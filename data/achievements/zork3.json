@@ -1,0 +1,96 @@
+{
+  "game": "zork3",
+  "achievements": [
+    {
+      "id": "on-the-lake",
+      "name": "On the Lake",
+      "description": "Swim out onto the lake.",
+      "hidden": false,
+      "trigger": { "type": "score-event", "eventId": "lake-crossed" }
+    },
+    {
+      "id": "the-cliff",
+      "name": "The Cliff",
+      "description": "Reach the ledge partway down the cliff face.",
+      "hidden": false,
+      "trigger": { "type": "score-event", "eventId": "cliff-encounter" }
+    },
+    {
+      "id": "a-shadowed-figure",
+      "name": "A Shadowed Figure",
+      "description": "Meet the hooded figure in the Land of Shadow.",
+      "hidden": true,
+      "trigger": { "type": "score-event", "eventId": "shadow-appears" }
+    },
+    {
+      "id": "strike-true",
+      "name": "Strike True",
+      "description": "Strike the shadowed figure with your sword.",
+      "hidden": true,
+      "trigger": { "type": "score-event", "eventId": "shadow-struck" }
+    },
+    {
+      "id": "scenic-route",
+      "name": "Scenic Route",
+      "description": "Discover what the viewing table at the Scenic Vista really does.",
+      "hidden": true,
+      "trigger": { "type": "score-event", "eventId": "viewing-table" }
+    },
+    {
+      "id": "776-gue",
+      "name": "776 GUE",
+      "description": "Ride the time machine into the past.",
+      "hidden": true,
+      "trigger": { "type": "score-event", "eventId": "time-machine" }
+    },
+    {
+      "id": "the-royal-puzzle",
+      "name": "The Royal Puzzle",
+      "description": "Solve the Royal Puzzle — the hardest puzzle in the trilogy.",
+      "hidden": true,
+      "trigger": { "type": "score-event", "eventId": "royal-puzzle" }
+    },
+    {
+      "id": "full-potential",
+      "name": "Full Potential",
+      "description": "Reach a potential of 7 out of a possible 7.",
+      "hidden": false,
+      "trigger": { "type": "score-reaches", "score": 7 }
+    },
+    {
+      "id": "the-dungeon-master",
+      "name": "The Dungeon Master",
+      "description": "Finish Zork III.",
+      "hidden": true,
+      "trigger": { "type": "milestone", "kind": "game-won" }
+    },
+    {
+      "id": "occupational-hazard",
+      "name": "Occupational Hazard",
+      "description": "Die. The Dungeon Master is merciful — mostly.",
+      "hidden": false,
+      "trigger": { "type": "milestone", "kind": "first-death" }
+    },
+    {
+      "id": "grue-food",
+      "name": "Grue Food",
+      "description": "Be eaten by a grue. You were warned about the dark.",
+      "hidden": false,
+      "trigger": { "type": "milestone", "kind": "grue-death" }
+    },
+    {
+      "id": "better-safe-than-sorry",
+      "name": "Better Safe Than Sorry",
+      "description": "Save your game for the first time.",
+      "hidden": false,
+      "trigger": { "type": "milestone", "kind": "first-checkpoint" }
+    },
+    {
+      "id": "good-night-adventurer",
+      "name": "Good Night, Adventurer",
+      "description": "Exhaust the Dungeon Master's mercy: die for the fourth time.",
+      "hidden": true,
+      "trigger": { "type": "milestone", "kind": "final-death" }
+    }
+  ]
+}

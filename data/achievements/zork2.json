@@ -1,0 +1,89 @@
+{
+  "game": "zork2",
+  "achievements": [
+    {
+      "id": "a-riddle-answered",
+      "name": "A Riddle Answered",
+      "description": "Answer the riddle and open the stone door.",
+      "hidden": false,
+      "trigger": { "type": "score-event", "eventId": "riddle-answered" }
+    },
+    {
+      "id": "play-ball",
+      "name": "Play Ball",
+      "description": "Solve the Oddly-angled Rooms.",
+      "hidden": true,
+      "trigger": { "type": "score-event", "eventId": "oddly-angled-solved" }
+    },
+    {
+      "id": "here-be-dragons",
+      "name": "Here Be Dragons",
+      "description": "Lead the dragon to the glacier and let nature take its course.",
+      "hidden": true,
+      "trigger": { "type": "score-event", "eventId": "dragon-melts-ice" }
+    },
+    {
+      "id": "bank-error-in-your-favor",
+      "name": "Bank Error in Your Favor",
+      "description": "Crack the Bank of Zork and walk out with the zorkmid bills.",
+      "hidden": true,
+      "trigger": { "type": "score-event", "eventId": "take-bills" }
+    },
+    {
+      "id": "a-good-dog",
+      "name": "A Good Dog",
+      "description": "Find the collar that fits a very large three-headed dog.",
+      "hidden": true,
+      "trigger": { "type": "score-event", "eventId": "take-collar" }
+    },
+    {
+      "id": "the-black-sphere",
+      "name": "The Black Sphere",
+      "description": "Place the three spheres and claim the fourth.",
+      "hidden": true,
+      "trigger": { "type": "score-event", "eventId": "take-black-sphere" }
+    },
+    {
+      "id": "the-wand",
+      "name": "The Wand",
+      "description": "Steal the Wizard of Frobozz's wand.",
+      "hidden": true,
+      "trigger": { "type": "score-event", "eventId": "take-wand" }
+    },
+    {
+      "id": "nothing-left-to-find",
+      "name": "Nothing Left to Find",
+      "description": "Reach the full 400 points.",
+      "hidden": false,
+      "trigger": { "type": "score-reaches", "score": 400 }
+    },
+    {
+      "id": "beyond-the-crypt",
+      "name": "Beyond the Crypt",
+      "description": "Finish Zork II.",
+      "hidden": false,
+      "trigger": { "type": "milestone", "kind": "game-won" }
+    },
+    {
+      "id": "occupational-hazard",
+      "name": "Occupational Hazard",
+      "description": "Die. The Wizard probably thought it was funny.",
+      "hidden": false,
+      "trigger": { "type": "milestone", "kind": "first-death" }
+    },
+    {
+      "id": "grue-food",
+      "name": "Grue Food",
+      "description": "Be eaten by a grue. You were warned about the dark.",
+      "hidden": false,
+      "trigger": { "type": "milestone", "kind": "grue-death" }
+    },
+    {
+      "id": "better-safe-than-sorry",
+      "name": "Better Safe Than Sorry",
+      "description": "Save your game for the first time.",
+      "hidden": false,
+      "trigger": { "type": "milestone", "kind": "first-checkpoint" }
+    }
+  ]
+}

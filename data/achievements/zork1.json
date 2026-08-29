@@ -1,0 +1,96 @@
+{
+  "game": "zork1",
+  "achievements": [
+    {
+      "id": "breaking-and-entering",
+      "name": "Breaking and Entering",
+      "description": "Find your way inside the white house.",
+      "hidden": false,
+      "trigger": { "type": "score-event", "eventId": "visit-kitchen" }
+    },
+    {
+      "id": "into-the-dark",
+      "name": "Into the Dark",
+      "description": "Descend into the Great Underground Empire.",
+      "hidden": false,
+      "trigger": { "type": "score-event", "eventId": "visit-cellar" }
+    },
+    {
+      "id": "honor-among-thieves",
+      "name": "Honor Among Thieves",
+      "description": "Take the jewel-encrusted chalice from the thief's treasure room.",
+      "hidden": true,
+      "trigger": { "type": "score-event", "eventId": "take-chalice" }
+    },
+    {
+      "id": "beyond-the-gates",
+      "name": "Beyond the Gates",
+      "description": "Retrieve the crystal skull from the Land of the Dead.",
+      "hidden": true,
+      "trigger": { "type": "score-event", "eventId": "take-skull" }
+    },
+    {
+      "id": "quiet-please",
+      "name": "Quiet, Please",
+      "description": "Solve the Loud Room and carry off the platinum bar.",
+      "hidden": true,
+      "trigger": { "type": "score-event", "eventId": "take-bar" }
+    },
+    {
+      "id": "end-of-the-rainbow",
+      "name": "End of the Rainbow",
+      "description": "Claim the pot of gold where the rainbow touches ground.",
+      "hidden": true,
+      "trigger": { "type": "score-event", "eventId": "take-pot-of-gold" }
+    },
+    {
+      "id": "pressure-and-time",
+      "name": "Pressure and Time",
+      "description": "Turn a lump of coal into a huge diamond.",
+      "hidden": true,
+      "trigger": { "type": "score-event", "eventId": "take-diamond" }
+    },
+    {
+      "id": "delicate-logistics",
+      "name": "Delicate Logistics",
+      "description": "Arrive in the Drafty Room empty-handed, with light waiting in the basket.",
+      "hidden": true,
+      "trigger": { "type": "score-event", "eventId": "light-shaft" }
+    },
+    {
+      "id": "nothing-left-to-find",
+      "name": "Nothing Left to Find",
+      "description": "Reach the full 350 points.",
+      "hidden": false,
+      "trigger": { "type": "score-reaches", "score": 350 }
+    },
+    {
+      "id": "the-stone-barrow",
+      "name": "The Stone Barrow",
+      "description": "Finish Zork I.",
+      "hidden": false,
+      "trigger": { "type": "milestone", "kind": "game-won" }
+    },
+    {
+      "id": "occupational-hazard",
+      "name": "Occupational Hazard",
+      "description": "Die. It happens to the best adventurers.",
+      "hidden": false,
+      "trigger": { "type": "milestone", "kind": "first-death" }
+    },
+    {
+      "id": "grue-food",
+      "name": "Grue Food",
+      "description": "Be eaten by a grue. You were warned about the dark.",
+      "hidden": false,
+      "trigger": { "type": "milestone", "kind": "grue-death" }
+    },
+    {
+      "id": "better-safe-than-sorry",
+      "name": "Better Safe Than Sorry",
+      "description": "Save your game for the first time.",
+      "hidden": false,
+      "trigger": { "type": "milestone", "kind": "first-checkpoint" }
+    }
+  ]
+}
