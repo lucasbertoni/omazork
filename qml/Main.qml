@@ -13,6 +13,7 @@ Item {
 
     // ---- host contract ----
     property var manifest: null
+    property var shell: null // injected by the host; null in a bare `qs` dev run
     property bool opened: false
 
     function open(payloadJson) {
@@ -29,15 +30,19 @@ Item {
         root.opened = false
     }
 
+    readonly property string pluginId: root.manifest && root.manifest.id
+        ? root.manifest.id : "omazork"
+
     // Esc: route through the host so its open-state stays in sync; the local
     // close keeps a bare `qs` dev run working without the host.
     function requestClose() {
-        var id = root.manifest && root.manifest.id ? root.manifest.id : "omazork"
         root.close()
-        Quickshell.execDetached(["omarchy-shell", "shell", "hide", id])
+        Quickshell.execDetached(["omarchy-shell", "shell", "hide", root.pluginId])
     }
 
-    Theme { id: phosphor }
+    // Theme adoption (docs/adr/0001): follows the active omarchy theme unless
+    // the shell.json plugin entry opts out with `"theme": "phosphor"`.
+    Theme { id: consoleTheme; shell: root.shell; pluginId: root.pluginId }
 
     readonly property string pluginRoot: {
         var u = Qt.resolvedUrl("..").toString()
@@ -425,16 +430,16 @@ Item {
                 NumberAnimation { duration: 220; easing.type: Easing.OutCubic }
             }
             gradient: Gradient {
-                GradientStop { position: 0.0; color: phosphor.drawerTop }
-                GradientStop { position: 1.0; color: phosphor.drawerBottom }
+                GradientStop { position: 0.0; color: consoleTheme.drawerTop }
+                GradientStop { position: 1.0; color: consoleTheme.drawerBottom }
             }
-            border.color: phosphor.borderMid
+            border.color: consoleTheme.borderMid
             border.width: 0
 
             Rectangle { // bottom edge line
                 anchors.bottom: parent.bottom
                 width: parent.width; height: 1
-                color: phosphor.borderMid
+                color: consoleTheme.borderMid
             }
 
             MouseArea { anchors.fill: parent } // swallow clicks inside the drawer
@@ -459,24 +464,24 @@ Item {
                     Text {
                         anchors.horizontalCenter: parent.horizontalCenter
                         text: "O M A Z O R K"
-                        color: phosphor.textBright
-                        font { family: phosphor.mono; pixelSize: 15; bold: true; letterSpacing: 6 }
+                        color: consoleTheme.textBright
+                        font { family: consoleTheme.mono; pixelSize: 15; bold: true; letterSpacing: 6 }
                     }
                     Text {
                         anchors.horizontalCenter: parent.horizontalCenter
                         visible: root.engineState === "bootstrapping"
                         text: "installing engine…"
-                        color: phosphor.textDim
-                        font { family: phosphor.mono; pixelSize: 13 }
+                        color: consoleTheme.textDim
+                        font { family: consoleTheme.mono; pixelSize: 13 }
                     }
                     Text {
                         width: parent.width
                         visible: root.engineState === "error"
                         text: root.engineError + "\n\npress R to retry · Esc to close"
-                        color: phosphor.amber
+                        color: consoleTheme.amber
                         wrapMode: Text.Wrap
                         horizontalAlignment: Text.AlignHCenter
-                        font { family: phosphor.mono; pixelSize: 12 }
+                        font { family: consoleTheme.mono; pixelSize: 12 }
                     }
                 }
             }
@@ -486,7 +491,7 @@ Item {
                 anchors.fill: parent
                 visible: root.engineState === "ready" && root.screen === "picker"
                 app: root
-                theme: phosphor
+                theme: consoleTheme
             }
 
             ConsoleView {
@@ -494,7 +499,7 @@ Item {
                 anchors.fill: parent
                 visible: root.engineState === "ready" && root.screen === "console"
                 app: root
-                theme: phosphor
+                theme: consoleTheme
             }
         }
     }

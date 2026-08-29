@@ -39,6 +39,14 @@ o.bind("SUPER + Z", "Zork console", "omarchy-shell shell toggle omazork")
 "zork": { "icon": "󰊠", "label": "Zork", "action": "omarchy-shell shell toggle omazork", "aliases": ["zork"] }
 ```
 
+**Theme** — the console follows the active omarchy theme, including light
+themes and live theme switches. To keep the original green-on-black phosphor
+look instead, set it on the plugin's entry in `~/.config/omarchy/shell.json`:
+
+```jsonc
+"plugins": [{ "id": "omazork", "theme": "phosphor" }]
+```
+
 On first launch the overlay bootstraps the engine binary into `bin/`: it
 downloads the checksum-pinned static build for your architecture
 (x86_64/aarch64) from the GitHub Release, falling back to `go build` if a Go
