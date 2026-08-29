@@ -1,11 +1,10 @@
 // omazork overlay entry point (#15). The shell host loads this via
-// manifest entryPoints.overlay, injects `manifest`, and drives summon/hide
-// through open()/close(). Layering, keyboard focus, and the slide animation
-// are plugin-owned (#4); the Go backend owns all game state and durability,
-// reached over NDJSON on stdio (docs/protocol.md).
+// manifest entryPoints.overlay, injects `manifest` and `service`, and drives
+// summon/hide through open()/close(). Layering, keyboard focus, and the
+// slide animation are plugin-owned (#4); the Go backend and its NDJSON
+// plumbing live in the service entry point (Service.qml, docs/adr/0002).
 import QtQuick
 import Quickshell
-import Quickshell.Io
 import Quickshell.Wayland
 
 Item {
@@ -44,74 +43,75 @@ Item {
     // the shell.json plugin entry opts out with `"theme": "phosphor"`.
     Theme { id: consoleTheme; shell: root.shell; pluginId: root.pluginId }
 
-    readonly property string pluginRoot: {
-        var u = Qt.resolvedUrl("..").toString()
-        if (u.indexOf("file://") === 0) u = u.substring(7)
-        while (u.length > 1 && u.charAt(u.length - 1) === "/")
-            u = u.substring(0, u.length - 1)
-        return u
-    }
+    // ---- service: the wrapper lives there (docs/adr/0002) ----
+    property var service: null // injected by the host when the service kind loaded
 
-    // ---- engine bootstrap (#12: idempotent, run on every launch) ----
-    property string engineState: "bootstrapping" // bootstrapping | ready | error
-    property string engineError: ""
+    // Host runs get the singleton via injection or the shell registry; a bare
+    // `qs` dev run creates a local instance instead (after a tick, so the
+    // host's injection wins when there is one).
+    readonly property var svc: root.service
+        || (root.shell ? root.shell.serviceFor(root.pluginId) : null)
+        || devService.item
+    Loader { id: devService; source: "Service.qml"; active: false }
+    Component.onCompleted: Qt.callLater(function() {
+        // only when there is no host at all: a host that injected `shell`
+        // creates the real service itself, possibly after this tick
+        if (!root.svc && !root.shell) devService.active = true
+    })
 
-    Process {
-        id: bootstrap
-        command: ["bash", root.pluginRoot + "/scripts/bootstrap.sh"]
-        workingDirectory: root.pluginRoot
-        running: true
-        stderr: StdioCollector { id: bootstrapErr }
-        onExited: exitCode => {
-            if (exitCode === 0) {
-                root.engineState = "ready"
-                backend.running = true
-            } else {
-                root.engineState = "error"
-                root.engineError =
-                    ("bootstrap failed (exit " + exitCode + ")\n" + bootstrapErr.text).trim()
-            }
-        }
-    }
+    readonly property string engineState: root.svc ? root.svc.engineState : "bootstrapping"
+    readonly property string engineError: root.svc ? root.svc.engineError : ""
 
     function retryBootstrap() {
-        if (root.engineState !== "error") return
-        root.engineState = "bootstrapping"
-        root.engineError = ""
-        bootstrap.running = true
+        if (root.svc) root.svc.retryBootstrap()
     }
-
-    // ---- backend child: NDJSON over stdio ----
-    Process {
-        id: backend
-        command: [root.pluginRoot + "/bin/omazork"]
-        stdinEnabled: true
-        stdout: SplitParser {
-            onRead: data => root.handleMessage(data)
-        }
-        stderr: SplitParser {
-            onRead: data => console.warn("omazork backend: " + data)
-        }
-        onStarted: {
-            // Durability lives in the backend: after a respawn (plugin rescan,
-            // crash) resuming the active game is invisible to the player.
-            if (root.screen === "console" && root.currentGame !== "") {
-                transcript.clear()
-                root.send({ type: "resume", game: root.currentGame })
-                if (root.opened) root.send({ type: "opened" })
-            } else {
-                root.send({ type: "picker" })
-            }
-        }
-        onExited: {
-            if (root.engineState === "ready") respawn.restart()
-        }
-    }
-    Timer { id: respawn; interval: 1000; onTriggered: backend.running = true }
 
     function send(msg) {
-        if (!backend.running) return
-        backend.write(JSON.stringify(msg) + "\n")
+        if (root.svc) root.svc.send(msg)
+    }
+
+    // The service owns resume-after-respawn (durability lives in the
+    // backend); the overlay only restarts the playtime clock and drops the
+    // stale transcript — the resume response rebuilds it.
+    Connections {
+        target: root.svc
+        function onMessage(msg) { root.handleMessage(msg) }
+        function onBackendStarted() {
+            if (root.screen === "console" && root.currentGame !== "") {
+                transcript.clear()
+                if (root.opened) root.send({ type: "opened" })
+            }
+        }
+    }
+
+    // The bar icon reads session identity off the service, and the service
+    // needs it to resume the right game after a wrapper respawn.
+    function pushSession() {
+        if (!root.svc) return
+        root.svc.currentGame = root.currentGame
+        root.svc.currentTitle = root.currentTitle
+        root.svc.mode = root.mode
+        root.svc.consoleActive = (root.screen === "console")
+    }
+    onSvcChanged: {
+        // the host's singleton won a race against the dev fallback: retire
+        // the fallback so only one wrapper process exists
+        if (devService.active && root.svc !== devService.item)
+            devService.active = false
+        if (!root.svc) return
+        // a recreated overlay adopts the live session rather than clobbering
+        // the service (which outlives overlay reloads) with fresh defaults
+        if (root.currentGame === "" && root.svc.currentGame !== "") {
+            root.currentGame = root.svc.currentGame
+            root.currentTitle = root.svc.currentTitle
+            root.mode = root.svc.mode
+            if (root.svc.consoleActive) {
+                root.screen = "console"
+                root.send({ type: "resume", game: root.currentGame })
+            }
+        } else {
+            root.pushSession()
+        }
     }
 
     // ---- session / ui state (display mirror of the backend's state) ----
@@ -130,8 +130,11 @@ Item {
     property int score: 0
     property int moves: 0
     property bool finished: false
-    property var pending: null // { maturesAt: Date }
+    // mirrored off the service, the single parser of the pending protocol
+    readonly property var pending: root.svc && root.svc.pendingMaturesAt
+        ? { maturesAt: root.svc.pendingMaturesAt } : null
     property int pendingMinutes: 0
+    onPendingChanged: updatePendingMinutes()
     property var checkpoints: []
     property var restoreChoices: null
 
@@ -170,18 +173,15 @@ Item {
         root.moves = st.moves
     }
 
-    function setPending(p) {
-        root.pending = p ? { maturesAt: new Date(p.maturesAt) } : null
-        root.updatePendingMinutes()
-    }
     function updatePendingMinutes() {
         if (!root.pending) { root.pendingMinutes = 0; return }
         root.pendingMinutes = Math.max(0,
             Math.ceil((root.pending.maturesAt.getTime() - Date.now()) / 60000))
     }
     Timer {
+        // countdown display only, so no need to tick while hidden
         interval: 30000; repeat: true
-        running: root.pending !== null
+        running: root.pending !== null && root.opened
         onTriggered: root.updatePendingMinutes()
     }
 
@@ -204,8 +204,6 @@ Item {
             appendLine("meta", "[Your score changed by "
                 + (r.delta > 0 ? "+" : "") + r.delta + ".]")
         showUnlocked(r.unlocked)
-        root.pending = null
-        root.updatePendingMinutes()
     }
 
     function endedLine(how) {
@@ -224,15 +222,9 @@ Item {
         appendLine("out", msg.output)
         applyStatus(msg.status)
         showUnlocked(msg.unlocked)
-        setPending(msg.pending || null)
     }
 
-    function handleMessage(data) {
-        var msg
-        try { msg = JSON.parse(data) } catch (e) {
-            console.warn("omazork: unparseable backend line: " + data)
-            return
-        }
+    function handleMessage(msg) {
         switch (msg.type) {
         case "picker":
             root.games = msg.games || []
@@ -255,12 +247,10 @@ Item {
         case "withheld":
             appendLine("out", msg.output)
             applyStatus(msg.status) // pre-turn values, per the #14 rule
-            setPending(msg.pending)
             break
         case "blocked":
             appendLine("meta", msg.output
                 || "The outcome of your last action is still unfolding...")
-            if (msg.pending) setPending(msg.pending)
             break
         case "checkpoint":
             appendLine("out", msg.output)
@@ -291,8 +281,7 @@ Item {
             root.pickerStage = "confirm"
             break
         case "matured":
-            Quickshell.execDetached(["notify-send", "-a", "omazork", "omazork",
-                "Something has happened in the Great Underground Empire."])
+            // the notification is the service's job; revealing needs UI state
             if (root.opened && root.screen === "console")
                 root.send({ type: "opened" }) // reveal now: the console is open
             break
@@ -374,11 +363,11 @@ Item {
         root.currentTitle = title
         root.mode = mode
         root.finished = false
-        root.pending = null
         root.checkpoints = []
         root.restoreChoices = null
         transcript.clear()
         root.awaitingEnter = true
+        root.pushSession()
     }
 
     function toPicker() {
@@ -389,8 +378,14 @@ Item {
     }
 
     // ---- focus ----
-    onOpenedChanged: Qt.callLater(root.syncFocus)
-    onScreenChanged: Qt.callLater(root.syncFocus)
+    onOpenedChanged: {
+        Qt.callLater(root.syncFocus)
+        if (root.opened) root.updatePendingMinutes()
+    }
+    onScreenChanged: {
+        Qt.callLater(root.syncFocus)
+        root.pushSession()
+    }
     onEngineStateChanged: Qt.callLater(root.syncFocus)
     onPickerStageChanged: Qt.callLater(root.syncFocus)
 

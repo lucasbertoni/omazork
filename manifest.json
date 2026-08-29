@@ -5,9 +5,18 @@
   "version": "0.1.0",
   "author": "Lucas Bertoni",
   "description": "Zork I/II/III console overlay with casual-mode pacing",
-  "kinds": ["overlay"],
+  "kinds": ["overlay", "bar-widget", "service"],
   "keepLoaded": true,
   "entryPoints": {
-    "overlay": "qml/Main.qml"
+    "overlay": "qml/Main.qml",
+    "barWidget": "qml/BarWidget.qml",
+    "service": "qml/Service.qml"
+  },
+  "barWidget": {
+    "displayName": "Omazork",
+    "description": "Brass-lantern status icon: lit while the engine runs, dotted when a recap awaits; click opens the console",
+    "category": "Games",
+    "allowMultiple": false,
+    "defaultSection": "center"
   }
 }

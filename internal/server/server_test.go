@@ -151,3 +151,41 @@ func TestMaturationEvent(t *testing.T) {
 	h.in.Close()
 	<-h.done
 }
+
+// The bar icon derives "recap waiting" from the picker after a shell restart,
+// so the picker must say when a pending outcome matures, not just that one
+// exists (qml/Service.qml, docs/adr/0002).
+func TestPickerCarriesPendingMaturesAt(t *testing.T) {
+	now := time.Date(2026, 8, 29, 9, 0, 0, 0, time.UTC)
+	h := start(t, &now)
+
+	h.send(map[string]any{"type": "new", "game": "zork1", "mode": "casual"})
+	for _, cmd := range []string{"south", "east", "open window"} {
+		h.send(map[string]any{"type": "input", "text": cmd})
+	}
+	if wh := h.send(map[string]any{"type": "input", "text": "enter window"}); wh["type"] != "withheld" {
+		t.Fatalf("scoring turn: %v", wh)
+	}
+
+	pick := h.send(map[string]any{"type": "picker"})
+	for _, g := range pick["games"].([]any) {
+		gm := g.(map[string]any)
+		if gm["game"] != "zork1" {
+			continue
+		}
+		pt := gm["playthrough"].(map[string]any)
+		if pt["pending"] != true {
+			t.Fatalf("pending flag: %v", pt)
+		}
+		raw, ok := pt["pendingMaturesAt"].(string)
+		if !ok {
+			t.Fatalf("no pendingMaturesAt: %v", pt)
+		}
+		when, err := time.Parse(time.RFC3339, raw)
+		if err != nil || !when.After(now) {
+			t.Fatalf("pendingMaturesAt = %q (err %v), want a future RFC3339 time", raw, err)
+		}
+	}
+	h.in.Close()
+	<-h.done
+}

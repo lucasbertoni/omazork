@@ -235,7 +235,10 @@ func (s *Server) picker() (any, error) {
 		Moves      int          `json:"moves"`
 		LastPlayed time.Time    `json:"lastPlayed"`
 		Pending    bool         `json:"pending"`
-		Finished   bool         `json:"finished"`
+		// When Pending: lets the bar icon rediscover a recap that matured
+		// while the wrapper was not running (no session, no matured event).
+		PendingMaturesAt *time.Time `json:"pendingMaturesAt,omitempty"`
+		Finished         bool       `json:"finished"`
 	}
 	type entry struct {
 		Game        string  `json:"game"`
@@ -251,6 +254,10 @@ func (s *Server) picker() (any, error) {
 			e.Playthrough = &ptView{
 				Mode: p.Mode, Room: p.Room, Score: p.Score, Moves: p.Moves,
 				LastPlayed: p.LastPlayed, Pending: p.Pending != nil, Finished: p.Finished,
+			}
+			if p.Pending != nil {
+				at := p.Pending.MaturesAt
+				e.Playthrough.PendingMaturesAt = &at
 			}
 		}
 		out = append(out, e)

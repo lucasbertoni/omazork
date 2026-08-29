@@ -21,4 +21,8 @@ Glossary of canonical terms. Keep implementation details out.
 - **Play stats**: passive counters the Wrapper keeps about a playthrough — sessions, deaths, playtime, commands entered. Displayed in the journal sidebar in both modes; reset when a new game replaces the playthrough. Never gamified.
 - **Theme adoption**: the Console deriving its entire palette and font from the active omarchy theme, updating live when the theme changes. The default behavior; a light theme yields a genuinely light Console.
 - **Phosphor**: the committed built-in green-on-black palette. What the Console shows when the player opts out of theme adoption, and the fallback when adoption fails.
+- **Installed**: present on the machine and known to the host shell, but nothing more. Installed plugins land disabled; nothing runs until enabled.
+- **Enabled**: the host-shell state that allows the plugin's components to load. Toggled only by the user through the shell — never by the plugin itself.
+- **On the bar**: whether the Bar icon occupies a slot in the shell bar's layout. A separate question from Enabled; placement belongs to the user, via the shell's bar commands.
+- **Bar icon**: the plugin's presence in the shell bar. Shows omazork is installed and enabled, signals a waiting Recap, reflects Wrapper health, and opens the Console on click.
 - **Achievement**: a named milestone unlocked once per game, ever — surviving across playthroughs, in both modes. Triggered by score events or curated non-scoring moments (a first death, finishing the game). May be *hidden*: shown as "???" until unlocked. In Casual mode an achievement on a withheld turn unlocks at the reveal, inside the recap.

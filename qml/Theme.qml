@@ -20,10 +20,19 @@ QtObject {
     // reactive, so edits to shell.json apply live.
     readonly property string mode: {
         var cfg = shell ? shell.shellConfig : null
-        var entries = cfg && cfg.plugins ? cfg.plugins : []
-        for (var i = 0; i < entries.length; i++)
-            if (entries[i] && entries[i].id === pluginId && entries[i].theme === "phosphor")
-                return "phosphor"
+        if (!cfg) return "omarchy"
+        // the entry lives in `plugins`, or — since the bar icon — possibly in
+        // `bar.layout` instead (an entry there also enables the plugin)
+        var pools = [cfg.plugins || []]
+        var layout = cfg.bar && cfg.bar.layout ? cfg.bar.layout : {}
+        var sections = ["left", "center", "right"]
+        for (var s = 0; s < sections.length; s++)
+            if (layout[sections[s]]) pools.push(layout[sections[s]])
+        for (var p = 0; p < pools.length; p++)
+            for (var i = 0; i < pools[p].length; i++)
+                if (pools[p][i] && pools[p][i].id === pluginId
+                        && pools[p][i].theme === "phosphor")
+                    return "phosphor"
         return "omarchy"
     }
 

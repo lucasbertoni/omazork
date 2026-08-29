@@ -39,6 +39,17 @@ o.bind("SUPER + Z", "Zork console", "omarchy-shell shell toggle omazork")
 "zork": { "icon": "󰊠", "label": "Zork", "action": "omarchy-shell shell toggle omazork", "aliases": ["zork"] }
 ```
 
+**Bar icon** — a brass lantern in the shell bar: lit while the engine runs,
+dark when it isn't, with a dot when a Casual recap is waiting. Click toggles
+the console; hover shows game and mode (never spoilers). Fresh enables place
+it automatically; if omazork was already enabled before the icon existed,
+re-enable it with a placement (progress is autosaved; note this rewrites the
+plugin's shell.json entry, so re-apply any `"theme"` setting after):
+
+```sh
+omarchy plugin disable omazork && omarchy plugin enable omazork --after omarchy.clock
+```
+
 **Theme** — the console follows the active omarchy theme, including light
 themes and live theme switches. To keep the original green-on-black phosphor
 look instead, set it on the plugin's entry in `~/.config/omarchy/shell.json`:
@@ -46,6 +57,9 @@ look instead, set it on the plugin's entry in `~/.config/omarchy/shell.json`:
 ```jsonc
 "plugins": [{ "id": "omazork", "theme": "phosphor" }]
 ```
+
+With the bar icon placed, the entry lives in `bar.layout` instead of
+`plugins`; set it there with `omarchy bar set omazork theme '"phosphor"'`.
 
 On first launch the overlay bootstraps the engine binary into `bin/`: it
 downloads the checksum-pinned static build for your architecture

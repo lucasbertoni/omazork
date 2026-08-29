@@ -15,9 +15,9 @@ plus respawn resumes invisibly. The binary takes `-state <dir>` and
 
 | type | fields | response |
 |---|---|---|
-| `picker` | — | `picker`: the three games with playthrough summaries |
+| `picker` | — | `picker`: the three games with playthrough summaries; a pending outcome carries `pendingMaturesAt` so the bar icon can rediscover a recap that matured while the wrapper was down |
 | `new` | `game`, `mode` (`classic`/`casual`), `replace` | opening `output`, or `confirm-replace` when a playthrough exists and `replace` is absent |
-| `resume` | `game` | `output` with `status`, `transcript` (recent console lines), and `pending`/`reveal` when applicable |
+| `resume` | `game` | `output` with `status`, `transcript` (recent console lines), and `pending` when applicable; a matured outcome reveals on the follow-up `opened`, never here |
 | `input` | `text` | `output` / `withheld` / `blocked` / `checkpoint` / `checkpoints` / `ended` (see below) |
 | `restore-checkpoint` | `checkpoint` (id) | `output` rewound to the checkpoint |
 | `opened` | — | `output`; carries `reveal` when a matured outcome is waiting |
@@ -46,7 +46,7 @@ Common fields: `output` (story text), `status` (`{room, score, moves}`),
   (Zork III's fourth death hard-quits). `quit` playthroughs resume from the
   last autosave; `won`/`died`-final playthroughs are `finished` in the picker.
 
-`reveal` (on `opened`, `resume`, or the first `input` after maturation) is the
+`reveal` (on `opened` or the first `input` after maturation) is the
 "While you were away…" recap: `{command, output, delta, status, unlocked}` —
 achievements earned on the withheld turn unlock here, not earlier.
 
