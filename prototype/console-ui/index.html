@@ -1,0 +1,548 @@
+<!-- PROTOTYPE — throwaway react-to artifact for issue #8 (Console UI).
+     Three variants of the omazork console overlay, switchable via the floating
+     bottom bar or #variant=A|B|C in the URL. Not production code. -->
+<title>Omazork Console Prototype</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;1,400&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap">
+<style>
+  /* Committed single-theme: a dark desktop world. All colors explicit. */
+  :root {
+    --desk-1: #1b2230; --desk-2: #2c3a52; --desk-glow: #3d5a80;
+    --bar-bg: rgba(12,16,24,.85); --bar-tx: #aeb8c8;
+    --mono: "IBM Plex Mono", ui-monospace, "Cascadia Mono", monospace;
+    --serif: "Spectral", Georgia, serif;
+  }
+  * { box-sizing: border-box; }
+  html, body { height: 100%; }
+  body {
+    margin: 0; font-family: var(--mono); font-size: 14px;
+    background: #10141c; color: #d8dee6; overflow: hidden;
+  }
+
+  /* ---------- fake desktop, shared context for every variant ---------- */
+  .desktop {
+    position: fixed; inset: 0;
+    background:
+      radial-gradient(1200px 700px at 70% 110%, var(--desk-glow) 0%, transparent 60%),
+      linear-gradient(160deg, var(--desk-1), var(--desk-2) 140%);
+  }
+  .waybar {
+    position: absolute; top: 0; left: 0; right: 0; height: 30px;
+    display: flex; align-items: center; gap: 18px; padding: 0 14px;
+    background: var(--bar-bg); color: var(--bar-tx); font-size: 11.5px;
+    letter-spacing: .04em; z-index: 1;
+  }
+  .waybar .ws { display: flex; gap: 10px; }
+  .waybar .ws b { color: #fff; }
+  .waybar .right { margin-left: auto; display: flex; gap: 16px; }
+  .fakewin {
+    position: absolute; border-radius: 8px;
+    background: rgba(18,23,33,.72); border: 1px solid rgba(255,255,255,.09);
+    box-shadow: 0 18px 50px rgba(0,0,0,.45); backdrop-filter: blur(2px);
+  }
+  .fakewin .tb { height: 26px; border-bottom: 1px solid rgba(255,255,255,.07);
+    display:flex; align-items:center; padding: 0 10px; color:#8a93a5; font-size: 11px; }
+  .fakewin pre { margin: 8px 12px; color: #5f6b80; font-size: 11px; line-height: 1.7; }
+  .hint {
+    position: absolute; bottom: 74px; left: 50%; transform: translateX(-50%);
+    color: #9fb0c8; font-size: 12px; letter-spacing: .03em; text-align: center;
+  }
+  .hint kbd { background: rgba(255,255,255,.1); border: 1px solid rgba(255,255,255,.18);
+    border-radius: 4px; padding: 1px 6px; font-family: var(--mono); color: #e8edf5; }
+
+  /* ---------- shared overlay mechanics ---------- */
+  .overlay { position: fixed; left:0; right:0; top:0; z-index: 5;
+    transition: transform .28s cubic-bezier(.3,.9,.3,1), opacity .22s;
+    transform: translateY(-102%); opacity: 0; pointer-events: none; }
+  .overlay.open { transform: translateY(0); opacity: 1; pointer-events: auto; }
+  @media (prefers-reduced-motion: reduce) { .overlay { transition: none; } }
+
+  .inputline input {
+    background: transparent; border: 0; outline: 0; flex: 1;
+    font: inherit; color: inherit; caret-color: currentColor;
+  }
+  .transcript { overflow-y: auto; scrollbar-width: thin; }
+  .transcript p { margin: 0 0 .55em; white-space: pre-wrap; }
+  .transcript .cmd { opacity: .75; }
+  .transcript .meta { font-style: italic; opacity: .65; }
+
+  /* demo strip: obviously not part of the design under review */
+  .demo {
+    position: fixed; top: 40px; right: 12px; z-index: 20;
+    display: flex; flex-direction: column; gap: 6px; width: 210px;
+  }
+  .demo button {
+    font: 11.5px var(--mono); text-align: left; cursor: pointer;
+    background: #e8edf5; color: #1a2130; border: 0; border-radius: 5px;
+    padding: 6px 9px; box-shadow: 0 4px 14px rgba(0,0,0,.4);
+  }
+  .demo button:hover { background: #fff; }
+  .demo .lbl { font-size: 10px; letter-spacing: .12em; color: #9fb0c8;
+    text-transform: uppercase; }
+
+  /* floating variant switcher */
+  .switcher {
+    position: fixed; bottom: 16px; left: 50%; transform: translateX(-50%);
+    z-index: 30; display: flex; align-items: center; gap: 4px;
+    background: #e8edf5; color: #1a2130; border-radius: 999px;
+    padding: 5px 8px; box-shadow: 0 8px 30px rgba(0,0,0,.55);
+    font: 12.5px var(--mono);
+  }
+  .switcher button { border: 0; background: transparent; cursor: pointer;
+    font: inherit; padding: 3px 9px; border-radius: 999px; }
+  .switcher button:hover { background: rgba(0,0,0,.1); }
+  .switcher .name { min-width: 210px; text-align: center; font-weight: 600; }
+  :focus-visible { outline: 2px solid #7fb2ff; outline-offset: 2px; }
+
+  /* =================== VARIANT A — Phosphor Drawer =================== */
+  .vA {
+    height: 58vh; min-height: 380px;
+    background: linear-gradient(#0b120c, #0a0f0a);
+    border-bottom: 1px solid #2c4a2e;
+    box-shadow: 0 24px 70px rgba(0,0,0,.65);
+    color: #9fdf9f; display: flex; flex-direction: column;
+    font-size: 14.5px; line-height: 1.65;
+  }
+  .vA .scan { position:absolute; inset:0; pointer-events:none; mix-blend-mode: overlay;
+    background: repeating-linear-gradient(transparent 0 2px, rgba(0,0,0,.28) 2px 3px); }
+  .vA header {
+    display: flex; gap: 22px; align-items: baseline; padding: 9px 22px 7px;
+    border-bottom: 1px solid #1e3320; color: #5f8f62; font-size: 12px;
+    letter-spacing: .08em;
+  }
+  .vA header .room { color: #cdeccd; font-weight: 600; letter-spacing: .04em; }
+  .vA header .stat { margin-left: auto; display: flex; gap: 18px;
+    font-variant-numeric: tabular-nums; }
+  .vA header .stat.hidden-stat { visibility: hidden; }
+  .vA .transcript { flex: 1; padding: 16px 22px; }
+  .vA .inputline { display: flex; gap: 8px; padding: 10px 22px 14px;
+    border-top: 1px solid #1e3320; }
+  .vA .inputline .ps { color: #5f8f62; }
+  .vA .pending {
+    margin: 0 22px 10px; padding: 9px 14px; border: 1px dashed #7a6a30;
+    color: #e8b04a; font-size: 12.5px; letter-spacing: .03em;
+    display: none;
+  }
+  .vA.is-pending .pending { display: block; }
+  .vA.is-pending .inputline { opacity: .45; }
+  /* A's picker: a full-console menu, keyboard-era */
+  .vA .picker { flex: 1; padding: 34px 0 0; display: flex; flex-direction: column;
+    align-items: center; gap: 4px; }
+  .vA .picker h1 { font: 600 15px var(--mono); letter-spacing: .35em;
+    color: #cdeccd; margin: 0 0 22px; text-transform: uppercase; }
+  .vA .picker .row {
+    width: min(560px, 86%); display: flex; gap: 14px; align-items: baseline;
+    padding: 9px 16px; cursor: pointer; border: 1px solid transparent;
+  }
+  .vA .picker .row:hover, .vA .picker .row.sel {
+    border-color: #2c4a2e; background: rgba(60,120,64,.08); }
+  .vA .picker .n { color: #5f8f62; width: 1.4em; }
+  .vA .picker .t { color: #cdeccd; font-weight: 600; }
+  .vA .picker .sub { margin-left: auto; color: #5f8f62; font-size: 12px; }
+  .vA .picker .sub .dot { color: #e8b04a; }
+  .vA .picker .mode { margin-top: 26px; color: #5f8f62; font-size: 12px; }
+  .vA .picker .mode b { color: #9fdf9f; }
+
+  /* =================== VARIANT B — The Study Card =================== */
+  .vB { display: flex; justify-content: center; padding-top: 52px; }
+  .vB .card {
+    width: min(880px, 92vw); height: 62vh; min-height: 420px;
+    background: #f2ead8; color: #2a241c; border-radius: 10px;
+    box-shadow: 0 30px 80px rgba(0,0,0,.6), 0 2px 0 rgba(255,255,255,.25) inset;
+    display: flex; overflow: hidden; font-family: var(--serif);
+    font-size: 16px; line-height: 1.62;
+  }
+  .vB .rail {
+    width: 168px; flex: none; background: #262019; color: #cfc4ae;
+    padding: 18px 0; display: flex; flex-direction: column; gap: 2px;
+  }
+  .vB .rail .brand { font: 600 11px var(--mono); letter-spacing: .3em;
+    text-transform: uppercase; color: #8c7f68; padding: 0 18px 14px; }
+  .vB .rail .game {
+    padding: 11px 18px; cursor: pointer; border-left: 3px solid transparent;
+  }
+  .vB .rail .game:hover { background: rgba(255,255,255,.05); }
+  .vB .rail .game.sel { border-left-color: #8c3b2e; background: rgba(255,255,255,.07); }
+  .vB .rail .game .t { font-weight: 600; font-size: 15px; }
+  .vB .rail .game .sub { font: 11px var(--mono); color: #8c7f68; margin-top: 3px; }
+  .vB .rail .game .sub .dot { color: #d08a4a; }
+  .vB .rail .foot { margin-top: auto; padding: 12px 18px 0;
+    font: 10.5px var(--mono); color: #6b6152; line-height: 1.7; }
+  .vB .page { flex: 1; display: flex; flex-direction: column; position: relative; }
+  .vB .page .head {
+    display: flex; baseline-position: first; align-items: baseline; gap: 14px;
+    padding: 16px 26px 10px; border-bottom: 1px solid #d8cdb4;
+  }
+  .vB .page .head .room { font-weight: 600; font-size: 17px; }
+  .vB .page .head .stat { margin-left: auto; font: 12px var(--mono);
+    color: #6b6152; font-variant-numeric: tabular-nums; }
+  .vB .page .head .stat.hidden-stat { visibility: hidden; }
+  .vB .transcript { flex: 1; padding: 18px 28px; }
+  .vB .transcript .cmd { font-family: var(--mono); font-size: 13px; }
+  .vB .inputline { display: flex; gap: 10px; padding: 12px 28px 18px;
+    border-top: 1px solid #d8cdb4; font-family: var(--mono); font-size: 14px; }
+  .vB .inputline .ps { color: #8c3b2e; }
+  /* B's pending: a sealed letter covering the lower page */
+  .vB .seal {
+    position: absolute; left: 0; right: 0; bottom: 0; display: none;
+    background: linear-gradient(transparent, #efe5cf 26%);
+    padding: 64px 28px 22px; text-align: center;
+  }
+  .vB.is-pending .seal { display: block; }
+  .vB.is-pending .inputline { visibility: hidden; }
+  .vB .seal .wax { width: 44px; height: 44px; border-radius: 50%;
+    background: radial-gradient(circle at 35% 30%, #a84a38, #6e2418);
+    margin: 0 auto 10px; box-shadow: 0 3px 10px rgba(0,0,0,.3);
+    display:flex; align-items:center; justify-content:center;
+    color: #f2ead8; font: 600 18px var(--serif); }
+  .vB .seal .t { font-style: italic; font-size: 16.5px; }
+  .vB .seal .sub { font: 11.5px var(--mono); color: #6b6152; margin-top: 6px; }
+
+  /* =================== VARIANT C — The Ledger =================== */
+  .vC {
+    height: 64vh; min-height: 420px; display: flex;
+    background: #12161d; color: #d8dee6;
+    border-bottom: 1px solid #2a3442; box-shadow: 0 24px 70px rgba(0,0,0,.65);
+    font-size: 14px; line-height: 1.7;
+  }
+  .vC .main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .vC .transcript { flex: 1; padding: 18px 26px; }
+  .vC .inputline { display: flex; gap: 9px; padding: 11px 26px 15px;
+    border-top: 1px solid #222b38; }
+  .vC .inputline .ps { color: #6ea8d8; }
+  .vC.is-pending .inputline { opacity: .4; }
+  .vC .journal {
+    width: 250px; flex: none; border-left: 1px solid #222b38;
+    background: #0e1218; padding: 16px 18px; display: flex;
+    flex-direction: column; gap: 16px; font-size: 12px; overflow-y: auto;
+  }
+  .vC .journal h2 { font: 600 10.5px var(--mono); letter-spacing: .22em;
+    text-transform: uppercase; color: #56637a; margin: 0 0 7px; }
+  .vC .journal .kv { display: flex; justify-content: space-between;
+    padding: 2.5px 0; color: #aab6c8; font-variant-numeric: tabular-nums; }
+  .vC .journal .kv b { color: #e6ecf5; font-weight: 600; }
+  .vC .journal .kv.hidden-stat { visibility: hidden; }
+  .vC .journal .chk { padding: 5px 0; border-top: 1px solid #1a2230;
+    color: #8fa0b8; }
+  .vC .journal .chk .ts { color: #56637a; font-size: 10.5px; }
+  .vC .journal .pendcard {
+    display: none; border: 1px solid #4a3d20; background: #191507;
+    border-radius: 6px; padding: 10px 12px; color: #e8b04a; line-height: 1.6;
+  }
+  .vC.is-pending .pendcard { display: block; }
+  .vC .journal .pendcard b { letter-spacing: .06em; }
+  /* C's picker: horizontal cards over the whole panel */
+  .vC .picker { flex: 1; display: flex; gap: 18px; align-items: center;
+    justify-content: center; padding: 0 30px; }
+  .vC .picker .gcard {
+    width: 200px; border: 1px solid #2a3442; border-radius: 8px;
+    background: #171d26; padding: 18px; cursor: pointer;
+  }
+  .vC .picker .gcard:hover { border-color: #6ea8d8; }
+  .vC .picker .gcard .t { font-weight: 600; font-size: 15px; color: #e6ecf5; }
+  .vC .picker .gcard .sub { color: #8fa0b8; font-size: 11.5px; margin-top: 8px;
+    line-height: 1.7; }
+  .vC .picker .gcard .cta { margin-top: 14px; font-size: 11px; color: #6ea8d8;
+    letter-spacing: .08em; text-transform: uppercase; }
+  .vC .picker .gcard .dot { color: #e8b04a; }
+</style>
+
+<div class="desktop">
+  <div class="waybar">
+    <span class="ws">​<b>1</b> 2 3 4 5</span>
+    <span>omazork prototype</span>
+    <span class="right"><span>en</span><span>99%</span><span>Fri 21:34</span></span>
+  </div>
+  <div class="fakewin" style="left:6%; top:12%; width:38%; height:52%;">
+    <div class="tb">~/Work/omazork — nvim</div>
+    <pre>func (s *Session) Step(cmd string) Result {
+    out := s.vm.Run(cmd)
+    if s.mode == Casual && out.ScoreDelta != 0 {
+        return s.withhold(out)
+    }
+    return out
+}</pre>
+  </div>
+  <div class="fakewin" style="right:7%; top:22%; width:33%; height:46%;">
+    <div class="tb">firefox — omarchy.org/manual/shell-plugins</div>
+    <pre>Shell plugins are git repos with a
+manifest.json declaring QML entry
+points. Overlays render above all
+windows and take keyboard focus…</pre>
+  </div>
+  <div class="hint">This is a mock desktop for context. <kbd>Super</kbd>+<kbd>Z</kbd> here = the “Toggle console” button. <kbd>Esc</kbd> closes.</div>
+</div>
+
+<div class="demo">
+  <span class="lbl">Prototype controls</span>
+  <button data-act="toggle">Toggle console (Super+Z)</button>
+  <button data-act="picker">Back to picker</button>
+  <button data-act="score">Play a scoring move → pending</button>
+  <button data-act="ff">Fast-forward 34 min → mature</button>
+  <button data-act="reset">Reset demo state</button>
+</div>
+
+<div class="overlay" id="overlay"></div>
+
+<div class="switcher" role="toolbar" aria-label="Prototype variant switcher">
+  <button data-dir="-1" aria-label="Previous variant">◀</button>
+  <span class="name" id="swname"></span>
+  <button data-dir="1" aria-label="Next variant">▶</button>
+</div>
+
+<script>
+/* ---------------- canned game state, shared by all variants ------------- */
+const OPENING = [
+  ["out","West of House"],
+  ["out","You are standing in an open field west of a white house, with a boarded front door. There is a small mailbox here."],
+];
+const CANNED = {
+  "open mailbox": "Opening the small mailbox reveals a leaflet.",
+  "read leaflet": "\"WELCOME TO ZORK!\n\nZORK is a game of adventure, danger, and low cunning. In it you will explore some of the most amazing territory ever seen by mortals. No computer should be without one!\"",
+  "north": "North of House\nYou are facing the north side of a white house. There is no door here, and all the windows are boarded up.",
+  "save": "(checkpoint recorded — omazork keeps the real file)",
+  "score": null, // handled as meta
+};
+const SCORING = {
+  cmd: "take egg",
+  masked: "You reach into the nest…",
+  reveal: "Taking the jewel-encrusted egg raises your score.\n\n[Your score just went up by 5 points. Total: 15]",
+  recapTitle: "While you were away…",
+  newScore: 15, delta: 5,
+};
+const GAMES = [
+  { key:"z1", title:"Zork I", sub:"The Great Underground Empire", resume:{room:"West of House", score:10, moves:41, mode:"Casual", pending:false} },
+  { key:"z2", title:"Zork II", sub:"The Wizard of Frobozz", resume:{room:"Inside the Barrow", score:5, moves:12, mode:"Classic", pending:true} },
+  { key:"z3", title:"Zork III", sub:"The Dungeon Master", resume:null },
+];
+
+let S; // demo state
+function resetState() {
+  S = {
+    open: false, screen: "picker", game: GAMES[0],
+    room: "West of House", score: 10, moves: 41, mode: "Casual",
+    lines: OPENING.slice(),
+    pending: null, // {maskedShown, minutesLeft, matured}
+    checkpoints: [ {name:"before the grating", ts:"today 20:58"},
+                   {name:"got the lamp", ts:"today 20:31"} ],
+  };
+}
+resetState();
+
+function submit(cmdRaw) {
+  const cmd = cmdRaw.trim().toLowerCase();
+  if (!cmd) return;
+  if (S.pending && !S.pending.matured) {
+    if (cmd === "score" || cmd === "time" || cmd === "quit") {
+      S.lines.push(["cmd","> " + cmd]);
+      S.lines.push(["meta","(meta commands still work while an outcome is pending)"]);
+    } else {
+      S.lines.push(["meta","An outcome is still unfolding — the story resumes on its own."]);
+    }
+    render(); return;
+  }
+  S.lines.push(["cmd","> " + cmd]);
+  S.moves++;
+  if (cmd === SCORING.cmd) { triggerScore(); return; }
+  if (cmd === "score") {
+    S.lines.push(["out",`Your score is ${S.score} (total of 350 points), in ${S.moves} moves.`]);
+  } else if (CANNED[cmd] !== undefined && CANNED[cmd] !== null) {
+    S.lines.push(["out", CANNED[cmd]]);
+    if (cmd === "north") S.room = "North of House";
+  } else {
+    S.lines.push(["out","I don't know the word \"" + cmd.split(" ")[0] + "\". (Canned demo — try the buttons on the right.)"]);
+  }
+  render();
+}
+
+function triggerScore() {
+  S.lines.push(["cmd","> " + SCORING.cmd]);
+  S.lines.push(["out", SCORING.masked]);
+  S.pending = { minutesLeft: 34, matured: false };
+  render();
+}
+function fastForward() {
+  if (!S.pending) { triggerScore(); }
+  S.pending.matured = true; S.pending.minutesLeft = 0;
+  // reveal happens on next open; if already open, reveal now
+  if (S.open && S.screen === "console") reveal();
+  render();
+}
+function reveal() {
+  S.lines.push(["meta", "— " + SCORING.recapTitle + " —"]);
+  S.lines.push(["out", SCORING.reveal]);
+  S.score = SCORING.newScore; S.pending = null;
+  render();
+}
+function toggleOverlay() {
+  S.open = !S.open;
+  if (S.open && S.pending && S.pending.matured && S.screen === "console") reveal();
+  render();
+}
+function pickGame(i, fresh) {
+  S.game = GAMES[i]; S.screen = "console";
+  if (S.game.resume && !fresh) {
+    const r = S.game.resume;
+    S.room = r.room; S.score = r.score; S.moves = r.moves; S.mode = r.mode;
+    S.lines = [["meta",`(resumed ${S.game.title} — ${r.room}, score ${r.score}, ${r.moves} moves, ${r.mode} mode)`],
+               ...OPENING.slice(1)];
+  } else {
+    S.room = "West of House"; S.score = 0; S.moves = 0;
+    S.lines = OPENING.slice();
+  }
+  render();
+  focusInput();
+}
+
+/* ---------------- variants ---------------- */
+const esc = s => s.replace(/&/g,"&amp;").replace(/</g,"&lt;");
+const linesHTML = () => S.lines.map(([k,t]) => `<p class="${k}">${esc(t)}</p>`).join("");
+const statHidden = () => (S.pending && !S.pending.matured) ? "hidden-stat" : "";
+const pendingLine = () =>
+  `Something is unfolding in the story. It resolves in ~${S.pending?.minutesLeft ?? 0} min — come back then. (No peeking; SAVE/RESTORE wait too.)`;
+
+function pickerRowsA() {
+  return GAMES.map((g,i) => {
+    const r = g.resume;
+    const sub = r ? `resume — ${r.room}, ${r.score} pts${r.pending ? ' <span class="dot">● outcome pending</span>' : ""}` : "new game";
+    return `<div class="row" data-pick="${i}" tabindex="0">
+      <span class="n">${i+1}.</span><span class="t">${g.title}</span>
+      <span class="sub">${sub}</span></div>`;
+  }).join("");
+}
+
+const VARIANTS = {
+  A: { name: "A — Phosphor Drawer", render() {
+    const pend = S.pending && !S.pending.matured;
+    if (S.screen === "picker") return `
+      <div class="vA"><div class="scan"></div>
+        <div class="picker">
+          <h1>Underground</h1>
+          ${pickerRowsA()}
+          <div class="mode">mode is chosen per new game: <b>Classic</b> / <b>Casual</b></div>
+        </div>
+      </div>`;
+    return `
+      <div class="vA ${pend ? "is-pending" : ""}"><div class="scan"></div>
+        <header>
+          <span class="room">${esc(S.room)}</span>
+          <span class="stat ${statHidden()}"><span>score ${S.score}</span><span>moves ${S.moves}</span><span>${S.mode.toLowerCase()}</span></span>
+        </header>
+        <div class="transcript">${linesHTML()}</div>
+        <div class="pending">⏳ ${pendingLine()}</div>
+        <div class="inputline"><span class="ps">&gt;</span><input aria-label="command" ${pend ? "placeholder='meta commands only (score, time, quit)'" : ""}></div>
+      </div>`;
+  }},
+
+  B: { name: "B — The Study", render() {
+    const pend = S.pending && !S.pending.matured;
+    const rail = GAMES.map((g,i) => {
+      const r = g.resume;
+      const sub = r ? `${r.score} pts · ${r.mode}${r.pending ? ' <span class="dot">●</span>' : ""}` : "new game";
+      return `<div class="game ${g===S.game && S.screen==="console" ? "sel":""}" data-pick="${i}" tabindex="0">
+        <div class="t">${g.title}</div><div class="sub">${sub}</div></div>`;
+    }).join("");
+    const page = S.screen === "picker"
+      ? `<div class="transcript" style="display:flex;align-items:center;justify-content:center;color:#6b6152;font-style:italic">Choose a story from the shelf.</div>`
+      : `
+        <div class="head"><span class="room">${esc(S.room)}</span>
+          <span class="stat ${statHidden()}">score ${S.score} · moves ${S.moves} · ${S.mode}</span></div>
+        <div class="transcript">${linesHTML()}</div>
+        <div class="inputline"><span class="ps">&gt;</span><input aria-label="command"></div>
+        <div class="seal"><div class="wax">Z</div>
+          <div class="t">The next page is still being written.</div>
+          <div class="sub">unseals in ~${S.pending?.minutesLeft ?? 0} min · meta commands in the rail still work</div></div>`;
+    return `
+      <div class="vB"><div class="card ${pend ? "is-pending":""}">
+        <div class="rail"><div class="brand">Omazork</div>${rail}
+          <div class="foot">mode set per new game<br>Classic / Casual</div></div>
+        <div class="page">${page}</div>
+      </div></div>`;
+  }},
+
+  C: { name: "C — The Ledger", render() {
+    const pend = S.pending && !S.pending.matured;
+    if (S.screen === "picker") {
+      const cards = GAMES.map((g,i) => {
+        const r = g.resume;
+        return `<div class="gcard" data-pick="${i}" tabindex="0">
+          <div class="t">${g.title}</div>
+          <div class="sub">${g.sub}${r ? `<br>${r.room} · ${r.score} pts · ${r.mode}${r.pending ? ' <span class="dot">● pending</span>' : ""}` : "<br>—"}</div>
+          <div class="cta">${r ? "Resume ▸" : "New game ▸"}</div></div>`;
+      }).join("");
+      return `<div class="vC"><div class="picker">${cards}</div></div>`;
+    }
+    const chks = S.checkpoints.map(c =>
+      `<div class="chk">${esc(c.name)}<br><span class="ts">${c.ts}</span></div>`).join("");
+    return `
+      <div class="vC ${pend ? "is-pending":""}">
+        <div class="main">
+          <div class="transcript">${linesHTML()}</div>
+          <div class="inputline"><span class="ps">›</span><input aria-label="command" ${pend ? "placeholder='meta only while pending'":""}></div>
+        </div>
+        <div class="journal">
+          <div><h2>${esc(S.game.title)} · ${S.mode}</h2>
+            <div class="kv"><span>Room</span><b>${esc(S.room)}</b></div>
+            <div class="kv ${statHidden()}"><span>Score</span><b>${S.score}</b></div>
+            <div class="kv"><span>Moves</span><b>${S.moves}</b></div>
+          </div>
+          <div class="pendcard"><b>⏳ Outcome pending</b><br>
+            matures in ~${S.pending?.minutesLeft ?? 0} min<br>
+            input paused · saves wait</div>
+          <div><h2>Checkpoints</h2>${chks}</div>
+        </div>
+      </div>`;
+  }},
+};
+
+/* ---------------- switcher + wiring ---------------- */
+const KEYS = ["A","B","C"];
+let current = (location.hash.match(/variant=([ABC])/) || [,"A"])[1];
+
+function render() {
+  const ov = document.getElementById("overlay");
+  ov.className = "overlay" + (S.open ? " open" : "");
+  ov.innerHTML = VARIANTS[current].render();
+  document.getElementById("swname").textContent = VARIANTS[current].name;
+  ov.querySelectorAll("[data-pick]").forEach(el => {
+    el.addEventListener("click", () => pickGame(+el.dataset.pick));
+    el.addEventListener("keydown", e => { if (e.key === "Enter") pickGame(+el.dataset.pick); });
+  });
+  const inp = ov.querySelector("input");
+  if (inp) inp.addEventListener("keydown", e => {
+    if (e.key === "Enter") { submit(inp.value); }
+  });
+  const t = ov.querySelector(".transcript");
+  if (t) t.scrollTop = t.scrollHeight;
+}
+function focusInput() {
+  const inp = document.querySelector("#overlay input");
+  if (inp) inp.focus();
+}
+function setVariant(k) {
+  current = k;
+  history.replaceState(null, "", "#variant=" + k);
+  render();
+}
+document.querySelectorAll(".switcher [data-dir]").forEach(b =>
+  b.addEventListener("click", () => {
+    const i = (KEYS.indexOf(current) + (+b.dataset.dir) + 3) % 3;
+    setVariant(KEYS[i]);
+  }));
+document.querySelector(".demo").addEventListener("click", e => {
+  const act = e.target.dataset?.act; if (!act) return;
+  if (act === "toggle") { toggleOverlay(); focusInput(); }
+  if (act === "picker") { S.screen = "picker"; S.open = true; render(); }
+  if (act === "score")  { S.open = true; S.screen = "console"; triggerScore(); }
+  if (act === "ff")     { fastForward(); }
+  if (act === "reset")  { resetState(); render(); }
+});
+document.addEventListener("keydown", e => {
+  const typing = /INPUT|TEXTAREA/.test(document.activeElement?.tagName);
+  if (e.key === "Escape" && S.open) { S.open = false; render(); return; }
+  if (typing) return;
+  if (e.key === "ArrowLeft")  setVariant(KEYS[(KEYS.indexOf(current)+2)%3]);
+  if (e.key === "ArrowRight") setVariant(KEYS[(KEYS.indexOf(current)+1)%3]);
+  if (e.key.toLowerCase() === "z" && (e.metaKey || e.ctrlKey)) { e.preventDefault(); toggleOverlay(); }
+});
+render();
+</script>
