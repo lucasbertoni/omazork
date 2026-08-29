@@ -18,3 +18,5 @@ Glossary of canonical terms. Keep implementation details out.
 - **Playthrough**: the durable unit of play — at most one per game. Carries its mode (Classic/Casual), its autosave, and its checkpoints; what "Resume" in the Picker resumes. Starting a new game replaces it after confirmation.
 - **Autosave**: the snapshot taken after every turn; a playthrough resumes from it exactly where play left off. Never player-managed.
 - **Checkpoint**: a player-created snapshot inside a playthrough, made with the in-game SAVE command; RESTORE returns to one. Distinct from the autosave.
+- **Play stats**: passive counters the Wrapper keeps about a playthrough — sessions, deaths, playtime, commands entered. Displayed in the journal sidebar in both modes; reset when a new game replaces the playthrough. Never gamified.
+- **Achievement**: a named milestone unlocked once per game, ever — surviving across playthroughs, in both modes. Triggered by score events or curated non-scoring moments (a first death, finishing the game). May be *hidden*: shown as "???" until unlocked. In Casual mode an achievement on a withheld turn unlocks at the reveal, inside the recap.
