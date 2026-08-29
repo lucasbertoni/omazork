@@ -1,0 +1,13 @@
+{
+  "schemaVersion": 1,
+  "id": "omazork",
+  "name": "Omazork",
+  "version": "0.1.0",
+  "author": "Lucas Bertoni",
+  "description": "Zork I/II/III console overlay with casual-mode pacing",
+  "kinds": ["overlay"],
+  "keepLoaded": true,
+  "entryPoints": {
+    "overlay": "qml/Main.qml"
+  }
+}
