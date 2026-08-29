@@ -1,0 +1,46 @@
+{
+  "game": "zork1",
+  "maxScore": 350,
+  "fallbackMinutes": { "min": 15, "max": 45 },
+  "events": [
+    { "id": "visit-kitchen", "delta": 10, "room": "KITCHEN", "roomName": "Kitchen", "waitMinutes": 5, "note": "First score of the game; keep momentum." },
+    { "id": "visit-cellar", "delta": 25, "room": "CELLAR", "roomName": "Cellar", "waitMinutes": 30, "note": "First descent underground." },
+    { "id": "visit-ew-passage", "delta": 5, "room": "EW-PASSAGE", "roomName": "East-West Passage", "waitMinutes": 10 },
+    { "id": "visit-treasure-room", "delta": 25, "room": "TREASURE-ROOM", "roomName": "Treasure Room", "waitMinutes": 0, "note": "Entering triggers the thief encounter; combat never waits." },
+
+    { "id": "take-painting", "delta": 4, "room": "GALLERY", "roomName": "Gallery", "waitMinutes": 15 },
+    { "id": "take-egg", "delta": 5, "room": "UP-A-TREE", "roomName": "Up a Tree", "waitMinutes": 20 },
+    { "id": "take-jade", "delta": 5, "room": "BAT-ROOM", "roomName": "Bat Room", "waitMinutes": 25 },
+    { "id": "take-bracelet", "delta": 5, "room": "GAS-ROOM", "roomName": "Gas Room", "waitMinutes": 25 },
+    { "id": "take-scarab", "delta": 5, "room": "SANDY-CAVE", "roomName": "Sandy Cave", "waitMinutes": 30, "note": "Dug up with the shovel." },
+    { "id": "take-skull", "delta": 10, "room": "LAND-OF-LIVING-DEAD", "roomName": "Land of the Dead", "waitMinutes": 60, "note": "Behind the exorcism puzzle." },
+    { "id": "take-chalice", "delta": 10, "room": "TREASURE-ROOM", "roomName": "Treasure Room", "waitMinutes": 0, "note": "Taken right after the thief fight; combat never waits." },
+    { "id": "take-coffin", "delta": 10, "room": "EGYPT-ROOM", "roomName": "Egyptian Room", "waitMinutes": 45 },
+    { "id": "take-bag-of-coins", "delta": 10, "room": "MAZE-5", "roomName": "Maze", "waitMinutes": 45, "note": "Maze rooms share the name \"Maze\"; delta 10 in any maze room is this event." },
+    { "id": "take-bar", "delta": 10, "room": "LOUD-ROOM", "roomName": "Loud Room", "waitMinutes": 60, "note": "Echo puzzle." },
+    { "id": "take-pot-of-gold", "delta": 10, "room": "END-OF-RAINBOW", "roomName": "End of Rainbow", "waitMinutes": 60, "note": "Rainbow puzzle." },
+    { "id": "take-diamond", "delta": 10, "room": "MACHINE-ROOM", "roomName": "Machine Room", "waitMinutes": 75, "note": "Coal-machine payoff at the end of the mine sequence." },
+    { "id": "take-trident", "delta": 4, "room": "ATLANTIS-ROOM", "roomName": "Atlantis Room", "waitMinutes": 20 },
+    { "id": "take-torch", "delta": 14, "room": "TORCH-ROOM", "roomName": "Torch Room", "waitMinutes": 45 },
+    { "id": "take-trunk", "delta": 15, "room": "RESERVOIR", "roomName": "Reservoir", "waitMinutes": 75, "note": "Dam puzzle payoff." },
+
+    { "id": "take-sceptre", "delta": 4, "room": null, "roomName": null, "waitMinutes": 30, "note": "Inside the portable coffin; take room varies." },
+    { "id": "take-emerald", "delta": 5, "room": null, "roomName": null, "waitMinutes": 30, "note": "Inside the buoy; usually taken on the Frigid River or ashore. Collides with other delta-5 takes only if those happen outside their home rooms." },
+    { "id": "take-canary", "delta": 6, "room": null, "roomName": null, "waitMinutes": 30, "note": "Egg must be opened by the thief; take room varies (usually Treasure Room)." },
+    { "id": "take-bauble", "delta": 1, "room": null, "roomName": null, "waitMinutes": 10, "note": "Dropped by the songbird in the forest; room varies." },
+
+    { "id": "case-deposit-1", "delta": 1, "room": "LIVING-ROOM", "roomName": "Living Room", "waitMinutes": 5, "note": "Bauble or broken canary into the trophy case." },
+    { "id": "case-deposit-2", "delta": 2, "room": "LIVING-ROOM", "roomName": "Living Room", "waitMinutes": 5, "note": "Broken egg into the trophy case." },
+    { "id": "case-deposit-4", "delta": 4, "room": "LIVING-ROOM", "roomName": "Living Room", "waitMinutes": 10, "note": "Canary into the trophy case." },
+    { "id": "case-deposit-5", "delta": 5, "room": "LIVING-ROOM", "roomName": "Living Room", "waitMinutes": 10, "note": "Chalice, jade, coins, bar, bracelet, scarab, trunk, or egg — indistinguishable by delta+room; same wait for all." },
+    { "id": "case-deposit-6", "delta": 6, "room": "LIVING-ROOM", "roomName": "Living Room", "waitMinutes": 10, "note": "Sceptre, painting, or torch." },
+    { "id": "case-deposit-10", "delta": 10, "room": "LIVING-ROOM", "roomName": "Living Room", "waitMinutes": 15, "note": "Skull, diamond, emerald, or pot of gold." },
+    { "id": "case-deposit-11", "delta": 11, "room": "LIVING-ROOM", "roomName": "Living Room", "waitMinutes": 15, "note": "Trident." },
+    { "id": "case-deposit-15", "delta": 15, "room": "LIVING-ROOM", "roomName": "Living Room", "waitMinutes": 20, "note": "Coffin. Final deposit completes the case and reveals the map — the game recomputes case score on every deposit/removal." },
+
+    { "id": "light-shaft", "delta": 13, "room": "LOWER-SHAFT", "roomName": "Drafty Room", "waitMinutes": 60, "note": "Arriving empty-handed with light sent down in the basket — the coal-mine logistics puzzle." },
+
+    { "id": "death", "delta": -10, "room": null, "roomName": null, "waitMinutes": 0, "note": "Death penalty; never withhold a death." },
+    { "id": "case-removal", "deltaMax": -1, "room": "LIVING-ROOM", "roomName": "Living Room", "waitMinutes": 0, "note": "Removing a treasure from the case subtracts its TVALUE; bookkeeping, never delay." }
+  ]
+}
