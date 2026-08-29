@@ -67,7 +67,7 @@
 
   /* demo strip: obviously not part of the design under review */
   .demo {
-    position: fixed; top: 40px; right: 12px; z-index: 20;
+    position: fixed; bottom: 16px; right: 12px; z-index: 20;
     display: flex; flex-direction: column; gap: 6px; width: 210px;
   }
   .demo button {
@@ -141,6 +141,29 @@
   .vA .picker .sub .dot { color: #e8b04a; }
   .vA .picker .mode { margin-top: 26px; color: #5f8f62; font-size: 12px; }
   .vA .picker .mode b { color: #9fdf9f; }
+
+  /* ---- D (winner): A's drawer + C's journal, phosphor palette ---- */
+  .vA .wrap { flex: 1; display: flex; min-height: 0; }
+  .vA .main { flex: 1; display: flex; flex-direction: column; min-width: 0; }
+  .vA .journal {
+    width: 240px; flex: none; border-left: 1px solid #1e3320;
+    background: #070c08; padding: 14px 18px; display: flex;
+    flex-direction: column; gap: 15px; font-size: 12px; overflow-y: auto;
+  }
+  .vA .journal h2 { font: 600 10.5px var(--mono); letter-spacing: .22em;
+    text-transform: uppercase; color: #5f8f62; margin: 0 0 7px; }
+  .vA .journal .kv { display: flex; justify-content: space-between;
+    padding: 2.5px 0; color: #82b085; font-variant-numeric: tabular-nums; }
+  .vA .journal .kv b { color: #cdeccd; font-weight: 600; }
+  .vA .journal .kv.hidden-stat { visibility: hidden; }
+  .vA .journal .chk { padding: 5px 0; border-top: 1px solid #142418;
+    color: #6f9a72; }
+  .vA .journal .chk .ts { color: #4a6b4a; font-size: 10.5px; }
+  .vA .journal .pendcard {
+    display: none; border: 1px dashed #7a6a30; background: #141004;
+    border-radius: 4px; padding: 10px 12px; color: #e8b04a; line-height: 1.6;
+  }
+  .vA.is-pending .journal .pendcard { display: block; }
 
   /* =================== VARIANT B — The Study Card =================== */
   .vB { display: flex; justify-content: center; padding-top: 52px; }
@@ -411,6 +434,34 @@ function pickerRowsA() {
 }
 
 const VARIANTS = {
+  D: { name: "D — Winner: Drawer + Journal", render() {
+    const pend = S.pending && !S.pending.matured;
+    if (S.screen === "picker") return VARIANTS.A.render();
+    const chks = S.checkpoints.map(c =>
+      `<div class="chk">${esc(c.name)}<br><span class="ts">${c.ts}</span></div>`).join("");
+    return `
+      <div class="vA ${pend ? "is-pending" : ""}"><div class="scan"></div>
+        <header><span class="room">${esc(S.room)}</span></header>
+        <div class="wrap">
+          <div class="main">
+            <div class="transcript">${linesHTML()}</div>
+            <div class="pending">⏳ ${pendingLine()}</div>
+            <div class="inputline"><span class="ps">&gt;</span><input aria-label="command" ${pend ? "placeholder='meta commands only (score, time, quit)'" : ""}></div>
+          </div>
+          <div class="journal">
+            <div><h2>${esc(S.game.title)} · ${S.mode}</h2>
+              <div class="kv ${statHidden()}"><span>Score</span><b>${S.score}</b></div>
+              <div class="kv"><span>Moves</span><b>${S.moves}</b></div>
+            </div>
+            <div class="pendcard"><b>⏳ Outcome pending</b><br>
+              matures in ~${S.pending?.minutesLeft ?? 0} min<br>
+              input paused · saves wait</div>
+            <div><h2>Checkpoints</h2>${chks}</div>
+          </div>
+        </div>
+      </div>`;
+  }},
+
   A: { name: "A — Phosphor Drawer", render() {
     const pend = S.pending && !S.pending.matured;
     if (S.screen === "picker") return `
@@ -495,8 +546,8 @@ const VARIANTS = {
 };
 
 /* ---------------- switcher + wiring ---------------- */
-const KEYS = ["A","B","C"];
-let current = (location.hash.match(/variant=([ABC])/) || [,"A"])[1];
+const KEYS = ["D","A","B","C"];
+let current = (location.hash.match(/variant=([ABCD])/) || [,"D"])[1];
 
 function render() {
   const ov = document.getElementById("overlay");
@@ -525,7 +576,7 @@ function setVariant(k) {
 }
 document.querySelectorAll(".switcher [data-dir]").forEach(b =>
   b.addEventListener("click", () => {
-    const i = (KEYS.indexOf(current) + (+b.dataset.dir) + 3) % 3;
+    const i = (KEYS.indexOf(current) + (+b.dataset.dir) + KEYS.length) % KEYS.length;
     setVariant(KEYS[i]);
   }));
 document.querySelector(".demo").addEventListener("click", e => {
@@ -540,8 +591,8 @@ document.addEventListener("keydown", e => {
   const typing = /INPUT|TEXTAREA/.test(document.activeElement?.tagName);
   if (e.key === "Escape" && S.open) { S.open = false; render(); return; }
   if (typing) return;
-  if (e.key === "ArrowLeft")  setVariant(KEYS[(KEYS.indexOf(current)+2)%3]);
-  if (e.key === "ArrowRight") setVariant(KEYS[(KEYS.indexOf(current)+1)%3]);
+  if (e.key === "ArrowLeft")  setVariant(KEYS[(KEYS.indexOf(current)+KEYS.length-1)%KEYS.length]);
+  if (e.key === "ArrowRight") setVariant(KEYS[(KEYS.indexOf(current)+1)%KEYS.length]);
   if (e.key.toLowerCase() === "z" && (e.metaKey || e.ctrlKey)) { e.preventDefault(); toggleOverlay(); }
 });
 render();
