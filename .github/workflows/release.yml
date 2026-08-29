@@ -1,0 +1,46 @@
+name: release
+
+on:
+  push:
+    tags: ["v*"]
+
+permissions:
+  contents: write
+
+jobs:
+  release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Build static binaries
+        run: |
+          mkdir -p dist
+          scripts/build.sh amd64 dist/omazork-linux-amd64
+          scripts/build.sh arm64 dist/omazork-linux-arm64
+
+      - name: Verify pinned checksums
+        run: |
+          tag="${GITHUB_REF_NAME}"
+          grep -qx "version=${tag}" scripts/engine.version \
+            || { echo "engine.version does not pin ${tag}"; exit 1; }
+          for arch in amd64 arm64; do
+            want="$(sed -n "s/^sha256_${arch}=//p" scripts/engine.version)"
+            got="$(sha256sum "dist/omazork-linux-${arch}" | cut -d' ' -f1)"
+            [ "$want" = "$got" ] || {
+              echo "checksum mismatch for ${arch}: pinned ${want}, built ${got}"
+              exit 1
+            }
+          done
+
+      - name: Create release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "${GITHUB_REF_NAME}" \
+            dist/omazork-linux-amd64 dist/omazork-linux-arm64 \
+            --title "${GITHUB_REF_NAME}" --generate-notes
