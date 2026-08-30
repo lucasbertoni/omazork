@@ -1,0 +1,380 @@
+# Zork II walkthrough fixture (wayfinder ticket #30).
+# Game: zork2 (Release 63 / Serial number 860811)   Seed: 1
+# Replay: go run ./internal/actions/prototype capture zork2 1 < zork2-walkthrough.txt
+# Final: 400/400 points in 345 moves, rank Master Adventurer; the game prints
+# the Zork III teaser and halts at the RESTART/RESTORE/QUIT prompt.
+# Converted from the prose walkthrough at The Walkthrough King
+# (https://www.walkthroughking.com/text/zork2.aspx), adapted turn-by-turn to
+# this seed's RNG: wizard-spell recoveries, the robot's "rusty circuits"
+# retry, carousel/Low Room random exits, the baseball-diamond orientation,
+# and balloon timing are all tuned for seed 1 and verified deterministic.
+
+# --- Surface to the gazebo ---
+take sword
+take lamp
+south
+south
+south
+southwest
+turn on lamp
+south
+southeast
+# The garden is moss-lit; save the lamp while we shop the gazebo.
+turn off lamp
+enter gazebo
+take all from table
+exit
+turn on lamp
+north
+northeast
+fill teapot with water
+south
+southwest
+southwest
+
+# --- Carousel Room (still spinning): stash what the well trip doesn't need ---
+drop sword
+drop opener
+drop newspaper
+drop mat
+drop matchbook
+# Spinning-room exit is random; under seed 1 this lands in the Riddle Room
+# on the first try.
+southeast
+
+# --- Riddle Room and Alice's well ---
+say "a well"
+# The Wizard casts "Feeble!" here (seed 1) and we drop the teapot; wait out
+# the weakness, then pick it back up.
+east
+wait
+wait
+wait
+wait
+take teapot
+east
+get in bucket
+pour water in bucket
+get out of bucket
+east
+
+# --- Tea Room: cakes, pool of tears, candy ---
+take red cake
+take blue cake
+take green cake
+eat green cake
+east
+throw red cake in pool
+take candy
+west
+eat blue cake
+northwest
+
+# --- Low Room: the robot, the triangular button, the red sphere ---
+# First order fails with "my circuits are getting rusty" (seed 1); repeat it.
+robot, go east
+robot, go east
+east
+robot, push the triangular button
+robot, go south
+south
+# Reaching for the sphere springs the cage on purpose; the robot lifts it.
+take sphere
+robot, lift the cage
+take sphere
+
+# --- Back down the well (Low Room exits are compass-scrambled; the failed
+# try bounces to the Machine Room, west returns, second try lands) ---
+north
+west
+southeast
+west
+southeast
+west
+get in bucket
+take water
+drop teapot
+get out of bucket
+west
+take necklace
+west
+northwest
+
+# --- Carousel (spin now stopped): restock for the Dreary Room key puzzle ---
+open box
+drop sphere
+drop necklace
+drop candy
+take sword
+take mat
+take opener
+north
+take brick
+north
+north
+up
+
+# --- Tiny Room: mat-and-opener key trick, blue sphere ---
+put mat under door
+move lid
+put opener in keyhole
+take opener
+pull mat
+take key
+unlock door with key
+open door
+north
+drop key
+drop opener
+take blue sphere
+south
+down
+west
+north
+
+# --- Dragon: three pokes, lure him onto the glacier ---
+attack dragon with sword
+south
+attack dragon with sword
+south
+attack dragon with sword
+west
+drop sword
+east
+southeast
+
+# --- Gather balloon supplies ---
+southwest
+take string
+northeast
+take newspaper
+take matchbook
+northwest
+west
+west
+south
+
+# --- Balloon flight 1: Narrow Ledge (coin, stamp) ---
+get in basket
+open receptacle
+put newspaper in receptacle
+light match
+light newspaper with match
+wait
+wait
+land
+tie wire to hook
+get out of basket
+take coin
+south
+open purple book
+take stamp
+north
+
+# --- Balloon flight 2: Wide Ledge (brick bomb, crown) ---
+get in basket
+untie wire
+wait
+wait
+wait
+land
+tie wire to hook
+get out of basket
+south
+put string in brick
+put brick in hole
+light match
+light string with match
+north
+south
+take crown
+north
+
+# --- Descend, grab the ruby, stash treasures at the carousel ---
+get in basket
+untie wire
+close receptacle
+wait
+wait
+wait
+wait
+wait
+get out of basket
+north
+take ruby
+east
+east
+southeast
+drop coin
+drop stamp
+drop crown
+drop sphere
+drop ruby
+drop matchbook
+
+# --- Bank of Zork ---
+northwest
+north
+north
+west
+west
+northeast
+east
+south
+take portrait
+north
+enter curtain
+enter south wall
+enter curtain
+take bills
+enter north wall
+# Reset the curtain by cycling through the teller's room, then walk the
+# valuables out via the curtain into the East Viewing Room.
+drop bills
+drop portrait
+east
+east
+take bills
+take portrait
+enter curtain
+south
+
+# --- Princess and the unicorn's gold key ---
+east
+east
+north
+talk to princess
+wait
+south
+wait
+wait
+# She has gone ahead; take the short way to the garden and meet her there.
+east
+east
+down
+south
+south
+northeast
+northeast
+southeast
+turn off lamp
+wait
+wait
+wait
+drop rose
+south
+turn on lamp
+west
+southwest
+# Only the bills get dropped here: the Wizard's second "Feeble!" (seed 1)
+# already made us drop the portrait in the Carousel Room, right where we
+# wanted it.
+drop bills
+
+# --- Statuette from the dragon's chest ---
+northwest
+north
+north
+north
+# The rusty hinges give on the second try.
+open chest
+open chest
+take statuette
+south
+south
+south
+southeast
+
+# --- Oddly-angled Room: run the bases (orientation is per-seed) ---
+south
+south
+down
+east
+take club
+southeast
+northeast
+northwest
+southwest
+southwest
+east
+up
+north
+north
+
+# --- Wizard's quarters: lizard, aquarium, the three spheres ---
+take red sphere
+take blue sphere
+take candy
+southwest
+southwest
+give candy to lizard
+unlock door with key
+open door
+south
+west
+west
+throw club at aquarium
+take clear sphere
+east
+put clear sphere on diamond stand
+put blue sphere on sapphire stand
+put red sphere on ruby stand
+take black sphere
+
+# --- Summon the demon; pay all ten treasures ---
+south
+put sphere on circle
+give key to demon
+give statuette to demon
+north
+east
+north
+north
+northeast
+take bills
+take portrait
+take coin
+take stamp
+take crown
+take ruby
+take necklace
+take violin
+southwest
+southwest
+south
+west
+south
+give bills to demon
+give portrait to demon
+give coin to demon
+give stamp to demon
+give crown to demon
+give ruby to demon
+give necklace to demon
+give violin to demon
+demon, give me the wand
+take wand
+
+# --- Menhir, kennel collar, Cerberus, the Crypt ending ---
+north
+east
+north
+north
+northeast
+south
+wave wand at menhir
+say "float"
+southwest
+take collar
+northeast
+south
+down
+down
+put collar on cerberus
+east
+open door
+south
+close door
+turn off lamp
+open secret door
+south
