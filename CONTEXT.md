@@ -11,9 +11,12 @@ Glossary of canonical terms. Keep implementation details out.
 - **Mediation layer**: the part of the Wrapper between the player and the Z-machine that shapes pacing — it may hold back an outcome before showing it. The seat of all "casual game" behavior.
 - **Outcome**: the game's response to a player action. A *pending outcome* is one the mediation layer has not yet revealed.
 - **Picker**: the Console's entry screen: choose Zork I/II/III or resume.
-- **Score event**: one of a game's fixed, published point-awarding moments (first entry to certain rooms, taking or depositing a treasure). The only trigger for delaying an outcome.
-- **Maturation**: the moment a pending outcome's wait elapses and it becomes revealable. Revealed on the next Console open.
-- **Recap**: the "While you were away…" block shown when a matured outcome reveals: last command, the outcome, current room and score.
+- **Score event**: one of a game's fixed, published point-awarding moments (first entry to certain rooms, taking or depositing a treasure). Triggers achievements; carries no timing.
+- **Action wait**: the real-world duration a player action takes to unfold in Casual mode — inferred per action (movement per directed room edge, other actions per verb and object) rather than from score. What delays an outcome.
+- **Wait tier**: the presentation register of an action wait, keyed on its resolved length. *Quiet* waits pass with minimal ceremony and never notify; *full* waits get the dramatic treatment.
+- **Drift edge**: a directed room-to-room passage traversed by current or vehicle rather than a walk command (the Frigid River, the balloon). Timed as movement even though the player didn't type a direction.
+- **Maturation**: the moment a pending outcome's action wait elapses and it becomes revealable. Revealed on the next Console open.
+- **Recap**: the "While you were away…" block shown when a matured full-tier outcome reveals: last command, the outcome, current room and score. Quiet-tier outcomes reveal plainly, without the recap frame.
 - **Casual mode**: per-save mode where the mediation layer is active. **Classic mode**: per-save mode that bypasses it entirely; pure Zork.
 - **Playthrough**: the durable unit of play — at most one per game. Carries its mode (Classic/Casual), its autosave, and its checkpoints; what "Resume" in the Picker resumes. Starting a new game replaces it after confirmation.
 - **Autosave**: the snapshot taken after every turn; a playthrough resumes from it exactly where play left off. Never player-managed.
