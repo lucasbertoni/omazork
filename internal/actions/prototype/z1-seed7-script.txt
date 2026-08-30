@@ -1,0 +1,42 @@
+open mailbox
+read leaflet
+frotz the wug
+xyzzy
+north
+east
+open window
+open window
+enter window
+west
+take lamp
+take sword
+move rug
+open trap door
+turn on lamp
+inventory
+down
+north
+look
+east
+kill troll with sword
+kill troll with sword
+take sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+kill troll with sword
+east
+west
+west
+south
+east
+kill thief with sword
+kill thief with sword
+kill thief with sword
+kill thief with sword
+kill thief with sword
+look

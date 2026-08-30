@@ -1,0 +1,21 @@
+take lamp
+turn on lamp
+south
+south
+south
+west
+west
+west
+east
+west
+west
+east
+east
+attack figure with sword
+attack figure with sword
+attack figure with sword
+take hood
+look
+take cloak
+east
+southeast

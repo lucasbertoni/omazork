@@ -1,0 +1,178 @@
+[
+ {
+  "input": "",
+  "output": "As in a dream, you see yourself tumbling down a great, dark staircase. All about you are shadowy images of struggles against fierce opponents and diabolical traps. These give way to another round of images: of imposing stone figures, a cool, clear lake, and, now, of an old, yet oddly youthful man. He turns toward you slowly, his long, silver hair dancing about him in a fresh breeze. \"You have reached the final test, my friend! You are proved clever and powerful, but this is not yet enough! Seek me when you feel yourself worthy!\" The dream dissolves around you as his last words echo through the void....\n\nZORK III: The Dungeon Master\nInfocom interactive fiction - a fantasy story\nCopyright 1982, 1983, 1984, 1986 Infocom, Inc. All rights reserved.\nZORK is a registered trademark of Infocom, Inc.\nRelease 25 / Serial number 860811\n\nEndless Stair\nYou are at the bottom of a seemingly endless stair, winding its way upward beyond your vision. An eerie light, coming from all around you, casts strange shadows on the walls. To the south is a dark and winding trail.\nYour old friend, the brass lantern, is at your feet.\n\n\u003e",
+  "room": "Endless Stair",
+  "roomObj": 211,
+  "score": 0,
+  "moves": 0
+ },
+ {
+  "input": "take lamp",
+  "output": "Taken.\n\n\u003e",
+  "room": "Endless Stair",
+  "roomObj": 211,
+  "score": 0,
+  "moves": 1
+ },
+ {
+  "input": "turn on lamp",
+  "output": "The lamp is now on.\n\n\u003e",
+  "room": "Endless Stair",
+  "roomObj": 211,
+  "score": 0,
+  "moves": 2
+ },
+ {
+  "input": "south",
+  "output": "Junction\nYou are at the junction of a north-south passage and an east-west passage. To the north, you can make out the bottom of a stairway. The ways to the east and south are relatively cramped, but a wider trail leads to the west.\nStanding before you is a great rock. Imbedded within it is an Elvish sword.\n\n\u003e",
+  "room": "Junction",
+  "roomObj": 217,
+  "score": 0,
+  "moves": 3
+ },
+ {
+  "input": "south",
+  "output": "Creepy Crawl\nYou are in a dark and quite creepy crawlway with passages leaving to the north, east, south, and southwest.\n\n\u003e",
+  "room": "Creepy Crawl",
+  "roomObj": 55,
+  "score": 0,
+  "moves": 4
+ },
+ {
+  "input": "south",
+  "output": "Foggy Room\nYou are in a dank passage filled with a wispy fog. A spooky passageway leads north and a wider path heads off to the south. To the west, the path leaves the rock and enters an eerie, shadowy land.\n\n\u003e",
+  "room": "Foggy Room",
+  "roomObj": 64,
+  "score": 0,
+  "moves": 5
+ },
+ {
+  "input": "west",
+  "output": "Land of Shadow\nYou are at the eastern end of a dark, featureless landscape of shallow hills. Paths to the east and southeast reenter the rock.\nThrough the shadows, a cloaked and hooded figure appears before you, blocking the eastern exit from the room and carrying a brightly glowing sword.\nFrom nowhere, the sword from the junction appears in your hand, wildly glowing!\n\n\u003e",
+  "room": "Land of Shadow",
+  "roomObj": 30,
+  "score": 1,
+  "moves": 6
+ },
+ {
+  "input": "west",
+  "output": "Land of Shadow\nYou are in a dark and shadowy land. All around you are gentle hills and eerie shadows. Far above, shrouded in mist, you can barely make out the ceiling of the enormous cavern that spans this entire land.\n\n\u003e",
+  "room": "Land of Shadow",
+  "roomObj": 134,
+  "score": 1,
+  "moves": 7
+ },
+ {
+  "input": "west",
+  "output": "Land of Shadow\nYou are in a land of dark shadows and shallow hills, which stretch out in all directions. To the west, the land dips sharply.\nThrough the shadows, a cloaked and hooded figure appears before you, blocking the southwestern exit from the room and carrying a brightly glowing sword.\n\n\u003e",
+  "room": "Land of Shadow",
+  "roomObj": 123,
+  "score": 1,
+  "moves": 8
+ },
+ {
+  "input": "east",
+  "output": "Land of Shadow\nYou can hear quiet footsteps nearby.\n\n\u003e",
+  "room": "Land of Shadow",
+  "roomObj": 134,
+  "score": 1,
+  "moves": 9
+ },
+ {
+  "input": "west",
+  "output": "Land of Shadow\n\n\u003e",
+  "room": "Land of Shadow",
+  "roomObj": 123,
+  "score": 1,
+  "moves": 10
+ },
+ {
+  "input": "west",
+  "output": "Flathead Ocean\nYou are at the shore of an amazing underground sea, the topic of many a legend among adventurers. Few were known to have arrived at this spot, and fewer to return. There is a heavy surf and a breeze is blowing onshore. The land rises steeply to the east and quicksand prevents movement to the south. A thick mist covers the ocean and extends over the hills to the east. A path heads north along the beach.\n\n\u003e",
+  "room": "Flathead Ocean",
+  "roomObj": 181,
+  "score": 1,
+  "moves": 11
+ },
+ {
+  "input": "east",
+  "output": "Land of Shadow\n\n\u003e",
+  "room": "Land of Shadow",
+  "roomObj": 123,
+  "score": 1,
+  "moves": 12
+ },
+ {
+  "input": "east",
+  "output": "Land of Shadow\nThrough the shadows, a cloaked and hooded figure appears before you, blocking the southeastern exit from the room and carrying a brightly glowing sword.\n\n\u003e",
+  "room": "Land of Shadow",
+  "roomObj": 134,
+  "score": 1,
+  "moves": 13
+ },
+ {
+  "input": "attack figure with sword",
+  "output": "A sharp thrust and the hooded figure is badly wounded!\nThe figure has some wounds and is probably not capable of hindering your movement.\nThe hooded figure stabs nonchalantly with its sword and misses.\n\n\u003e",
+  "room": "Land of Shadow",
+  "roomObj": 134,
+  "score": 2,
+  "moves": 14
+ },
+ {
+  "input": "attack figure with sword",
+  "output": "The hooded figure is hit with a quick slash!\nThe figure is hurt, and its strength appears to be fading.\nYou are wounded by a lightning thrust!\n\n\u003e",
+  "room": "Land of Shadow",
+  "roomObj": 134,
+  "score": 2,
+  "moves": 15
+ },
+ {
+  "input": "attack figure with sword",
+  "output": "A quick stroke catches the hooded figure off guard! Blood trickles down the figure's arm!\nThe figure appears to be badly hurt and defenseless.\nThe hooded figure attempts a thrust, but its weakened state prevents hitting you.\n\n\u003e",
+  "room": "Land of Shadow",
+  "roomObj": 134,
+  "score": 2,
+  "moves": 16
+ },
+ {
+  "input": "take hood",
+  "output": "You slowly remove the hood from your badly wounded opponent and recoil in horror at the sight of your own face, weary and wounded. A faint smile comes to the lips and then the face starts to change, very slowly, into that of an old, wizened person. The image fades and with it the body of your hooded opponent. The cloak remains on the ground.\n\n\u003e",
+  "room": "Land of Shadow",
+  "roomObj": 134,
+  "score": 2,
+  "moves": 17
+ },
+ {
+  "input": "look",
+  "output": "Land of Shadow\nYou are in a dark and shadowy land. All around you are gentle hills and eerie shadows. Far above, shrouded in mist, you can barely make out the ceiling of the enormous cavern that spans this entire land.\nThere is a cloak here.\n\n\u003e",
+  "room": "Land of Shadow",
+  "roomObj": 134,
+  "score": 2,
+  "moves": 18
+ },
+ {
+  "input": "take cloak",
+  "output": "You are now wearing the cloak.\n\n\u003e",
+  "room": "Land of Shadow",
+  "roomObj": 134,
+  "score": 2,
+  "moves": 19
+ },
+ {
+  "input": "east",
+  "output": "Land of Shadow\n\n\u003e",
+  "room": "Land of Shadow",
+  "roomObj": 30,
+  "score": 2,
+  "moves": 20
+ },
+ {
+  "input": "southeast",
+  "output": "Foggy Room\n\n\u003e",
+  "room": "Foggy Room",
+  "roomObj": 64,
+  "score": 2,
+  "moves": 21
+ }
+]

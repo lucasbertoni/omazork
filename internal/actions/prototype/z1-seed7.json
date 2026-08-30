@@ -1,0 +1,346 @@
+[
+ {
+  "input": "",
+  "output": "ZORK I: The Great Underground Empire\nInfocom interactive fiction - a fantasy story\nCopyright (c) 1981, 1982, 1983, 1984, 1985, 1986 Infocom, Inc. All rights reserved.\nZORK is a registered trademark of Infocom, Inc.\nRelease 119 / Serial number 880429\n\nWest of House\nYou are standing in an open field west of a white house, with a boarded front door.\nThere is a small mailbox here.\n\n\u003e",
+  "room": "West of House",
+  "roomObj": 64,
+  "score": 0,
+  "moves": 0
+ },
+ {
+  "input": "open mailbox",
+  "output": "Opening the small mailbox reveals a leaflet.\n\n\u003e",
+  "room": "West of House",
+  "roomObj": 64,
+  "score": 0,
+  "moves": 1
+ },
+ {
+  "input": "read leaflet",
+  "output": "(Taken)\n\"WELCOME TO ZORK!\n\nZORK is a game of adventure, danger, and low cunning. In it you will explore some of the most amazing territory ever seen by mortals. No computer should be without one!\"\n\n\u003e",
+  "room": "West of House",
+  "roomObj": 64,
+  "score": 0,
+  "moves": 2
+ },
+ {
+  "input": "frotz the wug",
+  "output": "I don't know the word \"frotz\".\n\n\u003e",
+  "room": "West of House",
+  "roomObj": 64,
+  "score": 0,
+  "moves": 2
+ },
+ {
+  "input": "xyzzy",
+  "output": "A hollow voice says \"Fool.\"\n\n\u003e",
+  "room": "West of House",
+  "roomObj": 64,
+  "score": 0,
+  "moves": 3
+ },
+ {
+  "input": "north",
+  "output": "North of House\nYou are facing the north side of a white house. There is no door here, and all the windows are boarded up. To the north a narrow path winds through the trees.\n\n\u003e",
+  "room": "North of House",
+  "roomObj": 137,
+  "score": 0,
+  "moves": 4
+ },
+ {
+  "input": "east",
+  "output": "Behind House\nYou are behind the white house. A path leads into the forest to the east. In one corner of the house there is a small window which is slightly ajar.\n\n\u003e",
+  "room": "Behind House",
+  "roomObj": 85,
+  "score": 0,
+  "moves": 5
+ },
+ {
+  "input": "open window",
+  "output": "With great effort, you open the window far enough to allow entry.\n\n\u003e",
+  "room": "Behind House",
+  "roomObj": 85,
+  "score": 0,
+  "moves": 6
+ },
+ {
+  "input": "open window",
+  "output": "Too late for that.\n\n\u003e",
+  "room": "Behind House",
+  "roomObj": 85,
+  "score": 0,
+  "moves": 7
+ },
+ {
+  "input": "enter window",
+  "output": "Kitchen\nYou are in the kitchen of the white house. A table seems to have been used recently for the preparation of food. A passage leads to the west and a dark staircase can be seen leading upward. A dark chimney leads down and to the east is a small window which is open.\nA bottle is sitting on the table.\nThe glass bottle contains:\n  A quantity of water\nOn the table is an elongated brown sack, smelling of hot peppers.\n\n\u003e",
+  "room": "Kitchen",
+  "roomObj": 27,
+  "score": 10,
+  "moves": 8
+ },
+ {
+  "input": "west",
+  "output": "Living Room\nYou are in the living room. There is a doorway to the east, a wooden door with strange gothic lettering to the west, which appears to be nailed shut, a trophy case, and a large oriental rug in the center of the room.\nAbove the trophy case hangs an elvish sword of great antiquity.\nA battery-powered brass lantern is on the trophy case.\n\n\u003e",
+  "room": "Living Room",
+  "roomObj": 75,
+  "score": 10,
+  "moves": 9
+ },
+ {
+  "input": "take lamp",
+  "output": "Taken.\n\n\u003e",
+  "room": "Living Room",
+  "roomObj": 75,
+  "score": 10,
+  "moves": 10
+ },
+ {
+  "input": "take sword",
+  "output": "Taken.\n\n\u003e",
+  "room": "Living Room",
+  "roomObj": 75,
+  "score": 10,
+  "moves": 11
+ },
+ {
+  "input": "move rug",
+  "output": "With a great effort, the rug is moved to one side of the room, revealing the dusty cover of a closed trap door.\n\n\u003e",
+  "room": "Living Room",
+  "roomObj": 75,
+  "score": 10,
+  "moves": 12
+ },
+ {
+  "input": "open trap door",
+  "output": "The door reluctantly opens to reveal a rickety staircase descending into darkness.\n\n\u003e",
+  "room": "Living Room",
+  "roomObj": 75,
+  "score": 10,
+  "moves": 13
+ },
+ {
+  "input": "turn on lamp",
+  "output": "The brass lantern is now on.\n\n\u003e",
+  "room": "Living Room",
+  "roomObj": 75,
+  "score": 10,
+  "moves": 14
+ },
+ {
+  "input": "inventory",
+  "output": "You are carrying:\n  A sword\n  A brass lantern (providing light)\n  A leaflet\n\n\u003e",
+  "room": "Living Room",
+  "roomObj": 75,
+  "score": 10,
+  "moves": 15
+ },
+ {
+  "input": "down",
+  "output": "The trap door crashes shut, and you hear someone barring it.\n\nCellar\nYou are in a dark and damp cellar with a narrow passageway leading north, and a crawlway to the south. On the west is the bottom of a steep metal ramp which is unclimbable.\nYour sword is glowing with a faint blue glow.\n\n\u003e",
+  "room": "Cellar",
+  "roomObj": 33,
+  "score": 35,
+  "moves": 16
+ },
+ {
+  "input": "north",
+  "output": "The Troll Room\nThis is a small room with passages to the east and south and a forbidding hole leading west. Bloodstains and deep scratches (perhaps made by an axe) mar the walls.\nA nasty-looking troll, brandishing a bloody axe, blocks all passages out of the room.\nYour sword has begun to glow very brightly.\nYou stagger back under a hail of axe strokes.\n\n\u003e",
+  "room": "The Troll Room",
+  "roomObj": 127,
+  "score": 35,
+  "moves": 17
+ },
+ {
+  "input": "look",
+  "output": "The Troll Room\nThis is a small room with passages to the east and south and a forbidding hole leading west. Bloodstains and deep scratches (perhaps made by an axe) mar the walls.\nA nasty-looking troll, brandishing a bloody axe, blocks all passages out of the room.\nThe troll's swing almost knocks you over as you barely parry in time.\n\n\u003e",
+  "room": "The Troll Room",
+  "roomObj": 127,
+  "score": 35,
+  "moves": 18
+ },
+ {
+  "input": "east",
+  "output": "The troll fends you off with a menacing gesture.\nThe troll swings; the blade turns on your armor but crashes broadside into your head.\n\n\u003e",
+  "room": "The Troll Room",
+  "roomObj": 127,
+  "score": 35,
+  "moves": 19
+ },
+ {
+  "input": "kill troll with sword",
+  "output": "You are still recovering from that last blow, so your attack is ineffective.\nThe troll swings, you parry, but the force of his blow knocks your sword away.\n\n\u003e",
+  "room": "The Troll Room",
+  "roomObj": 127,
+  "score": 35,
+  "moves": 20
+ },
+ {
+  "input": "kill troll with sword",
+  "output": "You don't have the sword.\n\n\u003e",
+  "room": "The Troll Room",
+  "roomObj": 127,
+  "score": 35,
+  "moves": 20
+ },
+ {
+  "input": "take sword",
+  "output": "Taken.\nThe flat of the troll's axe hits you delicately on the head, knocking you out.\n\n\u003e",
+  "room": "The Troll Room",
+  "roomObj": 127,
+  "score": 35,
+  "moves": 21
+ },
+ {
+  "input": "kill troll with sword",
+  "output": "You charge, but the troll jumps nimbly aside.\nThe flat of the troll's axe hits you delicately on the head, knocking you out.\n\n\u003e",
+  "room": "The Troll Room",
+  "roomObj": 127,
+  "score": 35,
+  "moves": 22
+ },
+ {
+  "input": "kill troll with sword",
+  "output": "The troll takes a fatal blow and slumps to the floor dead.\nAlmost as soon as the troll breathes his last breath, a cloud of sinister black fog envelops him, and when the fog lifts, the carcass has disappeared.\nYour sword is no longer glowing.\n\n\u003e",
+  "room": "The Troll Room",
+  "roomObj": 127,
+  "score": 35,
+  "moves": 23
+ },
+ {
+  "input": "kill troll with sword",
+  "output": "You can't see any troll here!\n\n\u003e",
+  "room": "The Troll Room",
+  "roomObj": 127,
+  "score": 35,
+  "moves": 24
+ },
+ {
+  "input": "kill troll with sword",
+  "output": "You can't see any troll here!\n\n\u003e",
+  "room": "The Troll Room",
+  "roomObj": 127,
+  "score": 35,
+  "moves": 25
+ },
+ {
+  "input": "kill troll with sword",
+  "output": "You can't see any troll here!\n\n\u003e",
+  "room": "The Troll Room",
+  "roomObj": 127,
+  "score": 35,
+  "moves": 26
+ },
+ {
+  "input": "kill troll with sword",
+  "output": "You can't see any troll here!\n\n\u003e",
+  "room": "The Troll Room",
+  "roomObj": 127,
+  "score": 35,
+  "moves": 27
+ },
+ {
+  "input": "kill troll with sword",
+  "output": "You can't see any troll here!\n\n\u003e",
+  "room": "The Troll Room",
+  "roomObj": 127,
+  "score": 35,
+  "moves": 28
+ },
+ {
+  "input": "kill troll with sword",
+  "output": "You can't see any troll here!\n\n\u003e",
+  "room": "The Troll Room",
+  "roomObj": 127,
+  "score": 35,
+  "moves": 29
+ },
+ {
+  "input": "east",
+  "output": "East-West Passage\nThis is a narrow east-west passageway. There is a narrow stairway leading down at the north end of the room.\n\n\u003e",
+  "room": "East-West Passage",
+  "roomObj": 130,
+  "score": 40,
+  "moves": 30
+ },
+ {
+  "input": "west",
+  "output": "The Troll Room\nThere is a bloody axe here.\n\n\u003e",
+  "room": "The Troll Room",
+  "roomObj": 127,
+  "score": 40,
+  "moves": 31
+ },
+ {
+  "input": "west",
+  "output": "Maze\nThis is part of a maze of twisty little passages, all alike.\n\n\u003e",
+  "room": "Maze",
+  "roomObj": 104,
+  "score": 40,
+  "moves": 32
+ },
+ {
+  "input": "south",
+  "output": "Maze\nThis is part of a maze of twisty little passages, all alike.\n\n\u003e",
+  "room": "Maze",
+  "roomObj": 19,
+  "score": 40,
+  "moves": 33
+ },
+ {
+  "input": "east",
+  "output": "Maze\nThis is part of a maze of twisty little passages, all alike.\nSomeone carrying a large bag is casually leaning against one of the walls here. He does not speak, but it is clear from his aspect that the bag will be taken only over his dead body.\nYour sword has begun to glow very brightly.\n\n\u003e",
+  "room": "Maze",
+  "roomObj": 54,
+  "score": 40,
+  "moves": 34
+ },
+ {
+  "input": "kill thief with sword",
+  "output": "You charge, but the thief jumps nimbly aside.\nThe thief stabs nonchalantly with his stiletto and misses.\n\n\u003e",
+  "room": "Maze",
+  "roomObj": 54,
+  "score": 40,
+  "moves": 35
+ },
+ {
+  "input": "kill thief with sword",
+  "output": "A good stroke, but it's too slow; the thief dodges.\nThe thief bows formally, raises his stiletto, and with a wry grin, ends the battle and your life.\nIt appears that that last blow was too much for you. I'm afraid you are dead.\n \n    ****  You have died  **** \n\nNow, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything.\n\nForest\nThis is a forest, with trees in all directions. To the east, there appears to be sunlight.\n\n\u003e",
+  "room": "Forest",
+  "roomObj": 87,
+  "score": 30,
+  "moves": 36
+ },
+ {
+  "input": "kill thief with sword",
+  "output": "You don't have that!\n\n\u003e",
+  "room": "Forest",
+  "roomObj": 87,
+  "score": 30,
+  "moves": 36
+ },
+ {
+  "input": "kill thief with sword",
+  "output": "You don't have that!\n\n\u003e",
+  "room": "Forest",
+  "roomObj": 87,
+  "score": 30,
+  "moves": 36
+ },
+ {
+  "input": "kill thief with sword",
+  "output": "You don't have that!\n\n\u003e",
+  "room": "Forest",
+  "roomObj": 87,
+  "score": 30,
+  "moves": 36
+ },
+ {
+  "input": "look",
+  "output": "Forest\nThis is a forest, with trees in all directions. To the east, there appears to be sunlight.\n\n\u003e",
+  "room": "Forest",
+  "roomObj": 87,
+  "score": 30,
+  "moves": 37
+ }
+]
