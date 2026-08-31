@@ -15,6 +15,7 @@ func testExtractor() *extractor {
 		synonymIx:  map[string]int{},
 		routines:   map[string]routineDef{},
 		roomIx:     map[string]*Room{},
+		globals:    map[string]*zil.Node{},
 	}
 }
 

@@ -3276,6 +3276,26 @@
       "dir": "DOWN",
       "kind": "plain",
       "to": "CELLAR"
+    },
+    {
+      "from": "RIVER-1",
+      "kind": "drift",
+      "to": "RIVER-2"
+    },
+    {
+      "from": "RIVER-2",
+      "kind": "drift",
+      "to": "RIVER-3"
+    },
+    {
+      "from": "RIVER-3",
+      "kind": "drift",
+      "to": "RIVER-4"
+    },
+    {
+      "from": "RIVER-4",
+      "kind": "drift",
+      "to": "RIVER-5"
     }
   ],
   "objects": [

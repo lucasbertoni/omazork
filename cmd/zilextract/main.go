@@ -55,9 +55,9 @@ func main() {
 	for _, e := range x.Edges {
 		kinds[e.Kind]++
 	}
-	fmt.Printf("%s: %d rooms, %d edges (plain %d, blocked %d, cond_flag %d, cond_door %d, routine %d), %d objects, %d syntax, %d routines → %s\n",
+	fmt.Printf("%s: %d rooms, %d edges (plain %d, blocked %d, cond_flag %d, cond_door %d, routine %d, drift %d), %d objects, %d syntax, %d routines → %s\n",
 		*game, len(x.Rooms), len(x.Edges), kinds["plain"], kinds["blocked"], kinds["cond_flag"],
-		kinds["cond_door"], kinds["routine"], len(x.Objects), len(x.Syntax), len(x.Routines), *out)
+		kinds["cond_door"], kinds["routine"], kinds["drift"], len(x.Objects), len(x.Syntax), len(x.Routines), *out)
 }
 
 func fatal(err error) {

@@ -2,7 +2,7 @@
 # Regenerate data/extract/<game>.json from the pinned historicalsource ZIL
 # (docs/action-waits.md §5.1). Sources are fetched at the exact commits the
 # research write-up quotes, so extraction is reproducible byte-for-byte.
-# Usage: extract.sh [zork1|zork2|zork3 ...]  (default: zork1)
+# Usage: extract.sh [zork1|zork2|zork3 ...]  (default: all three)
 set -euo pipefail
 cd "$(dirname "$0")/.."
 
@@ -30,7 +30,9 @@ fetch() {
   git -C "$dir" checkout -q "$sha"
 }
 
-for game in "${@:-zork1}"; do
+games=("$@")
+[ "${#games[@]}" -eq 0 ] && games=(zork1 zork2 zork3)
+for game in "${games[@]}"; do
   fetch "$game"
   go run ./cmd/zilextract -game "$game" -src ".cache/zil/$game"
 done

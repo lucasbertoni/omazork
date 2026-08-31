@@ -31,21 +31,25 @@ type Room struct {
 	Action string   `json:"action,omitempty"`
 }
 
-// Edge kinds: the closed five-shape exit taxonomy (§5.1). Values are the
-// JSON vocabulary shared with the generator; #33 adds "drift".
+// Edge kinds: the closed five-shape exit taxonomy (§5.1) plus "drift" —
+// a room-to-room passage traversed by current or vehicle rather than a walk
+// command (§3.4). Values are the JSON vocabulary shared with the generator.
 const (
 	KindPlain    = "plain"
 	KindBlocked  = "blocked"
 	KindCondFlag = "cond_flag"
 	KindCondDoor = "cond_door"
 	KindRoutine  = "routine"
+	KindDrift    = "drift"
 )
 
 // Edge is one direction property on a room, classified into the closed
-// five-shape taxonomy.
+// five-shape taxonomy — or a synthesized row (§3.4): a drift edge, or a
+// candidate edge for a random-destination walk exit. Synthesized rows carry
+// no Dir.
 type Edge struct {
 	From string `json:"from"`
-	Dir  string `json:"dir"`
+	Dir  string `json:"dir,omitempty"`
 	Kind string `json:"kind"`           // one of the Kind* constants
 	To   string `json:"to,omitempty"`   // absent on blocked
 	If   string `json:"if,omitempty"`   // cond_flag: global flag
@@ -132,6 +136,7 @@ type extractor struct {
 	synonymIx  map[string]int
 	routines   map[string]routineDef
 	roomIx     map[string]*Room
+	globals    map[string]*zil.Node
 }
 
 // Run extracts one game from the ZIL sources in srcDir, correlating room
@@ -148,6 +153,7 @@ func Run(game, srcDir string, story []byte) (*Extract, error) {
 		synonymIx:  map[string]int{},
 		routines:   map[string]routineDef{},
 		roomIx:     map[string]*Room{},
+		globals:    map[string]*zil.Node{},
 	}
 
 	files, err := manifest(srcDir, game)
@@ -163,7 +169,16 @@ func Run(game, srcDir string, story []byte) (*Extract, error) {
 	if err := ex.validate(); err != nil {
 		return nil, err
 	}
+	// Correlation matches the walk exits against the story file's exit
+	// properties, so synthesized rows (drift, random-exit candidates —
+	// they have no exit property) are appended only afterwards.
 	if err := ex.correlate(story); err != nil {
+		return nil, err
+	}
+	if err := ex.driftEdges(); err != nil {
+		return nil, err
+	}
+	if err := ex.candidateEdges(); err != nil {
 		return nil, err
 	}
 	return ex.build()
@@ -248,6 +263,13 @@ func (ex *extractor) topLevel(nodes []*zil.Node, src string) error {
 			err = ex.synonym(n)
 		case "ROUTINE":
 			err = ex.routine(n, src)
+		case "GLOBAL":
+			// Indexed opportunistically — a missing global errors at its
+			// point of use (driftEdges). The arity guard makes Kids[2]
+			// (the value) safe for consumers.
+			if len(n.Kids) >= 3 && n.Kids[1].Kind == zil.KAtom {
+				ex.globals[n.Kids[1].Text] = n
+			}
 		case "COND":
 			err = ex.cond(n, src)
 		}

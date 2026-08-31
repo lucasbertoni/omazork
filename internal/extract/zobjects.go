@@ -181,11 +181,34 @@ func (ex *extractor) correlateObjects(objs map[int]zObject) error {
 	}
 
 	// Fixpoint: filter candidates by exit signature, assign singletons,
-	// remove claimed object numbers from other rooms' candidate sets.
+	// remove claimed object numbers from other rooms' candidate sets, and
+	// propagate assignments backwards: an assigned room's target-byte exits
+	// pin the target rooms' object numbers exactly — the only signal that
+	// splits rooms with identical names and properties (Zork III's MRDE/MRDW
+	// mirror antechambers).
 	assigned := map[string]int{}
 	claimed := map[int]string{}
 	for changed := true; changed; {
 		changed = false
+		for id, num := range assigned {
+			o := objs[num]
+			for dir, e := range exits[id] {
+				if !exitTargetByte(e.Kind) {
+					continue
+				}
+				if _, done := assigned[e.To]; done {
+					continue
+				}
+				target := int(o.props[dirProp[dir]][0])
+				if !contains(cands[e.To], target) {
+					return fmt.Errorf("room %s → obj %d: %s exit targets obj %d, not a candidate for %s", id, num, dir, target, e.To)
+				}
+				if len(cands[e.To]) != 1 {
+					cands[e.To] = []int{target}
+					changed = true
+				}
+			}
+		}
 		for _, r := range ex.rooms {
 			if _, done := assigned[r.ID]; done {
 				continue

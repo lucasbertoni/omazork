@@ -94,3 +94,56 @@ func TestCorrelateFailsOnAmbiguity(t *testing.T) {
 		t.Errorf("want ambiguity error, got %v", err)
 	}
 }
+
+// The Zork III mirror antechambers (MRDE/MRDW): two rooms identical in name
+// and property shape, split only by reverse propagation from the assigned
+// room whose exits point at them.
+func TestCorrelateSplitsIdenticalTwinsByReferrer(t *testing.T) {
+	const (
+		propSE = 28
+		propSW = 27
+	)
+	ex := testExtractor()
+	mustFeed(t, ex, testDirections+`
+<ROOM ENTRY (DESC "Entry") (NORTH "no") (SE TO MRDE) (SW TO MRDW)>
+<ROOM OTHER (DESC "Other") (SE TO ENTRY) (SW "no")>
+<ROOM MRDE (DESC "Narrow Room") (NORTH TO ENTRY)>
+<ROOM MRDW (DESC "Narrow Room") (NORTH TO ENTRY)>`)
+	objs := map[int]zObject{
+		4: {name: "Entry", props: map[int][]byte{propNorth: {0, 0}, propSE: {8}, propSW: {9}}},
+		6: {name: "Other", props: map[int][]byte{propSE: {4}, propSW: {0, 0}}},
+		8: {name: "Narrow Room", props: map[int][]byte{propNorth: {4}}},
+		9: {name: "Narrow Room", props: map[int][]byte{propNorth: {4}}},
+	}
+	if err := ex.correlateObjects(objs); err != nil {
+		t.Fatal(err)
+	}
+	want := map[string]int{"ENTRY": 4, "OTHER": 6, "MRDE": 8, "MRDW": 9}
+	for _, r := range ex.rooms {
+		if r.Obj != want[r.ID] {
+			t.Errorf("%s → obj %d, want %d", r.ID, r.Obj, want[r.ID])
+		}
+	}
+}
+
+// Reverse propagation must not paper over a contradiction: an assigned
+// room's exit byte that names a non-candidate is an error.
+func TestCorrelateFailsOnReferrerContradiction(t *testing.T) {
+	const propSE = 28
+	ex := testExtractor()
+	mustFeed(t, ex, testDirections+`
+<ROOM ENTRY (DESC "Entry") (NORTH "no") (SE TO TWIN-A)>
+<ROOM TWIN-A (DESC "Twin") (NORTH TO ENTRY)>
+<ROOM TWIN-B (DESC "Twin") (NORTH TO ENTRY)>`)
+	objs := map[int]zObject{
+		4: {name: "Entry", props: map[int][]byte{propNorth: {0, 0}, propSE: {12}}},
+		8: {name: "Twin", props: map[int][]byte{propNorth: {4}}},
+		9: {name: "Twin", props: map[int][]byte{propNorth: {4}}},
+		// Obj 12 has the right shape for TWIN-A but the wrong name.
+		12: {name: "Imposter", props: map[int][]byte{propNorth: {4}}},
+	}
+	err := ex.correlateObjects(objs)
+	if err == nil {
+		t.Error("want contradiction error, got nil")
+	}
+}
