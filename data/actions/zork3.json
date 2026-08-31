@@ -1,0 +1,3158 @@
+{
+  "schemaVersion": 1,
+  "game": "zork3",
+  "rooms": [
+    {
+      "id": "AQ-1",
+      "obj": 203,
+      "name": "Aqueduct"
+    },
+    {
+      "id": "AQ-2",
+      "obj": 182,
+      "name": "High Arch"
+    },
+    {
+      "id": "AQ-3",
+      "obj": 163,
+      "name": "Water Slide"
+    },
+    {
+      "id": "AQ-VIEW",
+      "obj": 75,
+      "name": "Aqueduct View"
+    },
+    {
+      "id": "BEHIND-DOOR",
+      "obj": 159,
+      "name": "Narrow Corridor"
+    },
+    {
+      "id": "CELL",
+      "obj": 45,
+      "name": "Prison Cell"
+    },
+    {
+      "id": "CLEARING",
+      "obj": 112,
+      "name": "Barren Area"
+    },
+    {
+      "id": "CLIFF",
+      "obj": 109,
+      "name": "Cliff"
+    },
+    {
+      "id": "CLIFF-BASE",
+      "obj": 73,
+      "name": "Cliff Base"
+    },
+    {
+      "id": "CLIFF-LEDGE",
+      "obj": 218,
+      "name": "Cliff Ledge"
+    },
+    {
+      "id": "CP",
+      "obj": 194,
+      "name": "Room in a Puzzle"
+    },
+    {
+      "id": "CP-ANTE",
+      "obj": 143,
+      "name": "Royal Puzzle Entrance"
+    },
+    {
+      "id": "CP-OUT",
+      "obj": 188,
+      "name": "Side Room"
+    },
+    {
+      "id": "CREEPY-CRAWL",
+      "obj": 55,
+      "name": "Creepy Crawl"
+    },
+    {
+      "id": "DAMP-PASSAGE",
+      "obj": 93,
+      "name": "Damp Passage"
+    },
+    {
+      "id": "DARK-1",
+      "obj": 177,
+      "name": "Dark Place"
+    },
+    {
+      "id": "DARK-2",
+      "obj": 155,
+      "name": "Dark Place"
+    },
+    {
+      "id": "DEAD-END",
+      "obj": 86,
+      "name": "Dead End"
+    },
+    {
+      "id": "DEAD-END-5",
+      "obj": 138,
+      "name": "Dead End"
+    },
+    {
+      "id": "EAST-CORRIDOR",
+      "obj": 43,
+      "name": "East Corridor"
+    },
+    {
+      "id": "FAR-SHORE",
+      "obj": 140,
+      "name": "Western Shore"
+    },
+    {
+      "id": "FLATHEAD-OCEAN",
+      "obj": 181,
+      "name": "Flathead Ocean"
+    },
+    {
+      "id": "FOGGY-ROOM",
+      "obj": 64,
+      "name": "Foggy Room"
+    },
+    {
+      "id": "FRONT-DOOR",
+      "obj": 105,
+      "name": "Dungeon Entrance"
+    },
+    {
+      "id": "GOOD-CELL",
+      "obj": 204,
+      "name": "Prison Cell"
+    },
+    {
+      "id": "IN-LAKE",
+      "obj": 12,
+      "name": "Underwater"
+    },
+    {
+      "id": "IN-MIRROR",
+      "obj": 160,
+      "name": "Inside Mirror"
+    },
+    {
+      "id": "JEWEL-ROOM",
+      "obj": 103,
+      "name": "Jewel Room"
+    },
+    {
+      "id": "JUNCTION",
+      "obj": 217,
+      "name": "Junction"
+    },
+    {
+      "id": "KEY-ROOM",
+      "obj": 39,
+      "name": "Key Room"
+    },
+    {
+      "id": "LADDER-BOTTOM",
+      "obj": 57,
+      "name": "Ladder Bottom"
+    },
+    {
+      "id": "LADDER-TOP",
+      "obj": 20,
+      "name": "Ladder Top"
+    },
+    {
+      "id": "LAKE-SHORE",
+      "obj": 102,
+      "name": "Lake Shore"
+    },
+    {
+      "id": "LOWER-SHAFT",
+      "obj": 228,
+      "name": "Drafty Room"
+    },
+    {
+      "id": "MACHINE-ROOM",
+      "obj": 70,
+      "name": "Machine Room"
+    },
+    {
+      "id": "MID-CP-ANTE",
+      "obj": 84,
+      "name": "Royal Puzzle Entrance"
+    },
+    {
+      "id": "MID-CP-OUT",
+      "obj": 130,
+      "name": "Side Room"
+    },
+    {
+      "id": "MID-JEWEL-ROOM",
+      "obj": 16,
+      "name": "Jewel Room"
+    },
+    {
+      "id": "MID-MUSEUM-ENTRANCE",
+      "obj": 173,
+      "name": "Museum Entrance"
+    },
+    {
+      "id": "MID-TECH-MUSEUM",
+      "obj": 5,
+      "name": "Technology Museum"
+    },
+    {
+      "id": "MR-ANTE",
+      "obj": 98,
+      "name": "Button Room"
+    },
+    {
+      "id": "MRA",
+      "obj": 169,
+      "name": "Hallway"
+    },
+    {
+      "id": "MRAE",
+      "obj": 51,
+      "name": "Narrow Room"
+    },
+    {
+      "id": "MRAW",
+      "obj": 178,
+      "name": "Narrow Room"
+    },
+    {
+      "id": "MRB",
+      "obj": 113,
+      "name": "Hallway"
+    },
+    {
+      "id": "MRBE",
+      "obj": 221,
+      "name": "Narrow Room"
+    },
+    {
+      "id": "MRBW",
+      "obj": 119,
+      "name": "Narrow Room"
+    },
+    {
+      "id": "MRC",
+      "obj": 54,
+      "name": "Hallway"
+    },
+    {
+      "id": "MRCE",
+      "obj": 161,
+      "name": "Narrow Room"
+    },
+    {
+      "id": "MRCW",
+      "obj": 58,
+      "name": "Narrow Room"
+    },
+    {
+      "id": "MRD",
+      "obj": 224,
+      "name": "Hallway"
+    },
+    {
+      "id": "MRDE",
+      "obj": 100,
+      "name": "Narrow Room"
+    },
+    {
+      "id": "MRDW",
+      "obj": 8,
+      "name": "Narrow Room"
+    },
+    {
+      "id": "MREYE",
+      "obj": 6,
+      "name": "Beam Room"
+    },
+    {
+      "id": "MRG",
+      "obj": 44,
+      "name": "Hallway"
+    },
+    {
+      "id": "MRGE",
+      "obj": 151,
+      "name": "Narrow Room"
+    },
+    {
+      "id": "MRGW",
+      "obj": 48,
+      "name": "Narrow Room"
+    },
+    {
+      "id": "MSTAIRS",
+      "obj": 172,
+      "name": "Engravings Room"
+    },
+    {
+      "id": "MUSEUM-ANTE",
+      "obj": 136,
+      "name": "Great Door"
+    },
+    {
+      "id": "MUSEUM-ENTRANCE",
+      "obj": 227,
+      "name": "Museum Entrance"
+    },
+    {
+      "id": "NIRVANA",
+      "obj": 46,
+      "name": "Treasury of Zork"
+    },
+    {
+      "id": "NORTH-CORRIDOR",
+      "obj": 19,
+      "name": "North Corridor"
+    },
+    {
+      "id": "OLD-JEWEL-ROOM",
+      "obj": 179,
+      "name": "Jewel Room"
+    },
+    {
+      "id": "OLD-MUSEUM-ENTRANCE",
+      "obj": 28,
+      "name": "Museum Entrance"
+    },
+    {
+      "id": "OLD-TECH-MUSEUM",
+      "obj": 66,
+      "name": "Technology Museum"
+    },
+    {
+      "id": "ON-LAKE",
+      "obj": 184,
+      "name": "On the Lake"
+    },
+    {
+      "id": "PARAPET",
+      "obj": 36,
+      "name": "Parapet"
+    },
+    {
+      "id": "PRISON-CELL",
+      "obj": 225,
+      "name": "Prison Cell"
+    },
+    {
+      "id": "ROCKY-ROOM",
+      "obj": 81,
+      "name": "Crystal Grotto"
+    },
+    {
+      "id": "ROOM-8",
+      "obj": 192,
+      "name": "Room 8"
+    },
+    {
+      "id": "SHADOW-1",
+      "obj": 30,
+      "name": "Land of Shadow"
+    },
+    {
+      "id": "SHADOW-2",
+      "obj": 69,
+      "name": "Land of Shadow"
+    },
+    {
+      "id": "SHADOW-3",
+      "obj": 134,
+      "name": "Land of Shadow"
+    },
+    {
+      "id": "SHADOW-4",
+      "obj": 186,
+      "name": "Land of Shadow"
+    },
+    {
+      "id": "SHADOW-5",
+      "obj": 23,
+      "name": "Land of Shadow"
+    },
+    {
+      "id": "SHADOW-6",
+      "obj": 63,
+      "name": "Land of Shadow"
+    },
+    {
+      "id": "SHADOW-7",
+      "obj": 123,
+      "name": "Land of Shadow"
+    },
+    {
+      "id": "SHADOW-8",
+      "obj": 170,
+      "name": "Land of Shadow"
+    },
+    {
+      "id": "SLOPE",
+      "obj": 78,
+      "name": "Hairpin Loop"
+    },
+    {
+      "id": "SOUTH-CORRIDOR",
+      "obj": 190,
+      "name": "South Corridor"
+    },
+    {
+      "id": "SOUTH-SHORE",
+      "obj": 216,
+      "name": "Southern Shore"
+    },
+    {
+      "id": "TECH-MUSEUM",
+      "obj": 176,
+      "name": "Technology Museum"
+    },
+    {
+      "id": "TIGHT-SQUEEZE",
+      "obj": 40,
+      "name": "Tight Squeeze"
+    },
+    {
+      "id": "TIMBER-ROOM",
+      "obj": 15,
+      "name": "Timber Room"
+    },
+    {
+      "id": "VIEW-ROOM",
+      "obj": 124,
+      "name": "Scenic Vista"
+    },
+    {
+      "id": "WEST-CORRIDOR",
+      "obj": 162,
+      "name": "West Corridor"
+    },
+    {
+      "id": "WIDE-HALL",
+      "obj": 116,
+      "name": "Royal Hall"
+    },
+    {
+      "id": "ZORK-IV",
+      "obj": 210,
+      "name": "Sacrificial Altar"
+    },
+    {
+      "id": "ZORK2-STAIR",
+      "obj": 211,
+      "name": "Endless Stair"
+    }
+  ],
+  "edges": [
+    {
+      "from": "AQ-1",
+      "to": "AQ-2",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "AQ-2",
+      "to": "AQ-1",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "AQ-2",
+      "to": "AQ-3",
+      "dir": "NORTH",
+      "kind": "cond_flag",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + conditional 1"
+    },
+    {
+      "from": "AQ-3",
+      "to": "AQ-2",
+      "dir": "SOUTH",
+      "kind": "cond_flag",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + conditional 1"
+    },
+    {
+      "from": "AQ-3",
+      "to": "DAMP-PASSAGE",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 2 exits (NORTH, DOWN)"
+    },
+    {
+      "from": "AQ-VIEW",
+      "to": "LAKE-SHORE",
+      "dir": "NW",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2; cheapest of 2 exits (NW, UP)"
+    },
+    {
+      "from": "BEHIND-DOOR",
+      "to": "FRONT-DOOR",
+      "dir": "SOUTH",
+      "kind": "cond_door",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1"
+    },
+    {
+      "from": "BEHIND-DOOR",
+      "to": "SOUTH-CORRIDOR",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "CELL",
+      "to": "NORTH-CORRIDOR",
+      "dir": "OUT",
+      "kind": "cond_door",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1; cheapest of 2 exits (OUT, NORTH)"
+    },
+    {
+      "from": "CLEARING",
+      "to": "CLIFF",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "CLEARING",
+      "to": "JUNCTION",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "CLEARING",
+      "to": "SHADOW-2",
+      "dir": "SW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "CLEARING",
+      "to": "SLOPE",
+      "dir": "NW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "CLIFF",
+      "to": "CLEARING",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "CLIFF",
+      "to": "CLIFF-LEDGE",
+      "dir": "DOWN",
+      "kind": "cond_flag",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + down 1 + conditional 1"
+    },
+    {
+      "from": "CLIFF",
+      "to": "SHADOW-8",
+      "dir": "SW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "CLIFF-BASE",
+      "to": "FLATHEAD-OCEAN",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "CLIFF-BASE",
+      "to": "SLOPE",
+      "dir": "NE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "CLIFF-LEDGE",
+      "to": "CLIFF-BASE",
+      "dir": "DOWN",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + down 1"
+    },
+    {
+      "from": "CP-ANTE",
+      "to": "CP-OUT",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "CP-ANTE",
+      "to": "MUSEUM-ENTRANCE",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2; cheapest of 2 exits (NORTH, UP)"
+    },
+    {
+      "from": "CP-OUT",
+      "to": "CP",
+      "dir": "EAST",
+      "kind": "cond_flag",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + conditional 1"
+    },
+    {
+      "from": "CP-OUT",
+      "to": "CP-ANTE",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2; cheapest of 2 exits (NORTH, UP)"
+    },
+    {
+      "from": "CREEPY-CRAWL",
+      "to": "FOGGY-ROOM",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "CREEPY-CRAWL",
+      "to": "JUNCTION",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "CREEPY-CRAWL",
+      "to": "SHADOW-1",
+      "dir": "SW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "CREEPY-CRAWL",
+      "to": "TIGHT-SQUEEZE",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DAMP-PASSAGE",
+      "to": "DEAD-END",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DAMP-PASSAGE",
+      "to": "JUNCTION",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DAMP-PASSAGE",
+      "to": "MSTAIRS",
+      "dir": "NE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DARK-1",
+      "to": "DARK-2",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 2 exits (SOUTH, UP)"
+    },
+    {
+      "from": "DARK-1",
+      "to": "SOUTH-SHORE",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2; cheapest of 2 exits (NORTH, DOWN)"
+    },
+    {
+      "from": "DARK-2",
+      "to": "DARK-1",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 2 exits (NORTH, DOWN)"
+    },
+    {
+      "from": "DARK-2",
+      "to": "KEY-ROOM",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2; cheapest of 2 exits (EAST, UP)"
+    },
+    {
+      "from": "DEAD-END",
+      "to": "DAMP-PASSAGE",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DEAD-END",
+      "to": "MSTAIRS",
+      "dir": "NW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DEAD-END-5",
+      "to": "LADDER-BOTTOM",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "EAST-CORRIDOR",
+      "to": "NORTH-CORRIDOR",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "EAST-CORRIDOR",
+      "to": "SOUTH-CORRIDOR",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "FAR-SHORE",
+      "to": "VIEW-ROOM",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "FLATHEAD-OCEAN",
+      "to": "CLIFF-BASE",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "FLATHEAD-OCEAN",
+      "to": "SHADOW-6",
+      "dir": "SE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "FLATHEAD-OCEAN",
+      "to": "SHADOW-7",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "FLATHEAD-OCEAN",
+      "to": "SHADOW-8",
+      "dir": "NE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "FOGGY-ROOM",
+      "to": "CREEPY-CRAWL",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "FOGGY-ROOM",
+      "to": "LAKE-SHORE",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "FOGGY-ROOM",
+      "to": "SHADOW-1",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "FRONT-DOOR",
+      "to": "BEHIND-DOOR",
+      "dir": "NORTH",
+      "kind": "cond_door",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1"
+    },
+    {
+      "from": "FRONT-DOOR",
+      "to": "MRDE",
+      "dir": "SE",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "FRONT-DOOR",
+      "to": "MRDW",
+      "dir": "SW",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "GOOD-CELL",
+      "to": "NIRVANA",
+      "dir": "OUT",
+      "kind": "cond_door",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1; cheapest of 2 exits (OUT, SOUTH)"
+    },
+    {
+      "from": "IN-LAKE",
+      "to": "ON-LAKE",
+      "dir": "UP",
+      "kind": "plain",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + up 2"
+    },
+    {
+      "from": "JEWEL-ROOM",
+      "to": "MUSEUM-ENTRANCE",
+      "dir": "WEST",
+      "kind": "cond_door",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1; cheapest of 2 exits (WEST, OUT)"
+    },
+    {
+      "from": "JUNCTION",
+      "to": "CLEARING",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "JUNCTION",
+      "to": "CREEPY-CRAWL",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "JUNCTION",
+      "to": "DAMP-PASSAGE",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "JUNCTION",
+      "to": "ZORK2-STAIR",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "KEY-ROOM",
+      "to": "AQ-1",
+      "dir": "DOWN",
+      "kind": "cond_flag",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + down 1 + conditional 1"
+    },
+    {
+      "from": "KEY-ROOM",
+      "to": "DARK-2",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "LADDER-BOTTOM",
+      "to": "DEAD-END-5",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "LADDER-BOTTOM",
+      "to": "LADDER-TOP",
+      "dir": "UP",
+      "kind": "plain",
+      "minutes": 5,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + up 2 + dark 1"
+    },
+    {
+      "from": "LADDER-BOTTOM",
+      "to": "TIMBER-ROOM",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "LADDER-TOP",
+      "to": "LADDER-BOTTOM",
+      "dir": "DOWN",
+      "kind": "plain",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + down 1 + dark 1"
+    },
+    {
+      "from": "LAKE-SHORE",
+      "to": "AQ-VIEW",
+      "dir": "SE",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2; cheapest of 2 exits (SE, DOWN)"
+    },
+    {
+      "from": "LAKE-SHORE",
+      "to": "FOGGY-ROOM",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "LOWER-SHAFT",
+      "to": "MACHINE-ROOM",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "LOWER-SHAFT",
+      "to": "TIMBER-ROOM",
+      "dir": "OUT",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 2 exits (OUT, EAST)"
+    },
+    {
+      "from": "MID-CP-ANTE",
+      "to": "MID-CP-OUT",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MID-CP-ANTE",
+      "to": "MID-MUSEUM-ENTRANCE",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2; cheapest of 2 exits (NORTH, UP)"
+    },
+    {
+      "from": "MID-CP-OUT",
+      "to": "MID-CP-ANTE",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MID-JEWEL-ROOM",
+      "to": "MID-MUSEUM-ENTRANCE",
+      "dir": "WEST",
+      "kind": "cond_door",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1; cheapest of 2 exits (WEST, OUT)"
+    },
+    {
+      "from": "MID-MUSEUM-ENTRANCE",
+      "to": "MID-CP-ANTE",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2; cheapest of 2 exits (SOUTH, DOWN)"
+    },
+    {
+      "from": "MID-MUSEUM-ENTRANCE",
+      "to": "MID-JEWEL-ROOM",
+      "dir": "EAST",
+      "kind": "cond_door",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1"
+    },
+    {
+      "from": "MID-MUSEUM-ENTRANCE",
+      "to": "MID-TECH-MUSEUM",
+      "dir": "NORTH",
+      "kind": "cond_door",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1"
+    },
+    {
+      "from": "MID-TECH-MUSEUM",
+      "to": "MID-MUSEUM-ENTRANCE",
+      "dir": "SOUTH",
+      "kind": "cond_door",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1; cheapest of 2 exits (SOUTH, OUT)"
+    },
+    {
+      "from": "MR-ANTE",
+      "to": "MREYE",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MR-ANTE",
+      "to": "MSTAIRS",
+      "dir": "SOUTH",
+      "kind": "cond_door",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1 + dark 1; cheapest of 2 exits (SOUTH, UP)"
+    },
+    {
+      "from": "MRA",
+      "to": "MREYE",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MRAE",
+      "to": "MRB",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MRAE",
+      "to": "MREYE",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MRAW",
+      "to": "MRB",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MRAW",
+      "to": "MREYE",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MRBE",
+      "to": "MRA",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MRBE",
+      "to": "MRC",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MRBW",
+      "to": "MRA",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MRBW",
+      "to": "MRC",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MRCE",
+      "to": "MRB",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MRCE",
+      "to": "MRG",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MRCW",
+      "to": "MRB",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MRCW",
+      "to": "MRG",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MRD",
+      "to": "FRONT-DOOR",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2; cheapest of 3 exits (NORTH, NE, NW)"
+    },
+    {
+      "from": "MRDE",
+      "to": "FRONT-DOOR",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MRDE",
+      "to": "MRG",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MRDW",
+      "to": "FRONT-DOOR",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MRDW",
+      "to": "MRG",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MREYE",
+      "to": "MR-ANTE",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MRGE",
+      "to": "MRC",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MRGE",
+      "to": "MRD",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MRGW",
+      "to": "MRC",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MRGW",
+      "to": "MRD",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MSTAIRS",
+      "to": "DAMP-PASSAGE",
+      "dir": "SW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "MSTAIRS",
+      "to": "DEAD-END",
+      "dir": "SE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "MSTAIRS",
+      "to": "MR-ANTE",
+      "dir": "NORTH",
+      "kind": "cond_door",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1; cheapest of 2 exits (NORTH, DOWN)"
+    },
+    {
+      "from": "MUSEUM-ANTE",
+      "to": "MUSEUM-ENTRANCE",
+      "dir": "EAST",
+      "kind": "cond_flag",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + conditional 1"
+    },
+    {
+      "from": "MUSEUM-ANTE",
+      "to": "WIDE-HALL",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "MUSEUM-ENTRANCE",
+      "to": "CP-ANTE",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2; cheapest of 2 exits (SOUTH, DOWN)"
+    },
+    {
+      "from": "MUSEUM-ENTRANCE",
+      "to": "JEWEL-ROOM",
+      "dir": "EAST",
+      "kind": "cond_door",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1"
+    },
+    {
+      "from": "MUSEUM-ENTRANCE",
+      "to": "MUSEUM-ANTE",
+      "dir": "WEST",
+      "kind": "cond_flag",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + conditional 1 + dark 1"
+    },
+    {
+      "from": "MUSEUM-ENTRANCE",
+      "to": "TECH-MUSEUM",
+      "dir": "NORTH",
+      "kind": "cond_door",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1"
+    },
+    {
+      "from": "NORTH-CORRIDOR",
+      "to": "CELL",
+      "dir": "SOUTH",
+      "kind": "cond_door",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1"
+    },
+    {
+      "from": "NORTH-CORRIDOR",
+      "to": "EAST-CORRIDOR",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "NORTH-CORRIDOR",
+      "to": "PARAPET",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "NORTH-CORRIDOR",
+      "to": "WEST-CORRIDOR",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "OLD-JEWEL-ROOM",
+      "to": "OLD-MUSEUM-ENTRANCE",
+      "dir": "WEST",
+      "kind": "cond_door",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1; cheapest of 2 exits (WEST, OUT)"
+    },
+    {
+      "from": "OLD-MUSEUM-ENTRANCE",
+      "to": "OLD-JEWEL-ROOM",
+      "dir": "EAST",
+      "kind": "cond_door",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1"
+    },
+    {
+      "from": "OLD-MUSEUM-ENTRANCE",
+      "to": "OLD-TECH-MUSEUM",
+      "dir": "NORTH",
+      "kind": "cond_door",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1"
+    },
+    {
+      "from": "OLD-TECH-MUSEUM",
+      "to": "OLD-MUSEUM-ENTRANCE",
+      "dir": "SOUTH",
+      "kind": "cond_door",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1; cheapest of 2 exits (SOUTH, OUT)"
+    },
+    {
+      "from": "ON-LAKE",
+      "to": "FAR-SHORE",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2; cheapest of 2 exits (WEST, NW)"
+    },
+    {
+      "from": "ON-LAKE",
+      "to": "IN-LAKE",
+      "dir": "DOWN",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + down 1"
+    },
+    {
+      "from": "ON-LAKE",
+      "to": "LAKE-SHORE",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "ON-LAKE",
+      "to": "SOUTH-SHORE",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2; cheapest of 2 exits (SOUTH, SW)"
+    },
+    {
+      "from": "PARAPET",
+      "to": "NORTH-CORRIDOR",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "ROCKY-ROOM",
+      "to": "TIGHT-SQUEEZE",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "ROCKY-ROOM",
+      "to": "WIDE-HALL",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-1",
+      "to": "CREEPY-CRAWL",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-1",
+      "to": "FOGGY-ROOM",
+      "dir": "SE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-1",
+      "to": "SHADOW-2",
+      "dir": "NW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-1",
+      "to": "SHADOW-3",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-1",
+      "to": "SHADOW-4",
+      "dir": "SW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-1",
+      "to": "SHADOW-5",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-2",
+      "to": "CLEARING",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-2",
+      "to": "SHADOW-1",
+      "dir": "SE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 2 exits (SE, EAST)"
+    },
+    {
+      "from": "SHADOW-2",
+      "to": "SHADOW-3",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-2",
+      "to": "SHADOW-7",
+      "dir": "SW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-2",
+      "to": "SHADOW-8",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-3",
+      "to": "SHADOW-1",
+      "dir": "NE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 3 exits (NE, SE, EAST)"
+    },
+    {
+      "from": "SHADOW-3",
+      "to": "SHADOW-2",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-3",
+      "to": "SHADOW-4",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-3",
+      "to": "SHADOW-6",
+      "dir": "SW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-3",
+      "to": "SHADOW-7",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-3",
+      "to": "SHADOW-8",
+      "dir": "NW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-4",
+      "to": "SHADOW-1",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 2 exits (EAST, NE)"
+    },
+    {
+      "from": "SHADOW-4",
+      "to": "SHADOW-3",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-4",
+      "to": "SHADOW-5",
+      "dir": "SE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 2 exits (SE, SOUTH)"
+    },
+    {
+      "from": "SHADOW-4",
+      "to": "SHADOW-6",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-4",
+      "to": "SHADOW-7",
+      "dir": "NW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-5",
+      "to": "SHADOW-1",
+      "dir": "NE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-5",
+      "to": "SHADOW-4",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-5",
+      "to": "SHADOW-6",
+      "dir": "NW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-6",
+      "to": "FLATHEAD-OCEAN",
+      "dir": "NW",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2; cheapest of 3 exits (NW, WEST, DOWN)"
+    },
+    {
+      "from": "SHADOW-6",
+      "to": "SHADOW-3",
+      "dir": "NE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-6",
+      "to": "SHADOW-4",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-6",
+      "to": "SHADOW-5",
+      "dir": "SE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-6",
+      "to": "SHADOW-7",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-7",
+      "to": "FLATHEAD-OCEAN",
+      "dir": "NW",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2; cheapest of 4 exits (DOWN, NW, WEST, SW)"
+    },
+    {
+      "from": "SHADOW-7",
+      "to": "SHADOW-2",
+      "dir": "NE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-7",
+      "to": "SHADOW-3",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-7",
+      "to": "SHADOW-4",
+      "dir": "SE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-7",
+      "to": "SHADOW-6",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-7",
+      "to": "SHADOW-8",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-8",
+      "to": "CLIFF",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "SHADOW-8",
+      "to": "FLATHEAD-OCEAN",
+      "dir": "SW",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2; cheapest of 3 exits (SW, WEST, DOWN)"
+    },
+    {
+      "from": "SHADOW-8",
+      "to": "SHADOW-2",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-8",
+      "to": "SHADOW-3",
+      "dir": "SE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHADOW-8",
+      "to": "SHADOW-7",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SLOPE",
+      "to": "CLEARING",
+      "dir": "SE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 2 exits (SE, UP)"
+    },
+    {
+      "from": "SLOPE",
+      "to": "CLIFF-BASE",
+      "dir": "SW",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2; cheapest of 2 exits (SW, DOWN)"
+    },
+    {
+      "from": "SOUTH-CORRIDOR",
+      "to": "BEHIND-DOOR",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "SOUTH-CORRIDOR",
+      "to": "EAST-CORRIDOR",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "SOUTH-CORRIDOR",
+      "to": "WEST-CORRIDOR",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "SOUTH-SHORE",
+      "to": "DARK-1",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 2 exits (UP, SOUTH)"
+    },
+    {
+      "from": "TECH-MUSEUM",
+      "to": "MUSEUM-ENTRANCE",
+      "dir": "SOUTH",
+      "kind": "cond_door",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1; cheapest of 2 exits (SOUTH, OUT)"
+    },
+    {
+      "from": "TIGHT-SQUEEZE",
+      "to": "CREEPY-CRAWL",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "TIGHT-SQUEEZE",
+      "to": "ROCKY-ROOM",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "TIMBER-ROOM",
+      "to": "LADDER-BOTTOM",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "TIMBER-ROOM",
+      "to": "LOWER-SHAFT",
+      "dir": "WEST",
+      "kind": "cond_flag",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + conditional 1 + dark 1"
+    },
+    {
+      "from": "VIEW-ROOM",
+      "to": "FAR-SHORE",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "WEST-CORRIDOR",
+      "to": "NORTH-CORRIDOR",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "WEST-CORRIDOR",
+      "to": "SOUTH-CORRIDOR",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "WIDE-HALL",
+      "to": "MUSEUM-ANTE",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "WIDE-HALL",
+      "to": "ROCKY-ROOM",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "ZORK2-STAIR",
+      "to": "JUNCTION",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    }
+  ],
+  "actions": [],
+  "vocab": {
+    "verbs": {
+      "#command": "#command",
+      "#random": "#random",
+      "#record": "#record",
+      "#unrecord": "#unrecord",
+      "$verify": "$verify",
+      "activate": "activate",
+      "answer": "say",
+      "apply": "apply",
+      "ask": "say",
+      "attach": "tie",
+      "attack": "attack",
+      "awake": "wake",
+      "back": "back",
+      "banish": "exorcise",
+      "barf": "chomp",
+      "bathe": "swim",
+      "begone": "exorcise",
+      "bite": "eat",
+      "blast": "blast",
+      "block": "break",
+      "blow": "blow",
+      "board": "enter",
+      "brandish": "wave",
+      "break": "break",
+      "brief": "brief",
+      "brush": "brush",
+      "bug": "bug",
+      "burn": "burn",
+      "carry": "take",
+      "cast": "exorcise",
+      "catch": "take",
+      "chant": "incant",
+      "chase": "follow",
+      "chomp": "chomp",
+      "chuck": "throw",
+      "clean": "brush",
+      "climb": "climb",
+      "close": "close",
+      "come": "follow",
+      "command": "command",
+      "consume": "eat",
+      "count": "count",
+      "cross": "cross",
+      "curse": "curse",
+      "cut": "cut",
+      "damage": "break",
+      "damn": "curse",
+      "deflate": "deflate",
+      "describe": "examine",
+      "destroy": "break",
+      "diagnose": "diagnose",
+      "dig": "dig",
+      "disembark": "exit",
+      "disenchant": "disenchant",
+      "dispatch": "kill",
+      "dive": "jump",
+      "donate": "give",
+      "douse": "extinguish",
+      "drink": "drink",
+      "drive": "exorcise",
+      "drop": "drop",
+      "eat": "eat",
+      "echo": "echo",
+      "enchant": "enchant",
+      "enter": "enter",
+      "examine": "examine",
+      "exit": "exit",
+      "exorcise": "exorcise",
+      "extinguish": "extinguish",
+      "fasten": "tie",
+      "feed": "give",
+      "feel": "rub",
+      "fight": "attack",
+      "fill": "fill",
+      "find": "find",
+      "fix": "plug",
+      "flip": "turn",
+      "follow": "follow",
+      "ford": "cross",
+      "free": "untie",
+      "frobozz": "frobozz",
+      "fuck": "curse",
+      "gaze": "look",
+      "get": "take",
+      "give": "give",
+      "glue": "plug",
+      "go": "walk",
+      "grab": "take",
+      "grease": "oil",
+      "hatch": "hatch",
+      "hello": "hello",
+      "hi": "hello",
+      "hide": "put",
+      "hit": "attack",
+      "hold": "take",
+      "hop": "skip",
+      "hurl": "throw",
+      "hurt": "attack",
+      "i": "inventory",
+      "ignite": "burn",
+      "imbibe": "drink",
+      "incant": "incant",
+      "incinerate": "burn",
+      "inflat": "inflate",
+      "injure": "attack",
+      "insert": "put",
+      "inventory": "inventory",
+      "jump": "jump",
+      "kick": "kick",
+      "kill": "kill",
+      "kiss": "kiss",
+      "knock": "knock",
+      "l": "look",
+      "launch": "launch",
+      "lean": "lean",
+      "leap": "jump",
+      "leave": "leave",
+      "lift": "raise",
+      "light": "light",
+      "liquify": "melt",
+      "listen": "listen",
+      "lock": "lock",
+      "look": "look",
+      "lose": "chomp",
+      "lower": "lower",
+      "lubricate": "oil",
+      "make": "make",
+      "melt": "melt",
+      "molest": "rape",
+      "move": "move",
+      "mumble": "mumble",
+      "murder": "kill",
+      "odysseus": "odysseus",
+      "offer": "give",
+      "oil": "oil",
+      "open": "open",
+      "pat": "rub",
+      "patch": "plug",
+      "peal": "ring",
+      "pet": "rub",
+      "pick": "pick",
+      "pierce": "cut",
+      "place": "put",
+      "play": "play",
+      "plug": "plug",
+      "plugh": "plugh",
+      "poke": "poke",
+      "pour": "pour",
+      "pray": "pray",
+      "press": "move",
+      "proceed": "walk",
+      "pull": "move",
+      "pump": "inflate",
+      "puncture": "puncture",
+      "pursue": "follow",
+      "push": "move",
+      "put": "put",
+      "q": "quit",
+      "quit": "quit",
+      "raise": "raise",
+      "rap": "knock",
+      "rape": "rape",
+      "read": "read",
+      "release": "untie",
+      "remove": "take",
+      "repair": "plug",
+      "repent": "repent",
+      "reply": "say",
+      "restart": "restart",
+      "restore": "restore",
+      "ring": "ring",
+      "roll": "roll",
+      "rub": "rub",
+      "run": "walk",
+      "save": "save",
+      "say": "say",
+      "score": "score",
+      "scream": "say",
+      "script": "script",
+      "search": "search",
+      "secure": "tie",
+      "see": "find",
+      "seek": "find",
+      "send": "send",
+      "set": "turn",
+      "shake": "shake",
+      "shit": "curse",
+      "shout": "say",
+      "shut": "turn",
+      "sigh": "mumble",
+      "sit": "climb",
+      "skim": "read",
+      "skip": "skip",
+      "slay": "kill",
+      "slice": "cut",
+      "slide": "move",
+      "smash": "break",
+      "smell": "smell",
+      "sniff": "smell",
+      "spill": "pour",
+      "spin": "spin",
+      "spray": "spray",
+      "squeeze": "squeeze",
+      "stab": "stab",
+      "stand": "stand",
+      "stare": "look",
+      "startle": "wake",
+      "stay": "stay",
+      "step": "walk",
+      "strike": "strike",
+      "stuff": "put",
+      "super": "super",
+      "superbrief": "super",
+      "surprise": "wake",
+      "swallow": "drink",
+      "swim": "swim",
+      "swing": "swing",
+      "take": "take",
+      "talk": "talk",
+      "taste": "eat",
+      "taunt": "kick",
+      "tell": "say",
+      "temple": "treasure",
+      "throw": "throw",
+      "thrust": "swing",
+      "tie": "tie",
+      "toss": "throw",
+      "touch": "rub",
+      "treasure": "treasure",
+      "tug": "move",
+      "turn": "turn",
+      "ulysses": "odysseus",
+      "unattach": "untie",
+      "unfasten": "untie",
+      "unhook": "untie",
+      "unlock": "unlock",
+      "unscript": "unscript",
+      "untie": "untie",
+      "verbose": "verbose",
+      "version": "version",
+      "wade": "swim",
+      "wait": "wait",
+      "wake": "wake",
+      "walk": "walk",
+      "wave": "wave",
+      "wear": "wear",
+      "what": "examine",
+      "whats": "examine",
+      "where": "find",
+      "win": "win",
+      "wind": "wind",
+      "winnage": "win",
+      "wish": "wish",
+      "xyzzy": "plugh",
+      "yank": "move",
+      "yell": "say",
+      "z": "wait",
+      "zork": "zork"
+    },
+    "nouns": {
+      "abyss": [
+        "FLAMING-PIT"
+      ],
+      "adventurer": [
+        "ADVENTURER"
+      ],
+      "air": [
+        "LUNGS"
+      ],
+      "algae": [
+        "ALGAE"
+      ],
+      "amulet": [
+        "AMULET",
+        "SHINY-OBJECT"
+      ],
+      "aqueduct": [
+        "AQUEDUCT"
+      ],
+      "area": [
+        "TM-HOLLOW"
+      ],
+      "arrow": [
+        "COMPASS-ARROW",
+        "SUNDIAL"
+      ],
+      "aviator": [
+        "SAILOR"
+      ],
+      "bar": [
+        "T-BAR",
+        "WOODEN-BAR"
+      ],
+      "beam": [
+        "BEAM"
+      ],
+      "blade": [
+        "SWORD"
+      ],
+      "blessings": [
+        "BLESSINGS"
+      ],
+      "boat": [
+        "VIKING-SHIP"
+      ],
+      "book": [
+        "LORE-BOOK"
+      ],
+      "bottom": [
+        "SAND"
+      ],
+      "boulder": [
+        "RUBBLE"
+      ],
+      "bread": [
+        "WAYBREAD"
+      ],
+      "breath": [
+        "LUNGS"
+      ],
+      "button": [
+        "DIAL-BUTTON",
+        "RED-BUTTON",
+        "TM-BUTTON"
+      ],
+      "cage": [
+        "CAGE"
+      ],
+      "can": [
+        "REPELLENT"
+      ],
+      "carvin": [
+        "ROYAL-SEAL"
+      ],
+      "chair": [
+        "TM-SEAT"
+      ],
+      "channel": [
+        "CHANNEL",
+        "WATER-CHANNEL"
+      ],
+      "chasm": [
+        "AQUEDUCT",
+        "CHASM"
+      ],
+      "chest": [
+        "CHEST"
+      ],
+      "cleft": [
+        "CLEFT"
+      ],
+      "cliff": [
+        "CLIFF-OBJECT"
+      ],
+      "cloak": [
+        "CLOAK"
+      ],
+      "console": [
+        "TM-DIAL"
+      ],
+      "contents": [
+        "POTION"
+      ],
+      "cover": [
+        "COVER"
+      ],
+      "cpslt": [
+        "CP-SLOT"
+      ],
+      "craft": [
+        "VIKING-SHIP"
+      ],
+      "crawlway": [
+        "TUNNEL"
+      ],
+      "cretin": [
+        "ME"
+      ],
+      "crystal": [
+        "CRYSTALS"
+      ],
+      "debris": [
+        "DEBRIS"
+      ],
+      "device": [
+        "ROBOT"
+      ],
+      "dial": [
+        "SUNDIAL",
+        "TM-DIAL",
+        "VIEW-INDICATOR"
+      ],
+      "dirt": [
+        "GROUND"
+      ],
+      "display": [
+        "TM-DIAL"
+      ],
+      "door": [
+        "BRONZE-DOOR",
+        "CELL-DOOR",
+        "CPDOOR",
+        "DUNGEON-DOOR",
+        "GOOD-LOCKED-DOOR",
+        "IRON-DOOR",
+        "JEWEL-DOOR",
+        "LOCKED-DOOR",
+        "SECRET-DOOR",
+        "WOODEN-DOOR"
+      ],
+      "dryer": [
+        "PRESSURIZER"
+      ],
+      "duct": [
+        "AQUEDUCT"
+      ],
+      "dungeon": [
+        "DUNGEON-MASTER"
+      ],
+      "dust": [
+        "DEBRIS"
+      ],
+      "engrav": [
+        "RUNES"
+      ],
+      "figure": [
+        "SHADOW"
+      ],
+      "fish": [
+        "FISH"
+      ],
+      "floor": [
+        "GROUND",
+        "SAND"
+      ],
+      "fluid": [
+        "POTION"
+      ],
+      "footpad": [
+        "SAILOR"
+      ],
+      "friend": [
+        "GLOBAL-MAN",
+        "MAN"
+      ],
+      "gift": [
+        "VIAL"
+      ],
+      "glamdring": [
+        "SWORD"
+      ],
+      "gorge": [
+        "CHASM"
+      ],
+      "graces": [
+        "BLESSINGS"
+      ],
+      "grip": [
+        "SHORT-POLE"
+      ],
+      "ground": [
+        "GROUND"
+      ],
+      "grue": [
+        "GRUE"
+      ],
+      "guard": [
+        "GUARDIAN"
+      ],
+      "guardian": [
+        "GUARDIAN"
+      ],
+      "guards": [
+        "GUARDIAN",
+        "VOICES"
+      ],
+      "h2o": [
+        "WATER"
+      ],
+      "hand": [
+        "HANDS"
+      ],
+      "handgrip": [
+        "SHORT-POLE"
+      ],
+      "hands": [
+        "HANDS"
+      ],
+      "her": [
+        "IT"
+      ],
+      "him": [
+        "IT"
+      ],
+      "hole": [
+        "CHANNEL",
+        "CP-HOLE"
+      ],
+      "hood": [
+        "HOOD"
+      ],
+      "indicator": [
+        "SUNDIAL",
+        "VIEW-INDICATOR"
+      ],
+      "intdir": [
+        "INTDIR"
+      ],
+      "intnum": [
+        "INTNUM"
+      ],
+      "it": [
+        "IT"
+      ],
+      "jewels": [
+        "JEWELLED-KNIFE",
+        "RING",
+        "SCEPTRE"
+      ],
+      "key": [
+        "KEY"
+      ],
+      "knife": [
+        "JEWELLED-KNIFE"
+      ],
+      "ladder": [
+        "CPLADDER",
+        "LADDER"
+      ],
+      "lake": [
+        "LAKE"
+      ],
+      "lamp": [
+        "BROKEN-LAMP",
+        "FRIED-LAMP",
+        "LAMP"
+      ],
+      "lantern": [
+        "BROKEN-LAMP",
+        "FRIED-LAMP",
+        "LAMP"
+      ],
+      "ledge": [
+        "LEDGE"
+      ],
+      "lichen": [
+        "MOSS"
+      ],
+      "light": [
+        "BEAM"
+      ],
+      "liquid": [
+        "POTION",
+        "WATER"
+      ],
+      "lore": [
+        "LORE-BOOK"
+      ],
+      "lungs": [
+        "LUNGS"
+      ],
+      "machine": [
+        "PRESSURIZER",
+        "SPINNER",
+        "TIME-MACHINE"
+      ],
+      "man": [
+        "DUNGEON-MASTER",
+        "GLOBAL-MAN",
+        "MAN",
+        "MASTER",
+        "OLD-MAN",
+        "SHADOW"
+      ],
+      "master": [
+        "DUNGEON-MASTER",
+        "MASTER"
+      ],
+      "me": [
+        "ME"
+      ],
+      "mirror": [
+        "MIRROR"
+      ],
+      "moss": [
+        "MOSS"
+      ],
+      "motors": [
+        "SPINNER"
+      ],
+      "mouth": [
+        "LUNGS"
+      ],
+      "myself": [
+        "ME"
+      ],
+      "note": [
+        "WARNING-NOTE"
+      ],
+      "object": [
+        "AMULET",
+        "SHINY-OBJECT"
+      ],
+      "ocean": [
+        "OCEAN"
+      ],
+      "odor": [
+        "VIAL"
+      ],
+      "offici": [
+        "VOICES"
+      ],
+      "orcrist": [
+        "SWORD"
+      ],
+      "pair": [
+        "HANDS"
+      ],
+      "panel": [
+        "BLACK-PANEL",
+        "DUNGEON-PANEL",
+        "MAHOGANY-PANEL",
+        "PANEL",
+        "PINE-PANEL",
+        "RED-PANEL",
+        "WHITE-PANEL",
+        "YELLOW-PANEL"
+      ],
+      "parapet": [
+        "PARAPET-OBJ"
+      ],
+      "passage": [
+        "TUNNEL"
+      ],
+      "path": [
+        "PATHOBJ"
+      ],
+      "pedestal": [
+        "PEDESTAL"
+      ],
+      "piece": [
+        "WAYBREAD"
+      ],
+      "pile": [
+        "TIMBERS",
+        "VALUABLES"
+      ],
+      "pipes": [
+        "SPINNER"
+      ],
+      "pit": [
+        "FLAMING-PIT"
+      ],
+      "plant": [
+        "ALGAE"
+      ],
+      "plants": [
+        "ALGAE"
+      ],
+      "plaque": [
+        "PLAQUE",
+        "TECH-PLAQUE"
+      ],
+      "pole": [
+        "LONG-POLE",
+        "SHORT-POLE"
+      ],
+      "post": [
+        "SHORT-POLE"
+      ],
+      "potion": [
+        "POTION"
+      ],
+      "pressurizer": [
+        "PRESSURIZER"
+      ],
+      "quantity": [
+        "GLOBAL-WATER",
+        "WATER"
+      ],
+      "ravine": [
+        "CHASM"
+      ],
+      "reeds": [
+        "REEDS"
+      ],
+      "render": [
+        "ROYAL-SEAL"
+      ],
+      "repellent": [
+        "REPELLENT"
+      ],
+      "ring": [
+        "RING"
+      ],
+      "robot": [
+        "ROBOT"
+      ],
+      "rock": [
+        "RUBBLE",
+        "STONE"
+      ],
+      "rocks": [
+        "RUBBLE"
+      ],
+      "rope": [
+        "GLOBAL-ROPE",
+        "ROPE"
+      ],
+      "rose": [
+        "ROSE"
+      ],
+      "rubble": [
+        "RUBBLE"
+      ],
+      "runes": [
+        "RUNES"
+      ],
+      "sailor": [
+        "SAILOR"
+      ],
+      "sand": [
+        "GROUND",
+        "SAND"
+      ],
+      "sceptre": [
+        "SCEPTRE"
+      ],
+      "seal": [
+        "ROYAL-SEAL"
+      ],
+      "seat": [
+        "TM-SEAT"
+      ],
+      "self": [
+        "ME"
+      ],
+      "shadow": [
+        "SHADOW"
+      ],
+      "ship": [
+        "VIKING-SHIP"
+      ],
+      "slit": [
+        "CP-SLOT"
+      ],
+      "slot": [
+        "CP-SLOT"
+      ],
+      "staff": [
+        "BROKEN-STAFF",
+        "STAFF"
+      ],
+      "staircase": [
+        "STAIRS"
+      ],
+      "stairs": [
+        "STAIRS"
+      ],
+      "stairway": [
+        "STAIRS"
+      ],
+      "stalag": [
+        "CRYSTALS"
+      ],
+      "statue": [
+        "GUARDIAN"
+      ],
+      "steps": [
+        "STAIRS"
+      ],
+      "stone": [
+        "STONE"
+      ],
+      "structure": [
+        "MIRROR"
+      ],
+      "sundial": [
+        "SUNDIAL"
+      ],
+      "surface": [
+        "LAKE",
+        "VIEWING-TABLE"
+      ],
+      "sword": [
+        "SWORD"
+      ],
+      "t-bar": [
+        "T-BAR"
+      ],
+      "table": [
+        "VIEWING-TABLE"
+      ],
+      "temporizer": [
+        "TIME-MACHINE"
+      ],
+      "text": [
+        "LORE-BOOK",
+        "PLAQUE",
+        "RUNES",
+        "TECH-PLAQUE",
+        "WARNING-NOTE"
+      ],
+      "them": [
+        "IT"
+      ],
+      "timbers": [
+        "TIMBERS"
+      ],
+      "torch": [
+        "FRIED-TORCH",
+        "TORCH"
+      ],
+      "trail": [
+        "PATHOBJ"
+      ],
+      "treasure": [
+        "VALUABLES"
+      ],
+      "tree": [
+        "TREE"
+      ],
+      "trees": [
+        "TREE"
+      ],
+      "valuables": [
+        "VALUABLES"
+      ],
+      "vial": [
+        "VIAL"
+      ],
+      "voice": [
+        "VOICES"
+      ],
+      "voices": [
+        "VOICES"
+      ],
+      "wall": [
+        "BLACK-PANEL",
+        "CPEWL",
+        "CPNWL",
+        "CPSWL",
+        "CPWWL",
+        "EAST-WALL",
+        "MAHOGANY-PANEL",
+        "NORTH-WALL",
+        "PINE-PANEL",
+        "RED-PANEL",
+        "RUNES",
+        "SOUTH-WALL",
+        "STONE-WALL",
+        "WEST-WALL",
+        "WHITE-PANEL",
+        "WOODEN-WALL",
+        "YELLOW-PANEL"
+      ],
+      "warning": [
+        "WARNING-NOTE"
+      ],
+      "water": [
+        "GLOBAL-WATER",
+        "LAKE",
+        "OCEAN",
+        "WATER"
+      ],
+      "waybread": [
+        "WAYBREAD"
+      ],
+      "wires": [
+        "SPINNER"
+      ],
+      "woman": [
+        "SHADOW"
+      ],
+      "zorkmid": [
+        "ZORKMID"
+      ],
+      "zzmgck": [
+        "LOCAL-GLOBALS"
+      ]
+    }
+  }
+}

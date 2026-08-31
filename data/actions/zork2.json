@@ -1,0 +1,3193 @@
+{
+  "schemaVersion": 1,
+  "game": "zork2",
+  "rooms": [
+    {
+      "id": "AQUARIUM-ROOM",
+      "obj": 233,
+      "name": "Aquarium Room"
+    },
+    {
+      "id": "BANK-ENTRANCE",
+      "obj": 92,
+      "name": "Bank Entrance"
+    },
+    {
+      "id": "CAGE-ROOM",
+      "obj": 54,
+      "name": "Dingy Closet"
+    },
+    {
+      "id": "CAROUSEL-ROOM",
+      "obj": 144,
+      "name": "Carousel Room"
+    },
+    {
+      "id": "CERBERUS-ROOM",
+      "obj": 162,
+      "name": "Cerberus Room"
+    },
+    {
+      "id": "COBWEBBY-CORRIDOR",
+      "obj": 206,
+      "name": "Cobwebby Corridor"
+    },
+    {
+      "id": "COOL-ROOM",
+      "obj": 172,
+      "name": "Cool Room"
+    },
+    {
+      "id": "CRYPT-ANTEROOM",
+      "obj": 194,
+      "name": "Crypt Anteroom"
+    },
+    {
+      "id": "CRYPT-ROOM",
+      "obj": 125,
+      "name": "Crypt"
+    },
+    {
+      "id": "DARK-TUNNEL",
+      "obj": 158,
+      "name": "Dark Tunnel"
+    },
+    {
+      "id": "DEAD-PALANTIR-1",
+      "obj": 224,
+      "name": "Room of Red Mist"
+    },
+    {
+      "id": "DEAD-PALANTIR-2",
+      "obj": 227,
+      "name": "Room of Blue Mist"
+    },
+    {
+      "id": "DEAD-PALANTIR-3",
+      "obj": 228,
+      "name": "Room of White Mist"
+    },
+    {
+      "id": "DEAD-PALANTIR-4",
+      "obj": 210,
+      "name": "Room of Black Mist"
+    },
+    {
+      "id": "DEEP-FORD",
+      "obj": 231,
+      "name": "Deep Ford"
+    },
+    {
+      "id": "DEPOSITORY",
+      "obj": 200,
+      "name": "Safety Depository"
+    },
+    {
+      "id": "DIAMOND-1",
+      "obj": 185,
+      "name": "Oddly-angled Room"
+    },
+    {
+      "id": "DIAMOND-2",
+      "obj": 121,
+      "name": "Oddly-angled Room"
+    },
+    {
+      "id": "DIAMOND-3",
+      "obj": 142,
+      "name": "Oddly-angled Room"
+    },
+    {
+      "id": "DIAMOND-4",
+      "obj": 242,
+      "name": "Oddly-angled Room"
+    },
+    {
+      "id": "DIAMOND-5",
+      "obj": 19,
+      "name": "Oddly-angled Room"
+    },
+    {
+      "id": "DIAMOND-6",
+      "obj": 202,
+      "name": "Oddly-angled Room"
+    },
+    {
+      "id": "DIAMOND-7",
+      "obj": 226,
+      "name": "Oddly-angled Room"
+    },
+    {
+      "id": "DIAMOND-8",
+      "obj": 75,
+      "name": "Oddly-angled Room"
+    },
+    {
+      "id": "DIAMOND-9",
+      "obj": 95,
+      "name": "Oddly-angled Room"
+    },
+    {
+      "id": "DRAGON-LAIR",
+      "obj": 201,
+      "name": "Dragon's Lair"
+    },
+    {
+      "id": "DRAGON-ROOM",
+      "obj": 248,
+      "name": "Dragon Room"
+    },
+    {
+      "id": "DREARY-ROOM",
+      "obj": 59,
+      "name": "Dreary Room"
+    },
+    {
+      "id": "FOOT-BRIDGE",
+      "obj": 21,
+      "name": "Foot Bridge"
+    },
+    {
+      "id": "FORMAL-GARDEN",
+      "obj": 157,
+      "name": "Formal Garden"
+    },
+    {
+      "id": "FRESCO-ROOM",
+      "obj": 141,
+      "name": "Fresco Room"
+    },
+    {
+      "id": "GARDEN-NORTH",
+      "obj": 234,
+      "name": "North End of Garden"
+    },
+    {
+      "id": "GAZEBO-ROOM",
+      "obj": 16,
+      "name": "Gazebo"
+    },
+    {
+      "id": "GLACIER-ROOM",
+      "obj": 161,
+      "name": "Ice Room"
+    },
+    {
+      "id": "GREAT-CAVERN",
+      "obj": 183,
+      "name": "Great Cavern"
+    },
+    {
+      "id": "GUARDIAN-ROOM",
+      "obj": 28,
+      "name": "Guarded Room"
+    },
+    {
+      "id": "IN-AQUARIUM",
+      "obj": 237,
+      "name": "Murky Room"
+    },
+    {
+      "id": "IN-CAGE",
+      "obj": 106,
+      "name": "Cage"
+    },
+    {
+      "id": "INSIDE-BARROW",
+      "obj": 51,
+      "name": "Inside the Barrow"
+    },
+    {
+      "id": "KENNEL",
+      "obj": 128,
+      "name": "Kennel"
+    },
+    {
+      "id": "LAVA-ROOM",
+      "obj": 15,
+      "name": "Lava Room"
+    },
+    {
+      "id": "LAVA-TUBE",
+      "obj": 184,
+      "name": "Lava Tube"
+    },
+    {
+      "id": "LEDGE-1",
+      "obj": 13,
+      "name": "Narrow Ledge"
+    },
+    {
+      "id": "LEDGE-2",
+      "obj": 143,
+      "name": "Wide Ledge"
+    },
+    {
+      "id": "LEDGE-TUNNEL",
+      "obj": 171,
+      "name": "End of Ledge"
+    },
+    {
+      "id": "LIBRARY",
+      "obj": 136,
+      "name": "Library"
+    },
+    {
+      "id": "MACHINE-ROOM",
+      "obj": 87,
+      "name": "Machine Room"
+    },
+    {
+      "id": "MAGNET-ROOM",
+      "obj": 187,
+      "name": "Low Room"
+    },
+    {
+      "id": "MARBLE-HALL",
+      "obj": 30,
+      "name": "Marble Hall"
+    },
+    {
+      "id": "MENHIR-ROOM",
+      "obj": 159,
+      "name": "Menhir Room"
+    },
+    {
+      "id": "NARROW-TUNNEL",
+      "obj": 168,
+      "name": "Narrow Tunnel"
+    },
+    {
+      "id": "OFFICE",
+      "obj": 49,
+      "name": "Chairman's Office"
+    },
+    {
+      "id": "PEARL-ROOM",
+      "obj": 38,
+      "name": "Pearl Room"
+    },
+    {
+      "id": "PENTAGRAM-ROOM",
+      "obj": 91,
+      "name": "Pentagram Room"
+    },
+    {
+      "id": "POOL-ROOM",
+      "obj": 82,
+      "name": "Pool Room"
+    },
+    {
+      "id": "POSTS-ROOM",
+      "obj": 122,
+      "name": "Posts Room"
+    },
+    {
+      "id": "RAVINE-LEDGE",
+      "obj": 124,
+      "name": "Ledge in Ravine"
+    },
+    {
+      "id": "RIDDLE-ROOM",
+      "obj": 238,
+      "name": "Riddle Room"
+    },
+    {
+      "id": "ROOM-8",
+      "obj": 207,
+      "name": "Room 8"
+    },
+    {
+      "id": "SAFE-ROOM",
+      "obj": 182,
+      "name": "Dusty Room"
+    },
+    {
+      "id": "SHALLOW-FORD",
+      "obj": 53,
+      "name": "Shallow Ford"
+    },
+    {
+      "id": "SMALL-ROOM",
+      "obj": 64,
+      "name": "Small Room"
+    },
+    {
+      "id": "STAIRWAY-TOP",
+      "obj": 240,
+      "name": "Stairway"
+    },
+    {
+      "id": "STONE-BRIDGE",
+      "obj": 80,
+      "name": "Stone Bridge"
+    },
+    {
+      "id": "STREAM-PATH",
+      "obj": 212,
+      "name": "Path Near Stream"
+    },
+    {
+      "id": "TEA-ROOM",
+      "obj": 190,
+      "name": "Tea Room"
+    },
+    {
+      "id": "TELLER-EAST",
+      "obj": 243,
+      "name": "East Teller's Room"
+    },
+    {
+      "id": "TELLER-WEST",
+      "obj": 152,
+      "name": "West Teller's Room"
+    },
+    {
+      "id": "TINY-ROOM",
+      "obj": 46,
+      "name": "Tiny Room"
+    },
+    {
+      "id": "TOPIARY-ROOM",
+      "obj": 218,
+      "name": "Topiary"
+    },
+    {
+      "id": "TROPHY-ROOM",
+      "obj": 63,
+      "name": "Trophy Room"
+    },
+    {
+      "id": "VAIR-1",
+      "obj": 34,
+      "name": "Volcano Core"
+    },
+    {
+      "id": "VAIR-2",
+      "obj": 113,
+      "name": "Volcano Near Small Ledge"
+    },
+    {
+      "id": "VAIR-3",
+      "obj": 86,
+      "name": "Volcano by Viewing Ledge"
+    },
+    {
+      "id": "VAIR-4",
+      "obj": 177,
+      "name": "Volcano Near Wide Ledge"
+    },
+    {
+      "id": "VAULT",
+      "obj": 2,
+      "name": "Vault"
+    },
+    {
+      "id": "VIEWING-EAST",
+      "obj": 102,
+      "name": "East Viewing Room"
+    },
+    {
+      "id": "VIEWING-WEST",
+      "obj": 204,
+      "name": "West Viewing Room"
+    },
+    {
+      "id": "VOLCANO-BOTTOM",
+      "obj": 176,
+      "name": "Volcano Bottom"
+    },
+    {
+      "id": "VOLCANO-VIEW",
+      "obj": 117,
+      "name": "Volcano View"
+    },
+    {
+      "id": "WELL-BOTTOM",
+      "obj": 119,
+      "name": "Circular Room"
+    },
+    {
+      "id": "WELL-TOP",
+      "obj": 8,
+      "name": "Top of Well"
+    },
+    {
+      "id": "WIZARDS-QUARTERS",
+      "obj": 69,
+      "name": "Wizard's Quarters"
+    },
+    {
+      "id": "WIZARDS-WORKSHOP",
+      "obj": 45,
+      "name": "Wizard's Workshop"
+    },
+    {
+      "id": "WORKBENCH-ROOM",
+      "obj": 94,
+      "name": "Wizard's Workroom"
+    },
+    {
+      "id": "ZORK3",
+      "obj": 230,
+      "name": "Landing"
+    }
+  ],
+  "edges": [
+    {
+      "from": "AQUARIUM-ROOM",
+      "to": "IN-AQUARIUM",
+      "dir": "IN",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "AQUARIUM-ROOM",
+      "to": "WIZARDS-QUARTERS",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "AQUARIUM-ROOM",
+      "to": "WORKBENCH-ROOM",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "BANK-ENTRANCE",
+      "to": "FRESCO-ROOM",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "BANK-ENTRANCE",
+      "to": "TELLER-EAST",
+      "dir": "NE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "BANK-ENTRANCE",
+      "to": "TELLER-WEST",
+      "dir": "NW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "CAGE-ROOM",
+      "to": "MACHINE-ROOM",
+      "dir": "OUT",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2; cheapest of 2 exits (OUT, NORTH)"
+    },
+    {
+      "from": "CAROUSEL-ROOM",
+      "to": "COBWEBBY-CORRIDOR",
+      "dir": "SW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "CAROUSEL-ROOM",
+      "to": "COOL-ROOM",
+      "dir": "NW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "CAROUSEL-ROOM",
+      "to": "MARBLE-HALL",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "CAROUSEL-ROOM",
+      "to": "MENHIR-ROOM",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "CAROUSEL-ROOM",
+      "to": "RIDDLE-ROOM",
+      "dir": "SE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "CAROUSEL-ROOM",
+      "to": "ROOM-8",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "CAROUSEL-ROOM",
+      "to": "STREAM-PATH",
+      "dir": "NE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "CAROUSEL-ROOM",
+      "to": "TOPIARY-ROOM",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "CERBERUS-ROOM",
+      "to": "CRYPT-ANTEROOM",
+      "dir": "EAST",
+      "kind": "cond_flag",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + conditional 1 + dark 1; cheapest of 2 exits (EAST, IN)"
+    },
+    {
+      "from": "CERBERUS-ROOM",
+      "to": "DIAMOND-5",
+      "dir": "UP",
+      "kind": "plain",
+      "minutes": 5,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + up 2 + dark 1"
+    },
+    {
+      "from": "COBWEBBY-CORRIDOR",
+      "to": "CAROUSEL-ROOM",
+      "dir": "NE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "COBWEBBY-CORRIDOR",
+      "to": "GUARDIAN-ROOM",
+      "dir": "SW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 2 exits (SW, DOWN)"
+    },
+    {
+      "from": "COBWEBBY-CORRIDOR",
+      "to": "LAVA-TUBE",
+      "dir": "IN",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 3 exits (IN, UP, NORTH)"
+    },
+    {
+      "from": "COOL-ROOM",
+      "to": "CAROUSEL-ROOM",
+      "dir": "SE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "COOL-ROOM",
+      "to": "GLACIER-ROOM",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "COOL-ROOM",
+      "to": "STONE-BRIDGE",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 2 exits (NORTH, CROSS)"
+    },
+    {
+      "from": "CRYPT-ANTEROOM",
+      "to": "CERBERUS-ROOM",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "CRYPT-ANTEROOM",
+      "to": "CRYPT-ROOM",
+      "dir": "IN",
+      "kind": "cond_door",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1 + dark 1; cheapest of 2 exits (IN, SOUTH)"
+    },
+    {
+      "from": "CRYPT-ROOM",
+      "to": "CRYPT-ANTEROOM",
+      "dir": "NORTH",
+      "kind": "cond_door",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1 + dark 1"
+    },
+    {
+      "from": "CRYPT-ROOM",
+      "to": "ZORK3",
+      "dir": "SOUTH",
+      "kind": "cond_flag",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + conditional 1"
+    },
+    {
+      "from": "DARK-TUNNEL",
+      "to": "GARDEN-NORTH",
+      "dir": "SE",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "DARK-TUNNEL",
+      "to": "SHALLOW-FORD",
+      "dir": "NE",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "DARK-TUNNEL",
+      "to": "STREAM-PATH",
+      "dir": "SW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DEAD-PALANTIR-1",
+      "to": "DEAD-PALANTIR-2",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "DEAD-PALANTIR-2",
+      "to": "DEAD-PALANTIR-3",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "DEAD-PALANTIR-3",
+      "to": "DEAD-PALANTIR-4",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "DEEP-FORD",
+      "to": "MARBLE-HALL",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DEEP-FORD",
+      "to": "RAVINE-LEDGE",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 2 exits (NORTH, UP)"
+    },
+    {
+      "from": "DEPOSITORY",
+      "to": "OFFICE",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-1",
+      "to": "DIAMOND-5",
+      "dir": "SE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-2",
+      "to": "DIAMOND-4",
+      "dir": "SW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-2",
+      "to": "DIAMOND-5",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-2",
+      "to": "DIAMOND-6",
+      "dir": "SE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-3",
+      "to": "DIAMOND-5",
+      "dir": "SW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-4",
+      "to": "DIAMOND-2",
+      "dir": "NE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-4",
+      "to": "DIAMOND-5",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-4",
+      "to": "DIAMOND-8",
+      "dir": "SE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-5",
+      "to": "CERBERUS-ROOM",
+      "dir": "DOWN",
+      "kind": "plain",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + down 1 + dark 1"
+    },
+    {
+      "from": "DIAMOND-5",
+      "to": "DIAMOND-1",
+      "dir": "NW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-5",
+      "to": "DIAMOND-2",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-5",
+      "to": "DIAMOND-3",
+      "dir": "NE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-5",
+      "to": "DIAMOND-4",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-5",
+      "to": "DIAMOND-6",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-5",
+      "to": "DIAMOND-7",
+      "dir": "SW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-5",
+      "to": "DIAMOND-8",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-5",
+      "to": "DIAMOND-9",
+      "dir": "SE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-5",
+      "to": "STAIRWAY-TOP",
+      "dir": "UP",
+      "kind": "plain",
+      "minutes": 5,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + up 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-6",
+      "to": "DIAMOND-2",
+      "dir": "NW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-6",
+      "to": "DIAMOND-5",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-6",
+      "to": "DIAMOND-8",
+      "dir": "SW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-7",
+      "to": "DIAMOND-5",
+      "dir": "NE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-8",
+      "to": "DIAMOND-4",
+      "dir": "NW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-8",
+      "to": "DIAMOND-5",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-8",
+      "to": "DIAMOND-6",
+      "dir": "NE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DIAMOND-9",
+      "to": "DIAMOND-5",
+      "dir": "NW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DRAGON-LAIR",
+      "to": "DRAGON-ROOM",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 2 exits (SOUTH, OUT)"
+    },
+    {
+      "from": "DRAGON-ROOM",
+      "to": "DRAGON-LAIR",
+      "dir": "NORTH",
+      "kind": "cond_flag",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + conditional 1 + dark 1; cheapest of 2 exits (NORTH, IN)"
+    },
+    {
+      "from": "DRAGON-ROOM",
+      "to": "FRESCO-ROOM",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DRAGON-ROOM",
+      "to": "LEDGE-TUNNEL",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "DRAGON-ROOM",
+      "to": "STONE-BRIDGE",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 2 exits (SOUTH, CROSS)"
+    },
+    {
+      "from": "DREARY-ROOM",
+      "to": "TINY-ROOM",
+      "dir": "SOUTH",
+      "kind": "cond_door",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1 + dark 1; cheapest of 2 exits (SOUTH, OUT)"
+    },
+    {
+      "from": "FOOT-BRIDGE",
+      "to": "GREAT-CAVERN",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "FOOT-BRIDGE",
+      "to": "NARROW-TUNNEL",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "FORMAL-GARDEN",
+      "to": "GARDEN-NORTH",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "FORMAL-GARDEN",
+      "to": "STREAM-PATH",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "FORMAL-GARDEN",
+      "to": "TOPIARY-ROOM",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "FRESCO-ROOM",
+      "to": "BANK-ENTRANCE",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "FRESCO-ROOM",
+      "to": "DRAGON-ROOM",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "GARDEN-NORTH",
+      "to": "DARK-TUNNEL",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "GARDEN-NORTH",
+      "to": "FORMAL-GARDEN",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "GARDEN-NORTH",
+      "to": "GAZEBO-ROOM",
+      "dir": "IN",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "GAZEBO-ROOM",
+      "to": "GARDEN-NORTH",
+      "dir": "OUT",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "GLACIER-ROOM",
+      "to": "COOL-ROOM",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "GLACIER-ROOM",
+      "to": "LAVA-ROOM",
+      "dir": "WEST",
+      "kind": "cond_flag",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + conditional 1 + dark 1"
+    },
+    {
+      "from": "GLACIER-ROOM",
+      "to": "LAVA-TUBE",
+      "dir": "UP",
+      "kind": "plain",
+      "minutes": 5,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + up 2 + dark 1"
+    },
+    {
+      "from": "GREAT-CAVERN",
+      "to": "FOOT-BRIDGE",
+      "dir": "NE",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "GREAT-CAVERN",
+      "to": "SHALLOW-FORD",
+      "dir": "SW",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "GUARDIAN-ROOM",
+      "to": "COBWEBBY-CORRIDOR",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "GUARDIAN-ROOM",
+      "to": "WIZARDS-WORKSHOP",
+      "dir": "SOUTH",
+      "kind": "cond_door",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1 + dark 1; cheapest of 2 exits (SOUTH, IN)"
+    },
+    {
+      "from": "IN-AQUARIUM",
+      "to": "AQUARIUM-ROOM",
+      "dir": "OUT",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "INSIDE-BARROW",
+      "to": "NARROW-TUNNEL",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "KENNEL",
+      "to": "MENHIR-ROOM",
+      "dir": "NE",
+      "kind": "cond_flag",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + conditional 1 + dark 1; cheapest of 2 exits (NE, OUT)"
+    },
+    {
+      "from": "LAVA-ROOM",
+      "to": "GLACIER-ROOM",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "LAVA-ROOM",
+      "to": "VOLCANO-BOTTOM",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "LAVA-TUBE",
+      "to": "COBWEBBY-CORRIDOR",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "LAVA-TUBE",
+      "to": "GLACIER-ROOM",
+      "dir": "DOWN",
+      "kind": "plain",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + down 1 + dark 1"
+    },
+    {
+      "from": "LAVA-TUBE",
+      "to": "VOLCANO-VIEW",
+      "dir": "UP",
+      "kind": "plain",
+      "minutes": 5,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + up 2 + dark 1"
+    },
+    {
+      "from": "LEDGE-1",
+      "to": "LIBRARY",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "LEDGE-1",
+      "to": "VOLCANO-BOTTOM",
+      "dir": "WEST",
+      "kind": "cond_flag",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + conditional 1 + dark 1"
+    },
+    {
+      "from": "LEDGE-2",
+      "to": "SAFE-ROOM",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "LEDGE-2",
+      "to": "VOLCANO-BOTTOM",
+      "dir": "WEST",
+      "kind": "cond_flag",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + conditional 1 + dark 1"
+    },
+    {
+      "from": "LEDGE-TUNNEL",
+      "to": "DRAGON-ROOM",
+      "dir": "IN",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 2 exits (IN, NORTH)"
+    },
+    {
+      "from": "LEDGE-TUNNEL",
+      "to": "RAVINE-LEDGE",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "LIBRARY",
+      "to": "LEDGE-1",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 2 exits (NORTH, OUT)"
+    },
+    {
+      "from": "MACHINE-ROOM",
+      "to": "CAGE-ROOM",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MACHINE-ROOM",
+      "to": "MAGNET-ROOM",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MAGNET-ROOM",
+      "to": "MACHINE-ROOM",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MAGNET-ROOM",
+      "to": "TEA-ROOM",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "MARBLE-HALL",
+      "to": "CAROUSEL-ROOM",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "MARBLE-HALL",
+      "to": "DEEP-FORD",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "MARBLE-HALL",
+      "to": "STREAM-PATH",
+      "dir": "EAST",
+      "kind": "cond_flag",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + conditional 1 + dark 1"
+    },
+    {
+      "from": "MENHIR-ROOM",
+      "to": "CAROUSEL-ROOM",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "MENHIR-ROOM",
+      "to": "KENNEL",
+      "dir": "SW",
+      "kind": "cond_flag",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + conditional 1 + dark 1"
+    },
+    {
+      "from": "MENHIR-ROOM",
+      "to": "STAIRWAY-TOP",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "NARROW-TUNNEL",
+      "to": "FOOT-BRIDGE",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2; cheapest of 2 exits (SOUTH, CROSS)"
+    },
+    {
+      "from": "NARROW-TUNNEL",
+      "to": "INSIDE-BARROW",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "OFFICE",
+      "to": "DEPOSITORY",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "PEARL-ROOM",
+      "to": "RIDDLE-ROOM",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "PEARL-ROOM",
+      "to": "WELL-BOTTOM",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "PENTAGRAM-ROOM",
+      "to": "WORKBENCH-ROOM",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "POOL-ROOM",
+      "to": "POSTS-ROOM",
+      "dir": "OUT",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2; cheapest of 2 exits (OUT, WEST)"
+    },
+    {
+      "from": "POSTS-ROOM",
+      "to": "POOL-ROOM",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "RAVINE-LEDGE",
+      "to": "DEEP-FORD",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 2 exits (SOUTH, DOWN)"
+    },
+    {
+      "from": "RAVINE-LEDGE",
+      "to": "LEDGE-TUNNEL",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "RAVINE-LEDGE",
+      "to": "TINY-ROOM",
+      "dir": "UP",
+      "kind": "plain",
+      "minutes": 5,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + up 2 + dark 1"
+    },
+    {
+      "from": "RIDDLE-ROOM",
+      "to": "CAROUSEL-ROOM",
+      "dir": "NW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 2 exits (DOWN, NW)"
+    },
+    {
+      "from": "RIDDLE-ROOM",
+      "to": "PEARL-ROOM",
+      "dir": "EAST",
+      "kind": "cond_door",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1 + dark 1"
+    },
+    {
+      "from": "ROOM-8",
+      "to": "CAROUSEL-ROOM",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SAFE-ROOM",
+      "to": "LEDGE-2",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "SHALLOW-FORD",
+      "to": "DARK-TUNNEL",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 2 exits (SOUTH, CROSS)"
+    },
+    {
+      "from": "SHALLOW-FORD",
+      "to": "GREAT-CAVERN",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "STAIRWAY-TOP",
+      "to": "DIAMOND-5",
+      "dir": "DOWN",
+      "kind": "plain",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + down 1 + dark 1"
+    },
+    {
+      "from": "STAIRWAY-TOP",
+      "to": "MENHIR-ROOM",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "STONE-BRIDGE",
+      "to": "COOL-ROOM",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "STONE-BRIDGE",
+      "to": "DRAGON-ROOM",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "STREAM-PATH",
+      "to": "CAROUSEL-ROOM",
+      "dir": "SW",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "STREAM-PATH",
+      "to": "DARK-TUNNEL",
+      "dir": "NE",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "STREAM-PATH",
+      "to": "FORMAL-GARDEN",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "STREAM-PATH",
+      "to": "MARBLE-HALL",
+      "dir": "WEST",
+      "kind": "cond_flag",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + conditional 1 + dark 1"
+    },
+    {
+      "from": "TEA-ROOM",
+      "to": "MAGNET-ROOM",
+      "dir": "NW",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "TEA-ROOM",
+      "to": "WELL-TOP",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "TELLER-EAST",
+      "to": "BANK-ENTRANCE",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "TELLER-EAST",
+      "to": "DEPOSITORY",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "TELLER-EAST",
+      "to": "VIEWING-EAST",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "TELLER-WEST",
+      "to": "BANK-ENTRANCE",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "TELLER-WEST",
+      "to": "DEPOSITORY",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "TELLER-WEST",
+      "to": "VIEWING-WEST",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "TINY-ROOM",
+      "to": "DREARY-ROOM",
+      "dir": "NORTH",
+      "kind": "cond_door",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1; cheapest of 2 exits (NORTH, IN)"
+    },
+    {
+      "from": "TINY-ROOM",
+      "to": "RAVINE-LEDGE",
+      "dir": "DOWN",
+      "kind": "plain",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + down 1 + dark 1"
+    },
+    {
+      "from": "TOPIARY-ROOM",
+      "to": "CAROUSEL-ROOM",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "TOPIARY-ROOM",
+      "to": "FORMAL-GARDEN",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "TROPHY-ROOM",
+      "to": "WIZARDS-WORKSHOP",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "VAIR-1",
+      "to": "VAIR-2",
+      "kind": "drift",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "VAIR-2",
+      "to": "LEDGE-1",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 2 exits (WEST, LAND)"
+    },
+    {
+      "from": "VAIR-2",
+      "to": "VAIR-1",
+      "kind": "drift",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "VAIR-2",
+      "to": "VAIR-3",
+      "kind": "drift",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "VAIR-3",
+      "to": "VAIR-2",
+      "kind": "drift",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "VAIR-3",
+      "to": "VAIR-4",
+      "kind": "drift",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "VAIR-4",
+      "to": "LEDGE-2",
+      "dir": "LAND",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1; cheapest of 2 exits (LAND, WEST)"
+    },
+    {
+      "from": "VAIR-4",
+      "to": "VAIR-3",
+      "kind": "drift",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "VIEWING-EAST",
+      "to": "BANK-ENTRANCE",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "VIEWING-WEST",
+      "to": "BANK-ENTRANCE",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "VOLCANO-BOTTOM",
+      "to": "LAVA-ROOM",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "VOLCANO-VIEW",
+      "to": "LAVA-TUBE",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "WELL-BOTTOM",
+      "to": "PEARL-ROOM",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "WELL-TOP",
+      "to": "TEA-ROOM",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "WIZARDS-QUARTERS",
+      "to": "AQUARIUM-ROOM",
+      "dir": "NORTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "WIZARDS-WORKSHOP",
+      "to": "GUARDIAN-ROOM",
+      "dir": "NORTH",
+      "kind": "cond_door",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + door 1 + dark 1; cheapest of 2 exits (NORTH, OUT)"
+    },
+    {
+      "from": "WIZARDS-WORKSHOP",
+      "to": "TROPHY-ROOM",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    },
+    {
+      "from": "WIZARDS-WORKSHOP",
+      "to": "WORKBENCH-ROOM",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "WORKBENCH-ROOM",
+      "to": "AQUARIUM-ROOM",
+      "dir": "WEST",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "WORKBENCH-ROOM",
+      "to": "PENTAGRAM-ROOM",
+      "dir": "SOUTH",
+      "kind": "plain",
+      "minutes": 2,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2"
+    },
+    {
+      "from": "WORKBENCH-ROOM",
+      "to": "WIZARDS-WORKSHOP",
+      "dir": "EAST",
+      "kind": "plain",
+      "minutes": 3,
+      "class": "movement",
+      "source": "rule",
+      "note": "base 2 + dark 1"
+    }
+  ],
+  "actions": [],
+  "vocab": {
+    "verbs": {
+      "#command": "#command",
+      "#random": "#random",
+      "#record": "#record",
+      "#unrecord": "#unrecord",
+      "$verify": "$verify",
+      "activate": "activate",
+      "answer": "say",
+      "apply": "apply",
+      "ask": "say",
+      "attach": "tie",
+      "attack": "attack",
+      "awake": "wake",
+      "back": "back",
+      "banish": "exorcise",
+      "barf": "chomp",
+      "bathe": "swim",
+      "begone": "exorcise",
+      "bite": "eat",
+      "blast": "blast",
+      "block": "break",
+      "blow": "blow",
+      "board": "enter",
+      "brandish": "wave",
+      "break": "break",
+      "brief": "brief",
+      "brush": "brush",
+      "bug": "bug",
+      "burn": "burn",
+      "carry": "take",
+      "cast": "exorcise",
+      "catch": "take",
+      "chant": "incant",
+      "chase": "follow",
+      "chomp": "chomp",
+      "chuck": "throw",
+      "clean": "brush",
+      "climb": "climb",
+      "close": "close",
+      "come": "follow",
+      "command": "command",
+      "consume": "eat",
+      "count": "count",
+      "cross": "cross",
+      "curse": "curse",
+      "cut": "cut",
+      "damage": "break",
+      "damn": "curse",
+      "deflate": "deflate",
+      "describe": "examine",
+      "destroy": "break",
+      "diagnose": "diagnose",
+      "dig": "dig",
+      "disembark": "exit",
+      "disenchant": "disenchant",
+      "dispatch": "kill",
+      "dive": "jump",
+      "donate": "give",
+      "douse": "extinguish",
+      "drink": "drink",
+      "drive": "exorcise",
+      "drop": "drop",
+      "eat": "eat",
+      "echo": "echo",
+      "enchant": "enchant",
+      "enter": "enter",
+      "examine": "examine",
+      "exit": "exit",
+      "exorcise": "exorcise",
+      "extinguish": "extinguish",
+      "fasten": "tie",
+      "feed": "give",
+      "feel": "rub",
+      "fight": "attack",
+      "fill": "fill",
+      "find": "find",
+      "fix": "plug",
+      "flip": "turn",
+      "follow": "follow",
+      "ford": "cross",
+      "free": "untie",
+      "frobozz": "frobozz",
+      "fuck": "curse",
+      "gaze": "look",
+      "get": "take",
+      "give": "give",
+      "glue": "plug",
+      "go": "walk",
+      "grab": "take",
+      "grease": "oil",
+      "hand": "give",
+      "hatch": "hatch",
+      "hello": "hello",
+      "hi": "hello",
+      "hide": "put",
+      "hit": "attack",
+      "hold": "take",
+      "hop": "skip",
+      "hurl": "throw",
+      "hurt": "attack",
+      "i": "inventory",
+      "ignite": "burn",
+      "imbibe": "drink",
+      "incant": "incant",
+      "incinerate": "burn",
+      "inflat": "inflate",
+      "injure": "attack",
+      "insert": "put",
+      "inventory": "inventory",
+      "jump": "jump",
+      "kick": "kick",
+      "kill": "kill",
+      "kiss": "kiss",
+      "knock": "knock",
+      "l": "look",
+      "launch": "launch",
+      "lean": "lean",
+      "leap": "jump",
+      "leave": "leave",
+      "lift": "raise",
+      "light": "light",
+      "liquify": "melt",
+      "listen": "listen",
+      "lock": "lock",
+      "look": "look",
+      "lose": "chomp",
+      "lower": "lower",
+      "lubricate": "oil",
+      "make": "make",
+      "melt": "melt",
+      "molest": "rape",
+      "move": "move",
+      "mumble": "mumble",
+      "murder": "kill",
+      "odysseus": "odysseus",
+      "offer": "give",
+      "oil": "oil",
+      "open": "open",
+      "pat": "rub",
+      "patch": "plug",
+      "peal": "ring",
+      "pet": "rub",
+      "pick": "pick",
+      "pierce": "cut",
+      "place": "put",
+      "play": "play",
+      "plug": "plug",
+      "plugh": "plugh",
+      "poke": "poke",
+      "pour": "pour",
+      "pray": "pray",
+      "press": "move",
+      "proceed": "walk",
+      "pull": "move",
+      "pump": "inflate",
+      "puncture": "puncture",
+      "pursue": "follow",
+      "push": "move",
+      "put": "put",
+      "q": "quit",
+      "quit": "quit",
+      "raise": "raise",
+      "rap": "knock",
+      "rape": "rape",
+      "read": "read",
+      "release": "untie",
+      "remove": "take",
+      "repair": "plug",
+      "repent": "repent",
+      "reply": "say",
+      "restart": "restart",
+      "restore": "restore",
+      "ring": "ring",
+      "roll": "roll",
+      "rub": "rub",
+      "run": "walk",
+      "save": "save",
+      "say": "say",
+      "score": "score",
+      "scream": "say",
+      "script": "script",
+      "search": "search",
+      "secure": "tie",
+      "see": "find",
+      "seek": "find",
+      "send": "send",
+      "set": "turn",
+      "shake": "shake",
+      "shit": "curse",
+      "shout": "say",
+      "shut": "turn",
+      "sigh": "mumble",
+      "sit": "climb",
+      "skim": "read",
+      "skip": "skip",
+      "slay": "kill",
+      "slice": "cut",
+      "slide": "move",
+      "smash": "break",
+      "smell": "smell",
+      "sniff": "smell",
+      "spill": "pour",
+      "spin": "spin",
+      "spray": "spray",
+      "squeeze": "squeeze",
+      "stab": "stab",
+      "stand": "stand",
+      "stare": "look",
+      "startle": "wake",
+      "stay": "stay",
+      "step": "walk",
+      "strike": "strike",
+      "stuff": "put",
+      "super": "super",
+      "superbrief": "super",
+      "surprise": "wake",
+      "swallow": "drink",
+      "swim": "swim",
+      "swing": "swing",
+      "take": "take",
+      "talk": "talk",
+      "taste": "eat",
+      "taunt": "kick",
+      "tell": "say",
+      "temple": "treasure",
+      "throw": "throw",
+      "thrust": "swing",
+      "tie": "tie",
+      "toss": "throw",
+      "touch": "rub",
+      "treasure": "treasure",
+      "tug": "move",
+      "turn": "turn",
+      "ulysses": "odysseus",
+      "unattach": "untie",
+      "unfasten": "untie",
+      "unhook": "untie",
+      "unlock": "unlock",
+      "unscript": "unscript",
+      "untie": "untie",
+      "verbose": "verbose",
+      "version": "version",
+      "wade": "swim",
+      "wait": "wait",
+      "wake": "wake",
+      "walk": "walk",
+      "wave": "wave",
+      "wear": "wear",
+      "what": "examine",
+      "whats": "examine",
+      "where": "find",
+      "win": "win",
+      "wind": "wind",
+      "winnage": "win",
+      "wish": "wish",
+      "xyzzy": "plugh",
+      "yank": "move",
+      "yell": "say",
+      "z": "wait",
+      "zork": "zork"
+    },
+    "nouns": {
+      "adventurer": [
+        "ADVENTURER"
+      ],
+      "air": [
+        "LUNGS"
+      ],
+      "alembic": [
+        "ARCANA"
+      ],
+      "animal": [
+        "UNICORN"
+      ],
+      "aquarium": [
+        "AQUARIUM"
+      ],
+      "arbor": [
+        "ROSE-BUSH"
+      ],
+      "art": [
+        "PORTRAIT"
+      ],
+      "aviator": [
+        "SAILOR"
+      ],
+      "bag": [
+        "CLOTH-BAG"
+      ],
+      "ball": [
+        "PALANTIR-1",
+        "PALANTIR-4"
+      ],
+      "balloon": [
+        "BALLOON",
+        "DEAD-BALLOON"
+      ],
+      "basket": [
+        "BALLOON",
+        "DEAD-BALLOON"
+      ],
+      "bat": [
+        "BAT"
+      ],
+      "bench": [
+        "WORKBENCH"
+      ],
+      "bills": [
+        "BILLS"
+      ],
+      "blade": [
+        "SWORD"
+      ],
+      "bless": [
+        "WISH"
+      ],
+      "blessings": [
+        "BLESSINGS"
+      ],
+      "book": [
+        "BLUE-BOOK",
+        "GREEN-BOOK",
+        "PURPLE-BOOK",
+        "WHITE-BOOK"
+      ],
+      "books": [
+        "BLUE-BOOK",
+        "GREEN-BOOK",
+        "PURPLE-BOOK",
+        "WHITE-BOOK"
+      ],
+      "bottle": [
+        "TROPHY-BOTTLES"
+      ],
+      "box": [
+        "DEPOSIT-BOX",
+        "IRON-BOX",
+        "SAFE"
+      ],
+      "breath": [
+        "LUNGS"
+      ],
+      "brick": [
+        "BRICK"
+      ],
+      "bridge": [
+        "BRIDGE"
+      ],
+      "brochure": [
+        "BANK-BROCHURE"
+      ],
+      "bucket": [
+        "BUCKET"
+      ],
+      "bush": [
+        "ROSE-BUSH"
+      ],
+      "button": [
+        "ROUND-BUTTON",
+        "SQUARE-BUTTON",
+        "TRIANGULAR-BUTTON"
+      ],
+      "c3po": [
+        "ROBOT"
+      ],
+      "cabinet": [
+        "BROKEN-CASE",
+        "GLOBAL-WIZARD-CASE",
+        "WIZARD-CASE"
+      ],
+      "cage": [
+        "CAGE",
+        "MANGLED-CAGE"
+      ],
+      "cake": [
+        "BLUE-ICING",
+        "EAT-ME-CAKE",
+        "ORANGE-ICING",
+        "RED-ICING"
+      ],
+      "cakes": [
+        "BLUE-ICING",
+        "EAT-ME-CAKE",
+        "ORANGE-ICING",
+        "RED-ICING"
+      ],
+      "can": [
+        "REPELLENT"
+      ],
+      "candles": [
+        "ARCANA"
+      ],
+      "candy": [
+        "CANDY"
+      ],
+      "card": [
+        "CARD"
+      ],
+      "case": [
+        "BROKEN-CASE",
+        "GLOBAL-WIZARD-CASE",
+        "WIZARD-CASE"
+      ],
+      "cerberus": [
+        "CERBERUS",
+        "GLOBAL-CERBERUS"
+      ],
+      "chasm": [
+        "CHASM"
+      ],
+      "chest": [
+        "CHEST"
+      ],
+      "circle": [
+        "PENTAGRAM"
+      ],
+      "club": [
+        "BAT"
+      ],
+      "coil": [
+        "FUSE"
+      ],
+      "coin": [
+        "COIN"
+      ],
+      "collar": [
+        "COLLAR"
+      ],
+      "compass": [
+        "COMPASS"
+      ],
+      "cover": [
+        "BLUE-BOOK",
+        "GREEN-BOOK",
+        "WHITE-BOOK"
+      ],
+      "crack": [
+        "PCRACK"
+      ],
+      "crawlway": [
+        "TUNNEL"
+      ],
+      "cretin": [
+        "ME"
+      ],
+      "crown": [
+        "CROWN"
+      ],
+      "crypt": [
+        "CRYPT"
+      ],
+      "cube": [
+        "CUBE"
+      ],
+      "curtain": [
+        "CURTAIN"
+      ],
+      "degree": [
+        "DEGREE"
+      ],
+      "demon": [
+        "GENIE"
+      ],
+      "devil": [
+        "GENIE"
+      ],
+      "diploma": [
+        "DEGREE"
+      ],
+      "dirt": [
+        "GROUND"
+      ],
+      "djinn": [
+        "GENIE"
+      ],
+      "dog": [
+        "CERBERUS",
+        "GLOBAL-CERBERUS"
+      ],
+      "door": [
+        "CRYPT-DOOR",
+        "DIM-DOOR",
+        "PDOOR",
+        "RIDDLE-DOOR",
+        "WIZ-DOOR"
+      ],
+      "dragon": [
+        "DEAD-DRAGON",
+        "DRAGON",
+        "STATUETTE"
+      ],
+      "etchings": [
+        "BOTTOM-ETCHINGS",
+        "TOP-ETCHINGS"
+      ],
+      "f": [
+        "MENHIR"
+      ],
+      "flask": [
+        "FLASK"
+      ],
+      "floor": [
+        "GROUND"
+      ],
+      "footpad": [
+        "FOOTPAD",
+        "SAILOR"
+      ],
+      "fuse": [
+        "FUSE"
+      ],
+      "gazebo": [
+        "GAZEBO"
+      ],
+      "genie": [
+        "GENIE"
+      ],
+      "glacier": [
+        "ICE"
+      ],
+      "glamdring": [
+        "SWORD"
+      ],
+      "glass": [
+        "AQUARIUM"
+      ],
+      "gnome": [
+        "GNOME",
+        "GNOME-OF-ZURICH"
+      ],
+      "gold": [
+        "COIN"
+      ],
+      "graces": [
+        "BLESSINGS"
+      ],
+      "grasshoppers": [
+        "CANDY"
+      ],
+      "grave": [
+        "CRYPT"
+      ],
+      "ground": [
+        "GROUND"
+      ],
+      "grue": [
+        "GRUE"
+      ],
+      "guardian": [
+        "DOOR-KEEPER"
+      ],
+      "h2o": [
+        "SALTY-WATER",
+        "WATER"
+      ],
+      "hand": [
+        "HANDS"
+      ],
+      "hands": [
+        "HANDS"
+      ],
+      "head": [
+        "DOOR-KEEPER",
+        "HEADS"
+      ],
+      "heads": [
+        "HEADS"
+      ],
+      "hedge": [
+        "HEDGES"
+      ],
+      "hedges": [
+        "HEDGES"
+      ],
+      "her": [
+        "IT"
+      ],
+      "him": [
+        "IT"
+      ],
+      "hole": [
+        "KEYHOLE-1",
+        "KEYHOLE-2",
+        "SLOT"
+      ],
+      "hook": [
+        "HOOK-1",
+        "HOOK-2"
+      ],
+      "hound": [
+        "CERBERUS",
+        "GLOBAL-CERBERUS"
+      ],
+      "ice": [
+        "ICE"
+      ],
+      "icing": [
+        "BLUE-ICING",
+        "EAT-ME-CAKE",
+        "ORANGE-ICING",
+        "RED-ICING"
+      ],
+      "instructions": [
+        "ROBOT-LABEL"
+      ],
+      "intnum": [
+        "INTNUM"
+      ],
+      "it": [
+        "IT"
+      ],
+      "keeper": [
+        "DOOR-KEEPER"
+      ],
+      "key": [
+        "GOLD-KEY",
+        "KEY"
+      ],
+      "keyhole": [
+        "KEYHOLE-1",
+        "KEYHOLE-2"
+      ],
+      "knives": [
+        "ARCANA"
+      ],
+      "krebf": [
+        "EXPLOSION"
+      ],
+      "label": [
+        "BALLOON-LABEL",
+        "WARNING-LABEL"
+      ],
+      "lady": [
+        "GLOBAL-PRINCESS",
+        "PRINCESS"
+      ],
+      "lamp": [
+        "BROKEN-LAMP",
+        "LAMP"
+      ],
+      "lantern": [
+        "BROKEN-LAMP",
+        "LAMP"
+      ],
+      "leak": [
+        "LEAK"
+      ],
+      "letter": [
+        "BLUE-ICING",
+        "CUBE",
+        "DIM-DOOR",
+        "EAT-ME-CAKE",
+        "ORANGE-ICING",
+        "RED-ICING"
+      ],
+      "lid": [
+        "LID-1",
+        "LID-2"
+      ],
+      "light": [
+        "BROKEN-LAMP",
+        "CURTAIN",
+        "LAMP"
+      ],
+      "liquid": [
+        "SALTY-WATER",
+        "WATER"
+      ],
+      "lizard": [
+        "DOOR-KEEPER"
+      ],
+      "lungs": [
+        "LUNGS"
+      ],
+      "magician": [
+        "WIZARD"
+      ],
+      "man": [
+        "WIZARD"
+      ],
+      "mass": [
+        "ICE"
+      ],
+      "mat": [
+        "PLACE-MAT"
+      ],
+      "match": [
+        "MATCH"
+      ],
+      "matchbook": [
+        "MATCH"
+      ],
+      "matches": [
+        "MATCH"
+      ],
+      "me": [
+        "ME"
+      ],
+      "menhir": [
+        "GLOBAL-MENHIR",
+        "MENHIR"
+      ],
+      "money": [
+        "BILLS"
+      ],
+      "monster": [
+        "CERBERUS",
+        "GLOBAL-CERBERUS"
+      ],
+      "moss": [
+        "MOSS"
+      ],
+      "mosses": [
+        "MOSS"
+      ],
+      "mouth": [
+        "LUNGS"
+      ],
+      "myself": [
+        "ME"
+      ],
+      "necklace": [
+        "PEARL"
+      ],
+      "newspaper": [
+        "NEWSPAPER"
+      ],
+      "note": [
+        "CARD"
+      ],
+      "opener": [
+        "LETTER-OPENER"
+      ],
+      "orcrist": [
+        "SWORD"
+      ],
+      "package": [
+        "CANDY"
+      ],
+      "painting": [
+        "PORTRAIT"
+      ],
+      "pair": [
+        "HANDS"
+      ],
+      "palantir": [
+        "PALANTIR-1",
+        "PALANTIR-2",
+        "PALANTIR-3",
+        "PALANTIR-4"
+      ],
+      "paper": [
+        "BANK-BROCHURE",
+        "NEWSPAPER",
+        "ROBOT-LABEL"
+      ],
+      "passage": [
+        "TUNNEL"
+      ],
+      "path": [
+        "PATHOBJ"
+      ],
+      "pearls": [
+        "PEARL"
+      ],
+      "pentagram": [
+        "PENTAGRAM"
+      ],
+      "piece": [
+        "BANK-BROCHURE",
+        "ROBOT-LABEL"
+      ],
+      "placem": [
+        "PLACE-MAT"
+      ],
+      "pole": [
+        "HEADS"
+      ],
+      "poles": [
+        "HEADS"
+      ],
+      "pool": [
+        "POOL"
+      ],
+      "portrait": [
+        "PORTRAIT"
+      ],
+      "post": [
+        "POSTS"
+      ],
+      "posts": [
+        "POSTS"
+      ],
+      "pot": [
+        "TEAPOT"
+      ],
+      "princess": [
+        "GLOBAL-PRINCESS",
+        "PRINCESS"
+      ],
+      "quantity": [
+        "GLOBAL-WATER",
+        "SALTY-WATER",
+        "WATER"
+      ],
+      "r2d2": [
+        "ROBOT"
+      ],
+      "rack": [
+        "WANDS"
+      ],
+      "ravine": [
+        "CHASM"
+      ],
+      "receptacle": [
+        "RECEPTACLE"
+      ],
+      "repellent": [
+        "REPELLENT"
+      ],
+      "ribbon": [
+        "RIBBON"
+      ],
+      "robby": [
+        "ROBOT"
+      ],
+      "robot": [
+        "ROBOT"
+      ],
+      "rock": [
+        "GLOBAL-MENHIR",
+        "MENHIR"
+      ],
+      "rope": [
+        "BRAIDED-WIRE"
+      ],
+      "rose": [
+        "ROSE"
+      ],
+      "roses": [
+        "ROSE-BUSH"
+      ],
+      "ruby": [
+        "RUBY"
+      ],
+      "safe": [
+        "SAFE"
+      ],
+      "sailor": [
+        "SAILOR"
+      ],
+      "sand": [
+        "GROUND"
+      ],
+      "self": [
+        "ME"
+      ],
+      "serpent": [
+        "DEAD-SERPENT",
+        "SERPENT"
+      ],
+      "set": [
+        "WANDS"
+      ],
+      "slot": [
+        "SLOT"
+      ],
+      "smaug": [
+        "DEAD-DRAGON",
+        "DRAGON"
+      ],
+      "snake": [
+        "DEAD-SERPENT",
+        "SERPENT"
+      ],
+      "sorceror": [
+        "WIZARD"
+      ],
+      "sphere": [
+        "GLOBAL-PALANTIR",
+        "PALANTIR-1",
+        "PALANTIR-2",
+        "PALANTIR-3",
+        "PALANTIR-4"
+      ],
+      "stack": [
+        "BILLS"
+      ],
+      "staircase": [
+        "STAIRS"
+      ],
+      "stairs": [
+        "STAIRS"
+      ],
+      "stairway": [
+        "STAIRS"
+      ],
+      "stamp": [
+        "STAMP"
+      ],
+      "stand": [
+        "STAND-1",
+        "STAND-2",
+        "STAND-3",
+        "STAND-4"
+      ],
+      "stands": [
+        "STAND-1",
+        "STAND-2",
+        "STAND-3",
+        "STAND-4"
+      ],
+      "star": [
+        "PENTAGRAM"
+      ],
+      "statuette": [
+        "STATUETTE"
+      ],
+      "steps": [
+        "STAIRS"
+      ],
+      "stone": [
+        "GLOBAL-MENHIR",
+        "MENHIR"
+      ],
+      "stradivarius": [
+        "VIOLIN"
+      ],
+      "stream": [
+        "STREAM"
+      ],
+      "string": [
+        "FUSE"
+      ],
+      "structure": [
+        "GAZEBO"
+      ],
+      "sword": [
+        "SWORD",
+        "TROPHY-SWORD"
+      ],
+      "swords": [
+        "TROPHY-SWORD"
+      ],
+      "table": [
+        "ALICE-TABLE",
+        "GAZEBO-TABLE",
+        "PTABLE",
+        "WORKBENCH"
+      ],
+      "teapot": [
+        "TEAPOT"
+      ],
+      "tears": [
+        "POOL"
+      ],
+      "them": [
+        "IT"
+      ],
+      "tomb": [
+        "CRYPT"
+      ],
+      "trail": [
+        "PATHOBJ"
+      ],
+      "treasure": [
+        "BILLS",
+        "CANDY",
+        "COIN",
+        "COLLAR",
+        "CROWN",
+        "GOLD-KEY",
+        "PEARL",
+        "PORTRAIT",
+        "RUBY",
+        "STAMP",
+        "STATUETTE",
+        "VIOLIN"
+      ],
+      "trunk": [
+        "CHEST"
+      ],
+      "tunnel": [
+        "TUNNEL"
+      ],
+      "unicorn": [
+        "GLOBAL-UNICORN",
+        "UNICORN"
+      ],
+      "vault": [
+        "CUBE"
+      ],
+      "vellum": [
+        "ARCANA"
+      ],
+      "violin": [
+        "VIOLIN"
+      ],
+      "wall": [
+        "BOTTOM-ETCHINGS",
+        "EAST-WALL",
+        "NORTH-WALL",
+        "SEWL",
+        "SNWL",
+        "SOUTH-WALL",
+        "SSWL",
+        "SWWL",
+        "TOP-ETCHINGS",
+        "WEST-WALL"
+      ],
+      "wand": [
+        "WAND",
+        "WANDS"
+      ],
+      "wands": [
+        "WANDS"
+      ],
+      "water": [
+        "GLOBAL-WATER",
+        "SALTY-WATER",
+        "WATER"
+      ],
+      "well": [
+        "WELL"
+      ],
+      "window": [
+        "DWINDOW",
+        "PWINDOW"
+      ],
+      "wire": [
+        "BRAIDED-WIRE"
+      ],
+      "wish": [
+        "WISH"
+      ],
+      "wizard": [
+        "WIZARD"
+      ],
+      "woman": [
+        "GLOBAL-PRINCESS",
+        "PRINCESS"
+      ],
+      "workbench": [
+        "WORKBENCH"
+      ],
+      "worm": [
+        "DEAD-DRAGON",
+        "DRAGON"
+      ],
+      "zorkmid": [
+        "COIN",
+        "ZORKMID"
+      ],
+      "zurich": [
+        "GNOME-OF-ZURICH"
+      ],
+      "zzmgck": [
+        "LOCAL-GLOBALS"
+      ]
+    }
+  }
+}

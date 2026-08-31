@@ -1,0 +1,19 @@
+{
+  "schemaVersion": 1,
+  "replay": {
+    "cumulativeHoursMin": 15,
+    "cumulativeHoursMax": 35,
+    "medianMovementMinutesMin": 1,
+    "medianMovementMinutesMax": 3,
+    "turnsUnderQuietMin": 0.6
+  },
+  "histogram": {
+    "meanEdgeMinutesMin": 2,
+    "meanEdgeMinutesMax": 4,
+    "dramaticRowsMax": 0.03,
+    "classMediansInsideInnerHalf": true
+  },
+  "rows": {
+    "longRowsMax": 5
+  }
+}
