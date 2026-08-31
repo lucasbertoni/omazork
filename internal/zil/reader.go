@@ -136,7 +136,7 @@ func (p *parser) element() (*Node, error) {
 	case '[':
 		return p.sequence(']', KList, start, line)
 	case '"':
-		return p.string_(start, line)
+		return p.readString(start, line)
 	case '\'':
 		// Quote prefix ('elem): transparent for reading purposes.
 		p.advance()
@@ -211,7 +211,7 @@ func (p *parser) sequence(close byte, kind Kind, start, line int) (*Node, error)
 	}
 }
 
-func (p *parser) string_(start, line int) (*Node, error) {
+func (p *parser) readString(start, line int) (*Node, error) {
 	p.advance() // opening quote
 	var sb strings.Builder
 	for {

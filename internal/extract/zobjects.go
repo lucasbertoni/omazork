@@ -16,17 +16,28 @@ import (
 // exitSize maps an edge kind to its z-machine exit-property length in bytes
 // (gverbs.zil: UEXIT 1, NEXIT 2, FEXIT 3, CEXIT 4, DEXIT 5).
 var exitSize = map[string]int{
-	"plain":     1,
-	"blocked":   2,
-	"routine":   3,
-	"cond_flag": 4,
-	"cond_door": 5,
+	KindPlain:    1,
+	KindBlocked:  2,
+	KindRoutine:  3,
+	KindCondFlag: 4,
+	KindCondDoor: 5,
 }
 
 // exitTargetByte reports whether byte 0 of the exit property is the target
 // room's object number (V-WALK: GETB .PT ,REXIT on UEXIT/CEXIT/DEXIT).
 func exitTargetByte(kind string) bool {
-	return kind == "plain" || kind == "cond_flag" || kind == "cond_door"
+	return kind == KindPlain || kind == KindCondFlag || kind == KindCondDoor
+}
+
+// exitShapeMatches reports whether object o's property prop agrees with edge
+// e in presence and length: a room without the exit must lack the property,
+// one with it must carry the exit kind's exact size.
+func exitShapeMatches(o zObject, e *Edge, prop int) bool {
+	data, has := o.props[prop]
+	if e == nil {
+		return !has
+	}
+	return has && len(data) == exitSize[e.Kind]
 }
 
 type zObject struct {
@@ -217,19 +228,12 @@ func (ex *extractor) correlateObjects(objs map[int]zObject) error {
 		o := objs[assigned[r.ID]]
 		for dir, prop := range dirProp {
 			e := exits[r.ID][dir]
-			data, has := o.props[prop]
-			if e == nil {
-				if has {
-					return fmt.Errorf("room %s → obj %d: story has a %s exit the ZIL lacks", r.ID, assigned[r.ID], dir)
-				}
-				continue
-			}
-			if !has || len(data) != exitSize[e.Kind] {
+			if !exitShapeMatches(o, e, prop) {
 				return fmt.Errorf("room %s → obj %d: %s exit shape mismatch", r.ID, assigned[r.ID], dir)
 			}
-			if exitTargetByte(e.Kind) && int(data[0]) != assigned[e.To] {
+			if e != nil && exitTargetByte(e.Kind) && int(o.props[prop][0]) != assigned[e.To] {
 				return fmt.Errorf("room %s → obj %d: %s exit targets obj %d, ZIL says %s (obj %d)",
-					r.ID, assigned[r.ID], dir, data[0], e.To, assigned[e.To])
+					r.ID, assigned[r.ID], dir, o.props[prop][0], e.To, assigned[e.To])
 			}
 		}
 	}
@@ -275,9 +279,7 @@ func (ex *extractor) solveDirectionProps(objs map[int]zObject, exits map[string]
 		for prop := 1; prop <= 31; prop++ {
 			ok := true
 			for _, p := range pins {
-				e := p.exits[dir]
-				data, has := p.obj.props[prop]
-				if (e == nil) != !has || (e != nil && len(data) != exitSize[e.Kind]) {
+				if !exitShapeMatches(p.obj, p.exits[dir], prop) {
 					ok = false
 					break
 				}
@@ -304,18 +306,14 @@ func (ex *extractor) solveDirectionProps(objs map[int]zObject, exits map[string]
 func compatible(o zObject, roomExits map[string]*Edge, dirProp map[string]int, assigned map[string]int, cands map[string][]int) bool {
 	for dir, prop := range dirProp {
 		e := roomExits[dir]
-		data, has := o.props[prop]
-		if e == nil {
-			if has {
-				return false
-			}
-			continue
-		}
-		if !has || len(data) != exitSize[e.Kind] {
+		if !exitShapeMatches(o, e, prop) {
 			return false
 		}
+		if e == nil {
+			continue
+		}
 		if exitTargetByte(e.Kind) {
-			target := int(data[0])
+			target := int(o.props[prop][0])
 			if num, done := assigned[e.To]; done {
 				if target != num {
 					return false

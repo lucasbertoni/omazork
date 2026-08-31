@@ -11,6 +11,7 @@ import (
 	"fmt"
 	"os"
 	"path/filepath"
+	"sort"
 	"strings"
 
 	"github.com/lucasbertoni/omazork/internal/zil"
@@ -30,12 +31,22 @@ type Room struct {
 	Action string   `json:"action,omitempty"`
 }
 
+// Edge kinds: the closed five-shape exit taxonomy (§5.1). Values are the
+// JSON vocabulary shared with the generator; #33 adds "drift".
+const (
+	KindPlain    = "plain"
+	KindBlocked  = "blocked"
+	KindCondFlag = "cond_flag"
+	KindCondDoor = "cond_door"
+	KindRoutine  = "routine"
+)
+
 // Edge is one direction property on a room, classified into the closed
 // five-shape taxonomy.
 type Edge struct {
 	From string `json:"from"`
 	Dir  string `json:"dir"`
-	Kind string `json:"kind"`           // plain | blocked | cond_flag | cond_door | routine
+	Kind string `json:"kind"`           // one of the Kind* constants
 	To   string `json:"to,omitempty"`   // absent on blocked
 	If   string `json:"if,omitempty"`   // cond_flag: global flag
 	Door string `json:"door,omitempty"` // cond_door: door object
@@ -144,7 +155,7 @@ func Run(game, srcDir string, story []byte) (*Extract, error) {
 		return nil, err
 	}
 	for _, f := range files {
-		if err := ex.file(f); err != nil {
+		if err := ex.walkFile(f); err != nil {
 			return nil, err
 		}
 	}
@@ -179,7 +190,7 @@ func manifest(srcDir, game string) ([]string, error) {
 		if n.Kind != zil.KForm || n.Head() != "INSERT-FILE" || len(n.Kids) < 2 || n.Kids[1].Kind != zil.KString {
 			continue
 		}
-		path, err := resolveFile(srcDir, strings.ToLower(n.Kids[1].Text)+".zil")
+		path, err := resolveFile(srcDir, n.Kids[1].Text+".zil")
 		if err != nil {
 			return nil, err
 		}
@@ -204,7 +215,7 @@ func resolveFile(dir, name string) (string, error) {
 	return "", fmt.Errorf("%s: no file matching %q", dir, name)
 }
 
-func (ex *extractor) file(path string) error {
+func (ex *extractor) walkFile(path string) error {
 	src, err := os.ReadFile(path)
 	if err != nil {
 		return err
@@ -351,18 +362,18 @@ func classifyExit(room, dir string, vals []*zil.Node) (*Edge, error) {
 	e := &Edge{From: room, Dir: dir}
 	switch {
 	case len(vals) == 1 && vals[0].Kind == zil.KString:
-		e.Kind = "blocked"
+		e.Kind = KindBlocked
 		e.Text = vals[0].Text
 		return e, nil
 	case len(vals) == 2 && vals[0].IsAtom("PER"):
-		e.Kind = "routine"
+		e.Kind = KindRoutine
 		e.Per = vals[1].Atom()
 		return e, nil
 	case len(vals) >= 2 && vals[0].IsAtom("TO") && vals[1].Kind == zil.KAtom:
 		e.To = vals[1].Text
 		rest := vals[2:]
 		if len(rest) == 0 {
-			e.Kind = "plain"
+			e.Kind = KindPlain
 			return e, nil
 		}
 		if !rest[0].IsAtom("IF") || len(rest) < 2 {
@@ -371,11 +382,11 @@ func classifyExit(room, dir string, vals []*zil.Node) (*Edge, error) {
 		cond := rest[1].Atom()
 		rest = rest[2:]
 		if len(rest) >= 2 && rest[0].IsAtom("IS") && rest[1].IsAtom("OPEN") {
-			e.Kind = "cond_door"
+			e.Kind = KindCondDoor
 			e.Door = cond
 			rest = rest[2:]
 		} else {
-			e.Kind = "cond_flag"
+			e.Kind = KindCondFlag
 			e.If = cond
 		}
 		if len(rest) == 0 {
@@ -564,7 +575,8 @@ func (ex *extractor) build() (*Extract, error) {
 		out.Routines = append(out.Routines, Routine{Name: name, File: def.file, Line: def.line, Source: def.src})
 	}
 	if len(missing) > 0 {
-		return nil, fmt.Errorf("referenced routines not found: %s", strings.Join(sorted(missing), " "))
+		sort.Strings(missing)
+		return nil, fmt.Errorf("referenced routines not found: %s", strings.Join(missing, " "))
 	}
 	sortRoutines(out.Routines)
 	return out, nil

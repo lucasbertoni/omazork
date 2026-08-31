@@ -19,8 +19,3 @@ func (x *Extract) JSON() ([]byte, error) {
 func sortRoutines(rs []Routine) {
 	sort.Slice(rs, func(i, j int) bool { return rs[i].Name < rs[j].Name })
 }
-
-func sorted(s []string) []string {
-	sort.Strings(s)
-	return s
-}
