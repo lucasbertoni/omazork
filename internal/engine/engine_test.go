@@ -28,6 +28,9 @@ func TestStartZork1(t *testing.T) {
 	if turn.Score != 0 || turn.Moves != 0 {
 		t.Errorf("initial score/moves = %d/%d, want 0/0", turn.Score, turn.Moves)
 	}
+	if turn.RoomObj != 64 {
+		t.Errorf("initial room object = %d, want 64 (West of House)", turn.RoomObj)
+	}
 	if turn.Halted {
 		t.Error("halted at start")
 	}

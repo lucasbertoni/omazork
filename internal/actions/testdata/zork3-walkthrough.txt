@@ -1,0 +1,313 @@
+# Zork III: The Dungeon Master (Release 25 / Serial 860811) — full walkthrough fixture.
+# Seed: 11 (the script/seed pair is the fixture; timed events are seed-specific).
+# Source: converted from the eristic.net Zork 3 walkthrough
+# (http://www.eristic.net/games/infocom/zork3.html), adapted to this seed's
+# timing: lake dive, Scenic Vista indicator windows, cliff man, earthquake
+# (move 118), Viking ship (move 124), hooded-figure duel length, old-man
+# appearance, and museum guard departure are all deterministic under seed 11.
+# Ends in the Treasury of Zork: "Your potential is 7 of a possible 7, in 320
+# moves." — the game halts at the RESTART/RESTORE/QUIT prompt.
+# Run: internal/actions/testdata/check.sh zork3 11 zork3-walkthrough.txt
+
+# --- Endless Stair to Lake Shore; dive for the amulet ---
+take lamp
+turn on lamp
+south
+south
+south
+south
+turn off lamp
+drop lamp
+enter lake
+dive
+take shiny object
+up
+west
+south
+
+# --- Scenic Vista: indicator "II" -> Room 8 (grue repellent),
+#     indicator "III" -> Damp Passage (stash the torch) ---
+take torch
+wait
+wait
+wait
+touch table
+take can
+wait
+wait
+touch table
+drop torch
+wait
+north
+
+# --- Swim to the southern shore (possessions sink; retrieve the can),
+#     repellent for the dark climb, key, aqueduct crossing ---
+enter lake
+dive
+take can
+up
+south
+spray repellent on me
+south
+south
+east
+take key
+raise cover
+down
+north
+north
+north
+take torch
+
+# --- The Cliff: waybread, chest-for-staff trade with the man above ---
+west
+west
+west
+look
+take bread
+down
+take chest
+wait
+tie chest to rope
+wait
+wait
+wait
+grab rope
+down
+down
+
+# --- Flathead Ocean: wait for the Viking ship (arrives move 124 on this
+#     seed), greet the sailor, take the vial he throws ---
+south
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+wait
+hello sailor
+look
+take vial
+
+# --- Land of Shadow: the look triggers the hooded figure; wound it
+#     (8 rounds on this seed) until "badly hurt and defenseless" —
+#     never kill it — then take the hood and cloak ---
+east
+look
+attack figure with sword
+attack figure with sword
+attack figure with sword
+attack figure with sword
+attack figure with sword
+attack figure with sword
+attack figure with sword
+attack figure with sword
+take hood
+take cloak
+
+# --- Through the earthquake cleft (quake already struck at move 118)
+#     into the Royal Museum ---
+east
+east
+east
+east
+east
+south
+south
+east
+north
+
+# --- Time machine: ride to 776, take the ring, hide it under the seat,
+#     ride back to 948, recover the ring and belongings ---
+examine gold machine
+push gold machine south
+open stone door
+push gold machine east
+turn dial to 776
+sit on seat
+push button
+take ring
+wait
+wait
+wait
+wait
+wait
+open door
+west
+open wooden door
+north
+look under seat
+put ring under seat
+sit on seat
+turn dial to 948
+push button
+look under seat
+stand
+open wooden door
+south
+open stone door
+east
+take all
+
+# --- The Royal Puzzle: dig out the lore book, walk the ladder block to
+#     the exit (canonical push sequence; every cell is the same room) ---
+west
+south
+down
+push east wall
+south
+south
+southeast
+push south wall
+north
+northeast
+push south wall
+take book
+push south wall
+east
+northeast
+push west wall
+southwest
+northwest
+northeast
+push south wall
+southwest
+push east wall
+northeast
+push south wall
+northwest
+north
+north
+north
+push east wall
+southwest
+south
+southeast
+northeast
+north
+push west wall
+northwest
+push south wall
+push south wall
+west
+northwest
+northwest
+push south wall
+southeast
+southeast
+southeast
+northeast
+push west wall
+push west wall
+southwest
+push north wall
+push north wall
+push north wall
+northwest
+up
+
+# --- Back to the Engravings Room; cycle in and out until the old man
+#     appears (random-timed on this seed), wake and feed him ---
+north
+west
+north
+north
+west
+west
+north
+east
+northeast
+southwest
+northeast
+southwest
+northeast
+southwest
+northeast
+southwest
+northeast
+southwest
+northeast
+southwest
+northeast
+southwest
+northeast
+southwest
+northeast
+southwest
+northeast
+southwest
+northeast
+southwest
+northeast
+southwest
+northeast
+southwest
+northeast
+southwest
+northeast
+southwest
+northeast
+wake man
+give bread to man
+
+# --- Beam Room / Button Room: block the beam with the empty can, press
+#     the button, and slip into the mirror box before the panel shuts ---
+open secret door
+north
+north
+put can in beam
+south
+press button
+north
+north
+north
+
+# --- Mirror box past the Guardians: rotate mahogany to north, slide
+#     north three times, rotate it to south, exit through the pine wall ---
+raise short pole
+push yellow wall
+push yellow wall
+lower short pole
+push mahogany wall
+push mahogany wall
+push mahogany wall
+raise short pole
+push white wall
+push white wall
+push white wall
+push white wall
+push pine wall
+north
+
+# --- The Dungeon Master: knock (wearing hood, cloak, amulet, ring; staff
+#     in hand), dial 4 at the Parapet, enter cell 4, have the Master
+#     rotate the cells back, unlock the bronze door, claim the Treasury ---
+knock on door
+north
+east
+north
+north
+turn dial to 4
+push button
+south
+open door
+south
+master, go to the parapet
+master, turn the dial to 1
+master, push the button
+unlock bronze door with key
+open bronze door
+south

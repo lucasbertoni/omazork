@@ -70,8 +70,9 @@ as the `(verb, object)` action alone — never as an edge, never both.
 
 ## 3. Runtime rules (proven in the matcher prototype, [#22](https://github.com/lucasbertoni/omazork/issues/22))
 
-The liftable matcher module, capture harness, transcripts, and object-table dumps
-live on branch
+The matcher module and capture harness were lifted to `internal/actions` on
+master by [#32](https://github.com/lucasbertoni/omazork/issues/32); the original
+prototype, its transcripts, and the object-table dumps remain on branch
 [`prototype/action-matcher`](https://github.com/lucasbertoni/omazork/tree/prototype/action-matcher)
 (`internal/actions/prototype/`).
 
@@ -269,9 +270,10 @@ exercised).
 
 ### 6.1 Walkthrough fixtures ([#30](https://github.com/lucasbertoni/omazork/issues/30))
 
-Committed on `prototype/action-matcher` at 7cc2a0a under
-`internal/actions/prototype/fixtures/` with `check.sh`; replay via
-`go run ./internal/actions/prototype capture <game> <seed> < <script>`.
+Committed on master under `internal/actions/testdata/` with `check.sh`
+(lifted from `prototype/action-matcher` 7cc2a0a by #32); replay via
+`go run ./internal/actions/capture <game> <seed> < <script>`, or the
+replay test in `internal/actions/replay_test.go`.
 
 | Game | Script | Seed | Commands | Result |
 |---|---|---|---|---|

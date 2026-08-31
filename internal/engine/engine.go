@@ -18,12 +18,13 @@ import (
 
 // Turn is what one player command (or the opening banner) produced.
 type Turn struct {
-	Output string // story text, whitespace preserved; never the status line
-	Room   string // status-line room name; true room even in darkness
-	Score  int
-	Moves  int
-	State  []byte // Quetzal snapshot at the input boundary; nil when Halted
-	Halted bool   // the story terminated itself (quit, victory, Zork III final death)
+	Output  string // story text, whitespace preserved; never the status line
+	Room    string // status-line room name; true room even in darkness
+	RoomObj uint16 // global 0: current room object number; 0 when Halted (no snapshot)
+	Score   int
+	Moves   int
+	State   []byte // Quetzal snapshot at the input boundary; nil when Halted
+	Halted  bool   // the story terminated itself (quit, victory, Zork III final death)
 }
 
 // Engine is one running story. Not safe for concurrent use.
@@ -143,7 +144,7 @@ func (e *Engine) turn(res zmachine.Result) (Turn, error) {
 		if err != nil {
 			return Turn{}, fmt.Errorf("engine: peek: %w", err)
 		}
-		t.Score, t.Moves = int(p.Score), int(p.Moves)
+		t.Score, t.Moves, t.RoomObj = int(p.Score), int(p.Moves), p.Room
 	case res.StatusLine.Available:
 		// Halted: no snapshot exists; the last status line is all there is.
 		t.Score, t.Moves = int(res.StatusLine.Score), int(res.StatusLine.Turns)

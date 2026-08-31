@@ -1,0 +1,415 @@
+# Zork I: The Great Underground Empire — full 350/350 walkthrough fixture
+# (wayfinder ticket #30). One command per line; # lines are comments.
+#
+# Game:   zork1
+# Seed:   12  (the fixture is the (script, seed) pair; replay with
+#         `go run ./internal/actions/capture zork1 12 < this-file`)
+# Source: converted from Jacob Gunness's Zork I solution (23 March 1990),
+#         IF Archive: if-archive/infocom/hints/solutions/zorkI.step2,
+#         restructured so the thief is killed late (at score 234) instead of
+#         early, with per-seed combat and theft adjustments (see comments).
+# Final:  score 350 of 350, 374 moves, rank Master Adventurer; the last turn
+#         enters the stone barrow and the game halts on the Zork II teaser.
+#
+# --- Surface: jeweled egg from the tree nest, then into the house for lamp, sword, knife, rope ---
+north
+north
+climb tree
+take egg
+climb down
+south
+east
+open window
+enter window
+take sack
+west
+take lamp
+turn on lamp
+east
+up
+take knife
+take rope
+down
+west
+take sword
+move rug
+open trap door
+open case
+# --- Down the trap door (it slams shut and is barred behind us this first time) ---
+down
+# --- Troll Room: with seed 12 the troll is knocked out and killed in exactly two blows ---
+north
+kill troll with sword
+kill troll with sword
+drop sword
+# --- Gallery: the painting ---
+south
+south
+east
+take painting
+west
+north
+north
+# --- Maze (W, W, W, U from the Troll Room): bag of coins by the skeleton (touch nothing else!), then SW, E, S, SE to the cyclops ---
+west
+west
+west
+up
+take coins
+southwest
+east
+south
+southeast
+# "ulysses" scares the cyclops through the east wall, opening the permanent shortcut to the living room
+ulysses
+east
+east
+# --- Deposit #1: painting, coins; stage knife and sack here for later trips ---
+put painting in case
+put coins in case
+drop knife
+drop sack
+# --- Trip 2: rope down the dome to the gold coffin. The torch is left on its pedestal for now; the thief lifts the egg from us in the Egyptian Room (turn 62) and will open it in his lair. Exit by prayer at the altar ---
+open trap door
+down
+north
+east
+east
+southeast
+east
+tie rope to railing
+down
+south
+east
+take coffin
+inventory
+west
+south
+pray
+turn off lamp
+east
+south
+east
+enter window
+west
+# --- Deposit #2: coffin; keep the sceptre for the rainbow ---
+open coffin
+take sceptre
+put coffin in case
+drop lamp
+# --- Trip 3: through the canyon to the End of Rainbow; wave the sceptre for the pot of gold ---
+east
+east
+east
+east
+down
+down
+north
+wave sceptre
+take pot of gold
+southwest
+up
+up
+northwest
+west
+enter window
+west
+# --- Deposit #3: pot of gold, sceptre ---
+put pot of gold in case
+put sceptre in case
+# --- Trip 4: dam, reservoir, and hades. The thief robs us of bar and trunk in Deep Canyon (turn 134); both reappear when he dies ---
+take lamp
+turn on lamp
+# (the trap door is no longer barred once we have left the dungeon another way; this open is a no-op kept for turn alignment)
+open trap door
+down
+north
+east
+east
+east
+# "echo" fixes the Loud Room acoustics and frees the platinum bar
+echo
+take bar
+up
+east
+north
+take matches
+north
+take wrench
+take screwdriver
+# yellow button lights the panel bubble; the wrench opens the sluice gates
+press yellow button
+south
+south
+turn bolt with wrench
+drop wrench
+west
+# five waits while the reservoir drains
+wait
+wait
+wait
+wait
+wait
+# trunk of jewels from the reservoir bed, air pump from Reservoir North
+north
+take trunk
+north
+take pump
+south
+south
+# stage the pump at Dam Base for the river trip
+east
+down
+drop pump
+up
+south
+down
+west
+southeast
+east
+down
+# torch pickup (left safe on its pedestal in trip 2)
+take torch
+south
+take bell
+south
+take book
+take candles
+blow out candles
+down
+down
+# Exorcism: the red-hot bell makes us drop the candles, so plain "light candles" (which auto-takes them) is required; "light candles with match" would light them on the ground and void the ceremony
+ring bell
+light match
+light candles
+read book
+drop book
+drop matches
+blow out candles
+drop candles
+# crystal skull from the Land of the Dead
+south
+take skull
+north
+# out via Mirror Room / Narrow Passage / Round Room; the trap door is open both ways now
+up
+north
+north
+north
+west
+west
+south
+up
+put skull in case
+# --- Trip 5: the Frigid River. Sharp tools stay home; the pump is waiting at Dam Base ---
+drop screwdriver
+down
+north
+east
+east
+east
+up
+east
+down
+inflate boat with pump
+get in boat
+launch
+# four waits: the buoy is in the fourth river reach; grab it and beach east before the falls
+wait
+wait
+wait
+wait
+take buoy
+east
+get out of boat
+open buoy
+take emerald
+drop buoy
+take shovel
+northeast
+# the fourth dig uncovers the scarab (a fifth would bury us)
+dig sand with shovel
+dig sand with shovel
+dig sand with shovel
+dig sand with shovel
+drop shovel
+take scarab
+# home across the now-solid rainbow
+southwest
+south
+south
+west
+west
+southwest
+up
+up
+northwest
+west
+enter window
+west
+put emerald in case
+put scarab in case
+# --- Trip 6: the thief, at score 234. Six knife blows at seed 12; he holds the egg (opened), bar, and trunk ---
+take knife
+west
+west
+up
+kill thief with knife
+kill thief with knife
+kill thief with knife
+kill thief with knife
+kill thief with knife
+kill thief with knife
+# his hoard reappears: chalice, bar, trunk, and the egg with the clockwork canary
+drop knife
+# (the trunk is left for a second pass: too heavy to lift while wounded)
+take chalice
+take bar
+take egg
+turn off lamp
+down
+east
+east
+put chalice in case
+put bar in case
+# canary out of the egg before the egg is cased
+take canary
+put egg in case
+# --- Forest Path: wind the canary; the songbird delivers the brass bauble ---
+east
+east
+north
+north
+wind canary
+take bauble
+south
+east
+enter window
+west
+put canary in case
+put bauble in case
+# --- Second pass for the trunk of jewels ---
+west
+west
+up
+take trunk
+down
+east
+east
+put trunk in case
+# --- Trip 7: the coal mine. Garlic wards off the bat; trident collected en route in Atlantis ---
+open sack
+take garlic
+take screwdriver
+down
+north
+east
+north
+northeast
+north
+north
+north
+take trident
+up
+north
+north
+west
+north
+west
+north
+east
+# torch and screwdriver ride the basket (open flame + coal gas = boom)
+put torch in basket
+put screwdriver in basket
+turn on lamp
+north
+down
+take bracelet
+east
+northeast
+southeast
+southwest
+down
+down
+# coal from the dead end, back up to the shaft, and send the basket down
+south
+take coal
+north
+up
+up
+north
+east
+south
+north
+up
+south
+put coal in basket
+lower basket
+north
+down
+east
+northeast
+southeast
+southwest
+down
+down
+# the crack west of the Timber Room passes only an empty-handed adventurer; the lamp stays lit on the floor for the trip back
+west
+drop all
+west
+take coal
+take screwdriver
+take torch
+south
+# the machine turns coal into a diamond
+open lid
+put coal in machine
+close lid
+turn switch with screwdriver
+open lid
+take diamond
+north
+put diamond in basket
+put torch in basket
+drop screwdriver
+east
+take lamp
+take garlic
+take trident
+take bracelet
+east
+up
+up
+north
+east
+south
+north
+up
+south
+# raise the basket, recover torch and diamond, then the jade figurine
+raise basket
+take torch
+take diamond
+turn off lamp
+west
+take figurine
+south
+east
+south
+# down the slide, straight to the cellar and up
+down
+up
+# --- Final deposits: the 19th treasure conjures the ancient map ---
+put figurine in case
+put trident in case
+put bracelet in case
+put diamond in case
+put torch in case
+# --- The map reveals the secret path: West of House, southwest to the stone barrow, and in ---
+take map
+east
+east
+south
+west
+southwest
+west
