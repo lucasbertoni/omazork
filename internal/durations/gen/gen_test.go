@@ -5,6 +5,7 @@ import (
 	"testing"
 
 	"github.com/lucasbertoni/omazork/internal/durations"
+	"github.com/lucasbertoni/omazork/internal/durations/llm"
 	"github.com/lucasbertoni/omazork/internal/extract"
 )
 
@@ -27,6 +28,9 @@ func testExtract() *extract.Extract {
 			{Verb: "TAKE", Pattern: []string{"OBJECT"}, Action: "V-TAKE"},
 			{Verb: "DIG", Pattern: []string{"OBJECT"}, Action: "V-DIG"},
 			{Verb: "FROBOZZ", Action: "V-FROBOZZ"},
+			{Verb: "LOOK", Action: "V-LOOK"},
+			{Verb: "PRAY", Action: "V-PRAY"},
+			{Verb: "ATTACK", Pattern: []string{"OBJECT"}, Action: "V-ATTACK"},
 		},
 		Synonyms: []extract.Synonym{{Word: "TAKE", Synonyms: []string{"GET", "GRAB"}}},
 	}
@@ -35,7 +39,7 @@ func testExtract() *extract.Extract {
 func testVerbs() *durations.Verbs {
 	return &durations.Verbs{
 		SchemaVersion: durations.SchemaVersion,
-		FastVerbs:     []string{"look"},
+		FastVerbs:     []string{"look", "pray"},
 		Verbs: []durations.VerbDefault{
 			{Verb: "take", Synonyms: []string{"get", "grab"}, Class: durations.ClassManipulation, Minutes: 1},
 			{Verb: "dig", Class: durations.ClassMechanism, Minutes: 10},
@@ -45,11 +49,16 @@ func testVerbs() *durations.Verbs {
 
 func generate(t *testing.T, x *extract.Extract) *durations.Table {
 	t.Helper()
-	table, err := Generate(x, testVerbs())
+	return generateWith(t, x, llm.NewCache(x.Game)).Table
+}
+
+func generateWith(t *testing.T, x *extract.Extract, cache *llm.Cache) *Result {
+	t.Helper()
+	result, err := Generate(x, testVerbs(), cache)
 	if err != nil {
 		t.Fatalf("Generate: %v", err)
 	}
-	return table
+	return result
 }
 
 func edge(t *testing.T, table *durations.Table, from, to string) durations.EdgeRow {
@@ -170,7 +179,7 @@ func TestGeneratedTableValidates(t *testing.T) {
 func TestGenerateRejectsUnknownRooms(t *testing.T) {
 	x := testExtract()
 	x.Edges = []*extract.Edge{{From: "KITCHEN", Dir: "DOWN", Kind: extract.KindPlain, To: "NOWHERE"}}
-	if _, err := Generate(x, testVerbs()); err == nil {
+	if _, err := Generate(x, testVerbs(), nil); err == nil {
 		t.Fatal("edge to an unknown room accepted")
 	}
 }

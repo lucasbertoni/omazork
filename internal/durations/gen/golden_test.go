@@ -7,6 +7,7 @@ import (
 	"testing"
 
 	"github.com/lucasbertoni/omazork/internal/durations"
+	"github.com/lucasbertoni/omazork/internal/durations/llm"
 	"github.com/lucasbertoni/omazork/internal/extract"
 )
 
@@ -42,11 +43,11 @@ func TestCommittedTablesAreReproducible(t *testing.T) {
 	verbs := repoVerbs(t)
 	for _, game := range repoGames {
 		t.Run(game, func(t *testing.T) {
-			table, err := Generate(readExtract(t, game), verbs)
+			result, err := Generate(readExtract(t, game), verbs, repoCache(t, game))
 			if err != nil {
 				t.Fatalf("Generate: %v", err)
 			}
-			got, err := table.JSON()
+			got, err := result.Table.JSON()
 			if err != nil {
 				t.Fatalf("JSON: %v", err)
 			}
@@ -66,12 +67,12 @@ func TestCommittedTablesAreReproducible(t *testing.T) {
 func TestGenerationIsDeterministic(t *testing.T) {
 	verbs := repoVerbs(t)
 	x := readExtract(t, "zork1")
-	first, err := mustJSON(Generate(x, verbs))
+	first, err := mustJSON(Generate(x, verbs, repoCache(t, "zork1")))
 	if err != nil {
 		t.Fatal(err)
 	}
 	for i := 0; i < 5; i++ {
-		again, err := mustJSON(Generate(x, verbs))
+		again, err := mustJSON(Generate(x, verbs, repoCache(t, "zork1")))
 		if err != nil {
 			t.Fatal(err)
 		}
@@ -81,9 +82,20 @@ func TestGenerationIsDeterministic(t *testing.T) {
 	}
 }
 
-func mustJSON(t *durations.Table, err error) ([]byte, error) {
+func mustJSON(r *Result, err error) ([]byte, error) {
 	if err != nil {
 		return nil, err
 	}
-	return t.JSON()
+	return r.Table.JSON()
+}
+
+// repoCache reads a game's committed LLM cache, or an unprimed one when the
+// game has not been through an inference pass yet.
+func repoCache(t *testing.T, game string) *llm.Cache {
+	t.Helper()
+	cache, err := llm.LoadCache(filepath.Join(repoRoot, "data", "actions", game+".llm.json"), game)
+	if err != nil {
+		t.Fatalf("load llm cache: %v", err)
+	}
+	return cache
 }

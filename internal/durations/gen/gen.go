@@ -1,8 +1,9 @@
 // Package gen turns an extract into the generated duration table
-// (docs/action-waits.md §5.2): deterministic rule pricing for every room edge,
-// the rooms map the runtime matches on, and the generator-owned vocab. Rows
-// the rules cannot price — every (verb, object) handler pair — are left to the
-// LLM pass and the shared verb-default table; the generator never invents them.
+// (docs/action-waits.md §5.2, §5.3): deterministic rule pricing for every room
+// edge, the LLM pass layered on top of it out of the committed cache, the
+// rooms map the runtime matches on, and the generator-owned vocab. Nothing is
+// invented here — a row the rules cannot price and the cache does not answer
+// is simply absent, and resolves through the shared verb-default table.
 package gen
 
 import (
@@ -11,6 +12,7 @@ import (
 	"strings"
 
 	"github.com/lucasbertoni/omazork/internal/durations"
+	"github.com/lucasbertoni/omazork/internal/durations/llm"
 	"github.com/lucasbertoni/omazork/internal/extract"
 )
 
@@ -26,11 +28,26 @@ const (
 	darkMinutes        = 1
 )
 
-// Generate prices one game's extract into its duration table.
-func Generate(x *extract.Extract, verbs *durations.Verbs) (*durations.Table, error) {
+// Result is one generation: the table, every row the LLM pass prices, and the
+// subset of those whose cached answer is missing or stale. Missing rows are
+// not an error here — the caller decides whether to infer them, report them,
+// or fail (§5.3).
+type Result struct {
+	Table    *durations.Table
+	Requests []llm.Request
+	Missing  []llm.Request
+}
+
+// Generate prices one game's extract into its duration table, refining it with
+// whatever the committed LLM cache already answers. Pass an unprimed cache to
+// get the pure rule pricing.
+func Generate(x *extract.Extract, verbs *durations.Verbs, cache *llm.Cache) (*Result, error) {
 	if x.SchemaVersion != extract.SchemaVersion {
 		return nil, fmt.Errorf("gen: %s extract: schemaVersion %d, want exactly %d",
 			x.Game, x.SchemaVersion, extract.SchemaVersion)
+	}
+	if cache == nil {
+		cache = llm.NewCache(x.Game)
 	}
 	rooms := map[string]*extract.Room{}
 	table := &durations.Table{
@@ -44,13 +61,40 @@ func Generate(x *extract.Extract, verbs *durations.Verbs) (*durations.Table, err
 	}
 	sort.Slice(table.Rooms, func(i, j int) bool { return table.Rooms[i].ID < table.Rooms[j].ID })
 
-	edges, err := priceEdges(x, rooms)
+	priced, err := priceEdges(x, rooms)
 	if err != nil {
 		return nil, err
 	}
-	table.Edges = edges
 	table.Vocab = buildVocab(x, verbs)
-	return table, nil
+
+	result := &Result{Table: table}
+	for _, p := range priced {
+		row, err := applyEdge(x, rooms, p, cache, result)
+		if err != nil {
+			return nil, err
+		}
+		table.Edges = append(table.Edges, row)
+	}
+	for _, pr := range handlerPairs(x, table.Vocab, verbs) {
+		row, ok, err := applyHandler(x, pr, cache, result)
+		if err != nil {
+			return nil, err
+		}
+		if ok {
+			table.Actions = append(table.Actions, row)
+		}
+	}
+	return result, nil
+}
+
+// pricedEdge is one collapsed (from, to) pair as the rules leave it: the row,
+// the arithmetic that produced it, the collision note if several exits joined
+// the pair, and the exit that set the price — the LLM payload is built from it.
+type pricedEdge struct {
+	row       durations.EdgeRow
+	arith     string
+	collision string
+	edge      *extract.Edge
 }
 
 // priceEdges prices every passage that can change the room, then collapses
@@ -60,15 +104,14 @@ func Generate(x *extract.Extract, verbs *durations.Verbs) (*durations.Table, err
 // membership (§3.4), so the cheapest exit may set the price but never revoke
 // it.
 //
-// Routine-typed exits carry no static destination and so cannot become rows at
-// all; they are the LLM pass's to classify (§5.3), and actiongen reports how
-// many each game leaves behind.
-func priceEdges(x *extract.Extract, rooms map[string]*extract.Room) ([]durations.EdgeRow, error) {
+// Routine-typed exits that carry no static destination cannot become rows at
+// all; actiongen reports how many each game leaves behind.
+func priceEdges(x *extract.Extract, rooms map[string]*extract.Room) ([]pricedEdge, error) {
 	type group struct {
-		row   durations.EdgeRow
-		dirs  []string
-		n     int
-		drift bool
+		priced pricedEdge
+		dirs   []string
+		n      int
+		drift  bool
 	}
 	var order []string
 	groups := map[string]*group{}
@@ -85,42 +128,46 @@ func priceEdges(x *extract.Extract, rooms map[string]*extract.Room) ([]durations
 			return nil, fmt.Errorf("gen: %s: edge %s -> unknown room %s", x.Game, e.From, e.To)
 		}
 		minutes, note := priceEdge(e, from, to)
-		row := durations.EdgeRow{
-			From: e.From, To: e.To, Dir: e.Dir, Kind: e.Kind,
-			Minutes: minutes, Class: durations.ClassMovement, Source: durations.SourceRule, Note: note,
+		priced := pricedEdge{
+			row: durations.EdgeRow{
+				From: e.From, To: e.To, Dir: e.Dir, Kind: e.Kind,
+				Minutes: minutes, Class: durations.ClassMovement, Source: durations.SourceRule,
+			},
+			arith: note,
+			edge:  e,
 		}
 		key := durations.EdgeKey(e.From, e.To)
 		g, ok := groups[key]
 		if !ok {
-			g = &group{row: row, dirs: []string{exitLabel(e)}, n: 1}
+			g = &group{priced: priced, dirs: []string{exitLabel(e)}, n: 1}
 			groups[key] = g
 			order = append(order, key)
 		} else {
 			g.n++
 			g.dirs = append(g.dirs, exitLabel(e))
-			if minutes < g.row.Minutes {
-				g.row = row
+			if minutes < g.priced.row.Minutes {
+				g.priced = priced
 			}
 		}
 		g.drift = g.drift || e.Kind == extract.KindDrift
 	}
 
-	rows := make([]durations.EdgeRow, 0, len(order))
+	rows := make([]pricedEdge, 0, len(order))
 	for _, key := range order {
 		g := groups[key]
 		if g.drift {
-			g.row.Kind = extract.KindDrift
+			g.priced.row.Kind = extract.KindDrift
 		}
 		if g.n > 1 {
-			g.row.Note += fmt.Sprintf("; cheapest of %d exits (%s)", g.n, strings.Join(g.dirs, ", "))
+			g.priced.collision = fmt.Sprintf("cheapest of %d exits (%s)", g.n, strings.Join(g.dirs, ", "))
 		}
-		rows = append(rows, g.row)
+		rows = append(rows, g.priced)
 	}
 	sort.Slice(rows, func(i, j int) bool {
-		if rows[i].From != rows[j].From {
-			return rows[i].From < rows[j].From
+		if rows[i].row.From != rows[j].row.From {
+			return rows[i].row.From < rows[j].row.From
 		}
-		return rows[i].To < rows[j].To
+		return rows[i].row.To < rows[j].row.To
 	})
 	return rows, nil
 }
