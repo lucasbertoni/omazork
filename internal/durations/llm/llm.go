@@ -27,7 +27,7 @@ const SchemaVersion = 1
 // ModelID is the pinned model. It is hashed into every row's inputHash, so
 // changing this line invalidates the whole cache for every game — which is
 // the point: a new model is a re-inference event, reviewed as a diff.
-const ModelID = "claude-opus-5"
+const ModelID = "claude-sonnet-5"
 
 // Kind names the three prompt templates, and with them what the pass is
 // allowed to return (§5.3). It is part of the cache row so a row that changes
