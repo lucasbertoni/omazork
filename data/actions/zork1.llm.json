@@ -1,0 +1,3719 @@
+{
+  "schemaVersion": 1,
+  "game": "zork1",
+  "model": "claude-sonnet-5",
+  "rows": [
+    {
+      "key": "action:brush/TEETH",
+      "kind": "handler",
+      "inputHash": "30e839042eab4d0045cf9d55eeed9ceee75ca156093cba435497811c8b3e0017",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Brushing one's teeth is a simple, brief hygiene action with trivial physical effort."
+    },
+    {
+      "key": "action:burn/BODIES",
+      "kind": "handler",
+      "inputHash": "3aabc9803194d3e99e921b04da7eab0b4af6c41f172d2b0f940193d2ebf83841",
+      "class": "dramatic",
+      "minutes": 30,
+      "rationale": "This act of desecration triggers an instant-death ceremonial punishment from the dungeon's guardian, marking it as a fatal set-piece moment."
+    },
+    {
+      "key": "action:burn/BOOK",
+      "kind": "handler",
+      "inputHash": "485a0293518bcb25186b7408aec43bd659a514ed7b31b7fcccca17a1cebedafe",
+      "class": "dramatic",
+      "minutes": 30,
+      "rationale": "Burning the book is an instant-death set-piece moment the game treats as a fatal ceremony, not a routine manipulation."
+    },
+    {
+      "key": "action:burn/CANDLES",
+      "kind": "handler",
+      "inputHash": "4ee93674038f84a76794350e659d4a8629fe40f6442f53041c7fab5e1e14e53d",
+      "class": "mechanism",
+      "minutes": 3,
+      "rationale": "Lighting a pair of candles with a match is a simple but deliberate fire-tending action."
+    },
+    {
+      "key": "action:burn/CYCLOPS",
+      "kind": "handler",
+      "inputHash": "9ebefd2710118658d179b90b94c90696f60d6177d75d83cf1af1b2af5dc21e57",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Waking/threatening the sleeping cyclops with fire is a quick, non-mechanical hostile gesture that just yields a brief reaction line."
+    },
+    {
+      "key": "action:burn/FRONT-DOOR",
+      "kind": "handler",
+      "inputHash": "81610fbf6d7cbe76beda7f8f9ad5a719d3b8fd7127ebbcca51a475d940035c87",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The action fails outright with no effect on the world, just a rebuff."
+    },
+    {
+      "key": "action:burn/LEAVES",
+      "kind": "handler",
+      "inputHash": "cd3cd60c565ea67fcc043bfe03bf5116a0d169a31d81789374c3edd9e15b4446",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Burning a pile of leaves to expose the hidden grating requires setting and tending a fire, a deliberate act beyond simple manipulation but short of a ceremonial set-piece."
+    },
+    {
+      "key": "action:burn/MATCH",
+      "kind": "handler",
+      "inputHash": "e9ada3e4a3161d3a98c3321113d9a7656963d43abf44e3d7d69fea4a2dcf7bdc",
+      "class": "mechanism",
+      "minutes": 3,
+      "rationale": "Striking a match and getting it lit is a quick physical action but slightly more involved than simple manipulation."
+    },
+    {
+      "key": "action:burn/WHITE-HOUSE",
+      "kind": "handler",
+      "inputHash": "11386c0468dfdf225a40e94b8c4d5911187cef0e6cb858c8c3152e45196f72c7",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The handler just rejects the attempt with a canned response, a no-op turn with no in-world effort."
+    },
+    {
+      "key": "action:burn/WOODEN-DOOR",
+      "kind": "handler",
+      "inputHash": "9244394defa78678a0c8234d85d7c10e45fa12f31ef999d7df098def1b35daa2",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The handler outright rejects the action with no effect, so it's a no-op turn."
+    },
+    {
+      "key": "action:close/BARROW-DOOR",
+      "kind": "handler",
+      "inputHash": "b9189beb1e1a3841aff2936d1f9122385b4cbeb428629be94ef8b4454eccd40f",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A failed close attempt on an immovable door is a quick, low-effort action despite its no-op outcome."
+    },
+    {
+      "key": "action:close/BOOK",
+      "kind": "handler",
+      "inputHash": "5922dbd90cf1a47f3b24cf196d42ce1df7e1e6642dbfe02279c2d184dd19988c",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A simple attempted close action that fails outright, costing minimal effort despite the null result."
+    },
+    {
+      "key": "action:close/DAM",
+      "kind": "handler",
+      "inputHash": "2c1ec9772740b876b44877d26e961d7888337947bda374537be6a61e27c4f809",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "The handler rejects this as not the correct method, making it a no-op turn."
+    },
+    {
+      "key": "action:close/GRATE",
+      "kind": "handler",
+      "inputHash": "8cf5e380990caf7b068ce5cee78db05019bfab349d38ef304e159b65c9ff0268",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Closing the grate is a simple physical action of swinging a lattice shut, on par with other open/close manipulations."
+    },
+    {
+      "key": "action:close/KITCHEN-WINDOW",
+      "kind": "handler",
+      "inputHash": "2e6e6091af3f66a327ee7870caad8aa7563973bda31d153085e056ad20bbab56",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Closing an already-ajar window is a simple physical action described as easier than opening it."
+    },
+    {
+      "key": "action:close/LARGE-BAG",
+      "kind": "handler",
+      "inputHash": "1d67e998de5a5f8a9d323f55ad3f5ac69ffe1915a010fa81963206da9aca5ebe",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "A failed close attempt blocked by the thief guarding the bag is a trivial no-op action."
+    },
+    {
+      "key": "action:close/MACHINE",
+      "kind": "handler",
+      "inputHash": "1f85620a2306d06d77392a41b34e10d46e7913e88b06a7bac17b0b852e048b8f",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Closing the lid of the machine is a simple physical action akin to closing any container."
+    },
+    {
+      "key": "action:close/PEDESTAL",
+      "kind": "handler",
+      "inputHash": "98710af59d1be3a47d3988acce9f4e28e7e4466ef7164a67fc0d5d63794c0052",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The pedestal isn't a container that can be closed, so this is a no-op failed action."
+    },
+    {
+      "key": "action:close/TRAP-DOOR",
+      "kind": "handler",
+      "inputHash": "bc04c6e615ffbf97067416e7cf70a316f769c512099aa9618c16f25f10d4b268",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Closing a simple hinged trap door is a quick physical action."
+    },
+    {
+      "key": "action:cross/RAINBOW",
+      "kind": "handler",
+      "inputHash": "dcda535c51ff33b2f8a728c0d4f42a2147c1799c152e39d5198adec589660f0f",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Crossing the rainbow moves the player between Aragain Falls and End of Rainbow, a single room-edge traversal once the sceptre has revealed it."
+    },
+    {
+      "key": "action:cut/LEAVES",
+      "kind": "handler",
+      "inputHash": "74863a468f6241420da2e8eec97e2a5495ff899d0adc4166094229854af28bed",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Rustling leaves around is a trivial physical action with no lasting mechanism engaged."
+    },
+    {
+      "key": "action:deflate/INFLATED-BOAT",
+      "kind": "handler",
+      "inputHash": "ab136d4a8c72a9c8ecc908545c146aaf5e06e77496e35ff66d3b218b2184a7a5",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Deflating the boat requires unstopping/rolling out the air, a deliberate multi-step physical task akin to inflating it."
+    },
+    {
+      "key": "action:dig/GROUND",
+      "kind": "handler",
+      "inputHash": "59d68973441cba9adc0fc674186eb9803a63d1d0b866259919817f3f42ac6d32",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "A failed, futile attempt to dig hard ground is a quick physical effort with no mechanism engaged."
+    },
+    {
+      "key": "action:dig/PATHOBJ",
+      "kind": "handler",
+      "inputHash": "26eac6b4983eaba8a398cf35d352d8b330f9b5978a75961bef063d9b0d34fc8c",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The handler flatly rejects the action ('Not a chance.') with no effort expended."
+    },
+    {
+      "key": "action:dig/SAND",
+      "kind": "handler",
+      "inputHash": "a936b3603c75407a50a81b3f7c5067236d42b1947a3209f69414dd9780b208e8",
+      "class": "mechanism",
+      "minutes": 10,
+      "rationale": "Digging in sand with a shovel is manual labor requiring repeated effort to expose something buried."
+    },
+    {
+      "key": "action:drop/GLOBAL-WATER",
+      "kind": "handler",
+      "inputHash": "7ce6b67695e2457c6512ac868ccd0a819be1f1edc92925603fe1f38ce0f45e4c",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Dropping held water is a simple, quick action of pouring it out, spilling to the floor or a puddle."
+    },
+    {
+      "key": "action:drop/GROUND",
+      "kind": "handler",
+      "inputHash": "a6f05236b4b0239bf18c966293daadc4cb00ee466376e81af499341f1bc097ea",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "Dropping the ground is a nonsensical no-op action with no physical effort involved."
+    },
+    {
+      "key": "action:drop/INFLATED-BOAT",
+      "kind": "handler",
+      "inputHash": "dba6a62abcab90619e5582c2c97829e5ddd3fa5b22b268a0dcae93a28d00ee39",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Dropping the boat is a simple, quick physical placement action despite triggering conditional narrative consequences."
+    },
+    {
+      "key": "action:drop/ROPE",
+      "kind": "handler",
+      "inputHash": "11b224296a59aefef1c8310007504b6ed65e1625c0509adbefd960ee5173b985",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply dropping a rope from inventory is a basic object placement with no special handling in most locations."
+    },
+    {
+      "key": "action:drop/WATER",
+      "kind": "handler",
+      "inputHash": "46e435175c9077f6cdb20d1e7fc299e205f7d29adcff0efd7e86fc88d67c0227",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Dropping held water is a simple, quick physical action of releasing it to spill or puddle."
+    },
+    {
+      "key": "action:eat/GARLIC",
+      "kind": "handler",
+      "inputHash": "32f4ca2fd2831a3b22a5417dd0c960617abb474ccdad10ffd48415a1fe290825",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Eating an item is a quick simple ingestion action with no mechanism to operate."
+    },
+    {
+      "key": "action:eat/ME",
+      "kind": "handler",
+      "inputHash": "1830982e431193cf3047730a7282ae65a47f6d91d81f0b9246544af610a0211d",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "A trivial, immediately rebuffed no-op action with a single canned refusal line."
+    },
+    {
+      "key": "action:enter/GLOBAL-WATER",
+      "kind": "handler",
+      "inputHash": "6cb499be5fcb0f1dd8dc7b1edfcf41fd08e2494dad4d9258623f9b178653e8a6",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Trying to enter water is a trivial failed/no-op action handled with a quip or minor state check, not a real traversal."
+    },
+    {
+      "key": "action:enter/INFLATED-BOAT",
+      "kind": "handler",
+      "inputHash": "b067156a74e8100f8fbb3b99c7db9b984dfebbf594e4bd5965965975593896be",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Boarding the boat is a simple physical act of climbing in, functionally equivalent to a basic move/put action."
+    },
+    {
+      "key": "action:enter/KITCHEN-WINDOW",
+      "kind": "handler",
+      "inputHash": "aed7fff6ea8d3bab8d468cca5b558c214ba8c0401f3d09622c3657dc5fdbd365",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "Climbing through an already-open window into the adjacent room is a single directed traversal between locations."
+    },
+    {
+      "key": "action:enter/WATER",
+      "kind": "handler",
+      "inputHash": "5671a9e8698b569c40c7d06e76e08655e6d4cfde0060d58a57b8fe99e8d78df5",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Entering water is a trivial no-op/failed interaction like trying to board an uncontainable substance, akin to a simple take/put attempt."
+    },
+    {
+      "key": "action:exit/FOREST",
+      "kind": "handler",
+      "inputHash": "d636dccd5196fc96faa5390e88bebf0ff5a97e094b9a11774ce71e9d554bb37b",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "This is a no-op response requiring a direction, producing no actual movement or effect."
+    },
+    {
+      "key": "action:exit/ME",
+      "kind": "handler",
+      "inputHash": "fda297a14ca009e66fb399f309e2e4623eae190ff8e63f37bd9acaa31cda89fe",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Trying to exit yourself is a nonsensical no-op that produces an immediate rebuff with no in-world effort."
+    },
+    {
+      "key": "action:exorcise/GHOSTS",
+      "kind": "handler",
+      "inputHash": "a7443156090f37b43cdcd7384122b2046ff0a69b6f05b375abefe9fa0b97fb1d",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The handler explicitly rejects this command as a no-op, stating only the actual ceremony has any effect."
+    },
+    {
+      "key": "action:fill/GLOBAL-WATER",
+      "kind": "handler",
+      "inputHash": "4ec04ecdfdc9157fec07f671ef47904f4ad394f7611c6b937dbaf501a4b21e5e",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Filling a container with water is a simple, quick physical action akin to put/take."
+    },
+    {
+      "key": "action:fill/INFLATABLE-BOAT",
+      "kind": "handler",
+      "inputHash": "60d9248d9da5d4970e53836262d708bc4522bae73f59302d1e3f369c5b8fd9f4",
+      "class": "mechanism",
+      "minutes": 8,
+      "rationale": "Inflating the plastic boat with the pump is a multi-step physical task requiring sustained effort, fitting the mechanism band."
+    },
+    {
+      "key": "action:fill/INFLATED-BOAT",
+      "kind": "handler",
+      "inputHash": "48533f96b2f706f24cff94183d4ebc8a14855b2e412cde6c6759d8b67b85c4df",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "The boat is already inflated, so this is a trivial no-op action rejected with a single warning line."
+    },
+    {
+      "key": "action:fill/PUNCTURED-BOAT",
+      "kind": "handler",
+      "inputHash": "12056a5bb502b0e820d8ac2687d31dcd74ca76cd6ffad0a24ec73d94e9d205ee",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "The action fails outright since the boat is punctured, making it a quick no-op attempt rather than sustained effort."
+    },
+    {
+      "key": "action:fill/WATER",
+      "kind": "handler",
+      "inputHash": "7bf359a35d58683bbcb09792047f027ee57c474db15773a73264b2cbaf2a311b",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Filling a bottle with water is a simple container-filling task equivalent to a put action."
+    },
+    {
+      "key": "action:find/FOREST",
+      "kind": "handler",
+      "inputHash": "adbcb2e96570f138b2b601ec908c596d33160fa058388b785c0d868bdd581dfe",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The command is a no-op that just prints a dismissive message without any in-game effect."
+    },
+    {
+      "key": "action:find/GRANITE-WALL",
+      "kind": "handler",
+      "inputHash": "b30d8ca6d5cb5196c9ce1b7278ac43875406577f123eb5421e7dc31f4dc5063f",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Finding/examining a fixed wall feature is a trivial observation with no physical effort involved."
+    },
+    {
+      "key": "action:find/GRUE",
+      "kind": "handler",
+      "inputHash": "7327b124d06871835d4c1769985688027479294ab1be3f6eb6fd35237765e74e",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "A futile search query with no physical interaction, yielding only a flavor-text warning about the darkness."
+    },
+    {
+      "key": "action:find/PATHOBJ",
+      "kind": "handler",
+      "inputHash": "b1bd5e3c318b2ef6dc64ef6d16a586a1b1fd521e68a9ed1579a8a515daeefe6e",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The command fails outright with a canned rejection message, representing no meaningful in-world effort."
+    },
+    {
+      "key": "action:find/SONGBIRD",
+      "kind": "handler",
+      "inputHash": "981e841acf886a94ee8e2e46fe22217c7bb27b66c82dbd6ea5f4cd0c72e115f1",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "A failed search command that yields only a canned non-result message with no real effort."
+    },
+    {
+      "key": "action:find/WHITE-HOUSE",
+      "kind": "handler",
+      "inputHash": "484165e3545b229e6f5de1da53f0add5e5ff16e3d58ffbc88b6fb8f00fa3e0ba",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Finding something already in plain sight is a trivial no-op response, not an actual effort."
+    },
+    {
+      "key": "action:find/ZORKMID",
+      "kind": "handler",
+      "inputHash": "2fd2e3176776aef2b7c60078318075a587804dcba106dfb75ac9f99a3396ed57",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "This is a joke response with no actual searching mechanism, equivalent to a no-op turn."
+    },
+    {
+      "key": "action:follow/PATHOBJ",
+      "kind": "handler",
+      "inputHash": "82091caaaf0e0b3bf0db1387c6d8639db508591872aedfe7c8fdff7c1966be33",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "This is a failed action requiring the player to specify a direction, resulting in no actual movement or progress."
+    },
+    {
+      "key": "action:follow/SONGBIRD",
+      "kind": "handler",
+      "inputHash": "3010b1d045ae3574ef92ca81a4bcbb4c239c97199cea9b0dcebb6007baf2a8c0",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The action fails outright with no meaningful attempt or consequence, a pure no-op response."
+    },
+    {
+      "key": "action:give/CYCLOPS",
+      "kind": "handler",
+      "inputHash": "176373e9997adfb9cf503071b67c89542483d90e238fec89843a7b8eb85618ab",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Approaching and offering an item to a dangerous cyclops requires cautious deliberation, akin to a risky mechanical interaction."
+    },
+    {
+      "key": "action:give/GLOBAL-WATER",
+      "kind": "handler",
+      "inputHash": "a9f240f9c00e949f6dc2b58de9880a121de7b25fd7af8e7a3875b74edde937d8",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "GIVE on water simply falls through to no-op/RFALSE handling with no meaningful world-state change, akin to a trivial object interaction."
+    },
+    {
+      "key": "action:give/ME",
+      "kind": "handler",
+      "inputHash": "b8748068b02d63211aa5a787cece9b10fef8376431676a7805930abd512fbcae",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "Giving yourself something just redirects to taking it, a trivial self-referential no-op action."
+    },
+    {
+      "key": "action:give/THIEF",
+      "kind": "handler",
+      "inputHash": "83ce34ec8b25085227a61875f52595ba8db1279a7a86897644e581d98d20e7e1",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Handing an object to the thief is a simple physical transfer akin to giving/putting an item, just with social risk attached."
+    },
+    {
+      "key": "action:give/TROLL",
+      "kind": "handler",
+      "inputHash": "f77a43e44eab3481b038204364ceb0a435803040f6dfd074d471a9361b0a93a8",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Offering an item to the troll is a quick, deliberate hand-off action with immediate resolution, not a multi-step mechanism."
+    },
+    {
+      "key": "action:give/WATER",
+      "kind": "handler",
+      "inputHash": "0f32a48f5f4e5609a95355cc8bee9c0b1664f2af67000c0e4e9afc9931526d5a",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Giving water is a quick, mundane object-handling attempt (RFALSE for GIVE) with no real effort beyond a moment's fumbling."
+    },
+    {
+      "key": "action:hatch/EGG",
+      "kind": "handler",
+      "inputHash": "d41800da39fc110398174f285e6851a3c9cb9031cf99b4a1ca8e134866b388eb",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Attempting to hatch the egg by climbing on it is a quick, careless physical action that immediately crushes the fragile egg."
+    },
+    {
+      "key": "action:jump/CLIMBABLE-CLIFF",
+      "kind": "handler",
+      "inputHash": "e60c6ed4126343c74547fb85d3709ebe68272fb37f2a7089508eca9ef5465fbe",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "Jumping off/over the cliff is a quick, decisive physical action, not a multi-step mechanism."
+    },
+    {
+      "key": "action:jump/RIVER",
+      "kind": "handler",
+      "inputHash": "808791b93b7d402ed795b589bfaaf8e0b5396c29b6d1caed059a8e21ac992fc1",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The player just looks before leaping and decides not to jump, a no-op turn with no real effect."
+    },
+    {
+      "key": "action:kick/BONES",
+      "kind": "handler",
+      "inputHash": "22adec30a1fe6e74ea2c63ceeb055b36b66fe4d45f6b1fd4ceebdd391fef00aa",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "A quick physical act of desecrating remains that triggers an immediate curse, requiring no extended ritual or ceremony."
+    },
+    {
+      "key": "action:kick/CYCLOPS",
+      "kind": "handler",
+      "inputHash": "c768dc31609f11514e50b63ec96493b03dbe98af59f56cd48259e8e600a30b41",
+      "class": "mechanism",
+      "minutes": 3,
+      "rationale": "A risky provocative act (waking or angering the cyclops) that takes a brief but tense physical effort to execute."
+    },
+    {
+      "key": "action:kiss/BONES",
+      "kind": "handler",
+      "inputHash": "f2288f4dd01f24d44b82d5adb9071b6053428ab8b21442bba4bb2e567f8b405b",
+      "class": "dramatic",
+      "minutes": 30,
+      "rationale": "Kissing the skeleton triggers a curse-and-plunder ceremony (ghost appearance, robbery of valuables) that the game treats as a significant set-piece event."
+    },
+    {
+      "key": "action:launch/INFLATED-BOAT",
+      "kind": "handler",
+      "inputHash": "80548f9b30051115d8964414eec7d608d9d1c44b8538a519092f2311c473eda8",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Launching the inflated boat into the current is a brief but deliberate physical procedure, not a simple object manipulation."
+    },
+    {
+      "key": "action:listen/CYCLOPS",
+      "kind": "handler",
+      "inputHash": "0a3da6ce6c9f6eebe509ee3fe56e73e80b6aad5918b9329dc89f28136827f664",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Listening briefly to a nearby creature's stomach rumble is a trivial, momentary sensory check with no interaction."
+    },
+    {
+      "key": "action:listen/FOREST",
+      "kind": "handler",
+      "inputHash": "670e7170489448d8ab03fbe10d60e58e27f42474e95b2c06b9dbb5d33bacfd4b",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Simply pausing to listen to ambient forest sounds is a trivial, effortless action with no mechanism engaged."
+    },
+    {
+      "key": "action:listen/GRUE",
+      "kind": "handler",
+      "inputHash": "09208478eefea213d01663229d5530e3defc4ad5fac8b6319bb542802156bfa7",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Listening for the grue is a passive, momentary act yielding only a flavor line with no mechanical effect."
+    },
+    {
+      "key": "action:listen/SONGBIRD",
+      "kind": "handler",
+      "inputHash": "9e968cf82dc15ffeb393995c764b090bf751d8ae8a8de15aa1191b32419e2d11",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "A failed listen attempt with no songbird audible is a no-op turn."
+    },
+    {
+      "key": "action:listen/THIEF",
+      "kind": "handler",
+      "inputHash": "ee3b87b4b687652ad9d86914cc816f91f197ad740a0dbb05eb9837a0ae7e263c",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "A trivial failed social interaction that produces only a one-line rebuff with no in-world effort expended."
+    },
+    {
+      "key": "action:listen/TROLL",
+      "kind": "handler",
+      "inputHash": "e0e83ed70775ed233d6d8c59cb07a2be2a0dd7edaa60e0e33571460cb33c7bbe",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Listening to the troll just returns a flavor line with no mechanical effect, a trivial no-op action."
+    },
+    {
+      "key": "action:lock/GRATE",
+      "kind": "handler",
+      "inputHash": "3635f8a19a1695d719b1fd21d890186ce92a32527dd3f329050e3bd5cac87464",
+      "class": "mechanism",
+      "minutes": 4,
+      "rationale": "Locking the grate is a simple mechanical action of turning a key in a lock, requiring only brief physical effort."
+    },
+    {
+      "key": "action:lower/BONES",
+      "kind": "handler",
+      "inputHash": "2af4162f4356fb817d5ce8fb25e9369d15ad9b816e90a5199cc9e79e71ae4b89",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Physically manipulating the skeleton's remains is a quick, simple action despite its severe supernatural consequence."
+    },
+    {
+      "key": "action:lower/GRANITE-WALL",
+      "kind": "handler",
+      "inputHash": "36e385cee54c185bee179e8e0928543ed2fcee34c2821976947e766ddc29d1c1",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "A futile tug on an immovable solid granite wall is a trivial no-op effort."
+    },
+    {
+      "key": "action:lower/LOWERED-BASKET",
+      "kind": "handler",
+      "inputHash": "5ce1a2d8af0115fe11c00ba37857c92046d68acc1a7b00f8c9017e3b19bdaf75",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Lowering the basket requires manually operating the chain/pulley mechanism at the shaft, a physical task beyond simple object manipulation."
+    },
+    {
+      "key": "action:lower/RAISED-BASKET",
+      "kind": "handler",
+      "inputHash": "0093018daf3eb493e668c743ca81ca06b43945e530424dac214aa6084af3fb94",
+      "class": "mechanism",
+      "minutes": 4,
+      "rationale": "Lowering the counterweighted basket at the shaft requires operating a mechanism, not just a simple object manipulation."
+    },
+    {
+      "key": "action:make/ME",
+      "kind": "handler",
+      "inputHash": "ec7fc6748b3b2bf15a8577c62d0c1a940db43b2944a4f23540c547240e799c2b",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "A nonsensical self-transformation attempt that the game rejects outright with no world effect."
+    },
+    {
+      "key": "action:move/BLUE-BUTTON",
+      "kind": "handler",
+      "inputHash": "b0915c526c71d41ffd5112d4b0657ef03fee540b530707dcd5f8fd26cfae50b8",
+      "class": "mechanism",
+      "minutes": 4,
+      "rationale": "Pushing the button triggers a plumbing leak mechanism with a described physical effect, requiring more than a trivial manipulation."
+    },
+    {
+      "key": "action:move/BONES",
+      "kind": "handler",
+      "inputHash": "bce1e9b2ec69e33d656156c291e37f2c4f80029cdbc3b193560b70cc8d7901dc",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "A simple, quick physical act of touching the bones, though it triggers a severe unintended consequence."
+    },
+    {
+      "key": "action:move/BROWN-BUTTON",
+      "kind": "handler",
+      "inputHash": "ce523ff94564f74a3a42a524ffbdc7adb9886c466ed23dac799016a18f4d28b7",
+      "class": "mechanism",
+      "minutes": 3,
+      "rationale": "Pushing the button sets the dam gate flag with a simple click, a minor mechanical interaction akin to flipping a switch."
+    },
+    {
+      "key": "action:move/LEAVES",
+      "kind": "handler",
+      "inputHash": "fe3474c529f29e137ce9a83561c37dd6914d461d709ba6931eb82550823346fc",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Shoving a pile of leaves aside to reveal what's underneath is a quick physical action."
+    },
+    {
+      "key": "action:move/RED-BUTTON",
+      "kind": "handler",
+      "inputHash": "1748d7fce40d82aea5d1382c0bc13c35e01fc4492feb3619f8d28fb28c2fd0eb",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Pushing a button to toggle room lights is a simple, quick physical interaction."
+    },
+    {
+      "key": "action:move/RUG",
+      "kind": "handler",
+      "inputHash": "8cc57fefa67a4a8ad21b46791f303c6e703ef2e0d910cf2186fe0ada54c3d9a3",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Moving a heavy rug aside to reveal a hidden trap door requires sustained physical effort beyond a simple manipulation."
+    },
+    {
+      "key": "action:move/TROLL",
+      "kind": "handler",
+      "inputHash": "e6e0cc7c59e17a8969a481dfec5dd7169f4bf7db039eda08b09987be85214326",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Attempting to move the troll simply provokes a rebuff (spit in face), a trivial failed physical attempt."
+    },
+    {
+      "key": "action:move/YELLOW-BUTTON",
+      "kind": "handler",
+      "inputHash": "3437be3518207a9c8506c60c6986985c3217cdb35a692ec2fbb32d78dcc59e22",
+      "class": "mechanism",
+      "minutes": 3,
+      "rationale": "Pressing the button to reconfigure the dam gate mechanism requires a simple physical press with a mechanical click and effect."
+    },
+    {
+      "key": "action:odysseus/CYCLOPS",
+      "kind": "handler",
+      "inputHash": "733373ec50258bb1be0257ff461afd7b3b80cb0399fa4b7cf15fc2dbf75f84cb",
+      "class": "dramatic",
+      "minutes": 30,
+      "rationale": "Speaking the secret name of Odysseus to trick the cyclops is a scripted, story-critical ceremony that resolves a major obstacle, not a routine action."
+    },
+    {
+      "key": "action:oil/BOLT",
+      "kind": "handler",
+      "inputHash": "d35f0210f15b43cbe6186d7ed1b91bd64870acf66c186eb6d27b507115fd6ace",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Oiling the bolt is a no-op that just prints a flavor message without changing game state."
+    },
+    {
+      "key": "action:oil/PUTTY",
+      "kind": "handler",
+      "inputHash": "2d471ba73d09ad4502d5f9b879eaaedde6c12f26f58010031f69a8b4447ec934",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick failed attempt to oil putty that the game immediately rejects as not a lubricant."
+    },
+    {
+      "key": "action:open/BARROW-DOOR",
+      "kind": "handler",
+      "inputHash": "b1b68e4752ccc7d230eb5a0a0592962c6422eff842175d4102cc5ba7f3d23985",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A failed attempt to open a heavy door is a brief physical effort with no mechanical progress."
+    },
+    {
+      "key": "action:open/BOARDED-WINDOW",
+      "kind": "handler",
+      "inputHash": "054c48d8622ebf01bc11d28445f66edb0d387c12c00ddf38f1fbaceec5de9680",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick failed attempt to open a boarded window requires minimal effort and yields an immediate no-op result."
+    },
+    {
+      "key": "action:open/BOOK",
+      "kind": "handler",
+      "inputHash": "6172f7a2a806556487553c7363854f66ba6f30f06a0aae39357f4855f1fd5dec",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "The book is already open, so this is a no-op action with no real effort."
+    },
+    {
+      "key": "action:open/BUOY",
+      "kind": "handler",
+      "inputHash": "81d166522c46ed1a4233baf8e6905d114636fdacdf2643f6f369ed59b81f07a8",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Opening the buoy to reveal the emerald inside is a simple physical action akin to opening a container."
+    },
+    {
+      "key": "action:open/DAM",
+      "kind": "handler",
+      "inputHash": "16dabb859df50dbbb74b74b0ce38a115e610a7ad9604e327afcaff76af1c8423",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "The handler simply rejects opening the dam this way, a no-op response requiring no in-world effort."
+    },
+    {
+      "key": "action:open/EGG",
+      "kind": "handler",
+      "inputHash": "0acf30cbdf309f68149d760a28b8aefb9ba3485b63b52b4a0bbcba03635f2752",
+      "class": "manipulation",
+      "minutes": 3,
+      "rationale": "Opening bare-handed without tools always destroys the fragile egg, but it's still a quick, deliberate manipulation of an object."
+    },
+    {
+      "key": "action:open/FRONT-DOOR",
+      "kind": "handler",
+      "inputHash": "fa3bdf30d846dd7b04f56bde1371573a9da2bc861e17dcb45dccc54297c194f2",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "A quick, failed attempt to open a door that doesn't budge requires minimal effort."
+    },
+    {
+      "key": "action:open/GRATE",
+      "kind": "handler",
+      "inputHash": "5e776a5643c091d87ec19c428a30abaa609c848d56131af1baa30cfbd9b69711",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Opening the grating is a simple physical action of swinging open an unlocked grate."
+    },
+    {
+      "key": "action:open/KITCHEN-WINDOW",
+      "kind": "handler",
+      "inputHash": "fd5f48162158f0f168e7e7ac96ebc12278b29e67e1005624cef8f14391d716ea",
+      "class": "mechanism",
+      "minutes": 3,
+      "rationale": "The text explicitly notes 'great effort' to force the stuck window open, more than a simple manipulation."
+    },
+    {
+      "key": "action:open/LARGE-BAG",
+      "kind": "handler",
+      "inputHash": "11aa884f7e5966539ce210d6369614dea8db2fcf500497fb1da2bfdfff89b6aa",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "The bag is inaccessible under the thief, so this is a failed no-op attempt requiring no real effort."
+    },
+    {
+      "key": "action:open/MACHINE",
+      "kind": "handler",
+      "inputHash": "53e97e87970ed0416fcc170e8979d1fec6eebe5f6f20367f389e40fb9413004c",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Opening a lid on a machine is a simple physical action with immediate effect, fitting the manipulation band."
+    },
+    {
+      "key": "action:open/MATCH",
+      "kind": "handler",
+      "inputHash": "5a74e1df2bf61e4147e93ef2bfc6a5b6ea8af8c117e3cbc926ba47847b6480bd",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Opening a matchbook (here just reporting match count) is a trivial physical action akin to checking inventory."
+    },
+    {
+      "key": "action:open/PEDESTAL",
+      "kind": "handler",
+      "inputHash": "dc4c5e185445c937294715b357b038e4118700bb6b3eda62854c262f5dda38a2",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "The handler is a no-op response ('You can't do that.') for a dumb container, so no meaningful effort occurs."
+    },
+    {
+      "key": "action:open/TOOL-CHEST",
+      "kind": "handler",
+      "inputHash": "8a1c19fe63bc76ed253516567ab93ec9c11d08197a6c0071a589c449d2582a3a",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Attempting to open an already-open, empty chest is a trivial physical action yielding a no-op result."
+    },
+    {
+      "key": "action:open/TRAP-DOOR",
+      "kind": "handler",
+      "inputHash": "c6bc243f6270f071fff75abd226c4394c49929ebcb555fbc7504ba58f1a8b961",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Opening the trap door is a simple physical action of prying it up despite its stuck, reluctant nature."
+    },
+    {
+      "key": "action:open/WHITE-HOUSE",
+      "kind": "handler",
+      "inputHash": "40626859c3dcb3bc9a300c63a1230db0f9263f88af79126ecb10324f8ba93cf4",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "The house has no door to open; this is a no-op/failed action yielding an explanatory response rather than any physical effort."
+    },
+    {
+      "key": "action:open/WOODEN-DOOR",
+      "kind": "handler",
+      "inputHash": "5468f53afd4fb67a3df4b8f34707ae56bcff9e9a37ee09c3bd347f2f5b288aa0",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick attempt to open a door that simply fails, requiring minimal effort."
+    },
+    {
+      "key": "action:pick/GRATE",
+      "kind": "handler",
+      "inputHash": "d93da60ce456162c4e323d6f6f2b31b12fc46aa64bdc5c7faeed00b23a2e1f8b",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The handler simply refuses with 'You can't pick the lock,' a no-op failed action."
+    },
+    {
+      "key": "action:plug/DAM",
+      "kind": "handler",
+      "inputHash": "0b1fefc6bdb28205ed01db4bcb9b0cab22ffee6ba501b50aaf331d998afe0e25",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A futile attempt to plug the dam with an inadequate object yields an immediate rebuff with no real mechanical effort."
+    },
+    {
+      "key": "action:plug/LEAK",
+      "kind": "handler",
+      "inputHash": "125ffe95794b2bec5efac9e074d98aa3935a75c1a2d2df06072190db08a631e8",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Plugging a leak with putty requires careful physical effort to stop water flow, fitting the mechanism band."
+    },
+    {
+      "key": "action:plug/PUNCTURED-BOAT",
+      "kind": "handler",
+      "inputHash": "713c6b8aa531c0723215e3814405345176861598e198d658c8a7c61cbc59506d",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Plugging a puncture with putty to fix the boat is a small physical repair task requiring some effort and dexterity."
+    },
+    {
+      "key": "action:put/CANDLES",
+      "kind": "handler",
+      "inputHash": "b78a53628568f38b0a615d5c3624efbf6e410da158ec6ea8dcb292b322da3bd2",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Placing the pair of candles somewhere is a simple physical placement action."
+    },
+    {
+      "key": "action:put/CHALICE",
+      "kind": "handler",
+      "inputHash": "73581c639a9c685da8287c6f6a0dee65312f9683c2c1a6a1b1a69d114f9e6065",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A simple attempted put action that fails outright, still a quick physical fumbling with the object."
+    },
+    {
+      "key": "action:put/CLIMBABLE-CLIFF",
+      "kind": "handler",
+      "inputHash": "7dea973878a17d7e611608a4abbc327065a648afb3bfd60168a7e684ce0c3660",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Putting an object onto/at the cliff is a simple physical action, priced like any ordinary put/take manipulation."
+    },
+    {
+      "key": "action:put/GLOBAL-WATER",
+      "kind": "handler",
+      "inputHash": "2ff357f2010bb3569c6879121d1b1231ee56a390957a7d2232925d166410e8de",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simple attempt to place water somewhere that typically slips away or forms a puddle, a quick trivial action."
+    },
+    {
+      "key": "action:put/GRATE",
+      "kind": "handler",
+      "inputHash": "33003af1dcaaf88b70173d2faa1f70cf39ba5fb4ea45160c50b29305e9952ca9",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Dropping an object through the grating is a simple physical placement action, just above instant due to positioning the item at the opening."
+    },
+    {
+      "key": "action:put/GROUND",
+      "kind": "handler",
+      "inputHash": "d5293b711beed50d67d1512ec32aada5597e40aca4c1348a906922f6ce927acb",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Putting something on the ground is effectively just dropping it, a quick simple action."
+    },
+    {
+      "key": "action:put/INFLATED-BOAT",
+      "kind": "handler",
+      "inputHash": "fd1aac6dd51a655369af3f02c8ed36d32f3648504744dfd8917d800b113cb6ca",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Placing an object with or on another is a simple physical action even if it triggers a scripted consequence."
+    },
+    {
+      "key": "action:put/LARGE-BAG",
+      "kind": "handler",
+      "inputHash": "4d314a334103c43fa51a59901c648d2afd1fcd3194ccb90b4eb9f2f5d518d25b",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "A nonsensical self-referential put attempt that trivially fails with no real effort expended."
+    },
+    {
+      "key": "action:put/LEAK",
+      "kind": "handler",
+      "inputHash": "d68f7f71b332e376c35af7c06ef26b07a34811cad0e140bacd03aa79677d93b5",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Placing an object to plug a leak is a quick, simple physical action."
+    },
+    {
+      "key": "action:put/PUNCTURED-BOAT",
+      "kind": "handler",
+      "inputHash": "0bf6daca130d9003b6660c1c3df6ad68819c3816332d2a27962bebe0ad213ebf",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Putting the punctured boat somewhere is a simple object placement action with no mechanical effect."
+    },
+    {
+      "key": "action:put/PUTTY",
+      "kind": "handler",
+      "inputHash": "27e3f38ff54e7d58798f9f296673057a5d847f860f95f5daab1b753ccb967959",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A simple failed attempt to use putty as a lubricant is a quick, low-effort action."
+    },
+    {
+      "key": "action:put/RIVER",
+      "kind": "handler",
+      "inputHash": "536f1f3688acd79478b424303710874309ee2ba9ac402be27641ef9175f2b844",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Tossing an object into the river is a quick, simple physical action of releasing it into the water."
+    },
+    {
+      "key": "action:put/SLIDE",
+      "kind": "handler",
+      "inputHash": "87ff291e07dc14e79786f00bb234811e8d79ac8f10ad6bbba16251195346504c",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Putting an object onto/with the slide is a simple single-step interaction akin to placing an item."
+    },
+    {
+      "key": "action:put/TOOL-CHEST",
+      "kind": "handler",
+      "inputHash": "6596da24cebf9ea4b66ac7de9f53f82e88fafd5a96e7cfe7f9d87a472cb01c7c",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Touching the decrepit chests causes them to crumble, a quick single-action failure with immediate outcome."
+    },
+    {
+      "key": "action:put/TUBE",
+      "kind": "handler",
+      "inputHash": "bee79a4849d3bc1fe56d4fdb7b688a9f733844e8d004f053b478b857c7f76640",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A trivial, immediately-refused attempt to put something into the tube requires only a brief physical gesture."
+    },
+    {
+      "key": "action:put/WATER",
+      "kind": "handler",
+      "inputHash": "b26c48e349015aa644d76c38e6f76c3d7d09f00ca092af013e2dbfbe13c72052",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Handling water slipping through fingers or forming a puddle is a quick, simple physical action."
+    },
+    {
+      "key": "action:raise/BONES",
+      "kind": "handler",
+      "inputHash": "44eaa994438ca7c276b4fa72d9ef0878fdf32b203741f93e7783dd3acfa8ff61",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "A quick, physically simple act of disturbing the bones that triggers an immediate consequence."
+    },
+    {
+      "key": "action:raise/GRANITE-WALL",
+      "kind": "handler",
+      "inputHash": "b489f2fe09973a470cf0379f2ad964e7c52e5bf46e23476a357a705f6efe311e",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Futile attempt to move an immovable solid granite wall, resolved with a quick physical effort."
+    },
+    {
+      "key": "action:raise/LOWERED-BASKET",
+      "kind": "handler",
+      "inputHash": "a81a60c8cf527d8b6ac2511ab6017985d00c8df5d372a688764ca1d216d952d6",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Raising the basket via the pulley chain requires physical effort to operate a mechanism, but is simple and quick."
+    },
+    {
+      "key": "action:raise/RAISED-BASKET",
+      "kind": "handler",
+      "inputHash": "edc54f330677b42424baa585bcdcd1443ea4eedd5b364a2986bb54ae296e16a8",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Operating the mechanical chain-and-pulley to raise the basket to the top of the shaft is a physical mechanism action, not a simple manipulation."
+    },
+    {
+      "key": "action:raise/RUG",
+      "kind": "handler",
+      "inputHash": "92c4fe449227d07a3063370c79ac47116d6d7c9bb8817b5c33d72fa3c6271532",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "A failed attempt to lift a heavy rug, requiring physical effort but yielding no actual displacement."
+    },
+    {
+      "key": "action:raise/SCEPTRE",
+      "kind": "handler",
+      "inputHash": "fbb767884c226263d6b30a7ab3406fbfec688a96f2a693fe4bc2ef400e52324d",
+      "class": "dramatic",
+      "minutes": 30,
+      "rationale": "Raising the sceptre at the rainbow's end is a ceremonial act that transforms the environment, solidifying the rainbow into a walkable structure and revealing treasure."
+    },
+    {
+      "key": "action:raise/TRAP-DOOR",
+      "kind": "handler",
+      "inputHash": "c4140ff45e444dfd1e075ecad07fa2c3521a3a4834d7f216e0c282ad65ba4f76",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Raising the trap door is a simple physical action equivalent to opening it."
+    },
+    {
+      "key": "action:ring/BELL",
+      "kind": "handler",
+      "inputHash": "bc95d00290b0da48e612732c83071667f9f30713a63a98b5c2620526b086cd7f",
+      "class": "mechanism",
+      "minutes": 3,
+      "rationale": "Ringing the bell is a simple mechanical action with a brief, immediate ding-dong outcome, warranting the minimum mechanism time."
+    },
+    {
+      "key": "action:ring/HOT-BELL",
+      "kind": "handler",
+      "inputHash": "cac657f74de93fa38967e3bca077d8934c8a1a4c2d6c323b498edb4b340eb5f4",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Ringing without an object simply fails as the bell is too hot to reach, a quick rebuffed attempt."
+    },
+    {
+      "key": "action:rub/BONES",
+      "kind": "handler",
+      "inputHash": "5578b16ea6dfbfe18524ed4dbc8491cee36b0ab52fdcaf4fc732faad6f1fe26b",
+      "class": "dramatic",
+      "minutes": 30,
+      "rationale": "Desecrating a fellow adventurer's remains triggers a ghostly curse and ceremonial loss of valuables, a set-piece consequence rather than routine manipulation."
+    },
+    {
+      "key": "action:rub/HOT-BELL",
+      "kind": "handler",
+      "inputHash": "4045c691deba47aedcc2fb694a37382842e779f9f993d87a947cf9ac0a31716f",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Rubbing bare skin against a red-hot bell is a quick, futile touch that immediately burns without any mechanical progress."
+    },
+    {
+      "key": "action:rub/MIRROR-1",
+      "kind": "handler",
+      "inputHash": "038ef7f1c18a5294f0b960b009fc06b8429ff903c72c020d9ffedf5263d09c4f",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Rubbing the mirror triggers a room-swap teleportation effect, a physically simple but consequential act of manipulating a magical mechanism."
+    },
+    {
+      "key": "action:rub/MIRROR-2",
+      "kind": "handler",
+      "inputHash": "f9d9e33e080433f0be40eb04b3d6f4857e4dde58eed3e1b4ee2fedaa3c03cd55",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Rubbing the mirror triggers a room-swap teleportation effect, a mechanical action of real but brief physical effort."
+    },
+    {
+      "key": "action:say/BAT",
+      "kind": "handler",
+      "inputHash": "23c61d3a736417a62a16ad3e74381d1ee7a53a776a55106fe8ddbd0f874be4a4",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Speaking a single word to a bat triggers only a generic non-response gag with no mechanical effect."
+    },
+    {
+      "key": "action:say/GHOSTS",
+      "kind": "handler",
+      "inputHash": "4d670cb9045a806ab36fb4bc08ec80468c5835b10a1473418626b5aef7b1786a",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The command produces only a dismissive canned response with no mechanical effect, equivalent to a failed no-op turn."
+    },
+    {
+      "key": "action:say/ME",
+      "kind": "handler",
+      "inputHash": "a94030a457f79f76315059dc2b16af2952c773304feb30436035d5918d155c38",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Talking to oneself is a trivial no-op remark with no real-world effort."
+    },
+    {
+      "key": "action:say/SAILOR",
+      "kind": "handler",
+      "inputHash": "8f08c817c85d5a4c11391ad55e997c9b766af1f0a5ea3c62da5a4c719daa867c",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Speaking a phrase to the sailor is a quick verbal action with no physical effort."
+    },
+    {
+      "key": "action:say/THIEF",
+      "kind": "handler",
+      "inputHash": "ac2c4e94ab5c73151ecd3f73adeb76eebab04bc3f7c172467540044bb26039e3",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Saying to the thief without formal introduction is a trivial no-op response requiring negligible effort."
+    },
+    {
+      "key": "action:say/TROLL",
+      "kind": "handler",
+      "inputHash": "08519a3ada6d98984b5e13176124b9ecc089f77c034f6701c98c781459579800",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Saying something to the troll produces only a canned non-conversational reply with no game-world effect."
+    },
+    {
+      "key": "action:shake/BOTTLE",
+      "kind": "handler",
+      "inputHash": "90bedf0161938d529fb4183ff35ead14f4e5a3ee55e7a555581d3559ac277d13",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Shaking a small bottle is a quick, simple physical action."
+    },
+    {
+      "key": "action:smell/SANDWICH-BAG",
+      "kind": "handler",
+      "inputHash": "86a068d7ce504ded5f0e08e76e55ef0cd9fefe5d98857edf7c0340c009884074",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Smelling a held object is a trivial sensory check with no physical effort."
+    },
+    {
+      "key": "action:squeeze/TUBE",
+      "kind": "handler",
+      "inputHash": "ac3043f94c79c87641148b43723d51c0f058d55b161197db4c84b2804a086ffa",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Squeezing a small tube to extract or check its contents is a simple, quick physical action."
+    },
+    {
+      "key": "action:take/BAT",
+      "kind": "handler",
+      "inputHash": "779ad1245b010ef6d2c4e77552e8e302b0d268834e199cc6a924405a7c2aaf77",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Attempting to grab the bat is a quick single action, even though it triggers the vampire bat's chaotic response."
+    },
+    {
+      "key": "action:take/BOARD",
+      "kind": "handler",
+      "inputHash": "b6e857e124e4fd25753d81e1546580f8ad708d673b6dc2e462071aadc1fc3840",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick attempt to grab the board that immediately fails since it's securely fastened."
+    },
+    {
+      "key": "action:take/BODIES",
+      "kind": "handler",
+      "inputHash": "efe86760099fd94e88e14ee3d879ab27b37b078910482617b3b8248dfd4b02d7",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A simple failed take attempt that is blocked instantly by an unseen force."
+    },
+    {
+      "key": "action:take/BOLT",
+      "kind": "handler",
+      "inputHash": "83262f3510c0836887895a25c6af7dba20f49d530cd913c6ff37b5e0a6cfb3d6",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Taking the bolt is a simple grasp attempt resolved by INTEGRAL-PART, not the mechanism-level effort of turning it."
+    },
+    {
+      "key": "action:take/BONES",
+      "kind": "handler",
+      "inputHash": "152ff181b1fece40d3a938fde8427cb8eaa2eaecd11910c4895cf51cc3e96e1a",
+      "class": "dramatic",
+      "minutes": 30,
+      "rationale": "Disturbing the skeleton's remains triggers a ceremonial curse event (ghost appearance, banishment of valuables) that the game treats as a significant set-piece, not a routine pickup."
+    },
+    {
+      "key": "action:take/BUBBLE",
+      "kind": "handler",
+      "inputHash": "1e3e305c83bacb211e6ddc79602d1ad199e99bb2cc55d9dff856488056da909c",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply grasping a fragile bubble is a quick, low-effort manipulation action."
+    },
+    {
+      "key": "action:take/CHALICE",
+      "kind": "handler",
+      "inputHash": "9522735568d1c33cf7aea418e522d1ed37db392e5604d3dcaa24075f6b16758c",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simple pickup of a small treasure item requiring only a moment's grasp."
+    },
+    {
+      "key": "action:take/CYCLOPS",
+      "kind": "handler",
+      "inputHash": "a9b99ec20e5069c4d010a04ba6ed0c4e2505e8750024356fbe4a1cd1fd6490ba",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A brief, failed grab attempt that the cyclops rebuffs instantly with no real effort expended."
+    },
+    {
+      "key": "action:take/GLOBAL-WATER",
+      "kind": "handler",
+      "inputHash": "09dbd2ca0a5c3f75abe25e46701db7750c7369d80e4a382f49de1c5a4f447736",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Scooping water by hand is a quick, simple gesture that futilely slips through the fingers."
+    },
+    {
+      "key": "action:take/GRANITE-WALL",
+      "kind": "handler",
+      "inputHash": "bcf3a9e5868fe0b2f2619601566f24474c93bb8c061a1880dbe62406d59696f8",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Attempting to take a fixed wall is a trivial failed action with no physical effort expended."
+    },
+    {
+      "key": "action:take/HOT-BELL",
+      "kind": "handler",
+      "inputHash": "d9267ef4bcef4254561c7679f6fde5e77e0648a7a9ee27b4882e7b0a90f336c3",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick failed grab attempt reflexively pulled back due to heat, no lasting effort."
+    },
+    {
+      "key": "action:take/KNIFE",
+      "kind": "handler",
+      "inputHash": "dfc13578ba7646800e152a3395e2c949f5ec40a1ac0744e4632a05d07d4f8085",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply picking up a knife from a table is a quick, low-effort physical action."
+    },
+    {
+      "key": "action:take/LARGE-BAG",
+      "kind": "handler",
+      "inputHash": "58cf6969387f4030d0650d148983af1426b799dd1d208343cbf108068ab8d636",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick, failed grab attempt at a bag pinned under the thief."
+    },
+    {
+      "key": "action:take/LEAVES",
+      "kind": "handler",
+      "inputHash": "944e51bc369a5b7774948b89552f30be17bd629ecb8e24d23657b81bd6f08d7b",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Grabbing a pile of leaves is a simple physical action that also scatters them to reveal what's underneath."
+    },
+    {
+      "key": "action:take/LOWERED-BASKET",
+      "kind": "handler",
+      "inputHash": "aefd887af1e188e01258b7a141d17c2e58b9e7b00643d4aae17c6bec4d676582",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Attempting to take the fastened cage is a quick, failed grab that yields an immediate rebuff."
+    },
+    {
+      "key": "action:take/MACHINE",
+      "kind": "handler",
+      "inputHash": "9ef732566d0d8ec74c61378daf8e783f84fd6c12805da8d6963cc6395e9ee4a1",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "A failed take attempt on an object too large to carry is a no-op turn."
+    },
+    {
+      "key": "action:take/MAILBOX",
+      "kind": "handler",
+      "inputHash": "51380d92b079768fb1cf81b2926e422621a3b0c4c5fe9b230e35722dd1b17640",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick attempt to pick up the mailbox that fails instantly since it's anchored in place."
+    },
+    {
+      "key": "action:take/ME",
+      "kind": "handler",
+      "inputHash": "08a5a290336173a701c14f84738ba42e5b94b09998631e443d7601c0b293f00c",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "A trivial no-op joke response requiring no real effort, just a canned rebuff."
+    },
+    {
+      "key": "action:take/MIRROR-1",
+      "kind": "handler",
+      "inputHash": "775ffa68c7a9196ebb07bc425c82b14f9b86fe6ac4e9a71fb1766ed064533b14",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick, futile attempt to lift the oversized mirror that immediately fails."
+    },
+    {
+      "key": "action:take/MIRROR-2",
+      "kind": "handler",
+      "inputHash": "928da454bb601d50f0a191e62fa32124fe08d2e6e1028e92a58ebba3a027c959",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A brief futile attempt to lift the oversized mirror before giving up."
+    },
+    {
+      "key": "action:take/PATHOBJ",
+      "kind": "handler",
+      "inputHash": "4a262c0c02c073bd398c1d742a8e754a3cc42b90f272d5937fd1eb618c423f2f",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "This is a failed/no-op action since a passage cannot be taken, only responded to with clarifying or dismissive messages."
+    },
+    {
+      "key": "action:take/RAISED-BASKET",
+      "kind": "handler",
+      "inputHash": "d3ea988261381e626d1d9a9354f56d4af13ad2768dff262868444f2710f0c4ad",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "The cage is fixed to the chain, so attempting to take it is a quick failed action."
+    },
+    {
+      "key": "action:take/ROPE",
+      "kind": "handler",
+      "inputHash": "936bb3c673c5c7a1f4343c8214b142dd5fd4e19d3484d80f2f8e16eab7cd1d2a",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Picking up a coil of rope from the floor is a simple physical action, just on the longer end of manipulation."
+    },
+    {
+      "key": "action:take/RUG",
+      "kind": "handler",
+      "inputHash": "35715ef5ada57f2c63eb495e79b62a8bf30308c4085374cab2a719951d699014",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A brief failed attempt to lift an overly heavy rug requires minimal effort before giving up."
+    },
+    {
+      "key": "action:take/RUSTY-KNIFE",
+      "kind": "handler",
+      "inputHash": "f3005e52e06cd285e1f2e252f2ea98cf851f714ed81b8d0851b9e3dd78792709",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply picking up an item beside a skeleton is a quick physical action despite its ominous implications."
+    },
+    {
+      "key": "action:take/SONGBIRD",
+      "kind": "handler",
+      "inputHash": "9a9004ce072bf9f0afa04bf1aaa4e020703eb1ac8c0aa562c69df3a59af4edb0",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "This is a failed no-op turn since the songbird isn't present to be taken."
+    },
+    {
+      "key": "action:take/SWORD",
+      "kind": "handler",
+      "inputHash": "ee0ac1901e97e5f2660805ecc8b7c197cafe8988bd3b042ae283ed1bb29301de",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply grabbing a hanging sword is a quick, low-effort physical action."
+    },
+    {
+      "key": "action:take/THIEF",
+      "kind": "handler",
+      "inputHash": "cec1fa119e738b3bddc8ce4e79819d5dd92e82787e275c97d48f7b07d537aef1",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A futile grab attempt on the thief yields only a rhetorical rebuff with no real effort expended."
+    },
+    {
+      "key": "action:take/TOOL-CHEST",
+      "kind": "handler",
+      "inputHash": "a4702a4f2d33cf7c0f673427e29ab1ec45d3f565dfcfa18c5a4a6dbfac320a0e",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick attempt to grab the chests that immediately crumbles to dust, a brief physical action."
+    },
+    {
+      "key": "action:take/TROLL",
+      "kind": "handler",
+      "inputHash": "fb4def983cec2d749583b5a9578ecc719e91473a2810f26b6959453bea08059c",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick, futile grab that the troll rebuffs instantly, costing only a brief physical attempt."
+    },
+    {
+      "key": "action:take/TROPHY-CASE",
+      "kind": "handler",
+      "inputHash": "045f806dea84b93b7a7494c86a02140154cc4f229e7f6d0a03939d0066409def",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick futile tug on a fixed object requires minimal effort before finding it immovable."
+    },
+    {
+      "key": "action:take/WATER",
+      "kind": "handler",
+      "inputHash": "9f66197af8f727dec1c7236909851a549c695629a70d1c60528ef9105c785cc0",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Scooping water by hand is a quick, futile grasping motion since it simply slips through the fingers."
+    },
+    {
+      "key": "action:throw/BOTTLE",
+      "kind": "handler",
+      "inputHash": "1bccae17c64ee152513e86b2b684d3d9714f52f15afd13a0413d2742e58bc9af",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "A quick, deliberate throw-and-shatter action with immediate irreversible consequence but minimal physical effort."
+    },
+    {
+      "key": "action:throw/CYCLOPS",
+      "kind": "handler",
+      "inputHash": "d0d80a34a0318980cbdac3572b7dcd15cef72e533dab5438a84070c831a4cf51",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick, futile toss that the cyclops shrugs off, with the item just landing on the floor."
+    },
+    {
+      "key": "action:throw/EGG",
+      "kind": "handler",
+      "inputHash": "1ce691dd31c43ec24378cf4932648df7e0bb104022748b03d7e73b2383cd9a59",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Throwing the fragile egg is a quick, irreversible physical action that immediately breaks it rather than a sustained mechanism or ceremony."
+    },
+    {
+      "key": "action:throw/GLOBAL-WATER",
+      "kind": "handler",
+      "inputHash": "b7a1798369782d083b0c543cf2d63ee4ee6dd372b42b1358ae24970b69e0911c",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Tossing a handful of water is a trivial, quick gesture that just splashes and evaporates with no lasting effect."
+    },
+    {
+      "key": "action:throw/LAMP",
+      "kind": "handler",
+      "inputHash": "15f4edb015c5505850da0e70387bf80bc98af467cf55f9e7a006bcc161676dd0",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Throwing the lamp is a quick physical action that instantly smashes it, destroying a key tool."
+    },
+    {
+      "key": "action:throw/ME",
+      "kind": "handler",
+      "inputHash": "715ab6187f71789de39d31083303c0e3d74dae40670fd1376339ec0063771a62",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Throwing yourself is a nonsensical no-op that the game just rebukes with a one-liner."
+    },
+    {
+      "key": "action:throw/MIRROR-1",
+      "kind": "handler",
+      "inputHash": "ea12c8d6286b1dd31735707f7dfa8c3e8886820541db7e9ca278972d282a3208",
+      "class": "mechanism",
+      "minutes": 3,
+      "rationale": "Throwing the mirror irrevocably shatters it, a quick but consequential act of destruction with lasting magical repercussions."
+    },
+    {
+      "key": "action:throw/MIRROR-2",
+      "kind": "handler",
+      "inputHash": "b60031d82863aff4eb05c2c3c04ec664f8273f92d1906554f75bf35b09b37449",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Shattering a magic mirror is a quick but irreversible physical act with unknown supernatural consequences, warranting more than a trivial manipulation."
+    },
+    {
+      "key": "action:throw/THIEF",
+      "kind": "handler",
+      "inputHash": "318e2ff1456883c5835e11edc6ccc2cee1c9adf3320da14ec3d92f0974663874",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Throwing an object (typically the knife) at the armed thief is a risky combat maneuver with an uncertain outcome, more involved than simple manipulation but not a scripted set-piece."
+    },
+    {
+      "key": "action:throw/TROLL",
+      "kind": "handler",
+      "inputHash": "c57a6057a1f3cf09c08256f6da0b60d660917c636aea32ed801c4428c325b42a",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Throwing an item at the troll is a quick, deliberate physical action akin to giving/taking an object, not a multi-step mechanism."
+    },
+    {
+      "key": "action:throw/WATER",
+      "kind": "handler",
+      "inputHash": "7386b3f8195e58f4d2a296c79dff84a7b4cbeb9949ce32f3aff0701fba58ae1f",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Tossing a handful of water is a quick, trivial physical action that just splashes and evaporates."
+    },
+    {
+      "key": "action:tie/CYCLOPS",
+      "kind": "handler",
+      "inputHash": "03d7510c63cfe336e426cc17c568aa953b6cc61f980634d904985c61d9b20a7e",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The game flatly rejects the action as impossible, so no meaningful effort occurs."
+    },
+    {
+      "key": "action:tie/ROPE",
+      "kind": "handler",
+      "inputHash": "5b417110d52de9e21f101f1dc916b6f1de42bcc41e2f1616dab589715e853453",
+      "class": "mechanism",
+      "minutes": 8,
+      "rationale": "Securely tying a heavy rope to a railing over a dome edge requires deliberate knot-work and effort beyond simple manipulation."
+    },
+    {
+      "key": "action:turn/BOLT",
+      "kind": "handler",
+      "inputHash": "683591a32c204d90cd5834e07b531dadf72e1cc7e890edbcc462ebae33dbc95f",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Turning the dam bolt with the wrench requires real physical effort and operates the sluice gates, a mechanical task beyond a simple manipulation."
+    },
+    {
+      "key": "action:turn/BOOK",
+      "kind": "handler",
+      "inputHash": "a710b41f554f914231f02bcc2d1c7642c8455dd8f1b9c558ada2ee81cb44fb45",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Flipping pages in an already-open book is a trivial physical action yielding only flavor text."
+    },
+    {
+      "key": "action:turn/MACHINE",
+      "kind": "handler",
+      "inputHash": "4eee51d6e5de8f9d5b8b071c973d26a820c32aeed056abc89c69803268ed73e7",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Turning the machine without a proper indirect object requires fiddling with an unfamiliar mechanical switch, a small physical operation with no immediate clarity of outcome."
+    },
+    {
+      "key": "action:turn/MACHINE-SWITCH",
+      "kind": "handler",
+      "inputHash": "e5997dbf368c7cd3270c64c8e108134a43e978d03ed4436de7a821b8ab1de40e",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Turning the machine's switch with the screwdriver triggers a multi-step transformation process requiring careful manipulation of a mechanical device."
+    },
+    {
+      "key": "action:unlock/GRATE",
+      "kind": "handler",
+      "inputHash": "255fdae705a0214235f30c2e50535172f3ac5add5ea18ed655704b1256fc3a15",
+      "class": "mechanism",
+      "minutes": 4,
+      "rationale": "Fitting and turning a key in a stiff outdoor lock is a brief physical mechanism task."
+    },
+    {
+      "key": "action:unlock/TRAP-DOOR",
+      "kind": "handler",
+      "inputHash": "7d399e012dac651d5d517771cd2ee9798fb6e2da7bb9c4e289ec8f4a0227f7cf",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Attempting to unlock a simple trap door is a quick physical action, even though it fails when locked from above."
+    },
+    {
+      "key": "action:untie/ROPE",
+      "kind": "handler",
+      "inputHash": "4c924ca1b85a924cd933a1f5d02f7462b3ac57b97d9518f8e517e9bef90a43ba",
+      "class": "mechanism",
+      "minutes": 4,
+      "rationale": "Untying a rope tied to a railing requires physically undoing knots, a quick but deliberate mechanical task."
+    },
+    {
+      "key": "action:walk/INFLATED-BOAT",
+      "kind": "handler",
+      "inputHash": "38049be091ee971a6528d1cf0ea617eb9e59a9c370ac609410f4f177c54260d8",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The handler just prints a message telling the player to read the label instead; no in-world action occurs."
+    },
+    {
+      "key": "action:walk/KITCHEN-WINDOW",
+      "kind": "handler",
+      "inputHash": "0fd2b64ed6d8e6e44b8569c28a6c15e0a4ee40faf0d5b17141b9fcd6401806ae",
+      "class": "movement",
+      "minutes": 1,
+      "rationale": "Walking through the window is just moving between the kitchen and the outside area, equivalent to a single room-edge traversal."
+    },
+    {
+      "key": "action:wave/SCEPTRE",
+      "kind": "handler",
+      "inputHash": "d869ba9b97d343ec3348877d71c801cd048e09bc31865edc49b844d6faee6e9c",
+      "class": "dramatic",
+      "minutes": 30,
+      "rationale": "Waving the sceptre at the rainbow's end is the ceremonial trigger that transforms the rainbow into a solid, walkable structure, revealing the pot of gold—a treasure-vault-defining set piece."
+    },
+    {
+      "key": "action:wind/BROKEN-CANARY",
+      "kind": "handler",
+      "inputHash": "613995072c28e51d1ff6682a32109c9f30d8b7cb8ba8bd275e235f659cb6c648",
+      "class": "mechanism",
+      "minutes": 4,
+      "rationale": "Winding a small broken mechanism is a quick physical fiddling action that yields only a grinding noise."
+    },
+    {
+      "key": "action:wind/CANARY",
+      "kind": "handler",
+      "inputHash": "bc9a103ebf234a8b3b4e5a2b682a1e5ba9303246c80028353292b40ffdf8a408",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Winding the delicate clockwork canary is a small mechanical action with a meaningful in-game consequence, akin to turning a bolt or ringing a bell."
+    },
+    {
+      "key": "edge:ARAGAIN-FALLS\u003eON-RAINBOW",
+      "kind": "edge",
+      "inputHash": "f3b40748cf076823117cdc3a0e01d9e5514d8a7aa04b1bf73da2021799d01b2e",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Walking onto a rainbow to cross toward the falls is a short, clear traversal matching the baseline pacing."
+    },
+    {
+      "key": "edge:ARAGAIN-FALLS\u003eSHORE",
+      "kind": "edge",
+      "inputHash": "4e0b8162adf74d99186df0edd857449443599d725724284cfd62a94324a4b6f8",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain outdoor path along the shore matches the baseline pace with no obstacles to slow it."
+    },
+    {
+      "key": "edge:ATLANTIS-ROOM\u003eRESERVOIR-NORTH",
+      "kind": "edge",
+      "inputHash": "80d0ae91a9b835b2e3d74989d8d23785a159e949b6e61196c76f52a85e91debc",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain exit from a once-flooded, unlit room to an unknown space stays near baseline with no added length or clarity to shorten it."
+    },
+    {
+      "key": "edge:ATLANTIS-ROOM\u003eSMALL-CAVE",
+      "kind": "edge",
+      "inputHash": "f79f74045276bd979ad0067d0b5f870b1d08760d9413304415a65fbd14dd4e12",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "A staircase climb from a dark, ancient flooded room to a small cave keeps the baseline pace with no added justification for change."
+    },
+    {
+      "key": "edge:ATTIC\u003eKITCHEN",
+      "kind": "edge",
+      "inputHash": "b6b846c071c366ddbade44ef30db9de88dd53e944293f344523431c4a589ed95",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple stairway descent from the attic to the lit kitchen matches the baseline pace with no extra hazards or obstructions."
+    },
+    {
+      "key": "edge:BAT-ROOM\u003eSHAFT-ROOM",
+      "kind": "edge",
+      "inputHash": "62af70f029210f8060635ec2ae0678f9344fc3236da64a320671610b80fb3684",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple eastward walk into a dark shaft room stays at the baseline pace with no added hazards."
+    },
+    {
+      "key": "edge:BAT-ROOM\u003eSQUEEKY-ROOM",
+      "kind": "edge",
+      "inputHash": "42008bd76d0e3d2df49e9b690e8b4f4bc6fb9396a90ab1b596261baf3d45dda4",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "The bat-infested origin and squeaky, cramped destination justify keeping the baseline dark-passage pacing rather than a quick lit-room step."
+    },
+    {
+      "key": "edge:CANYON-BOTTOM\u003eCLIFF-MIDDLE",
+      "kind": "edge",
+      "inputHash": "03109384ddcb39af1135f17afa8f6ea083026db15702f6f17b9a468a8cd27036",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A sacred, sunlit climb up a canyon wall with no hazards or obstruction matches the baseline pace."
+    },
+    {
+      "key": "edge:CANYON-BOTTOM\u003eEND-OF-RAINBOW",
+      "kind": "edge",
+      "inputHash": "ef3ad650375499787754c0e668109694cb365688b484d6ba5eca18a580d561bb",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A short, lit, unobstructed walk along a narrow path keeps this passage at the baseline pace."
+    },
+    {
+      "key": "edge:CANYON-VIEW\u003eCLEARING",
+      "kind": "edge",
+      "inputHash": "1a3b50f763a4a3fbd29b01299ae0c61660efff276b8da56aa6b00a31d348d749",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple sunlit path between two open, sacred outdoor rooms warrants no deviation from the baseline pace."
+    },
+    {
+      "key": "edge:CANYON-VIEW\u003eCLIFF-MIDDLE",
+      "kind": "edge",
+      "inputHash": "5da8c040348f658bcd7e1af4b7fc2d0a911bf42893b64d8d0b6b9bca28c85fb2",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "Both areas are open, lit, and easily traversed, matching the baseline pace."
+    },
+    {
+      "key": "edge:CANYON-VIEW\u003eFOREST-3",
+      "kind": "edge",
+      "inputHash": "0c540fe0bafc80e5bf17873af0ef8018d080e0143cd1841d26a9f5e8c638ec8f",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain outdoor path from a scenic overlook into an open forest matches the baseline pace with no obstacles to slow it."
+    },
+    {
+      "key": "edge:CELLAR\u003eEAST-OF-CHASM",
+      "kind": "edge",
+      "inputHash": "c3894db8162f6148ce41eb1ef76fa32ca075c32ec60e2f7ae1ea34001c45a7ab",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A short cellar exit into a dark chasm edge justifies the baseline pace without further nudging."
+    },
+    {
+      "key": "edge:CELLAR\u003eLIVING-ROOM",
+      "kind": "edge",
+      "inputHash": "673f079216dc2af11cfba6941f640bed8a17adedf3627d2bcae56395d6823b7a",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "The trapdoor passage from the cellar up into the lit living room matches the mechanical baseline with no descriptive reason to deviate."
+    },
+    {
+      "key": "edge:CELLAR\u003eTROLL-ROOM",
+      "kind": "edge",
+      "inputHash": "57108f9865237255d26d0497c97d8932d0bb635dce5cac02d843f0f3936ced18",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "The Troll Room's known danger and bloodstained, scratched walls justify keeping the dark-passage baseline rather than reducing it."
+    },
+    {
+      "key": "edge:CHASM-ROOM\u003eEW-PASSAGE",
+      "kind": "edge",
+      "inputHash": "930390c17f99d15ed07f474620b0e40f9e3603b1e5ab7d012b46a5b3a9ed810f",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple traversal along a chasm edge into a narrow passage warrants no adjustment from the baseline."
+    },
+    {
+      "key": "edge:CHASM-ROOM\u003eNS-PASSAGE",
+      "kind": "edge",
+      "inputHash": "a9e648ad18a7a216e071690399ee4d7d8feba5352e732ed94e4983d3686235f8",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple southward step between two plain, non-flooded passages matches the baseline pacing."
+    },
+    {
+      "key": "edge:CHASM-ROOM\u003eRESERVOIR-SOUTH",
+      "kind": "edge",
+      "inputHash": "850eddbe8e48c70fdbd8d9fcb5c635552e6518718825eec673b7d904903978e1",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A crack-in-the-wall passage beside a chasm keeps the baseline dark, cramped pacing without further slowing it down."
+    },
+    {
+      "key": "edge:CLEARING\u003eCANYON-VIEW",
+      "kind": "edge",
+      "inputHash": "e14b142b2cce75ebf90ab042dd1c3e4120f66e8689383ed9770b47ca99902f98",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple eastward walk between a marked forest path and an open canyon view, both lit and unremarkable underfoot, matches the baseline pace."
+    },
+    {
+      "key": "edge:CLEARING\u003eEAST-OF-HOUSE",
+      "kind": "edge",
+      "inputHash": "aaf1f93f3901a3d85a13699922736629c7400401208f394e2c964f2d3b7b0833",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A short, plain walk between two lit outdoor areas justifies no adjustment from the baseline."
+    },
+    {
+      "key": "edge:CLEARING\u003eFOREST-2",
+      "kind": "edge",
+      "inputHash": "4e2d3ef03dcfc1ad1dd6695f6a075b7b918e80cfd6eb4edcd0bdfbbe22d8ac39",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain path between a clearing and a nearby lit forest is an easy, unremarkable walk matching the baseline."
+    },
+    {
+      "key": "edge:CLEARING\u003eFOREST-3",
+      "kind": "edge",
+      "inputHash": "b5dc0c604aa2debb763364d93f5cf58e85a451bd5b832ee968ecf57130169b0f",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain path between two lit, ordinary outdoor rooms warrants no adjustment from the baseline."
+    },
+    {
+      "key": "edge:CLIFF-MIDDLE\u003eCANYON-BOTTOM",
+      "kind": "edge",
+      "inputHash": "4a2934035b1a02cd25de03cd113c7bd4deb9bc22f1e8dc5d1cd273d1449a3659",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A climbable canyon wall descent matches the baseline pace of a moderately careful downward scramble."
+    },
+    {
+      "key": "edge:CLIFF-MIDDLE\u003eCANYON-VIEW",
+      "kind": "edge",
+      "inputHash": "0cc0b29df4d0a4bac9fb900c03fd6db0d89a1ea50493a2783c6e148aca0c8c7a",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A climbable rocky cliff face is a straightforward but strenuous ascent, matching the baseline pace."
+    },
+    {
+      "key": "edge:COLD-PASSAGE\u003eMIRROR-ROOM-1",
+      "kind": "edge",
+      "inputHash": "b03291c33460904ed161cd504da30aae16811be7560b9f929f851d3cebd170b5",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain southward exit from a cold, dark passage keeps the baseline of a short but dim corridor traversal."
+    },
+    {
+      "key": "edge:COLD-PASSAGE\u003eSLIDE-ROOM",
+      "kind": "edge",
+      "inputHash": "88f58b47b06f0c89c5956036a60994fba398dde4ee2547974f95be0336ff877a",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain westward walk between two ordinary rooms stays at the mechanical baseline."
+    },
+    {
+      "key": "edge:CYCLOPS-ROOM\u003eMAZE-15",
+      "kind": "edge",
+      "inputHash": "231a1182fe92ba527a985c6ced091071488214add113b5c4d96eead78fe9293e",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Baseline holds since moving from a normal room into a dark, twisty maze passage warrants a modest slowdown but no further embellishment."
+    },
+    {
+      "key": "edge:CYCLOPS-ROOM\u003eSTRANGE-PASSAGE",
+      "kind": "edge",
+      "inputHash": "0672334cc5f8d645aa894b669ff07c94fbed388f7dc41cbb3bcb36aadfe877ea",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "This escape from the Cyclops only appears after triggering a magic word, so the baseline conditional and dark passage timing stands without further adjustment."
+    },
+    {
+      "key": "edge:CYCLOPS-ROOM\u003eTREASURE-ROOM",
+      "kind": "edge",
+      "inputHash": "ab0611c9e5d8c6bcc5bb30a1e0e29b888498a42a93be35a0f6807464c39cb3fc",
+      "class": "movement",
+      "minutes": 6,
+      "rationale": "Fleeing the Cyclops up a staircase into the treasure room is tense but straightforward, matching the baseline pacing."
+    },
+    {
+      "key": "edge:DAM-BASE\u003eDAM-ROOM",
+      "kind": "edge",
+      "inputHash": "e8c853946a5b572e78c68289d741a060df0d890ff85ab7817bc97a96e39c9fbc",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A straightforward lit walk from the dam base up to the dam room matches the baseline pace."
+    },
+    {
+      "key": "edge:DAM-LOBBY\u003eDAM-ROOM",
+      "kind": "edge",
+      "inputHash": "55eb0478f029c53879e1a9472ab5017d5a30d48fd7fe4833195a98978c08941c",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain lit path over the dam warrants no adjustment from the baseline."
+    },
+    {
+      "key": "edge:DAM-LOBBY\u003eMAINTENANCE-ROOM",
+      "kind": "edge",
+      "inputHash": "5d1f70745141f914b4af02354402c7c0520370d9b57c8c3c572e8c46a51f26da",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain doorway passage between a lit lobby and a ransacked but ordinary maintenance room stays at the baseline pace."
+    },
+    {
+      "key": "edge:DAM-ROOM\u003eDAM-BASE",
+      "kind": "edge",
+      "inputHash": "f13295e0c24309a8168f16c2db2f190b832d0cfd54e8183338cd197e292fdb2a",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain outdoor exit between two lit, non-hazardous rooms matches the baseline pace."
+    },
+    {
+      "key": "edge:DAM-ROOM\u003eDAM-LOBBY",
+      "kind": "edge",
+      "inputHash": "882fff32787e1839a2302da2dabba4debe1bf5cdcd427d197bc54481a2165c81",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain, lit, dry passage from the dam to its lobby warrants no adjustment from the baseline."
+    },
+    {
+      "key": "edge:DAM-ROOM\u003eDEEP-CANYON",
+      "kind": "edge",
+      "inputHash": "121a086797601ce1d1d10aeec69c91afa51b697abd0112966f286135b532e2ae",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Baseline stands since the origin is lit but the passage still crosses into an unlit outdoor canyon requiring caution."
+    },
+    {
+      "key": "edge:DAM-ROOM\u003eRESERVOIR-SOUTH",
+      "kind": "edge",
+      "inputHash": "fb7ea5fdbe3d85d08c61e047370095e07a2ba637086ae8cef7b3e72d05a7067f",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Destination lacks the dam's light source, so the baseline dark passage estimate stands unchanged."
+    },
+    {
+      "key": "edge:DAMP-CAVE\u003eLOUD-ROOM",
+      "kind": "edge",
+      "inputHash": "50cc1af03bba027a386492c6309147de24e71fb5a91c384b67803205b1b40822",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain westward walk between two ordinary land rooms holds close to the baseline pace."
+    },
+    {
+      "key": "edge:DAMP-CAVE\u003eWHITE-CLIFFS-NORTH",
+      "kind": "edge",
+      "inputHash": "87a199aae169ed9164e994d8e6650ec7add7fb9dd170e89be8745e6833dc6b22",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain eastward walk from a damp cave to an open beach path doesn't warrant deviation from the baseline pacing."
+    },
+    {
+      "key": "edge:DEAD-END-1\u003eMAZE-4",
+      "kind": "edge",
+      "inputHash": "2ad8af622a88fc03f28bf8321eebd4a0c0c751b1668e90802a741528d03a8315",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Both maze rooms are unlit and disorienting but otherwise plain, so the baseline dark-crawl pace holds."
+    },
+    {
+      "key": "edge:DEAD-END-2\u003eMAZE-5",
+      "kind": "edge",
+      "inputHash": "07f0e50a554276bb6ef115a224fea66487d1d11a252884ea14dc5f7d11f40b38",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A dark, twisty maze passage keeps the baseline pace with no additional hazards to justify deviation."
+    },
+    {
+      "key": "edge:DEAD-END-3\u003eMAZE-8",
+      "kind": "edge",
+      "inputHash": "41cc92b76e2c03fcfdcf13874a1b599d17ea2896701ae0b5cd39cf2d8270528a",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain maze passage between two undistinguished dark rooms stays at the baseline pace."
+    },
+    {
+      "key": "edge:DEAD-END-4\u003eMAZE-12",
+      "kind": "edge",
+      "inputHash": "74c593ebc5e35f49c07952f56ad84aaa5dfd18d5bfa01af97e5d779f4320e92e",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Plain maze passage between two nondescript dark dead-ends stays at the mechanical baseline with no added hazards."
+    },
+    {
+      "key": "edge:DEAD-END-5\u003eLADDER-BOTTOM",
+      "kind": "edge",
+      "inputHash": "c695ff54cd1de7c72e092f8b13eb612560458b46196e2de6d4f793e3083bfbef",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A dark dead-end mine passage to a ladder room justifies the baseline 3-minute crawl."
+    },
+    {
+      "key": "edge:DEEP-CANYON\u003eDAM-ROOM",
+      "kind": "edge",
+      "inputHash": "51e95b7ea0ad4a76f80e9339ebe547331154ab853288c84e855cbd67319ec931",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain eastward exit into a lit room warrants no deviation from the baseline pace."
+    },
+    {
+      "key": "edge:DEEP-CANYON\u003eLOUD-ROOM",
+      "kind": "edge",
+      "inputHash": "afe7323d8d68ee97c2338e2b960bfaf92e3d3b69ea390c653f2a997546419265",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "No descriptive detail justifies deviation, so the baseline mechanical estimate of 4 minutes stands."
+    },
+    {
+      "key": "edge:DEEP-CANYON\u003eNS-PASSAGE",
+      "kind": "edge",
+      "inputHash": "139c21c8cc7a2c4adce253abc3cea2f8b2839a24e3fc5e535b194365a0d9a058",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A straightforward climb from the canyon into a plain high passage keeps the baseline unchanged."
+    },
+    {
+      "key": "edge:DEEP-CANYON\u003eRESERVOIR-SOUTH",
+      "kind": "edge",
+      "inputHash": "9bf0edf6c8c77b9dd14815ee7fce35b2fe2bdc4f5a98e27f95e517d501990f37",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "No descriptive cues to deviate, so the baseline 3-minute dark passage estimate stands."
+    },
+    {
+      "key": "edge:DOME-ROOM\u003eENGRAVINGS-CAVE",
+      "kind": "edge",
+      "inputHash": "e6412b67f0c8e80bed43733c00e00297b481174c40239151982cea469c4cd50b",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Baseline holds for a plain westward exit into a dim, unremarkable cave passage."
+    },
+    {
+      "key": "edge:DOME-ROOM\u003eTORCH-ROOM",
+      "kind": "edge",
+      "inputHash": "1a9fc4cc52bfd30657ed64f84654961f6aa9bb0c9007e0579f567c4b9b151efb",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "The Dome Room to Torch Room descent via rope is a notable climb down through darkness, matching the baseline of 5 minutes."
+    },
+    {
+      "key": "edge:EAST-OF-CHASM\u003eCELLAR",
+      "kind": "edge",
+      "inputHash": "dfffae31febdf9e8e3183781265391be9a3ec008ff2d6d246f9c963b24e2d98d",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A narrow, unlit passage through a chasm edge warrants the baseline time without further adjustment."
+    },
+    {
+      "key": "edge:EAST-OF-CHASM\u003eGALLERY",
+      "kind": "edge",
+      "inputHash": "96baf2314c15a7a4726eb0ae63dc4ff08ee7ab300df24daad16d72e12627bc8f",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple eastward walk from chasm edge to a lit gallery warrants no adjustment from baseline."
+    },
+    {
+      "key": "edge:EAST-OF-HOUSE\u003eCLEARING",
+      "kind": "edge",
+      "inputHash": "5bede0686da6d4b782c46ae2d63399346cfcaa124cc76c1ec41371a745687b67",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple eastward walk between two lit, sacred outdoor areas warrants no deviation from the baseline pace."
+    },
+    {
+      "key": "edge:EAST-OF-HOUSE\u003eKITCHEN",
+      "kind": "edge",
+      "inputHash": "08978892747ed0e5828bab7b961b0b92212c718c8c8dc2d97f15be36a4dbe1b4",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A door between two lit, ordinary rooms matches the baseline with no added hazard or complexity."
+    },
+    {
+      "key": "edge:EAST-OF-HOUSE\u003eNORTH-OF-HOUSE",
+      "kind": "edge",
+      "inputHash": "fbb6eb81a517c9f236750c6c6b4fa4ecf2609839b711630b1e5655283a300c54",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple outdoor path between two lit, above-ground areas warrants no deviation from the baseline."
+    },
+    {
+      "key": "edge:EAST-OF-HOUSE\u003eSOUTH-OF-HOUSE",
+      "kind": "edge",
+      "inputHash": "0d7998417f27c1857ee4a19401560cd831d8afa7af05f4a75c53886fa5ad4f3c",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple outdoor walk around the house with no obstacles keeps this at the baseline pace."
+    },
+    {
+      "key": "edge:EGYPT-ROOM\u003eNORTH-TEMPLE",
+      "kind": "edge",
+      "inputHash": "8038661e07c96a5154ce4b131ed358fc8cf7c199267f6a5264a25fb10dc01d80",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A short ascending staircase between two plainly described, unobstructed rooms warrants no deviation from the baseline."
+    },
+    {
+      "key": "edge:END-OF-RAINBOW\u003eCANYON-BOTTOM",
+      "kind": "edge",
+      "inputHash": "c0097168a1be14437b244335aebbd6644599a6a05551054533697fee818328dc",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A short, lit walk down a narrow path to the canyon bottom matches the baseline pace."
+    },
+    {
+      "key": "edge:END-OF-RAINBOW\u003eON-RAINBOW",
+      "kind": "edge",
+      "inputHash": "e662518ee0de663731177db91ea0d1facc34bb128a64db18d09c71388f3fcb13",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Crossing onto the rainbow is a short, magical but straightforward step with no obstruction, matching the baseline."
+    },
+    {
+      "key": "edge:ENGRAVINGS-CAVE\u003eDOME-ROOM",
+      "kind": "edge",
+      "inputHash": "e0b4f8435f596b138f902274aba005409657ed22ea14ba71c99d1463fd6a546f",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple eastward step from a low cave carries the baseline dark-crawl pacing without added hazards to justify lengthening it."
+    },
+    {
+      "key": "edge:ENGRAVINGS-CAVE\u003eROUND-ROOM",
+      "kind": "edge",
+      "inputHash": "f51adae9fc1e6293c47956c8932e262b6e63d643a2acbe5ee993c2c431869646",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple cave-to-room walk with no flooding or hazards keeps the pace at the baseline dark-passage timing."
+    },
+    {
+      "key": "edge:ENTRANCE-TO-HADES\u003eLAND-OF-LIVING-DEAD",
+      "kind": "edge",
+      "inputHash": "b1772258733d23e2fdf766d69f5dc6016d9a599db829545ad5d490d87918a9b5",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "This is a straightforward passage into an eerie but traversable chamber, matching the baseline pacing."
+    },
+    {
+      "key": "edge:ENTRANCE-TO-HADES\u003eTINY-CAVE",
+      "kind": "edge",
+      "inputHash": "dffa94a39e80891927fb8f192fcec9ddb4409768e18f5f38dae7b515bb8f9d5c",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "Climbing up from the dark Entrance to Hades into the tiny cave keeps the baseline pace with no extra hazards described."
+    },
+    {
+      "key": "edge:EW-PASSAGE\u003eCHASM-ROOM",
+      "kind": "edge",
+      "inputHash": "71a5e18fcb63dde25d56bd013e4747bc65852556656f2fb95b5206dc09279705",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A short narrow-passage-to-chasm-edge transition stays at baseline with no additional hazards described."
+    },
+    {
+      "key": "edge:EW-PASSAGE\u003eROUND-ROOM",
+      "kind": "edge",
+      "inputHash": "d7fe429fa6f47337e9840d35630b03130692b2ab2929812723a26c72a4655d2a",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A short walk from a plain passage into an open circular room stays at the mechanical baseline with no added complexity."
+    },
+    {
+      "key": "edge:EW-PASSAGE\u003eTROLL-ROOM",
+      "kind": "edge",
+      "inputHash": "e5ba736e84e92c1a0e808834e11d6c7f37fdc62e6a3b114cce2e9210f1a1cedc",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A short passage into an ominous, bloodstained room stays near baseline with a slight wary pace."
+    },
+    {
+      "key": "edge:FOREST-1\u003eFOREST-3",
+      "kind": "edge",
+      "inputHash": "5bdb26377dbe9c3dd9c63d430b9bfaa7fc91bdc2b8dafd3f01e0fc8c0584cdaa",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain forest path between two ordinary wooded rooms warrants no deviation from baseline."
+    },
+    {
+      "key": "edge:FOREST-1\u003eGRATING-CLEARING",
+      "kind": "edge",
+      "inputHash": "3530aa4318430aa22c4ad54a016deaad1f58187a746266ea99885e4f63e7cccc",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple forest walk into a plain clearing exit stays at the baseline pace."
+    },
+    {
+      "key": "edge:FOREST-1\u003ePATH",
+      "kind": "edge",
+      "inputHash": "2f190d3196a2253c9624ad56d800dbedfb0353e9791a06c7e14d3e92f82faf74",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple eastward walk from open forest to a clear path, both lit and unremarkable, matches the baseline pace."
+    },
+    {
+      "key": "edge:FOREST-2\u003eCLEARING",
+      "kind": "edge",
+      "inputHash": "136de4379925dd5d3540e443391f8e362abe90f9f344331b5a9dbd77a81592c2",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple walk between two plain, lit outdoor rooms matches the baseline pace."
+    },
+    {
+      "key": "edge:FOREST-2\u003eMOUNTAINS",
+      "kind": "edge",
+      "inputHash": "063e79e639d532d973255fb2fa5a2bff770a05c995a0f88b610ee8cc08151dcc",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple lit forest walk to a mountain view justifies no change from the baseline."
+    },
+    {
+      "key": "edge:FOREST-2\u003ePATH",
+      "kind": "edge",
+      "inputHash": "05b8c01069719c42728bf32087682da8a8f6f4d741a3c0fb21ebf35b1d15bea3",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain, unobstructed walk between two ordinary forest areas warrants no adjustment from the baseline."
+    },
+    {
+      "key": "edge:FOREST-3\u003eCLEARING",
+      "kind": "edge",
+      "inputHash": "ad38add20b9cf3c93d125d99aeac35e85ba2e3882f7cb35a7fe8f30ad2c07f89",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple walk between two lit, plain forest areas matches the baseline pace with no obstacles to slow it down."
+    },
+    {
+      "key": "edge:FOREST-3\u003eFOREST-1",
+      "kind": "edge",
+      "inputHash": "246f0aa73c63290a92aa72a08cc52a6be36ceb193e19e904fd8cdf8846d61891",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain forest-to-forest walk between two ordinary wooded rooms warrants no deviation from the baseline pace."
+    },
+    {
+      "key": "edge:FOREST-3\u003eSOUTH-OF-HOUSE",
+      "kind": "edge",
+      "inputHash": "68cdf144070d64cfce8023de715604c585788c806096846388b85afff48f5f57",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple lit-to-lit forest walk matches the baseline pace with no obstacles to slow it."
+    },
+    {
+      "key": "edge:GALLERY\u003eEAST-OF-CHASM",
+      "kind": "edge",
+      "inputHash": "99f9932556f2b116d10935fc9d127eb07e1d4551af7d2271cb14245144e219b9",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A short walk from a lit gallery to the chasm's edge stays at baseline since the path is plain despite the destination's darker mood."
+    },
+    {
+      "key": "edge:GALLERY\u003eSTUDIO",
+      "kind": "edge",
+      "inputHash": "a274cae8b9a8adcc483e5add95a3192c8b277931d8c676895df13d9b23436e4e",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple north walk between two ordinary rooms stays at the baseline despite the studio's darkness."
+    },
+    {
+      "key": "edge:GAS-ROOM\u003eMINE-1",
+      "kind": "edge",
+      "inputHash": "ae6681748c8c426e18068c5b1590af1528d0b8f92f751b3d77642c9e3a6c2710",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A short climb and narrow tunnel into the mine warrants a slight bump over a plain step but nothing extreme."
+    },
+    {
+      "key": "edge:GAS-ROOM\u003eSMELLY-ROOM",
+      "kind": "edge",
+      "inputHash": "54ac1a7a889482f7586cc468c19c1f68fe3d04985279fb187cec44ccf212a8ed",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "Sacred, gas-filled origin and unlit climb through a narrow tunnel justify staying at the baseline rather than shortening it."
+    },
+    {
+      "key": "edge:GRATING-CLEARING\u003eFOREST-1",
+      "kind": "edge",
+      "inputHash": "daa1ace43f0eed60c5344123d73ecd064f7b4943cc8de06ebe4e69b41c9cc669",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain westward walk between two ordinary outdoor areas stays at the base pace."
+    },
+    {
+      "key": "edge:GRATING-CLEARING\u003eFOREST-2",
+      "kind": "edge",
+      "inputHash": "978907c3b44986cd892482d8ac9988aa67371ea95dceb38774200a149683ce24",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple eastward step from a clearing into a lit forest matches the baseline pace with no obstacles to slow it down."
+    },
+    {
+      "key": "edge:GRATING-CLEARING\u003ePATH",
+      "kind": "edge",
+      "inputHash": "df91d28baa4936148d24d6398be34aae0c8c6efb4a6c2eaa56dc3966680bde5d",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple lit outdoor path with no hazards keeps this movement at the baseline pace."
+    },
+    {
+      "key": "edge:GRATING-ROOM\u003eGRATING-CLEARING",
+      "kind": "edge",
+      "inputHash": "abf3d2903fa222af21bfe1f5b08c15d740f9405f73ae7c7af501e9dc689307fc",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "Climbing up through the grating door to the lit, sacred clearing matches the baseline pacing without added hazard."
+    },
+    {
+      "key": "edge:GRATING-ROOM\u003eMAZE-11",
+      "kind": "edge",
+      "inputHash": "334eab7f0c4b9567de7c7d7134007c7c2fcb9d7fd36863a91446c2b9db8174c4",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Stepping from the Grating Room into the twisting, unlit maze passage keeps the baseline crawl-through-dark pacing."
+    },
+    {
+      "key": "edge:IN-STREAM\u003eRESERVOIR",
+      "kind": "edge",
+      "inputHash": "b2abf097f99389a3c6db91960fa45e2c0c4695022d39ad470c6e043ed7599b3b",
+      "class": "movement",
+      "minutes": 6,
+      "rationale": "Water travel through a narrow, twisting, unlit stream justifies the full baseline pacing."
+    },
+    {
+      "key": "edge:IN-STREAM\u003eSTREAM-VIEW",
+      "kind": "edge",
+      "inputHash": "ea02708f623c10c75ed51d7768f98878f25118d9c4ceed43fe6b15daee201dd4",
+      "class": "movement",
+      "minutes": 6,
+      "rationale": "Landing from the stream onto the beach still involves the water and disorientation baseline despite reaching a plain, lit path."
+    },
+    {
+      "key": "edge:KITCHEN\u003eATTIC",
+      "kind": "edge",
+      "inputHash": "e18aef9d227c1b3b136fb18458c75169e1b73fd16289bddce2967732417b74a6",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "A simple climb up to a sparsely described attic with no flooding or hazards keeps the passage at the mechanical baseline."
+    },
+    {
+      "key": "edge:KITCHEN\u003eEAST-OF-HOUSE",
+      "kind": "edge",
+      "inputHash": "85272a31d641973906e4781288ac89466a474329a3e06a865a0780e2658f9612",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Both rooms are lit and above ground, so the door adds a brief pause but the passage stays near the baseline."
+    },
+    {
+      "key": "edge:KITCHEN\u003eLIVING-ROOM",
+      "kind": "edge",
+      "inputHash": "212ae95b1bd42d8d96cffa38ca3a385632d05bed013856b8261639fdd16e6477",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple westward step between two lit, ordinary rooms warrants no deviation from the baseline."
+    },
+    {
+      "key": "edge:KITCHEN\u003eSTUDIO",
+      "kind": "edge",
+      "inputHash": "8b3f771a49b789876c9cb792f1932b844fe864b53c809ce44edf35a5c8d17d41",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "A narrow chimney climb down into a dim, paint-choked studio keeps the passage near baseline with slight extra caution for the dark, tricky descent."
+    },
+    {
+      "key": "edge:LADDER-BOTTOM\u003eDEAD-END-5",
+      "kind": "edge",
+      "inputHash": "115cce9e54329e2f196e165bb2ee3b0e08042cc2238a629cbb7828cbb7189bae",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple southward passage to a dead end stays near baseline despite the dark, unlit mine setting."
+    },
+    {
+      "key": "edge:LADDER-BOTTOM\u003eLADDER-TOP",
+      "kind": "edge",
+      "inputHash": "0841a12adb99dee0b71d3da1dfc715c79a0cc3c875ccf9b71acbb429286dd330",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "A narrow ladder climb between two ordinary, non-hazardous rooms fits the baseline pacing without added risk or obstruction."
+    },
+    {
+      "key": "edge:LADDER-BOTTOM\u003eTIMBER-ROOM",
+      "kind": "edge",
+      "inputHash": "e5dd5cebb894c80781e411a8aed1d886ce2eb75a2de1492974a4dca11cd259be",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A cluttered, timber-strewn passage with a draft warrants the baseline 3 minutes for a careful westward crawl."
+    },
+    {
+      "key": "edge:LADDER-TOP\u003eLADDER-BOTTOM",
+      "kind": "edge",
+      "inputHash": "0d2dda8626b64ecc167504df16fc571fefa2a5214027584143a60d57733497d7",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A simple rickety-ladder descent between two plain rooms stays at the mechanical baseline."
+    },
+    {
+      "key": "edge:LADDER-TOP\u003eMINE-4",
+      "kind": "edge",
+      "inputHash": "a0a14e847974a8784f24d2e576d4df165c136363069015cced3edc8a49e37ad6",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "Climbing up a staircase from a small lit room into a dark coal mine keeps the passage at its baseline pace."
+    },
+    {
+      "key": "edge:LAND-OF-LIVING-DEAD\u003eENTRANCE-TO-HADES",
+      "kind": "edge",
+      "inputHash": "90b9d23d5f8eec71fad8502a3eb7a00341ac5f73b1c4da52c8a5790bdc5b5e1a",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A straightforward exit through an already-lit, familiar passage keeps the pace at baseline."
+    },
+    {
+      "key": "edge:LIVING-ROOM\u003eKITCHEN",
+      "kind": "edge",
+      "inputHash": "6e2988595ed3b8e7c743f5a6c7dd33d2a73c350791a30494d482cb559a8d8d45",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple lit-room-to-lit-room step warrants no adjustment from the baseline."
+    },
+    {
+      "key": "edge:LIVING-ROOM\u003eSTRANGE-PASSAGE",
+      "kind": "edge",
+      "inputHash": "88c606b233da05f19acb4b5f4c848e506b6def1ddae63a835b146718f6aa4995",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "The conditional exit through a hidden passage into a narrow corridor keeps the pace at the mechanical baseline."
+    },
+    {
+      "key": "edge:LOUD-ROOM\u003eDAMP-CAVE",
+      "kind": "edge",
+      "inputHash": "272b7a682d4c48767ac86fe0b17c48cc813da7156f273263ac3928f661762fcd",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A short eastward passage into a damp, still-lit cave stays near baseline with no extra hazard to slow it further."
+    },
+    {
+      "key": "edge:LOUD-ROOM\u003eDEEP-CANYON",
+      "kind": "edge",
+      "inputHash": "c0e26273add0782698e30c7408c9674ad7657baeb60b5ff660e5f1a1b1038574",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "No special descriptive details push this beyond the mechanical baseline for a dark upward climb between two land rooms."
+    },
+    {
+      "key": "edge:LOUD-ROOM\u003eROUND-ROOM",
+      "kind": "edge",
+      "inputHash": "dfc95cc73e18f75dc3f49ea4efcadf03f1c73d76bd8f5226c31f403ed1c8094f",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain westward exit into a known landmark room with no water or hazard keeps the passage at the mechanical baseline."
+    },
+    {
+      "key": "edge:LOWER-SHAFT\u003eMACHINE-ROOM",
+      "kind": "edge",
+      "inputHash": "c1a00b8f31438e3911683b5de12dcb5b89010552ffd4a92ded0b0cefe3e1705e",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A short passageway south from the drafty shaft room to the Machine Room, with the dark destination keeping the baseline at 3 minutes."
+    },
+    {
+      "key": "edge:LOWER-SHAFT\u003eTIMBER-ROOM",
+      "kind": "edge",
+      "inputHash": "9cdf41e185c251def6a43e90cab43efa516a4def67c6946f93708c27d430f03b",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A short narrow passage climb from a drafty shaft into a cluttered timber room stays near the mechanical baseline."
+    },
+    {
+      "key": "edge:MACHINE-ROOM\u003eLOWER-SHAFT",
+      "kind": "edge",
+      "inputHash": "d6aa3e44ffa8119e2be324e95ae215c58588ebac96e80f2596abba87b414f8f0",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Sacred, drafty shaft room with a dangling chain keeps the passage at baseline, dark-crevice pacing."
+    },
+    {
+      "key": "edge:MAINTENANCE-ROOM\u003eDAM-LOBBY",
+      "kind": "edge",
+      "inputHash": "3ee9c8b9fcdca45d71604089779e199c7e17a44c2932905582a1a29ccb8a82ad",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple doorway walk between two lit, plain rooms stays at baseline pace."
+    },
+    {
+      "key": "edge:MAZE-10\u003eMAZE-11",
+      "kind": "edge",
+      "inputHash": "66691c24e0b879e4eb68fdbe13b423c8838f125f978aaf3663361f427f6074e8",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "Plain maze passage matches the baseline pacing of a dark, disorienting crawl with no additional hazards to lengthen or shorten it."
+    },
+    {
+      "key": "edge:MAZE-10\u003eMAZE-13",
+      "kind": "edge",
+      "inputHash": "c9c0145769e3bfffe69e207c948d8df9a62d70ef783986e9c7a2db47cfcac15f",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Both maze passages are plain, undifferentiated twisty corridors, so the baseline dark-crawl timing holds without adjustment."
+    },
+    {
+      "key": "edge:MAZE-10\u003eMAZE-9",
+      "kind": "edge",
+      "inputHash": "2585f2cf045f58c377d06b104f7fffac1a436eaedaa802a3d0afe1f593fe1909",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain maze passage between two identical twisty, unlit corridors matches the baseline pace with no additional hazards to slow it further."
+    },
+    {
+      "key": "edge:MAZE-11\u003eGRATING-ROOM",
+      "kind": "edge",
+      "inputHash": "b0d54cff577e15aa7fcfa96613a628560a9d1ff8c39ffa76102d353b95e2c15c",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Escaping the twisty maze passages keeps the baseline crawl pace even without an unusual destination description."
+    },
+    {
+      "key": "edge:MAZE-11\u003eMAZE-10",
+      "kind": "edge",
+      "inputHash": "805208629807c22ff145579017362d25cdb02e4d4820b15c0faaa021d8bba89a",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "Generic twisty maze passage matches the baseline with no descriptive cues to lengthen or shorten it."
+    },
+    {
+      "key": "edge:MAZE-11\u003eMAZE-12",
+      "kind": "edge",
+      "inputHash": "43e986f81c0f1d5d607be14746e25c47202844b16098ebd5cbdfb600712cd400",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Generic maze passage with no distinguishing features keeps this at the baseline dark-crawl pace."
+    },
+    {
+      "key": "edge:MAZE-11\u003eMAZE-13",
+      "kind": "edge",
+      "inputHash": "32858b11ccf6f31fd0582e699db934ba519ac0bb396f7fc2d92419dfb0b50354",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A generic dark maze passage stays at the baseline pace with no additional hazards or clarity to adjust it."
+    },
+    {
+      "key": "edge:MAZE-12\u003eDEAD-END-4",
+      "kind": "edge",
+      "inputHash": "29e1eb25ce609ed4cd1b6a9b7247c787cfbaf7149bb3efdabf1d36d333b6f8eb",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain maze passage to a dead end matches the baseline pace with no additional hazards to slow it further."
+    },
+    {
+      "key": "edge:MAZE-12\u003eMAZE-11",
+      "kind": "edge",
+      "inputHash": "8a156808bb67b6abd4ea1d9b7e88fb5769ee2b557ad379a5a50c990a588b0ae1",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Both rooms are plain twisty maze passages with no water or extra hazards beyond the standard darkness, so the baseline 3 minutes stands."
+    },
+    {
+      "key": "edge:MAZE-12\u003eMAZE-13",
+      "kind": "edge",
+      "inputHash": "a61ba212eccc9d6c3519fc6be256bb1f0380f00246ea168cb8cc266ec06b65d5",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Plain maze-to-maze passage with no distinguishing features stays at the baseline dark-crawl pace."
+    },
+    {
+      "key": "edge:MAZE-12\u003eMAZE-9",
+      "kind": "edge",
+      "inputHash": "a1229f1f02ff1748d88f3e9a8f67a8af43c82d8bdae0422806ac088f708fb83f",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "Plain maze passage with no unusual features stays at the baseline for an upward move through dark, twisty corridors."
+    },
+    {
+      "key": "edge:MAZE-13\u003eMAZE-10",
+      "kind": "edge",
+      "inputHash": "201a40876159a7754491acf56a19c136d0226a8ead3a3e9ded31279d96274c18",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Both rooms are identical twisty maze passages with no special hazards, so the baseline dark-maze pace holds."
+    },
+    {
+      "key": "edge:MAZE-13\u003eMAZE-11",
+      "kind": "edge",
+      "inputHash": "b2d319246821febbd486eed30a69a036f7c44e2abd9e5e7d8cf128d76c7e47f2",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A featureless maze passage stays at baseline with no special traits to justify adjustment."
+    },
+    {
+      "key": "edge:MAZE-13\u003eMAZE-12",
+      "kind": "edge",
+      "inputHash": "173ee9f98c65df4ca6c4540c2bb93cd44b18ee61a8ecf5173b5983d191cfee10",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "Generic twisty maze passages match the baseline pacing with no additional hazards described."
+    },
+    {
+      "key": "edge:MAZE-13\u003eMAZE-9",
+      "kind": "edge",
+      "inputHash": "e5dfed01cc5f964fe506ad44038ec211f8311997254a86dd784dea13102fe9f6",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A featureless maze passage stays at baseline since both rooms are identically dark and disorienting with no added hazard."
+    },
+    {
+      "key": "edge:MAZE-14\u003eMAZE-15",
+      "kind": "edge",
+      "inputHash": "6160b37146ed2cababf700f78fc0a5c5fb79022a8f87610547e21e489ec8137a",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain, unremarkable maze passage stays at baseline with no lit or hazard cues to adjust it."
+    },
+    {
+      "key": "edge:MAZE-14\u003eMAZE-7",
+      "kind": "edge",
+      "inputHash": "ac90fa41084550d2663ed980921af9ba669ccea1c474f0af2327a6e3011333b7",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Generic twisty maze passage with no distinguishing features keeps the timing at the baseline dark-room crawl."
+    },
+    {
+      "key": "edge:MAZE-15\u003eCYCLOPS-ROOM",
+      "kind": "edge",
+      "inputHash": "c08bc47d5f58fb332572259a90d1f1f4d871f4e945d5361d3c0e44d4adebba61",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A twisting, maze-like passage into an unlit room keeps the pace at the mechanically-set baseline of 3 minutes."
+    },
+    {
+      "key": "edge:MAZE-15\u003eMAZE-14",
+      "kind": "edge",
+      "inputHash": "090d5c588c2c002e72d0d678ea0525ccc287eed19624e5a4f7d5e2ca97bd67f4",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain unlit maze passage matches the baseline pace of a twisty, disorienting crawl."
+    },
+    {
+      "key": "edge:MAZE-15\u003eMAZE-7",
+      "kind": "edge",
+      "inputHash": "781376f676c43a12cba7683b9bfc6f7b3fac5e80c489f23b03648a336341a2e7",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Featureless maze passage with no additional hazards beyond the standard dark penalty, so the baseline holds."
+    },
+    {
+      "key": "edge:MAZE-1\u003eMAZE-2",
+      "kind": "edge",
+      "inputHash": "c531270fe18aafd926bc0035d22f89f27794f5e161237f91fbce547eda0a10a7",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Featureless maze passage matches the baseline pacing with no added complications."
+    },
+    {
+      "key": "edge:MAZE-1\u003eMAZE-4",
+      "kind": "edge",
+      "inputHash": "f79f82b9199f22ae526d3a7730938e0f1e703fd0522137925bf402a922663eb6",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Both maze rooms are unlit and identical, so the baseline crawl-through-darkness pacing holds without further adjustment."
+    },
+    {
+      "key": "edge:MAZE-1\u003eTROLL-ROOM",
+      "kind": "edge",
+      "inputHash": "7d3e7ceff7abf530dc2459e212b35beae33b5254a61c3c93898afebcb30628ce",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Leaving the twisty, dark maze into a plain lit room keeps the baseline pace with no added hazard to justify a longer crawl."
+    },
+    {
+      "key": "edge:MAZE-2\u003eMAZE-1",
+      "kind": "edge",
+      "inputHash": "0d1652e2e5ac976268e942b76b7ffd96342b7923109855fec638fe469cd751b6",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Standard maze passage between two identical twisty, unlit rooms matches the baseline pace."
+    },
+    {
+      "key": "edge:MAZE-2\u003eMAZE-3",
+      "kind": "edge",
+      "inputHash": "77a50243d6c67294a7956388ca9f35c6202c9e848c154a57327fcc73ac414712",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A featureless maze passage between two identical twisty rooms matches the baseline pace with no reason to speed up or slow down."
+    },
+    {
+      "key": "edge:MAZE-3\u003eMAZE-2",
+      "kind": "edge",
+      "inputHash": "329b082a80449d38df234c099d5a6587814e8f252f8ebee6963b1337fe5af5c2",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Standard maze passage with no additional hazards beyond the baseline dark, twisty-passage crawl."
+    },
+    {
+      "key": "edge:MAZE-3\u003eMAZE-4",
+      "kind": "edge",
+      "inputHash": "074030a7d85484450e57e482d2c333cf888a2cbeb5dfb374b0a9004605b6e735",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain maze passage between two identical twisty, unlit rooms matches the baseline pace without further adjustment."
+    },
+    {
+      "key": "edge:MAZE-3\u003eMAZE-5",
+      "kind": "edge",
+      "inputHash": "639a489ab47d3d6cf620653e52dce3337bd1ead56d9f87da5ffc6f1e645db888",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "A dark, twisty maze passage with a skeleton stays at the mechanical baseline, neither quicker nor slower than a standard disorienting crawl."
+    },
+    {
+      "key": "edge:MAZE-4\u003eDEAD-END-1",
+      "kind": "edge",
+      "inputHash": "ea2c1f1566bac296535e1c0b86a7f29f4101c8d9388e0b8f8acc0288ec0f4880",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A featureless maze passage to a dead end matches the baseline pace with no reason to lengthen or shorten it."
+    },
+    {
+      "key": "edge:MAZE-4\u003eMAZE-1",
+      "kind": "edge",
+      "inputHash": "f51eb97ada488f9ce3f837c66c488727d64d9a82b7d1f216a909a4c69629fe15",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Identical twisty maze passages offer no distinguishing detail to justify deviating from the baseline pace."
+    },
+    {
+      "key": "edge:MAZE-4\u003eMAZE-3",
+      "kind": "edge",
+      "inputHash": "7dfdce6be013f9bcb2407c92e39add11dcc40100008bc6755fa2f36245079c83",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain maze passage between two identical twisty rooms stays at the baseline pace."
+    },
+    {
+      "key": "edge:MAZE-5\u003eDEAD-END-2",
+      "kind": "edge",
+      "inputHash": "4462e7174507914ddee5cb013f503830ecff12db1056e7b0e13a900c894dab07",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A dark, twisting maze passage to a dead end justifies the baseline pace without further reduction or increase."
+    },
+    {
+      "key": "edge:MAZE-5\u003eMAZE-3",
+      "kind": "edge",
+      "inputHash": "90f9e85727ad1c9cecaeeea95397ef2263f4a14f449c798b7e6b07a1fcbf2206",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain unlit maze passage past a skeleton stays at the baseline crawl-through-darkness pace."
+    },
+    {
+      "key": "edge:MAZE-5\u003eMAZE-6",
+      "kind": "edge",
+      "inputHash": "2773e9d6df4f72e05406d0464b469377a53138dddbcc743004f0fc53cce42c7f",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain maze passage between two twisty, dark passages stays at the baseline pace."
+    },
+    {
+      "key": "edge:MAZE-6\u003eMAZE-5",
+      "kind": "edge",
+      "inputHash": "0583091e5e82e09f62b049e7d081006226fd2f5073d5b4c1ecf7a26fe40a1d9c",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A dark maze passage downward with an eerie skeleton discovery matches the baseline pace of a cautious, twisting crawl."
+    },
+    {
+      "key": "edge:MAZE-6\u003eMAZE-7",
+      "kind": "edge",
+      "inputHash": "58d596b72b1d53b6f532173c1c0e70164459b3c65f3072a3b1f1d2c3f0edf06f",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Identical twisty maze passages with no special hazards keep this at the baseline 3-minute crawl."
+    },
+    {
+      "key": "edge:MAZE-6\u003eMAZE-9",
+      "kind": "edge",
+      "inputHash": "80c7834e249667f5b3e4621a2aaec78755de532ab48ea7163310fde8e7df4b06",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "Generic twisty maze passage with no distinguishing features keeps the pacing at the mechanical baseline."
+    },
+    {
+      "key": "edge:MAZE-7\u003eMAZE-14",
+      "kind": "edge",
+      "inputHash": "964ea39e5aa7ca6d71c7d8c5e3a1c0d4c3469159f4beda4e6cc992deaed08db0",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "Both maze rooms are identical, disorienting, and unlit, matching the baseline crawl through twisty passages."
+    },
+    {
+      "key": "edge:MAZE-7\u003eMAZE-15",
+      "kind": "edge",
+      "inputHash": "101c578a4274cf345484f10f0412f51a59849dae49f6915394e6f84b128f6bfb",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A featureless maze passage matches the baseline pacing with no additional hazards to slow it further."
+    },
+    {
+      "key": "edge:MAZE-7\u003eMAZE-6",
+      "kind": "edge",
+      "inputHash": "d470c600034f56c99e0725be5b750b92eca185c5d23964c870c0a494a9fd6afe",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Plain maze passage between two identical unlit twisty rooms matches the baseline with no additional hazards."
+    },
+    {
+      "key": "edge:MAZE-7\u003eMAZE-8",
+      "kind": "edge",
+      "inputHash": "708a937d4290cd18ac70dfdb585b4b501bbdc6bd954fb97c59a4f59c6ee1e4d6",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Featureless maze passage stays at baseline with no descriptive cues to adjust pacing."
+    },
+    {
+      "key": "edge:MAZE-8\u003eDEAD-END-3",
+      "kind": "edge",
+      "inputHash": "afc14f6d04073ae9bf4a4a62894a7ae1918e8fb9adeb1fdc1d7bac5f3309ba7c",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain maze passage into a dead end matches the baseline pace with no additional hazards to slow it further."
+    },
+    {
+      "key": "edge:MAZE-8\u003eMAZE-7",
+      "kind": "edge",
+      "inputHash": "3bf195d1d481fb8a3f0ad5459324c5029feb95470d753737f390d80a5bcde3dc",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Both maze rooms are dark and identical-feeling, matching the baseline crawl-through-twisty-passages pacing."
+    },
+    {
+      "key": "edge:MAZE-9\u003eMAZE-10",
+      "kind": "edge",
+      "inputHash": "32fd3a22d4d5aba94889ff9eb02c149d5f55116d44b7c203a01c067c0106f671",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Identical twisty maze passages with no special hazards keep this at the baseline 3 minutes."
+    },
+    {
+      "key": "edge:MAZE-9\u003eMAZE-12",
+      "kind": "edge",
+      "inputHash": "6b59a9d369a468aa3907095034b3ece96b4f330ab311d07e2866010f00ab40e0",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Generic maze passage matches baseline with no additional hazards or terrain complexity to justify adjustment."
+    },
+    {
+      "key": "edge:MAZE-9\u003eMAZE-13",
+      "kind": "edge",
+      "inputHash": "ea6e82588d6294a994bdc81cd43b374d4e87f9682e5cd663574e9860acf7f0c2",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Generic maze passage matches the baseline with no descriptive cues to lengthen or shorten it."
+    },
+    {
+      "key": "edge:MAZE-9\u003eMAZE-6",
+      "kind": "edge",
+      "inputHash": "80e44a5df90d79f8f8c3c6ad6f46ceac6dc54a5293a69713f71ba501ab1e80d4",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Identical twisty-maze passages with no special features justify keeping the baseline 3-minute pacing."
+    },
+    {
+      "key": "edge:MINE-1\u003eGAS-ROOM",
+      "kind": "edge",
+      "inputHash": "a46b25d50ccf00dd6fe80bcfdb02f1b738f36c4b1953af0c046d72f563403843",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Sacred gas-filled room with a climb up stairs warrants the baseline dark-passage time without further extension."
+    },
+    {
+      "key": "edge:MINE-1\u003eMINE-2",
+      "kind": "edge",
+      "inputHash": "66a0971e321b5f7badb64c897ba1fc2855dd7d0f103123b9b917ff44ece64328",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Nondescript coal mine passages are plain but dark, keeping the pace at the baseline."
+    },
+    {
+      "key": "edge:MINE-2\u003eMINE-1",
+      "kind": "edge",
+      "inputHash": "8a9590f86708a224b203b0db771f22c1c8b8899d7a48eda5bc49301e96a943df",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Nondescript unlit mine passage matches the baseline pace with no additional hazards described."
+    },
+    {
+      "key": "edge:MINE-2\u003eMINE-3",
+      "kind": "edge",
+      "inputHash": "ee5f90cd3fa442ff46c7470b61f9a19dd67620db0aaf4ad23b785f567b2a101d",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A nondescript, unlit coal mine passage justifies the standard baseline with no additional hazards to extend it."
+    },
+    {
+      "key": "edge:MINE-3\u003eMINE-2",
+      "kind": "edge",
+      "inputHash": "e2619de537283e8c6b7ac643eafdf98b695f7d6171386784d738df4a585138f6",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Nondescript coal mine passage matches the baseline dark, plain movement with no additional hazards."
+    },
+    {
+      "key": "edge:MINE-3\u003eMINE-4",
+      "kind": "edge",
+      "inputHash": "e8cffb2dd54086db737f20fc190289a2d4636611f97e004ad06a139ac05b6c41",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A nondescript, unlit coal mine passage matches the baseline pace with no additional hazards to slow it further."
+    },
+    {
+      "key": "edge:MINE-4\u003eLADDER-TOP",
+      "kind": "edge",
+      "inputHash": "622ac40720beec5e73a2bab10237236d109c28e16e3bc96dfaee7340d65dde8e",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A rickety ladder descent in a dark mine warrants the baseline pacing without further adjustment."
+    },
+    {
+      "key": "edge:MINE-4\u003eMINE-3",
+      "kind": "edge",
+      "inputHash": "ffcfd88a0a08b9307f1f75528821704be33ff1f5ee8b81626c25e17fa1df9048",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A nondescript unlit coal mine passage matches the baseline dark-room crawl with no additional hazards described."
+    },
+    {
+      "key": "edge:MINE-ENTRANCE\u003eSLIDE-ROOM",
+      "kind": "edge",
+      "inputHash": "608db5aa039dc0f0ddcdfda4d0405d0686b0f9b1553e28eb466a5cb8fae3608e",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple exit south into a slide chamber with no notable obstacles keeps the passage at the baseline duration."
+    },
+    {
+      "key": "edge:MINE-ENTRANCE\u003eSQUEEKY-ROOM",
+      "kind": "edge",
+      "inputHash": "67f886a7017f6b9e27526816da21978bf65486f128537ecbab81be690309fe88",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple shaft entrance into a small squeaky room is a plain, short passage matching the baseline dark-room crawl."
+    },
+    {
+      "key": "edge:MIRROR-ROOM-1\u003eCOLD-PASSAGE",
+      "kind": "edge",
+      "inputHash": "4434b7b515253fa96765e86ba4e6e4e79f8d3a80d6a4fe78f20bacc0bc566e2c",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple northward step into an unlit corridor stays close to the baseline pace."
+    },
+    {
+      "key": "edge:MIRROR-ROOM-1\u003eSMALL-CAVE",
+      "kind": "edge",
+      "inputHash": "f16367480d190b70ca3969dab88ff8ec5a071ed42181946b635b3d118bd98650",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple eastward step between two ordinary rooms stays at the baseline pace despite the mirror room's darkness."
+    },
+    {
+      "key": "edge:MIRROR-ROOM-1\u003eTWISTING-PASSAGE",
+      "kind": "edge",
+      "inputHash": "0d40074ccfff26ca00afd0a5839ae1ce2136d7b8f825af556622247de825965b",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A brief westward step into a winding, unlit passage justifies staying at the baseline pace."
+    },
+    {
+      "key": "edge:MIRROR-ROOM-2\u003eNARROW-PASSAGE",
+      "kind": "edge",
+      "inputHash": "900d80578413d76602dfd22ef6b3f810b8c89e6b279592e82958863208fa6371",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A brief walk from a lit mirror room into a narrowing corridor stays near baseline with no extra hazards."
+    },
+    {
+      "key": "edge:MIRROR-ROOM-2\u003eTINY-CAVE",
+      "kind": "edge",
+      "inputHash": "e4091d480a7d8b09548ae4d04b501832263f13728f98fd9dc35b4c67378ce2ad",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple lit-to-dark eastward step keeps the baseline of 2 plus a minute for the destination's darkness."
+    },
+    {
+      "key": "edge:MIRROR-ROOM-2\u003eWINDING-PASSAGE",
+      "kind": "edge",
+      "inputHash": "5daa44157217265644ad7f84b3704e2abae6fb427efe13db0f9300a3fbe88bc8",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple westward step from a lit mirror room into a winding passage stays at the baseline pace with a slight allowance for the dark, unfamiliar crevice ahead."
+    },
+    {
+      "key": "edge:MOUNTAINS\u003eFOREST-2",
+      "kind": "edge",
+      "inputHash": "cc857ba5b948861b1ca416f0f17471ffe09554c1600a3be41d00bb4d9e249be0",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple walk between two lit, open forest areas matches the baseline pace."
+    },
+    {
+      "key": "edge:NARROW-PASSAGE\u003eMIRROR-ROOM-2",
+      "kind": "edge",
+      "inputHash": "9646c30bd9077d4284e938829aea7ce67bc19594c259a10e8b0f466a3acac21e",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A narrow but plain passage into a lit room warrants no deviation from the baseline pace."
+    },
+    {
+      "key": "edge:NARROW-PASSAGE\u003eROUND-ROOM",
+      "kind": "edge",
+      "inputHash": "7c63f5863034ac16746e786bbcba14072aba576e45c1f3d5a5731828d5f2d922",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A brief narrow corridor into a wider stone room warrants only the baseline pace with no additional hazards."
+    },
+    {
+      "key": "edge:NORTH-OF-HOUSE\u003eEAST-OF-HOUSE",
+      "kind": "edge",
+      "inputHash": "1940dd7a0c0116d68ab438cfe8ec0dd8cf2818c322c008b8d44b3850f4ee1fbe",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple outdoor path around the house between two lit, sacred locations warrants no adjustment from the baseline."
+    },
+    {
+      "key": "edge:NORTH-OF-HOUSE\u003ePATH",
+      "kind": "edge",
+      "inputHash": "e9107f6d298d3b893fdcbe7bf378c3833a17975dcc0c1ebb24809323272209fc",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain, unobstructed walk along a clear path with no hazards keeps the timing at baseline."
+    },
+    {
+      "key": "edge:NORTH-OF-HOUSE\u003eWEST-OF-HOUSE",
+      "kind": "edge",
+      "inputHash": "f9e6a015c8efa7e73b130e6d5991e78ee892492d3980e196fd441a13e50ad9df",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A short outdoor walk around the house exterior stays at the baseline pace."
+    },
+    {
+      "key": "edge:NORTH-TEMPLE\u003eEGYPT-ROOM",
+      "kind": "edge",
+      "inputHash": "30834f1de63174eb0ce4e04c18ab1db0b9303cc3c0c6407aa92a869ac3297528",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple staircase transition between a plain lit temple room and an unlit tomb justifies the baseline dark-room nudge with no further adjustment."
+    },
+    {
+      "key": "edge:NORTH-TEMPLE\u003eSOUTH-TEMPLE",
+      "kind": "edge",
+      "inputHash": "c0bb56c2a03646702df07022fc33036b955a3bee83ef90fbb8fbe8009df210b6",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A short walk between two lit, sacred temple rooms warrants no adjustment from the baseline."
+    },
+    {
+      "key": "edge:NORTH-TEMPLE\u003eTORCH-ROOM",
+      "kind": "edge",
+      "inputHash": "3848a6a697398aa8c7caf8b2f6b7a7f6100e23d7b36f12f22c4324c28b37434a",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A short walk through marble pillars into an unlit torch room stays near baseline with a slight allowance for the darkness."
+    },
+    {
+      "key": "edge:NS-PASSAGE\u003eCHASM-ROOM",
+      "kind": "edge",
+      "inputHash": "26486c9615b8d29d75330247680e357407c659cb032aeb1100a13646a191708f",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A brief walk from a plain passage to a nearby chasm ledge stays at the baseline pace."
+    },
+    {
+      "key": "edge:NS-PASSAGE\u003eDEEP-CANYON",
+      "kind": "edge",
+      "inputHash": "88463b5e7c85d2e0316c1ea32676cb72e616e7ae38d853a81908aa0139acddf1",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple fork in a passage with no notable hazards keeps the timing at the mechanical baseline."
+    },
+    {
+      "key": "edge:NS-PASSAGE\u003eROUND-ROOM",
+      "kind": "edge",
+      "inputHash": "d8e3efed25177652484e3a498bd486ec2fa1964a96bb2f45e0ac9ee18e6a6435",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple passage-to-room transition with no unusual hazards keeps the pacing at the baseline dark-passage crawl."
+    },
+    {
+      "key": "edge:ON-RAINBOW\u003eARAGAIN-FALLS",
+      "kind": "edge",
+      "inputHash": "b8290492fc162f6f534979123cbc95224e641e819207aa16117d20fa06ed43d2",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A short open-air walk along the rainbow keeps the pacing at the baseline."
+    },
+    {
+      "key": "edge:ON-RAINBOW\u003eEND-OF-RAINBOW",
+      "kind": "edge",
+      "inputHash": "96c2438d6a5b392278fc9692aa44365f058fc2f40559a4865a0a5dc8793235d3",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple westward walk along the open, sunlit rainbow to the beach matches the baseline pace."
+    },
+    {
+      "key": "edge:PATH\u003eFOREST-1",
+      "kind": "edge",
+      "inputHash": "b4c56ac82a3376c810f31c8116422e4e86ac332e6689a4dd4a1ef31bbd1f64bb",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple westward walk between two ordinary forest rooms matches the baseline pace."
+    },
+    {
+      "key": "edge:PATH\u003eFOREST-2",
+      "kind": "edge",
+      "inputHash": "366a18d856d4842d6912f8eb5268c3a992a6263a7e282e1c4b6b54e365db4547",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple eastward walk between two lit, plain forest areas matches the baseline pace."
+    },
+    {
+      "key": "edge:PATH\u003eGRATING-CLEARING",
+      "kind": "edge",
+      "inputHash": "b73470473ae7a1436d3d21c67b30fe7a2ca4547646f71ef325a28bdec839f4f3",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain lit path northward to a clearing is a simple, unobstructed walk matching the baseline pace."
+    },
+    {
+      "key": "edge:PATH\u003eNORTH-OF-HOUSE",
+      "kind": "edge",
+      "inputHash": "3591167155f4abfddded038e016a5a4704499f4038755bf529afa7e3563e56dd",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A short walk between two plain, lit outdoor areas matches the baseline pace."
+    },
+    {
+      "key": "edge:PATH\u003eUP-A-TREE",
+      "kind": "edge",
+      "inputHash": "16fa5744481bd31d7121f6411406af03a09ac3fb04ff5c2bc4576c46170bbb21",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "Climbing the large tree from the lit forest path matches the baseline pacing with no extra hazards to slow it down."
+    },
+    {
+      "key": "edge:RESERVOIR-NORTH\u003eATLANTIS-ROOM",
+      "kind": "edge",
+      "inputHash": "f011e4928ae7c12db4d641a0fca4b3114490be3ab5c25a82738c6560b41359c8",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "The Reservoir North to Atlantis Room passage into an ancient, formerly flooded, unlit chamber justifies the baseline 3-minute crawl."
+    },
+    {
+      "key": "edge:RESERVOIR-NORTH\u003eRESERVOIR",
+      "kind": "edge",
+      "inputHash": "df960b25cf3e4d6f8efb4a45957b3ca8d1c21e49ac6fd013b69d27cf32f0f591",
+      "class": "movement",
+      "minutes": 7,
+      "rationale": "Crossing from dry land into the flooded, unlit reservoir crevice warrants the full baseline time for cautious, groping movement through water and darkness."
+    },
+    {
+      "key": "edge:RESERVOIR-SOUTH\u003eCHASM-ROOM",
+      "kind": "edge",
+      "inputHash": "f6815143adcf7b4e9b630d323485f867f4cb8d5aec9a7af6cd605a534be55082",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Following a chasm edge into a crack passage is a slightly deliberate but unremarkable traversal, matching the baseline."
+    },
+    {
+      "key": "edge:RESERVOIR-SOUTH\u003eDAM-ROOM",
+      "kind": "edge",
+      "inputHash": "24babecbad25c83a1320dc968b3398f1b72996169ce9d5b5c639cb0de2b5c534",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain eastward exit into a lit room stays at the baseline pace with no obstacles to slow it down."
+    },
+    {
+      "key": "edge:RESERVOIR-SOUTH\u003eDEEP-CANYON",
+      "kind": "edge",
+      "inputHash": "d1410f6bd9aec7e8409a489bfc0daad7f2f395626b4ef2456a5bab6bfc6f2118",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "No descriptive cues justify deviation, so the baseline dark-crossing estimate stands."
+    },
+    {
+      "key": "edge:RESERVOIR-SOUTH\u003eRESERVOIR",
+      "kind": "edge",
+      "inputHash": "7d403e0994714ef30a5a3109a566fc67f7fd98e21987bed632675d6bad320031",
+      "class": "movement",
+      "minutes": 7,
+      "rationale": "Crossing from dry land into the flooded, unlit reservoir crevice warrants the full baseline for water and darkness."
+    },
+    {
+      "key": "edge:RESERVOIR-SOUTH\u003eSTREAM-VIEW",
+      "kind": "edge",
+      "inputHash": "b83019731dd1b93767c0abc4dc8563c358b04cdca386df6234cd19729a34d1cd",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain lit path beside a stream matches the baseline pace with no added hazard."
+    },
+    {
+      "key": "edge:RESERVOIR\u003eIN-STREAM",
+      "kind": "edge",
+      "inputHash": "9cdf2eb91cc5fdc39b3e247a1bff5c4243a9fcf207a2e522b7fbf1501b1530bf",
+      "class": "movement",
+      "minutes": 6,
+      "rationale": "Flowing water and disorienting, wall-twisted darkness keep this at the baseline crawl rather than a quick step."
+    },
+    {
+      "key": "edge:RESERVOIR\u003eRESERVOIR-NORTH",
+      "kind": "edge",
+      "inputHash": "a56ee5eec842a7c59244468a1b58365ac0bf9821ee9e4d297388d5f8073a3761",
+      "class": "movement",
+      "minutes": 6,
+      "rationale": "Crossing from the dry reservoir edge into the water-adjacent, unlit northern area warrants the full baseline for a cautious, blind crawl."
+    },
+    {
+      "key": "edge:RESERVOIR\u003eRESERVOIR-SOUTH",
+      "kind": "edge",
+      "inputHash": "aa09682a143ec9ad1e5fc825c5c854b221fbd6b7efeeaf8d7dcc30bef987aecd",
+      "class": "movement",
+      "minutes": 6,
+      "rationale": "Crossing from the reservoir into the water and dark reservoir south warrants the full baseline for a hazardous, unlit passage."
+    },
+    {
+      "key": "edge:RIVER-1\u003eDAM-BASE",
+      "kind": "edge",
+      "inputHash": "ce91724444f24de2260a93d830a9caa2e4feee38ac002255c76ce4b29cfb5e1f",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "Rowing west to the landing at the dam base is a deliberate river crossing matching the baseline pace."
+    },
+    {
+      "key": "edge:RIVER-1\u003eRIVER-2",
+      "kind": "edge",
+      "inputHash": "be4966cd6b8025c83472bb17bdbbf6618a254f22d036aeb1c573c7eee9e16cee",
+      "class": "movement",
+      "minutes": 6,
+      "rationale": "Drifting on the current is being on ONBIT, so the baseline holds without further nudging."
+    },
+    {
+      "key": "edge:RIVER-2\u003eRIVER-3",
+      "kind": "edge",
+      "inputHash": "383f2ba3f8801aaf29f9bd91a2fef2bf54d6a4944540e93333c8205fbb8f46a6",
+      "class": "movement",
+      "minutes": 6,
+      "rationale": "Drifting on the current river with limited visibility keeps this at the mechanically-priced baseline."
+    },
+    {
+      "key": "edge:RIVER-3\u003eRIVER-4",
+      "kind": "edge",
+      "inputHash": "c7c5bf14cfa1c19aed7bd19d6494c80616e80d75ffb87dbda3b8c8e6d4c4a4e9",
+      "class": "movement",
+      "minutes": 6,
+      "rationale": "Drifting faster on the river with rushing water ahead keeps the baseline pace despite no explicit darkness in the destination description."
+    },
+    {
+      "key": "edge:RIVER-3\u003eWHITE-CLIFFS-NORTH",
+      "kind": "edge",
+      "inputHash": "262f1f01b900a16cbb3db84a32edc40fd301abdbea961a95a69ebf10a186af5f",
+      "class": "movement",
+      "minutes": 6,
+      "rationale": "Landing from the river onto the cliffside beach still involves fighting current and current out of the water, matching the baseline flooded-dark passage time."
+    },
+    {
+      "key": "edge:RIVER-4\u003eRIVER-5",
+      "kind": "edge",
+      "inputHash": "b65ea1696698ca6a9ed2e28aadee2a8797eab9c825e63a35c3df5d9352118b09",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "Drifting on the rushing frigid river between two sacred, waterlogged stretches justifies the full baseline with no reason to shorten or lengthen it further."
+    },
+    {
+      "key": "edge:RIVER-4\u003eSANDY-BEACH",
+      "kind": "edge",
+      "inputHash": "bb8fcc1110d34ed95bd97de8a0a1410848aac725576d5eb553954f54cf1d97f2",
+      "class": "movement",
+      "minutes": 6,
+      "rationale": "Baseline stands as the swift, dangerous river current onto the beach still warrants the water and darkness surcharge despite the short physical distance."
+    },
+    {
+      "key": "edge:RIVER-4\u003eWHITE-CLIFFS-SOUTH",
+      "kind": "edge",
+      "inputHash": "143dbea66f75b028ac67e0a6a38ae5aa9b48f78dd0eabdad8a7225ef8010ceb1",
+      "class": "movement",
+      "minutes": 6,
+      "rationale": "Drifting through fast, dark river water to reach the cliff beach matches the baseline crawl-through-flooded-crevice pacing."
+    },
+    {
+      "key": "edge:RIVER-5\u003eSHORE",
+      "kind": "edge",
+      "inputHash": "19571ae20d34d37cd4d47a12f80c24625e42aab641a95c3f260be02053bf8590",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "Crossing treacherous river water to reach shore keeps the baseline timing intact."
+    },
+    {
+      "key": "edge:ROUND-ROOM\u003eENGRAVINGS-CAVE",
+      "kind": "edge",
+      "inputHash": "153472d45b655273a61151353ccb4faf13715bb9405cb2d73c69eb5486c12021",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A straightforward passage between two plain cave-like rooms with no hazards beyond the baseline darkness warrants no further adjustment."
+    },
+    {
+      "key": "edge:ROUND-ROOM\u003eEW-PASSAGE",
+      "kind": "edge",
+      "inputHash": "3280ea764d3171274a1985c09cfac75944aba956b90d715af339d33267a31b7c",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain westward walk between two ordinary stone passages stays at the baseline pace."
+    },
+    {
+      "key": "edge:ROUND-ROOM\u003eLOUD-ROOM",
+      "kind": "edge",
+      "inputHash": "d744dc8b345f364aa7e71e7e29b3f4ac30927f0dd999ed08e17f0174004c202f",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain eastward passage between two land rooms with no special hazards stays at the baseline duration."
+    },
+    {
+      "key": "edge:ROUND-ROOM\u003eNARROW-PASSAGE",
+      "kind": "edge",
+      "inputHash": "ae0f6620dad666f73bf5c57360a73c08c316d57915df95ea7f7f1527810a0f4a",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple south exit into a narrowing corridor stays at the baseline pace with no added description-based delay."
+    },
+    {
+      "key": "edge:ROUND-ROOM\u003eNS-PASSAGE",
+      "kind": "edge",
+      "inputHash": "fb8c5d633c70002138378f46fb5be3b4be4104f854c3be2aa4788d074088ea32",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Both rooms are ordinary land passages with no special hazards, so the baseline of 2 minutes plus 1 for darkness stands unchanged."
+    },
+    {
+      "key": "edge:SANDY-BEACH\u003eSANDY-CAVE",
+      "kind": "edge",
+      "inputHash": "ce9dae2056fc388fd8e89c86506aea1f668ae5976241cb76eab658696742a745",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Sacred beach to a sand-buried, unlit cave warrants the base plus dark-room penalty with no further adjustment."
+    },
+    {
+      "key": "edge:SANDY-BEACH\u003eSHORE",
+      "kind": "edge",
+      "inputHash": "68ace8fce115ab3e738a6b94bd6a53b2ee4c32d0609101336bb3d64077d60a2a",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain outdoor path between two lit, open shore locations matches the baseline pace with no obstacles to slow it down."
+    },
+    {
+      "key": "edge:SANDY-CAVE\u003eSANDY-BEACH",
+      "kind": "edge",
+      "inputHash": "2659bc477c07b02b53c51aa9964d782cc7ffed5c075300150c3fcf004cb1dd46",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A short sandy crawl between two plain landbound rooms stays at the baseline pace."
+    },
+    {
+      "key": "edge:SHAFT-ROOM\u003eBAT-ROOM",
+      "kind": "edge",
+      "inputHash": "1d597dbb1a7e167c288169c840f8fa4cc346b3289116ccf552369e5668cc6458",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain westward exit from a shaft room into an unlit destination stays at the baseline pace."
+    },
+    {
+      "key": "edge:SHAFT-ROOM\u003eSMELLY-ROOM",
+      "kind": "edge",
+      "inputHash": "0c4a4d7c7f5db77714fa22ba57d3f41a7c4643aa18fae7b394043f5456fba6d0",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Both rooms are lit and the passage is a straightforward corridor, so the baseline timing holds."
+    },
+    {
+      "key": "edge:SHORE\u003eARAGAIN-FALLS",
+      "kind": "edge",
+      "inputHash": "b520a96ea052ef2f32125aee46be7a0871788aa614c845dc08da0bae12e7ab92",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A lit, sacred shore path with a simple southward turn matches the baseline pace."
+    },
+    {
+      "key": "edge:SHORE\u003eSANDY-BEACH",
+      "kind": "edge",
+      "inputHash": "a03e7cbb42eae796c8cacf802bfdd6dd91de2abf865ad2b597d1c6d0998f1bfc",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple lit path along the shore matches the baseline pace with no added difficulty."
+    },
+    {
+      "key": "edge:SLIDE-ROOM\u003eCELLAR",
+      "kind": "edge",
+      "inputHash": "b95517f861d3e89a8e1c888bfba6228e7509cbc1da88657bdb9aa6df353ca572",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A steep metal slide twisting downward into darkness matches the baseline pace with no strong reason to deviate."
+    },
+    {
+      "key": "edge:SLIDE-ROOM\u003eCOLD-PASSAGE",
+      "kind": "edge",
+      "inputHash": "ea72e50a083f417218514b1c0a35681a775139362c229ab297b58dc58a50ebc8",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain east passage between two ordinary rooms stays at baseline with no added difficulty."
+    },
+    {
+      "key": "edge:SLIDE-ROOM\u003eMINE-ENTRANCE",
+      "kind": "edge",
+      "inputHash": "9a19fe7d831743d290ca1f9119bfb86da816c915c56899ea7e3c50cf25eaa153",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A short climb through a small opening between two mine chambers stays near baseline with no added complications."
+    },
+    {
+      "key": "edge:SMALL-CAVE\u003eATLANTIS-ROOM",
+      "kind": "edge",
+      "inputHash": "86f6d18a95367eab36474ebbf22f346b6ba269a651990006f7cdf3373bce66e2",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A short staircase descent from a tiny cave into a flooded, unlit ancient room keeps close to the baseline with a slight allowance for the awkward terrain."
+    },
+    {
+      "key": "edge:SMALL-CAVE\u003eMIRROR-ROOM-1",
+      "kind": "edge",
+      "inputHash": "9fe7032a39da87d2264c11d296d40019933fd23e45fc8cb5e5a5aa1c2beb48b6",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple north step between two plain lit-adjacent cave rooms holds to the baseline pace."
+    },
+    {
+      "key": "edge:SMALL-CAVE\u003eTWISTING-PASSAGE",
+      "kind": "edge",
+      "inputHash": "f789764aa00f171df9af9feea28423abfdfa19d6b75a0a3b63ca6a7911c023bf",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple westward step between two plain, unremarkable rooms keeps the pace at the baseline crawl."
+    },
+    {
+      "key": "edge:SMELLY-ROOM\u003eGAS-ROOM",
+      "kind": "edge",
+      "inputHash": "c42c768530e429d04415c336c59ddcd1bb63cb5c3ff823b075da9efab1163b10",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "The Gas Room's SACREDBIT and coal-gas hazard near an unlit descending staircase justify staying at the mechanical baseline rather than reducing it."
+    },
+    {
+      "key": "edge:SMELLY-ROOM\u003eSHAFT-ROOM",
+      "kind": "edge",
+      "inputHash": "3266de9112ddbc6744fda935e1b407e8bdb6212a5aefe9623c0683a04016821c",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A narrow tunnel south into a large shaft room is a plain, straightforward passage matching the baseline pacing."
+    },
+    {
+      "key": "edge:SOUTH-OF-HOUSE\u003eEAST-OF-HOUSE",
+      "kind": "edge",
+      "inputHash": "a6ee254d284f7eadacc3d3ecaef3eb547cf80cfbb0d668594ea30a422b554768",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple outdoor walk around the house with no obstacles keeps the pace at the baseline."
+    },
+    {
+      "key": "edge:SOUTH-OF-HOUSE\u003eFOREST-3",
+      "kind": "edge",
+      "inputHash": "178837845442a00b5b246daf07a8ab2326954569de13e86ab02d27c91f2f0395",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain outdoor walk from the house to the forest matches the baseline pace with no complicating terrain."
+    },
+    {
+      "key": "edge:SOUTH-OF-HOUSE\u003eWEST-OF-HOUSE",
+      "kind": "edge",
+      "inputHash": "1e725334fbc3179350c2708ab83d40651dd982a83f81c6d08546d16e25310d82",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain, well-lit outdoor exit warrants no adjustment from the baseline."
+    },
+    {
+      "key": "edge:SOUTH-TEMPLE\u003eNORTH-TEMPLE",
+      "kind": "edge",
+      "inputHash": "f5d555baa21e41b9d36f0de7833258911a8ba4bf800e92ab1d05c36881dbdb45",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "Both rooms are lit and the passage is a plain walk between two ends of the same temple, matching the baseline."
+    },
+    {
+      "key": "edge:SOUTH-TEMPLE\u003eTINY-CAVE",
+      "kind": "edge",
+      "inputHash": "e0b8f9222f2246dd2c887059432988aeebc18290e375b7474a24af7b21a1112c",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "A one-way drop through a small hole into a dark, forbidding cave warrants the baseline timing without further adjustment."
+    },
+    {
+      "key": "edge:SQUEEKY-ROOM\u003eBAT-ROOM",
+      "kind": "edge",
+      "inputHash": "75064cc889180bb3d427d23fe78e99686db095578747ce214d9d145b3072048a",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "The Bat Room's darkness (SACREDBIT, no lit description) justifies keeping the baseline dark-passage penalty despite the short squeak-filled corridor."
+    },
+    {
+      "key": "edge:SQUEEKY-ROOM\u003eMINE-ENTRANCE",
+      "kind": "edge",
+      "inputHash": "2c1da1776d492c7f6ea9c2d51c60743555df11fe134b301cb8ae407fb224c552",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple eastward exit into a mine entrance keeps the pace at the mechanical baseline with no added complications."
+    },
+    {
+      "key": "edge:STONE-BARROW\u003eWEST-OF-HOUSE",
+      "kind": "edge",
+      "inputHash": "74c8c17996ae8394b83ec10d32960daf9be5b28df3ec0a183cd945c4885ef3a0",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A short walk out through an open stone door to the outside is straightforward, matching the baseline pace."
+    },
+    {
+      "key": "edge:STRANGE-PASSAGE\u003eCYCLOPS-ROOM",
+      "kind": "edge",
+      "inputHash": "8939ea59294e51fe9cf5619b3451b3811b69e95c37e098763d71cc099e77a050",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple westward walk through a plain passage stays at the baseline despite the dark penalty."
+    },
+    {
+      "key": "edge:STRANGE-PASSAGE\u003eLIVING-ROOM",
+      "kind": "edge",
+      "inputHash": "20c2001c437f005831ef9b1ab8c8e92886b83b1c49108b931be34f00edd7f904",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A short walk east through a doorway into a lit room justifies staying at the baseline pace."
+    },
+    {
+      "key": "edge:STREAM-VIEW\u003eRESERVOIR-SOUTH",
+      "kind": "edge",
+      "inputHash": "1307b1ebfe6aee9aa99a0b3e6d6991372937579b3b58e64effdc591f288003b2",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple path walk beside a stream stays at the baseline pace despite the dark destination."
+    },
+    {
+      "key": "edge:STUDIO\u003eGALLERY",
+      "kind": "edge",
+      "inputHash": "3063182a149f0493abaf44a9c443f8e56f8d771bdbda1b9cfa5acac80d8d9af6",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple open doorway between two lit, plain rooms warrants no adjustment from the baseline."
+    },
+    {
+      "key": "edge:TIMBER-ROOM\u003eLADDER-BOTTOM",
+      "kind": "edge",
+      "inputHash": "93cca33723858e26472a2f4b2a455fb9294a4dd7536c5f3dcecc8812fa30b4bb",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A cluttered, sacred, dark timber passage into a wider ladder room justifies keeping the priced baseline of 3 minutes."
+    },
+    {
+      "key": "edge:TIMBER-ROOM\u003eLOWER-SHAFT",
+      "kind": "edge",
+      "inputHash": "829e319f824dbd72e063a555e03a6bbf70ffa7aaa422aa5b4047cdf6b1b51ba9",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A narrow, timber-cluttered passage with a strong draft leading to a dark shaft room justifies the baseline crawl time."
+    },
+    {
+      "key": "edge:TINY-CAVE\u003eENTRANCE-TO-HADES",
+      "kind": "edge",
+      "inputHash": "56b59023153baf81cc2bea8a89aed967b3703f2987c9d80888bbac03e3857467",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A forbidding dark staircase down into Hades warrants the baseline pace without further slowdown despite lacking flood or crawl elements."
+    },
+    {
+      "key": "edge:TINY-CAVE\u003eMIRROR-ROOM-2",
+      "kind": "edge",
+      "inputHash": "d56d2b16159ed5fd85056484eeb79967dc555a5a372452e9000a15c6911468e7",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple north exit from a small cave into a lit room stays at the baseline pace."
+    },
+    {
+      "key": "edge:TINY-CAVE\u003eWINDING-PASSAGE",
+      "kind": "edge",
+      "inputHash": "f64907e5638bb186aa5d138f81d126d9280b5f257cb169caf2ac9f15bc028e2e",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple westward step between two plain, similarly sized rooms matches the baseline pace with no added obstacles."
+    },
+    {
+      "key": "edge:TORCH-ROOM\u003eNORTH-TEMPLE",
+      "kind": "edge",
+      "inputHash": "5628cc677fc3aef2324a994d7d325e98aaccda36030b1515e5f526570a8bec36",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple sanctioned passage between well-defined rooms warrants the baseline travel time."
+    },
+    {
+      "key": "edge:TREASURE-ROOM\u003eCYCLOPS-ROOM",
+      "kind": "edge",
+      "inputHash": "68553e041838d76529694f96c09dfa2a5b55fb7783e4e2fe29e60a1ce66a56c2",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A staircase descent from the treasure room into darkness matches the baseline pacing for a cautious, unlit downward passage."
+    },
+    {
+      "key": "edge:TROLL-ROOM\u003eCELLAR",
+      "kind": "edge",
+      "inputHash": "70193a2339090b9b9d1eef07c99925b2c1746922b5abcfba6d0649a6f28eee68",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Standard south passage between two rooms with no notable hazards beyond the baseline darkness of the Troll Room."
+    },
+    {
+      "key": "edge:TROLL-ROOM\u003eEW-PASSAGE",
+      "kind": "edge",
+      "inputHash": "de75a4178c8116d21c16ccc704e6db10d3880dba83f696f39b4c3d3fcc1f78be",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A straightforward eastward step from the Troll Room into the East-West Passage matches the baseline pacing with no additional hazards described."
+    },
+    {
+      "key": "edge:TROLL-ROOM\u003eMAZE-1",
+      "kind": "edge",
+      "inputHash": "d86f0fb58da7c08e524bd11afe8b0037c17300330ad5b924d45f986320a299b1",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A forbidding, unlit hole leading into a twisting maze warrants a cautious crawl at the priced baseline."
+    },
+    {
+      "key": "edge:TWISTING-PASSAGE\u003eMIRROR-ROOM-1",
+      "kind": "edge",
+      "inputHash": "d3ab1ef7d8e87db306d7415f42fc09c959615c05b53424e818c792d6a618943c",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain exit from a winding passage into an unremarkable mirror room stays at the baseline pace."
+    },
+    {
+      "key": "edge:TWISTING-PASSAGE\u003eSMALL-CAVE",
+      "kind": "edge",
+      "inputHash": "c76712cffe955a70513cfdef06908c9250234cc066d7c2320984f06c2d7a6186",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple winding passage into a small cave with no unusual hazards stays at the baseline dark-passage pace."
+    },
+    {
+      "key": "edge:UP-A-TREE\u003ePATH",
+      "kind": "edge",
+      "inputHash": "004495afad1a482ff2923f1f75a3a67ac3dfe157bcbc8d8aea35b44c65977a3a",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple climb down from a tree to a lit forest path warrants no adjustment from the baseline."
+    },
+    {
+      "key": "edge:WEST-OF-HOUSE\u003eFOREST-1",
+      "kind": "edge",
+      "inputHash": "b767c1371284081e1a1040579a47b89f9c74d532a749ffbb62f18a2d2db78be9",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple open walk from the house to the sunlit edge of the forest matches the baseline pace."
+    },
+    {
+      "key": "edge:WEST-OF-HOUSE\u003eNORTH-OF-HOUSE",
+      "kind": "edge",
+      "inputHash": "337a06a0b3335977b5b0232d8bb1738ad2a980f8082022c35379b948a35921eb",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain, lit outdoor path between two above-ground house locations warrants no deviation from the baseline."
+    },
+    {
+      "key": "edge:WEST-OF-HOUSE\u003eSOUTH-OF-HOUSE",
+      "kind": "edge",
+      "inputHash": "a61ae1328ff82d39fa0ea6fb7c121e1904b2d0c9c9fbb7f387359e442dd88da5",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple outdoor walk around the house stays at the baseline pace."
+    },
+    {
+      "key": "edge:WEST-OF-HOUSE\u003eSTONE-BARROW",
+      "kind": "edge",
+      "inputHash": "53489a5f18d988c17e22c420bbc7fd2be97055c852bd6ffe4956a1da0e7de20f",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A short outdoor walk to the barrow entrance stays at the mechanical baseline with no lit/flooded complications."
+    },
+    {
+      "key": "edge:WHITE-CLIFFS-NORTH\u003eDAMP-CAVE",
+      "kind": "edge",
+      "inputHash": "8bae9437764e62d83ff1898a3f4004d54bd9ec76d21ab6ddfe904dd00415a22a",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A tight passage into a damp, dark cave warrants keeping the baseline as a slow crawl through cramped, unlit terrain."
+    },
+    {
+      "key": "edge:WHITE-CLIFFS-NORTH\u003eWHITE-CLIFFS-SOUTH",
+      "kind": "edge",
+      "inputHash": "a46767c13f14ee03d9821cb22e32655fa15a4af9da78669b3103a76640cec857",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A simple beach path walk south along the cliffs matches the baseline pacing without added difficulty."
+    },
+    {
+      "key": "edge:WHITE-CLIFFS-SOUTH\u003eWHITE-CLIFFS-NORTH",
+      "kind": "edge",
+      "inputHash": "6891dcb7df36ace98e5d69b3379a25bbff2cec215fd27d7d91b4fd21af0b0217",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A simple beach walk along the shore matches the baseline pace with no added hazards."
+    },
+    {
+      "key": "edge:WINDING-PASSAGE\u003eMIRROR-ROOM-2",
+      "kind": "edge",
+      "inputHash": "3b01e077609b175bae99db45f0b36f9b98e1ffcf0aa8e7f0872273f035f7cd5f",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain northward exit from a simple winding passage into a lit room matches the baseline pace."
+    },
+    {
+      "key": "edge:WINDING-PASSAGE\u003eTINY-CAVE",
+      "kind": "edge",
+      "inputHash": "34298870d74e822488d620844a26cbbf96353c8dc7a9343cbe5135b35487c938",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain winding passage into a tiny cave is unremarkable, so the baseline of 2 minutes plus 1 for darkness stands."
+    }
+  ]
+}

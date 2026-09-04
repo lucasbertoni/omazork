@@ -456,8 +456,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — A plain, lit, dry channel walk matches the baseline pace with no complicating terrain."
     },
     {
       "from": "AQ-2",
@@ -466,8 +466,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — A plain, lit, dry aqueduct passage matches the baseline pace with no obstacles to slow it down."
     },
     {
       "from": "AQ-2",
@@ -476,8 +476,8 @@
       "kind": "cond_flag",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + conditional 1"
+      "source": "rule+llm",
+      "note": "base 2 + conditional 1, llm 3 — Both rooms are lit and above water, so the baseline conditional passage timing holds without adjustment."
     },
     {
       "from": "AQ-3",
@@ -486,8 +486,8 @@
       "kind": "cond_flag",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + conditional 1"
+      "source": "rule+llm",
+      "note": "base 2 + conditional 1, llm 3 — Both rooms are lit and above water, so the baseline pacing holds with no added hazard."
     },
     {
       "from": "AQ-3",
@@ -496,8 +496,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1; cheapest of 2 exits (NORTH, DOWN)"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3; cheapest of 2 exits (NORTH, DOWN) — A steep, mossy stone channel between a lit slide and a damp, rubble-blocked junction warrants the baseline pace without further adjustment."
     },
     {
       "from": "AQ-VIEW",
@@ -506,8 +506,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2; cheapest of 2 exits (NW, UP)"
+      "source": "rule+llm",
+      "note": "base 2, llm 2; cheapest of 2 exits (NW, UP) — Climbing stone steps up a cliff to a dimly lit cavern is a modest, unobstructed ascent matching the baseline pace."
     },
     {
       "from": "BEHIND-DOOR",
@@ -516,8 +516,8 @@
       "kind": "cond_door",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + door 1"
+      "source": "rule+llm",
+      "note": "base 2 + door 1, llm 3 — Both rooms are lit and above ground, so the baseline door passage time stands unchanged."
     },
     {
       "from": "BEHIND-DOOR",
@@ -526,8 +526,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and above ground with no notable obstacles, so the baseline pace holds."
     },
     {
       "from": "CELL",
@@ -536,8 +536,8 @@
       "kind": "cond_door",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + door 1; cheapest of 2 exits (OUT, NORTH)"
+      "source": "rule+llm",
+      "note": "base 2 + door 1, llm 3; cheapest of 2 exits (OUT, NORTH) — A lit cell door exit stays at the baseline with no added hazards to slow the crossing."
     },
     {
       "from": "CLEARING",
@@ -546,8 +546,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — A plain westward walk from a flat clearing to a lit cliff area matches the baseline pace with no obstacles to slow it."
     },
     {
       "from": "CLEARING",
@@ -556,8 +556,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A plain open-air walk between two barren, unremarkable areas stays at the baseline pace."
     },
     {
       "from": "CLEARING",
@@ -566,8 +566,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A misty gap in a crumbling wall leading into shadowy hills warrants the baseline dark-passage pacing without further extension."
     },
     {
       "from": "CLEARING",
@@ -576,8 +576,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A steep, boulder-strewn trail descent between two barren but not hazardous outdoor areas justifies staying at the baseline pace."
     },
     {
       "from": "CLIFF",
@@ -586,8 +586,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — Cliff is lit while the destination is a plain open area, so the baseline dark-passage time stands without further adjustment."
     },
     {
       "from": "CLIFF",
@@ -596,8 +596,8 @@
       "kind": "cond_flag",
       "minutes": 4,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + down 1 + conditional 1"
+      "source": "rule+llm",
+      "note": "base 2 + down 1 + conditional 1, llm 4 — Both rooms are lit with no special hazards noted, so the baseline climbing time stands unchanged."
     },
     {
       "from": "CLIFF",
@@ -606,8 +606,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — Destination is unlit but described as an open cliffside path rather than a treacherous crawl, so the baseline dark-penalty stands without further adjustment."
     },
     {
       "from": "CLIFF-BASE",
@@ -616,8 +616,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — A lit, plain southward walk over sandy ground stays at the baseline pace."
     },
     {
       "from": "CLIFF-BASE",
@@ -626,8 +626,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A steep climbing path with scattered boulders warrants the baseline 3 minutes, even though it's lit."
     },
     {
       "from": "CLIFF-LEDGE",
@@ -636,8 +636,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + down 1"
+      "source": "rule+llm",
+      "note": "base 2 + down 1, llm 3 — Both rooms are lit and this is a simple climb down a cliff face, matching the baseline pacing."
     },
     {
       "from": "CP-ANTE",
@@ -646,8 +646,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and above ground with no adverse conditions, so the baseline short passage stands."
     },
     {
       "from": "CP-ANTE",
@@ -656,8 +656,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2; cheapest of 2 exits (NORTH, UP)"
+      "source": "rule+llm",
+      "note": "base 2, llm 2; cheapest of 2 exits (NORTH, UP) — Both rooms are lit and on land with no adverse conditions noted, so the baseline pace holds."
     },
     {
       "from": "CP-OUT",
@@ -666,8 +666,8 @@
       "kind": "cond_flag",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + conditional 1"
+      "source": "rule+llm",
+      "note": "base 2 + conditional 1, llm 3 — Both rooms are lit and above ground with no unusual hazards noted, so the baseline pacing holds."
     },
     {
       "from": "CP-OUT",
@@ -676,8 +676,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2; cheapest of 2 exits (NORTH, UP)"
+      "source": "rule+llm",
+      "note": "base 2, llm 2; cheapest of 2 exits (NORTH, UP) — Both rooms are lit and landed with no adverse flags, so the baseline plain exit timing holds."
     },
     {
       "from": "CREEPY-CRAWL",
@@ -686,8 +686,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A creepy, dark crawlway into a foggy passage justifies staying at the baseline slow pace."
     },
     {
       "from": "CREEPY-CRAWL",
@@ -696,8 +696,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A crawlway passage stays at the baseline, reflecting the slow, dark crawl into a junction."
     },
     {
       "from": "CREEPY-CRAWL",
@@ -706,8 +706,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A dark, creepy crawlway into a shadowed landscape stays at the mechanical baseline with no added hazards to justify further delay."
     },
     {
       "from": "CREEPY-CRAWL",
@@ -716,8 +716,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — Baseline crawl through a dark, narrow passage stays at 3 minutes with no additional factors to adjust it."
     },
     {
       "from": "DAMP-PASSAGE",
@@ -726,8 +726,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — Damp, slippery, unlit passage keeps the pace at baseline rather than a quick lit-room step."
     },
     {
       "from": "DAMP-PASSAGE",
@@ -736,8 +736,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — Both rooms are plain lit passages with no hazards, so the baseline of 3 minutes fits without adjustment."
     },
     {
       "from": "DAMP-PASSAGE",
@@ -746,8 +746,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — Slippery moss-covered channel and lack of destination detail keep it at the standard damp-passage baseline."
     },
     {
       "from": "DARK-1",
@@ -756,8 +756,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1; cheapest of 2 exits (SOUTH, UP)"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3; cheapest of 2 exits (SOUTH, UP) — No unusual descriptive details beyond the darkness already factored into the baseline, so the passage stays at the mechanical 3-minute estimate."
     },
     {
       "from": "DARK-1",
@@ -766,8 +766,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2; cheapest of 2 exits (NORTH, DOWN)"
+      "source": "rule+llm",
+      "note": "base 2, llm 2; cheapest of 2 exits (NORTH, DOWN) — A plain exit from a dark room to an open lakeshore stays at baseline pace."
     },
     {
       "from": "DARK-2",
@@ -776,8 +776,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1; cheapest of 2 exits (NORTH, DOWN)"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3; cheapest of 2 exits (NORTH, DOWN) — Both rooms are dark with no distinguishing features, so the baseline dark-passage timing holds."
     },
     {
       "from": "DARK-2",
@@ -786,8 +786,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2; cheapest of 2 exits (EAST, UP)"
+      "source": "rule+llm",
+      "note": "base 2, llm 2; cheapest of 2 exits (EAST, UP) — Moving from a dark room into a lit key room is a straightforward eastward step, matching the baseline pace."
     },
     {
       "from": "DEAD-END",
@@ -796,8 +796,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A simple westward walk into a plain junction room stays at baseline despite the damp, mossy conditions."
     },
     {
       "from": "DEAD-END",
@@ -806,8 +806,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A plain passage between two ordinary land rooms stays at the baseline pace."
     },
     {
       "from": "DEAD-END-5",
@@ -816,8 +816,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A simple climb from a dead-end mine to a ladder bottom matches the baseline pacing with no added hazards."
     },
     {
       "from": "EAST-CORRIDOR",
@@ -826,8 +826,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — A plain corridor transition between two lit, landbound rooms matches the baseline pace with no complicating factors."
     },
     {
       "from": "EAST-CORRIDOR",
@@ -836,8 +836,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — A plain lit corridor-to-corridor transition matches the baseline pace with no obstacles to slow it."
     },
     {
       "from": "FAR-SHORE",
@@ -846,8 +846,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — A short, plain path from the lit shore into the rock south stays at the baseline pace."
     },
     {
       "from": "FLATHEAD-OCEAN",
@@ -856,8 +856,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — A plain northward walk from open ocean shore to a lit cliff base warrants no deviation from baseline."
     },
     {
       "from": "FLATHEAD-OCEAN",
@@ -866,8 +866,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A plain lit crossing into open, rolling terrain matches the baseline pace with no added hazards."
     },
     {
       "from": "FLATHEAD-OCEAN",
@@ -876,8 +876,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — Origin is unlit while destination is an open, sprawling shadowed landscape, keeping the crossing at the baseline dark-exit pace."
     },
     {
       "from": "FLATHEAD-OCEAN",
@@ -886,8 +886,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A plain NE exit from ocean shore to a cliff-top area with no notable obstacles keeps close to the baseline pace."
     },
     {
       "from": "FOGGY-ROOM",
@@ -896,8 +896,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A foggy, spooky passage into a dark crawlway justifies the baseline dark-and-eerie pacing without further extension."
     },
     {
       "from": "FOGGY-ROOM",
@@ -906,8 +906,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — A plain southward path from a foggy passage to a dimly lit lakeshore matches the baseline pace with no added hazards."
     },
     {
       "from": "FOGGY-ROOM",
@@ -916,8 +916,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — An eerie, shadowy crossing from fog into a dark hilly land warrants the baseline 3-minute pace."
     },
     {
       "from": "FRONT-DOOR",
@@ -926,8 +926,8 @@
       "kind": "cond_door",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + door 1"
+      "source": "rule+llm",
+      "note": "base 2 + door 1, llm 3 — Both rooms are lit with no special hazards noted, so the baseline door-crossing time of 3 minutes stands unchanged."
     },
     {
       "from": "FRONT-DOOR",
@@ -936,8 +936,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and landbound with no notable obstacles, so the baseline pace holds."
     },
     {
       "from": "FRONT-DOOR",
@@ -946,8 +946,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and on land with no notable description to justify deviation, so the baseline holds."
     },
     {
       "from": "GOOD-CELL",
@@ -956,8 +956,8 @@
       "kind": "cond_door",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + door 1; cheapest of 2 exits (OUT, SOUTH)"
+      "source": "rule+llm",
+      "note": "base 2 + door 1, llm 3; cheapest of 2 exits (OUT, SOUTH) — Both rooms are lit and the exit is a simple conditional door, so the baseline passage time holds."
     },
     {
       "from": "IN-LAKE",
@@ -966,8 +966,8 @@
       "kind": "plain",
       "minutes": 4,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + up 2"
+      "source": "rule+llm",
+      "note": "base 2 + up 2, llm 4 — A short swim upward to the surface matches the baseline pace with no added hazard or complexity."
     },
     {
       "from": "JEWEL-ROOM",
@@ -976,8 +976,8 @@
       "kind": "cond_door",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + door 1; cheapest of 2 exits (WEST, OUT)"
+      "source": "rule+llm",
+      "note": "base 2 + door 1, llm 3; cheapest of 2 exits (WEST, OUT) — Both rooms are lit and above ground, so the baseline door-passage timing holds without further adjustment."
     },
     {
       "from": "JUNCTION",
@@ -986,8 +986,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A plain westward walk between two open, non-flooded areas fits the baseline pace with no added obstacles."
     },
     {
       "from": "JUNCTION",
@@ -996,8 +996,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A cramped southward crawl into a dark, creepy crawlway keeps the pace at baseline with no added complexity."
     },
     {
       "from": "JUNCTION",
@@ -1006,8 +1006,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A cramped, damp, moss-covered passage keeps pace at the baseline rather than a quick stroll."
     },
     {
       "from": "JUNCTION",
@@ -1016,8 +1016,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — A straightforward north passage to a visible stairway base warrants no deviation from baseline."
     },
     {
       "from": "KEY-ROOM",
@@ -1026,8 +1026,8 @@
       "kind": "cond_flag",
       "minutes": 4,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + down 1 + conditional 1"
+      "source": "rule+llm",
+      "note": "base 2 + down 1 + conditional 1, llm 4 — A lit, dry stone channel with a simple downward step keeps the passage at the mechanical baseline."
     },
     {
       "from": "KEY-ROOM",
@@ -1036,8 +1036,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — Baseline stands: leaving a lit room into an unlit space warrants the standard dark-passage bump without further adjustment."
     },
     {
       "from": "LADDER-BOTTOM",
@@ -1046,8 +1046,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A straightforward passage into a dark dead-end mine keeps the baseline pace with no added complications."
     },
     {
       "from": "LADDER-BOTTOM",
@@ -1056,8 +1056,8 @@
       "kind": "plain",
       "minutes": 5,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + up 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + up 2 + dark 1, llm 5 — A straightforward ladder climb between two plainly described rooms warrants no adjustment from the baseline."
     },
     {
       "from": "LADDER-BOTTOM",
@@ -1066,8 +1066,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A short passage between two connected rooms with a mild timber-clutter and draft detail keeps it near baseline."
     },
     {
       "from": "LADDER-TOP",
@@ -1076,8 +1076,8 @@
       "kind": "plain",
       "minutes": 4,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + down 1 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + down 1 + dark 1, llm 4 — A rickety ladder descent between two plain, unremarkable rooms warrants no adjustment from the baseline."
     },
     {
       "from": "LAKE-SHORE",
@@ -1086,8 +1086,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2; cheapest of 2 exits (SE, DOWN)"
+      "source": "rule+llm",
+      "note": "base 2, llm 2; cheapest of 2 exits (SE, DOWN) — A short climb up polished stone steps between two lit, dry areas stays at the baseline pace."
     },
     {
       "from": "LAKE-SHORE",
@@ -1096,8 +1096,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A lit cavern walk into a foggy passage stays near baseline with no added difficulty."
     },
     {
       "from": "LOWER-SHAFT",
@@ -1106,8 +1106,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — No special descriptive details justify deviating from the mechanically-priced baseline."
     },
     {
       "from": "LOWER-SHAFT",
@@ -1116,8 +1116,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1; cheapest of 2 exits (OUT, EAST)"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3; cheapest of 2 exits (OUT, EAST) — Cluttered timbers and a narrow, drafty passage justify the baseline crawl time."
     },
     {
       "from": "MID-CP-ANTE",
@@ -1126,8 +1126,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and above ground with no hazards noted, so the baseline plain exit timing holds."
     },
     {
       "from": "MID-CP-ANTE",
@@ -1136,8 +1136,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2; cheapest of 2 exits (NORTH, UP)"
+      "source": "rule+llm",
+      "note": "base 2, llm 2; cheapest of 2 exits (NORTH, UP) — Both rooms are lit and above ground with no hazards noted, so the baseline passage time stands."
     },
     {
       "from": "MID-CP-OUT",
@@ -1146,8 +1146,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and above ground with no obstacles noted, so the baseline plain passage timing holds."
     },
     {
       "from": "MID-JEWEL-ROOM",
@@ -1156,8 +1156,8 @@
       "kind": "cond_door",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + door 1; cheapest of 2 exits (WEST, OUT)"
+      "source": "rule+llm",
+      "note": "base 2 + door 1, llm 3; cheapest of 2 exits (WEST, OUT) — Both rooms are lit and landed with no unusual descriptors, so the baseline door-passage timing holds."
     },
     {
       "from": "MID-MUSEUM-ENTRANCE",
@@ -1166,8 +1166,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2; cheapest of 2 exits (SOUTH, DOWN)"
+      "source": "rule+llm",
+      "note": "base 2, llm 2; cheapest of 2 exits (SOUTH, DOWN) — Both rooms are lit and on land, so a plain southward passage matches the baseline pace."
     },
     {
       "from": "MID-MUSEUM-ENTRANCE",
@@ -1176,8 +1176,8 @@
       "kind": "cond_door",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + door 1"
+      "source": "rule+llm",
+      "note": "base 2 + door 1, llm 3 — Both rooms are lit and dry, so the baseline door-crossing time stands unmodified."
     },
     {
       "from": "MID-MUSEUM-ENTRANCE",
@@ -1186,8 +1186,8 @@
       "kind": "cond_door",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + door 1"
+      "source": "rule+llm",
+      "note": "base 2 + door 1, llm 3 — Both rooms are lit and landmarked with no adverse conditions noted, so the baseline door-passage timing holds."
     },
     {
       "from": "MID-TECH-MUSEUM",
@@ -1196,8 +1196,8 @@
       "kind": "cond_door",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + door 1; cheapest of 2 exits (SOUTH, OUT)"
+      "source": "rule+llm",
+      "note": "base 2 + door 1, llm 3; cheapest of 2 exits (SOUTH, OUT) — Both rooms are lit and land-based with no adverse conditions, so the baseline door-crossing time stands."
     },
     {
       "from": "MR-ANTE",
@@ -1206,8 +1206,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — A plain, torch-lit corridor walk keeps the passage at the baseline pace."
     },
     {
       "from": "MR-ANTE",
@@ -1216,8 +1216,8 @@
       "kind": "cond_door",
       "minutes": 4,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + door 1 + dark 1; cheapest of 2 exits (SOUTH, UP)"
+      "source": "rule+llm",
+      "note": "base 2 + door 1 + dark 1, llm 4; cheapest of 2 exits (SOUTH, UP) — Stairs ascending into darkness through a stuck door keep this at the baseline pace."
     },
     {
       "from": "MRA",
@@ -1226,8 +1226,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and normal, so the baseline plain-exit timing holds."
     },
     {
       "from": "MRAE",
@@ -1236,8 +1236,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and dry, so the baseline pace holds with no complicating conditions."
     },
     {
       "from": "MRAE",
@@ -1246,8 +1246,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and landbound with no adverse conditions, so the baseline pace holds."
     },
     {
       "from": "MRAW",
@@ -1256,8 +1256,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and on land with no notable obstacles, so the baseline pace holds."
     },
     {
       "from": "MRAW",
@@ -1266,8 +1266,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and landbound with no special hazards noted, so the baseline plain exit time stands."
     },
     {
       "from": "MRBE",
@@ -1276,8 +1276,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and above ground with no hazard flags, so the baseline crossing time stands."
     },
     {
       "from": "MRBE",
@@ -1286,8 +1286,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and on land with no obstacles noted, so the baseline pace holds."
     },
     {
       "from": "MRBW",
@@ -1296,8 +1296,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and on land with no adverse conditions, so the baseline pace holds."
     },
     {
       "from": "MRBW",
@@ -1306,8 +1306,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and land-based with no hazards noted, so the baseline plain exit timing holds."
     },
     {
       "from": "MRCE",
@@ -1316,8 +1316,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and above ground with no adverse conditions noted, so the baseline plain exit timing holds."
     },
     {
       "from": "MRCE",
@@ -1326,8 +1326,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and on land with no adverse features noted, so the baseline plain traversal time stands."
     },
     {
       "from": "MRCW",
@@ -1336,8 +1336,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and on land with no adverse descriptors, so the baseline passage time holds."
     },
     {
       "from": "MRCW",
@@ -1346,8 +1346,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and dry with no unusual features, so the baseline two-minute pace stands."
     },
     {
       "from": "MRD",
@@ -1356,8 +1356,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2; cheapest of 3 exits (NORTH, NE, NW)"
+      "source": "rule+llm",
+      "note": "base 2, llm 2; cheapest of 3 exits (NORTH, NE, NW) — Both rooms are lit and above ground with no adverse conditions noted, so the baseline traversal time stands."
     },
     {
       "from": "MRDE",
@@ -1366,8 +1366,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and above ground with no notable hazards, so the baseline pace applies."
     },
     {
       "from": "MRDE",
@@ -1376,8 +1376,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and above ground with no adverse conditions, so the baseline stands."
     },
     {
       "from": "MRDW",
@@ -1386,8 +1386,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and on land with no adverse conditions noted, so the baseline stands."
     },
     {
       "from": "MRDW",
@@ -1396,8 +1396,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and land-based with no notable obstacles, so the baseline plain passage time stands."
     },
     {
       "from": "MREYE",
@@ -1406,8 +1406,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and the passage is a plain exit, so the baseline pace holds."
     },
     {
       "from": "MRGE",
@@ -1416,8 +1416,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and dry, so the baseline plain exit timing holds."
     },
     {
       "from": "MRGE",
@@ -1426,8 +1426,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and on land with no adverse conditions noted, so the baseline passage time stands."
     },
     {
       "from": "MRGW",
@@ -1436,8 +1436,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and on land with no adverse conditions noted, so the baseline passage time holds."
     },
     {
       "from": "MRGW",
@@ -1446,8 +1446,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and dry, so the baseline pace for a plain corridor transition holds."
     },
     {
       "from": "MSTAIRS",
@@ -1456,8 +1456,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A slippery, moss-covered descent into a damp junction warrants the baseline dark-passage timing with no further adjustment."
     },
     {
       "from": "MSTAIRS",
@@ -1466,8 +1466,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A dark room-to-room passage keeps the baseline timing of 3 minutes without added hazards or shortcuts."
     },
     {
       "from": "MSTAIRS",
@@ -1476,8 +1476,8 @@
       "kind": "cond_door",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + door 1; cheapest of 2 exits (NORTH, DOWN)"
+      "source": "rule+llm",
+      "note": "base 2 + door 1, llm 3; cheapest of 2 exits (NORTH, DOWN) — A simple door passage into a lit, straightforward hall stays at the mechanical baseline with no added hazards to slow it."
     },
     {
       "from": "MUSEUM-ANTE",
@@ -1486,8 +1486,8 @@
       "kind": "cond_flag",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + conditional 1"
+      "source": "rule+llm",
+      "note": "base 2 + conditional 1, llm 3 — A simple eastward step through a great door into a lit museum entrance keeps the baseline pace."
     },
     {
       "from": "MUSEUM-ANTE",
@@ -1496,8 +1496,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A plain northward walk into a grand but unremarkable vaulted hall stays at the baseline pace."
     },
     {
       "from": "MUSEUM-ENTRANCE",
@@ -1506,8 +1506,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2; cheapest of 2 exits (SOUTH, DOWN)"
+      "source": "rule+llm",
+      "note": "base 2, llm 2; cheapest of 2 exits (SOUTH, DOWN) — Both rooms are lit and on land with no adverse conditions noted, so the baseline stands."
     },
     {
       "from": "MUSEUM-ENTRANCE",
@@ -1516,8 +1516,8 @@
       "kind": "cond_door",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + door 1"
+      "source": "rule+llm",
+      "note": "base 2 + door 1, llm 3 — Both rooms are lit and above ground, so the baseline door crossing time stands unmodified."
     },
     {
       "from": "MUSEUM-ENTRANCE",
@@ -1526,8 +1526,8 @@
       "kind": "cond_flag",
       "minutes": 4,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + conditional 1 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + conditional 1 + dark 1, llm 4 — A conditional door passage between an origin lit room and a landmark chamber warrants no adjustment from the baseline."
     },
     {
       "from": "MUSEUM-ENTRANCE",
@@ -1536,8 +1536,8 @@
       "kind": "cond_door",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + door 1"
+      "source": "rule+llm",
+      "note": "base 2 + door 1, llm 3 — Both rooms are lit with no unusual traversal difficulty noted, so the baseline 3-minute door passage stands."
     },
     {
       "from": "NORTH-CORRIDOR",
@@ -1546,8 +1546,8 @@
       "kind": "cond_door",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + door 1"
+      "source": "rule+llm",
+      "note": "base 2 + door 1, llm 3 — Both rooms are lit and on land, so the baseline door-passage timing holds without further adjustment."
     },
     {
       "from": "NORTH-CORRIDOR",
@@ -1556,8 +1556,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — A plain corridor-to-corridor step between two lit, dry rooms warrants no adjustment from the baseline."
     },
     {
       "from": "NORTH-CORRIDOR",
@@ -1566,8 +1566,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and above ground with no adverse conditions noted, so the baseline pace holds."
     },
     {
       "from": "NORTH-CORRIDOR",
@@ -1576,8 +1576,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and the destination is a plain marble corridor, so the baseline pace holds."
     },
     {
       "from": "OLD-JEWEL-ROOM",
@@ -1586,8 +1586,8 @@
       "kind": "cond_door",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + door 1; cheapest of 2 exits (WEST, OUT)"
+      "source": "rule+llm",
+      "note": "base 2 + door 1, llm 3; cheapest of 2 exits (WEST, OUT) — Both rooms are lit and above-ground, so the baseline door passage time stands unchanged."
     },
     {
       "from": "OLD-MUSEUM-ENTRANCE",
@@ -1596,8 +1596,8 @@
       "kind": "cond_door",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + door 1"
+      "source": "rule+llm",
+      "note": "base 2 + door 1, llm 3 — Both rooms are lit and above ground, so the baseline door crossing time holds without further adjustment."
     },
     {
       "from": "OLD-MUSEUM-ENTRANCE",
@@ -1606,8 +1606,8 @@
       "kind": "cond_door",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + door 1"
+      "source": "rule+llm",
+      "note": "base 2 + door 1, llm 3 — Both rooms are lit and on land, so the baseline door-passage timing holds with no added difficulty."
     },
     {
       "from": "OLD-TECH-MUSEUM",
@@ -1616,8 +1616,8 @@
       "kind": "cond_door",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + door 1; cheapest of 2 exits (SOUTH, OUT)"
+      "source": "rule+llm",
+      "note": "base 2 + door 1, llm 3; cheapest of 2 exits (SOUTH, OUT) — Both rooms are lit and on land, so a door-crossing at the baseline 3 minutes fits without added hazard."
     },
     {
       "from": "ON-LAKE",
@@ -1626,8 +1626,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2; cheapest of 2 exits (WEST, NW)"
+      "source": "rule+llm",
+      "note": "base 2, llm 2; cheapest of 2 exits (WEST, NW) — A swim across open lake water to a walkable shore is a simple, unremarkable crossing that matches the baseline pace."
     },
     {
       "from": "ON-LAKE",
@@ -1636,8 +1636,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + down 1"
+      "source": "rule+llm",
+      "note": "base 2 + down 1, llm 3 — Diving underwater into cold, shallow water adds brief disorientation but stays close to baseline since it's just a short plunge to the sandy bottom."
     },
     {
       "from": "ON-LAKE",
@@ -1646,8 +1646,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Swimming to shore is a plain exit with no obstruction, so it stays at the baseline pace."
     },
     {
       "from": "ON-LAKE",
@@ -1656,8 +1656,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2; cheapest of 2 exits (SOUTH, SW)"
+      "source": "rule+llm",
+      "note": "base 2, llm 2; cheapest of 2 exits (SOUTH, SW) — A short swim to shore between adjacent lake locations matches the baseline pace with no added hazard."
     },
     {
       "from": "PARAPET",
@@ -1666,8 +1666,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit, plain terrain with no hazards, so the baseline traversal time stands."
     },
     {
       "from": "ROCKY-ROOM",
@@ -1676,8 +1676,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A tight, narrow crawl from the lit grotto into an unlit crevice keeps the pace at the baseline slow crawl."
     },
     {
       "from": "ROCKY-ROOM",
@@ -1686,8 +1686,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A lit chamber to a man-made hall via a plain south passage is a straightforward walk, matching the baseline."
     },
     {
       "from": "SHADOW-1",
@@ -1696,8 +1696,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A crawl between two dark rooms stays at the baseline pace set by the darkness penalty."
     },
     {
       "from": "SHADOW-1",
@@ -1706,8 +1706,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — Baseline holds as a foggy, unlit rock passage between two shadowy areas offers no reason to deviate."
     },
     {
       "from": "SHADOW-1",
@@ -1716,8 +1716,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A plain shadowy-hills crossing stays at the baseline pace with no added hazards beyond the ambient dark."
     },
     {
       "from": "SHADOW-1",
@@ -1726,8 +1726,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A featureless, shadowy cavern crossing stays at the dark-baseline pace with no additional hazards to slow it further."
     },
     {
       "from": "SHADOW-1",
@@ -1736,8 +1736,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — Both areas are dark, featureless shadow terrain with no obstacles beyond the baseline darkness penalty."
     },
     {
       "from": "SHADOW-1",
@@ -1746,8 +1746,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — Featureless shadowed terrain with soft, quicksand-bordered ground keeps the pace at the baseline crawl."
     },
     {
       "from": "SHADOW-2",
@@ -1756,8 +1756,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A simple walk north through a wall breach to an open flat area matches the baseline pace with no added hazards."
     },
     {
       "from": "SHADOW-2",
@@ -1766,8 +1766,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1; cheapest of 2 exits (SE, EAST)"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3; cheapest of 2 exits (SE, EAST) — A plain traversal across shadowy hills matches the baseline with no additional hazards described."
     },
     {
       "from": "SHADOW-2",
@@ -1776,8 +1776,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A plain trek across shadowy, misty hills matches the baseline dark-land pacing without added hazards."
     },
     {
       "from": "SHADOW-2",
@@ -1786,8 +1786,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A plain walk across open shadowy hills matches the baseline pace with no added obstacles."
     },
     {
       "from": "SHADOW-2",
@@ -1796,8 +1796,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A simple walk over rolling hills to a cliff edge matches the baseline pace with no added obstacles."
     },
     {
       "from": "SHADOW-3",
@@ -1806,8 +1806,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1; cheapest of 3 exits (NE, SE, EAST)"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3; cheapest of 3 exits (NE, SE, EAST) — A plain traversal across shadowy but unobstructed hills stays at the baseline dark-room pace."
     },
     {
       "from": "SHADOW-3",
@@ -1816,8 +1816,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A plain walk across shadowy hills toward a crumbled wall gap matches the baseline pacing with no added hazards."
     },
     {
       "from": "SHADOW-3",
@@ -1826,8 +1826,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — Both rooms are dark, gently hilled shadowlands with no obstacles, so the baseline of 3 minutes stands."
     },
     {
       "from": "SHADOW-3",
@@ -1836,8 +1836,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — Shadowy, misty terrain with soft spongy ground keeps the baseline dark-crawl pace with no further adjustment needed."
     },
     {
       "from": "SHADOW-3",
@@ -1846,8 +1846,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — Both rooms are shadowy but plain terrain with no hazards, so the baseline dark-crossing time stands."
     },
     {
       "from": "SHADOW-3",
@@ -1856,8 +1856,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A shadowy but unobstructed walk from the hills up to the cliff edge matches the baseline dark-traversal pace."
     },
     {
       "from": "SHADOW-4",
@@ -1866,8 +1866,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1; cheapest of 2 exits (EAST, NE)"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3; cheapest of 2 exits (EAST, NE) — Both rooms are dark, featureless shadow-land terrain with no added obstacles, so the baseline dark-passage time holds."
     },
     {
       "from": "SHADOW-4",
@@ -1876,8 +1876,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A plain northward walk between two dark, hilly shadow-land rooms matches the baseline pace."
     },
     {
       "from": "SHADOW-4",
@@ -1886,8 +1886,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1; cheapest of 2 exits (SE, SOUTH)"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3; cheapest of 2 exits (SE, SOUTH) — Soft, shadowy terrain with nearby quicksand keeps the pace at the baseline crawl rather than a quick step."
     },
     {
       "from": "SHADOW-4",
@@ -1896,8 +1896,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A plain traversal across dark, rolling terrain to a soft, spongy area matches the baseline pace with no added hazards."
     },
     {
       "from": "SHADOW-4",
@@ -1906,8 +1906,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — Plain exit between two ordinary shadowy hill rooms with no added hazards keeps it at the baseline dark-terrain pace."
     },
     {
       "from": "SHADOW-5",
@@ -1916,8 +1916,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — Plain terrain crossing between two unlit shadowland areas stays at the baseline pace."
     },
     {
       "from": "SHADOW-5",
@@ -1926,8 +1926,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A plain unobstructed walk between two dark, soft-ground rooms matches the baseline pace."
     },
     {
       "from": "SHADOW-5",
@@ -1936,8 +1936,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — Soft quicksand-edged terrain between two shadowy areas keeps the pace at the baseline crawl."
     },
     {
       "from": "SHADOW-6",
@@ -1946,8 +1946,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2; cheapest of 3 exits (NW, WEST, DOWN)"
+      "source": "rule+llm",
+      "note": "base 2, llm 2; cheapest of 3 exits (NW, WEST, DOWN) — A plain NW exit from open, lit terrain into the ocean edge stays at the baseline pace."
     },
     {
       "from": "SHADOW-6",
@@ -1956,8 +1956,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A gentle uphill walk between two shadowy but open, unobstructed hilly areas matches the baseline pace."
     },
     {
       "from": "SHADOW-6",
@@ -1966,8 +1966,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A simple walk over rolling hills into a dark room stays at the baseline pace."
     },
     {
       "from": "SHADOW-6",
@@ -1976,8 +1976,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A plain soft-ground walk between two similar shadowy quicksand-adjacent areas stays at the mechanical baseline."
     },
     {
       "from": "SHADOW-6",
@@ -1986,8 +1986,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A plain walk across gentle shadowed hills matches the baseline pace with no added terrain or lighting hazards."
     },
     {
       "from": "SHADOW-7",
@@ -1996,8 +1996,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2; cheapest of 4 exits (DOWN, NW, WEST, SW)"
+      "source": "rule+llm",
+      "note": "base 2, llm 2; cheapest of 4 exits (DOWN, NW, WEST, SW) — A plain NW exit across shadowed but open land to a lit ocean area stays at the baseline pace."
     },
     {
       "from": "SHADOW-7",
@@ -2006,8 +2006,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — Open shadowy hills terrain with no additional hazards keeps this at the baseline dark-outdoor pace."
     },
     {
       "from": "SHADOW-7",
@@ -2016,8 +2016,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A plain shadowy-hills crossing keeps the baseline pace with no added hazards to slow it."
     },
     {
       "from": "SHADOW-7",
@@ -2026,8 +2026,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — Plain shadowy terrain with no hazards keeps the pacing at the baseline dark-room crawl."
     },
     {
       "from": "SHADOW-7",
@@ -2036,8 +2036,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — Open shadowed terrain with no obstacles keeps the pace at the baseline crossing time."
     },
     {
       "from": "SHADOW-7",
@@ -2046,8 +2046,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A plain northward walk from shadowed hills to a cliff edge holds close to the baseline pace."
     },
     {
       "from": "SHADOW-8",
@@ -2056,8 +2056,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Climbing over decaying wall rubble is a modest obstacle but stays close to baseline."
     },
     {
       "from": "SHADOW-8",
@@ -2066,8 +2066,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2; cheapest of 3 exits (SW, WEST, DOWN)"
+      "source": "rule+llm",
+      "note": "base 2, llm 2; cheapest of 3 exits (SW, WEST, DOWN) — A cliffside path descent to the ocean is a moderate, unremarkable trek matching the baseline pace."
     },
     {
       "from": "SHADOW-8",
@@ -2076,8 +2076,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A simple eastward walk across shadowy hills with no obstacles keeps this at the baseline dark-room pace."
     },
     {
       "from": "SHADOW-8",
@@ -2086,8 +2086,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A cliffside descent into shadowy hills matches the baseline pace with no extra hazards beyond the dark."
     },
     {
       "from": "SHADOW-8",
@@ -2096,8 +2096,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A simple walk south across shadowed hills matches the baseline pace with no added obstacles."
     },
     {
       "from": "SLOPE",
@@ -2106,8 +2106,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1; cheapest of 2 exits (SE, UP)"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3; cheapest of 2 exits (SE, UP) — A steep, boulder-strewn climb up to a barren plain justifies the baseline pace without further adjustment."
     },
     {
       "from": "SLOPE",
@@ -2116,8 +2116,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2; cheapest of 2 exits (SW, DOWN)"
+      "source": "rule+llm",
+      "note": "base 2, llm 2; cheapest of 2 exits (SW, DOWN) — A steep but plain winding path down to the cliff base matches the baseline pace with no unusual hazards."
     },
     {
       "from": "SOUTH-CORRIDOR",
@@ -2126,8 +2126,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit with no special hazards noted, so the baseline plain corridor traversal stands."
     },
     {
       "from": "SOUTH-CORRIDOR",
@@ -2136,8 +2136,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — Both rooms are lit and plainly connected, so the baseline pace holds."
     },
     {
       "from": "SOUTH-CORRIDOR",
@@ -2146,8 +2146,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — A plain lit corridor-to-corridor walk matches the baseline pace with no obstacles to slow it."
     },
     {
       "from": "SOUTH-SHORE",
@@ -2156,8 +2156,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1; cheapest of 2 exits (UP, SOUTH)"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3; cheapest of 2 exits (UP, SOUTH) — A steep, dark passage sloping upward into rock warrants the baseline 3 minutes for the added difficulty and lack of light."
     },
     {
       "from": "TECH-MUSEUM",
@@ -2166,8 +2166,8 @@
       "kind": "cond_door",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + door 1; cheapest of 2 exits (SOUTH, OUT)"
+      "source": "rule+llm",
+      "note": "base 2 + door 1, llm 3; cheapest of 2 exits (SOUTH, OUT) — Both rooms are lit and on land with no unusual conditions, so the baseline door-passage timing stands."
     },
     {
       "from": "TIGHT-SQUEEZE",
@@ -2176,8 +2176,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A narrow, dark crawlway warrants the baseline 3 minutes with no further adjustment needed."
     },
     {
       "from": "TIGHT-SQUEEZE",
@@ -2186,8 +2186,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — A tight but short passage opening into a lit chamber keeps the pace near baseline."
     },
     {
       "from": "TIMBER-ROOM",
@@ -2196,8 +2196,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A narrow, timber-cluttered passage widening into another room justifies the baseline pace without further adjustment."
     },
     {
       "from": "TIMBER-ROOM",
@@ -2206,8 +2206,8 @@
       "kind": "cond_flag",
       "minutes": 4,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + conditional 1 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + conditional 1 + dark 1, llm 4 — Narrow, timber-cluttered passage with a strong draft narrows further west, matching the baseline crawl-through-tight-space pacing."
     },
     {
       "from": "VIEW-ROOM",
@@ -2216,8 +2216,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — A plain lit passage between two above-ground areas matches the baseline pace with no obstacles to slow it."
     },
     {
       "from": "WEST-CORRIDOR",
@@ -2226,8 +2226,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — A plain lit corridor-to-corridor step matches the baseline pace with no hazards to slow it."
     },
     {
       "from": "WEST-CORRIDOR",
@@ -2236,8 +2236,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — A short walk between two lit, plain corridors matches the baseline pace."
     },
     {
       "from": "WIDE-HALL",
@@ -2246,8 +2246,8 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — A plain lit hallway passage stays at baseline with no added obstacles to slow it down."
     },
     {
       "from": "WIDE-HALL",
@@ -2256,8 +2256,8 @@
       "kind": "plain",
       "minutes": 2,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2"
+      "source": "rule+llm",
+      "note": "base 2, llm 2 — A short walk north through an arch into a lit, dry grotto matches the baseline pace."
     },
     {
       "from": "ZORK2-STAIR",
@@ -2266,11 +2266,1724 @@
       "kind": "plain",
       "minutes": 3,
       "class": "movement",
-      "source": "rule",
-      "note": "base 2 + dark 1"
+      "source": "rule+llm",
+      "note": "base 2 + dark 1, llm 3 — The origin is lit but the destination is unlit, so the baseline dark-passage time holds without further adjustment."
     }
   ],
-  "actions": [],
+  "actions": [
+    {
+      "verb": "burn",
+      "object": "BROKEN-STAFF",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A simple act of touching torch to staff, instantaneous in effort though fatal in outcome."
+    },
+    {
+      "verb": "burn",
+      "object": "LORE-BOOK",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Burning an ancient book requires preparing a flame source and setting it alight, a deliberate destructive act beyond simple manipulation."
+    },
+    {
+      "verb": "burn",
+      "object": "REPELLENT",
+      "minutes": 3,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "A fatal, deliberate act of igniting a pressurized can requires brief but decisive setup, not a mere manipulation."
+    },
+    {
+      "verb": "burn",
+      "object": "ROPE",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The action fails outright with the rope refusing to catch fire, a no-op with no in-game effort expended."
+    },
+    {
+      "verb": "burn",
+      "object": "STAFF",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Deliberately setting fire to an object with a torch is a quick but consequential physical action."
+    },
+    {
+      "verb": "burn",
+      "object": "TREE",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The action instantly kills the player via Smokey the Bear, a no-op death with no elapsed effort to price."
+    },
+    {
+      "verb": "close",
+      "object": "CAGE",
+      "minutes": 0,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "The cage is already closed, so this is a no-op action with no physical effort expended."
+    },
+    {
+      "verb": "close",
+      "object": "CPDOOR",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "This is a no-op turn since the door cannot be closed and the game merely returns a rebuff message."
+    },
+    {
+      "verb": "close",
+      "object": "DUNGEON-DOOR",
+      "minutes": 0,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "The door won't budge, making this a no-op failed action."
+    },
+    {
+      "verb": "close",
+      "object": "DUNGEON-MASTER",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Closing a person is a no-op social gesture the handler just acknowledges with a line, akin to a trivial manipulation command."
+    },
+    {
+      "verb": "close",
+      "object": "MAHOGANY-PANEL",
+      "minutes": 0,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Closing this panel is explicitly a no-op that the handler rejects with a flat refusal message."
+    },
+    {
+      "verb": "close",
+      "object": "PINE-PANEL",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The handler explicitly rejects CLOSE on the panel as a no-op failure response."
+    },
+    {
+      "verb": "close",
+      "object": "STONE",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The command is rejected outright with a sarcastic no-op response, requiring no real effort or time."
+    },
+    {
+      "verb": "close",
+      "object": "TIME-MACHINE",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The handler outright rejects the action with 'This is a machine, not a box,' making it a no-op turn."
+    },
+    {
+      "verb": "cross",
+      "object": "CHASM",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The action fails outright with no bridge present, resulting in a no-op turn."
+    },
+    {
+      "verb": "cut",
+      "object": "ROPE",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A failed cutting attempt on an uncuttable rope is a quick, low-effort action with no mechanism progress."
+    },
+    {
+      "verb": "cut",
+      "object": "WAYBREAD",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A simple cutting attempt on bread is a quick, one-step physical action even though it fails to produce the intended result."
+    },
+    {
+      "verb": "dig",
+      "object": "GROUND",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Digging into hard ground with no tool is a brief physical attempt that fails outright."
+    },
+    {
+      "verb": "dig",
+      "object": "PATHOBJ",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The handler flatly rejects digging with \"Not a chance,\" a no-op turn with no real effort expended."
+    },
+    {
+      "verb": "dig",
+      "object": "SAND",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Digging through sand by hand is physically laborious but yields nothing, fitting the lower end of the mechanism band."
+    },
+    {
+      "verb": "drink",
+      "object": "POTION",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Drinking a small vial's contents is a quick, simple bodily action with no mechanism to operate."
+    },
+    {
+      "verb": "drink",
+      "object": "VIAL",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Drinking a small vial's contents is a quick, simple consumption action with no mechanism complexity."
+    },
+    {
+      "verb": "drop",
+      "object": "GLOBAL-WATER",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The player doesn't have any water, so this is a no-op failure turn."
+    },
+    {
+      "verb": "drop",
+      "object": "GROUND",
+      "minutes": 0,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Dropping an object that's already on the ground is a trivial no-op action."
+    },
+    {
+      "verb": "drop",
+      "object": "POTION",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Simply dropping the vial is a quick physical action despite the odd flavor text about the smell dissipating."
+    },
+    {
+      "verb": "drop",
+      "object": "WATER",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The player doesn't actually have water, so this is a failed no-op action."
+    },
+    {
+      "verb": "eat",
+      "object": "ALGAE",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A trivial, failed action producing only a disgusted one-line response with no mechanical effect."
+    },
+    {
+      "verb": "eat",
+      "object": "ME",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "A trivial failed no-op action where the player simply attempts to eat themselves and is rebuffed with a one-line joke."
+    },
+    {
+      "verb": "enter",
+      "object": "LAKE",
+      "minutes": 5,
+      "class": "movement",
+      "source": "llm",
+      "note": "Entering the lake from shore is a directed room transition into the water, treated as boarding/leaping into the lake to move onto it."
+    },
+    {
+      "verb": "enter",
+      "object": "OCEAN",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "Entering the pounding surf is instantly fatal, resulting in a no-op/failed turn rather than any sustained effort."
+    },
+    {
+      "verb": "enter",
+      "object": "TIME-MACHINE",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Boarding and settling into the time machine's seat is a deliberate physical action beyond simple manipulation but not yet a ceremonial set-piece."
+    },
+    {
+      "verb": "enter",
+      "object": "TM-SEAT",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Entering/boarding the seat simply redirects to boarding the time machine, a quick physical action."
+    },
+    {
+      "verb": "enter",
+      "object": "WATER-CHANNEL",
+      "minutes": 2,
+      "class": "movement",
+      "source": "llm",
+      "note": "Entering the channel is just moving into/onto it, a trivial directed move rather than a mechanism or manipulation."
+    },
+    {
+      "verb": "exit",
+      "object": "ME",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "Trying to exit yourself is a no-op joke response with no real-world effort or delay."
+    },
+    {
+      "verb": "fill",
+      "object": "GLOBAL-WATER",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Redirects to a put-with-water attempt that just fails as water slips through fingers, a trivial container-filling gesture."
+    },
+    {
+      "verb": "fill",
+      "object": "VIAL",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The command is a hard-coded no-op that always fails with 'You can't seem to put anything in it.'"
+    },
+    {
+      "verb": "fill",
+      "object": "WATER",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Filling a container with water is a quick, simple manipulation redirected to a PUT action."
+    },
+    {
+      "verb": "find",
+      "object": "GRUE",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "A futile search that finds nothing and produces only a flavor-text warning, with no real progress made."
+    },
+    {
+      "verb": "find",
+      "object": "PATHOBJ",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The command fails outright with a canned rejection message, representing no meaningful in-world effort."
+    },
+    {
+      "verb": "find",
+      "object": "SHINY-OBJECT",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Reaching into the water to grab a submerged shiny object is a simple physical action akin to taking an item."
+    },
+    {
+      "verb": "find",
+      "object": "ZORKMID",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "A joke response with no actual searching performed, just a canned quip."
+    },
+    {
+      "verb": "follow",
+      "object": "BEAM",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The beam simply crosses the room with nowhere to follow, making this a no-op turn."
+    },
+    {
+      "verb": "follow",
+      "object": "DUNGEON-MASTER",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Simply agreeing to accompany the dungeon master is a quick verbal exchange with no physical exertion."
+    },
+    {
+      "verb": "follow",
+      "object": "PATHOBJ",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The command merely returns an error message asking for a direction, a no-op with no in-world effect."
+    },
+    {
+      "verb": "follow",
+      "object": "ROBOT",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The robot evades instantly, resulting in a no-op turn with no real effort expended."
+    },
+    {
+      "verb": "give",
+      "object": "DUNGEON-MASTER",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A simple rejected offer of an item, requiring only a brief exchange with no mechanical effect."
+    },
+    {
+      "verb": "give",
+      "object": "GLOBAL-MAN",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The handler simply rejects the give attempt with \"You aren't even close to him!\", a no-op failure."
+    },
+    {
+      "verb": "give",
+      "object": "GLOBAL-WATER",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "Giving water fails outright since the player doesn't have any, a no-op turn."
+    },
+    {
+      "verb": "give",
+      "object": "MASTER",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A simple offer of an item that gets politely refused with no real interaction."
+    },
+    {
+      "verb": "give",
+      "object": "ME",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Giving something to yourself just redirects to taking it, a trivial self-directed grasp."
+    },
+    {
+      "verb": "give",
+      "object": "OLD-MAN",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Giving the waybread to the old man triggers a pivotal exchange revealing a secret door, more consequential than simple manipulation but not a full ceremony."
+    },
+    {
+      "verb": "give",
+      "object": "SHADOW",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A simple rejected offer to an NPC, requiring only a brief gesture before the figure dismisses it."
+    },
+    {
+      "verb": "give",
+      "object": "WATER",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The player has no water to give, so the command fails as a no-op."
+    },
+    {
+      "verb": "jump",
+      "object": "AQUEDUCT",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — This is an instant-death set-piece (fatal swan dive), a ceremonial climactic moment the game treats as final."
+    },
+    {
+      "verb": "jump",
+      "object": "BEAM",
+      "minutes": 1,
+      "class": "movement",
+      "source": "llm",
+      "note": "A quick leap over the low beam into the hallway is a single directed motion, not sustained effort."
+    },
+    {
+      "verb": "jump",
+      "object": "CHASM",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "Jumping into the chasm is a fatal no-op that resolves before any real time passes for the player."
+    },
+    {
+      "verb": "jump",
+      "object": "CLIFF-OBJECT",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "Jumping off the cliff is fatal instantly, resulting in a no-op death with no meaningful duration to price."
+    },
+    {
+      "verb": "jump",
+      "object": "LAKE",
+      "minutes": 2,
+      "class": "movement",
+      "source": "llm",
+      "note": "Jumping into or across the lake functions as a directed transition to a new location, akin to a single room-edge traversal."
+    },
+    {
+      "verb": "knock",
+      "object": "CPDOOR",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Knocking on a door is a trivial physical action that produces no effect."
+    },
+    {
+      "verb": "knock",
+      "object": "DUNGEON-DOOR",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — Knocking at the front door triggers a pivotal, ceremony-like narrative encounter with the Master of the Dungeon that can culminate in a major story turning point."
+    },
+    {
+      "verb": "knock",
+      "object": "JEWEL-DOOR",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Knocking on a door is a quick physical action, whether it alerts guards or simply has no special effect."
+    },
+    {
+      "verb": "knock",
+      "object": "WOODEN-DOOR",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Knocking on a door is a simple, brief physical action with minimal effort."
+    },
+    {
+      "verb": "listen",
+      "object": "GRUE",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "Listening for a silent, invisible presence yields no actionable information and requires no real effort."
+    },
+    {
+      "verb": "listen",
+      "object": "OLD-MAN",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "Listening simply returns a brief observation about the man's silence or snoring with no interaction or effort involved."
+    },
+    {
+      "verb": "listen",
+      "object": "WOODEN-DOOR",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Listening at a door is a quick, low-effort sensory check requiring only a moment's pause."
+    },
+    {
+      "verb": "lower",
+      "object": "SHORT-POLE",
+      "minutes": 4,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Lowering the pole requires physical manipulation to shift its position into the channel or hole, a simple mechanical action."
+    },
+    {
+      "verb": "make",
+      "object": "ME",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The game simply rejects the nonsensical self-targeted command with no in-world effort expended."
+    },
+    {
+      "verb": "move",
+      "object": "BLACK-PANEL",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Pushing the panel physically rotates a massive stone structure, requiring sustained force akin to turning a heavy mechanism."
+    },
+    {
+      "verb": "move",
+      "object": "COVER",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Shifting a heavy manhole cover aside to reveal a hole requires sustained physical effort, fitting the mechanism band."
+    },
+    {
+      "verb": "move",
+      "object": "CPEWL",
+      "minutes": 8,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Pushing a massive stone wall to slide an entire architectural section requires sustained physical effort, akin to turning a heavy mechanism."
+    },
+    {
+      "verb": "move",
+      "object": "CPNWL",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Pushing a massive rock wall to shift the maze grid is a strenuous physical effort involving positioning and force, beyond simple manipulation."
+    },
+    {
+      "verb": "move",
+      "object": "CPSWL",
+      "minutes": 8,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Pushing a massive sliding wall and following it into a new position is a physically demanding, multi-step mechanical action within a shifting maze."
+    },
+    {
+      "verb": "move",
+      "object": "CPWWL",
+      "minutes": 8,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Pushing a massive stone wall to shift the maze's layout is a strenuous, deliberate physical effort with mechanical consequences."
+    },
+    {
+      "verb": "move",
+      "object": "DIAL-BUTTON",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Pressing the dial button triggers a cell-door mechanism to move, akin to turning a bolt."
+    },
+    {
+      "verb": "move",
+      "object": "DUNGEON-MASTER",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "Moving/pushing the dungeon master is not a supported action and simply yields a dismissive reply with no world-state change."
+    },
+    {
+      "verb": "move",
+      "object": "EAST-WALL",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Attempting to shove an immovable wall is a quick, futile physical effort yielding a no-op response."
+    },
+    {
+      "verb": "move",
+      "object": "GLOBAL-ROPE",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Grabbing hold of a securely fastened rope is a quick physical check, not a task with a real duration."
+    },
+    {
+      "verb": "move",
+      "object": "MAHOGANY-PANEL",
+      "minutes": 8,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Pushing the heavy mahogany panel physically shifts a stone structure along a channel, a laborious mechanical effort beyond simple manipulation."
+    },
+    {
+      "verb": "move",
+      "object": "MIRROR",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "MOVE on the mirror just yields a generic 'can't open' response, a trivial physical fumble with no mechanism engaged."
+    },
+    {
+      "verb": "move",
+      "object": "MOSS",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The handler simply refuses the action with 'Don't be silly,' a no-op with no in-world effect."
+    },
+    {
+      "verb": "move",
+      "object": "NORTH-WALL",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "Pushing an immovable wall is a failed no-op action with no mechanical effect."
+    },
+    {
+      "verb": "move",
+      "object": "PANEL",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Pushing on the panel just yields a slight, reversible give with no mechanism actually engaged."
+    },
+    {
+      "verb": "move",
+      "object": "PINE-PANEL",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Pushing/moving the heavy stone structure's pine panel to swing open a wall requires sustained physical effort against a mechanism."
+    },
+    {
+      "verb": "move",
+      "object": "PRESSURIZER",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The machine cannot be moved at all, resulting in a no-op failure message."
+    },
+    {
+      "verb": "move",
+      "object": "RED-BUTTON",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Pushing the button engages a hidden mechanism (stopping the beam and opening the mirror) that requires deliberate, careful pressure rather than a simple manipulation."
+    },
+    {
+      "verb": "move",
+      "object": "RED-PANEL",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Pushing the panel rotates a heavy stone structure, a physical mechanism with mechanical consequences requiring real exertion."
+    },
+    {
+      "verb": "move",
+      "object": "ROPE",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "The rope is simply tied to a tree, so attempting to move it is a quick, trivial no-op action."
+    },
+    {
+      "verb": "move",
+      "object": "ROSE",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The rose is immovable stone, so the action fails immediately with no effort expended."
+    },
+    {
+      "verb": "move",
+      "object": "SHORT-POLE",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Physically repositioning a pole into a channel or hole requires deliberate manual effort beyond simple manipulation."
+    },
+    {
+      "verb": "move",
+      "object": "SOUTH-WALL",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A futile shove/attempt to budge an immovable wall is a quick, low-effort action yielding no result."
+    },
+    {
+      "verb": "move",
+      "object": "SPINNER",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "The player's attempt to move the massive machine fails instantly with a simple rebuff, requiring minimal effort."
+    },
+    {
+      "verb": "move",
+      "object": "STONE",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A failed attempt to shove an immovable stone is brief physical exertion with no result."
+    },
+    {
+      "verb": "move",
+      "object": "SWORD",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "An attempt to shift the sword is a simple physical effort that yields little more than a futile tug against the imbedded stone."
+    },
+    {
+      "verb": "move",
+      "object": "TIME-MACHINE",
+      "minutes": 0,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Bare MOVE on the machine is a no-op requiring a direction to actually push it."
+    },
+    {
+      "verb": "move",
+      "object": "TM-BUTTON",
+      "minutes": 3,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Pushing the time machine button is a single mechanical activation whose consequences are determined by prior state, not a dramatic set-piece."
+    },
+    {
+      "verb": "move",
+      "object": "TM-SEAT",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Shifting a seat to peer underneath it is a simple physical action akin to moving a piece of furniture slightly."
+    },
+    {
+      "verb": "move",
+      "object": "VALUABLES",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Simply moving a pile of valuables is a basic object manipulation with no mechanism involved."
+    },
+    {
+      "verb": "move",
+      "object": "WEST-WALL",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The handler just rejects the push with a static message, indicating a futile no-op action."
+    },
+    {
+      "verb": "move",
+      "object": "WHITE-PANEL",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Pushing the panel physically rotates the massive structure, requiring sustained force to shift the mechanism."
+    },
+    {
+      "verb": "move",
+      "object": "WOODEN-WALL",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A futile attempt to move an immovable wall is a quick physical effort yielding a no-op result."
+    },
+    {
+      "verb": "move",
+      "object": "YELLOW-PANEL",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Pushing a heavy stone panel to rotate the entire structure requires sustained physical effort against a large mechanism."
+    },
+    {
+      "verb": "open",
+      "object": "BRONZE-DOOR",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Opening an unlocked door is a simple physical action of brief effort."
+    },
+    {
+      "verb": "open",
+      "object": "CAGE",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A quick failed attempt to open a locked cage takes only a moment."
+    },
+    {
+      "verb": "open",
+      "object": "CHEST",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Attempting to open a locked chest is a simple, quick manipulation that fails outright."
+    },
+    {
+      "verb": "open",
+      "object": "COVER",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Moving a heavy manhole cover aside requires physical effort beyond simple manipulation but isn't a full ceremony."
+    },
+    {
+      "verb": "open",
+      "object": "CPDOOR",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A simple failed attempt to force open an already-open or immovable door requires minimal physical effort."
+    },
+    {
+      "verb": "open",
+      "object": "DUNGEON-DOOR",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A simple attempt to open a door that turns out to be immovable, requiring minimal physical effort."
+    },
+    {
+      "verb": "open",
+      "object": "DUNGEON-MASTER",
+      "minutes": 0,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Opening a person is a nonsensical no-op that the handler merely deflects with dialogue, requiring no real effort."
+    },
+    {
+      "verb": "open",
+      "object": "DUNGEON-PANEL",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The action fails outright since the panel can't be opened, resulting in no effect."
+    },
+    {
+      "verb": "open",
+      "object": "GOOD-LOCKED-DOOR",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A simple failed attempt to open a locked door, requiring only a brief physical effort."
+    },
+    {
+      "verb": "open",
+      "object": "IRON-DOOR",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A simple attempt to open a door that fails outright, costing only the brief effort of trying."
+    },
+    {
+      "verb": "open",
+      "object": "JEWEL-DOOR",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Opening a stone door is a simple physical action akin to any other door manipulation."
+    },
+    {
+      "verb": "open",
+      "object": "LOCKED-DOOR",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A simple attempt to open a locked door that fails instantly with no mechanism engaged."
+    },
+    {
+      "verb": "open",
+      "object": "LORE-BOOK",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Opening a book to view its page is a simple, quick physical action."
+    },
+    {
+      "verb": "open",
+      "object": "MAHOGANY-PANEL",
+      "minutes": 8,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Opening the mahogany panel triggers a heavy stone structure to physically move along a channel, requiring real physical effort beyond a simple manipulation."
+    },
+    {
+      "verb": "open",
+      "object": "MIRROR",
+      "minutes": 0,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "The handler outright rejects OPEN on the mirror, a no-op response with no physical effort expended."
+    },
+    {
+      "verb": "open",
+      "object": "PANEL",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Attempting to open the panel is a quick failed manipulation attempt with no mechanism engaged, since the handler only rejects the open verb outright."
+    },
+    {
+      "verb": "open",
+      "object": "PINE-PANEL",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Opening the pine panel swings open a heavy structural wall section revealing a hidden area, requiring physical effort beyond a simple door."
+    },
+    {
+      "verb": "open",
+      "object": "SECRET-DOOR",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Opening a massive stone door is simple manipulation, just at the higher end of effort for the class."
+    },
+    {
+      "verb": "open",
+      "object": "STONE",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The stone can't be opened, so this is a no-op turn that just returns a rebuff."
+    },
+    {
+      "verb": "open",
+      "object": "TIME-MACHINE",
+      "minutes": 0,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "The handler explicitly rejects opening the machine, calling it a no-op response rather than a real action ('This is a machine, not a box.')."
+    },
+    {
+      "verb": "open",
+      "object": "VIAL",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Simply unstoppering a small vial is a quick physical action."
+    },
+    {
+      "verb": "put",
+      "object": "BEAM",
+      "minutes": 0,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Attempting to put the immaterial beam itself is a no-op/failed action since BEAM isn't a holdable object."
+    },
+    {
+      "verb": "put",
+      "object": "CELL-DOOR",
+      "minutes": 0,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A rejected action requiring the player to enter the cell first, with no physical effort expended."
+    },
+    {
+      "verb": "put",
+      "object": "CHASM",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Putting an object into the chasm is a simple, quick physical action of dropping it over the edge."
+    },
+    {
+      "verb": "put",
+      "object": "CHEST",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Putting the chest itself somewhere is a trivial, incomplete manipulation command with no real handling."
+    },
+    {
+      "verb": "put",
+      "object": "CP-SLOT",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Placing an item into a slot is a simple physical action of putting an object somewhere."
+    },
+    {
+      "verb": "put",
+      "object": "FLAMING-PIT",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Casting a held object into the pit is a simple, deliberate physical action akin to dropping something."
+    },
+    {
+      "verb": "put",
+      "object": "GLOBAL-WATER",
+      "minutes": 0,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Attempting to put water simply results in it slipping through the player's fingers, a trivial failed action."
+    },
+    {
+      "verb": "put",
+      "object": "GROUND",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Putting something down on the ground is just a drop action requiring minimal effort."
+    },
+    {
+      "verb": "put",
+      "object": "HOOD",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Putting the hood involves brief physical handling of the object, consistent with a standard manipulation action."
+    },
+    {
+      "verb": "put",
+      "object": "JEWELLED-KNIFE",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Placing a held knife somewhere is a simple, quick physical action."
+    },
+    {
+      "verb": "put",
+      "object": "OCEAN",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Tossing an object into the ocean is a simple physical action of dropping it into the water."
+    },
+    {
+      "verb": "put",
+      "object": "PEDESTAL",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A simple reach-and-place attempt that's immediately blocked by the cage, costing only a brief physical effort."
+    },
+    {
+      "verb": "put",
+      "object": "PRESSURIZER",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A simple attempted placement action that the game rejects outright with no mechanism engaged."
+    },
+    {
+      "verb": "put",
+      "object": "RING",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Placing a held ring somewhere is a simple physical action akin to putting down an object."
+    },
+    {
+      "verb": "put",
+      "object": "SCEPTRE",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Placing the sceptre is a simple object-placement action akin to putting down an item."
+    },
+    {
+      "verb": "put",
+      "object": "SHORT-POLE",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Positioning the short pole (lowering/resting it) is a simple physical placement action akin to put/drop."
+    },
+    {
+      "verb": "put",
+      "object": "SPINNER",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "This is a failed put attempt on an immovable machine, a trivial physical action rejected by the game."
+    },
+    {
+      "verb": "put",
+      "object": "STONE",
+      "minutes": 0,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "The stone is immovable and the attempt is a rejected no-op action."
+    },
+    {
+      "verb": "put",
+      "object": "TIME-MACHINE",
+      "minutes": 0,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "The command is rejected outright since nothing can be put on or inside the machine itself, a no-op action."
+    },
+    {
+      "verb": "put",
+      "object": "TM-HOLLOW",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Placing an object under/on the seat is a simple physical manipulation redirected through the hollow's handler."
+    },
+    {
+      "verb": "put",
+      "object": "VALUABLES",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Placing a pile of valuables somewhere is a simple physical handling action akin to putting down an object."
+    },
+    {
+      "verb": "put",
+      "object": "WATER",
+      "minutes": 0,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Attempting to put water fails as it slips through the player's fingers, a trivial no-op action."
+    },
+    {
+      "verb": "raise",
+      "object": "COVER",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Moving a heavy cover aside to reveal a hole is a brief physical action, not a multi-step mechanism."
+    },
+    {
+      "verb": "raise",
+      "object": "SHORT-POLE",
+      "minutes": 4,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Raising a physical pole mechanism into position requires deliberate manual effort beyond simple manipulation."
+    },
+    {
+      "verb": "raise",
+      "object": "TIME-MACHINE",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The machine cannot be lifted at all, so the action fails immediately with no effort expended."
+    },
+    {
+      "verb": "raise",
+      "object": "TM-SEAT",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Lifting a seat to check underneath is a simple physical action, not a complex mechanism."
+    },
+    {
+      "verb": "rub",
+      "object": "TM-SEAT",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A quick tactile check of the seat's surface yielding a simple no-op result."
+    },
+    {
+      "verb": "rub",
+      "object": "VIEWING-TABLE",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — Touching the table instantly transports the player to another location, a ceremonial reality-shifting moment treated as a set-piece by the handler."
+    },
+    {
+      "verb": "say",
+      "object": "MASTER",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "Merely speaking a name with no target present is a no-op yielding a stock failure message."
+    },
+    {
+      "verb": "say",
+      "object": "ME",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "Talking to yourself is a trivial no-op action with just a snarky text response."
+    },
+    {
+      "verb": "say",
+      "object": "SAILOR",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — Saying the magic phrase to the sailor triggers a scripted ceremonial payoff (the boat's release and gift), treated by the game as a special one-time event."
+    },
+    {
+      "verb": "shake",
+      "object": "OLD-MAN",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Physically rousing a sleeping man to consciousness is a deliberate act with a meaningful state-change outcome, warranting a short mechanism-tier duration."
+    },
+    {
+      "verb": "shake",
+      "object": "REPELLENT",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Shaking a can to check its contents is a trivial, quick physical check with no lasting effect."
+    },
+    {
+      "verb": "shake",
+      "object": "VIAL",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Shaking the vial to dislodge its invisible contents is a quick physical action with an immediate outcome."
+    },
+    {
+      "verb": "smell",
+      "object": "POTION",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Smelling a held object is a trivial sensory check requiring no manipulation of the world."
+    },
+    {
+      "verb": "smell",
+      "object": "VIAL",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Smelling a small held vial is a quick, low-effort sensory check requiring no special mechanism."
+    },
+    {
+      "verb": "spin",
+      "object": "DUNGEON-MASTER",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A trivial, non-serious gesture toward the dungeon master that merely elicits a dismissive one-line reply with no mechanical effect."
+    },
+    {
+      "verb": "spin",
+      "object": "SUNDIAL",
+      "minutes": 3,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Spinning a dial to randomize its setting is a quick physical mechanism interaction."
+    },
+    {
+      "verb": "spray",
+      "object": "REPELLENT",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Spraying a can into the air is a quick, simple physical action with an immediate result."
+    },
+    {
+      "verb": "stay",
+      "object": "DUNGEON-MASTER",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "Telling a companion to stay put is a trivial verbal command with no physical effort or delay."
+    },
+    {
+      "verb": "swim",
+      "object": "GLOBAL-WATER",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Swimming across or in the water is a physical exertion requiring sustained effort, fitting the mechanism band."
+    },
+    {
+      "verb": "swim",
+      "object": "WATER",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Swimming in place is a trivial, brief bodily action with no mechanical progress, akin to a failed or minor interaction."
+    },
+    {
+      "verb": "take",
+      "object": "BEAM",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The beam cannot be taken and the attempt is a no-op joke response with no physical effort expended."
+    },
+    {
+      "verb": "take",
+      "object": "CLOAK",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A simple attempt to pick up an object, though it may be foiled by circumstances."
+    },
+    {
+      "verb": "take",
+      "object": "COVER",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A brief, failed attempt to lift a too-heavy object is minimal physical effort with no result."
+    },
+    {
+      "verb": "take",
+      "object": "DUNGEON-MASTER",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A simple failed take attempt rebuffed with a one-line refusal, no real effort expended."
+    },
+    {
+      "verb": "take",
+      "object": "GLOBAL-ROPE",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Grabbing the dangling rope is a simple, quick physical action, not a multi-step mechanism."
+    },
+    {
+      "verb": "take",
+      "object": "GLOBAL-WATER",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "Taking water always fails outright as it slips through the player's fingers, a no-op turn."
+    },
+    {
+      "verb": "take",
+      "object": "HOOD",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A tense but physically simple act of pulling a hood off a struggling opponent."
+    },
+    {
+      "verb": "take",
+      "object": "JEWELLED-KNIFE",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Taking an item from a cage is a simple grab requiring only a quick reach."
+    },
+    {
+      "verb": "take",
+      "object": "ME",
+      "minutes": 0,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A trivial, joke no-op response of grabbing oneself with no real game effect."
+    },
+    {
+      "verb": "take",
+      "object": "MOSS",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The handler simply refuses the action with 'Don't be silly,' a no-op turn."
+    },
+    {
+      "verb": "take",
+      "object": "PATHOBJ",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "Taking an abstract passage is not a valid action and results in a no-op response requiring direction clarification."
+    },
+    {
+      "verb": "take",
+      "object": "PEDESTAL",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A simple attempted grab that is immediately blocked by the cage, requiring minimal physical effort."
+    },
+    {
+      "verb": "take",
+      "object": "POTION",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A simple take attempt that fails harmlessly, warranting minimal time."
+    },
+    {
+      "verb": "take",
+      "object": "PRESSURIZER",
+      "minutes": 0,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "The attempt fails outright since the machine is too massive to move, a no-op turn."
+    },
+    {
+      "verb": "take",
+      "object": "RING",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Simple grasping of a small item, a quick physical action."
+    },
+    {
+      "verb": "take",
+      "object": "ROPE",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Simply attempting to take a tied rope is a quick, failed grab with no real effort."
+    },
+    {
+      "verb": "take",
+      "object": "SAND",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A quick, failed attempt to grab sand that simply slips away."
+    },
+    {
+      "verb": "take",
+      "object": "SCEPTRE",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Simple grab of an accessible item, requiring only a brief physical action."
+    },
+    {
+      "verb": "take",
+      "object": "SHINY-OBJECT",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A simple grasp attempt at an object in the lake, quick physical action with an uncertain outcome."
+    },
+    {
+      "verb": "take",
+      "object": "SPINNER",
+      "minutes": 0,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "The action fails outright since the massive machine cannot be moved, resulting in a no-op."
+    },
+    {
+      "verb": "take",
+      "object": "STONE",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The stone can't be moved, so the attempt fails immediately with no effort expended."
+    },
+    {
+      "verb": "take",
+      "object": "SWORD",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Grasping and lifting a sword is a simple, quick physical action."
+    },
+    {
+      "verb": "take",
+      "object": "TECH-PLAQUE",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A quick futile tug on a bolted-down plaque is a trivial physical attempt."
+    },
+    {
+      "verb": "take",
+      "object": "TIME-MACHINE",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "The command is a failed attempt to take an immovable object, resolved instantly with a rejection message."
+    },
+    {
+      "verb": "take",
+      "object": "VALUABLES",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A simple take action, though potentially contested, remains a quick physical grab."
+    },
+    {
+      "verb": "take",
+      "object": "WATER",
+      "minutes": 0,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A failed attempt to scoop water bare-handed that slips away instantly, resulting in no actual effect."
+    },
+    {
+      "verb": "throw",
+      "object": "GLOBAL-MAN",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A quick, futile toss of an object at a distant man that fails to accomplish anything."
+    },
+    {
+      "verb": "throw",
+      "object": "GLOBAL-WATER",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The player doesn't have any water, so this is a failed no-op turn."
+    },
+    {
+      "verb": "throw",
+      "object": "GUARDIAN",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Tossing an object at the Guardians is a single deliberate but low-effort physical action with an immediate, brief outcome."
+    },
+    {
+      "verb": "throw",
+      "object": "LAMP",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A quick, irreversible toss that destroys the lamp, but physically it's a single simple motion."
+    },
+    {
+      "verb": "throw",
+      "object": "ME",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "Throwing yourself is a nonsensical no-op that the game simply rebukes with a snarky message."
+    },
+    {
+      "verb": "throw",
+      "object": "OCEAN",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Simply tossing an item into the ocean is a quick, irreversible discard action with no mechanism to operate."
+    },
+    {
+      "verb": "throw",
+      "object": "WATER",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The handler reveals the player has no water to throw, resulting in a failed no-op turn."
+    },
+    {
+      "verb": "tie",
+      "object": "CHEST",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Tying rope to a locked chest is a quick, pointless fumbling attempt that the game outright rejects."
+    },
+    {
+      "verb": "tie",
+      "object": "GLOBAL-ROPE",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Securely tying the chest to the rope is a deliberate physical task with real consequences, fitting the mechanism band."
+    },
+    {
+      "verb": "turn",
+      "object": "DUNGEON-MASTER",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "TURN on the dungeon master falls into the generic no-op reply branch (\"If you wish,\" he replies), a trivial, effectless exchange."
+    },
+    {
+      "verb": "turn",
+      "object": "ROSE",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The rose is immovably embedded in stone, making this a failed no-op action."
+    },
+    {
+      "verb": "turn",
+      "object": "SUNDIAL",
+      "minutes": 4,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Setting a dial to a specific number requires careful physical manipulation without needing the full ceremonial weight of a dramatic action."
+    },
+    {
+      "verb": "turn",
+      "object": "T-BAR",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "The action fails outright with no mechanical effect, just a hint text."
+    },
+    {
+      "verb": "turn",
+      "object": "TM-DIAL",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Setting a time-dial to a specific value requires careful manual adjustment of a mechanical device."
+    },
+    {
+      "verb": "unlock",
+      "object": "CHEST",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Fiddling with a lock and key on a chest is a quick physical task, and here it fails outright since the chest remains locked."
+    },
+    {
+      "verb": "unlock",
+      "object": "GOOD-LOCKED-DOOR",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "It's a simple attempt to manipulate a lock that fails outright, requiring minimal effort."
+    },
+    {
+      "verb": "unlock",
+      "object": "IRON-DOOR",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Attempting to unlock a door is a simple manipulation that fails outright, whether locked from outside or rusted shut."
+    },
+    {
+      "verb": "unlock",
+      "object": "JEWEL-DOOR",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "Unlocking/opening a door is a simple physical action with no puzzle mechanism involved here."
+    },
+    {
+      "verb": "unlock",
+      "object": "KEY",
+      "minutes": 5,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Fitting the shape-shifting key into a lock and twisting the bolt is a fiddly physical action beyond simple manipulation but short of a full set-piece."
+    },
+    {
+      "verb": "unlock",
+      "object": "LOCKED-DOOR",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "The door simply rebuffs the attempt, a quick failed manipulation with no mechanical progress made."
+    },
+    {
+      "verb": "untie",
+      "object": "GLOBAL-ROPE",
+      "minutes": 3,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Untying a knot securing the chest to the rope is a quick physical task with minor fiddliness."
+    },
+    {
+      "verb": "untie",
+      "object": "ROPE",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "A quick failed attempt to untie a securely fastened rope, requiring minimal effort before the game rebuffs it."
+    },
+    {
+      "verb": "walk",
+      "object": "DUNGEON-MASTER",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "llm",
+      "note": "The player simply declares walking near the dungeon master, who typically just replies verbally without any real physical exertion or travel occurring."
+    },
+    {
+      "verb": "walk",
+      "object": "TIME-MACHINE",
+      "minutes": 0,
+      "class": "instant",
+      "source": "llm",
+      "note": "Walking on the machine is a no-op that just tells the player they're going nowhere."
+    }
+  ],
   "vocab": {
     "verbs": {
       "#command": "#command",

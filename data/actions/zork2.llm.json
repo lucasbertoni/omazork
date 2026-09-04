@@ -1,0 +1,3671 @@
+{
+  "schemaVersion": 1,
+  "game": "zork2",
+  "model": "claude-sonnet-5",
+  "rows": [
+    {
+      "key": "action:burn/BILLS",
+      "kind": "handler",
+      "inputHash": "4378d8c03a84650c4ef79058484d62471fc3c3f9771659ba5e44aeeac304ae32",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "A quick, trivial action that the game rejects outright with a quip, no real mechanism engaged."
+    },
+    {
+      "key": "action:burn/BRICK",
+      "kind": "handler",
+      "inputHash": "a0655802aaeee5f6a44351e44443ff24d685ac250fc7d692104d82fe1f500bc0",
+      "class": "dramatic",
+      "minutes": 30,
+      "rationale": "Burning the brick triggers instant death, a fatal ceremony-level outcome the game treats as a climactic mistake."
+    },
+    {
+      "key": "action:burn/BUCKET",
+      "kind": "handler",
+      "inputHash": "a13072dc9940318ef250242f430936b03ec88f4c111a9fb638332aa944e7f49b",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick failed attempt to ignite a fireproof object yields no real effect, just a brief action."
+    },
+    {
+      "key": "action:burn/FUSE",
+      "kind": "handler",
+      "inputHash": "6d77bd0721b174e7c23495bd8a75635139c9fbc38a5898da69eb3b6384816cab",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Igniting a fuse to trigger a timed sequence is a deliberate mechanical action beyond simple manipulation."
+    },
+    {
+      "key": "action:burn/HEADS",
+      "kind": "handler",
+      "inputHash": "ccb7ba2a1ea9f3f62ead3e3f189e25a0cf659c555c918174c3d2c9f454823a98",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Burning the cursed remains is a deliberate act requiring fire application, though it triggers instant fatal punishment rather than an extended process."
+    },
+    {
+      "key": "action:burn/MATCH",
+      "kind": "handler",
+      "inputHash": "e4b88726b548e836df88da6f867c152f99f103f04c85eeb6a0dcd6a60f80b3dd",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Striking a match is a quick, simple physical action with an immediate result."
+    },
+    {
+      "key": "action:close/CRYPT-DOOR",
+      "kind": "handler",
+      "inputHash": "8601fbbe49fc03269eec2d9e883e37e9c01b0de01972edd9468b0823642a6135",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Closing a simple door is a quick physical action with no mechanism to operate."
+    },
+    {
+      "key": "action:close/DIM-DOOR",
+      "kind": "handler",
+      "inputHash": "f6e91f56abc2459d056563bf5780f441c7ad113a8bb514a0fb00eab7fa28be42",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Closing a door is a simple physical action despite its magical noiseless quality."
+    },
+    {
+      "key": "action:close/GLOBAL-WIZARD-CASE",
+      "kind": "handler",
+      "inputHash": "810bab980ea5d80595904dc81fce7d349b676b580707648aea44efa3f7bc5c76",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Closing the case is a trivial attempted action that the spell simply blocks, no different in effort than any failed close attempt."
+    },
+    {
+      "key": "action:close/LID-1",
+      "kind": "handler",
+      "inputHash": "c8db3d7a0eafac493530fc7b3a50f2d4380bbff97c36c6a99faed8b7cf24cd1e",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Closing a simple lid is a quick physical action akin to closing a container."
+    },
+    {
+      "key": "action:close/LID-2",
+      "kind": "handler",
+      "inputHash": "a701cc1ece35f5932849bfa60cb764a8e705bf1c63b7277d4e3396bbc6d7d1f9",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Closing a lid over a keyhole is a simple physical action, priced at the low end of manipulation."
+    },
+    {
+      "key": "action:close/PDOOR",
+      "kind": "handler",
+      "inputHash": "742ac358f7bc53581c3274c3da7ea4e00fde4f91c9f8616700c3ba60d0844594",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Closing an unlocked door is a simple physical action with no complications."
+    },
+    {
+      "key": "action:close/RIDDLE-DOOR",
+      "kind": "handler",
+      "inputHash": "97dc2702daa5dc570cfe28423251355c3daf8c8e03fe6ac931a3dd8914ebba43",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "A futile close attempt on an immovable stone door is a trivial no-op requiring negligible effort."
+    },
+    {
+      "key": "action:close/ROBOT",
+      "kind": "handler",
+      "inputHash": "5e938c4ddd107b683289924276a58a2be6920b8e19af6a58557e37d5b8adc30b",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "A trivial failed action attempting to close a robot with no panel or door, yielding an instant no-op response."
+    },
+    {
+      "key": "action:close/SAFE",
+      "kind": "handler",
+      "inputHash": "4aa3f9363256a71b29520a8405fc2adf97f5c487000e76711ed1cc8faa54cd57",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "A trivial failed attempt to close an immovable safe door that isn't even open."
+    },
+    {
+      "key": "action:close/TEAPOT",
+      "kind": "handler",
+      "inputHash": "d321c3382a0b30aa13eb72ca20a769ce975f3cec4c070d80310fb5b2889c74ce",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "A trivial failed attempt to close a lidless teapot requires almost no effort."
+    },
+    {
+      "key": "action:close/WIZ-DOOR",
+      "kind": "handler",
+      "inputHash": "6dfda877d6f97babc2260d3b87c7144a61fb3c00626d05e26f4d7fd78db47a9c",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Closing an already-unlocked door is a simple physical action, just a swing shut of a creaky door."
+    },
+    {
+      "key": "action:close/WIZARD-CASE",
+      "kind": "handler",
+      "inputHash": "706219277c892c731252dc381cdbc6116f8291fa29cef457f87b386464969d1b",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "The cabinet is spell-protected and cannot be closed, so the attempt is a trivial failed no-op action."
+    },
+    {
+      "key": "action:cross/BRIDGE",
+      "kind": "handler",
+      "inputHash": "7f87159e960626b6390203ac6072efa39c34a90031feb4e0fe547f73ed61594c",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Crossing the bridge is a single directed room transition via DO-WALK."
+    },
+    {
+      "key": "action:cross/CHASM",
+      "kind": "handler",
+      "inputHash": "aeab54be2fd3e1fc1e006c6094b2f53c9593c3a2b8b04212bb3a64310406f74d",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The command fails outright with no bridge present, so no real effort or time is expended."
+    },
+    {
+      "key": "action:cross/STREAM",
+      "kind": "handler",
+      "inputHash": "96f64eb0b22e6e9d6d9c7ff414c8567d714ec2b334355f8727c21d4cd6971b5b",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The action fails immediately with no progress, just a rebuff telling the player to find another way."
+    },
+    {
+      "key": "action:dig/GROUND",
+      "kind": "handler",
+      "inputHash": "2798627e42c2a9419bcc9f237b4268b629e2e2501710dee4b8ce092c8e5e3f1c",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "A quick failed attempt at digging into hard, unyielding ground with no result."
+    },
+    {
+      "key": "action:dig/PATHOBJ",
+      "kind": "handler",
+      "inputHash": "e73006d3f30984ababa9a9799a159880eaf8e72278f72978abc7f18508d1f668",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The handler outright rejects the action with \"Not a chance,\" a no-op turn with no real effort."
+    },
+    {
+      "key": "action:disenchant/MENHIR",
+      "kind": "handler",
+      "inputHash": "3785a20476abb719328031139b4c0df2d98ff1dbbb681c6a550b0fae21d6740a",
+      "class": "mechanism",
+      "minutes": 8,
+      "rationale": "Reversing a levitation spell on a massive stone requires focused magical effort akin to turning a great mechanism."
+    },
+    {
+      "key": "action:drink/POOL",
+      "kind": "handler",
+      "inputHash": "67b9c7d2a5161837c63eaca72893494b954e140e9dbe97c00dc0264e97f63d76",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A simple drink action yielding a trivial flavor response with no mechanical consequence."
+    },
+    {
+      "key": "action:drink/ROBOT",
+      "kind": "handler",
+      "inputHash": "cee0c1a0c0fcb38b24e4d704c0ec9123edca2c1893195841af756c3c10b451e1",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The robot simply states it has no mouth, a trivial failed action with no real effort or consequence."
+    },
+    {
+      "key": "action:drop/BUCKET",
+      "kind": "handler",
+      "inputHash": "37dc686b53fd11acd4ede1b59806f632a3fb5cee38f51667245799e3377ced05",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply setting down a bucket is a quick, low-effort physical action."
+    },
+    {
+      "key": "action:drop/COMPASS",
+      "kind": "handler",
+      "inputHash": "96a7355a93d998ddf66b00486b08f65e3665f896604807d6dc00204eeefe867f",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "A futile drop attempt that fails instantly since the compass can't be discarded."
+    },
+    {
+      "key": "action:drop/GLOBAL-WATER",
+      "kind": "handler",
+      "inputHash": "e18a4ca6b49a41f5b20534d814a76a572a37651136e86699201228ef425078e6",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Dropping water is a trivial single-action manipulation that just spills it to the floor."
+    },
+    {
+      "key": "action:drop/GROUND",
+      "kind": "handler",
+      "inputHash": "7553aaa4ebc6e2401a287d2847529a059cd3b010eb1d31922c459c3292b957da",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "Dropping the ground is a no-op/invalid action with no real-world effort."
+    },
+    {
+      "key": "action:drop/ROBOT",
+      "kind": "handler",
+      "inputHash": "9e621d34656feaf66aa141b1af4be1a8c6722075b6c03b97bda805faa0344434",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Dropping an item the player isn't even holding is a trivial, quick action attempt."
+    },
+    {
+      "key": "action:drop/SALTY-WATER",
+      "kind": "handler",
+      "inputHash": "66ca7a14c20c9a2e3762aec06763e75f55b630c785df3e8f689f2fe4ed83c4ed",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Dropping held water is a simple, quick physical action that just spills it onto the floor."
+    },
+    {
+      "key": "action:drop/WATER",
+      "kind": "handler",
+      "inputHash": "28c4c41e1f22678dd2b26dd9c2e78864cc4ce02117cdf983726418012f1177d6",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Dropping held water is a quick, simple physical action that just spills or forms a puddle."
+    },
+    {
+      "key": "action:drop/WELL",
+      "kind": "handler",
+      "inputHash": "321061f0e74f54fee8f53f4e19fc8014a43cec3760d72dd16b73091e9569dcfb",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Dropping a takeable object into the well is a simple release action requiring minimal effort."
+    },
+    {
+      "key": "action:eat/BILLS",
+      "kind": "handler",
+      "inputHash": "fb49c9b01544b1b2db0df2470b156df589ad52079cd74e9e6d86e0d5c853adc9",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick, trivial bite of a prop with no mechanism to work, just a flavor response."
+    },
+    {
+      "key": "action:eat/BLUE-ICING",
+      "kind": "handler",
+      "inputHash": "cbecc44b059789b695642d1f3e8fcb7df29e6113ba48e43a003be6396074e515",
+      "class": "dramatic",
+      "minutes": 30,
+      "rationale": "Eating the blue cake triggers a body-shrinking transformation sequence that relocates the player and alters the room state, a ceremonial plot event rather than routine manipulation."
+    },
+    {
+      "key": "action:eat/CANDY",
+      "kind": "handler",
+      "inputHash": "2effb0af16accc18776c993e39d87e2ce1db42c0122d3531a00c5cc8b726a4a4",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Eating a small piece of candy is a quick, simple physical action akin to taking or opening something."
+    },
+    {
+      "key": "action:eat/EAT-ME-CAKE",
+      "kind": "handler",
+      "inputHash": "da9ba0c5eb6d9c543d5fee96c2600343717126941c6a4e6d15e383350839f4f1",
+      "class": "dramatic",
+      "minutes": 30,
+      "rationale": "Eating the cake triggers a world-altering set-piece transformation (shrinking, teleporting the room's contents) that the game treats as a ceremonial turning point."
+    },
+    {
+      "key": "action:eat/ME",
+      "kind": "handler",
+      "inputHash": "17ae98f6b39542b3f04c60f7466860fe9a1f9835cf378c4eee94add2d86d583c",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "A trivial no-op joke response with no real-world effort or consequence."
+    },
+    {
+      "key": "action:eat/ORANGE-ICING",
+      "kind": "handler",
+      "inputHash": "200138adec4c9148875b6480d25919e12ba6ec9215d63415b9085c41bb98dac2",
+      "class": "dramatic",
+      "minutes": 30,
+      "rationale": "Eating the orange-frosted cake triggers ICEBOOM, a fatal set-piece explosion ending the game, which is a ceremonial climactic moment."
+    },
+    {
+      "key": "action:eat/RED-ICING",
+      "kind": "handler",
+      "inputHash": "5bdc3eff4fc3707d439545218e893eccca62b0b188603d8839d2d3d80b608969",
+      "class": "dramatic",
+      "minutes": 30,
+      "rationale": "Eating the red cake is an irreversible fatal action that kills the player, a narrative set-piece rather than routine manipulation."
+    },
+    {
+      "key": "action:eat/ROBOT",
+      "kind": "handler",
+      "inputHash": "7072406642acacd805b6e6ff123a4a290e707419c228d0b4c19bbefec623a12d",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "A failed no-op attempt that the robot simply rebuffs with a canned line about having no mouth."
+    },
+    {
+      "key": "action:enchant/CERBERUS",
+      "kind": "handler",
+      "inputHash": "c7a0a82939227b88bb4f654a0a24c4709d60d34ab41515a0cbda84e3a16288c9",
+      "class": "mechanism",
+      "minutes": 12,
+      "rationale": "Casting a specific spell on a guarding creature requires careful preparation and precise incantation, though it's a single magical act rather than a full ceremony."
+    },
+    {
+      "key": "action:enchant/COLLAR",
+      "kind": "handler",
+      "inputHash": "fa0a9facab12a7c653d491caf5ecdb8cca09b583666d4992344f5018c7332937",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Casting a spell on an object requires focused arcane effort but isn't a scripted narrative set-piece."
+    },
+    {
+      "key": "action:enchant/GLOBAL-WIZARD-CASE",
+      "kind": "handler",
+      "inputHash": "df0c20c141c5189b727a9743dc17cad1a5827a23ba177dd126c6f87afff44619",
+      "class": "mechanism",
+      "minutes": 8,
+      "rationale": "Casting a spell on the warded case is a focused magical effort beyond simple manipulation but short of a ceremonial set-piece."
+    },
+    {
+      "key": "action:enchant/MENHIR",
+      "kind": "handler",
+      "inputHash": "28eeb1a62b65070a184e22f8b910546ff7a449620caefbb66782eb5788056da6",
+      "class": "mechanism",
+      "minutes": 15,
+      "rationale": "Casting a levitation spell on an eight-foot stone slab to raise it and reveal a passage is a deliberate magical mechanism trigger, not a simple manipulation."
+    },
+    {
+      "key": "action:enchant/WIZARD-CASE",
+      "kind": "handler",
+      "inputHash": "e40224e613c50dfc8e6cbcea3c434003a560ac42611639c12c934ffdc11ffc1b",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Casting a targeted enchant spell on a specific object requires focused magical effort beyond simple manipulation but isn't a full ceremonial set-piece."
+    },
+    {
+      "key": "action:enter/AQUARIUM",
+      "kind": "handler",
+      "inputHash": "388a8816d4e16df6910569499f0111e07f20ca112fc9f74221613101199d5909",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Boarding/entering the aquarium simply redirects to walking into the room, a quick no-op-like action."
+    },
+    {
+      "key": "action:enter/BUCKET",
+      "kind": "handler",
+      "inputHash": "f3ca9658907fb4b63c0e67a8ed181d812d5beb242ec31a1f2cccb64e6d71ea31",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Climbing into a bucket is a simple physical positioning action akin to boarding an object."
+    },
+    {
+      "key": "action:enter/PENTAGRAM",
+      "kind": "handler",
+      "inputHash": "7ef6cbc28ba8a6bb9a93c7d07965b283ed9a1f80539146141cb62d4b386eda04",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply stepping toward/into the pentagram is a quick, failed no-effort action since an invisible force just repels the player."
+    },
+    {
+      "key": "action:exit/GAZEBO",
+      "kind": "handler",
+      "inputHash": "ae13a41a0c0a5cf94c5eac728a17697462bfcb35c28ace20ab93db7bc9973555",
+      "class": "movement",
+      "minutes": 1,
+      "rationale": "Exiting the gazebo is a single directed room transition equivalent to walking out."
+    },
+    {
+      "key": "action:exit/ME",
+      "kind": "handler",
+      "inputHash": "bf8f17f0b80e74d757db9ff80e50c430c4e9ea1b129d82089063dda59a87b6ac",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "A trivial no-op response telling the player to disembark on their own, with no real-world effort involved."
+    },
+    {
+      "key": "action:exorcise/GENIE",
+      "kind": "handler",
+      "inputHash": "2dcde1dd1bd473f1d571b5a57a89537b170551c185d7d140c96fa1ac87f55630",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The genie simply laughs at the attempt, a trivial no-op response with no real effect."
+    },
+    {
+      "key": "action:fill/GLOBAL-WATER",
+      "kind": "handler",
+      "inputHash": "5b30b379530a1a95868c124e0aacd7bb85ed9938540cf0b9717948777d15c152",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Filling a container with water is a simple physical put-action equivalent to handling an object."
+    },
+    {
+      "key": "action:fill/SALTY-WATER",
+      "kind": "handler",
+      "inputHash": "0532320253ec9c4ea691bb77126af1a552b1be7f98e2e4eff465a686d1b1c399",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Filling a container with water at hand is a quick, simple physical action akin to put/take."
+    },
+    {
+      "key": "action:fill/WATER",
+      "kind": "handler",
+      "inputHash": "9af4bd9c2672e49615cadc482f53c68592f34a3b22da0c296044dec744958225",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Filling with water resolves into a simple attempt to scoop/pour water into a container, a quick physical action."
+    },
+    {
+      "key": "action:find/BRAIDED-WIRE",
+      "kind": "handler",
+      "inputHash": "1d99a150269bec56f0bad31d1285fefdbad2b4088c96d261ebf0a9bf2fc76dcb",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "FIND just lists contents like examine, a quick no-cost lookup rather than a physical action."
+    },
+    {
+      "key": "action:find/CLOTH-BAG",
+      "kind": "handler",
+      "inputHash": "bb661384ddb4dacfc6031113e8c3d1de82270b1873c14281af186b4dcea13245",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Finding/examining the fixed cloth bag just prints an informational message with no real manipulation occurring."
+    },
+    {
+      "key": "action:find/COMPASS",
+      "kind": "handler",
+      "inputHash": "7a68fbf0143d229547c77d74a2fbe7323866e0fb4dcfe47ba5b24c40c6ee235c",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The compass is already on the player's person, so finding it is a trivial no-op realization."
+    },
+    {
+      "key": "action:find/GENIE",
+      "kind": "handler",
+      "inputHash": "dcc19a705dd16575e68e9498058651997ce75a2737dfd3488991c65982140285",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The genie flatly refuses to answer, a no-op response with no in-game effort expended."
+    },
+    {
+      "key": "action:find/GLOBAL-UNICORN",
+      "kind": "handler",
+      "inputHash": "84da51656f28db365ffe7e513e7a2e20ca82ab087044db3a462f35b1a377701f",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Simply asking about the unicorn's whereabouts is a quick query with no physical effort involved."
+    },
+    {
+      "key": "action:find/GRUE",
+      "kind": "handler",
+      "inputHash": "e1090f1978d783b941fd1fce298563bc3fdcdf299274c6c50ca7226d81e81e6b",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "A failed search for an unseen creature that yields only a flavor-text warning, with no real progress made."
+    },
+    {
+      "key": "action:find/PATHOBJ",
+      "kind": "handler",
+      "inputHash": "c95a27297aebce8d304bb0dd7ab30a0cf86ae4633a9577fba8306775cc79b63a",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The command fails outright with no game-world effect, just a rebuff message."
+    },
+    {
+      "key": "action:find/RECEPTACLE",
+      "kind": "handler",
+      "inputHash": "3c5102bd0766dcfde11853a0a0d2968f6216638a2e1069b6a8cd421ed8ff53a3",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Finding/examining the fixed receptacle just prints descriptive text with no manipulation or progress."
+    },
+    {
+      "key": "action:find/ZORKMID",
+      "kind": "handler",
+      "inputHash": "c9d2dd4b1d32ec44641eae56fda2d0badc79968b651e95a3dde45df146daf822",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The command is a joke non-action that yields a canned rebuff with no in-world effort expended."
+    },
+    {
+      "key": "action:follow/GLOBAL-PRINCESS",
+      "kind": "handler",
+      "inputHash": "f336298045d151101a58e63b02d3bd445a826ecd0e7e0e03d8362468eae29f10",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Following the princess is essentially trailing her into an adjacent room via DO-WALK, a single directed traversal."
+    },
+    {
+      "key": "action:follow/GLOBAL-UNICORN",
+      "kind": "handler",
+      "inputHash": "dbc3f1551cacf01de0f4208f1e8699ce4846c3d33c27015039d3cf20ad09f0d1",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "This is just a query about the unicorn's whereabouts with no actual pursuit occurring, a no-op response."
+    },
+    {
+      "key": "action:follow/GOLD-KEY",
+      "kind": "handler",
+      "inputHash": "a01a6d15d29071786bc736320a63c8b28ddd8bc804e4da40324172ee09e41166",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick attempt to trail the unicorn that simply spooks it away, requiring little real effort."
+    },
+    {
+      "key": "action:follow/PATHOBJ",
+      "kind": "handler",
+      "inputHash": "9524d8c26a3e069809bca9ce6db6f9ec104d7a76af4ffa1c192168034933179c",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The command yields only a clarification or refusal message with no actual game action performed."
+    },
+    {
+      "key": "action:follow/PRINCESS",
+      "kind": "handler",
+      "inputHash": "e7dbbe57b186a9cdf8d3af3bb31580596fb01f74d83147ae886b3429d6d4a862",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "Following the princess triggers a walk to her destination room, equivalent to traversing a room edge."
+    },
+    {
+      "key": "action:follow/RIBBON",
+      "kind": "handler",
+      "inputHash": "ea71b839d411789341f99bd7c1528db67808db0c6512ef3b8fc8554ba3b3b45d",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick attempt to trail the unicorn that simply results in it shying away, no real progress made."
+    },
+    {
+      "key": "action:follow/ROBOT",
+      "kind": "handler",
+      "inputHash": "9b859fe0b60562a7bdf943b229b52c6367b57b99086328415799f96b58f509da",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The robot simply refuses/comments that it can't follow of its own accord, a no-op conversational response with no in-world effect."
+    },
+    {
+      "key": "action:follow/UNICORN",
+      "kind": "handler",
+      "inputHash": "7984dcda69c2ebf43575846a135a849867b37ee566040486b4f5e3f94a9a2573",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "Attempting to trail the skittish unicorn is a quick directed pursuit that simply spooks it away."
+    },
+    {
+      "key": "action:give/DOOR-KEEPER",
+      "kind": "handler",
+      "inputHash": "ea60ee913db3baae702e66f19e5ea4e37fffe34a5cd0ca9fa053248014ed7992",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Handing an item to the lizard guardian is a simple, low-effort interaction resolved immediately by the handler."
+    },
+    {
+      "key": "action:give/DRAGON",
+      "kind": "handler",
+      "inputHash": "3d6276c54664c37f85c1a5ea29426072f494b8a62eef30fcea906400e6b95a04",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Offering an item to the dragon is a simple deliberate handoff, not a multi-step mechanism or set-piece."
+    },
+    {
+      "key": "action:give/GENIE",
+      "kind": "handler",
+      "inputHash": "b272f048a6d8ec2f1d68490653f3571e2f0af305e2b1951678d9ad05c56284aa",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Handing an object to the genie triggers a valuation/negotiation exchange that is more than a simple transfer but not a full ceremonial set-piece."
+    },
+    {
+      "key": "action:give/GLOBAL-WATER",
+      "kind": "handler",
+      "inputHash": "93a8b3aefa8ef965a3474eac8f7b5943bc738f568dd53dea473854f72360805b",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Giving away handheld water is a trivial hand-off attempt that simply fails ('The water slips through your fingers')."
+    },
+    {
+      "key": "action:give/GNOME",
+      "kind": "handler",
+      "inputHash": "b47b02b30a7b9481dc178c3de5c24dd44303944a2c05132e0cd23489673ed564",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Offering an item to the gnome and awaiting his judgment is a small deliberate interaction with a meaningful outcome, warranting more than a trivial manipulation."
+    },
+    {
+      "key": "action:give/GNOME-OF-ZURICH",
+      "kind": "handler",
+      "inputHash": "1fbd166d477bfcbce323b97db3be29d61a523a7ad73daff987f48a6e30f75a15",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Handing an item to the gnome for deposit into the safety box is a deliberate transactional exchange, not a simple object manipulation."
+    },
+    {
+      "key": "action:give/ME",
+      "kind": "handler",
+      "inputHash": "28d7eb47f8f4ce0fae5504f82706ef58ef9585b345d9ff409818bc2d6e0feb50",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "Giving yourself to yourself just redirects to taking yourself, a trivial self-referential no-op action."
+    },
+    {
+      "key": "action:give/ROBOT",
+      "kind": "handler",
+      "inputHash": "e8ee220e0c03fbfca34e8fc8da2b048c8c87ae9b2a1b8c8d235cf8ddacdf1680",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Handing an object to the robot is a simple transfer action akin to a basic give/take interaction."
+    },
+    {
+      "key": "action:give/SALTY-WATER",
+      "kind": "handler",
+      "inputHash": "e8088f8599b04b843760b6d6b57af1d171a6109ca5f15e2057779f00e6e72a92",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Giving away water is a trivial handoff attempt that simply fails or spills, akin to a quick take/drop action."
+    },
+    {
+      "key": "action:give/SERPENT",
+      "kind": "handler",
+      "inputHash": "103a03c14753fbe7ec62a5693db7911f3653fa31799caf6db168a88fa6f8b632",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Reaching into the aquarium to offer the serpent something is a quick, fatal manipulation with no complex mechanism involved."
+    },
+    {
+      "key": "action:give/WAND",
+      "kind": "handler",
+      "inputHash": "72a2975c243c87927a106e3f1acd7812b407ad1d225fc52dcc0da41a0f90bf35",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Handing over an item is a simple, quick physical transfer even though the Wizard immediately snatches it back."
+    },
+    {
+      "key": "action:give/WATER",
+      "kind": "handler",
+      "inputHash": "2f2bc0c39a140550b0828fba1891b023008b072b00d7ae0e9ffc8b71a647df67",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Giving away handheld water is a trivial physical gesture that immediately fails or spills, akin to a simple object manipulation."
+    },
+    {
+      "key": "action:give/WIZARD",
+      "kind": "handler",
+      "inputHash": "ac95321b4e69a34affc8df5bc046c976f726ad758400f517242d78b1f6886663",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Handing over an object is a simple physical exchange with an immediate one-line response."
+    },
+    {
+      "key": "action:incant/CERBERUS",
+      "kind": "handler",
+      "inputHash": "2925bae6ebe1d09b43703f0aaed268ca44ac587696bb3546e58cf7e8f638b791",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Incanting at Cerberus is a spell invocation requiring focus and precise wording, but it's a single verbal act rather than a full ceremonial set-piece."
+    },
+    {
+      "key": "action:jump/BRIDGE",
+      "kind": "handler",
+      "inputHash": "f79ec1b2ea2db263e8edb1104feecb647e4ed789d777eb4938430578db5095d0",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Jumping off the bridge is a fatal no-op action resolved instantly by the game's death handler."
+    },
+    {
+      "key": "action:jump/CHASM",
+      "kind": "handler",
+      "inputHash": "bf73acd167f372112ab564ceafc6f1637504c79191974bc2331f7537c65b1f3f",
+      "class": "dramatic",
+      "minutes": 30,
+      "rationale": "Leaping into a chasm is a fatal, irreversible gamble the game treats as a life-or-death ceremony, not a routine action."
+    },
+    {
+      "key": "action:kick/BUCKET",
+      "kind": "handler",
+      "inputHash": "f214b8a09bcb7beb62e6e496658968513ff85bd1e8e5b6b8d50464ec4f39a97f",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Kicking the bucket is instantly fatal (JIGS-UP), a no-op turn ending the game rather than an effortful action."
+    },
+    {
+      "key": "action:kick/DRAGON",
+      "kind": "handler",
+      "inputHash": "0fc6cdbf5815a9f0e2571421f5586bff35cad8a2cc812635b3d246f16f511797",
+      "class": "dramatic",
+      "minutes": 30,
+      "rationale": "Provoking a huge red dragon into a physical retaliation is a life-threatening confrontation the game treats as a major set-piece moment."
+    },
+    {
+      "key": "action:kick/HEADS",
+      "kind": "handler",
+      "inputHash": "8f87693545d08a89c3c938fa1493b193fb885c29ec4991d69e1e8e9bc1b019ed",
+      "class": "dramatic",
+      "minutes": 30,
+      "rationale": "Kicking the cursed poled heads triggers fatal punishment, a ceremonial death-trap moment the game treats as significant."
+    },
+    {
+      "key": "action:kiss/GLOBAL-PRINCESS",
+      "kind": "handler",
+      "inputHash": "7074a0c9a958126701d6626acda412c75ce0fdae1f945d11920e29c868ff71e8",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A simple, brief physical gesture toward an NPC that mostly just triggers dialogue rather than sustained effort."
+    },
+    {
+      "key": "action:kiss/PRINCESS",
+      "kind": "handler",
+      "inputHash": "98149b53e41adda3c4c91754f68e12faa50e40bd4413fc1264d59f7bc5af8645",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A simple physical gesture toward an entranced NPC that produces no mechanical effect on its own."
+    },
+    {
+      "key": "action:knock/DIM-DOOR",
+      "kind": "handler",
+      "inputHash": "f4cdd7064bedb6001da9a83f0251a0443fa9bb0a7a28331e3f5ba7d0de02b193",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Knocking on a door is a simple, quick physical action yielding only a sound response."
+    },
+    {
+      "key": "action:leave/GAZEBO",
+      "kind": "handler",
+      "inputHash": "7859aca720b4f0244ef58a4626ece94c93d6cb7d3867696734cfb6ff3d393a1d",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "Leaving the gazebo is a single directed exit to an adjacent room via DO-WALK."
+    },
+    {
+      "key": "action:listen/GRUE",
+      "kind": "handler",
+      "inputHash": "87996614e567897825e0c32b0e84454cecb42a6c8b714afd1f98afc7d5cef511",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Listening for a silent, unseen grue yields no perceptible result, a no-op turn."
+    },
+    {
+      "key": "action:lock/KEY",
+      "kind": "handler",
+      "inputHash": "f07ad624fa0c688868915c9e368dfdeca9417122ce740ea33c5e9454bb29ef84",
+      "class": "mechanism",
+      "minutes": 3,
+      "rationale": "Locking a door with a key is a simple mechanical action requiring only turning the lock."
+    },
+    {
+      "key": "action:lock/PDOOR",
+      "kind": "handler",
+      "inputHash": "04fc83be1f59e6f59d3ffc5ce3dbc407269ab674e1de3ae116d3de69637e0cb3",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Turning a key in a lock is a simple, quick physical action."
+    },
+    {
+      "key": "action:lock/WIZ-DOOR",
+      "kind": "handler",
+      "inputHash": "4784ae9385702ba7a6192efd3d1c1411084c9981525e69ba854438443bce522b",
+      "class": "mechanism",
+      "minutes": 3,
+      "rationale": "Turning a key to lock a bolted door is a simple physical mechanism action."
+    },
+    {
+      "key": "action:lower/LID-1",
+      "kind": "handler",
+      "inputHash": "faaafb7293a2d810024929903f6e4b432601d82822244d80c4fcfbb3c165d8b1",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Simple closing of a lid over a keyhole, akin to closing an object."
+    },
+    {
+      "key": "action:lower/LID-2",
+      "kind": "handler",
+      "inputHash": "754e397ac1a7b3bb13b857029a13fc426489971370961c4f108a93b6876aa7ce",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Lowering a lid over a keyhole is a simple physical action akin to closing a cover."
+    },
+    {
+      "key": "action:make/ME",
+      "kind": "handler",
+      "inputHash": "a60eb899c416d5090261a226bb3015eabe0166ffecb5d3179d735f5233916b2c",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "A rejected no-op command ('Only you can do that.') with no in-world effect."
+    },
+    {
+      "key": "action:make/WISH",
+      "kind": "handler",
+      "inputHash": "b32ec9cfc092750fac40a40faa06ee3b90edd883269b12cd6a5007b61e195677",
+      "class": "dramatic",
+      "minutes": 30,
+      "rationale": "Making a wish at the well is a ceremonial, fateful moment that consumes the coin and triggers a significant story event."
+    },
+    {
+      "key": "action:melt/ICE",
+      "kind": "handler",
+      "inputHash": "21b49db649f797265ddb0d5d709ae78e37bbe24f29b264c080d9e3c19a59499d",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "This is a failed no-op turn since the game merely rebukes the attempt without any effect on the glacier."
+    },
+    {
+      "key": "action:move/BLUE-BOOK",
+      "kind": "handler",
+      "inputHash": "a3fd9eb61e1c0ea9f2a0be9e077cffeb1db5b1f3f135958b7eb4e4282146efac",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Moving a book aside is a simple physical action akin to taking or shifting an object."
+    },
+    {
+      "key": "action:move/CURTAIN",
+      "kind": "handler",
+      "inputHash": "18cb4fc5cf77bc92ec7f2ff2d0da97884ef49dc0a4676bb5b1f2bb3967dfc281",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A futile grasp at an intangible curtain of light is a quick, effortless failed action."
+    },
+    {
+      "key": "action:move/GENIE",
+      "kind": "handler",
+      "inputHash": "92f435e90cd91b0e6ed2bd17d7a53a4f30eb4b846ff28602d64546e06638c05b",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Attempting to move the genie (not the menhir) is just a simple ineffectual command with no real-world exertion, defaulting to the generic 'cannot perform such a task' response."
+    },
+    {
+      "key": "action:move/GREEN-BOOK",
+      "kind": "handler",
+      "inputHash": "d455cc6de2da8730a64e806501db31dc4d6ac9d6ace903dad4a1db049b9b7123",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Moving a book on a table is a simple physical manipulation with no mechanism involved."
+    },
+    {
+      "key": "action:move/LID-1",
+      "kind": "handler",
+      "inputHash": "0574acfd56c2cdd767c119593690a88aea4d8165e9ff7260b9587abfa52cae24",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply moving a metal lid to reveal a keyhole is a quick physical action akin to opening a cover."
+    },
+    {
+      "key": "action:move/LID-2",
+      "kind": "handler",
+      "inputHash": "35be4366c132cc9b312ef554abcbae03fb7ec4ae8e6dc36506cb136855ffac91",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Simply moving a metal lid to expose or cover a keyhole is a straightforward physical action akin to opening a container."
+    },
+    {
+      "key": "action:move/MENHIR",
+      "kind": "handler",
+      "inputHash": "f6d07f37ba20c343964d14d73ec2a49cfbb6a5f1d01613c15583f7825ebd43c1",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A futile attempt to budge an immovable multi-ton object, resulting in a quick failure message."
+    },
+    {
+      "key": "action:move/PALANTIR-1",
+      "kind": "handler",
+      "inputHash": "e2ab4ec7dc16c4d2fa5f4e638a6232c3cec025c6f7a8c6367075deed066e2ad7",
+      "class": "dramatic",
+      "minutes": 30,
+      "rationale": "Reaching for the sphere triggers an irreversible cage-trap/poison-gas ceremony that redefines the game state, a genuine set-piece moment."
+    },
+    {
+      "key": "action:move/PLACE-MAT",
+      "kind": "handler",
+      "inputHash": "4ec12bb529605f233601032beaa569aaec794b4cf3279dbb955add2555c1f414",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply moving a place mat is a quick, low-effort physical action."
+    },
+    {
+      "key": "action:move/ROBOT",
+      "kind": "handler",
+      "inputHash": "2f7366e518099fad39b7617c55c70e7b3e18ed1ebf8bd3336c36bc985bec3c9e",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Attempting to push/move the actor-robot is a simple physical action that the handler mostly just rebuffs with dialogue."
+    },
+    {
+      "key": "action:move/ROUND-BUTTON",
+      "kind": "handler",
+      "inputHash": "e1c77d70bd6f8d295b6fc7bbb5d6ec6bdf887fb02a727d91dc77eded63dd4edc",
+      "class": "mechanism",
+      "minutes": 4,
+      "rationale": "Pushing the round button toggles the carousel's whirring intensity, a small but consequential mechanical interaction with the device."
+    },
+    {
+      "key": "action:move/SQUARE-BUTTON",
+      "kind": "handler",
+      "inputHash": "afeca397ab15d603c9ed5cb05ecb84dbecf8c06031b9037a6a519e1dd006e432",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Pushing the square button alters the carousel's whirring intensity, a mechanical state change requiring deliberate interaction."
+    },
+    {
+      "key": "action:move/TRIANGULAR-BUTTON",
+      "kind": "handler",
+      "inputHash": "e2d9480d9e10b4ea033ef19527bf58379497bd94a4e7bc0ba6818da93dc6035c",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Pushing the button triggers a mechanical flip affecting the carousel room and iron box, akin to throwing a switch."
+    },
+    {
+      "key": "action:move/WHITE-BOOK",
+      "kind": "handler",
+      "inputHash": "8c7365103c3cb8c6c24a1e37fada71fed38f5dfe2a132743b1fab0a7cf407112",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply shifting a book aside is a quick physical action, just marking it touched with no mechanism triggered."
+    },
+    {
+      "key": "action:open/BALLOON",
+      "kind": "handler",
+      "inputHash": "f5977f439b85c2eccada25d5b9fecbaf61fa96224bd1e162bb0614a373f0892a",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Opening the receptacle in the balloon's basket is a simple physical action of unlatching a lid."
+    },
+    {
+      "key": "action:open/CANDY",
+      "kind": "handler",
+      "inputHash": "32310ff98a2d8bcb1d6fd79500889e52fba4f4fcc937be3fab5847ebccef89b5",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply opening a candy package is a trivial physical action with no mechanism involved."
+    },
+    {
+      "key": "action:open/CHEST",
+      "kind": "handler",
+      "inputHash": "f0ceefa2f52d4d8be687ae82fe41c18d03af2da6ffb3b05eb354ceffb1eeef06",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Prying at a rusty-hinged chest lid is a brief physical action with resistance, fitting the upper end of manipulation."
+    },
+    {
+      "key": "action:open/CLOTH-BAG",
+      "kind": "handler",
+      "inputHash": "24794507b61c86f802e2b2f8b4657b47fb3359f7b423e6b21b23f00360c8bb0f",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "Attempting to open the enormous bag is a trivial, immediately rebuffed action with no mechanical effect."
+    },
+    {
+      "key": "action:open/CRYPT",
+      "kind": "handler",
+      "inputHash": "f90f84f2d13f0e9e72232fc5e9e8f26fa9bea0833138cd34ddb1530035d2a799",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A simple attempt to open a sealed crypt is quick physical effort that fails immediately."
+    },
+    {
+      "key": "action:open/CRYPT-DOOR",
+      "kind": "handler",
+      "inputHash": "65ee123a455fe1c3617fa8c85ff1b2a49a35589b4af45e9bea8b57c85a86d415",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Simply swinging open a squeaky door is a quick physical action with no complex mechanism involved."
+    },
+    {
+      "key": "action:open/DIM-DOOR",
+      "kind": "handler",
+      "inputHash": "d78ec116cf013fb51a164a8f9dd9ad54ef2479323be0a3decfa420edfd0b0c1b",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Opening a door, even a secret one, is a simple physical action with no puzzle-solving involved."
+    },
+    {
+      "key": "action:open/FLASK",
+      "kind": "handler",
+      "inputHash": "67948b74095d116f754da03247143e7031825e641e7438b51b8423f031d3edd6",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Opening the flask is a simple physical action, instantly fatal in outcome but trivial in effort."
+    },
+    {
+      "key": "action:open/GLOBAL-WIZARD-CASE",
+      "kind": "handler",
+      "inputHash": "f6c393b68fef167afde69f66d4f81f1e8077aabf3bd86c1c523de3052d7f698e",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A simple attempt to open a case, immediately rebuffed by a protective spell, is just a quick physical try."
+    },
+    {
+      "key": "action:open/HEADS",
+      "kind": "handler",
+      "inputHash": "4bf5d18fb0737ed796eb945108551274097749ad0c71cadc61aefbb88fca0749",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Opening the poled heads is a simple manipulation attempt, fatal in outcome but trivial in physical effort."
+    },
+    {
+      "key": "action:open/LID-1",
+      "kind": "handler",
+      "inputHash": "46d747cb2e073cb371483fd965875d662d7e3cbb99f3e459bfc5ff5ed688f4b5",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Opening a simple lid is a quick physical action with no complex mechanism involved."
+    },
+    {
+      "key": "action:open/LID-2",
+      "kind": "handler",
+      "inputHash": "68c824c4209a8667879711a28a727515a182429c6b5f0437300753052d9037fb",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Opening a simple lid is a quick physical action typical of manipulation-class commands."
+    },
+    {
+      "key": "action:open/PDOOR",
+      "kind": "handler",
+      "inputHash": "9610116a77efa4f6fde4eaab30cf1b23ab6fd72552adb79ac44beb639006d4cb",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply swinging an unlocked oak door open is a quick physical action."
+    },
+    {
+      "key": "action:open/PURPLE-BOOK",
+      "kind": "handler",
+      "inputHash": "3cca52abdf8e291c10824140e67aa4cdd3165593ea9a46274b872dfbdcb26ff9",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Opening a moldy book is a simple physical action of brief effort."
+    },
+    {
+      "key": "action:open/RECEPTACLE",
+      "kind": "handler",
+      "inputHash": "d981a09d8027c0df9242109e222887660864a41e84745b9bb3fb699e5dd70189",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Opening a receptacle is a simple physical action akin to opening any container."
+    },
+    {
+      "key": "action:open/RIDDLE-DOOR",
+      "kind": "handler",
+      "inputHash": "e199b22f325af1f20ff22232c5b42b40b9331d48a7a59cbd1af9e60376070cab",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A simple attempt to open a door that merely fails or confirms state, requiring minimal effort."
+    },
+    {
+      "key": "action:open/ROBOT",
+      "kind": "handler",
+      "inputHash": "ac17c3c744a84d5829d3414a574f3f85b6c6b9d4b930ba53e69239040c2e6203",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A trivial failed attempt to open the robot, which simply has no panel or door, requiring only a quick check."
+    },
+    {
+      "key": "action:open/SAFE",
+      "kind": "handler",
+      "inputHash": "39cf310d17e169edbd3ebcbb8d119d6fa898146fc2d23ecde0ee561805cc1e43",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A simple failed attempt to open a rusted, doorless safe requires only a brief effort before finding it won't budge."
+    },
+    {
+      "key": "action:open/WIZ-DOOR",
+      "kind": "handler",
+      "inputHash": "6fa83f1cede49d3a31c6ac85282cb58e64ceb79bebeccff05daa94eb1bfbebaa",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Reaching for a locked door's handle is a quick manual attempt, even though the lizard guardian foils it."
+    },
+    {
+      "key": "action:open/WIZARD-CASE",
+      "kind": "handler",
+      "inputHash": "6a9736e349ddc98a21fe9e17f6d91c5ac3d0c11bbe59c4ad20a708215d9c1947",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A failed attempt to open a spell-protected cabinet is a simple, quick action despite its no-op outcome."
+    },
+    {
+      "key": "action:play/VIOLIN",
+      "kind": "handler",
+      "inputHash": "fd740091fa81ed6f5da3fd38997f211000d2fabcbb199bbf323b30c8e400bc19",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply picking up and playing the violin badly is a quick, trivial action with no mechanical effect."
+    },
+    {
+      "key": "action:plug/LEAK",
+      "kind": "handler",
+      "inputHash": "346f01767722c17dd86c9ea0f0de89ec2f85eb34b94c6a92a448dbada4c0ffd5",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A failed attempt to plug an unreachable leak is a quick, simple action with no real progress."
+    },
+    {
+      "key": "action:put/BALLOON",
+      "kind": "handler",
+      "inputHash": "f78e7a991e2440275bfa9083d9f59702713218ab9af06f435443afc19b912f6d",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Placing an object into the basket's receptacle is a simple physical placement action."
+    },
+    {
+      "key": "action:put/BLUE-BOOK",
+      "kind": "handler",
+      "inputHash": "253a116b73f42d9fb3ce7ebb0fe54448e131b51ac7b70144d7a966d4b2c953ee",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Placing a book down is a simple physical action requiring minimal time."
+    },
+    {
+      "key": "action:put/BLUE-ICING",
+      "kind": "handler",
+      "inputHash": "355e8c7ebc85782886c451d7e442665af66e77fd84889d22a45c5ce23d81d776",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Putting the blue-frosted cake down or into something is a simple object placement action, not a complex mechanism."
+    },
+    {
+      "key": "action:put/BUCKET",
+      "kind": "handler",
+      "inputHash": "8a0b8cd2393f5ef9a775f500d3e9848763b792df6e1b8c6b13d4216b2f337d76",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Placing the bucket somewhere is a simple physical action akin to putting down an object."
+    },
+    {
+      "key": "action:put/CERBERUS",
+      "kind": "handler",
+      "inputHash": "ced16eafbcec4a71ab3c5ba44b852743dedd23b55fb5598a40f0d101a48c25f6",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Putting the collar on the dog is a simple, deliberate object-placement action, not a multi-step mechanism."
+    },
+    {
+      "key": "action:put/CHASM",
+      "kind": "handler",
+      "inputHash": "0bde1a9c5d9102a36d385008370f0b5ab5a780565718e3c2c815299ca8aa7bf4",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Putting an object toward the chasm is a simple, quick physical action akin to dropping something."
+    },
+    {
+      "key": "action:put/GLOBAL-WATER",
+      "kind": "handler",
+      "inputHash": "8184e980d672e97a0c82f42c226cfc6bbd3e1007289ecd11859cbee3caab0605",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Handling water without a container is a quick, trivial physical action that just slips away."
+    },
+    {
+      "key": "action:put/GOLD-KEY",
+      "kind": "handler",
+      "inputHash": "10181d764d7a210027156874213affa7bafa9166545de91066643d3d2855477d",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Attempting to put the key involves grabbing it from the unicorn, a quick physical act that spooks it away."
+    },
+    {
+      "key": "action:put/GREEN-BOOK",
+      "kind": "handler",
+      "inputHash": "f9c1559cabae6122634502eadad4e360b62bf5f1ab529e0869dbeac23515091d",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simple physical placement of a small object requiring minimal effort."
+    },
+    {
+      "key": "action:put/GROUND",
+      "kind": "handler",
+      "inputHash": "f4769aa124bb2ec1e64a44dc416e7fcd76f773bcae1b5aff4bf9cdcbf59feb7f",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Putting an object on the ground is effectively just setting it down, a trivial physical action."
+    },
+    {
+      "key": "action:put/KEYHOLE-1",
+      "kind": "handler",
+      "inputHash": "14ed457c362eee6c4147b83d995e7d89e98b5941bc755675322dfaefffd38462",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Inserting an item into a keyhole is a quick, precise physical action akin to placing a key or similar object into a lock."
+    },
+    {
+      "key": "action:put/KEYHOLE-2",
+      "kind": "handler",
+      "inputHash": "19512093626f28864e86abe4014b8e1e2718453e2ac28ca3237895bf0b27745a",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Inserting an object into a keyhole is a quick, precise physical action akin to a fit-check."
+    },
+    {
+      "key": "action:put/ORANGE-ICING",
+      "kind": "handler",
+      "inputHash": "19d946ca0704de94849821c82ff6c16e982d61dc24d361adc7c37334baa248ef",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Placing the orange-frosted cake is a simple deliberate action that immediately triggers its explosive effect, fitting the low end of the manipulation band."
+    },
+    {
+      "key": "action:put/PALANTIR-1",
+      "kind": "handler",
+      "inputHash": "15c9d261d9a4e1e64f692c5636257fbecac543ac78f785d3bb3fe90b618e2786",
+      "class": "dramatic",
+      "minutes": 30,
+      "rationale": "Reaching for the sphere triggers a fatal cage-and-gas trap sequence with lasting narrative consequences, a ceremonial turning point rather than routine manipulation."
+    },
+    {
+      "key": "action:put/PENTAGRAM",
+      "kind": "handler",
+      "inputHash": "eb10922dc1b449e81d8e6ee9489645b859320fbb4aa062db44e59621823aec05",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Placing an object into the pentagram is a simple physical placement action akin to putting something in a container."
+    },
+    {
+      "key": "action:put/RED-ICING",
+      "kind": "handler",
+      "inputHash": "eb970da0f2334227bcd2bdf6595138c00f69637f67851665d2166e7f29e15e3b",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Putting the cake somewhere (e.g., into the pool) is a simple object-placement action requiring minimal physical effort."
+    },
+    {
+      "key": "action:put/REPELLENT",
+      "kind": "handler",
+      "inputHash": "b92d4f12a6d6c53ba4d36e309927c95b4e5789f73104e66c0553b1fc7a72b53c",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Spraying the repellent is a quick single-action item use with no physical exertion beyond pressing a nozzle."
+    },
+    {
+      "key": "action:put/RIBBON",
+      "kind": "handler",
+      "inputHash": "abcdef7f89649fdf608ad40c1a2d9ab4282e9bac691cd66a1b4e19ce08ba1906",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Attempting to put the ribbon-wearing unicorn triggers a quick, simple physical action that startles it away."
+    },
+    {
+      "key": "action:put/ROBOT",
+      "kind": "handler",
+      "inputHash": "d9977fc0bf295ec6113c901615463077cb53d54a0b14ad869365ac2070a6d2d7",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Attempting to put an object with/near the robot is a simple, quickly-resolved interaction with no mechanical effect."
+    },
+    {
+      "key": "action:put/SALTY-WATER",
+      "kind": "handler",
+      "inputHash": "1c36110a57505aad57bb979c4b250b950beb206599091d3277ee12de828e5157",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Pouring water out of hand into a container or puddle is a quick, simple physical action."
+    },
+    {
+      "key": "action:put/SERPENT",
+      "kind": "handler",
+      "inputHash": "9e37288a202686a3525790ba280148bf9fe244ed298b0e907e5f0a46d9c904d2",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A trivial attempted action that fails outright with 'Impossible for many reasons,' requiring negligible effort."
+    },
+    {
+      "key": "action:put/SEWL",
+      "kind": "handler",
+      "inputHash": "fce023dfe8967b469b8bb2dc715c26e8908d0cef723e2bfcc1e214d1d0bdadf0",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Putting an object against the east wall to trigger a hidden mechanism is a simple physical placement action."
+    },
+    {
+      "key": "action:put/SNWL",
+      "kind": "handler",
+      "inputHash": "97ade886278e61f1784f0f5a261c8d2adfc591e7057c99cb8616a10f8988c774",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Putting an object against the wall to trigger a mechanism is a quick physical action akin to placing an item."
+    },
+    {
+      "key": "action:put/SSWL",
+      "kind": "handler",
+      "inputHash": "7f64e92b27162f4729c582da8498a26288fc1c5f5e976da154f0102f61788d13",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Putting an object against the south wall to trigger a mechanism check is a quick physical action."
+    },
+    {
+      "key": "action:put/STAND-1",
+      "kind": "handler",
+      "inputHash": "ee22054debeb1179b5f91c00dc654bc89db1059b55d3405cc044f1bc30c96482",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Placing a sphere on a stand is a simple physical action, though this instance may trigger a larger mechanism."
+    },
+    {
+      "key": "action:put/STAND-2",
+      "kind": "handler",
+      "inputHash": "a20b40fd88f801229739b3d541d46671cb98bc8a6c976ee5e41ac32ed7d255bd",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Placing a sapphire sphere onto a stand is a simple physical placement action, akin to a standard put-object-on-object command."
+    },
+    {
+      "key": "action:put/STAND-3",
+      "kind": "handler",
+      "inputHash": "412c9c629ffee97e105f630a63f2a7e1e2ef22d0b8570e9f49d76dd02c8f56f0",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Placing a sphere on a stand is a simple physical action, though it may trigger a larger mechanism."
+    },
+    {
+      "key": "action:put/STAND-4",
+      "kind": "handler",
+      "inputHash": "d5843d2a7f6df67fad62f31e17a7ca7ea975658461f05e4ebb6f52554f7c130b",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Simply placing an object onto a stand is a basic manipulation action regardless of the dramatic consequences it triggers."
+    },
+    {
+      "key": "action:put/SWWL",
+      "kind": "handler",
+      "inputHash": "16dd880cd731ab5ef86e3267ffece0f39210be7f3fd827561e4900268bc9f9c1",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Placing an object against the wall to trigger a mechanism check is a simple, quick physical action."
+    },
+    {
+      "key": "action:put/UNICORN",
+      "kind": "handler",
+      "inputHash": "6f09eea22a9e0d80677ab2a7043640ff6b824477d3078f05de0102a512611d8f",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Attempting to put the unicorn causes it to flee, a quick failed handling action rather than a sustained mechanism or ceremony."
+    },
+    {
+      "key": "action:put/WAND",
+      "kind": "handler",
+      "inputHash": "f7f476cb44a8c53c10c6ea0eeaba5747d67cf795cd9085bfd711fc757c62d024",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Putting down the wand is a simple object placement, likely interrupted by the Wizard snatching it away."
+    },
+    {
+      "key": "action:put/WATER",
+      "kind": "handler",
+      "inputHash": "73a980d2e092623b9dbf20b6dbd9dfb535ca25755c1c376c7f8c8a73c9ec8d24",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Attempting to put loose water somewhere is a quick, trivial action that almost always just slips through the player's fingers."
+    },
+    {
+      "key": "action:put/WELL",
+      "kind": "handler",
+      "inputHash": "a6440e8a1a8c5080c731892d0f2b49a485ad4b1b7c73187d685cd0d505384952",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Dropping an object into the well is a simple, quick physical action."
+    },
+    {
+      "key": "action:put/WHITE-BOOK",
+      "kind": "handler",
+      "inputHash": "01dace1086d05c051f2f8a7365a9ba7ec075979464254394b126dad120c76023",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Putting down a book is a simple physical action with no mechanism to engage."
+    },
+    {
+      "key": "action:raise/CERBERUS",
+      "kind": "handler",
+      "inputHash": "fcdff7cb451318c34f92ee6c1c59476317cca8bbe90ef7ca52f21269ce7b0a63",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Raising the dog is a quick, unremarkable gesture that the game treats as a puzzled non-event unless paired with the wand."
+    },
+    {
+      "key": "action:raise/LID-1",
+      "kind": "handler",
+      "inputHash": "3102e87974118c3a210575dbdb8576787b78a3dee77cd0cdeac09f233164d67a",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simple physical act of lifting a lid to reveal a keyhole."
+    },
+    {
+      "key": "action:raise/LID-2",
+      "kind": "handler",
+      "inputHash": "146dc1bf13ddf95e106bb764f80d1e09ba5b454d945b449438602abb7d225f22",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply lifting a lid to expose an opening is a quick, low-effort manipulation action."
+    },
+    {
+      "key": "action:raise/ROBOT",
+      "kind": "handler",
+      "inputHash": "4139c5cb921e178a3bcbf84cd24ccd2a666092e62d0b26471edfac4156fab194",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Raising the robot (typically against the cage) is a physical struggle requiring effort but not a full ceremonial set-piece."
+    },
+    {
+      "key": "action:raise/WAND",
+      "kind": "handler",
+      "inputHash": "3364cf6038ea76d91706889ae285b3e1ea60a16af7bdae892f5f6bacaad2c3d1",
+      "class": "mechanism",
+      "minutes": 4,
+      "rationale": "Raising the wand triggers a magical charge-up effect requiring deliberate ritual gesture, akin to activating a mechanism."
+    },
+    {
+      "key": "action:rape/GLOBAL-PRINCESS",
+      "kind": "handler",
+      "inputHash": "790dec90f9154b5a6b2732bee1dba20e408ac8e61fd5d4bbeecefaf1af14bf35",
+      "class": "dramatic",
+      "minutes": 30,
+      "rationale": "This is a fatal, irreversible set-piece action that instantly kills the player via the Wizard's lightning bolt, treated by the game as a climactic (if punitive) event rather than routine manipulation."
+    },
+    {
+      "key": "action:rape/PRINCESS",
+      "kind": "handler",
+      "inputHash": "22f057b28e0606af287b932795099c63578fa6ba6bdc0f101e9909a874a71a33",
+      "class": "dramatic",
+      "minutes": 30,
+      "rationale": "This is a fatal, game-ending set-piece action triggering the Wizard's instant-death intervention."
+    },
+    {
+      "key": "action:rub/CERBERUS",
+      "kind": "handler",
+      "inputHash": "7cf2ed86e748e3f5be0d6fcc6bc3eefa65d8f98617e65169fad28b1179bf49bf",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Rubbing a leashed dog's fur for affection is a quick, low-effort physical gesture with no mechanical complexity."
+    },
+    {
+      "key": "action:rub/CRYPT",
+      "kind": "handler",
+      "inputHash": "4ebd89e4b45c03403169f69c63360048c0676d3fbb2fc0760c797494a52b666f",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply touching the crypt's surface to feel its texture is a trivial, low-effort action yielding a flavor response."
+    },
+    {
+      "key": "action:rub/CURTAIN",
+      "kind": "handler",
+      "inputHash": "88cf3d617f0e54f73ef981ee32f4e61c01b6906588ed5530ef44dd8468b7c369",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The hand passes through the curtain with no physical interaction possible, a no-op failure response."
+    },
+    {
+      "key": "action:rub/DEGREE",
+      "kind": "handler",
+      "inputHash": "f38f7c85d0965a1df1a08f8b954f934367bb0e260485cd77449152588b95bd19",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick tactile rub that just yields a shock, no mechanism engaged."
+    },
+    {
+      "key": "action:rub/GLOBAL-PRINCESS",
+      "kind": "handler",
+      "inputHash": "e5a5e7a945467e6648ee8ef7994372d704f91e73d905ed0d29ed88228728ec89",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Rubbing the princess is a simple gesture akin to examine, with no mechanism engaged beyond a flavor-text check."
+    },
+    {
+      "key": "action:rub/GOLD-KEY",
+      "kind": "handler",
+      "inputHash": "947aa8c07c4f557b6cc23da59ecfe19960434f0c3725aa30be1940cf22588141",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Rubbing an object the unicorn wears is a quick physical action that immediately triggers its flight response."
+    },
+    {
+      "key": "action:rub/HEADS",
+      "kind": "handler",
+      "inputHash": "752a421dfca439c212a8f8251f00d60044231a8effd411c11ddb0f936e80b715",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Rubbing the cursed heads is a quick tactile action that instantly triggers fatal punishment, warranting minimal time despite its outcome."
+    },
+    {
+      "key": "action:rub/MOSS",
+      "kind": "handler",
+      "inputHash": "64a872bd707b2d9594ec3df8eaf1b2ef613d6eb195dc801db729ca67106a9bd1",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Rubbing moss is a quick simple physical action akin to taking a small sample."
+    },
+    {
+      "key": "action:rub/PRINCESS",
+      "kind": "handler",
+      "inputHash": "33527f05c2bf069d9c1b01b70d270c5f330ab7aabbc5a9cabbfab6a93b23d548",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Rubbing the entranced princess is a simple physical touch that either does nothing or triggers a scripted wake sequence, requiring negligible effort."
+    },
+    {
+      "key": "action:rub/RIBBON",
+      "kind": "handler",
+      "inputHash": "4306d2a1db5be4b826a1b3c267a1df7beae70c94bdb02e6d6924ce1e630ea11d",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Rubbing the ribbon is a quick, simple physical action that merely spooks the unicorn away."
+    },
+    {
+      "key": "action:rub/TROPHY-BOTTLES",
+      "kind": "handler",
+      "inputHash": "a5863664e97b2f2dd3e5828092c39d3efa9bcdd914ecdedadfaf6eb38c833656",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick touch/rub that instantly resolves into a shock, a brief physical action with no drawn-out process."
+    },
+    {
+      "key": "action:rub/TROPHY-SWORD",
+      "kind": "handler",
+      "inputHash": "62c8b9338580bb7ecfff09ac95294e92c41e894c8835c842d1974797441dd189",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick touch of the sword that briefly zaps the player's hand, requiring minimal time to attempt."
+    },
+    {
+      "key": "action:rub/UNICORN",
+      "kind": "handler",
+      "inputHash": "e3536fe4f22a3c67c16ae7a8ca9358b14858575b9d0588877d28f32ea4ae0ac8",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick, irreversible physical action that instantly spooks the unicorn away."
+    },
+    {
+      "key": "action:rub/WAND",
+      "kind": "handler",
+      "inputHash": "8df8f3bb98bb02e408bb2222b1cfd0663615545bac2df6d567620d8db6ff2340",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Rubbing the wand on an object to invoke a magical charging effect is a deliberate ritual-like action beyond simple manipulation but short of a full dramatic set-piece."
+    },
+    {
+      "key": "action:rub/WANDS",
+      "kind": "handler",
+      "inputHash": "9f1cb6103e7000ec7dbb3396c9c3bee97c616ed5c62e5dba86150d08588559ee",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick touch that merely triggers a shock warning, not a mechanism with lasting effect."
+    },
+    {
+      "key": "action:say/CERBERUS",
+      "kind": "handler",
+      "inputHash": "30b960bec5a487daa87bc4d346644bdf99e88564502e4ce2899bed482413903f",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Saying a phrase at the dog produces no branch in the handler (falls through to the default snarl), a trivial no-op utterance."
+    },
+    {
+      "key": "action:say/GNOME",
+      "kind": "handler",
+      "inputHash": "c8bed11b90b82fa535a05e78d58949cb090133ab3906af03a1398dd7ca8454ef",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Speaking a simple phrase to the gnome is a trivial verbal action with an immediate, brief response."
+    },
+    {
+      "key": "action:say/GNOME-OF-ZURICH",
+      "kind": "handler",
+      "inputHash": "9fb3aa231c2e92dfade35e4ad515e07874cd54ed394f9f34b9d924c87d880ae1",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Saying the gnome's name is just a spoken address that produces a canned impatience response with no real effort or effect."
+    },
+    {
+      "key": "action:say/ME",
+      "kind": "handler",
+      "inputHash": "d0d5dc35b6c974a0285dccb811f6ad3bafc555756b2136ad77a70ff468c89adc",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Talking to oneself is a trivial no-op response with no physical effort or delay involved."
+    },
+    {
+      "key": "action:say/SAILOR",
+      "kind": "handler",
+      "inputHash": "fadb7ad6067fcc468d2f1d38eb1e205864106561df8bfdfe3e7602385f2aaec9",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Speaking a single word to a nearby figure is a quick verbal action, not a physical mechanism or set-piece."
+    },
+    {
+      "key": "action:shake/REPELLENT",
+      "kind": "handler",
+      "inputHash": "f26afa589171a67303f47136d29030a800bcb61cd69b1f7579511fe5ae92db71",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Shaking a can to check its contents is a quick, low-effort physical check."
+    },
+    {
+      "key": "action:smell/ROSE",
+      "kind": "handler",
+      "inputHash": "45c72f12662f5dac2e80a548dc54aaa5e0f8a081e6017f12a938d43abadf39ac",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Smelling a rose is a trivial sensory action with an immediate quip response, no real effort or duration."
+    },
+    {
+      "key": "action:spray/REPELLENT",
+      "kind": "handler",
+      "inputHash": "2926a13aed7842045a3118e10915af4395253c9c62c83a88b9b0ef5b4e275e97",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Pressing a nozzle to spray a can is a quick, simple physical action."
+    },
+    {
+      "key": "action:swim/GLOBAL-WATER",
+      "kind": "handler",
+      "inputHash": "d0379c41dc09e353a5fcb38dabd71b68afcb6aae0f1c9eb46d7a2739c84e9fb7",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Swimming through water is a physical exertion beyond simple manipulation but not a scripted set-piece."
+    },
+    {
+      "key": "action:swim/SALTY-WATER",
+      "kind": "handler",
+      "inputHash": "d7373003ae21327e443e5e47d971c3db091f0b6be04194937ed00fa8c7274739",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Swimming in the salty pool room water is a physical activity requiring exertion beyond a simple manipulation but isn't a scripted set-piece."
+    },
+    {
+      "key": "action:swim/STREAM",
+      "kind": "handler",
+      "inputHash": "160db9bcb446d7565c9593b9d1cc5f3f2651e9c354b3367fd8cada3b2646086a",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The action fails outright, yielding only a rebuff with no real-world effort expended."
+    },
+    {
+      "key": "action:swim/WATER",
+      "kind": "handler",
+      "inputHash": "6131826c47c237a38ad9cdbd6678d828d472eb329cc6f95df97c705652a9fab1",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Swimming in a puddle of water is a brief physical action the game treats as a trivial, non-mechanical bodily motion."
+    },
+    {
+      "key": "action:take/ARCANA",
+      "kind": "handler",
+      "inputHash": "8609922aa000a2e477b2272baf02a47d7d8bbcd6085877be64c924dc37e5287f",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick attempt to grab junk that the game immediately rejects as not worth carrying."
+    },
+    {
+      "key": "action:take/BALLOON",
+      "kind": "handler",
+      "inputHash": "04a907a6dac9cc3fc78eceaf8458ea2825d5e41e520c19f23dcd7ccbb4239310",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Picking up the large, heavy basket is a simple physical action, though its bulk warrants a bit more effort than a trivial grab."
+    },
+    {
+      "key": "action:take/BLUE-BOOK",
+      "kind": "handler",
+      "inputHash": "48c5cc899a576a2ba83167dbc54d6edc9c115ae50279ef3a84e0c8f559b24515",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply picking up a book from the room is a quick, low-effort physical action."
+    },
+    {
+      "key": "action:take/BRAIDED-WIRE",
+      "kind": "handler",
+      "inputHash": "5fa3a1dd422d4e37bbc5db0e42e48c1a9c850f7db9b2ec35c8528086984b35de",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply picking up a wire is a quick physical action with no complexity involved."
+    },
+    {
+      "key": "action:take/CLOTH-BAG",
+      "kind": "handler",
+      "inputHash": "1bac6016980a4bc4e65320fdb4394b7bd7b34199f78d2e41ed364c56c63f8217",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick futile grab attempt at a fixed part of the basket that fails immediately."
+    },
+    {
+      "key": "action:take/COLLAR",
+      "kind": "handler",
+      "inputHash": "c99cf293c7fb4cd9f4b2072ada7e635cdcc8bdcb837e13268e04f7d5c344a594",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Picking up a large, awkward collar off debris is a simple physical action, though bulkier than a trivial grab."
+    },
+    {
+      "key": "action:take/CURTAIN",
+      "kind": "handler",
+      "inputHash": "5b8ede158904b2d2745d1436cb247046ad4faf3dcf90ab7c9f34d4adefc99be6",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The hand passes through the curtain harmlessly, a failed no-op action with no real effort."
+    },
+    {
+      "key": "action:take/DEAD-SERPENT",
+      "kind": "handler",
+      "inputHash": "a9f83510de2ccc87e2d22d379f5e1abd0dd6a933f6ec1629e955d08414b91d23",
+      "class": "manipulation",
+      "minutes": 3,
+      "rationale": "Attempting to lift the massive serpent is a failed take, but the effort of trying to hoist something whale-sized still caps the manipulation band."
+    },
+    {
+      "key": "action:take/DEGREE",
+      "kind": "handler",
+      "inputHash": "af8ca3aeb7abecdfd4e770f3f2aa71a222654d19b0b7ecf93a43b411ad077893",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A simple attempt to take an object that merely triggers a shock deterrent, requiring only a brief reach."
+    },
+    {
+      "key": "action:take/DWINDOW",
+      "kind": "handler",
+      "inputHash": "c50169621549ba7724f53c932d37595e49dca83d610c42e688a9b29a1c52c7ae",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick, immediately failed attempt to pick up a window that's fixed in the floor."
+    },
+    {
+      "key": "action:take/GENIE",
+      "kind": "handler",
+      "inputHash": "b1006909d68672638f172fb3e9fc76700b52247c43f2bc0e99f5b823faae402b",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply attempting to take the genie is a quick, low-effort command that mostly triggers a refusal or minor scripted reaction, not a sustained task."
+    },
+    {
+      "key": "action:take/GLOBAL-WATER",
+      "kind": "handler",
+      "inputHash": "486ed11a9f1f904f4f33fdf24da0a35aecc68b3f6646ad455c2b3758a275cf82",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Attempting to scoop up loose water is a quick, simple action that predictably fails as it slips through the player's fingers."
+    },
+    {
+      "key": "action:take/GLOBAL-WIZARD-CASE",
+      "kind": "handler",
+      "inputHash": "fffeaf9e714f7d6f9fc44cb9b1328a524607a68a7d4426f2885d57cb428e2339",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A simple attempted take that fails instantly due to a protective spell."
+    },
+    {
+      "key": "action:take/GOLD-KEY",
+      "kind": "handler",
+      "inputHash": "838f6ea4e38fd38f3c2dd08e992de41703c6c62cca668f42ede755889351d833",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Attempting to take the key spooks the unicorn away, but it's still a quick, simple grab attempt."
+    },
+    {
+      "key": "action:take/GREEN-BOOK",
+      "kind": "handler",
+      "inputHash": "b5eec7e07d566467b9803f4683ee66401a85af17f6a068eefce5c6c137864a78",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply picking up a book from a table is a quick, low-effort physical action."
+    },
+    {
+      "key": "action:take/HEADS",
+      "kind": "handler",
+      "inputHash": "058219cf9f4947f660b8f345787adc320af6cbaff4edd775154ed138f98195d0",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A simple reach-and-grab attempt, though it fatally backfires instantly."
+    },
+    {
+      "key": "action:take/LEAK",
+      "kind": "handler",
+      "inputHash": "c0fea9e45f90a707700a8760d0eca1225f1968904205e145ce54b2a7c0eef13f",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "A joke response to a futile take attempt on an intangible object, requiring only a quick gesture."
+    },
+    {
+      "key": "action:take/ME",
+      "kind": "handler",
+      "inputHash": "72f9610a61993a147d21e1ffa9093e2a0615e649f3b75144ebda3d3dec2c4410",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "A trivial, physically meaningless attempt to grab oneself that the game merely quips at with no real effort or consequence."
+    },
+    {
+      "key": "action:take/MENHIR",
+      "kind": "handler",
+      "inputHash": "798fac0b5a593f385c64ca10b0c618d0c925bac91cee293695da4400b7e1487a",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A futile attempt to grip an immovable multi-ton object, resulting in an immediate failure with minimal physical effort expended."
+    },
+    {
+      "key": "action:take/MOSS",
+      "kind": "handler",
+      "inputHash": "6a14a87ca12e266bf7613b66a27aeba0f271bcb231a1e8c8794df61c9595534f",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Plucking moss from its surface is a simple, quick physical action."
+    },
+    {
+      "key": "action:take/PALANTIR-1",
+      "kind": "handler",
+      "inputHash": "45ff39ef632a82dc6ad3de6d36d80a4244550a811f76ab2f13982eddd7891390",
+      "class": "dramatic",
+      "minutes": 30,
+      "rationale": "This is a fatal trap trigger with a ceremonial, story-critical outcome (cage/gas/robot death), not a routine pickup."
+    },
+    {
+      "key": "action:take/PALANTIR-2",
+      "kind": "handler",
+      "inputHash": "dafe9ab621214186045370e9c1219124c9e019b9c3bd11f51ce7636c9cc0af01",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply picking up a sphere from a table is a basic object-take action."
+    },
+    {
+      "key": "action:take/PALANTIR-3",
+      "kind": "handler",
+      "inputHash": "77f81f76a57b0698d9b6941f1d2bbc1542ba39d2d33294320db7821fa2d20a95",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply picking up an object from the sand is a quick physical action."
+    },
+    {
+      "key": "action:take/PALANTIR-4",
+      "kind": "handler",
+      "inputHash": "055ad4e2e428ea7853c010e86424d2bcbd2a8c17abe80c56e92e31947b552cfd",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Picking up an ordinary object is a simple physical action with no special complication."
+    },
+    {
+      "key": "action:take/PATHOBJ",
+      "kind": "handler",
+      "inputHash": "4470c2ce96fa795af484e3d310751351101d6680b061921173f508d62560e320",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Taking a passage is a nonsensical no-op that just prompts for a direction, requiring no real effort."
+    },
+    {
+      "key": "action:take/PLACE-MAT",
+      "kind": "handler",
+      "inputHash": "4e47170f609f8616c45a850f5f32b7e040cee24a7de022422ca1236db4e0ba0c",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply picking up a place mat is a quick, low-effort physical action."
+    },
+    {
+      "key": "action:take/RECEPTACLE",
+      "kind": "handler",
+      "inputHash": "af0a0bc004f1b07cebfb9662bd7d4be890ae31038c6bc88978af694e7bbad3ed",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick futile grab at a fixed part of the basket that fails immediately."
+    },
+    {
+      "key": "action:take/RIBBON",
+      "kind": "handler",
+      "inputHash": "2a77b44afe393f5d3aa9e880d1b8306f267cc10bcb8e46c3eea6f9573f069fff",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Attempting to grab the ribbon requires carefully approaching the skittish unicorn, a quick but delicate reach rather than a simple pickup."
+    },
+    {
+      "key": "action:take/ROBOT",
+      "kind": "handler",
+      "inputHash": "f30ce8c86847dfb6906f6d01c426d5549d3afed619d61cac6fca6ab7e510b216",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Attempting to take the robot (an ACTORBIT object) yields a rebuff response, a quick failed grab rather than sustained effort."
+    },
+    {
+      "key": "action:take/ROSE-BUSH",
+      "kind": "handler",
+      "inputHash": "605410cf5250b0e137041e146890d94027930e33987b97826da6918155c0d80e",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick attempt to pluck a rose that ends in a thorn prick, a brief failed grab."
+    },
+    {
+      "key": "action:take/SAFE",
+      "kind": "handler",
+      "inputHash": "13dd2929cf54228d8cf30f82bd40bfac6600c357ac2ec73fc213191459ed2c4e",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick futile tug at an immovable, wall-embedded safe."
+    },
+    {
+      "key": "action:take/SALTY-WATER",
+      "kind": "handler",
+      "inputHash": "9a553eab5b675fe53d0a1eb8cb3402a423ac9d61fcf85bbc3a542b45d4e0e3bf",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Scooping water into hand is a quick physical action that ultimately just slips away, a trivial grasp attempt."
+    },
+    {
+      "key": "action:take/SERPENT",
+      "kind": "handler",
+      "inputHash": "24f247e4b41304274791284f4574510e18cb7ea4e5dbb6b0145ca343fc9b4ddb",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "A quick reach into the aquarium to grab the serpent, fatal outcome notwithstanding."
+    },
+    {
+      "key": "action:take/STAND-1",
+      "kind": "handler",
+      "inputHash": "a39dfe8fb4b22b867150d90ba29ee7f4b112b644b87e1296b042a2fee5c1d271",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick futile tug on an object that turns out to be fixed in place."
+    },
+    {
+      "key": "action:take/STAND-2",
+      "kind": "handler",
+      "inputHash": "f5e53075053f47c5f96d9a26f303e21502683a3c1ae843313d5b9724007c48b2",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick futile tug on a fixed object that fails immediately."
+    },
+    {
+      "key": "action:take/STAND-3",
+      "kind": "handler",
+      "inputHash": "331fee4f127e9d4ff4e7daf39fcb5ecfe1f50c3071ecd40815f80b71896fa881",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick futile tug on a stand fixed to the bench, yielding an immediate failure message."
+    },
+    {
+      "key": "action:take/STAND-4",
+      "kind": "handler",
+      "inputHash": "e727121b9ecd82fe0920118d61cc48c8e775a14b6ac164e913dff5f16b25537b",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A simple failed attempt to take an object that is firmly attached and doesn't budge."
+    },
+    {
+      "key": "action:take/SWORD",
+      "kind": "handler",
+      "inputHash": "71bfb0f4d93f84a9764c0ba3ea0654cf6a64a18347a66501692c6ebcbb06bf8c",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply picking up a visible sword is a quick physical action."
+    },
+    {
+      "key": "action:take/TROPHY-BOTTLES",
+      "kind": "handler",
+      "inputHash": "439c542208ad9beb4fdb22afc9657d7a14d41a05199ff87f4d3f03f18f8da449",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A simple attempt to grab an object that merely results in a shock, a quick reflexive action."
+    },
+    {
+      "key": "action:take/TROPHY-SWORD",
+      "kind": "handler",
+      "inputHash": "c45dfb635941da113ca663939beff055849487dcd0269e386b536a4247f37fb3",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A simple reach-and-grab attempt, quickly interrupted by a shock before any real grip is made."
+    },
+    {
+      "key": "action:take/UNICORN",
+      "kind": "handler",
+      "inputHash": "1f5044e51a727b1889bc42008b8c89394bc3388eeea27d2d2a4235d8d3fd2252",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick grab attempt that immediately spooks the unicorn away, requiring little sustained effort."
+    },
+    {
+      "key": "action:take/WAND",
+      "kind": "handler",
+      "inputHash": "5688c838a2fbb662fa931621167c098b48d6d946f309b3b0f73582efed4f4678",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simply picking up an item is a quick physical action, even though the Wizard will immediately snatch it back."
+    },
+    {
+      "key": "action:take/WANDS",
+      "kind": "handler",
+      "inputHash": "83e656e259b833f35cd29da98ecb4be22686a440e9d72cde67798bc7541ee1e2",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A simple reach-and-grab attempt that results in a shock, requiring minimal time despite the failed outcome."
+    },
+    {
+      "key": "action:take/WATER",
+      "kind": "handler",
+      "inputHash": "3cd7f61a45e2630b877be3ed6481b7fb791f185a174203420003f4fae23b3211",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Scooping up water is a quick, simple attempt that mostly just slips through the player's fingers."
+    },
+    {
+      "key": "action:take/WHITE-BOOK",
+      "kind": "handler",
+      "inputHash": "3ca1e1c29928ea5f5ec4c510a00dddd01444121f019c1383d5c5c5223bf5d2cd",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Simple pickup of a single small object from a table."
+    },
+    {
+      "key": "action:take/WIZARD-CASE",
+      "kind": "handler",
+      "inputHash": "63295d101ce8a7fa30a92cdd11fbae01e94c560b116640f0590e16cd5ab40649",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A failed attempt to take a spell-protected fixed object is a quick, simple grasp-and-fail action."
+    },
+    {
+      "key": "action:throw/AQUARIUM",
+      "kind": "handler",
+      "inputHash": "63e95e39765b8e1f614830aee0bbc7f3482c6e38b0985503cc7df9b5ebcf77e2",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Hauling and hurling an object at a huge glass tank to shatter it is a deliberate physical act with real consequences beyond a simple manipulation."
+    },
+    {
+      "key": "action:throw/BLUE-ICING",
+      "kind": "handler",
+      "inputHash": "4da60798c37d9ef22d4895c278ebcd20483e2473b4ced6f9a3732650b1dccef6",
+      "class": "manipulation",
+      "minutes": 2,
+      "rationale": "Throwing a small object without a target here is just a simple toss handled as a generic fallback action."
+    },
+    {
+      "key": "action:throw/COMPASS",
+      "kind": "handler",
+      "inputHash": "4c5ba2bfd89a176f1fa05c6a46e9f7bdf744f3bcdc7dcf1e2ac30dc564505eb1",
+      "class": "manipulation",
+      "minutes": 0,
+      "rationale": "A failed throw attempt that the game rejects outright, requiring only a brief futile gesture."
+    },
+    {
+      "key": "action:throw/CURTAIN",
+      "kind": "handler",
+      "inputHash": "c7ffadd309359b6d4ccc599b051666063f8e7fbf0a7074718a487b4791ff308d",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Throwing an object through an intangible curtain is a quick futile gesture, not a mechanism or ceremony."
+    },
+    {
+      "key": "action:throw/FLASK",
+      "kind": "handler",
+      "inputHash": "8a740d5787ef0130032328da5d014f0f23b60a7f5910abe48dcde8a3bebba6fa",
+      "class": "mechanism",
+      "minutes": 3,
+      "rationale": "Throwing the flask releases fatal vapors instantly, but the deliberate act of hurling a dangerous unknown liquid deserves a brief mechanism-level pause."
+    },
+    {
+      "key": "action:throw/GLOBAL-WATER",
+      "kind": "handler",
+      "inputHash": "f0b802530c7478a338e27aa7c7ce506eda23fdecb585f2aaf491ce19e4e958de",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Tossing a handful of water is a trivial physical action that simply evaporates with no lasting effect."
+    },
+    {
+      "key": "action:throw/GNOME",
+      "kind": "handler",
+      "inputHash": "0958adffb6c16b26c45d23791d9b5c4cd6324ba7bb782561d076c3c264d33222",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Throwing an object at the gnome is a quick, mundane physical action that just triggers a rejection or crunching response."
+    },
+    {
+      "key": "action:throw/GNOME-OF-ZURICH",
+      "kind": "handler",
+      "inputHash": "b516e58640cd92f4abfa380fccfd784066fe0b9d13a9abc84e147bb36f21973a",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Throwing the gnome itself is a trivial, dismissive act the game treats as a quick reflexive gesture, not a mechanism or set-piece."
+    },
+    {
+      "key": "action:throw/LAMP",
+      "kind": "handler",
+      "inputHash": "d6d79b6a13680e43cd96e5cdb9fc7ce93ef73294f96f023b337d6374057a8827",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A quick, destructive toss of the lamp with an immediate, irreversible result."
+    },
+    {
+      "key": "action:throw/ME",
+      "kind": "handler",
+      "inputHash": "c24888ceb7c88632a014de44666f48565fb5bef8e766229063bd71633d885723",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Throwing yourself is a nonsensical no-op that the game simply rebuffs with a quip."
+    },
+    {
+      "key": "action:throw/ORANGE-ICING",
+      "kind": "handler",
+      "inputHash": "ca8ab358acfb993d2f954b3a8d67ece7ad36205b58eea0ba41c41b70ce962348",
+      "class": "mechanism",
+      "minutes": 3,
+      "rationale": "Throwing the orange cake triggers an explosive chain reaction (ICEBOOM), a deliberate risky act beyond simple manipulation but not a ceremonial set-piece."
+    },
+    {
+      "key": "action:throw/RED-ICING",
+      "kind": "handler",
+      "inputHash": "46bb381b2bb06f357e01a8fca358d490d612bd262b4c93195eb42dfe847235a4",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Throwing a small object is a quick, deliberate physical action akin to putting or tossing something."
+    },
+    {
+      "key": "action:throw/ROBOT",
+      "kind": "handler",
+      "inputHash": "e64b5ec93b78f3912093d8d95498a8a17e678859af65f2d7b38aaddd9eef9941",
+      "class": "mechanism",
+      "minutes": 3,
+      "rationale": "Throwing the robot destroys it in a single decisive but non-ceremonial physical action, warranting a short mechanism-tier cost."
+    },
+    {
+      "key": "action:throw/SALTY-WATER",
+      "kind": "handler",
+      "inputHash": "48bfebf8443ea720ff9ce43f949a8b8a95a28a1d56b3a13a25cfd3ab319c00de",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Tossing a handful of water is a quick, trivial physical action that immediately evaporates with no lasting effect."
+    },
+    {
+      "key": "action:throw/SEWL",
+      "kind": "handler",
+      "inputHash": "baaac77ec268bc96d4ae2beb0261d4bb26048c67b3ec512b975bf6ca2a721ba6",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Throwing an object at a wall is a quick, simple physical action with no mechanical complexity."
+    },
+    {
+      "key": "action:throw/SNWL",
+      "kind": "handler",
+      "inputHash": "a944377b182fbf1e46a215c8dd2ae09ab051ca5e2d41e8c660813e8abc2e141e",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Throwing an object at a wall is a quick, low-effort physical action with no mechanism to operate."
+    },
+    {
+      "key": "action:throw/SSWL",
+      "kind": "handler",
+      "inputHash": "a7084ee9d2ea161ff7670cfbb930eaa17ceebf8bff05d8e0efe9e38005200d7d",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Throwing an object at the coal mine's south wall to trigger a mechanism-like reaction requires deliberate aim and a moment for the wall's response."
+    },
+    {
+      "key": "action:throw/SWWL",
+      "kind": "handler",
+      "inputHash": "3769ac71091c28d61cee1c10d23cee5836bdfacdefe2ffc6fff0c01a4e5d878a",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Throwing an object at a wall in this puzzle context (like the Scoliosis Museum) is a quick physical action akin to putting or placing an item."
+    },
+    {
+      "key": "action:throw/WATER",
+      "kind": "handler",
+      "inputHash": "3cb8ca34ed0326428a0ed4bd174421cf0e509d68efdfcc8a5c9bc45613a23e58",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Throwing the water is a quick, wasteful gesture that simply results in it splashing and evaporating with no lasting effect."
+    },
+    {
+      "key": "action:throw/WELL",
+      "kind": "handler",
+      "inputHash": "5a9ba8051f1e214e4af6aa08b3917b6be3d95144401b5c64cbe0ec20ae4acf4c",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Tossing a held object into the well is a quick, simple physical action."
+    },
+    {
+      "key": "action:tie/BRAIDED-WIRE",
+      "kind": "handler",
+      "inputHash": "2f40b60f9b7a66cf6c013eed67636f7a98296c02a318d6711a154b701e7d5604",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Securing the braided wire to a hook to fasten the balloon requires careful knotting, fitting the mechanism band."
+    },
+    {
+      "key": "action:turn/KEY",
+      "kind": "handler",
+      "inputHash": "5d010576bcf7cfb16527fc061cd3478d3e25f3811ebdcb0881f8966e9bcf40b9",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Turning a rusty key to lock/unlock a door is a small physical mechanism action requiring some effort against the rust."
+    },
+    {
+      "key": "action:turn/MENHIR",
+      "kind": "handler",
+      "inputHash": "d747faa99852081fb8f43746c6adbabafe76dda5ec38c02f2e910b24afec1111",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "The menhir is immovable and the futile effort of trying to turn it is a no-op with no real exertion."
+    },
+    {
+      "key": "action:turn/ROBOT",
+      "kind": "handler",
+      "inputHash": "f00e83c65d979c8aca26a5faa79bf4b7152bb8230b9ede5b1ff7f7b8e5d8541e",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Turning the robot (an actor) is a trivial, ineffective gesture that just yields a canned buzz/click response with no mechanical effect."
+    },
+    {
+      "key": "action:unlock/KEY",
+      "kind": "handler",
+      "inputHash": "50e0b7db618c006c4f0005d5028b17266ba45bbdd4996c0e46bc67e921560d1e",
+      "class": "mechanism",
+      "minutes": 4,
+      "rationale": "Fitting a rusty key into a lock and working it takes a bit of physical effort but is still a quick mechanical action."
+    },
+    {
+      "key": "action:unlock/PDOOR",
+      "kind": "handler",
+      "inputHash": "189f93db47dca2593aa66878317935e07310b86fbff8cce5e8a0691c674d10e4",
+      "class": "mechanism",
+      "minutes": 3,
+      "rationale": "Fitting a key into a lock and turning it is a simple mechanical action with immediate resistance to check."
+    },
+    {
+      "key": "action:unlock/WIZ-DOOR",
+      "kind": "handler",
+      "inputHash": "2c069ca94986deab7f3241a7777b69ce96461ddc2660e000438b31711fdc994d",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Unlocking a warded door with a guardian requires careful, deliberate manipulation of the lock mechanism beyond a simple action."
+    },
+    {
+      "key": "action:untie/BRAIDED-WIRE",
+      "kind": "handler",
+      "inputHash": "d257e9154c672cae455dce5a9f15070251ac27c8d8981513ff67bf1cc76608d7",
+      "class": "mechanism",
+      "minutes": 4,
+      "rationale": "Untying braided wire from a hook to release the balloon is a small physical unfastening task, quicker than tying it in the first place."
+    },
+    {
+      "key": "action:walk/BALLOON",
+      "kind": "handler",
+      "inputHash": "9dc2b528448e98e1ccb0225dc24271fbf160da03c76198039ca85bc2c436bd0c",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Walking the balloon sets its travel destination and enables movement, an actual piloting maneuver rather than a simple manipulation."
+    },
+    {
+      "key": "action:walk/DRAGON",
+      "kind": "handler",
+      "inputHash": "782272c42c7786f834e76fce5aabd67bb4ddebbd3344f10c713edee2cf7b528b",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "A wary, cautious approach toward a dangerous creature, but a single brief action not warranting mechanism-level complexity."
+    },
+    {
+      "key": "action:walk/ROBOT",
+      "kind": "handler",
+      "inputHash": "687c72513c69a257b1e2723b21cc49d08be00a1fdb13c70299f201b8740dbc63",
+      "class": "instant",
+      "minutes": 0,
+      "rationale": "Walking at/around the robot just triggers a canned dismissive response with no real progress or physical effort."
+    },
+    {
+      "key": "action:wave/CERBERUS",
+      "kind": "handler",
+      "inputHash": "a82aa405ae36c36f4df1154570677cf21084103c0b6230e2539164201766738b",
+      "class": "manipulation",
+      "minutes": 1,
+      "rationale": "Waving at the dog with no held magic item is a trivial, unrecognized gesture the dog just snaps at."
+    },
+    {
+      "key": "action:wave/WAND",
+      "kind": "handler",
+      "inputHash": "0dc3489e4177a9531ac734c42213b9774de2d9df31ef6e3e2f9d4d42b5493083",
+      "class": "mechanism",
+      "minutes": 5,
+      "rationale": "Waving the wand at a target invokes a genuine magical ritual with real consequences, warranting more than a trivial manipulation but short of a full dramatic set-piece."
+    },
+    {
+      "key": "edge:AQUARIUM-ROOM\u003eIN-AQUARIUM",
+      "kind": "edge",
+      "inputHash": "a51edaf43533b4609c89683abed1b661e89a64426c7548635153ee0a447ba432",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Moving from a dim hallway into a murky, hard-to-see sandy room warrants a slightly slower crawl than the baseline."
+    },
+    {
+      "key": "edge:AQUARIUM-ROOM\u003eWIZARDS-QUARTERS",
+      "kind": "edge",
+      "inputHash": "37fd72b252ea665cb3428562f5b840b6286c3d144f88b2425925aa28da81a30f",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A dark hallway corner into an unlit room keeps the pace at the mechanical baseline without added hazard."
+    },
+    {
+      "key": "edge:AQUARIUM-ROOM\u003eWORKBENCH-ROOM",
+      "kind": "edge",
+      "inputHash": "ab2ece6e8f03fa3fd756938cc5fbfb7d22e7e937338441ef8cc005ef338e3e73",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "Both rooms are lit and the hallway passage is unobstructed, matching the baseline pace."
+    },
+    {
+      "key": "edge:BANK-ENTRANCE\u003eFRESCO-ROOM",
+      "kind": "edge",
+      "inputHash": "572e0fb137aeafc315bbb436fe5dc454b21d2df4edb3793650d5a92389883263",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple eastward walk between two plain, lit rooms matches the baseline pace with no obstacles to slow it."
+    },
+    {
+      "key": "edge:BANK-ENTRANCE\u003eTELLER-EAST",
+      "kind": "edge",
+      "inputHash": "f04c436c1c12bf4cfe529f4d5bb5739d2939401295addfd0e3699705d25ad80c",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain exit through a described, well-lit bank hall keeps the baseline pace without further adjustment."
+    },
+    {
+      "key": "edge:BANK-ENTRANCE\u003eTELLER-WEST",
+      "kind": "edge",
+      "inputHash": "e7ccd5942c21649a7b09ef9c1443ff66bbe9613806f909668d15d526c4791e71",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A short walk from the ornate bank entrance to an adjoining teller room stays near baseline with no special hazards noted."
+    },
+    {
+      "key": "edge:CAGE-ROOM\u003eMACHINE-ROOM",
+      "kind": "edge",
+      "inputHash": "b43252d454419db694dc8aa2be874b40bf984dd3b9044ff70e0ec18d9478d0fa",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A short, lit, plain exit from a small closet to an adjacent room warrants no deviation from the baseline."
+    },
+    {
+      "key": "edge:CAROUSEL-ROOM\u003eCOBWEBBY-CORRIDOR",
+      "kind": "edge",
+      "inputHash": "2ee58e030a13ddaf5ed18d497956a416b88aab88d68eaafd6cfeecd382a5f03a",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "The known baseline holds since the cobwebbed, twisting corridor is slow going but nothing in the description warrants further lengthening."
+    },
+    {
+      "key": "edge:CAROUSEL-ROOM\u003eCOOL-ROOM",
+      "kind": "edge",
+      "inputHash": "61420f0573b0bd346848e2f5afc2ede5d7a5884be16c43841d16995131e796f2",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Baseline holds since it's a plain twisty exit into a misty, unlit room with no additional obstacles described."
+    },
+    {
+      "key": "edge:CAROUSEL-ROOM\u003eMARBLE-HALL",
+      "kind": "edge",
+      "inputHash": "add0c49be8807b3321517690baa55d667443c4647c19eeb35c5fb99868a8ee61",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Straightforward hall passage with no unusual terrain to slow the crossing beyond the baseline."
+    },
+    {
+      "key": "edge:CAROUSEL-ROOM\u003eMENHIR-ROOM",
+      "kind": "edge",
+      "inputHash": "a134ef6ff5244fe85bd379746c8be666f53e302318f4ba58a65a12532b60888a",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Known passage between two named rooms with no special description, so the baseline movement time holds."
+    },
+    {
+      "key": "edge:CAROUSEL-ROOM\u003eRIDDLE-ROOM",
+      "kind": "edge",
+      "inputHash": "a375f317d5341ec280ee6d7c889b9dbd96c6f87122f1c52356137b1a323d107b",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Known passage with no descriptive detail to justify shifting from the baseline dark-room crossing time."
+    },
+    {
+      "key": "edge:CAROUSEL-ROOM\u003eROOM-8",
+      "kind": "edge",
+      "inputHash": "405a3ecced2489a5dd77f090a0894c3350966af2d30cad1fb06bf5379154a279",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "The Carousel Room is famously disorienting and the destination is reached via a short crawl into a small rock-carved chamber, justifying the baseline crawl-and-dark padding."
+    },
+    {
+      "key": "edge:CAROUSEL-ROOM\u003eSTREAM-PATH",
+      "kind": "edge",
+      "inputHash": "c0fb5955a75be88bda521eb265330f14ca3a5c06b661b4a8ac5f622d0366e6e6",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "The Carousel Room is famous for being confusing but the destination is an ordinary path along a ravine, so the baseline 3 minutes fits without further adjustment."
+    },
+    {
+      "key": "edge:CAROUSEL-ROOM\u003eTOPIARY-ROOM",
+      "kind": "edge",
+      "inputHash": "cc5c9c27d4d5c55683860faf817c0c2b08df03f93ff133f1076eaa9d7fabe46b",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain lit exit into an open garden warrants no deviation from the baseline pace."
+    },
+    {
+      "key": "edge:CERBERUS-ROOM\u003eCRYPT-ANTEROOM",
+      "kind": "edge",
+      "inputHash": "394c2c36be7363a7f6190eabf50e9a3ca0e00afe990c3671bfaa809251b6a810",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A conditional crypt passage from a described gateway room stays at the baseline pacing without added crawl or flood cues."
+    },
+    {
+      "key": "edge:CERBERUS-ROOM\u003eDIAMOND-5",
+      "kind": "edge",
+      "inputHash": "cf74ba071991cf3b02a227f68f8b62babcb6337bf3cb6f19e1b3801ab321f616",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "A stairway climb from a crypt to an oddly-angled room stays at baseline with no flooding or unusual hazards to slow it further."
+    },
+    {
+      "key": "edge:COBWEBBY-CORRIDOR\u003eCAROUSEL-ROOM",
+      "kind": "edge",
+      "inputHash": "2e2d3236eccb08e68468bf64aad1e02589efe5280c56b00f5a29163b8981ca07",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A twisting cobwebbed corridor keeps the baseline pace without further justification for a longer or shorter passage."
+    },
+    {
+      "key": "edge:COBWEBBY-CORRIDOR\u003eGUARDIAN-ROOM",
+      "kind": "edge",
+      "inputHash": "694c648f5b43f6688147207a60ca77e03236447865dc4bc2260687a00b646f32",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A winding, cobwebbed corridor with disturbed dust matches the baseline crawl-paced dark passage."
+    },
+    {
+      "key": "edge:COBWEBBY-CORRIDOR\u003eLAVA-TUBE",
+      "kind": "edge",
+      "inputHash": "469762207d93fe3c2cc32efa17da6707527e69fa9487df4311a83c8a8241faa5",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A winding cobwebbed corridor into a tall dark lava chimney warrants the baseline 3 minutes for careful navigation."
+    },
+    {
+      "key": "edge:COOL-ROOM\u003eCAROUSEL-ROOM",
+      "kind": "edge",
+      "inputHash": "a2e2fadf2301ebd7c4ea14149f028b6b66aef2c620fb6e57cc2c31b70be25d07",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A twisty, misty path with a rocky bridge junction keeps it near baseline, neither notably faster nor slower."
+    },
+    {
+      "key": "edge:COOL-ROOM\u003eGLACIER-ROOM",
+      "kind": "edge",
+      "inputHash": "7f9f35f19a64aefb17d429da61d5e0f7e14801ad4feb6d2eca8ef21a1b7d5578",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A narrow, misty, chill tunnel westward warrants a cautious pace matching the baseline."
+    },
+    {
+      "key": "edge:COOL-ROOM\u003eSTONE-BRIDGE",
+      "kind": "edge",
+      "inputHash": "c8fef062aa2896bac77163d8f75a3cc0eb71f7edf91be59a9b373bffa9c987f0",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain northward walk across a stone bridge stays at the baseline pace despite the misty, unlit surroundings."
+    },
+    {
+      "key": "edge:CRYPT-ANTEROOM\u003eCERBERUS-ROOM",
+      "kind": "edge",
+      "inputHash": "656aeaec94d3ce9857f85f96d16eab9134e30db9978cb4115d398408f71a0740",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain westward exit into a described stairway landing keeps the baseline dark-crypt pacing without extra hazards to slow it further."
+    },
+    {
+      "key": "edge:CRYPT-ANTEROOM\u003eCRYPT-ROOM",
+      "kind": "edge",
+      "inputHash": "89349d02b1124d88b2e00993e4b0e56244ba46c52d13dd10bbfc592a1b775864",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "No descriptive detail overrides the baseline, so the mechanical crypt-door-and-darkness pricing stands as-is."
+    },
+    {
+      "key": "edge:CRYPT-ROOM\u003eCRYPT-ANTEROOM",
+      "kind": "edge",
+      "inputHash": "1ff824352fead7b9c4434d2af29dca86b1f2b5a8391ed954bb362d997c2fdd03",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "No descriptive cues to adjust the baseline, so the mechanical door-and-dark pricing stands."
+    },
+    {
+      "key": "edge:CRYPT-ROOM\u003eZORK3",
+      "kind": "edge",
+      "inputHash": "34a53e06dc3c47a52204c83cb470558ddb8ed0011f3c5af714447f6ca9d205a8",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A crypt-to-landing transition into a lit area matches the baseline pace with no need to adjust."
+    },
+    {
+      "key": "edge:DARK-TUNNEL\u003eGARDEN-NORTH",
+      "kind": "edge",
+      "inputHash": "f7eb79fc8cccec40befd14decdb9a72a568510051e38c05aa28b564c2566e6f9",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A short passage from a dim, debris-filled tunnel into a lit garden warrants no adjustment from the baseline."
+    },
+    {
+      "key": "edge:DARK-TUNNEL\u003eSHALLOW-FORD",
+      "kind": "edge",
+      "inputHash": "15ee615a2da57b80dc54639ed7dd723b1a75bb71dd9e8fe5aa54010cb77998d6",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A short, unobstructed traverse from a dim tunnel to a lit cavern edge stays at the baseline pace."
+    },
+    {
+      "key": "edge:DARK-TUNNEL\u003eSTREAM-PATH",
+      "kind": "edge",
+      "inputHash": "c6d1d1e06f018b52eefa80e2fcaafc7e88ab9dfe3b36e48c43aab8f6bc6142a4",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A debris-filled dark tunnel narrowing into a corridor keeps the pace at the baseline crawl-through time."
+    },
+    {
+      "key": "edge:DEAD-PALANTIR-1\u003eDEAD-PALANTIR-2",
+      "kind": "edge",
+      "inputHash": "f6ccc5ffbce62534deea44bf51b8ec8a866f99cc557944924b922e06add821fc",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "Both rooms are lit and on land, so the baseline short passage stands unchanged."
+    },
+    {
+      "key": "edge:DEAD-PALANTIR-2\u003eDEAD-PALANTIR-3",
+      "kind": "edge",
+      "inputHash": "b25d1a4ca0482b4e0bcbd6996895d1329184e652d1d91ae05145039c9c432df0",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "Both rooms are lit and land-based with no special hazards, so the baseline pace holds."
+    },
+    {
+      "key": "edge:DEAD-PALANTIR-3\u003eDEAD-PALANTIR-4",
+      "kind": "edge",
+      "inputHash": "030b034f7dd283029ada4921c269a28a389e3b6cf56fa0fab8c1fc16bc3f3aeb",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "Both rooms are lit and landbound with no adverse conditions noted, so the baseline pace holds."
+    },
+    {
+      "key": "edge:DEEP-FORD\u003eMARBLE-HALL",
+      "kind": "edge",
+      "inputHash": "f78eeb8779afbc55f7fe8c7c2c641d8ddb2171d8baeb19a0a535ff7a71211cd4",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Fording a cold, deep stream is slow and effortful even though the destination hall is open, so the baseline holds."
+    },
+    {
+      "key": "edge:DEEP-FORD\u003eRAVINE-LEDGE",
+      "kind": "edge",
+      "inputHash": "874ba086a5f3e17aaeb0fe3fe44010d34de463ae3e2b92dc1eb8dc5ddc260f16",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Fording a cold stream to reach a narrow ledge matches the baseline pace without added hazard."
+    },
+    {
+      "key": "edge:DEPOSITORY\u003eOFFICE",
+      "kind": "edge",
+      "inputHash": "8565ef25d4730c0adb87bc26312869b7a4c19a7b90ad6b52740185867d1ea135",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain lit doorway passage stays at the baseline with no additional obstacles to slow the crossing."
+    },
+    {
+      "key": "edge:DIAMOND-1\u003eDIAMOND-5",
+      "kind": "edge",
+      "inputHash": "a7d87e0cecbbab69ab1b4808987a5a2f9f1bc07991eef816d4818b549c2be5e5",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain exit between two identical oddly-angled rooms matches the baseline crawl through a disorienting but otherwise unremarkable passage."
+    },
+    {
+      "key": "edge:DIAMOND-2\u003eDIAMOND-4",
+      "kind": "edge",
+      "inputHash": "827637edc33736a4babc565b7d7e96f1be1952ff49273509b63771a81748debf",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain exit between two similar oddly-angled rooms stays at the baseline pace despite the disorienting geometry."
+    },
+    {
+      "key": "edge:DIAMOND-2\u003eDIAMOND-5",
+      "kind": "edge",
+      "inputHash": "2bbad098096681774fbf8fdf42128ff01bf82e96ded52b930d4ba1933c4e1daa",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain exit between two identical, unremarkable oddly-angled rooms warrants no deviation from the baseline pacing."
+    },
+    {
+      "key": "edge:DIAMOND-2\u003eDIAMOND-6",
+      "kind": "edge",
+      "inputHash": "9aa88652957d63878c5c95ae4b78f46710ddf87422a438afbd0e903e3311a2a3",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain exit between two similar oddly-angled rooms stays at the baseline pace."
+    },
+    {
+      "key": "edge:DIAMOND-3\u003eDIAMOND-5",
+      "kind": "edge",
+      "inputHash": "98613c092a532ef8f45bc7af74c936ad628389265d85dd2db97da7412fdf7dc5",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Plain exit between two similarly ordinary oddly-angled rooms keeps the passage at its baseline pace."
+    },
+    {
+      "key": "edge:DIAMOND-4\u003eDIAMOND-2",
+      "kind": "edge",
+      "inputHash": "6a6160a5f6310bb77a2f66bda2c432bc2e07fc61f7850f0fd1e8a1ca266bafbc",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain exit between two similar oddly-angled rooms stays at the baseline pace."
+    },
+    {
+      "key": "edge:DIAMOND-4\u003eDIAMOND-5",
+      "kind": "edge",
+      "inputHash": "c6857893819710670bba35aba2a6c4c807848a42685b1228059b82f6f791e583",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain oddly-angled passage between two similarly disorienting rooms keeps the baseline crawl-through-the-dark pacing."
+    },
+    {
+      "key": "edge:DIAMOND-4\u003eDIAMOND-8",
+      "kind": "edge",
+      "inputHash": "a2a64e6af6eeb1288c14e70ac9b0324e505abb93beee5033ca70ea66138b0fe9",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain short passage between two similar oddly-angled rooms stays at the baseline pace."
+    },
+    {
+      "key": "edge:DIAMOND-5\u003eCERBERUS-ROOM",
+      "kind": "edge",
+      "inputHash": "48629256c64c3f3a8f380378cd2366a1c285a3a913d53e14e997a64ddde454ad",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A straightforward downward stair descent into a crypt entrance matches the baseline pacing without added hazards."
+    },
+    {
+      "key": "edge:DIAMOND-5\u003eDIAMOND-1",
+      "kind": "edge",
+      "inputHash": "1d14dce220a0379db491ec858cb0a7ead9b80028feefa315d0bdf5284e3e4b5e",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain short move between two similarly plain, oddly-angled rooms stays at baseline."
+    },
+    {
+      "key": "edge:DIAMOND-5\u003eDIAMOND-2",
+      "kind": "edge",
+      "inputHash": "8716d3e0051f99e969fa792d7538e31559fdbec91005caa2c224946aa9dbd15a",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain exit between two identical, unremarkable oddly-angled rooms doesn't merit deviation from the baseline."
+    },
+    {
+      "key": "edge:DIAMOND-5\u003eDIAMOND-3",
+      "kind": "edge",
+      "inputHash": "c67b63d2ba87fd2e8370750a9a90ebe559fb70c606579c013f39e9a3e6879222",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Plain exit between two similar oddly-angled rooms keeps the baseline unchanged."
+    },
+    {
+      "key": "edge:DIAMOND-5\u003eDIAMOND-4",
+      "kind": "edge",
+      "inputHash": "ff3b62762a870958af51686585c65224d4264c00e4966a09cec66111732d5900",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain westward step between two similarly oddly-angled rooms stays at the baseline pace."
+    },
+    {
+      "key": "edge:DIAMOND-5\u003eDIAMOND-6",
+      "kind": "edge",
+      "inputHash": "b96cd7859dccb5ec7e5ae3f74d3ea48058e857eed3d872bed6e74a5b598ed63b",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain oddly-angled room-to-room step keeps the baseline pacing without added hazard."
+    },
+    {
+      "key": "edge:DIAMOND-5\u003eDIAMOND-7",
+      "kind": "edge",
+      "inputHash": "d2a6c8f6d5841d0b1744956cbcfcf44c9c60f6729481f809e170200e03b7dea8",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain short move between two similarly plain, unremarkable oddly-angled rooms stays at the baseline."
+    },
+    {
+      "key": "edge:DIAMOND-5\u003eDIAMOND-8",
+      "kind": "edge",
+      "inputHash": "676a86a4c1f3d3f5a04fa4f313521b7cb8148d4733662ee419f9b08e04a1286d",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Plain oddly-angled rooms with no special flags keep this at the baseline dark-room crossing time."
+    },
+    {
+      "key": "edge:DIAMOND-5\u003eDIAMOND-9",
+      "kind": "edge",
+      "inputHash": "e3242a9c6cba65c5667ca31fd3da7333cac66fcc2d02cba9b94ca9b1e8506ef7",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain exit between two similar oddly-angled rooms keeps the baseline pace with no added complications."
+    },
+    {
+      "key": "edge:DIAMOND-5\u003eSTAIRWAY-TOP",
+      "kind": "edge",
+      "inputHash": "1acfd1a1f407d0d1a7c404954f3b8af406790fe5f01fdb7797b2e70b7b1a1607",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "A straightforward staircase ascent between two ordinary rooms stays at the baseline pace."
+    },
+    {
+      "key": "edge:DIAMOND-6\u003eDIAMOND-2",
+      "kind": "edge",
+      "inputHash": "2247446350a372dc088d998594f701797aaca52b320b1cade850707530518397",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Plain exit between two similarly disorienting oddly-angled rooms keeps the baseline dark-crawl pacing."
+    },
+    {
+      "key": "edge:DIAMOND-6\u003eDIAMOND-5",
+      "kind": "edge",
+      "inputHash": "129a1ac607ee224085f6c42b94096141463e77546e21ef4271ab933a94d25787",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain oddly-angled passage with no special hazards stays at the baseline dark-room crawl time."
+    },
+    {
+      "key": "edge:DIAMOND-6\u003eDIAMOND-8",
+      "kind": "edge",
+      "inputHash": "0850a357c22609dce3ad4ec3827dd40e9e9258f3ff360200a606d7ed2b17e7c6",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Plain exit between two similar oddly-angled rooms stays at the baseline pace."
+    },
+    {
+      "key": "edge:DIAMOND-7\u003eDIAMOND-5",
+      "kind": "edge",
+      "inputHash": "6900ec6bfe67f0ae96f542cb594835e51a3f1fb4381aaceaded86ba4b448f00a",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Plain exit between two similarly nondescript, oddly-angled rooms keeps the baseline unchanged."
+    },
+    {
+      "key": "edge:DIAMOND-8\u003eDIAMOND-4",
+      "kind": "edge",
+      "inputHash": "26e375414c051c4ce8f25c20a2aea693daa41977da090e63494f9514500e5f07",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain exit between two identical oddly-angled rooms stays at the baseline crawl-through-darkness pace."
+    },
+    {
+      "key": "edge:DIAMOND-8\u003eDIAMOND-5",
+      "kind": "edge",
+      "inputHash": "eaddfe91b5794d5a7dcca0597f8d4ac907c3bcec98d6f6728f597e4b24c7f944",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Both oddly-angled rooms are plain, similar spaces with no special hazards, so the baseline timing holds."
+    },
+    {
+      "key": "edge:DIAMOND-8\u003eDIAMOND-6",
+      "kind": "edge",
+      "inputHash": "6abf2fc65bac3330a1cae26ee8ed02ecac55894f110941d40212ccf9523ff97e",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain oddly-angled passage between two similar dark rooms stays at the baseline 3 minutes."
+    },
+    {
+      "key": "edge:DIAMOND-9\u003eDIAMOND-5",
+      "kind": "edge",
+      "inputHash": "0359613ed869ff44183d66589061e4d352ae99428a73f441f33f052b2d3bed5e",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Plain exit between two identical oddly-angled rooms keeps the baseline unchanged."
+    },
+    {
+      "key": "edge:DRAGON-LAIR\u003eDRAGON-ROOM",
+      "kind": "edge",
+      "inputHash": "7d20f5f9a695578735842651688b720fb297ed4acdfc8007f4c42b62dd6693d4",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A short doorway crossing between two scorched rooms with no water or extra hazards, so the baseline dark-room time stands."
+    },
+    {
+      "key": "edge:DRAGON-ROOM\u003eDRAGON-LAIR",
+      "kind": "edge",
+      "inputHash": "432b653b624725e65b3e4eb099c38fe4826740bb8854410d6f6b3c753202ddc3",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A dark, smokey tunnel leading to a flame-scarred dragon's lair warrants the baseline conditional-plus-dark pacing without further extension."
+    },
+    {
+      "key": "edge:DRAGON-ROOM\u003eFRESCO-ROOM",
+      "kind": "edge",
+      "inputHash": "8b6154e177030c42043951e23b373e7e31b387b4a476317bd98a135719628ece",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A straightforward walk from a broken cavern to an adjacent fresco-lined room stays at the baseline pace."
+    },
+    {
+      "key": "edge:DRAGON-ROOM\u003eLEDGE-TUNNEL",
+      "kind": "edge",
+      "inputHash": "b617826af157aa6379b2f249dd7212017f260f686106118272b8a991bb9f5547",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A small crack leading to a narrow ledge through smokey, dim tunnels justifies keeping the baseline dark-passage pace."
+    },
+    {
+      "key": "edge:DRAGON-ROOM\u003eSTONE-BRIDGE",
+      "kind": "edge",
+      "inputHash": "41f4eda0231e1d8ba52fd2fcc6756602252b2f206ee17955fccbebcc86d259b8",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Crossing a large stone bridge over a chasm to a misty tunnel matches the baseline pace with no added complications."
+    },
+    {
+      "key": "edge:DREARY-ROOM\u003eTINY-ROOM",
+      "kind": "edge",
+      "inputHash": "b409a308ebaaa16ca6669b0a41f60c320b88a74b87a1fc62f63a5fc581fd689a",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "No descriptive details push this off the mechanical baseline of a door passage into a dark room."
+    },
+    {
+      "key": "edge:FOOT-BRIDGE\u003eGREAT-CAVERN",
+      "kind": "edge",
+      "inputHash": "60c4d4c619e508973c30b7eea7796fcb94fd94793cca8f5b6a919b7b8a0539ae",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple southward crossing from a sturdy bridge into a dimly lit but open cavern warrants no deviation from the baseline pace."
+    },
+    {
+      "key": "edge:FOOT-BRIDGE\u003eNARROW-TUNNEL",
+      "kind": "edge",
+      "inputHash": "df5505bbb7495423f7d704e7aa341ff98cb8279a18f0217cd45f2838bf70e82f",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple crossing of a foot bridge into a lit cavern matches the baseline pace with no added hazards."
+    },
+    {
+      "key": "edge:FORMAL-GARDEN\u003eGARDEN-NORTH",
+      "kind": "edge",
+      "inputHash": "43a70d952ca3bea82487566f6779137bc725e92792cd157a28042fbf7a2e6a8d",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A short, well-lit garden path with no hazards keeps this at the baseline pace."
+    },
+    {
+      "key": "edge:FORMAL-GARDEN\u003eSTREAM-PATH",
+      "kind": "edge",
+      "inputHash": "725824f50ef55af56cd2de0ba8f98fc1b9a7b88e187f6e1d6533fbe07850b361",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple gap-in-the-hedge crossing to a nearby path keeps the passage at the mechanical baseline."
+    },
+    {
+      "key": "edge:FORMAL-GARDEN\u003eTOPIARY-ROOM",
+      "kind": "edge",
+      "inputHash": "11c65fab403f1209c869062d4523131fe3b1c35b852c185d03197963a173ada7",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A short, lit, easy walk between two garden areas matches the baseline pace."
+    },
+    {
+      "key": "edge:FRESCO-ROOM\u003eBANK-ENTRANCE",
+      "kind": "edge",
+      "inputHash": "27fb5d12850463f337bfbdaf7b00be8efec118452f00137e27923751abfda435",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain lit-room walk between two ordinary chambers stays at the baseline pace."
+    },
+    {
+      "key": "edge:FRESCO-ROOM\u003eDRAGON-ROOM",
+      "kind": "edge",
+      "inputHash": "8169804965b806576f06c769f9cc5e5c85b4495c83eaece9a377fa9b7d15e13e",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A short walk between two lit rooms stays at the mechanical baseline with no added hazards."
+    },
+    {
+      "key": "edge:GARDEN-NORTH\u003eDARK-TUNNEL",
+      "kind": "edge",
+      "inputHash": "62a3b96a8b8be62e74de335b453988d1b16d054de8bc6dc94ea875a7881cd715",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Leaving a lit garden through an overgrown gap into a debris-filled dark tunnel keeps the baseline pace with the dark penalty applied."
+    },
+    {
+      "key": "edge:GARDEN-NORTH\u003eFORMAL-GARDEN",
+      "kind": "edge",
+      "inputHash": "341c363179ea7e2bbf7b9f152875efa1f23cd5b1f150beeaeba616a45dbcf4b0",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A short, well-lit garden path with no hazards keeps this passage at the baseline pace."
+    },
+    {
+      "key": "edge:GARDEN-NORTH\u003eGAZEBO-ROOM",
+      "kind": "edge",
+      "inputHash": "8f5f451a9b7d620927096925d2a48dc48dd70f3213d9fc0b84efad18e551c359",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A short walk through a lit, gentle garden into a small gazebo warrants no adjustment from the baseline."
+    },
+    {
+      "key": "edge:GAZEBO-ROOM\u003eGARDEN-NORTH",
+      "kind": "edge",
+      "inputHash": "d73f10fa4cc24099210ec57f6dfc802750e68324ba7375371b27ee9fcf4ffa3a",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A short, lit garden stroll between two calm outdoor rooms matches the baseline pace."
+    },
+    {
+      "key": "edge:GLACIER-ROOM\u003eCOOL-ROOM",
+      "kind": "edge",
+      "inputHash": "a0f63af6eddb6b188bf9595b06a4c93f9a439d8a8f9fb021e1ba6049ef2b3b98",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple eastward walk into a merely cool, misty room doesn't warrant deviation from the baseline dark-passage pace."
+    },
+    {
+      "key": "edge:GLACIER-ROOM\u003eLAVA-ROOM",
+      "kind": "edge",
+      "inputHash": "ef2aefdd147ccb7a169e991fe2d71737f56b7f522421eb283545f9920ea57dab",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A conditional passage into a dim lava-formed room warrants the baseline 4 minutes without further adjustment."
+    },
+    {
+      "key": "edge:GLACIER-ROOM\u003eLAVA-TUBE",
+      "kind": "edge",
+      "inputHash": "e59ac01f82c5e73db00d2c064a3ae08a8a13b4245dbc192323d462a88e9fcf0e",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "Climbing a tight, dark lava chimney matches the baseline pacing with no additional hazards to justify a longer crawl."
+    },
+    {
+      "key": "edge:GREAT-CAVERN\u003eFOOT-BRIDGE",
+      "kind": "edge",
+      "inputHash": "cbd91d8e0accee1c399360b340f9959086c9f432ed06c134ed2da06a97abdcf3",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A lit cavern path to a sturdy bridge is a straightforward walk, matching the baseline."
+    },
+    {
+      "key": "edge:GREAT-CAVERN\u003eSHALLOW-FORD",
+      "kind": "edge",
+      "inputHash": "301afde82999a4ef05a23e3ac58891181f31943eece8c362c20f9a09f8b8154f",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A short, dimly lit path between two on-lit cavern rooms with no obstacles justifies staying at the baseline."
+    },
+    {
+      "key": "edge:GUARDIAN-ROOM\u003eCOBWEBBY-CORRIDOR",
+      "kind": "edge",
+      "inputHash": "07463c30d9abfc51b1ab76c7b649aa5b1bca4037914f1438bbebedc19cc44ddc",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A guarded room into a winding, cobwebbed, disturbed corridor keeps the baseline dark-passage pace without extra hazards to justify lengthening it."
+    },
+    {
+      "key": "edge:GUARDIAN-ROOM\u003eWIZARDS-WORKSHOP",
+      "kind": "edge",
+      "inputHash": "3a6487629d1638080b5fbd998d91eba89d14e764a186ad56c4f38ec65ebbc72e",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A guarded door into the Wizard's dark workshop warrants the baseline pacing without further adjustment."
+    },
+    {
+      "key": "edge:IN-AQUARIUM\u003eAQUARIUM-ROOM",
+      "kind": "edge",
+      "inputHash": "30e0895a342c665f542bb16fd2d6a85ea258b512d4985fc976baf157d6c66d74",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple exit from a dim sandy room into a hallway holds close to baseline pace."
+    },
+    {
+      "key": "edge:INSIDE-BARROW\u003eNARROW-TUNNEL",
+      "kind": "edge",
+      "inputHash": "f0619b729b5bd65c8c6fa4b37b6591dd0663b54f5da9e95bda9050b728bf6fe5",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A straightforward exit from the barrow into a dimly lit tunnel matches the baseline pace of a simple, unobstructed passage."
+    },
+    {
+      "key": "edge:KENNEL\u003eMENHIR-ROOM",
+      "kind": "edge",
+      "inputHash": "c9970619afdbbd81f1845050d2b8f07848eb3f4b977ed6f0f125a91df77ef60c",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A straightforward exit from a dusty but unremarkable kennel keeps the passage at the mechanical baseline."
+    },
+    {
+      "key": "edge:LAVA-ROOM\u003eGLACIER-ROOM",
+      "kind": "edge",
+      "inputHash": "8ecb3005d6435a9c1ee56ef372a938ec89a589401074dee53e70b5029a7e68a7",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple eastward step from a lava-formed room to an unknown room stays at the mechanical baseline with no added complexity."
+    },
+    {
+      "key": "edge:LAVA-ROOM\u003eVOLCANO-BOTTOM",
+      "kind": "edge",
+      "inputHash": "3f4bb20c63814e8613f40c842da700ff00ad573dc07a8d6466c5fd689e8b3cb6",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A short, plain descent from a small lava-formed room into a cavernous volcanic shaft keeps the baseline pace."
+    },
+    {
+      "key": "edge:LAVA-TUBE\u003eCOBWEBBY-CORRIDOR",
+      "kind": "edge",
+      "inputHash": "d90c08891207e21acbf1f9d2ebc32c312816f7d7285ba7aaa5036007cf7f90f5",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A tight lava chimney crack leading into a cobweb-choked, twisting corridor keeps the baseline pace of a cramped, careful crawl."
+    },
+    {
+      "key": "edge:LAVA-TUBE\u003eGLACIER-ROOM",
+      "kind": "edge",
+      "inputHash": "9bccbadfdd4e4d4cccd3412ba243af902c77952a54a258a493435d21825ac529",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A long, dark chimney descent to an unknown room keeps this at the mechanical baseline with no reason to shorten or lengthen it."
+    },
+    {
+      "key": "edge:LAVA-TUBE\u003eVOLCANO-VIEW",
+      "kind": "edge",
+      "inputHash": "06ef3885f5b421d3ae2f2c6eeb94ac11c433e89a0b6aa5a4b38470b28710383a",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "A tight, steep hundred-foot climb up a solidified lava chimney justifies the baseline pacing despite the destination being open and lit."
+    },
+    {
+      "key": "edge:LEDGE-1\u003eLIBRARY",
+      "kind": "edge",
+      "inputHash": "d5a0dd1855ab840791d0fd9a9da1e86ec323e9d25bd18ddfd0297c090f8104c0",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A ledge-to-library descent through darkness warrants the baseline pace without further adjustment."
+    },
+    {
+      "key": "edge:LEDGE-1\u003eVOLCANO-BOTTOM",
+      "kind": "edge",
+      "inputHash": "caaffca1304e6ecdbebaaa40e4188712e4cc50b061af8775077ac7d8a5cfeb53",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A direct ledge-to-floor descent inside the volcano matches the baseline pacing with no additional hazards described."
+    },
+    {
+      "key": "edge:LEDGE-2\u003eSAFE-ROOM",
+      "kind": "edge",
+      "inputHash": "f0307b6a52d3bd7b3733108b6d85c4ddb6d2cb8f07d55b7205e50d9675c5f587",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain southward step between a ledge and a lit dusty room stays at the baseline pace."
+    },
+    {
+      "key": "edge:LEDGE-2\u003eVOLCANO-BOTTOM",
+      "kind": "edge",
+      "inputHash": "23ec38b61e3668ee3144372a7a037ac379045bbf8ddca515dafd39eb35bd6d2d",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A climb down a wide ledge into a dim volcano bottom warrants the baseline four minutes."
+    },
+    {
+      "key": "edge:LEDGE-TUNNEL\u003eDRAGON-ROOM",
+      "kind": "edge",
+      "inputHash": "b99f180ee567094e2cfd0b383f1a96927fb0485e4ce224a64bc6cd195bf08a36",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A tunnel crawl into a dark, smokey dragon lair keeps the pace at the baseline for a hazardous, unlit passage."
+    },
+    {
+      "key": "edge:LEDGE-TUNNEL\u003eRAVINE-LEDGE",
+      "kind": "edge",
+      "inputHash": "1f901f561000bf06d62bbc9d616f1e16e2738dad297ce23eb64f6097998e0bd4",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A short ledge-to-ledge traverse with a bit of precarious climbing keeps it near the baseline."
+    },
+    {
+      "key": "edge:LIBRARY\u003eLEDGE-1",
+      "kind": "edge",
+      "inputHash": "73e93aa5c378e3c390bd0f7d782f4c772c47de188aafb29190fcb6555f568f7b",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A short walk from the gnawed library up to a narrow volcanic ledge stays near baseline given the darkness and change in terrain."
+    },
+    {
+      "key": "edge:MACHINE-ROOM\u003eCAGE-ROOM",
+      "kind": "edge",
+      "inputHash": "e52487f94106b8cb4cb882004c32993ee469d29fed7bdedf3b377d2941b30c5b",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple lit-to-lit walk between adjacent rooms matches the baseline pace."
+    },
+    {
+      "key": "edge:MACHINE-ROOM\u003eMAGNET-ROOM",
+      "kind": "edge",
+      "inputHash": "240fe92b95b5a5ce567598110fc391ca084fb0794d2b62f5f1fae38d0692314d",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain westward exit from a well-lit, if noisy, machine room warrants no deviation from the baseline pace."
+    },
+    {
+      "key": "edge:MAGNET-ROOM\u003eMACHINE-ROOM",
+      "kind": "edge",
+      "inputHash": "63cfc20d74a0ceb58758ffc3bfbaa4833f52604ff1e3240266533f039575e375",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain lit-room exit into a busy but unobstructed machine room keeps the passage at the standard baseline pace."
+    },
+    {
+      "key": "edge:MAGNET-ROOM\u003eTEA-ROOM",
+      "kind": "edge",
+      "inputHash": "f60f94d51ef2b9210d256875b44c5b2191ce36a5da61d72135a8273df195308b",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "Both rooms are lit and above ground with no hazards mentioned, so the baseline pace holds."
+    },
+    {
+      "key": "edge:MARBLE-HALL\u003eCAROUSEL-ROOM",
+      "kind": "edge",
+      "inputHash": "06ec1835cd0160db30accac6d7ab44b4c9827f5844ad8bd4a7d4163d073ba068",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "The Carousel Room's known whirring sound and unrecorded conditions keep this near the baseline crawl rather than a quick lit-room step."
+    },
+    {
+      "key": "edge:MARBLE-HALL\u003eDEEP-FORD",
+      "kind": "edge",
+      "inputHash": "8c4b16e5f605b057c4787d83e72defc0c2e87f821dbfc7fa9cd739c4bf122d4b",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Fording a cold, deep stream across cracked marble adds a bit of caution beyond a simple room transition, matching the baseline of 3 minutes."
+    },
+    {
+      "key": "edge:MARBLE-HALL\u003eSTREAM-PATH",
+      "kind": "edge",
+      "inputHash": "763601f2fce8e877e4784afff84a831882298fe847b45a57001d2a38d7f2c624",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A simple eastward walk from a marble hall to a ravine path stays at the baseline pace."
+    },
+    {
+      "key": "edge:MENHIR-ROOM\u003eCAROUSEL-ROOM",
+      "kind": "edge",
+      "inputHash": "2d5b6e17d0b19819643010087055df61d028cc066faa2cd862b2f4fa9f93bea6",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "No special descriptive details push this beyond the baseline mechanical estimate."
+    },
+    {
+      "key": "edge:MENHIR-ROOM\u003eKENNEL",
+      "kind": "edge",
+      "inputHash": "653daedef0cc5220a7e71acf61541b379bf5c310bd63215ea8cd07ca97332ea9",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A conditional exit into a dark, dusty, long-disused kennel warrants sticking to the mechanically priced baseline."
+    },
+    {
+      "key": "edge:MENHIR-ROOM\u003eSTAIRWAY-TOP",
+      "kind": "edge",
+      "inputHash": "1cdd1305761b80e503afadabe0d54935c5c8e578378345190723382c1bc89ff2",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain southward passage between two lit rooms matches the standard baseline pace."
+    },
+    {
+      "key": "edge:NARROW-TUNNEL\u003eFOOT-BRIDGE",
+      "kind": "edge",
+      "inputHash": "21bc7753fcdd076ede8d68eff09ec5a4320e6d18c193ac2e20cd1aeb6685e4c0",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple southward walk onto a sturdy foot bridge in a lit cavern warrants no adjustment from baseline."
+    },
+    {
+      "key": "edge:NARROW-TUNNEL\u003eINSIDE-BARROW",
+      "kind": "edge",
+      "inputHash": "b8d4254b9de6a2d49a9a45dbf621d5c0d3d760032a07afee274ea4ca25b3d448",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A straightforward northward passage from a lit cavern into a dimly glowing barrow entrance stays at baseline pace."
+    },
+    {
+      "key": "edge:OFFICE\u003eDEPOSITORY",
+      "kind": "edge",
+      "inputHash": "89df57d04a2da279832f8ac648762c241946b8ca4dd9c7ca524f6c978baa69be",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain northward walk between two lit, unobstructed rooms matches the baseline pace."
+    },
+    {
+      "key": "edge:PEARL-ROOM\u003eRIDDLE-ROOM",
+      "kind": "edge",
+      "inputHash": "73c7e92e00d808b25262ecee58837108dc0f0fb5df28893817f976a7741c499f",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple closet-to-riddle-room step keeps the baseline with no added complications."
+    },
+    {
+      "key": "edge:PEARL-ROOM\u003eWELL-BOTTOM",
+      "kind": "edge",
+      "inputHash": "e5c7af9af0b4165cadc37a9b96736fe8192ea78a8947fa9bbcffb5fd11f55c39",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple eastward step from a small closet into an adjoining brick chamber stays at the baseline pace."
+    },
+    {
+      "key": "edge:PENTAGRAM-ROOM\u003eWORKBENCH-ROOM",
+      "kind": "edge",
+      "inputHash": "7b5eae7af5d09ae68ca5e7995f4e95293409818a25d5417c5d710b8a9dbe3f1d",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple northward step between two lit, dry rooms matches the baseline pace with no complicating terrain."
+    },
+    {
+      "key": "edge:POOL-ROOM\u003ePOSTS-ROOM",
+      "kind": "edge",
+      "inputHash": "2ecdc72e1f612384da58c3eef2554526a4d222603cd36b3d330c459c954ee32d",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple westward exit into an enormous, lit room keeps the passage at the baseline pace."
+    },
+    {
+      "key": "edge:POSTS-ROOM\u003ePOOL-ROOM",
+      "kind": "edge",
+      "inputHash": "3f0580e170e74d3c3e62f741749412d74192112a3c477586d3b19e6469a5c846",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple eastward passage between two lit rooms stays at the baseline with no added hazards."
+    },
+    {
+      "key": "edge:RAVINE-LEDGE\u003eDEEP-FORD",
+      "kind": "edge",
+      "inputHash": "64bb6035cb44926f1aceb6e36dbd44360d2ebb2bdbe2ef362aa1f13492c4d74f",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Scrambling down a rock face into a cold stream ford justifies the standard dark/hazard nudge above a trivial step."
+    },
+    {
+      "key": "edge:RAVINE-LEDGE\u003eLEDGE-TUNNEL",
+      "kind": "edge",
+      "inputHash": "43e4aebf9b9104e79cb48c087a976c55a8d4e47504f5858bd7538fb8aba6a516",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple westward walk along a ledge with no obstacles keeps it at the baseline 3 minutes."
+    },
+    {
+      "key": "edge:RAVINE-LEDGE\u003eTINY-ROOM",
+      "kind": "edge",
+      "inputHash": "182b19dd5069e0e5217f4eaabfdd9323ba4b9c8d9392fb61c6b806dc1b3bbe1f",
+      "class": "movement",
+      "minutes": 5,
+      "rationale": "A precarious climb up a rock face to an unlit ledge justifies staying at the mechanical baseline."
+    },
+    {
+      "key": "edge:RIDDLE-ROOM\u003eCAROUSEL-ROOM",
+      "kind": "edge",
+      "inputHash": "a1c9dae34d117fc91f0e2c4d9fd6570093f3f153d9072826965ce5cd4bf0fa6e",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "No unusual descriptive details are recorded, so the passage keeps the mechanical baseline of 3 minutes."
+    },
+    {
+      "key": "edge:RIDDLE-ROOM\u003ePEARL-ROOM",
+      "kind": "edge",
+      "inputHash": "e85ce2c9379f150f2a2f94396b741063702a91c76c1e56ae2c6c7c9782838e30",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "The riddle-solved door opening into a plain former broom closet doesn't warrant deviation from the baseline pricing."
+    },
+    {
+      "key": "edge:ROOM-8\u003eCAROUSEL-ROOM",
+      "kind": "edge",
+      "inputHash": "dc673be399cb1cc820e9f9caa04e2dd3be0aafb164bcf7e715a86451e0f45ea0",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "The Carousel Room is known for its disorienting, unlit nature, keeping the crawl-through-rock baseline intact."
+    },
+    {
+      "key": "edge:SAFE-ROOM\u003eLEDGE-2",
+      "kind": "edge",
+      "inputHash": "bc3c14eb81ba15d39781cd58e05b2cd7a9bd592781af759654f0f2727a17c6d1",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Baseline dark-passage timing holds since no descriptive details suggest a faster or slower crossing."
+    },
+    {
+      "key": "edge:SHALLOW-FORD\u003eDARK-TUNNEL",
+      "kind": "edge",
+      "inputHash": "7d936c964f9f71b416c44d28d3a35f8e8a5040b6ce500d622772f75d27a5da36",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Wading across a shallow ford into a dim, debris-filled tunnel matches the baseline dark-passage pace without added hazard."
+    },
+    {
+      "key": "edge:SHALLOW-FORD\u003eGREAT-CAVERN",
+      "kind": "edge",
+      "inputHash": "397c17c417b44484b4e90a248f8b8372b05103154a5fb9b3a1500210338f8e3c",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple winding path between two dimly lit but navigable cavern areas fits the baseline pace."
+    },
+    {
+      "key": "edge:STAIRWAY-TOP\u003eDIAMOND-5",
+      "kind": "edge",
+      "inputHash": "47ec16eaf2eb47a732bdd39a97cc9f191ba92f2530bb47f8ceb1f841c16962a2",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A straightforward descent down a marble stairway into a dim but unremarkable oddly-angled room matches the baseline pacing."
+    },
+    {
+      "key": "edge:STAIRWAY-TOP\u003eMENHIR-ROOM",
+      "kind": "edge",
+      "inputHash": "eef0128b1f8b84613398972d8ca6b1e332623567514bda21cf89ad9de211cc72",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple northward passage between two ordinary landbound rooms doesn't warrant deviation from the baseline."
+    },
+    {
+      "key": "edge:STONE-BRIDGE\u003eCOOL-ROOM",
+      "kind": "edge",
+      "inputHash": "40275390bd946a5f55b6c40f1aa02914328e4faad4437489c34564cabc377d9a",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A misty, tunnel-bound descent from the bridge into the damp Cool Room warrants the baseline dark-passage pacing."
+    },
+    {
+      "key": "edge:STONE-BRIDGE\u003eDRAGON-ROOM",
+      "kind": "edge",
+      "inputHash": "63e6a7a390cdb0b1424e44ef4fad35c332a281f6c7dbe6666a744f7280fe27ef",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Crossing the stone bridge into the dragon room is a straightforward paved path but the destination's dark, smokey tunnel keeps the pace at baseline."
+    },
+    {
+      "key": "edge:STREAM-PATH\u003eCAROUSEL-ROOM",
+      "kind": "edge",
+      "inputHash": "9be63278f1539c019b31d41f5bd43771feb4d6eeecf0109722d345e63be8d8c4",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "The tight, narrowing crawl through the tunnel justifies a slight bump above baseline despite the room being lit."
+    },
+    {
+      "key": "edge:STREAM-PATH\u003eDARK-TUNNEL",
+      "kind": "edge",
+      "inputHash": "89d20a17e0cf96674270f68a9b47c7c602e8bdfd398067553047627aae3f88ad",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple NE path walk into a dim, debris-filled tunnel matches the baseline dark-passage pacing."
+    },
+    {
+      "key": "edge:STREAM-PATH\u003eFORMAL-GARDEN",
+      "kind": "edge",
+      "inputHash": "15e20b8d44f18431cc8688b5d81e77ee7905a57fddcc9b94e87261decf1155e1",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple eastward walk through an archway into a lit garden matches the baseline pace."
+    },
+    {
+      "key": "edge:STREAM-PATH\u003eMARBLE-HALL",
+      "kind": "edge",
+      "inputHash": "4d3c5047d2b2e37a359ff96de489bc0d967ec8485c5024208d4f3c9c0de5f2da",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "The path-to-hall transition matches the baseline pace, neither a quick lit dash nor an extended flooded crawl."
+    },
+    {
+      "key": "edge:TEA-ROOM\u003eMAGNET-ROOM",
+      "kind": "edge",
+      "inputHash": "63fbc3f3a1180fd617203043f0571672e14cf4a0256b755eafdd6835452fe1c6",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A lit, ordinary passageway to the northwest keeps the timing at the standard baseline."
+    },
+    {
+      "key": "edge:TEA-ROOM\u003eWELL-TOP",
+      "kind": "edge",
+      "inputHash": "bd195aea6a2a83ded2d2aaa274d61deca398bfa329c0331df6216f45c0b18a6a",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple westward walk between two ordinary lit rooms warrants no adjustment from the baseline."
+    },
+    {
+      "key": "edge:TELLER-EAST\u003eBANK-ENTRANCE",
+      "kind": "edge",
+      "inputHash": "6be1425a4d8a62c44756d36705cfb4e208def11b0e8ee31e697778d9b91a50e2",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain, lit passage into the grand bank entrance keeps the pacing at the mechanical baseline."
+    },
+    {
+      "key": "edge:TELLER-EAST\u003eDEPOSITORY",
+      "kind": "edge",
+      "inputHash": "b1a7bf37effe9e547239abdeaeccbaf531b50fa7f97776a5cc9d824ad9ce456c",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain lit doorway between two accessible rooms warrants no adjustment from the baseline."
+    },
+    {
+      "key": "edge:TELLER-EAST\u003eVIEWING-EAST",
+      "kind": "edge",
+      "inputHash": "b9b18f9fcc5692c8a9a9c21ff018b763f305879657f8d4d9fb7a6685d0e6ca7f",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain lit-to-lit doorway crossing between banking rooms matches the baseline pace with no added obstacles."
+    },
+    {
+      "key": "edge:TELLER-WEST\u003eBANK-ENTRANCE",
+      "kind": "edge",
+      "inputHash": "5229a55a0d873165bcc7dff39f6e6531f17476f5f91526c62825302141c8cf19",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A short plain passage into the well-lit Bank Entrance keeps the baseline three-minute timing without added delay."
+    },
+    {
+      "key": "edge:TELLER-WEST\u003eDEPOSITORY",
+      "kind": "edge",
+      "inputHash": "de389d8f7395dafcbdb7d6580b9a1a172b5fe5cf29f5c3a39d35019001676fc2",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain westward exit into a lit, ordinary room warrants no adjustment from the baseline."
+    },
+    {
+      "key": "edge:TELLER-WEST\u003eVIEWING-WEST",
+      "kind": "edge",
+      "inputHash": "c2f927783eb86a3798ddc2b2f78b1c75b786d1d84acf56e0116114a482bfeeb2",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain lit passage between two ordinary rooms stays at the baseline pace."
+    },
+    {
+      "key": "edge:TINY-ROOM\u003eDREARY-ROOM",
+      "kind": "edge",
+      "inputHash": "04e91dfaedfcac3019552b6f60d568b926773be14f4760cb8bec4ed9f8af568e",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "No descriptive cues to adjust the baseline, and the destination being lit keeps the door crossing at the standard pace."
+    },
+    {
+      "key": "edge:TINY-ROOM\u003eRAVINE-LEDGE",
+      "kind": "edge",
+      "inputHash": "f995107198c9f5119d8938259778d3e2b108272eab5ab2e42d3ff1afe3435537",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A climb down into a dark ravine ledge with a scramble to a stream justifies the baseline 4-minute pacing."
+    },
+    {
+      "key": "edge:TOPIARY-ROOM\u003eCAROUSEL-ROOM",
+      "kind": "edge",
+      "inputHash": "7dd13d7cbc3d91a19e4e448712ba039cda12bbb5c29cc07cb47a5970aa5577c8",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A dimly lit garden path through an arbor into a tunnel matches the baseline pace with no added obstacles."
+    },
+    {
+      "key": "edge:TOPIARY-ROOM\u003eFORMAL-GARDEN",
+      "kind": "edge",
+      "inputHash": "6910485a8b4057ed94ef4d37df8f2ac2092b10237bd51c21cf3fdbd1c3a89019",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple lit garden path with no obstacles keeps this at the baseline pace."
+    },
+    {
+      "key": "edge:TROPHY-ROOM\u003eWIZARDS-WORKSHOP",
+      "kind": "edge",
+      "inputHash": "db210f90cf9934ca7f959d454c415aea121bbc9c5e0fef4a48bcbe3a9f25ed4f",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple northward walk between two ordinary indoor rooms stays at the baseline pace."
+    },
+    {
+      "key": "edge:VAIR-1\u003eVAIR-2",
+      "kind": "edge",
+      "inputHash": "66a97217a05a922ed07dd6cede4f00be10a808954b96ec980dd7460e9b445380",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Drifting one hundred feet up an open volcano shaft matches the baseline pace without added hazard or complexity."
+    },
+    {
+      "key": "edge:VAIR-2\u003eLEDGE-1",
+      "kind": "edge",
+      "inputHash": "799d453f05bad452deafd89dda8f0a136c75e49d1d381b0102646cdf44b6fe64",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A precarious traverse along a narrow volcano ledge two hundred feet up justifies the baseline pace without further slowdown."
+    },
+    {
+      "key": "edge:VAIR-2\u003eVAIR-1",
+      "kind": "edge",
+      "inputHash": "f5a381d244f293a40bc685736916a731c707a8de1bae1960b7d1141ba0bd7215",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Drifting one hundred feet down through open volcano airspace between two visible landmarks matches the baseline pacing with no added hazard."
+    },
+    {
+      "key": "edge:VAIR-2\u003eVAIR-3",
+      "kind": "edge",
+      "inputHash": "236f242fb0619ea2e7cafd99f4d2b20b61b9ecd60b820f55392bdf33c7292de7",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Drifting between two precarious, high-altitude volcano positions matches the baseline pace with no added hazard beyond the drift itself."
+    },
+    {
+      "key": "edge:VAIR-3\u003eVAIR-2",
+      "kind": "edge",
+      "inputHash": "ab158ac61290199eddd01f5a372edb437e334e2a9ccef7601aa32c3b7a9058a2",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Drifting along the narrow volcano rim between two precarious ledges warrants the baseline pace with no additional hazard beyond the dark."
+    },
+    {
+      "key": "edge:VAIR-3\u003eVAIR-4",
+      "kind": "edge",
+      "inputHash": "d2346b004a469a3f1bf73b01a7b588d6f8dcbefc37991eb6df67c2c7745f39b8",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A precarious drift along a narrow volcanic rim between two airborne vantage points warrants the baseline pace with no further adjustment."
+    },
+    {
+      "key": "edge:VAIR-4\u003eLEDGE-2",
+      "kind": "edge",
+      "inputHash": "cf4b44ad1e409011f2d1de59204f40532c600832ff55f678ba7c31afeef38066",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A brief landing flight from the open volcano rim to a wide ledge stays near the baseline pace."
+    },
+    {
+      "key": "edge:VAIR-4\u003eVAIR-3",
+      "kind": "edge",
+      "inputHash": "891a69aa28d4a76eef5bd642e5a99e78c871d5fd9ddb786f575c708c79ecc674",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Drifting along the open, airy volcano rim between two exposed ledges matches the baseline pace without added hazard or obstruction."
+    },
+    {
+      "key": "edge:VIEWING-EAST\u003eBANK-ENTRANCE",
+      "kind": "edge",
+      "inputHash": "b8bf8dc9ed41aa18bd82d4ac3b3aa6ffca62563edc410c7e179ba3004b52321e",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple south exit from a viewing room to the bank entrance, both lit, matches the baseline plain traversal."
+    },
+    {
+      "key": "edge:VIEWING-WEST\u003eBANK-ENTRANCE",
+      "kind": "edge",
+      "inputHash": "ebf3553d1b967bd48628d9750a1412cb2dd8ed2a49a1b20457c054ebb80129b7",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple lit walk from the viewing room to the bank entrance matches the baseline pace with no added hazards."
+    },
+    {
+      "key": "edge:VOLCANO-BOTTOM\u003eLAVA-ROOM",
+      "kind": "edge",
+      "inputHash": "acfc74e4d0dc4123f1a9fde81406e4182509b8acab3dc7fccba000c0ae40389e",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple climb north from an open volcano floor into a small lava-formed room stays at baseline pace."
+    },
+    {
+      "key": "edge:VOLCANO-VIEW\u003eLAVA-TUBE",
+      "kind": "edge",
+      "inputHash": "1750df675bef8f24e932dda5de1e91b1b2177e42e3d1fb422e54ac8c0b81b21d",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "Traversing a ledge into a precarious lava chimney keeps the passage at its baseline pace of a careful but unremarkable transition."
+    },
+    {
+      "key": "edge:WELL-BOTTOM\u003ePEARL-ROOM",
+      "kind": "edge",
+      "inputHash": "c60dbad427233cc4dffe4cc73eebe865118d16608fac335a15c0f4ac92303fa0",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A plain westward passage between two mundane, unremarkable rooms stays at the mechanical baseline without further adjustment."
+    },
+    {
+      "key": "edge:WELL-TOP\u003eTEA-ROOM",
+      "kind": "edge",
+      "inputHash": "85e32927c1353dc2312ff0ff03ddc457a887255639b84afe6fed4ddbfc98ad6c",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A simple eastward crossing over a minor crack into a lit room stays at the baseline pace."
+    },
+    {
+      "key": "edge:WIZARDS-QUARTERS\u003eAQUARIUM-ROOM",
+      "kind": "edge",
+      "inputHash": "238e0451de9cea2f9fa36b0a4d29e794bdb2fccd9b1e4d50b06bf9c2e7218875",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "The destination is lit and the passage is a plain exit, so the baseline pace holds."
+    },
+    {
+      "key": "edge:WIZARDS-WORKSHOP\u003eGUARDIAN-ROOM",
+      "kind": "edge",
+      "inputHash": "ad76955c260eb704523309d05e6bf579cbcdd14518d705e0f4e2af52752b496f",
+      "class": "movement",
+      "minutes": 4,
+      "rationale": "A guarded door out of the wizard's workshop keeps the baseline pacing with no extra hazards described."
+    },
+    {
+      "key": "edge:WIZARDS-WORKSHOP\u003eTROPHY-ROOM",
+      "kind": "edge",
+      "inputHash": "4b2ef1ac5b82d77263c989905eb1b4bca41084d0594be2f92d5af40d959f3cc0",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A simple southward walk between two ordinary, plainly-connected rooms matches the baseline pace."
+    },
+    {
+      "key": "edge:WIZARDS-WORKSHOP\u003eWORKBENCH-ROOM",
+      "kind": "edge",
+      "inputHash": "fd9eb615a0984083f28eba4bf75fc8ff1c0ce1afc21ca0a349b404ee70ab7157",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain westward step between two lit, ordinary rooms matches the baseline pace with no complicating obstacles."
+    },
+    {
+      "key": "edge:WORKBENCH-ROOM\u003eAQUARIUM-ROOM",
+      "kind": "edge",
+      "inputHash": "2182e0af2e754f188a85245914203f9c05e4b56590589f0d029eea56231423c5",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "A plain westward exit between two lit, ordinary rooms warrants no deviation from the baseline pace."
+    },
+    {
+      "key": "edge:WORKBENCH-ROOM\u003ePENTAGRAM-ROOM",
+      "kind": "edge",
+      "inputHash": "ab71bcfcb1148bcef5059fea0737f8f81f207dcbe1ad4fbcd4afa1c5658d0bb8",
+      "class": "movement",
+      "minutes": 2,
+      "rationale": "Both rooms are lit and the passage is a plain, unobstructed exit, so the baseline pace holds."
+    },
+    {
+      "key": "edge:WORKBENCH-ROOM\u003eWIZARDS-WORKSHOP",
+      "kind": "edge",
+      "inputHash": "abe92ca48b406467b55a9cec2dcd681376c00e91b86a87529aa9947198e409f7",
+      "class": "movement",
+      "minutes": 3,
+      "rationale": "A short eastward step between lit rooms stays at the baseline pace."
+    }
+  ]
+}
