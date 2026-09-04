@@ -20,13 +20,23 @@ slice ([#36](https://github.com/lucasbertoni/omazork/issues/36)).
 ```
 go run ./cmd/actiongen            # rewrite all three tables from data/extract/ + the committed cache
 go run ./cmd/actiongen -llm       # infer the rows the cache is missing or stale on, then rewrite
+go run ./cmd/actiongen -llm -batch 100   # same, but at most 100 rows per game this sitting
 scripts/validate.sh               # what CI runs: regen-and-diff, then validate
 ```
 
 Generation is deterministic: the table is a pure function of
 `data/extract/<game>.json` and `<game>.llm.json`, so a regeneration that changes
-a table is a reviewable diff. Only `-llm` ever calls the API; a plain run and
+a table is a reviewable diff. Only `-llm` ever reaches a model; a plain run and
 `-check` never do.
+
+`-llm` goes through the `claude` CLI in headless mode, on the logged-in Claude
+subscription — one `claude -p` process per row, tools off, one turn, settings
+ignored, a fixed system prompt, run from an empty scratch directory so no
+CLAUDE.md or memory is picked up. Setting `ANTHROPIC_API_KEY` switches it to the
+direct Messages API instead. A full pass is ~1300 rows; `-batch N` stops each
+game after N rows and writes the partly-warm cache, and the next run continues
+from there. Don't commit between batches: a cache that exists but is incomplete
+fails `-check`, by design.
 
 ## Rule pricing
 

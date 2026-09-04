@@ -30,7 +30,8 @@ func main() {
 	game := flag.String("game", "", "game to generate: zork1, zork2, or zork3 (default all three)")
 	root := flag.String("root", ".", "repository root holding data/")
 	check := flag.Bool("check", false, "regenerate in memory and fail on any difference from the committed files")
-	infer := flag.Bool("llm", false, "run the LLM pass for rows the cache is missing or stale on (needs ANTHROPIC_API_KEY)")
+	infer := flag.Bool("llm", false, "run the LLM pass for rows the cache is missing or stale on, through the claude CLI (or the API when ANTHROPIC_API_KEY is set)")
+	batch := flag.Int("batch", 0, "with -llm: infer at most this many rows per game, then write what is cached so far (0 = all)")
 	flag.Parse()
 
 	if *check && *infer {
@@ -43,7 +44,7 @@ func main() {
 	}
 	failed := false
 	for _, g := range targets {
-		if err := run(*root, g, *check, *infer); err != nil {
+		if err := run(*root, g, *check, *infer, *batch); err != nil {
 			fmt.Fprintln(os.Stderr, "actiongen:", err)
 			failed = true
 		}
@@ -60,7 +61,7 @@ type artifact struct {
 	data []byte
 }
 
-func run(root, game string, check, infer bool) error {
+func run(root, game string, check, infer bool, batch int) error {
 	fsys := os.DirFS(root)
 	verbs, err := durations.LoadVerbsFS(fsys)
 	if err != nil {
@@ -86,7 +87,7 @@ func run(root, game string, check, infer bool) error {
 		return err
 	}
 	if infer && len(result.Missing) > 0 {
-		if err := inferMissing(game, result, cache); err != nil {
+		if err := inferMissing(game, result, cache, batch); err != nil {
 			return err
 		}
 		// Regenerate against the now-warm cache: the table is always a pure
@@ -94,7 +95,7 @@ func run(root, game string, check, infer bool) error {
 		if result, err = gen.Generate(x, verbs, cache); err != nil {
 			return err
 		}
-		if len(result.Missing) > 0 {
+		if len(result.Missing) > 0 && batch == 0 {
 			return fmt.Errorf("%s: %d rows still uncached after the LLM pass", game, len(result.Missing))
 		}
 	}
@@ -180,17 +181,26 @@ func match(a artifact) error {
 }
 
 // inferMissing runs the LLM pass over the rows the cache cannot answer. It is
-// the only path in this tool that touches the network (§5.3).
-func inferMissing(game string, result *gen.Result, cache *llm.Cache) error {
-	key := os.Getenv("ANTHROPIC_API_KEY")
-	if key == "" {
-		return fmt.Errorf("%s: -llm needs ANTHROPIC_API_KEY", game)
+// the only path in this tool that reaches a model (§5.3). By default it goes
+// through the claude CLI on the user's subscription; an API key in the
+// environment selects the direct client instead. A batch limit stops after
+// that many rows so a long pass can be run in sittings — the caller then
+// writes the partly-warm cache, and the next run picks up the rest.
+func inferMissing(game string, result *gen.Result, cache *llm.Cache, batch int) error {
+	var inf llm.Inferencer = llm.NewCLI()
+	via := "the claude CLI"
+	if key := os.Getenv("ANTHROPIC_API_KEY"); key != "" {
+		inf, via = llm.NewAPI(key), "the API"
 	}
-	fmt.Printf("%s: inferring %d rows with %s\n", game, len(result.Missing), llm.ModelID)
+	reqs := result.Missing
+	if batch > 0 && batch < len(reqs) {
+		reqs = reqs[:batch]
+	}
+	fmt.Printf("%s: inferring %d of %d rows with %s via %s\n", game, len(reqs), len(result.Missing), llm.ModelID, via)
 	progress := func(done, total int, rowKey string) {
 		fmt.Printf("  %s %d/%d %s\n", game, done, total, rowKey)
 	}
-	return llm.Run(context.Background(), llm.NewAPI(key), result.Missing, cache, progress)
+	return llm.Run(context.Background(), inf, reqs, cache, progress)
 }
 
 // liveKeys is the set of rows this extract still asks about — what a cache is
