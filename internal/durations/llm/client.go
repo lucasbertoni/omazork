@@ -71,7 +71,10 @@ type apiResponse struct {
 func (a *API) Infer(ctx context.Context, prompt string) (string, error) {
 	var body apiRequest
 	body.Model = a.Model
-	body.MaxTokens = 2048
+	// The answer is one short JSON object, but the pinned model thinks
+	// adaptively and its thinking tokens count against max_tokens: a low
+	// ceiling can cut the reply off before the JSON and hard-fail the run.
+	body.MaxTokens = 16000
 	body.Messages = []apiMessage{{Role: "user", Content: prompt}}
 
 	raw, err := json.Marshal(body)

@@ -150,6 +150,7 @@ func (c *Cache) Fresh(req Request) (Row, bool) {
 // the cache: once something has been inferred there is a file worth writing.
 func (c *Cache) Put(row Row) {
 	c.build()
+	c.Primed = true
 	if _, ok := c.index[row.Key]; ok {
 		for i := range c.Rows {
 			if c.Rows[i].Key == row.Key {
@@ -161,7 +162,6 @@ func (c *Cache) Put(row Row) {
 	}
 	c.Rows = append(c.Rows, row)
 	c.index[row.Key] = row
-	c.Primed = true
 }
 
 // Prune drops cached answers for rows the generator no longer asks about, so
