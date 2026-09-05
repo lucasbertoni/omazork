@@ -80,6 +80,10 @@ type Pending struct {
 	Moves     int       `json:"moves"`
 	MaturesAt time.Time `json:"maturesAt"`
 	Notified  bool      `json:"notified"`
+	// Tier is the wait's presentation register, "quiet" or "full"
+	// (docs/action-waits.md §8), fixed when the outcome is withheld. Saves
+	// from before tiers carry none and present as full.
+	Tier string `json:"tier,omitempty"`
 	// Achievements that would have unlocked on the withheld turn; they unlock
 	// at the reveal, folded into the recap (#10).
 	Achievements []string `json:"achievements,omitempty"`

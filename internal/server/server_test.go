@@ -195,3 +195,49 @@ func TestPickerCarriesPendingMaturesAt(t *testing.T) {
 	h.in.Close()
 	<-h.done
 }
+
+// The 5-minute tier threshold lives only in the wrapper: the protocol carries
+// the resolved tier on pending, on the matured event (so the QML side can skip
+// the notification for quiet waits), and on the picker (so the bar's in-flight
+// dot survives a shell restart).
+func TestProtocolCarriesTier(t *testing.T) {
+	now := time.Date(2026, 8, 29, 9, 0, 0, 0, time.UTC)
+	h := start(t, &now)
+	h.send(map[string]any{"type": "new", "game": "zork1", "mode": "casual"})
+	h.play(&now, "south", "east", "open window")
+
+	wh := h.send(map[string]any{"type": "input", "text": "enter window"}) // 2 min: quiet
+	pend, _ := wh["pending"].(map[string]any)
+	if pend == nil || pend["tier"] != "quiet" || pend["command"] != "enter window" {
+		t.Fatalf("withheld pending = %v", wh["pending"])
+	}
+	pick := h.send(map[string]any{"type": "picker"})
+	for _, g := range pick["games"].([]any) {
+		gm := g.(map[string]any)
+		if gm["game"] != "zork1" {
+			continue
+		}
+		if pt := gm["playthrough"].(map[string]any); pt["pendingTier"] != "quiet" {
+			t.Errorf("picker pendingTier = %v", pt["pendingTier"])
+		}
+	}
+	now = now.Add(2 * time.Minute)
+	if ev := h.send(map[string]any{"type": "check-maturation"}); ev["type"] != "matured" || ev["tier"] != "quiet" {
+		t.Fatalf("matured event = %v", ev)
+	}
+	opened := h.send(map[string]any{"type": "opened"})
+	if rv, _ := opened["reveal"].(map[string]any); rv == nil || rv["tier"] != "quiet" {
+		t.Fatalf("reveal = %v", opened["reveal"])
+	}
+
+	// A full-tier wait says so everywhere too.
+	if wh := h.send(map[string]any{"type": "input", "text": "up"}); wh["pending"].(map[string]any)["tier"] != "full" {
+		t.Fatalf("up pending = %v", wh["pending"])
+	}
+	now = now.Add(5 * time.Minute)
+	if ev := h.send(map[string]any{"type": "check-maturation"}); ev["tier"] != "full" {
+		t.Fatalf("matured event = %v", ev)
+	}
+	h.in.Close()
+	<-h.done
+}

@@ -15,7 +15,7 @@ plus respawn resumes invisibly. The binary takes `-state <dir>` and
 
 | type | fields | response |
 |---|---|---|
-| `picker` | — | `picker`: the three games with playthrough summaries; a pending outcome carries `pendingMaturesAt` so the bar icon can rediscover a recap that matured while the wrapper was down |
+| `picker` | — | `picker`: the three games with playthrough summaries; a pending outcome carries `pendingMaturesAt` and `pendingTier` so the bar icon can rediscover a recap that matured while the wrapper was down, and draw the in-flight dot meanwhile |
 | `new` | `game`, `mode` (`classic`/`casual`), `replace` | opening `output`, or `confirm-replace` when a playthrough exists and `replace` is absent |
 | `resume` | `game` | `output` with `status`, `transcript` (recent console lines), and `pending` when applicable; a matured outcome reveals on the follow-up `opened`, never here |
 | `input` | `text` | `output` / `withheld` / `blocked` / `checkpoint` / `checkpoints` / `ended` (see below) |
@@ -40,23 +40,33 @@ Common fields: `output` (story text), `status` (`{room, score, moves}`),
 - **`withheld`** — Casual: the turn carries an action wait
   (docs/action-waits.md) and its outcome is held back.
   `status` stays at pre-turn values (the status line is part of the outcome
-  and would spoil it); `pending` is `{maturesAt, remaining}` (nanoseconds).
+  and would spoil it); `pending` is `{maturesAt, remaining, tier, command}`:
+  `remaining` in nanoseconds, `tier` the wait's presentation register
+  (`"quiet"` below 5 minutes, `"full"` at or above — decided in the wrapper,
+  never recomputed by the Console; docs/action-waits.md §8), `command` the
+  player's own echoed command. The `output` copy is tiered too: "Time passes."
+  vs "The outcome of your action will take some time to unfold...".
 - **`blocked`** — game input while an outcome is pending and unmatured.
-  `save`/`restore` are game input and also answer `blocked`.
+  `save`/`restore` are game input and also answer `blocked`. Copy is tiered:
+  "Time is still passing..." vs "The outcome of your last action is still
+  unfolding...".
 - **`ended`** — the story halted; `ended` is `"won"`, `"quit"`, or `"died"`
   (Zork III's fourth death hard-quits). `quit` playthroughs resume from the
   last autosave; `won`/`died`-final playthroughs are `finished` in the picker.
 
-`reveal` (on `opened` or the first `input` after maturation) is the
-"While you were away…" recap: `{command, output, delta, status, unlocked}` —
-achievements earned on the withheld turn unlock here, not earlier.
+`reveal` (on `opened` or the first `input` after maturation) is the matured
+outcome: `{tier, command, output, delta, status, unlocked}` — achievements
+earned on the withheld turn unlock here, not earlier. The Console frames a
+`full` reveal as the "While you were away…" recap and shows a `quiet` one
+plainly: command echo, output, score/achievement lines, no header.
 
 ## Events (stdout, unsolicited)
 
-- **`matured`** `{game}` — a pending outcome matured; emitted once per outcome
-  (the wrapper checks every `-maturation-tick`). The QML side fires the single
-  non-spoiler desktop notification ("Something has happened in the Great
-  Underground Empire").
+- **`matured`** `{game, tier}` — a pending outcome matured; emitted once per
+  outcome (the wrapper checks every `-maturation-tick`). For a `full` wait the
+  QML side fires the single non-spoiler desktop notification ("Something has
+  happened in the Great Underground Empire"); `quiet` waits never notify, the
+  bar dot alone carries the news.
 
 Because unsolicited events interleave with responses, the QML reader should
 dispatch on `type` (and `id`), not on request order.

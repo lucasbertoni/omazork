@@ -87,10 +87,14 @@ func (s *Server) maturationEvent() map[string]any {
 	if s.sess == nil || !s.sess.PendingMatured() {
 		return nil
 	}
+	// The tier rides along so the QML side can gate the desktop notification
+	// (quiet waits never notify, docs/action-waits.md §8) — read before
+	// MarkNotified, which is the last thing to touch the pending outcome.
+	tier := s.sess.Pending().Tier
 	if err := s.sess.MarkNotified(); err != nil {
 		return map[string]any{"type": "error", "message": err.Error()}
 	}
-	return map[string]any{"type": "matured", "game": s.sess.Game()}
+	return map[string]any{"type": "matured", "game": s.sess.Game(), "tier": tier}
 }
 
 func (s *Server) handle(req request) any {
@@ -236,8 +240,10 @@ func (s *Server) picker() (any, error) {
 		LastPlayed time.Time    `json:"lastPlayed"`
 		Pending    bool         `json:"pending"`
 		// When Pending: lets the bar icon rediscover a recap that matured
-		// while the wrapper was not running (no session, no matured event).
+		// while the wrapper was not running (no session, no matured event),
+		// and show the in-flight dot for the right tier meanwhile.
 		PendingMaturesAt *time.Time `json:"pendingMaturesAt,omitempty"`
+		PendingTier      string     `json:"pendingTier,omitempty"`
 		Finished         bool       `json:"finished"`
 	}
 	type entry struct {
@@ -258,6 +264,7 @@ func (s *Server) picker() (any, error) {
 			if p.Pending != nil {
 				at := p.Pending.MaturesAt
 				e.Playthrough.PendingMaturesAt = &at
+				e.Playthrough.PendingTier = game.PendingTier(p.Pending)
 			}
 		}
 		out = append(out, e)

@@ -11,9 +11,10 @@ Two ways to play, chosen per playthrough:
 - **Casual** — a mediation layer paces play: every action takes the time it
   plausibly would — a minute or two to cross a room, longer to inflate a
   boat, hours for the rare dramatic moment — and its outcome is withheld
-  until that time has passed. Close the console, live your life, and come
-  back to a "While you were away…" recap. Looking, combat, failed turns, and
-  deaths never wait.
+  until that time has passed. Short waits pass quietly ("Time passes.");
+  from five minutes up, close the console, live your life, and come back to
+  a "While you were away…" recap and one desktop notification. Looking,
+  combat, failed turns, and deaths never wait.
 
 Autosave every turn (a shell restart resumes invisibly), checkpoints via
 in-game SAVE/RESTORE, per-playthrough stats, and lifetime achievements.
@@ -42,7 +43,8 @@ o.bind("SUPER + Z", "Zork console", "omarchy-shell shell toggle omazork")
 ```
 
 **Bar icon** — a brass lantern in the shell bar: lit while the engine runs,
-dark when it isn't, with a dot when a Casual recap is waiting. Click toggles
+dark when it isn't, with a hollow dot while a Casual wait unfolds and a filled
+dot once the recap is waiting. Click toggles
 the console; hover shows game and mode (never spoilers). Fresh enables place
 it automatically; if omazork was already enabled before the icon existed,
 re-enable it with a placement (progress is autosaved; note this rewrites the

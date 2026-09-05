@@ -132,9 +132,16 @@ Item {
     property bool finished: false
     // mirrored off the service, the single parser of the pending protocol
     readonly property var pending: root.svc && root.svc.pendingMaturesAt
-        ? { maturesAt: root.svc.pendingMaturesAt } : null
+        ? { maturesAt: root.svc.pendingMaturesAt, tier: root.svc.pendingTier,
+            command: root.svc.pendingCommand } : null
+    readonly property bool pendingQuiet: root.pending !== null && root.pending.tier === "quiet"
     property int pendingMinutes: 0
     onPendingChanged: updatePendingMinutes()
+    // formatted by the service (§8 rule); the transcript never sees either
+    readonly property bool pendingHourPlus: root.pending !== null
+        && root.svc.pendingHourPlus(root.pendingMinutes)
+    readonly property string pendingWhen: root.pending === null ? ""
+        : root.svc.pendingWhen(root.pendingMinutes)
     property var checkpoints: []
     property var restoreChoices: null
 
@@ -197,7 +204,8 @@ Item {
     }
 
     function showReveal(r) {
-        appendLine("meta", "— While you were away… —")
+        // quiet tier: plain reveal, no recap frame (§8)
+        if (r.tier !== "quiet") appendLine("meta", "— While you were away… —")
         appendLine("cmd", "> " + r.command)
         appendLine("out", r.output)
         if (r.delta)

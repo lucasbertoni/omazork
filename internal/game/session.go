@@ -52,8 +52,58 @@ type Status struct {
 	Moves int    `json:"moves"`
 }
 
-// Reveal is the "While you were away…" recap for a matured outcome (#5).
+// Wait tiers (docs/action-waits.md §8): presentation keys on the resolved
+// wait length, with one threshold. The wrapper decides; the Console only
+// reads the tier off PendingInfo and Reveal.
+const (
+	TierQuiet = "quiet" // below quietThreshold: brief copy, plain reveal, no notification
+	TierFull  = "full"  // at or above: the dramatic register
+)
+
+// quietThreshold is the sole tier threshold: waits shorter than this are quiet.
+const quietThreshold = 5 * time.Minute
+
+// tierFor resolves a wait's tier.
+func tierFor(wait time.Duration) string {
+	if wait < quietThreshold {
+		return TierQuiet
+	}
+	return TierFull
+}
+
+// PendingTier reads a stored pending outcome's tier; saves from before tiers
+// carry none and present in the full register, the only one they knew.
+// Exported for the server's picker view, which reads playthroughs without a
+// live session.
+func PendingTier(p *session.Pending) string {
+	if p.Tier == "" {
+		return TierFull
+	}
+	return p.Tier
+}
+
+// Copy per tier (docs/action-waits.md §8 table). Full-tier copy is the
+// original, unchanged.
+var (
+	withheldCopy = map[string]string{
+		TierQuiet: "Time passes.",
+		TierFull:  "The outcome of your action will take some time to unfold...",
+	}
+	withheldMarker = map[string]string{
+		TierQuiet: "[Time passes...]",
+		TierFull:  "[Something is unfolding...]",
+	}
+	blockedCopy = map[string]string{
+		TierQuiet: "Time is still passing...",
+		TierFull:  "The outcome of your last action is still unfolding...",
+	}
+)
+
+// Reveal is a matured outcome as presented (#5): framed as the "While you
+// were away…" recap in the full tier, a plain command echo + output in the
+// quiet tier.
 type Reveal struct {
+	Tier     string               `json:"tier"`
 	Command  string               `json:"command"`
 	Output   string               `json:"output"`
 	Delta    int                  `json:"delta"`
@@ -61,10 +111,13 @@ type Reveal struct {
 	Unlocked []tables.Achievement `json:"unlocked,omitempty"`
 }
 
-// PendingInfo describes a not-yet-matured outcome without spoiling it.
+// PendingInfo describes a not-yet-matured outcome without spoiling it: when
+// it matures, its presentation tier, and the player's own echoed command.
 type PendingInfo struct {
 	MaturesAt time.Time     `json:"maturesAt"`
 	Remaining time.Duration `json:"remaining"`
+	Tier      string        `json:"tier"`
+	Command   string        `json:"command"`
 }
 
 // CheckpointInfo is a checkpoint as shown to the player (no raw state).
@@ -276,15 +329,9 @@ func (s *Session) Command(text string) (Response, error) {
 
 	var reveal *Reveal
 	if s.p.Pending != nil {
-		if now.Before(s.p.Pending.MaturesAt) {
-			// Input is blocked while an outcome is pending (#5).
-			resp := Response{
-				Kind:   KindBlocked,
-				Output: "The outcome of your last action is still unfolding...",
-				Status: s.status(),
-			}
-			s.decorate(&resp)
-			return resp, nil
+		// Input is blocked while an outcome is pending (#5).
+		if blocked := s.blockedResponse(); blocked != nil {
+			return *blocked, nil
 		}
 		reveal = s.reveal(now)
 	}
@@ -343,19 +390,20 @@ func (s *Session) runTurn(text string, now time.Time) (Response, error) {
 			// The turn ran and is autosaved, but the visible status must not
 			// advance: the status line is part of the outcome (#7) and stays
 			// at its pre-turn values on every surface until the reveal.
+			tier := tierFor(wait)
 			s.p.Autosave = turn.State
 			s.p.Pending = &session.Pending{
 				Command: text, Output: turn.Output, Delta: delta, EventID: eventID,
 				Room: turn.Room, Score: turn.Score, Moves: turn.Moves,
-				MaturesAt: now.Add(wait),
+				MaturesAt: now.Add(wait), Tier: tier,
 			}
 			for _, a := range unlocked {
 				s.p.Pending.Achievements = append(s.p.Pending.Achievements, a.ID)
 			}
-			s.p.AppendTranscript("> "+text, "[Something is unfolding...]")
+			s.p.AppendTranscript("> "+text, withheldMarker[tier])
 			return Response{
 				Kind:    KindWithheld,
-				Output:  "The outcome of your action will take some time to unfold...",
+				Output:  withheldCopy[tier],
 				Status:  s.status(),
 				Pending: s.pendingInfo(now),
 			}, nil
@@ -432,13 +480,15 @@ func (s *Session) matchEventID(delta int, room string) string {
 }
 
 // reveal clears the pending outcome, unlocks its achievements, and builds the
-// recap (#5).
+// recap (#5). The transcript gets the "[While you were away...]" header in the
+// full tier only; a quiet reveal is plain output (§8), with the score change
+// on its own line since no header carries it.
 func (s *Session) reveal(now time.Time) *Reveal {
 	pend := s.p.Pending
 	s.p.Pending = nil
 	s.p.Room, s.p.Score, s.p.Moves = pend.Room, pend.Score, pend.Moves
 	r := &Reveal{
-		Command: pend.Command, Output: pend.Output, Delta: pend.Delta,
+		Tier: PendingTier(pend), Command: pend.Command, Output: pend.Output, Delta: pend.Delta,
 		Status: Status{Room: pend.Room, Score: pend.Score, Moves: pend.Moves},
 	}
 	for _, id := range pend.Achievements {
@@ -449,6 +499,13 @@ func (s *Session) reveal(now time.Time) *Reveal {
 		}
 	}
 	s.unlock(r.Unlocked, now)
+	if r.Tier == TierQuiet {
+		s.p.AppendTranscript(pend.Output)
+		if pend.Delta != 0 {
+			s.p.AppendTranscript(fmt.Sprintf("[Your score changed by %+d.]", pend.Delta))
+		}
+		return r
+	}
 	header := "[While you were away...]"
 	if pend.Delta != 0 {
 		header = fmt.Sprintf("[While you were away... (%+d points)]", pend.Delta)
@@ -497,6 +554,10 @@ func (s *Session) PendingMatured() bool {
 	return p != nil && !s.cfg.now().Before(p.MaturesAt) && !p.Notified
 }
 
+// Pending reports the pending outcome, matured or not, without spoiling it;
+// nil when none. The server reads the tier off it to gate the notification.
+func (s *Session) Pending() *PendingInfo { return s.pendingInfo(s.cfg.now()) }
+
 // MarkNotified records that the maturation notification has been sent.
 func (s *Session) MarkNotified() error {
 	if s.p.Pending != nil {
@@ -528,7 +589,7 @@ func (s *Session) pendingInfo(now time.Time) *PendingInfo {
 	if rem < 0 {
 		rem = 0
 	}
-	return &PendingInfo{MaturesAt: p.MaturesAt, Remaining: rem}
+	return &PendingInfo{MaturesAt: p.MaturesAt, Remaining: rem, Tier: PendingTier(p), Command: p.Command}
 }
 
 func (s *Session) recordTurn(turn engine.Turn) {

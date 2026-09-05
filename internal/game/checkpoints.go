@@ -89,7 +89,7 @@ func (s *Session) blockedResponse() *Response {
 	}
 	return &Response{
 		Kind:    KindBlocked,
-		Output:  "The outcome of your last action is still unfolding...",
+		Output:  blockedCopy[PendingTier(s.p.Pending)],
 		Status:  s.status(),
 		Pending: s.pendingInfo(s.cfg.now()),
 	}

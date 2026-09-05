@@ -80,10 +80,14 @@ Rectangle {
                 Text {
                     id: pendText
                     anchors { fill: parent; margins: 10 }
-                    text: journal.app.pendingMinutes > 0
-                        ? "⏳ Outcome pending\nmatures in ~" + journal.app.pendingMinutes
-                          + " min\ninput paused · saves wait"
-                        : "⏳ Outcome matured\nyour next command\nreveals it"
+                    text: journal.app.pendingMinutes <= 0
+                        ? "⏳ Outcome matured\nyour next command\nreveals it"
+                        : journal.app.pendingQuiet
+                        ? "⏳ " + (journal.app.pending.command || "Time passes")
+                          + " — " + journal.app.pendingWhen
+                        : "⏳ Outcome pending\nmatures "
+                          + (journal.app.pendingHourPlus ? "at " : "in ") + journal.app.pendingWhen
+                          + "\ninput paused · saves wait"
                     color: journal.theme.amber
                     wrapMode: Text.Wrap
                     lineHeight: 1.3

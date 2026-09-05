@@ -31,6 +31,27 @@ Item {
     readonly property bool backendAlive: backend.running
     property bool matureRecapWaiting: false
     property var pendingMaturesAt: null
+    // Wait tier and echoed command of the pending outcome (docs/action-waits.md
+    // §8). The tier is server-authoritative: the wrapper decides, this side
+    // only presents — "quiet" or "full", "" when nothing is pending.
+    property string pendingTier: ""
+    property string pendingCommand: ""
+
+    // Out-of-game surfaces only (docs/action-waits.md §8): remaining minutes
+    // under an hour, absolute clock time from an hour up. Shared by the
+    // Console and the bar so the two never disagree on the rule.
+    function pendingHourPlus(minutes) { return minutes >= 60 }
+    function pendingWhen(minutes) {
+        return root.pendingHourPlus(minutes)
+            ? Qt.formatTime(root.pendingMaturesAt, "h:mm AP")
+            : "~" + minutes + " min"
+    }
+
+    function adoptPending(pending) {
+        root.pendingMaturesAt = pending ? new Date(pending.maturesAt) : null
+        root.pendingTier = pending && pending.tier ? pending.tier : ""
+        root.pendingCommand = pending && pending.command ? pending.command : ""
+    }
 
     signal message(var msg) // every parsed wrapper line, after service bookkeeping
     signal backendStarted()
@@ -125,27 +146,30 @@ Item {
         // so a reveal clears the dot even while the Console is unloaded.
         if (msg.reveal) {
             root.matureRecapWaiting = false
-            root.pendingMaturesAt = null
+            root.adoptPending(null)
         }
         switch (msg.type) {
         case "output":
         case "ended":
         case "withheld":
-            root.pendingMaturesAt = msg.pending ? new Date(msg.pending.maturesAt) : null
+            root.adoptPending(msg.pending)
             // no pending and no reveal: the active playthrough owes nothing,
             // so a lit dot is stale (playthrough replaced, or game switched)
             if (!msg.pending && !msg.reveal) root.matureRecapWaiting = false
             break
         case "blocked":
-            if (msg.pending) root.pendingMaturesAt = new Date(msg.pending.maturesAt)
+            if (msg.pending) root.adoptPending(msg.pending)
             break
         case "picker":
             root.adoptPickerPending(msg.games)
             break
         case "matured":
             root.matureRecapWaiting = true
-            Quickshell.execDetached(["notify-send", "-a", "omazork", "omazork",
-                "Something has happened in the Great Underground Empire."])
+            // Quiet waits never notify (§8); the dot alone carries the news.
+            // A tier-less event is an older wrapper: full register.
+            if (msg.tier !== "quiet")
+                Quickshell.execDetached(["notify-send", "-a", "omazork", "omazork",
+                    "Something has happened in the Great Underground Empire."])
             break
         }
         root.message(msg)
@@ -155,15 +179,20 @@ Item {
     // picker payload carries each playthrough's pendingMaturesAt; adopt the
     // earliest (covers outcomes that matured across a shell restart).
     function adoptPickerPending(games) {
-        var earliest = null
+        var earliest = null, tier = ""
         for (var i = 0; games && i < games.length; i++) {
             var pt = games[i].playthrough
             if (pt && pt.pending && pt.pendingMaturesAt) {
                 var at = new Date(pt.pendingMaturesAt)
-                if (!earliest || at < earliest) earliest = at
+                if (!earliest || at < earliest) {
+                    earliest = at
+                    tier = pt.pendingTier || ""
+                }
             }
         }
         root.pendingMaturesAt = earliest
+        root.pendingTier = tier
+        root.pendingCommand = "" // the picker carries no command: spoiler-free summary
         if (!earliest) root.matureRecapWaiting = false
         else if (Date.now() >= earliest.getTime()) root.matureRecapWaiting = true
     }

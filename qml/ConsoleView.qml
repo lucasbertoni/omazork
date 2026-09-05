@@ -91,11 +91,13 @@ FocusScope {
                 Text {
                     id: bannerText
                     anchors { fill: parent; margins: 9; leftMargin: 14; rightMargin: 14 }
-                    text: view.pendingUnmatured
-                        ? "⏳ Something is unfolding in the story. It resolves in ~"
-                          + view.app.pendingMinutes
-                          + " min — come back then. (No peeking; SAVE/RESTORE wait too.)"
-                        : "⏳ The outcome has matured — your next command reveals it."
+                    text: !view.pendingUnmatured
+                        ? "⏳ The outcome has matured — your next command reveals it."
+                        : view.app.pendingQuiet
+                        ? "⏳ Time passes — " + view.app.pendingWhen + ". (SAVE/RESTORE wait too.)"
+                        : "⏳ Something is unfolding in the story. It resolves "
+                          + (view.app.pendingHourPlus ? "at " : "in ") + view.app.pendingWhen
+                          + " — come back then. (No peeking; SAVE/RESTORE wait too.)"
                     color: view.theme.amber
                     wrapMode: Text.Wrap
                     font { family: view.theme.mono; pixelSize: 12 }
@@ -143,9 +145,9 @@ FocusScope {
                         Text {
                             anchors.fill: parent
                             visible: cmdInput.text === ""
-                            text: view.pendingUnmatured
-                                ? "an outcome is unfolding — MENU still works"
-                                : ""
+                            text: !view.pendingUnmatured ? ""
+                                : view.app.pendingQuiet ? "time is passing — MENU still works"
+                                : "an outcome is unfolding — MENU still works"
                             color: view.theme.textDim
                             font: cmdInput.font
                         }
