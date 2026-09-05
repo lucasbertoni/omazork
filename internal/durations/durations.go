@@ -208,6 +208,9 @@ type VerbDefault struct {
 	Synonyms []string `json:"synonyms,omitempty"`
 	Class    Class    `json:"class"`
 	Seconds  int      `json:"seconds"`
+	// Narration is the verb's progressive phrase for wait narration
+	// (docs/action-waits.md §8): "climbing", "inflating". Player-facing.
+	Narration string `json:"narration,omitempty"`
 }
 
 // Calibration is the shared threshold file, data/actions/calibration.json

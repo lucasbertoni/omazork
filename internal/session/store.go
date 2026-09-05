@@ -80,6 +80,13 @@ type Pending struct {
 	Moves     int       `json:"moves"`
 	MaturesAt time.Time `json:"maturesAt"`
 	Notified  bool      `json:"notified"`
+	// StartedAt is when the wait began; zero on saves from before wait
+	// narration, which then show no progress.
+	StartedAt time.Time `json:"startedAt,omitzero"`
+	// Narration is the player-facing phrase for what the wait is about
+	// ("climbing the tree"), fixed when the outcome is withheld; empty on
+	// older saves, which fall back to the generic tier copy.
+	Narration string `json:"narration,omitempty"`
 	// Tier is the wait's presentation register, "quiet" or "full"
 	// (docs/action-waits.md §8), fixed when the outcome is withheld. Saves
 	// from before tiers carry none and present as full.

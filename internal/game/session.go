@@ -82,13 +82,11 @@ func PendingTier(p *session.Pending) string {
 	return p.Tier
 }
 
-// Copy per tier (docs/action-waits.md §8 table). Full-tier copy is the
-// original, unchanged.
+// Copy per tier (docs/action-waits.md §8 table). Withheld and blocked lines
+// normally carry the wait narration (narration.go); these generic forms serve
+// pending outcomes saved before narration existed. The transcript marker is
+// always generic: it is a permanent artefact, not a status.
 var (
-	withheldCopy = map[string]string{
-		TierQuiet: "Time passes.",
-		TierFull:  "The outcome of your action will take some time to unfold...",
-	}
 	withheldMarker = map[string]string{
 		TierQuiet: "[Time passes...]",
 		TierFull:  "[Something is unfolding...]",
@@ -98,6 +96,14 @@ var (
 		TierFull:  "The outcome of your last action is still unfolding...",
 	}
 )
+
+// blockedFor is the blocked-input line for a stored pending outcome.
+func blockedFor(p *session.Pending) string {
+	if p.Narration != "" {
+		return blockedNarration(p.Narration)
+	}
+	return blockedCopy[PendingTier(p)]
+}
 
 // Reveal is a matured outcome as presented (#5): framed as the "While you
 // were away…" recap in the full tier, a plain command echo + output in the
@@ -118,6 +124,11 @@ type PendingInfo struct {
 	Remaining time.Duration `json:"remaining"`
 	Tier      string        `json:"tier"`
 	Command   string        `json:"command"`
+	// Narration is the wait narration (§8); empty for saves that predate it.
+	Narration string `json:"narration,omitempty"`
+	// StartedAt is when the wait began, so a surface can draw progress; nil
+	// for saves that predate it.
+	StartedAt *time.Time `json:"startedAt,omitempty"`
 }
 
 // CheckpointInfo is a checkpoint as shown to the player (no raw state).
@@ -385,7 +396,7 @@ func (s *Session) runTurn(text string, now time.Time) (Response, error) {
 	// edge, verb default, fallback. Deaths and halts always reveal immediately.
 	// Classic never classifies, so its playthrough file is exactly what it was.
 	if s.p.Mode == session.Casual {
-		wait := s.classify(text, turn)
+		wait, narration := s.classify(text, turn)
 		if wait > 0 && !died {
 			// The turn ran and is autosaved, but the visible status must not
 			// advance: the status line is part of the outcome (#7) and stays
@@ -395,7 +406,7 @@ func (s *Session) runTurn(text string, now time.Time) (Response, error) {
 			s.p.Pending = &session.Pending{
 				Command: text, Output: turn.Output, Delta: delta, EventID: eventID,
 				Room: turn.Room, Score: turn.Score, Moves: turn.Moves,
-				MaturesAt: now.Add(wait), Tier: tier,
+				MaturesAt: now.Add(wait), Tier: tier, StartedAt: now, Narration: narration,
 			}
 			for _, a := range unlocked {
 				s.p.Pending.Achievements = append(s.p.Pending.Achievements, a.ID)
@@ -403,7 +414,7 @@ func (s *Session) runTurn(text string, now time.Time) (Response, error) {
 			s.p.AppendTranscript("> "+text, withheldMarker[tier])
 			return Response{
 				Kind:    KindWithheld,
-				Output:  withheldCopy[tier],
+				Output:  withheldNarration(narration),
 				Status:  s.status(),
 				Pending: s.pendingInfo(now),
 			}, nil
@@ -449,14 +460,14 @@ func (s *Session) endTurn(text string, turn engine.Turn, died bool, now time.Tim
 // turn is classified against the engine's true position (§3): room object
 // number and moves counter from the snapshot, the combat window carried from
 // the previous turn and persisted on the playthrough.
-func (s *Session) classify(text string, turn engine.Turn) time.Duration {
+func (s *Session) classify(text string, turn engine.Turn) (time.Duration, string) {
 	res := s.matcher.Classify(s.mstate, actions.Turn{
 		Input: text, Output: turn.Output, Room: turn.Room, RoomObj: turn.RoomObj, Moves: turn.Moves,
 	})
 	s.mstate = res.State
 	s.p.Combat = res.State.Combat
 	r := s.durs.Resolve(durations.QueryFor(res))
-	return time.Duration(r.Row.Seconds) * time.Second
+	return time.Duration(r.Row.Seconds) * time.Second, narrate(res, r.Row.Class, s.durs)
 }
 
 // matchEventID resolves the turn's score event, applying the Zork III
@@ -589,7 +600,12 @@ func (s *Session) pendingInfo(now time.Time) *PendingInfo {
 	if rem < 0 {
 		rem = 0
 	}
-	return &PendingInfo{MaturesAt: p.MaturesAt, Remaining: rem, Tier: PendingTier(p), Command: p.Command}
+	info := &PendingInfo{MaturesAt: p.MaturesAt, Remaining: rem, Tier: PendingTier(p), Command: p.Command, Narration: p.Narration}
+	if !p.StartedAt.IsZero() {
+		at := p.StartedAt
+		info.StartedAt = &at
+	}
+	return info
 }
 
 func (s *Session) recordTurn(turn engine.Turn) {

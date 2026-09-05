@@ -8,6 +8,7 @@ type Parsed struct {
 	Dir    string // canonical direction; "" when not a walk command
 	Verb   string // canonical verb; "" for walk commands and empty input
 	Object string // head noun (last object token before "with"); "" when absent
+	Rest   string // the normalized words after the verb, for wait narration; "" when none
 }
 
 var directions = map[string]string{
@@ -98,5 +99,5 @@ func Parse(raw string) Parsed {
 	if len(objTokens) > 0 {
 		object = objTokens[len(objTokens)-1]
 	}
-	return Parsed{Verb: verb, Object: object}
+	return Parsed{Verb: verb, Object: object, Rest: strings.Join(rest, " ")}
 }

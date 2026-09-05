@@ -83,24 +83,38 @@ FocusScope {
                 visible: view.app.pending !== null
                 width: parent.width - 44
                 anchors.horizontalCenter: parent.horizontalCenter
-                height: visible ? bannerText.implicitHeight + 18 : 0
+                height: visible ? bannerColumn.implicitHeight + 18 : 0
                 color: "transparent"
                 border.color: view.theme.amberBorder
                 border.width: 1
 
-                Text {
-                    id: bannerText
+                // Wait narration + remaining time, over the progress bar (#43).
+                // The narration is the wrapper's; this side only frames it.
+                Column {
+                    id: bannerColumn
                     anchors { fill: parent; margins: 9; leftMargin: 14; rightMargin: 14 }
-                    text: !view.pendingUnmatured
-                        ? "⏳ The outcome has matured — your next command reveals it."
-                        : view.app.pendingQuiet
-                        ? "⏳ Time passes — " + view.app.pendingWhen + ". (SAVE/RESTORE wait too.)"
-                        : "⏳ Something is unfolding in the story. It resolves "
-                          + (view.app.pendingHourPlus ? "at " : "in ") + view.app.pendingWhen
-                          + " — come back then. (No peeking; SAVE/RESTORE wait too.)"
-                    color: view.theme.amber
-                    wrapMode: Text.Wrap
-                    font { family: view.theme.mono; pixelSize: 12 }
+                    spacing: 7
+
+                    Text {
+                        id: bannerText
+                        width: parent.width
+                        text: !view.pendingUnmatured
+                            ? "⏳ The outcome has matured — your next command reveals it."
+                            : view.app.pendingQuiet
+                            ? "⏳ " + view.app.pendingNarration + " — " + view.app.pendingWhen
+                              + ". (SAVE/RESTORE wait too.)"
+                            : "⏳ " + view.app.pendingNarration + " — resolves "
+                              + (view.app.pendingHourPlus ? "at " : "in ") + view.app.pendingWhen
+                              + ". No peeking; SAVE/RESTORE wait too."
+                        color: view.theme.amber
+                        wrapMode: Text.Wrap
+                        font { family: view.theme.mono; pixelSize: 12 }
+                    }
+                    WaitBar {
+                        width: parent.width
+                        theme: view.theme
+                        progress: view.app.pendingProgress
+                    }
                 }
             }
 

@@ -133,9 +133,19 @@ Item {
     // mirrored off the service, the single parser of the pending protocol
     readonly property var pending: root.svc && root.svc.pendingMaturesAt
         ? { maturesAt: root.svc.pendingMaturesAt, tier: root.svc.pendingTier,
-            command: root.svc.pendingCommand } : null
+            command: root.svc.pendingCommand, narration: root.svc.pendingNarration,
+            startedAt: root.svc.pendingStartedAt } : null
     readonly property bool pendingQuiet: root.pending !== null && root.pending.tier === "quiet"
+    // The wait narration as the surfaces show it (#43): the wrapper's phrase,
+    // or the generic tier line for a save that predates narration.
+    readonly property string pendingNarration: root.pending === null ? ""
+        : root.pending.narration ? root.pending.narration
+        : root.pendingQuiet ? "time passes" : "something is unfolding"
     property int pendingMinutes: 0
+    // Wait progress (#43): elapsed share of the pending wait, 0..1; -1 when the
+    // wait's start is unknown (a save from before it was recorded). Clamps at
+    // 1 once matured so the bar stays full until the reveal.
+    property real pendingProgress: -1
     onPendingChanged: updatePendingMinutes()
     // formatted by the service (§8 rule); the transcript never sees either
     readonly property bool pendingHourPlus: root.pending !== null
@@ -180,15 +190,29 @@ Item {
         root.moves = st.moves
     }
 
+    // Progress of one wait at a given moment: -1 without a start, else the
+    // elapsed share clamped to 0..1. Shared with the picker rows, which carry
+    // their own start/matures pairs.
+    function waitProgress(startedAt, maturesAt, nowMs) {
+        if (!startedAt || !maturesAt) return -1
+        var total = maturesAt.getTime() - startedAt.getTime()
+        if (total <= 0) return 1
+        return Math.min(1, Math.max(0, (nowMs - startedAt.getTime()) / total))
+    }
+    property double nowMs: Date.now()
+
     function updatePendingMinutes() {
-        if (!root.pending) { root.pendingMinutes = 0; return }
+        root.nowMs = Date.now()
+        if (!root.pending) { root.pendingMinutes = 0; root.pendingProgress = -1; return }
         root.pendingMinutes = Math.max(0,
-            Math.ceil((root.pending.maturesAt.getTime() - Date.now()) / 60000))
+            Math.ceil((root.pending.maturesAt.getTime() - root.nowMs) / 60000))
+        root.pendingProgress = root.waitProgress(root.pending.startedAt, root.pending.maturesAt, root.nowMs)
     }
     Timer {
-        // countdown display only, so no need to tick while hidden
-        interval: 30000; repeat: true
-        running: root.pending !== null && root.opened
+        // display only (countdown, progress bars), so no need to tick while
+        // hidden; the picker rows carry their own waits, hence the screen test
+        interval: 1000; repeat: true
+        running: root.opened && (root.pending !== null || root.screen === "picker")
         onTriggered: root.updatePendingMinutes()
     }
 

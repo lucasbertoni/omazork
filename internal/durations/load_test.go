@@ -6,7 +6,7 @@ import (
 )
 
 const testVerbs = `{"schemaVersion":2,"fastVerbs":["look","pray"],"verbs":[
- {"verb":"take","synonyms":["get"],"class":"manipulation","seconds":60},
+ {"verb":"take","synonyms":["get"],"class":"manipulation","seconds":60,"narration":"taking"},
  {"verb":"dig","class":"mechanism","seconds":600}]}`
 
 const testTable = `{"schemaVersion":2,"game":"zork1",
@@ -115,5 +115,17 @@ func TestVocabNormalizes(t *testing.T) {
 	}
 	if got := l.Nouns("sand"); len(got) != 1 || got[0] != "SAND" {
 		t.Fatalf("Nouns(sand) = %v", got)
+	}
+}
+
+// Narration (§8) resolves through the verb's synonyms and is absent, not
+// invented, for a verb without a phrase.
+func TestNarrationThroughSynonyms(t *testing.T) {
+	l := loadOK(t, baseFS())
+	if n, ok := l.Narration("get"); !ok || n != "taking" {
+		t.Errorf("Narration(get) = %q %v, want taking", n, ok)
+	}
+	if n, ok := l.Narration("dig"); ok {
+		t.Errorf("Narration(dig) = %q, want none", n)
 	}
 }

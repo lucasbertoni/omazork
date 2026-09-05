@@ -113,6 +113,18 @@ FocusScope {
                         ? view.theme.amber : view.theme.textDim
                     font { family: view.theme.mono; pixelSize: 12 }
                 }
+                // Wait progress, no narration: the picker stays spoiler-free (#43).
+                WaitBar {
+                    anchors { left: parent.left; right: parent.right; bottom: parent.bottom
+                              leftMargin: 16; rightMargin: 16; bottomMargin: 4 }
+                    theme: view.theme
+                    progress: {
+                        var pt = modelData.playthrough
+                        if (!pt || !pt.pending || !pt.pendingStartedAt || !pt.pendingMaturesAt) return -1
+                        return view.app.waitProgress(new Date(pt.pendingStartedAt),
+                                                     new Date(pt.pendingMaturesAt), view.app.nowMs)
+                    }
+                }
             }
         }
 

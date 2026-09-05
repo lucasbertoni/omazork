@@ -14,6 +14,7 @@ Glossary of canonical terms. Keep implementation details out.
 - **Score event**: one of a game's fixed, published point-awarding moments (first entry to certain rooms, taking or depositing a treasure). Triggers achievements; carries no timing.
 - **Action wait**: the real-world duration a player action takes to unfold in Casual mode — inferred per action (movement per directed room edge, other actions per verb and object) rather than from score. What delays an outcome.
 - **Wait tier**: the presentation register of an action wait, keyed on its resolved length. *Quiet* waits pass with minimal ceremony and never notify; *full* waits get the dramatic treatment.
+- **Wait narration**: the player-facing, spoiler-free phrasing of an in-flight action wait, built from the player's own command ("climbing the tree", "heading north"). Names what the player is doing, never the outcome, the destination, or how the wait was priced. Distinct from the wait tier, which is only the register.
 - **Drift edge**: a directed room-to-room passage traversed by current or vehicle rather than a walk command (the Frigid River, the balloon). Timed as movement even though the player didn't type a direction.
 - **Maturation**: the moment a pending outcome's action wait elapses and it becomes revealable. Revealed on the next Console open.
 - **Recap**: the "While you were away…" block shown when a matured full-tier outcome reveals: last command, the outcome, current room and score. Quiet-tier outcomes reveal plainly, without the recap frame.

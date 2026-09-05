@@ -89,7 +89,7 @@ func (s *Session) blockedResponse() *Response {
 	}
 	return &Response{
 		Kind:    KindBlocked,
-		Output:  blockedCopy[PendingTier(s.p.Pending)],
+		Output:  blockedFor(s.p.Pending),
 		Status:  s.status(),
 		Pending: s.pendingInfo(s.cfg.now()),
 	}

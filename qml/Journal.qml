@@ -69,29 +69,40 @@ Rectangle {
             }
 
             Rectangle {
+                id: pendCard
                 visible: journal.app.pending !== null
                 width: parent.width
-                height: pendText.implicitHeight + 20
+                height: pendColumn.implicitHeight + 20
                 radius: 4
                 color: journal.theme.amberBg
                 border.color: journal.theme.amberBorder
                 border.width: 1
 
-                Text {
-                    id: pendText
+                Column {
+                    id: pendColumn
                     anchors { fill: parent; margins: 10 }
-                    text: journal.app.pendingMinutes <= 0
-                        ? "⏳ Outcome matured\nyour next command\nreveals it"
-                        : journal.app.pendingQuiet
-                        ? "⏳ " + (journal.app.pending.command || "Time passes")
-                          + " — " + journal.app.pendingWhen
-                        : "⏳ Outcome pending\nmatures "
-                          + (journal.app.pendingHourPlus ? "at " : "in ") + journal.app.pendingWhen
-                          + "\ninput paused · saves wait"
-                    color: journal.theme.amber
-                    wrapMode: Text.Wrap
-                    lineHeight: 1.3
-                    font { family: journal.theme.mono; pixelSize: 12 }
+                    spacing: 8
+
+                    Text {
+                        id: pendText
+                        width: parent.width
+                        text: journal.app.pendingMinutes <= 0
+                            ? "⏳ Outcome matured\nyour next command\nreveals it"
+                            : journal.app.pendingQuiet
+                            ? "⏳ " + journal.app.pendingNarration + "\n" + journal.app.pendingWhen
+                            : "⏳ " + journal.app.pendingNarration + "\nmatures "
+                              + (journal.app.pendingHourPlus ? "at " : "in ") + journal.app.pendingWhen
+                              + "\ninput paused · saves wait"
+                        color: journal.theme.amber
+                        wrapMode: Text.Wrap
+                        lineHeight: 1.3
+                        font { family: journal.theme.mono; pixelSize: 12 }
+                    }
+                    WaitBar {
+                        width: parent.width
+                        theme: journal.theme
+                        progress: journal.app.pendingProgress
+                    }
                 }
             }
 

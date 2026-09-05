@@ -36,6 +36,10 @@ Item {
     // only presents — "quiet" or "full", "" when nothing is pending.
     property string pendingTier: ""
     property string pendingCommand: ""
+    // Wait narration and start (#43): what the wait is about, in the player's
+    // words, and when it began (null on saves that predate it: no progress).
+    property string pendingNarration: ""
+    property var pendingStartedAt: null
 
     // Out-of-game surfaces only (docs/action-waits.md §8): remaining minutes
     // under an hour, absolute clock time from an hour up. Shared by the
@@ -51,6 +55,8 @@ Item {
         root.pendingMaturesAt = pending ? new Date(pending.maturesAt) : null
         root.pendingTier = pending && pending.tier ? pending.tier : ""
         root.pendingCommand = pending && pending.command ? pending.command : ""
+        root.pendingNarration = pending && pending.narration ? pending.narration : ""
+        root.pendingStartedAt = pending && pending.startedAt ? new Date(pending.startedAt) : null
     }
 
     signal message(var msg) // every parsed wrapper line, after service bookkeeping
@@ -179,7 +185,7 @@ Item {
     // picker payload carries each playthrough's pendingMaturesAt; adopt the
     // earliest (covers outcomes that matured across a shell restart).
     function adoptPickerPending(games) {
-        var earliest = null, tier = ""
+        var earliest = null, tier = "", started = null
         for (var i = 0; games && i < games.length; i++) {
             var pt = games[i].playthrough
             if (pt && pt.pending && pt.pendingMaturesAt) {
@@ -187,12 +193,16 @@ Item {
                 if (!earliest || at < earliest) {
                     earliest = at
                     tier = pt.pendingTier || ""
+                    started = pt.pendingStartedAt ? new Date(pt.pendingStartedAt) : null
                 }
             }
         }
         root.pendingMaturesAt = earliest
         root.pendingTier = tier
-        root.pendingCommand = "" // the picker carries no command: spoiler-free summary
+        root.pendingStartedAt = started
+        // the picker carries no command or narration: spoiler-free summary
+        root.pendingCommand = ""
+        root.pendingNarration = ""
         if (!earliest) root.matureRecapWaiting = false
         else if (Date.now() >= earliest.getTime()) root.matureRecapWaiting = true
     }

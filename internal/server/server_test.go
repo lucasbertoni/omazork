@@ -191,6 +191,12 @@ func TestPickerCarriesPendingMaturesAt(t *testing.T) {
 		if err != nil || !when.After(now) {
 			t.Fatalf("pendingMaturesAt = %q (err %v), want a future RFC3339 time", raw, err)
 		}
+		// The picker's progress bar (#43) needs the wait's start too.
+		if rawStart, ok := pt["pendingStartedAt"].(string); !ok {
+			t.Fatalf("no pendingStartedAt: %v", pt)
+		} else if began, err := time.Parse(time.RFC3339, rawStart); err != nil || !began.Equal(now) {
+			t.Fatalf("pendingStartedAt = %q (err %v), want %v", rawStart, err, now)
+		}
 	}
 	h.in.Close()
 	<-h.done

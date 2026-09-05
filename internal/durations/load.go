@@ -21,6 +21,7 @@ type Layered struct {
 	verbDefaults map[string]Row
 	verbAliases  map[string]string
 	fastVerbs    map[string]bool
+	narrations   map[string]string
 	roomObj      map[string]int
 	roomID       map[int]string
 	drift        map[string]bool
@@ -131,6 +132,7 @@ func Layer(t *Table, o *Overlay, v *Verbs) *Layered {
 		verbDefaults: map[string]Row{},
 		verbAliases:  map[string]string{},
 		fastVerbs:    map[string]bool{},
+		narrations:   map[string]string{},
 		roomObj:      map[string]int{},
 		roomID:       map[int]string{},
 		drift:        map[string]bool{},
@@ -152,6 +154,9 @@ func Layer(t *Table, o *Overlay, v *Verbs) *Layered {
 	for _, d := range v.Verbs {
 		l.verbDefaults[d.Verb] = Row{Seconds: d.Seconds, Class: d.Class, Source: SourceRule}
 		l.verbAliases[d.Verb] = d.Verb
+		if d.Narration != "" {
+			l.narrations[d.Verb] = d.Narration
+		}
 		for _, syn := range d.Synonyms {
 			l.verbAliases[syn] = d.Verb
 		}
@@ -203,6 +208,16 @@ func (l *Layered) VerbDefault(verb string) (Row, bool) {
 	}
 	row, ok := l.verbDefaults[verb]
 	return row, ok
+}
+
+// Narration returns the verb's hand-authored progressive phrase (§8), through
+// its synonyms; false when the verb has none.
+func (l *Layered) Narration(verb string) (string, bool) {
+	if canon, ok := l.verbAliases[verb]; ok {
+		verb = canon
+	}
+	n, ok := l.narrations[verb]
+	return n, ok
 }
 
 // FastVerb reports whether a verb is in the always-instant hard class (§10).

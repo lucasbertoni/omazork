@@ -244,6 +244,10 @@ func (s *Server) picker() (any, error) {
 		// and show the in-flight dot for the right tier meanwhile.
 		PendingMaturesAt *time.Time `json:"pendingMaturesAt,omitempty"`
 		PendingTier      string     `json:"pendingTier,omitempty"`
+		// When the wait began, for the picker's progress bar (#43); absent
+		// on saves from before wait narration. No narration here: the
+		// picker is spoiler-free by design.
+		PendingStartedAt *time.Time `json:"pendingStartedAt,omitempty"`
 		Finished         bool       `json:"finished"`
 	}
 	type entry struct {
@@ -265,6 +269,10 @@ func (s *Server) picker() (any, error) {
 				at := p.Pending.MaturesAt
 				e.Playthrough.PendingMaturesAt = &at
 				e.Playthrough.PendingTier = game.PendingTier(p.Pending)
+				if !p.Pending.StartedAt.IsZero() {
+					began := p.Pending.StartedAt
+					e.Playthrough.PendingStartedAt = &began
+				}
 			}
 		}
 		out = append(out, e)

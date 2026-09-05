@@ -336,27 +336,50 @@ surfaces (console banner, journal card, bar tooltip) show remaining minutes unde
 an hour ("~4 min") and absolute clock time at an hour or more ("matures at
 5:12 PM").
 
-| Moment | Quiet (<5 min) | Full (≥5 min — current copy, unchanged) |
+**Wait narration** ([#43](https://github.com/lucasbertoni/omazork/issues/43)):
+the withheld and blocked lines name what the player is doing, in the player's own
+words, in both tiers. The narration is the verb's progressive phrase (`narration`
+in `verbs.json`, resolved through synonyms) followed by the rest of the typed
+command: `climb the tree` → "climbing the tree", `put coins in case` → "putting
+coins in case". Walk commands narrate by direction: "heading north", "climbing
+up/down"; a drift edge has no typed direction and narrates whatever was typed. A
+verb with no phrase falls back to a class phrase that stands alone
+(manipulation "handling", mechanism "working on", movement "making your way",
+dramatic "seeing it through"; "acting" when even the class is unknown). Never the
+destination room, never the pricing class — nothing the player did not type.
+
+| Moment | Quiet (<5 min) | Full (≥5 min) |
 |---|---|---|
-| Withheld response | "Time passes." | "The outcome of your action will take some time to unfold..." |
+| Withheld response | "You begin {narration}..." | same |
 | Transcript marker | `[Time passes...]` | `[Something is unfolding...]` |
-| Blocked input | "Time is still passing..." | "The outcome of your last action is still unfolding..." |
+| Blocked input | "You are still {narration}..." | same |
 | Reveal | Plain reveal: command echo + output (+ score-delta / achievement lines), **no header** | "— While you were away… —" recap unchanged |
 | Desktop notification | none | "Something has happened in the Great Underground Empire." |
 
-Derived quiet variants (drafts — build sessions may polish wording, not register):
-banner "⏳ Time passes — ~2 min. (SAVE/RESTORE wait too.)" (matured variant
-unchanged); journal card "⏳ north — ~2 min"; input placeholder "time is passing —
-MENU still works".
+Pending outcomes saved before narration existed keep the generic tiered lines
+("Time is still passing..." / "The outcome of your last action is still
+unfolding...").
+
+**Progress bar**: the out-of-game surfaces (console banner, journal card, picker
+row) draw a thin bar of the wait's elapsed share, ticking once a second, both
+tiers, staying full once matured until the reveal. The transcript never shows it.
+The picker draws the bar without narration (spoiler-free summary). A pending
+outcome without `startedAt` shows no bar.
+
+Banner "⏳ climbing the tree — ~2 min. (SAVE/RESTORE wait too.)" (quiet) /
+"⏳ climbing the tree — resolves at 5:12 PM. No peeking; SAVE/RESTORE wait too."
+(full); journal card "⏳ climbing the tree / ~2 min"; input placeholder "time is
+passing — MENU still works". Matured variants unchanged.
 
 **Bar icon**: gains an in-flight state, both tiers — dim/hollow dot while a wait is
 unfolding, accent dot when matured (existing). Matured-dot semantics, click action,
-glyph unchanged.
+glyph unchanged. No progress bar: a bar slot is too small to read one.
 
-**PendingInfo** gains two fields: `tier` (`"quiet"` | `"full"`) —
-server-authoritative, the 5-min threshold lives only in the wrapper — and
-`command`, the player's own echoed command. Existing `{maturesAt, remaining}`
-unchanged.
+**PendingInfo** carries `tier` (`"quiet"` | `"full"`) — server-authoritative, the
+5-min threshold lives only in the wrapper — `command`, the player's own echoed
+command, `narration` (above), and `startedAt`, when the wait began. Existing
+`{maturesAt, remaining}` unchanged. The picker payload carries `pendingStartedAt`
+alongside `pendingMaturesAt` and `pendingTier`.
 
 ## 9. Score-event decoupling ([#24](https://github.com/lucasbertoni/omazork/issues/24))
 

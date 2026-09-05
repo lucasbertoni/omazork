@@ -29,13 +29,14 @@ func TestQuietTierWait(t *testing.T) {
 	if resp.Pending.Command != "enter window" {
 		t.Errorf("command = %q, want the echoed command", resp.Pending.Command)
 	}
-	if resp.Output != "Time passes." {
+	// Withheld and blocked lines carry the wait narration in both tiers (#43).
+	if resp.Output != "You begin entering window..." {
 		t.Errorf("withheld copy = %q", resp.Output)
 	}
-	if b, _ := s.Command("west"); b.Kind != game.KindBlocked || b.Output != "Time is still passing..." {
+	if b, _ := s.Command("west"); b.Kind != game.KindBlocked || b.Output != "You are still entering window..." {
 		t.Errorf("blocked = %+v", b)
 	}
-	if b, _ := s.Command("save"); b.Kind != game.KindBlocked || b.Output != "Time is still passing..." {
+	if b, _ := s.Command("save"); b.Kind != game.KindBlocked || b.Output != "You are still entering window..." {
 		t.Errorf("blocked save = %+v", b)
 	}
 	if b, _ := s.Command("west"); b.Pending == nil || b.Pending.Tier != game.TierQuiet || b.Pending.Command != "enter window" {
@@ -69,8 +70,9 @@ func TestQuietTierWait(t *testing.T) {
 	}
 }
 
-// TestFullTierWaitUnchanged: at or above 5 minutes the current dramatic
-// register is byte-identical to today, and the tier says so.
+// TestFullTierWaitUnchanged: at or above 5 minutes the dramatic register
+// (marker, recap header) is unchanged, and the tier says so; the withheld and
+// blocked lines narrate the walk by direction (#43).
 func TestFullTierWaitUnchanged(t *testing.T) {
 	s, clock := casualAtWindow(t)
 	play(t, s, clock, "enter window")
@@ -87,10 +89,10 @@ func TestFullTierWaitUnchanged(t *testing.T) {
 	if resp.Pending.Tier != game.TierFull || resp.Pending.Command != "up" {
 		t.Errorf("pending = %+v, want full/up", resp.Pending)
 	}
-	if resp.Output != "The outcome of your action will take some time to unfold..." {
-		t.Errorf("withheld copy = %q", resp.Output)
+	if resp.Output != "You begin climbing up..." || resp.Pending.Narration != "climbing up" {
+		t.Errorf("withheld = %q / %q", resp.Output, resp.Pending.Narration)
 	}
-	if b, _ := s.Command("down"); b.Output != "The outcome of your last action is still unfolding..." {
+	if b, _ := s.Command("down"); b.Output != "You are still climbing up..." {
 		t.Errorf("blocked copy = %q", b.Output)
 	}
 	clock.t = clock.t.Add(5 * time.Minute)
