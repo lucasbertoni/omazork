@@ -1,8 +1,12 @@
 // actiongen is the offline duration generator (docs/action-waits.md §5.2,
 // §5.3): it rule-prices data/extract/<game>.json into the committed duration
 // table data/actions/<game>.json, refines it with the committed LLM cache
-// data/actions/<game>.llm.json, then validates the table against the game's
-// overlay and the shared verb defaults.
+// data/actions/<game>.llm.json, validates the table against the game's overlay
+// and the shared verb defaults, then calibrates the layered result (§6, §7):
+// the committed walkthrough replayed through the real engine and priced, the
+// whole-table histograms, the shared thresholds as pass/fail gates, and the
+// curation queue — written to data/actions/<game>.calibration.json. A breached
+// gate fails the run like any other validation error.
 //
 //	actiongen           regenerate from the extract and the warm cache; no API calls, ever
 //	actiongen -llm      infer the rows the cache is missing or stale on, then regenerate
@@ -18,7 +22,9 @@ import (
 	"os"
 	"path/filepath"
 
+	"github.com/lucasbertoni/omazork/internal/actions"
 	"github.com/lucasbertoni/omazork/internal/durations"
+	"github.com/lucasbertoni/omazork/internal/durations/calibrate"
 	"github.com/lucasbertoni/omazork/internal/durations/gen"
 	"github.com/lucasbertoni/omazork/internal/durations/llm"
 	"github.com/lucasbertoni/omazork/internal/extract"
@@ -67,9 +73,8 @@ func run(root, game string, check, infer bool, batch int) error {
 	if err != nil {
 		return err
 	}
-	// Read the shared thresholds only to assert their schemaVersion here: a
-	// stale calibration file should stop a regeneration, not surface later.
-	if _, err := durations.LoadCalibrationFS(fsys); err != nil {
+	thresholds, err := durations.LoadCalibrationFS(fsys)
+	if err != nil {
 		return err
 	}
 	x, err := readExtract(filepath.Join(root, "data", "extract", game+".json"))
@@ -78,6 +83,7 @@ func run(root, game string, check, infer bool, batch int) error {
 	}
 	tablePath := filepath.Join(root, "data", "actions", game+".json")
 	cachePath := filepath.Join(root, "data", "actions", game+".llm.json")
+	calibrationPath := filepath.Join(root, "data", "actions", game+".calibration.json")
 	cache, err := llm.LoadCache(cachePath, game)
 	if err != nil {
 		return err
@@ -111,6 +117,14 @@ func run(root, game string, check, infer bool, batch int) error {
 		}
 		return fmt.Errorf("%s: %d validation errors", game, len(errs))
 	}
+	report, err := calibrateGame(root, game, result, cache, overlay, verbs, thresholds)
+	if err != nil {
+		return err
+	}
+	// The report is written — or compared — even when a gate is breached: the
+	// per-threshold verdicts in it are how a curator sees what to fix.
+	gateErr := gateFailures(game, report)
+
 	data, err := result.Table.JSON()
 	if err != nil {
 		return err
@@ -119,10 +133,18 @@ func run(root, game string, check, infer bool, batch int) error {
 	if err != nil {
 		return err
 	}
+	calibrationData, err := report.JSON()
+	if err != nil {
+		return err
+	}
 	table := artifact{tablePath, data}
 	llmCache := artifact{cachePath, cacheData}
+	calibration := artifact{calibrationPath, calibrationData}
 	if check {
-		return verify(game, table, llmCache, cache.Primed, result)
+		if err := verify(game, table, llmCache, calibration, cache.Primed, result); err != nil {
+			return err
+		}
+		return gateErr
 	}
 	if err := os.WriteFile(table.path, table.data, 0o644); err != nil {
 		return err
@@ -134,21 +156,80 @@ func run(root, game string, check, infer bool, batch int) error {
 			return err
 		}
 	}
+	if err := os.WriteFile(calibration.path, calibration.data, 0o644); err != nil {
+		return err
+	}
 	fmt.Printf("%s: %d rooms, %d edges, %d actions, %d verb words (%d routine exits unpriced)\n",
 		game, len(result.Table.Rooms), len(result.Table.Edges), len(result.Table.Actions),
 		len(result.Table.Vocab.Verbs), routineExits(x))
 	fmt.Printf("%s: llm cache %d/%d rows warm%s\n", game,
 		len(result.Requests)-len(result.Missing), len(result.Requests), droppedNote(dropped))
-	return nil
+	fmt.Printf("%s: %s\n", game, calibrationSummary(report))
+	return gateErr
 }
 
-// verify is the CI check (§7): the committed table must match, and — once a
-// cache exists — it must cover every row, so regeneration never needs an API
-// call. Until the first inference pass is committed there is no cache to be
-// complete, so the API-call check reports its coverage instead of failing on
-// every row at once.
-func verify(game string, table, llmCache artifact, primed bool, result *gen.Result) error {
+// calibrateGame replays the game's committed walkthrough against the layered
+// result — base + overlay + shared verbs, exactly what the runtime loads — and
+// profiles the whole table (§6, §7).
+func calibrateGame(root, game string, result *gen.Result, cache *llm.Cache, overlay *durations.Overlay,
+	verbs *durations.Verbs, thresholds *durations.Calibration) (*calibrate.Report, error) {
+	fx, ok := actions.Fixtures[game]
+	if !ok {
+		return nil, fmt.Errorf("%s: no committed walkthrough fixture", game)
+	}
+	script, err := os.ReadFile(fx.Path(root))
+	if err != nil {
+		return nil, err
+	}
+	hashes := make(map[string]string, len(result.Requests))
+	for _, r := range result.Requests {
+		hashes[r.Key] = r.Hash
+	}
+	return calibrate.Run(calibrate.Input{
+		Layered:     durations.Layer(result.Table, overlay, verbs),
+		Thresholds:  thresholds,
+		Fixture:     fx,
+		Script:      script,
+		Hashes:      hashes,
+		Nominations: gen.Nominations(cache),
+	})
+}
+
+// gateFailures prints every breached gate and returns the run's error for
+// them, or nil when the table passes.
+func gateFailures(game string, report *calibrate.Report) error {
+	fails := report.Failures()
+	for _, e := range fails {
+		fmt.Fprintln(os.Stderr, "actiongen:", game+":", e)
+	}
+	if len(fails) == 0 {
+		return nil
+	}
+	return fmt.Errorf("%s: %d calibration gates breached — see data/actions/%s.calibration.json", game, len(fails), game)
+}
+
+// calibrationSummary is the one-line run report for a game's calibration.
+func calibrationSummary(r *calibrate.Report) string {
+	pass := 0
+	for _, g := range r.Gates {
+		if g.Pass {
+			pass++
+		}
+	}
+	return fmt.Sprintf("walkthrough %d turns, %g h cumulative; %d/%d gates pass; %d curation candidates; %.0f%% of rows exercised",
+		r.Replay.Turns, r.Replay.CumulativeHours, pass, len(r.Gates), len(r.CurationCandidates), r.Coverage.Share*100)
+}
+
+// verify is the CI check (§7): the committed table and calibration report must
+// match what this run computes, and — once a cache exists — it must cover
+// every row, so regeneration never needs an API call. Until the first
+// inference pass is committed there is no cache to be complete, so the
+// API-call check reports its coverage instead of failing on every row at once.
+func verify(game string, table, llmCache, calibration artifact, primed bool, result *gen.Result) error {
 	if err := match(table); err != nil {
+		return err
+	}
+	if err := match(calibration); err != nil {
 		return err
 	}
 	if !primed {
@@ -171,6 +252,9 @@ func verify(game string, table, llmCache artifact, primed bool, result *gen.Resu
 // match fails when a committed file differs from what this run would write.
 func match(a artifact) error {
 	committed, err := os.ReadFile(a.path)
+	if os.IsNotExist(err) {
+		return fmt.Errorf("%s is missing — generate it with actiongen", a.path)
+	}
 	if err != nil {
 		return err
 	}

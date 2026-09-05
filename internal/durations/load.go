@@ -23,6 +23,7 @@ type Layered struct {
 	fastVerbs    map[string]bool
 	roomObj      map[string]int
 	roomID       map[int]string
+	drift        map[string]bool
 	acknowledged map[string]string
 }
 
@@ -47,7 +48,7 @@ func LoadFS(fsys fs.FS, game string) (*Layered, error) {
 	if errs := Validate(table, overlay, verbs); len(errs) > 0 {
 		return nil, fmt.Errorf("durations: %s: %w", game, errs[0])
 	}
-	return layer(table, overlay, verbs), nil
+	return Layer(table, overlay, verbs), nil
 }
 
 // LoadTableFS reads one generated table.
@@ -116,7 +117,11 @@ func readJSON(fsys fs.FS, name string, into any) error {
 	return nil
 }
 
-func layer(t *Table, o *Overlay, v *Verbs) *Layered {
+// Layer resolves base + overlay + shared verb defaults in memory by the §4
+// rules: overlay rows replace or join base rows, overlay verb defaults
+// override the shared ones. It trusts its inputs — run Validate first, as
+// LoadFS does.
+func Layer(t *Table, o *Overlay, v *Verbs) *Layered {
 	l := &Layered{
 		Game:         t.Game,
 		Rooms:        t.Rooms,
@@ -128,6 +133,7 @@ func layer(t *Table, o *Overlay, v *Verbs) *Layered {
 		fastVerbs:    map[string]bool{},
 		roomObj:      map[string]int{},
 		roomID:       map[int]string{},
+		drift:        map[string]bool{},
 		acknowledged: o.Acknowledged,
 	}
 	for _, r := range t.Rooms {
@@ -136,6 +142,9 @@ func layer(t *Table, o *Overlay, v *Verbs) *Layered {
 	}
 	for _, e := range t.Edges {
 		l.edges[EdgeKey(e.From, e.To)] = Row{Minutes: e.Minutes, Class: e.Class, Source: e.Source, Note: e.Note}
+		if e.Kind == KindDrift {
+			l.drift[EdgeKey(e.From, e.To)] = true
+		}
 	}
 	for _, a := range t.Actions {
 		l.actions[ActionKey(a.Verb, a.Object)] = Row{Minutes: a.Minutes, Class: a.Class, Source: a.Source, Note: a.Note}

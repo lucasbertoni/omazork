@@ -1,0 +1,635 @@
+{
+  "schemaVersion": 1,
+  "game": "zork1",
+  "replay": {
+    "script": "internal/actions/testdata/zork1-walkthrough.txt",
+    "seed": 12,
+    "turns": 361,
+    "cumulativeMinutes": 847,
+    "cumulativeHours": 14.117,
+    "medianMovementMinutes": 3,
+    "turnsUnderQuiet": 0.906,
+    "byKind": {
+      "aborted": {
+        "turns": 2,
+        "minutes": 0
+      },
+      "action": {
+        "turns": 142,
+        "minutes": 239
+      },
+      "combat": {
+        "turns": 11,
+        "minutes": 0
+      },
+      "fastverb": {
+        "turns": 8,
+        "minutes": 0
+      },
+      "melee": {
+        "turns": 1,
+        "minutes": 0
+      },
+      "movement": {
+        "turns": 197,
+        "minutes": 608
+      }
+    },
+    "bySlot": {
+      "action": {
+        "turns": 32,
+        "minutes": 101
+      },
+      "drift": {
+        "turns": 3,
+        "minutes": 18
+      },
+      "edge": {
+        "turns": 192,
+        "minutes": 603
+      },
+      "fallback": {
+        "turns": 11,
+        "minutes": 11
+      },
+      "hard": {
+        "turns": 22,
+        "minutes": 0
+      },
+      "verbDefault": {
+        "turns": 101,
+        "minutes": 114
+      }
+    },
+    "waits": [
+      {
+        "minutes": 0,
+        "count": 22
+      },
+      {
+        "minutes": 1,
+        "count": 119
+      },
+      {
+        "minutes": 2,
+        "count": 68
+      },
+      {
+        "minutes": 3,
+        "count": 91
+      },
+      {
+        "minutes": 4,
+        "count": 27
+      },
+      {
+        "minutes": 5,
+        "count": 22
+      },
+      {
+        "minutes": 6,
+        "count": 7
+      },
+      {
+        "minutes": 7,
+        "count": 3
+      },
+      {
+        "minutes": 8,
+        "count": 1
+      },
+      {
+        "minutes": 30,
+        "count": 1
+      }
+    ],
+    "longestTurns": [
+      {
+        "turn": 85,
+        "input": "wave sceptre",
+        "kind": "action",
+        "minutes": 30,
+        "slot": "action",
+        "key": "action:wave/SCEPTRE"
+      },
+      {
+        "turn": 178,
+        "input": "inflate boat with pump",
+        "kind": "action",
+        "minutes": 8,
+        "slot": "verbDefault",
+        "key": "verbDefault:inflate"
+      },
+      {
+        "turn": 124,
+        "input": "north",
+        "kind": "movement",
+        "minutes": 7,
+        "slot": "edge",
+        "key": "edge:RESERVOIR-SOUTH\u003eRESERVOIR"
+      },
+      {
+        "turn": 128,
+        "input": "south",
+        "kind": "movement",
+        "minutes": 7,
+        "slot": "edge",
+        "key": "edge:RESERVOIR-NORTH\u003eRESERVOIR"
+      },
+      {
+        "turn": 263,
+        "input": "north",
+        "kind": "movement",
+        "minutes": 7,
+        "slot": "edge",
+        "key": "edge:RESERVOIR-SOUTH\u003eRESERVOIR"
+      },
+      {
+        "turn": 126,
+        "input": "north",
+        "kind": "movement",
+        "minutes": 6,
+        "slot": "edge",
+        "key": "edge:RESERVOIR\u003eRESERVOIR-NORTH"
+      },
+      {
+        "turn": 129,
+        "input": "south",
+        "kind": "movement",
+        "minutes": 6,
+        "slot": "edge",
+        "key": "edge:RESERVOIR\u003eRESERVOIR-SOUTH"
+      },
+      {
+        "turn": 181,
+        "input": "wait",
+        "kind": "action",
+        "minutes": 6,
+        "slot": "drift",
+        "key": "edge:RIVER-1\u003eRIVER-2"
+      },
+      {
+        "turn": 183,
+        "input": "wait",
+        "kind": "action",
+        "minutes": 6,
+        "slot": "drift",
+        "key": "edge:RIVER-2\u003eRIVER-3"
+      },
+      {
+        "turn": 184,
+        "input": "wait",
+        "kind": "action",
+        "minutes": 6,
+        "slot": "drift",
+        "key": "edge:RIVER-3\u003eRIVER-4"
+      }
+    ]
+  },
+  "histogram": {
+    "edges": {
+      "rows": 259,
+      "mean": 3.158,
+      "median": 3,
+      "bins": [
+        {
+          "minutes": 2,
+          "count": 64
+        },
+        {
+          "minutes": 3,
+          "count": 140
+        },
+        {
+          "minutes": 4,
+          "count": 21
+        },
+        {
+          "minutes": 5,
+          "count": 20
+        },
+        {
+          "minutes": 6,
+          "count": 12
+        },
+        {
+          "minutes": 7,
+          "count": 2
+        }
+      ]
+    },
+    "actions": {
+      "rows": 205,
+      "mean": 2.634,
+      "median": 1,
+      "bins": [
+        {
+          "minutes": 0,
+          "count": 55
+        },
+        {
+          "minutes": 1,
+          "count": 80
+        },
+        {
+          "minutes": 2,
+          "count": 25
+        },
+        {
+          "minutes": 3,
+          "count": 10
+        },
+        {
+          "minutes": 4,
+          "count": 6
+        },
+        {
+          "minutes": 5,
+          "count": 18
+        },
+        {
+          "minutes": 8,
+          "count": 2
+        },
+        {
+          "minutes": 10,
+          "count": 1
+        },
+        {
+          "minutes": 30,
+          "count": 8
+        }
+      ]
+    },
+    "classes": {
+      "dramatic": {
+        "rows": 8,
+        "median": 30,
+        "bandLow": 30,
+        "bandHigh": 180,
+        "innerLow": 67.5,
+        "innerHigh": 142.5
+      },
+      "instant": {
+        "rows": 41,
+        "median": 0,
+        "bandLow": 0,
+        "bandHigh": 0,
+        "innerLow": 0,
+        "innerHigh": 0
+      },
+      "manipulation": {
+        "rows": 117,
+        "median": 1,
+        "bandLow": 0,
+        "bandHigh": 3,
+        "innerLow": 0.75,
+        "innerHigh": 2.25
+      },
+      "mechanism": {
+        "rows": 35,
+        "median": 5,
+        "bandLow": 3,
+        "bandHigh": 20,
+        "innerLow": 7.25,
+        "innerHigh": 15.75
+      },
+      "movement": {
+        "rows": 263,
+        "median": 3,
+        "bandLow": 1,
+        "bandHigh": 10,
+        "innerLow": 3.25,
+        "innerHigh": 7.75
+      }
+    },
+    "dramaticShare": 0.039,
+    "longRows": []
+  },
+  "gates": [
+    {
+      "name": "replay.cumulativeHours",
+      "value": 14.117,
+      "min": 15,
+      "max": 35,
+      "pass": false
+    },
+    {
+      "name": "replay.medianMovementMinutes",
+      "value": 3,
+      "min": 1,
+      "max": 3,
+      "pass": true
+    },
+    {
+      "name": "replay.turnsUnderQuiet",
+      "value": 0.906,
+      "min": 0.6,
+      "pass": true
+    },
+    {
+      "name": "histogram.meanEdgeMinutes",
+      "value": 3.158,
+      "min": 2,
+      "max": 4,
+      "pass": true
+    },
+    {
+      "name": "histogram.dramaticShare",
+      "value": 0.039,
+      "max": 0.03,
+      "pass": false
+    },
+    {
+      "name": "histogram.classMedian.instant",
+      "value": 0,
+      "min": 0,
+      "max": 0,
+      "pass": true
+    },
+    {
+      "name": "histogram.classMedian.manipulation",
+      "value": 1,
+      "min": 0.75,
+      "max": 2.25,
+      "pass": true
+    },
+    {
+      "name": "histogram.classMedian.mechanism",
+      "value": 5,
+      "min": 7.25,
+      "max": 15.75,
+      "pass": false
+    },
+    {
+      "name": "histogram.classMedian.movement",
+      "value": 3,
+      "min": 3.25,
+      "max": 7.75,
+      "pass": false
+    },
+    {
+      "name": "rows.longRows",
+      "value": 0,
+      "max": 5,
+      "pass": true
+    }
+  ],
+  "coverage": {
+    "edges": 259,
+    "edgesExercised": 131,
+    "actions": 205,
+    "actionsExercised": 21,
+    "share": 0.328
+  },
+  "curationCandidates": [
+    {
+      "key": "action:burn/BODIES",
+      "kind": "action",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — This act of desecration triggers an instant-death ceremonial punishment from the dungeon's guardian, marking it as a fatal set-piece moment.",
+      "inputHash": "3aabc9803194d3e99e921b04da7eab0b4af6c41f172d2b0f940193d2ebf83841",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:burn/BOOK",
+      "kind": "action",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — Burning the book is an instant-death set-piece moment the game treats as a fatal ceremony, not a routine manipulation.",
+      "inputHash": "485a0293518bcb25186b7408aec43bd659a514ed7b31b7fcccca17a1cebedafe",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:kiss/BONES",
+      "kind": "action",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — Kissing the skeleton triggers a curse-and-plunder ceremony (ghost appearance, robbery of valuables) that the game treats as a significant set-piece event.",
+      "inputHash": "f2288f4dd01f24d44b82d5adb9071b6053428ab8b21442bba4bb2e567f8b405b",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:odysseus/CYCLOPS",
+      "kind": "action",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — Speaking the secret name of Odysseus to trick the cyclops is a scripted, story-critical ceremony that resolves a major obstacle, not a routine action.",
+      "inputHash": "733373ec50258bb1be0257ff461afd7b3b80cb0399fa4b7cf15fc2dbf75f84cb",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:raise/SCEPTRE",
+      "kind": "action",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — Raising the sceptre at the rainbow's end is a ceremonial act that transforms the environment, solidifying the rainbow into a walkable structure and revealing treasure.",
+      "inputHash": "fbb767884c226263d6b30a7ab3406fbfec688a96f2a693fe4bc2ef400e52324d",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:rub/BONES",
+      "kind": "action",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — Desecrating a fellow adventurer's remains triggers a ghostly curse and ceremonial loss of valuables, a set-piece consequence rather than routine manipulation.",
+      "inputHash": "5578b16ea6dfbfe18524ed4dbc8491cee36b0ab52fdcaf4fc732faad6f1fe26b",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:take/BONES",
+      "kind": "action",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — Disturbing the skeleton's remains triggers a ceremonial curse event (ghost appearance, banishment of valuables) that the game treats as a significant set-piece, not a routine pickup.",
+      "inputHash": "152ff181b1fece40d3a938fde8427cb8eaa2eaecd11910c4895cf51cc3e96e1a",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:wave/SCEPTRE",
+      "kind": "action",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — Waving the sceptre at the rainbow's end is the ceremonial trigger that transforms the rainbow into a solid, walkable structure, revealing the pot of gold—a treasure-vault-defining set piece.",
+      "inputHash": "d869ba9b97d343ec3348877d71c801cd048e09bc31865edc49b844d6faee6e9c",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:dig/SAND",
+      "kind": "action",
+      "minutes": 10,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Digging in sand with a shovel is manual labor requiring repeated effort to expose something buried.",
+      "inputHash": "a936b3603c75407a50a81b3f7c5067236d42b1947a3209f69414dd9780b208e8",
+      "reasons": [
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:fill/INFLATABLE-BOAT",
+      "kind": "action",
+      "minutes": 8,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Inflating the plastic boat with the pump is a multi-step physical task requiring sustained effort, fitting the mechanism band.",
+      "inputHash": "60d9248d9da5d4970e53836262d708bc4522bae73f59302d1e3f369c5b8fd9f4",
+      "reasons": [
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "edge:RESERVOIR-NORTH\u003eRESERVOIR",
+      "kind": "edge",
+      "minutes": 7,
+      "class": "movement",
+      "source": "rule+llm",
+      "note": "base 2 + water 3 + conditional 1 + dark 1, llm 7 — Crossing from dry land into the flooded, unlit reservoir crevice warrants the full baseline time for cautious, groping movement through water and darkness.",
+      "inputHash": "df960b25cf3e4d6f8efb4a45957b3ca8d1c21e49ac6fd013b69d27cf32f0f591",
+      "reasons": [
+        "top-10 longest edges"
+      ]
+    },
+    {
+      "key": "edge:RESERVOIR-SOUTH\u003eRESERVOIR",
+      "kind": "edge",
+      "minutes": 7,
+      "class": "movement",
+      "source": "rule+llm",
+      "note": "base 2 + water 3 + conditional 1 + dark 1, llm 7 — Crossing from dry land into the flooded, unlit reservoir crevice warrants the full baseline for water and darkness.",
+      "inputHash": "7d403e0994714ef30a5a3109a566fc67f7fd98e21987bed632675d6bad320031",
+      "reasons": [
+        "top-10 longest edges"
+      ]
+    },
+    {
+      "key": "edge:CYCLOPS-ROOM\u003eTREASURE-ROOM",
+      "kind": "edge",
+      "minutes": 6,
+      "class": "movement",
+      "source": "rule+llm",
+      "note": "base 2 + up 2 + conditional 1 + dark 1, llm 6 — Fleeing the Cyclops up a staircase into the treasure room is tense but straightforward, matching the baseline pacing.",
+      "inputHash": "ab0611c9e5d8c6bcc5bb30a1e0e29b888498a42a93be35a0f6807464c39cb3fc",
+      "reasons": [
+        "top-10 longest edges"
+      ]
+    },
+    {
+      "key": "edge:IN-STREAM\u003eRESERVOIR",
+      "kind": "edge",
+      "minutes": 6,
+      "class": "movement",
+      "source": "rule+llm",
+      "note": "base 2 + water 3 + dark 1, llm 6; cheapest of 2 exits (DOWN, EAST) — Water travel through a narrow, twisting, unlit stream justifies the full baseline pacing.",
+      "inputHash": "b2abf097f99389a3c6db91960fa45e2c0c4695022d39ad470c6e043ed7599b3b",
+      "reasons": [
+        "top-10 longest edges"
+      ]
+    },
+    {
+      "key": "edge:IN-STREAM\u003eSTREAM-VIEW",
+      "kind": "edge",
+      "minutes": 6,
+      "class": "movement",
+      "source": "rule+llm",
+      "note": "base 2 + water 3 + dark 1, llm 6 — Landing from the stream onto the beach still involves the water and disorientation baseline despite reaching a plain, lit path.",
+      "inputHash": "ea02708f623c10c75ed51d7768f98878f25118d9c4ceed43fe6b15daee201dd4",
+      "reasons": [
+        "top-10 longest edges"
+      ]
+    },
+    {
+      "key": "edge:RESERVOIR\u003eIN-STREAM",
+      "kind": "edge",
+      "minutes": 6,
+      "class": "movement",
+      "source": "rule+llm",
+      "note": "base 2 + water 3 + dark 1, llm 6; cheapest of 2 exits (UP, WEST) — Flowing water and disorienting, wall-twisted darkness keep this at the baseline crawl rather than a quick step.",
+      "inputHash": "9cdf2eb91cc5fdc39b3e247a1bff5c4243a9fcf207a2e522b7fbf1501b1530bf",
+      "reasons": [
+        "top-10 longest edges"
+      ]
+    },
+    {
+      "key": "edge:RESERVOIR\u003eRESERVOIR-NORTH",
+      "kind": "edge",
+      "minutes": 6,
+      "class": "movement",
+      "source": "rule+llm",
+      "note": "base 2 + water 3 + dark 1, llm 6 — Crossing from the dry reservoir edge into the water-adjacent, unlit northern area warrants the full baseline for a cautious, blind crawl.",
+      "inputHash": "a56ee5eec842a7c59244468a1b58365ac0bf9821ee9e4d297388d5f8073a3761",
+      "reasons": [
+        "top-10 longest edges"
+      ]
+    },
+    {
+      "key": "edge:RESERVOIR\u003eRESERVOIR-SOUTH",
+      "kind": "edge",
+      "minutes": 6,
+      "class": "movement",
+      "source": "rule+llm",
+      "note": "base 2 + water 3 + dark 1, llm 6 — Crossing from the reservoir into the water and dark reservoir south warrants the full baseline for a hazardous, unlit passage.",
+      "inputHash": "aa09682a143ec9ad1e5fc825c5c854b221fbd6b7efeeaf8d7dcc30bef987aecd",
+      "reasons": [
+        "top-10 longest edges"
+      ]
+    },
+    {
+      "key": "edge:RIVER-1\u003eRIVER-2",
+      "kind": "edge",
+      "minutes": 6,
+      "class": "movement",
+      "source": "rule+llm",
+      "note": "base 2 + water 3 + dark 1, llm 6; cheapest of 2 exits (DOWN, drift) — Drifting on the current is being on ONBIT, so the baseline holds without further nudging.",
+      "inputHash": "be4966cd6b8025c83472bb17bdbbf6618a254f22d036aeb1c573c7eee9e16cee",
+      "reasons": [
+        "top-10 longest edges"
+      ]
+    },
+    {
+      "key": "edge:RIVER-2\u003eRIVER-3",
+      "kind": "edge",
+      "minutes": 6,
+      "class": "movement",
+      "source": "rule+llm",
+      "note": "base 2 + water 3 + dark 1, llm 6; cheapest of 2 exits (DOWN, drift) — Drifting on the current river with limited visibility keeps this at the mechanically-priced baseline.",
+      "inputHash": "383f2ba3f8801aaf29f9bd91a2fef2bf54d6a4944540e93333c8205fbb8f46a6",
+      "reasons": [
+        "top-10 longest edges"
+      ]
+    }
+  ]
+}

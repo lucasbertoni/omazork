@@ -65,6 +65,11 @@ const UncuratedCap = 30
 // reason (§4).
 const ReasonThreshold = 60
 
+// KindDrift marks an edge row in the drift set (§3.4): a passage traversed by
+// current or vehicle. The generator copies the extract's kind onto the row;
+// the runtime reads this value as drift-set membership.
+const KindDrift = "drift"
+
 // Row is a resolved duration with its provenance — what layering yields and
 // the runtime consumes.
 type Row struct {

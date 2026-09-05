@@ -1,0 +1,665 @@
+{
+  "schemaVersion": 1,
+  "game": "zork2",
+  "replay": {
+    "script": "internal/actions/testdata/zork2-walkthrough.txt",
+    "seed": 1,
+    "turns": 315,
+    "cumulativeMinutes": 914,
+    "cumulativeHours": 15.233,
+    "medianMovementMinutes": 3,
+    "turnsUnderQuiet": 0.93,
+    "byKind": {
+      "aborted": {
+        "turns": 2,
+        "minutes": 0
+      },
+      "action": {
+        "turns": 163,
+        "minutes": 522
+      },
+      "combat": {
+        "turns": 6,
+        "minutes": 0
+      },
+      "fastverb": {
+        "turns": 10,
+        "minutes": 0
+      },
+      "movement": {
+        "turns": 134,
+        "minutes": 392
+      }
+    },
+    "bySlot": {
+      "action": {
+        "turns": 57,
+        "minutes": 393
+      },
+      "drift": {
+        "turns": 6,
+        "minutes": 18
+      },
+      "edge": {
+        "turns": 133,
+        "minutes": 391
+      },
+      "fallback": {
+        "turns": 13,
+        "minutes": 13
+      },
+      "hard": {
+        "turns": 18,
+        "minutes": 0
+      },
+      "verbDefault": {
+        "turns": 88,
+        "minutes": 99
+      }
+    },
+    "waits": [
+      {
+        "minutes": 0,
+        "count": 20
+      },
+      {
+        "minutes": 1,
+        "count": 101
+      },
+      {
+        "minutes": 2,
+        "count": 59
+      },
+      {
+        "minutes": 3,
+        "count": 92
+      },
+      {
+        "minutes": 4,
+        "count": 21
+      },
+      {
+        "minutes": 5,
+        "count": 13
+      },
+      {
+        "minutes": 30,
+        "count": 9
+      }
+    ],
+    "longestTurns": [
+      {
+        "turn": 42,
+        "input": "eat green cake",
+        "kind": "action",
+        "minutes": 30,
+        "slot": "action",
+        "key": "action:eat/BLUE-ICING"
+      },
+      {
+        "turn": 47,
+        "input": "eat blue cake",
+        "kind": "action",
+        "minutes": 30,
+        "slot": "action",
+        "key": "action:eat/BLUE-ICING"
+      },
+      {
+        "turn": 55,
+        "input": "take sphere",
+        "kind": "action",
+        "minutes": 30,
+        "slot": "action",
+        "key": "action:take/PALANTIR-1"
+      },
+      {
+        "turn": 57,
+        "input": "take sphere",
+        "kind": "action",
+        "minutes": 30,
+        "slot": "action",
+        "key": "action:take/PALANTIR-1"
+      },
+      {
+        "turn": 95,
+        "input": "take blue sphere",
+        "kind": "action",
+        "minutes": 30,
+        "slot": "action",
+        "key": "action:take/PALANTIR-1"
+      },
+      {
+        "turn": 244,
+        "input": "take red sphere",
+        "kind": "action",
+        "minutes": 30,
+        "slot": "action",
+        "key": "action:take/PALANTIR-1"
+      },
+      {
+        "turn": 245,
+        "input": "take blue sphere",
+        "kind": "action",
+        "minutes": 30,
+        "slot": "action",
+        "key": "action:take/PALANTIR-1"
+      },
+      {
+        "turn": 256,
+        "input": "take clear sphere",
+        "kind": "action",
+        "minutes": 30,
+        "slot": "action",
+        "key": "action:take/PALANTIR-1"
+      },
+      {
+        "turn": 261,
+        "input": "take black sphere",
+        "kind": "action",
+        "minutes": 30,
+        "slot": "action",
+        "key": "action:take/PALANTIR-1"
+      },
+      {
+        "turn": 83,
+        "input": "up",
+        "kind": "movement",
+        "minutes": 5,
+        "slot": "edge",
+        "key": "edge:RAVINE-LEDGE\u003eTINY-ROOM"
+      }
+    ]
+  },
+  "histogram": {
+    "edges": {
+      "rows": 170,
+      "mean": 2.941,
+      "median": 3,
+      "bins": [
+        {
+          "minutes": 2,
+          "count": 40
+        },
+        {
+          "minutes": 3,
+          "count": 105
+        },
+        {
+          "minutes": 4,
+          "count": 20
+        },
+        {
+          "minutes": 5,
+          "count": 5
+        }
+      ]
+    },
+    "actions": {
+      "rows": 288,
+      "mean": 2.924,
+      "median": 1,
+      "bins": [
+        {
+          "minutes": 0,
+          "count": 48
+        },
+        {
+          "minutes": 1,
+          "count": 148
+        },
+        {
+          "minutes": 2,
+          "count": 39
+        },
+        {
+          "minutes": 3,
+          "count": 9
+        },
+        {
+          "minutes": 4,
+          "count": 4
+        },
+        {
+          "minutes": 5,
+          "count": 22
+        },
+        {
+          "minutes": 8,
+          "count": 2
+        },
+        {
+          "minutes": 12,
+          "count": 1
+        },
+        {
+          "minutes": 15,
+          "count": 1
+        },
+        {
+          "minutes": 30,
+          "count": 14
+        }
+      ]
+    },
+    "classes": {
+      "dramatic": {
+        "rows": 14,
+        "median": 30,
+        "bandLow": 30,
+        "bandHigh": 180,
+        "innerLow": 67.5,
+        "innerHigh": 142.5
+      },
+      "instant": {
+        "rows": 34,
+        "median": 0,
+        "bandLow": 0,
+        "bandHigh": 0,
+        "innerLow": 0,
+        "innerHigh": 0
+      },
+      "manipulation": {
+        "rows": 199,
+        "median": 1,
+        "bandLow": 0,
+        "bandHigh": 3,
+        "innerLow": 0.75,
+        "innerHigh": 2.25
+      },
+      "mechanism": {
+        "rows": 35,
+        "median": 5,
+        "bandLow": 3,
+        "bandHigh": 20,
+        "innerLow": 7.25,
+        "innerHigh": 15.75
+      },
+      "movement": {
+        "rows": 176,
+        "median": 3,
+        "bandLow": 1,
+        "bandHigh": 10,
+        "innerLow": 3.25,
+        "innerHigh": 7.75
+      }
+    },
+    "dramaticShare": 0.049,
+    "longRows": []
+  },
+  "gates": [
+    {
+      "name": "replay.cumulativeHours",
+      "value": 15.233,
+      "min": 15,
+      "max": 35,
+      "pass": true
+    },
+    {
+      "name": "replay.medianMovementMinutes",
+      "value": 3,
+      "min": 1,
+      "max": 3,
+      "pass": true
+    },
+    {
+      "name": "replay.turnsUnderQuiet",
+      "value": 0.93,
+      "min": 0.6,
+      "pass": true
+    },
+    {
+      "name": "histogram.meanEdgeMinutes",
+      "value": 2.941,
+      "min": 2,
+      "max": 4,
+      "pass": true
+    },
+    {
+      "name": "histogram.dramaticShare",
+      "value": 0.049,
+      "max": 0.03,
+      "pass": false
+    },
+    {
+      "name": "histogram.classMedian.instant",
+      "value": 0,
+      "min": 0,
+      "max": 0,
+      "pass": true
+    },
+    {
+      "name": "histogram.classMedian.manipulation",
+      "value": 1,
+      "min": 0.75,
+      "max": 2.25,
+      "pass": true
+    },
+    {
+      "name": "histogram.classMedian.mechanism",
+      "value": 5,
+      "min": 7.25,
+      "max": 15.75,
+      "pass": false
+    },
+    {
+      "name": "histogram.classMedian.movement",
+      "value": 3,
+      "min": 3.25,
+      "max": 7.75,
+      "pass": false
+    },
+    {
+      "name": "rows.longRows",
+      "value": 0,
+      "max": 5,
+      "pass": true
+    }
+  ],
+  "coverage": {
+    "edges": 170,
+    "edgesExercised": 106,
+    "actions": 288,
+    "actionsExercised": 26,
+    "share": 0.288
+  },
+  "curationCandidates": [
+    {
+      "key": "action:burn/BRICK",
+      "kind": "action",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — Burning the brick triggers instant death, a fatal ceremony-level outcome the game treats as a climactic mistake.",
+      "inputHash": "a0655802aaeee5f6a44351e44443ff24d685ac250fc7d692104d82fe1f500bc0",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:eat/BLUE-ICING",
+      "kind": "action",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — Eating the blue cake triggers a body-shrinking transformation sequence that relocates the player and alters the room state, a ceremonial plot event rather than routine manipulation.",
+      "inputHash": "cbecc44b059789b695642d1f3e8fcb7df29e6113ba48e43a003be6396074e515",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:eat/EAT-ME-CAKE",
+      "kind": "action",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — Eating the cake triggers a world-altering set-piece transformation (shrinking, teleporting the room's contents) that the game treats as a ceremonial turning point.",
+      "inputHash": "da9ba0c5eb6d9c543d5fee96c2600343717126941c6a4e6d15e383350839f4f1",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:eat/ORANGE-ICING",
+      "kind": "action",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — Eating the orange-frosted cake triggers ICEBOOM, a fatal set-piece explosion ending the game, which is a ceremonial climactic moment.",
+      "inputHash": "200138adec4c9148875b6480d25919e12ba6ec9215d63415b9085c41bb98dac2",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:eat/RED-ICING",
+      "kind": "action",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — Eating the red cake is an irreversible fatal action that kills the player, a narrative set-piece rather than routine manipulation.",
+      "inputHash": "5bdc3eff4fc3707d439545218e893eccca62b0b188603d8839d2d3d80b608969",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:jump/CHASM",
+      "kind": "action",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — Leaping into a chasm is a fatal, irreversible gamble the game treats as a life-or-death ceremony, not a routine action.",
+      "inputHash": "bf73acd167f372112ab564ceafc6f1637504c79191974bc2331f7537c65b1f3f",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:kick/DRAGON",
+      "kind": "action",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — Provoking a huge red dragon into a physical retaliation is a life-threatening confrontation the game treats as a major set-piece moment.",
+      "inputHash": "0fc6cdbf5815a9f0e2571421f5586bff35cad8a2cc812635b3d246f16f511797",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:kick/HEADS",
+      "kind": "action",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — Kicking the cursed poled heads triggers fatal punishment, a ceremonial death-trap moment the game treats as significant.",
+      "inputHash": "8f87693545d08a89c3c938fa1493b193fb885c29ec4991d69e1e8e9bc1b019ed",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:make/WISH",
+      "kind": "action",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — Making a wish at the well is a ceremonial, fateful moment that consumes the coin and triggers a significant story event.",
+      "inputHash": "b32ec9cfc092750fac40a40faa06ee3b90edd883269b12cd6a5007b61e195677",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:move/PALANTIR-1",
+      "kind": "action",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — Reaching for the sphere triggers an irreversible cage-trap/poison-gas ceremony that redefines the game state, a genuine set-piece moment.",
+      "inputHash": "e2ab4ec7dc16c4d2fa5f4e638a6232c3cec025c6f7a8c6367075deed066e2ad7",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:put/PALANTIR-1",
+      "kind": "action",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — Reaching for the sphere triggers a fatal cage-and-gas trap sequence with lasting narrative consequences, a ceremonial turning point rather than routine manipulation.",
+      "inputHash": "15c9d261d9a4e1e64f692c5636257fbecac543ac78f785d3bb3fe90b618e2786",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate"
+      ]
+    },
+    {
+      "key": "action:rape/GLOBAL-PRINCESS",
+      "kind": "action",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — This is a fatal, irreversible set-piece action that instantly kills the player via the Wizard's lightning bolt, treated by the game as a climactic (if punitive) event rather than routine manipulation.",
+      "inputHash": "790dec90f9154b5a6b2732bee1dba20e408ac8e61fd5d4bbeecefaf1af14bf35",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate"
+      ]
+    },
+    {
+      "key": "action:rape/PRINCESS",
+      "kind": "action",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — This is a fatal, game-ending set-piece action triggering the Wizard's instant-death intervention.",
+      "inputHash": "22f057b28e0606af287b932795099c63578fa6ba6bdc0f101e9909a874a71a33",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate"
+      ]
+    },
+    {
+      "key": "action:take/PALANTIR-1",
+      "kind": "action",
+      "minutes": 30,
+      "class": "dramatic",
+      "source": "llm",
+      "note": "llm nominated dramatic 30m — overlay candidate — This is a fatal trap trigger with a ceremonial, story-critical outcome (cage/gas/robot death), not a routine pickup.",
+      "inputHash": "45ff39ef632a82dc6ad3de6d36d80a4244550a811f76ab2f13982eddd7891390",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate"
+      ]
+    },
+    {
+      "key": "edge:CERBERUS-ROOM\u003eDIAMOND-5",
+      "kind": "edge",
+      "minutes": 5,
+      "class": "movement",
+      "source": "rule+llm",
+      "note": "base 2 + up 2 + dark 1, llm 5 — A stairway climb from a crypt to an oddly-angled room stays at baseline with no flooding or unusual hazards to slow it further.",
+      "inputHash": "cf74ba071991cf3b02a227f68f8b62babcb6337bf3cb6f19e1b3801ab321f616",
+      "reasons": [
+        "top-10 longest edges"
+      ]
+    },
+    {
+      "key": "edge:DIAMOND-5\u003eSTAIRWAY-TOP",
+      "kind": "edge",
+      "minutes": 5,
+      "class": "movement",
+      "source": "rule+llm",
+      "note": "base 2 + up 2 + dark 1, llm 5 — A straightforward staircase ascent between two ordinary rooms stays at the baseline pace.",
+      "inputHash": "1acfd1a1f407d0d1a7c404954f3b8af406790fe5f01fdb7797b2e70b7b1a1607",
+      "reasons": [
+        "top-10 longest edges"
+      ]
+    },
+    {
+      "key": "edge:GLACIER-ROOM\u003eLAVA-TUBE",
+      "kind": "edge",
+      "minutes": 5,
+      "class": "movement",
+      "source": "rule+llm",
+      "note": "base 2 + up 2 + dark 1, llm 5 — Climbing a tight, dark lava chimney matches the baseline pacing with no additional hazards to justify a longer crawl.",
+      "inputHash": "e59ac01f82c5e73db00d2c064a3ae08a8a13b4245dbc192323d462a88e9fcf0e",
+      "reasons": [
+        "top-10 longest edges"
+      ]
+    },
+    {
+      "key": "edge:LAVA-TUBE\u003eVOLCANO-VIEW",
+      "kind": "edge",
+      "minutes": 5,
+      "class": "movement",
+      "source": "rule+llm",
+      "note": "base 2 + up 2 + dark 1, llm 5 — A tight, steep hundred-foot climb up a solidified lava chimney justifies the baseline pacing despite the destination being open and lit.",
+      "inputHash": "06ef3885f5b421d3ae2f2c6eeb94ac11c433e89a0b6aa5a4b38470b28710383a",
+      "reasons": [
+        "top-10 longest edges"
+      ]
+    },
+    {
+      "key": "edge:RAVINE-LEDGE\u003eTINY-ROOM",
+      "kind": "edge",
+      "minutes": 5,
+      "class": "movement",
+      "source": "rule+llm",
+      "note": "base 2 + up 2 + dark 1, llm 5 — A precarious climb up a rock face to an unlit ledge justifies staying at the mechanical baseline.",
+      "inputHash": "182b19dd5069e0e5217f4eaabfdd9323ba4b9c8d9392fb61c6b806dc1b3bbe1f",
+      "reasons": [
+        "top-10 longest edges"
+      ]
+    },
+    {
+      "key": "edge:CERBERUS-ROOM\u003eCRYPT-ANTEROOM",
+      "kind": "edge",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule+llm",
+      "note": "base 2 + conditional 1 + dark 1, llm 4; cheapest of 2 exits (EAST, IN) — A conditional crypt passage from a described gateway room stays at the baseline pacing without added crawl or flood cues.",
+      "inputHash": "394c2c36be7363a7f6190eabf50e9a3ca0e00afe990c3671bfaa809251b6a810",
+      "reasons": [
+        "top-10 longest edges"
+      ]
+    },
+    {
+      "key": "edge:CRYPT-ANTEROOM\u003eCRYPT-ROOM",
+      "kind": "edge",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule+llm",
+      "note": "base 2 + door 1 + dark 1, llm 4; cheapest of 2 exits (IN, SOUTH) — No descriptive detail overrides the baseline, so the mechanical crypt-door-and-darkness pricing stands as-is.",
+      "inputHash": "89349d02b1124d88b2e00993e4b0e56244ba46c52d13dd10bbfc592a1b775864",
+      "reasons": [
+        "top-10 longest edges"
+      ]
+    },
+    {
+      "key": "edge:CRYPT-ROOM\u003eCRYPT-ANTEROOM",
+      "kind": "edge",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule+llm",
+      "note": "base 2 + door 1 + dark 1, llm 4 — No descriptive cues to adjust the baseline, so the mechanical door-and-dark pricing stands.",
+      "inputHash": "1ff824352fead7b9c4434d2af29dca86b1f2b5a8391ed954bb362d997c2fdd03",
+      "reasons": [
+        "top-10 longest edges"
+      ]
+    },
+    {
+      "key": "edge:DIAMOND-5\u003eCERBERUS-ROOM",
+      "kind": "edge",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule+llm",
+      "note": "base 2 + down 1 + dark 1, llm 4 — A straightforward downward stair descent into a crypt entrance matches the baseline pacing without added hazards.",
+      "inputHash": "48629256c64c3f3a8f380378cd2366a1c285a3a913d53e14e997a64ddde454ad",
+      "reasons": [
+        "top-10 longest edges"
+      ]
+    },
+    {
+      "key": "edge:DRAGON-ROOM\u003eDRAGON-LAIR",
+      "kind": "edge",
+      "minutes": 4,
+      "class": "movement",
+      "source": "rule+llm",
+      "note": "base 2 + conditional 1 + dark 1, llm 4; cheapest of 2 exits (NORTH, IN) — A dark, smokey tunnel leading to a flame-scarred dragon's lair warrants the baseline conditional-plus-dark pacing without further extension.",
+      "inputHash": "432b653b624725e65b3e4eb099c38fe4826740bb8854410d6f6b3c753202ddc3",
+      "reasons": [
+        "top-10 longest edges"
+      ]
+    }
+  ]
+}

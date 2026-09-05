@@ -28,7 +28,6 @@ var parserRejection = regexp.MustCompile(`I don't know the word|You can't go tha
 func TestWalkthroughFixtures(t *testing.T) {
 	cases := []struct {
 		game        string
-		seed        uint64
 		finalRoom   string
 		score       int
 		moves       int
@@ -36,7 +35,7 @@ func TestWalkthroughFixtures(t *testing.T) {
 		transitions []string
 	}{
 		{
-			game: "zork1", seed: 12, finalRoom: "Stone Barrow", score: 350, moves: 374,
+			game: "zork1", finalRoom: "Stone Barrow", score: 350, moves: 374,
 			kinds: map[actions.Kind]int{
 				actions.Aborted: 2, actions.Combat: 11, actions.Melee: 1, actions.FastVerb: 8,
 				actions.Movement: 197, actions.Action: 142,
@@ -51,7 +50,7 @@ func TestWalkthroughFixtures(t *testing.T) {
 			},
 		},
 		{
-			game: "zork2", seed: 1, finalRoom: "Landing", score: 400, moves: 345,
+			game: "zork2", finalRoom: "Landing", score: 400, moves: 345,
 			kinds: map[actions.Kind]int{
 				actions.Aborted: 2, actions.Combat: 6, actions.FastVerb: 10,
 				actions.Movement: 134, actions.Action: 163,
@@ -62,7 +61,7 @@ func TestWalkthroughFixtures(t *testing.T) {
 			},
 		},
 		{
-			game: "zork3", seed: 11, finalRoom: "Treasury of Zork", score: 7, moves: 320,
+			game: "zork3", finalRoom: "Treasury of Zork", score: 7, moves: 320,
 			kinds: map[actions.Kind]int{
 				actions.Aborted: 1, actions.Combat: 10, actions.FastVerb: 38, actions.FailedMove: 31,
 				actions.Movement: 94, actions.Action: 90,
@@ -76,13 +75,14 @@ func TestWalkthroughFixtures(t *testing.T) {
 	for _, c := range cases {
 		t.Run(c.game, func(t *testing.T) {
 			t.Parallel()
-			script, err := os.ReadFile("testdata/" + c.game + "-walkthrough.txt")
+			fx := actions.Fixtures[c.game]
+			script, err := os.ReadFile(fx.Path("../.."))
 			if err != nil {
 				t.Fatal(err)
 			}
 			cmds := actions.ParseScript(script)
 
-			e, err := engine.New(c.game, engine.WithSeed(c.seed))
+			e, err := engine.New(c.game, engine.WithSeed(fx.Seed))
 			if err != nil {
 				t.Fatal(err)
 			}

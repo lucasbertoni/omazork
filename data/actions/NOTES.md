@@ -11,9 +11,7 @@ The action-wait data the casual-mode mediation layer prices turns from, per
 | `<game>.overlay.json` | Hand-curated overrides, per-game verb defaults, `acknowledged` map | humans only |
 | `verbs.json` | Shared verb-default table (§10) | hand-authored |
 | `calibration.json` | Shared calibration thresholds (§6) | hand-authored |
-
-The per-game `<game>.calibration.json` report (§5.4) lands with the calibration
-slice ([#36](https://github.com/lucasbertoni/omazork/issues/36)).
+| `<game>.calibration.json` | Calibration report: walkthrough replay profile, histograms, per-gate pass/fail, coverage, `curationCandidates` | `go run ./cmd/actiongen` — never hand-edited |
 
 ## Regenerating
 
@@ -98,6 +96,40 @@ the three games currently has one.
 Until a cache is committed the `actions` array stays empty and edge medians sit
 at the low end of the Movement band; the §6 histogram gates run on the finished
 tables.
+
+## Calibration
+
+Every run ends by proving the tables against the **layered** result — base +
+overlay + shared verbs, exactly what the wrapper loads — so an overlay edit can
+fail generation just like an orphaned key can. The committed walkthrough
+fixture (`internal/actions/testdata/`, seed pinned in `actions.Fixtures`) is
+replayed through the real seeded engine; every turn is classified by the shared
+matcher and priced by the shared §2 lookup (`durations.Layered.Resolve`), so
+the replay profile is what a player following that walkthrough would wait. The
+whole table is histogrammed alongside. Both are gated by the thresholds in
+`calibration.json`, and every verdict lands in `<game>.calibration.json`:
+
+- `replay`: turns, cumulative hours, median movement wait, share of turns under
+  the 5-minute quiet line, tallies by matcher kind and by precedence slot, a
+  wait histogram, and the ten longest turns with the key that priced them.
+- `histogram`: edge and action distributions, per-class medians against the
+  inner half of each class band, the Dramatic share of action rows, and every
+  row at or above the 60-minute reason line.
+- `gates`: one entry per threshold with the measured value and its bounds. The
+  class-median gate skips Dramatic on purpose — an uncurated nomination sits at
+  the 30-minute cap by construction, so that class is gated by share instead.
+- `coverage`: the non-gating share of rows the walkthrough exercised.
+- `curationCandidates`: the §7 queue — the LLM pass's Dramatic nominations, the
+  ten longest edges, the ten longest action rows, every row at its class cap —
+  minus keys the overlay `acknowledged` map pins at their current `inputHash`.
+  A row whose hash has moved under an acknowledgement comes back with that said.
+  Rows the overlay added on its own have no LLM hash, so their content is hashed.
+
+A breached gate prints and fails the run *after* the report is written, so the
+file always shows what to fix. Fixes are overlay edits or, when a threshold
+itself is wrong, a visible diff to `calibration.json`; either way, regenerate
+and commit the report. `-check` additionally fails when the committed report
+does not match the recomputed one (§7's freshness check).
 
 ## Curating
 

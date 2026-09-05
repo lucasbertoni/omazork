@@ -164,3 +164,16 @@ func objectDesc(o *extract.Object) string {
 	}
 	return ""
 }
+
+// Nominations lists every row the LLM pass nominated Dramatic — or priced
+// above the uncurated cap — keyed by row, with the note capNomination wrote on
+// the generated row. It is the curation queue's first source (§7).
+func Nominations(cache *llm.Cache) map[string]string {
+	out := map[string]string{}
+	for _, r := range cache.Rows {
+		if _, _, nomination := capNomination(r); nomination != "" {
+			out[r.Key] = nomination
+		}
+	}
+	return out
+}
