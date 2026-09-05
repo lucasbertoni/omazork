@@ -83,6 +83,10 @@ omarchy plugin enable omazork
 touch bin/DEV   # bootstrap always go-builds, never clobbers with the release binary
 ```
 
+Then, after a change, `scripts/dev.sh` runs the checks, rebuilds, restarts the
+shell, opens the console, and tails the wrapper log (`--quick` skips tests and
+data validation; `--no-open`, `--no-log` as named).
+
 `go test ./...` covers the engine wrapper, mediation, saves, achievements, and
 the NDJSON protocol (`docs/protocol.md`). Cut a release with
 `scripts/release.sh vX.Y.Z` and push the tag; CI rebuilds with the same
