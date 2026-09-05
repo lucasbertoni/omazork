@@ -102,10 +102,9 @@ FocusScope {
                             ? "⏳ The outcome has matured — your next command reveals it."
                             : view.app.pendingQuiet
                             ? "⏳ " + view.app.pendingNarration + " — " + view.app.pendingWhen
-                              + ". (SAVE/RESTORE wait too.)"
                             : "⏳ " + view.app.pendingNarration + " — resolves "
                               + (view.app.pendingHourPlus ? "at " : "in ") + view.app.pendingWhen
-                              + ". No peeking; SAVE/RESTORE wait too."
+                              + ". No peeking."
                         color: view.theme.amber
                         wrapMode: Text.Wrap
                         font { family: view.theme.mono; pixelSize: 12 }

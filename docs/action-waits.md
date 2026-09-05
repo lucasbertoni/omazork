@@ -366,8 +366,8 @@ tiers, staying full once matured until the reveal. The transcript never shows it
 The picker draws the bar without narration (spoiler-free summary). A pending
 outcome without `startedAt` shows no bar.
 
-Banner "⏳ climbing the tree — ~2 min. (SAVE/RESTORE wait too.)" (quiet) /
-"⏳ climbing the tree — resolves at 5:12 PM. No peeking; SAVE/RESTORE wait too."
+Banner "⏳ climbing the tree — ~2 min" (quiet) /
+"⏳ climbing the tree — resolves at 5:12 PM. No peeking."
 (full); journal card "⏳ climbing the tree / ~2 min"; input placeholder "time is
 passing — MENU still works". Matured variants unchanged.
 
