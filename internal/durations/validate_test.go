@@ -124,3 +124,17 @@ func TestValidateRejectsDuplicateAndUnknownRows(t *testing.T) {
 	table.Edges[0].To = "ATTIC"
 	validationError(t, table, overlay, verbs, "ATTIC")
 }
+
+// The shared verb table is hand-authored (§10): like an overlay row it may sit
+// anywhere under its class cap, including 0, the band only fences generated rows.
+func TestValidateVerbDefaultsAreCuratedNotBanded(t *testing.T) {
+	table, overlay, verbs := fixture()
+	verbs.Verbs[0].Seconds = 10 // mechanism, far below the 3-min band floor
+	if errs := Validate(table, overlay, verbs); len(errs) != 0 {
+		t.Fatalf("hand-authored verb default below the band rejected: %v", errs)
+	}
+
+	table, overlay, verbs = fixture()
+	verbs.Verbs[0].Seconds = 31 * Minute // above the mechanism cap
+	validationError(t, table, overlay, verbs, "cap")
+}

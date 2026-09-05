@@ -402,6 +402,11 @@ Hand-authored here, one table for all three games; per-game divergence via overl
 `verbDefaults`. Fast verbs are listed for completeness but are enforced as a
 wrapper hard class (precedence slot 1), not by table lookup.
 
+Because the table is curated, the validator holds its rows to the §2 class **cap**
+only, like overlay rows: a verb default may sit anywhere from 0 s (instant) up to
+its class cap, below the band the LLM inference is fenced to. The minutes below
+are the original baseline; the shipped `seconds` are the authority.
+
 **Fast verbs (hard class, always instant)**: look, examine, read, inventory, wait,
 score, diagnose, verbose, brief, superbrief, save, restore, restart, quit, script,
 unscript, version, again, oops, pray*, hello, count.

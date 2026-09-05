@@ -90,7 +90,8 @@ func (c *checker) verbTable() {
 			c.fail("verb default %s: unknown class %q", d.Verb, d.Class)
 			continue
 		}
-		c.checkBand(VerbDefaultKey(d.Verb), d.Class, d.Seconds, false)
+		// verbs.json is hand-authored (§10): curated like an overlay row.
+		c.checkBand(VerbDefaultKey(d.Verb), d.Class, d.Seconds, true)
 	}
 	for _, word := range sortedKeys(c.table.Vocab.Verbs) {
 		if c.table.Vocab.Verbs[word] == "" {
@@ -99,10 +100,11 @@ func (c *checker) verbTable() {
 	}
 }
 
-// checkBand enforces the §2 class table: a row's seconds must sit inside its
-// class band and never above the class cap. Generated rows carry the extra
-// uncurated ceiling — drama needs a human signature.
-func (c *checker) checkBand(key string, class Class, seconds int, overlay bool) {
+// checkBand enforces the §2 class table: no row may exceed its class cap, and a
+// generated row must also sit inside the class band and under the uncurated
+// ceiling — drama needs a human signature. A curated row (overlay, or the
+// hand-authored verb table) may sit anywhere under the cap, including 0.
+func (c *checker) checkBand(key string, class Class, seconds int, curated bool) {
 	band, ok := BandOf(class)
 	if !ok {
 		c.fail("%s: unknown class %q", key, class)
@@ -116,8 +118,8 @@ func (c *checker) checkBand(key string, class Class, seconds int, overlay bool) 
 		c.fail("%s: %ds is above the %s cap of %ds", key, seconds, class, band.Cap)
 		return
 	}
-	if overlay {
-		return // an overlay row may sit anywhere under the cap, including 0 (force instant)
+	if curated {
+		return
 	}
 	if seconds < band.Low || seconds > band.High {
 		c.fail("%s: %ds is outside the %s band %ds-%ds", key, seconds, class, band.Low, band.High)
