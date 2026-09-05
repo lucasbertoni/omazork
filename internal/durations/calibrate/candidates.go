@@ -15,7 +15,7 @@ import (
 type Candidate struct {
 	Key       string          `json:"key"`
 	Kind      string          `json:"kind"` // edge | action
-	Minutes   int             `json:"minutes"`
+	Seconds   int             `json:"seconds"`
 	Class     durations.Class `json:"class"`
 	Source    string          `json:"source"`
 	Note      string          `json:"note,omitempty"`
@@ -47,8 +47,8 @@ func candidates(edges, acts []durations.KeyedRow, acked, hashes, nominations map
 	}
 	for _, rows := range [][]durations.KeyedRow{edges, acts} {
 		for _, r := range rows {
-			if band, ok := durations.BandOf(r.Class); ok && band.Cap > 0 && r.Minutes == band.Cap {
-				nominate(r.Key, fmt.Sprintf("at the %s class cap of %d min", r.Class, band.Cap))
+			if band, ok := durations.BandOf(r.Class); ok && band.Cap > 0 && r.Seconds == band.Cap {
+				nominate(r.Key, fmt.Sprintf("at the %s class cap of %ds", r.Class, band.Cap))
 			}
 		}
 	}
@@ -73,13 +73,13 @@ func candidates(edges, acts []durations.KeyedRow, acked, hashes, nominations map
 		}
 		sort.Strings(why)
 		out = append(out, Candidate{
-			Key: key, Kind: kindOf(key), Minutes: row.Minutes, Class: row.Class, Source: row.Source, Note: row.Note,
+			Key: key, Kind: kindOf(key), Seconds: row.Seconds, Class: row.Class, Source: row.Source, Note: row.Note,
 			InputHash: hash, Reasons: why,
 		})
 	}
 	sort.Slice(out, func(i, j int) bool {
-		if out[i].Minutes != out[j].Minutes {
-			return out[i].Minutes > out[j].Minutes
+		if out[i].Seconds != out[j].Seconds {
+			return out[i].Seconds > out[j].Seconds
 		}
 		return out[i].Key < out[j].Key
 	})
@@ -93,7 +93,7 @@ func candidates(edges, acts []durations.KeyedRow, acked, hashes, nominations map
 // stable across runs.
 func longest(rows []durations.KeyedRow) []durations.KeyedRow {
 	sorted := append([]durations.KeyedRow(nil), rows...)
-	sort.SliceStable(sorted, func(i, j int) bool { return sorted[i].Minutes > sorted[j].Minutes })
+	sort.SliceStable(sorted, func(i, j int) bool { return sorted[i].Seconds > sorted[j].Seconds })
 	if len(sorted) > outliers {
 		sorted = sorted[:outliers]
 	}
@@ -107,7 +107,7 @@ func rowHash(row durations.KeyedRow, hashes map[string]string) string {
 	if h, ok := hashes[row.Key]; ok {
 		return h
 	}
-	sum := sha256.Sum256([]byte(strings.Join([]string{"overlay", row.Key, fmt.Sprint(row.Minutes), string(row.Class), row.Note}, "\x00")))
+	sum := sha256.Sum256([]byte(strings.Join([]string{"overlay", row.Key, fmt.Sprint(row.Seconds), string(row.Class), row.Note}, "\x00")))
 	return hex.EncodeToString(sum[:])
 }
 

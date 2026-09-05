@@ -33,16 +33,20 @@ mode is untouched.
 
 ## 2. Duration model ([#20](https://github.com/lucasbertoni/omazork/issues/20))
 
-Five classes. Values are fixed integer minutes — one duration per row, no runtime
-ranges or randomness.
+Five classes. Values are fixed integer durations — one duration per row, no runtime
+ranges or randomness. The bands and caps below are written in **minutes**, the unit
+humans reason in; on disk every duration is stored as integer **seconds**
+(amended by [#42](https://github.com/lucasbertoni/omazork/issues/42),
+[ADR 0004](adr/0004-action-waits-stored-in-seconds.md)). A band of 1–10 min is a
+stored row of 60–600 s.
 
-| Class | Examples | Band (min) | Cap (min) |
-|---|---|---|---|
-| Instant | look, inventory, combat turns, failed/no-op turns | 0 | 0 |
-| Movement | one directed room edge | 1–10 | 15 |
-| Manipulation | take, drop, open, close, put, read | 0–3 | 5 |
-| Mechanism | inflate boat, tie rope, turn bolt, ring bell | 3–20 | 30 |
-| Dramatic | exorcism, prayer, treasure-vault moments | 30–180 | 240 |
+| Class | Examples | Band (min) | Cap (min) | Stored (s) |
+|---|---|---|---|---|
+| Instant | look, inventory, combat turns, failed/no-op turns | 0 | 0 | 0 |
+| Movement | one directed room edge | 1–10 | 15 | 60–600, cap 900 |
+| Manipulation | take, drop, open, close, put, read | 0–3 | 5 | 0–180, cap 300 |
+| Mechanism | inflate boat, tie rope, turn bolt, ring bell | 3–20 | 30 | 180–1200, cap 1800 |
+| Dramatic | exorcism, prayer, treasure-vault moments | 30–180 | 240 | 1800–10800, cap 14400 |
 
 **Edge pricing rule**: every edge gets a 2-minute base plus mechanical modifiers —
 vertical up +2, vertical down +1 (asymmetric), water travel +3, door/conditional
@@ -63,7 +67,7 @@ above 60 min it must carry a `reason`.
 5. Edge row — consulted only for directional walk commands that changed the room
 6. Verb-only default (shared `verbs.json`, §10; per-game divergence via overlay
    `verbDefaults`)
-7. Global fallback: 1 minute
+7. Global fallback: 1 minute (stored as 60 s)
 
 **Teleports**: a handler-driven room change (GOTO, death, wizard spells) is priced
 as the `(verb, object)` action alone — never as an edge, never both.
@@ -132,9 +136,13 @@ Three games, three architectures:
 
 ## 4. Data formats ([#21](https://github.com/lucasbertoni/omazork/issues/21))
 
-All per-game files ×3 unless noted. Every file carries `"schemaVersion": 1`; the
+All per-game files ×3 unless noted. Every file carries `"schemaVersion": 2`; the
 wrapper asserts an **exact match** at load and refuses to start otherwise (data is
-go:embedded — this guards dev-time regeneration skew).
+go:embedded — this guards dev-time regeneration skew). Version 2 stores durations
+in seconds; version 1 stored minutes and is refused, never converted
+([#42](https://github.com/lucasbertoni/omazork/issues/42)). The one exception is
+`<game>.llm.json`, which keeps its own `schemaVersion` and its `minutes` field: the
+LLM contract (§5.3) still speaks minutes so every committed `inputHash` stays valid.
 
 | File | Role | Written by |
 |---|---|---|
@@ -147,9 +155,10 @@ go:embedded — this guards dev-time regeneration skew).
 | `data/actions/calibration.json` | Shared calibration thresholds (one file, all games) | hand-authored (§6) |
 | `data/events/<game>.json` | Pure score-event tables (achievements) | extractor-era, hand-maintained (§9) |
 
-**Generated row shape** (edges and actions): key fields + `minutes` + provenance —
+**Generated row shape** (edges and actions): key fields + `seconds` + provenance —
 `class`, `source` (`"rule"` / `"llm"` / `"rule+llm"`), optional `note`
-(e.g. `"base 2 + dark 1, llm 4"` — nudge magnitude visible to curators). One row
+(e.g. `"base 2 + dark 1, llm 4"` — the arithmetic stays in minutes so curators can
+read it against §2; the row's `seconds` is that total × 60). One row
 per directed `(from, to)`; multiple exits connecting the same pair collapse to the
 **cheapest** duration, collision noted in `note`. `dir` is informational, not part
 of the key. Edge rows reference ZIL ids (curator-readable); the `rooms` section
@@ -161,10 +170,11 @@ light normalization of raw command text. Mismatches degrade to the verb-default
 row. The overlay cannot touch vocab.
 
 **Overlay semantics**: same key shapes as base (edge, `(verb, object)`) plus
-`verbDefaults: { "<verb>": minutes }` for per-game divergence. An overlay row
-(i) overrides duration (`0` = force instant), (ii) may add a row absent from base,
-(iii) is the **only** place a duration may exceed the 30-min uncurated cap,
-(iv) requires a `reason` field above 60 min. No wildcards, no deletes. The
+`verbDefaults: { "<verb>": seconds }` for per-game divergence. An overlay row
+(i) overrides duration (`seconds`; `0` = force instant), (ii) may add a row absent
+from base, (iii) is the **only** place a duration may exceed the 30-min (1800 s)
+uncurated cap, (iv) requires a `reason` field above 60 min (3600 s). No wildcards,
+no deletes. The
 `acknowledged` section is a map `{"<row key>": "<inputHash>"}` (§7).
 
 **Orphan rule**: a validator (run by the generator and in CI) fails on any overlay
@@ -217,7 +227,11 @@ modifiers (§2); everything else defers to the LLM pass or the verb-default tabl
 - **Contract**: one API call per row key; strict JSON `{class, minutes, rationale}`;
   `minutes` integer; `rationale` ≤1 sentence, stored in `llm.json` and surfaced as
   the row's `note`. Validator: `class` must be `movement` on static edges;
-  `minutes` within the returned class's band.
+  `minutes` within the returned class's band. The contract deliberately stays in
+  minutes — the prompt, the bands it shows, and the cached answer — and the
+  generator multiplies by 60 when it writes the table row, so the seconds
+  migration ([#42](https://github.com/lucasbertoni/omazork/issues/42)) changed no
+  `inputHash`.
 - **Hashing**: `inputHash = sha256(modelId + renderedPrompt)`. The rendered prompt
   embeds template + payload, so editing one of the ~3 templates (Go string
   constants) auto-invalidates exactly that kind's rows; changing the pinned model
@@ -257,8 +271,10 @@ threshold change is a visible diff. Gates evaluate the **layered** result (base 
 overlay + verbs) everywhere — otherwise the overlay is a gate bypass.
 
 - Replay gates, per game: cumulative walkthrough wait **15–35 hours**; median
-  movement wait **1–3 min**; **≥60%** of walkthrough turns resolve <5 min.
-- Histogram gates, per game: mean edge duration **2–4 min**; Dramatic-class rows
+  movement wait **1–3 min** (`medianMovementSeconds` 60–180); **≥60%** of
+  walkthrough turns resolve <5 min.
+- Histogram gates, per game: mean edge duration **2–4 min** (`meanEdgeSeconds`
+  120–240); Dramatic-class rows
   **≤3%** of (verb,object) rows; per-class medians inside the **inner half** of
   their band.
 - Hard cap: **≤5 rows ≥60 min per game** (the 30–60 band is gated per-row by the
@@ -310,8 +326,8 @@ are documented as comments in the scripts.
 
 ## 8. Reveal UX and copy ([#25](https://github.com/lucasbertoni/omazork/issues/25))
 
-**Tiers**: presentation keys on resolved **minutes**, never inference class. One
-threshold, **5 minutes**: below = **quiet**, at/above = **full** (the current
+**Tiers**: presentation keys on resolved **duration**, never inference class. One
+threshold, **5 minutes** (300 s): below = **quiet**, at/above = **full** (the current
 dramatic register). The same line gates the desktop notification — quiet waits
 never notify.
 
@@ -368,7 +384,7 @@ score, diagnose, verbose, brief, superbrief, save, restore, restart, quit, scrip
 unscript, version, again, oops, pray*, hello, count.
 (*prayer at the altar is a handler pair; the LLM/overlay prices it there.)
 
-| Verb (synonyms resolve via vocab) | Class | Minutes |
+| Verb (synonyms resolve via vocab) | Class | Minutes (stored ×60 as `seconds`) |
 |---|---|---|
 | take / get / grab | manipulation | 1 |
 | drop / put down | manipulation | 1 |

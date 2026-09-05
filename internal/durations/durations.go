@@ -12,11 +12,18 @@ import (
 )
 
 // SchemaVersion is stamped on every duration file; loading asserts an exact
-// match and refuses the file otherwise (§4).
-const SchemaVersion = 1
+// match and refuses the file otherwise (§4). Version 2 stores every duration
+// in seconds (ADR 0004); a version-1 file, whose values were minutes, is
+// refused rather than silently read sixty times too short.
+const SchemaVersion = 2
 
-// Class is a row's inference class (§2). Presentation keys on minutes, never
-// on class; class exists to bound what a row may cost.
+// Minute is the number of seconds in a minute. Every duration in this package
+// is an integer count of seconds; the spec's bands, caps, and thresholds are
+// written in minutes, so they are expressed here as N * Minute.
+const Minute = 60
+
+// Class is a row's inference class (§2). Presentation keys on the duration,
+// never on class; class exists to bound what a row may cost.
 type Class string
 
 const (
@@ -28,7 +35,8 @@ const (
 )
 
 // Band is one row of the §2 class table: the band inference must stay inside,
-// and the hard cap no row of the class may exceed.
+// and the hard cap no row of the class may exceed. BandOf returns it in
+// seconds, the storage unit; llm.MinuteBand returns the same row in minutes.
 type Band struct {
 	Low  int
 	High int
@@ -37,10 +45,10 @@ type Band struct {
 
 var bands = map[Class]Band{
 	ClassInstant:      {0, 0, 0},
-	ClassMovement:     {1, 10, 15},
-	ClassManipulation: {0, 3, 5},
-	ClassMechanism:    {3, 20, 30},
-	ClassDramatic:     {30, 180, 240},
+	ClassMovement:     {1 * Minute, 10 * Minute, 15 * Minute},
+	ClassManipulation: {0, 3 * Minute, 5 * Minute},
+	ClassMechanism:    {3 * Minute, 20 * Minute, 30 * Minute},
+	ClassDramatic:     {30 * Minute, 180 * Minute, 240 * Minute},
 }
 
 // BandOf returns the class's band, or false for an unknown class.
@@ -59,21 +67,21 @@ const (
 
 // UncuratedCap is the ceiling on any generated row (§2): drama requires a
 // human signature, so only an overlay row may exceed it.
-const UncuratedCap = 30
+const UncuratedCap = 30 * Minute
 
 // ReasonThreshold is the duration above which an overlay row must carry a
 // reason (§4).
-const ReasonThreshold = 60
+const ReasonThreshold = 60 * Minute
 
 // KindDrift marks an edge row in the drift set (§3.4): a passage traversed by
 // current or vehicle. The generator copies the extract's kind onto the row;
 // the runtime reads this value as drift-set membership.
 const KindDrift = "drift"
 
-// Row is a resolved duration with its provenance — what layering yields and
-// the runtime consumes.
+// Row is a resolved duration in seconds with its provenance — what layering
+// yields and the runtime consumes.
 type Row struct {
-	Minutes int
+	Seconds int
 	Class   Class
 	Source  string
 	Note    string
@@ -130,7 +138,7 @@ type EdgeRow struct {
 	To      string `json:"to"`
 	Dir     string `json:"dir,omitempty"`
 	Kind    string `json:"kind,omitempty"`
-	Minutes int    `json:"minutes"`
+	Seconds int    `json:"seconds"`
 	Class   Class  `json:"class"`
 	Source  string `json:"source"`
 	Note    string `json:"note,omitempty"`
@@ -140,7 +148,7 @@ type EdgeRow struct {
 type ActionRow struct {
 	Verb    string `json:"verb"`
 	Object  string `json:"object,omitempty"`
-	Minutes int    `json:"minutes"`
+	Seconds int    `json:"seconds"`
 	Class   Class  `json:"class"`
 	Source  string `json:"source"`
 	Note    string `json:"note,omitempty"`
@@ -165,11 +173,11 @@ type Overlay struct {
 	Acknowledged  map[string]string `json:"acknowledged,omitempty"`
 }
 
-// OverlayEdge overrides — or adds — one edge row. Minutes 0 forces instant.
+// OverlayEdge overrides — or adds — one edge row. Seconds 0 forces instant.
 type OverlayEdge struct {
 	From    string `json:"from"`
 	To      string `json:"to"`
-	Minutes int    `json:"minutes"`
+	Seconds int    `json:"seconds"`
 	Class   Class  `json:"class,omitempty"`
 	Reason  string `json:"reason,omitempty"`
 	Note    string `json:"note,omitempty"`
@@ -179,7 +187,7 @@ type OverlayEdge struct {
 type OverlayAction struct {
 	Verb    string `json:"verb"`
 	Object  string `json:"object,omitempty"`
-	Minutes int    `json:"minutes"`
+	Seconds int    `json:"seconds"`
 	Class   Class  `json:"class,omitempty"`
 	Reason  string `json:"reason,omitempty"`
 	Note    string `json:"note,omitempty"`
@@ -199,7 +207,7 @@ type VerbDefault struct {
 	Verb     string   `json:"verb"`
 	Synonyms []string `json:"synonyms,omitempty"`
 	Class    Class    `json:"class"`
-	Minutes  int      `json:"minutes"`
+	Seconds  int      `json:"seconds"`
 }
 
 // Calibration is the shared threshold file, data/actions/calibration.json
@@ -210,13 +218,13 @@ type Calibration struct {
 	Replay        struct {
 		CumulativeHoursMin       float64 `json:"cumulativeHoursMin"`
 		CumulativeHoursMax       float64 `json:"cumulativeHoursMax"`
-		MedianMovementMinutesMin int     `json:"medianMovementMinutesMin"`
-		MedianMovementMinutesMax int     `json:"medianMovementMinutesMax"`
+		MedianMovementSecondsMin int     `json:"medianMovementSecondsMin"`
+		MedianMovementSecondsMax int     `json:"medianMovementSecondsMax"`
 		TurnsUnderQuietMin       float64 `json:"turnsUnderQuietMin"`
 	} `json:"replay"`
 	Histogram struct {
-		MeanEdgeMinutesMin float64 `json:"meanEdgeMinutesMin"`
-		MeanEdgeMinutesMax float64 `json:"meanEdgeMinutesMax"`
+		MeanEdgeSecondsMin float64 `json:"meanEdgeSecondsMin"`
+		MeanEdgeSecondsMax float64 `json:"meanEdgeSecondsMax"`
 		DramaticRowsMax    float64 `json:"dramaticRowsMax"`
 		ClassMediansInner  bool    `json:"classMediansInsideInnerHalf"`
 	} `json:"histogram"`

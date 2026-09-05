@@ -141,16 +141,16 @@ func Layer(t *Table, o *Overlay, v *Verbs) *Layered {
 		l.roomID[r.Obj] = r.ID
 	}
 	for _, e := range t.Edges {
-		l.edges[EdgeKey(e.From, e.To)] = Row{Minutes: e.Minutes, Class: e.Class, Source: e.Source, Note: e.Note}
+		l.edges[EdgeKey(e.From, e.To)] = Row{Seconds: e.Seconds, Class: e.Class, Source: e.Source, Note: e.Note}
 		if e.Kind == KindDrift {
 			l.drift[EdgeKey(e.From, e.To)] = true
 		}
 	}
 	for _, a := range t.Actions {
-		l.actions[ActionKey(a.Verb, a.Object)] = Row{Minutes: a.Minutes, Class: a.Class, Source: a.Source, Note: a.Note}
+		l.actions[ActionKey(a.Verb, a.Object)] = Row{Seconds: a.Seconds, Class: a.Class, Source: a.Source, Note: a.Note}
 	}
 	for _, d := range v.Verbs {
-		l.verbDefaults[d.Verb] = Row{Minutes: d.Minutes, Class: d.Class, Source: SourceRule}
+		l.verbDefaults[d.Verb] = Row{Seconds: d.Seconds, Class: d.Class, Source: SourceRule}
 		l.verbAliases[d.Verb] = d.Verb
 		for _, syn := range d.Synonyms {
 			l.verbAliases[syn] = d.Verb
@@ -160,25 +160,25 @@ func Layer(t *Table, o *Overlay, v *Verbs) *Layered {
 		l.fastVerbs[verb] = true
 	}
 	for _, e := range o.Edges {
-		l.edges[EdgeKey(e.From, e.To)] = overlayRow(e.Minutes, e.Class, e.Note, e.Reason)
+		l.edges[EdgeKey(e.From, e.To)] = overlayRow(e.Seconds, e.Class, e.Note, e.Reason)
 	}
 	for _, a := range o.Actions {
-		l.actions[ActionKey(a.Verb, a.Object)] = overlayRow(a.Minutes, a.Class, a.Note, a.Reason)
+		l.actions[ActionKey(a.Verb, a.Object)] = overlayRow(a.Seconds, a.Class, a.Note, a.Reason)
 	}
-	for verb, minutes := range o.VerbDefaults {
+	for verb, seconds := range o.VerbDefaults {
 		row := l.verbDefaults[verb]
-		row.Minutes = minutes
+		row.Seconds = seconds
 		row.Source = SourceOverlay
 		l.verbDefaults[verb] = row
 	}
 	return l
 }
 
-func overlayRow(minutes int, class Class, note, reason string) Row {
+func overlayRow(seconds int, class Class, note, reason string) Row {
 	if note == "" {
 		note = reason
 	}
-	return Row{Minutes: minutes, Class: class, Source: SourceOverlay, Note: note}
+	return Row{Seconds: seconds, Class: class, Source: SourceOverlay, Note: note}
 }
 
 // Edge returns the layered row for a directed room edge.

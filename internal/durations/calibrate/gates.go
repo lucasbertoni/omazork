@@ -42,10 +42,10 @@ func (g Gate) describe() string {
 func evaluate(rep Replay, h Histogram, c *durations.Calibration) []Gate {
 	gates := []Gate{
 		between("replay.cumulativeHours", rep.CumulativeHours, c.Replay.CumulativeHoursMin, c.Replay.CumulativeHoursMax),
-		between("replay.medianMovementMinutes", rep.MedianMovementMinutes,
-			float64(c.Replay.MedianMovementMinutesMin), float64(c.Replay.MedianMovementMinutesMax)),
+		between("replay.medianMovementSeconds", rep.MedianMovementSeconds,
+			float64(c.Replay.MedianMovementSecondsMin), float64(c.Replay.MedianMovementSecondsMax)),
 		atLeast("replay.turnsUnderQuiet", rep.TurnsUnderQuiet, c.Replay.TurnsUnderQuietMin),
-		between("histogram.meanEdgeMinutes", h.Edges.Mean, c.Histogram.MeanEdgeMinutesMin, c.Histogram.MeanEdgeMinutesMax),
+		between("histogram.meanEdgeSeconds", h.Edges.Mean, c.Histogram.MeanEdgeSecondsMin, c.Histogram.MeanEdgeSecondsMax),
 		atMost("histogram.dramaticShare", h.DramaticShare, c.Histogram.DramaticRowsMax),
 	}
 	if c.Histogram.ClassMediansInner {

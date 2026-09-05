@@ -1,105 +1,105 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "game": "zork1",
   "replay": {
     "script": "internal/actions/testdata/zork1-walkthrough.txt",
     "seed": 12,
     "turns": 361,
-    "cumulativeMinutes": 847,
+    "cumulativeSeconds": 50820,
     "cumulativeHours": 14.117,
-    "medianMovementMinutes": 3,
+    "medianMovementSeconds": 180,
     "turnsUnderQuiet": 0.906,
     "byKind": {
       "aborted": {
         "turns": 2,
-        "minutes": 0
+        "seconds": 0
       },
       "action": {
         "turns": 142,
-        "minutes": 239
+        "seconds": 14340
       },
       "combat": {
         "turns": 11,
-        "minutes": 0
+        "seconds": 0
       },
       "fastverb": {
         "turns": 8,
-        "minutes": 0
+        "seconds": 0
       },
       "melee": {
         "turns": 1,
-        "minutes": 0
+        "seconds": 0
       },
       "movement": {
         "turns": 197,
-        "minutes": 608
+        "seconds": 36480
       }
     },
     "bySlot": {
       "action": {
         "turns": 32,
-        "minutes": 101
+        "seconds": 6060
       },
       "drift": {
         "turns": 3,
-        "minutes": 18
+        "seconds": 1080
       },
       "edge": {
         "turns": 192,
-        "minutes": 603
+        "seconds": 36180
       },
       "fallback": {
         "turns": 11,
-        "minutes": 11
+        "seconds": 660
       },
       "hard": {
         "turns": 22,
-        "minutes": 0
+        "seconds": 0
       },
       "verbDefault": {
         "turns": 101,
-        "minutes": 114
+        "seconds": 6840
       }
     },
     "waits": [
       {
-        "minutes": 0,
+        "seconds": 0,
         "count": 22
       },
       {
-        "minutes": 1,
+        "seconds": 60,
         "count": 119
       },
       {
-        "minutes": 2,
+        "seconds": 120,
         "count": 68
       },
       {
-        "minutes": 3,
+        "seconds": 180,
         "count": 91
       },
       {
-        "minutes": 4,
+        "seconds": 240,
         "count": 27
       },
       {
-        "minutes": 5,
+        "seconds": 300,
         "count": 22
       },
       {
-        "minutes": 6,
+        "seconds": 360,
         "count": 7
       },
       {
-        "minutes": 7,
+        "seconds": 420,
         "count": 3
       },
       {
-        "minutes": 8,
+        "seconds": 480,
         "count": 1
       },
       {
-        "minutes": 30,
+        "seconds": 1800,
         "count": 1
       }
     ],
@@ -108,7 +108,7 @@
         "turn": 85,
         "input": "wave sceptre",
         "kind": "action",
-        "minutes": 30,
+        "seconds": 1800,
         "slot": "action",
         "key": "action:wave/SCEPTRE"
       },
@@ -116,7 +116,7 @@
         "turn": 178,
         "input": "inflate boat with pump",
         "kind": "action",
-        "minutes": 8,
+        "seconds": 480,
         "slot": "verbDefault",
         "key": "verbDefault:inflate"
       },
@@ -124,7 +124,7 @@
         "turn": 124,
         "input": "north",
         "kind": "movement",
-        "minutes": 7,
+        "seconds": 420,
         "slot": "edge",
         "key": "edge:RESERVOIR-SOUTH\u003eRESERVOIR"
       },
@@ -132,7 +132,7 @@
         "turn": 128,
         "input": "south",
         "kind": "movement",
-        "minutes": 7,
+        "seconds": 420,
         "slot": "edge",
         "key": "edge:RESERVOIR-NORTH\u003eRESERVOIR"
       },
@@ -140,7 +140,7 @@
         "turn": 263,
         "input": "north",
         "kind": "movement",
-        "minutes": 7,
+        "seconds": 420,
         "slot": "edge",
         "key": "edge:RESERVOIR-SOUTH\u003eRESERVOIR"
       },
@@ -148,7 +148,7 @@
         "turn": 126,
         "input": "north",
         "kind": "movement",
-        "minutes": 6,
+        "seconds": 360,
         "slot": "edge",
         "key": "edge:RESERVOIR\u003eRESERVOIR-NORTH"
       },
@@ -156,7 +156,7 @@
         "turn": 129,
         "input": "south",
         "kind": "movement",
-        "minutes": 6,
+        "seconds": 360,
         "slot": "edge",
         "key": "edge:RESERVOIR\u003eRESERVOIR-SOUTH"
       },
@@ -164,7 +164,7 @@
         "turn": 181,
         "input": "wait",
         "kind": "action",
-        "minutes": 6,
+        "seconds": 360,
         "slot": "drift",
         "key": "edge:RIVER-1\u003eRIVER-2"
       },
@@ -172,7 +172,7 @@
         "turn": 183,
         "input": "wait",
         "kind": "action",
-        "minutes": 6,
+        "seconds": 360,
         "slot": "drift",
         "key": "edge:RIVER-2\u003eRIVER-3"
       },
@@ -180,7 +180,7 @@
         "turn": 184,
         "input": "wait",
         "kind": "action",
-        "minutes": 6,
+        "seconds": 360,
         "slot": "drift",
         "key": "edge:RIVER-3\u003eRIVER-4"
       }
@@ -189,74 +189,74 @@
   "histogram": {
     "edges": {
       "rows": 259,
-      "mean": 3.158,
-      "median": 3,
+      "meanSeconds": 189.498,
+      "medianSeconds": 180,
       "bins": [
         {
-          "minutes": 2,
+          "seconds": 120,
           "count": 64
         },
         {
-          "minutes": 3,
+          "seconds": 180,
           "count": 140
         },
         {
-          "minutes": 4,
+          "seconds": 240,
           "count": 21
         },
         {
-          "minutes": 5,
+          "seconds": 300,
           "count": 20
         },
         {
-          "minutes": 6,
+          "seconds": 360,
           "count": 12
         },
         {
-          "minutes": 7,
+          "seconds": 420,
           "count": 2
         }
       ]
     },
     "actions": {
       "rows": 205,
-      "mean": 2.302,
-      "median": 1,
+      "meanSeconds": 138.146,
+      "medianSeconds": 60,
       "bins": [
         {
-          "minutes": 0,
+          "seconds": 0,
           "count": 55
         },
         {
-          "minutes": 1,
+          "seconds": 60,
           "count": 80
         },
         {
-          "minutes": 2,
+          "seconds": 120,
           "count": 26
         },
         {
-          "minutes": 3,
+          "seconds": 180,
           "count": 10
         },
         {
-          "minutes": 4,
+          "seconds": 240,
           "count": 6
         },
         {
-          "minutes": 5,
+          "seconds": 300,
           "count": 18
         },
         {
-          "minutes": 8,
+          "seconds": 480,
           "count": 2
         },
         {
-          "minutes": 10,
+          "seconds": 600,
           "count": 3
         },
         {
-          "minutes": 30,
+          "seconds": 1800,
           "count": 5
         }
       ]
@@ -264,43 +264,43 @@
     "classes": {
       "dramatic": {
         "rows": 5,
-        "median": 30,
-        "bandLow": 30,
-        "bandHigh": 180,
-        "innerLow": 67.5,
-        "innerHigh": 142.5
+        "medianSeconds": 1800,
+        "bandLowSeconds": 1800,
+        "bandHighSeconds": 10800,
+        "innerLowSeconds": 4050,
+        "innerHighSeconds": 8550
       },
       "instant": {
         "rows": 41,
-        "median": 0,
-        "bandLow": 0,
-        "bandHigh": 0,
-        "innerLow": 0,
-        "innerHigh": 0
+        "medianSeconds": 0,
+        "bandLowSeconds": 0,
+        "bandHighSeconds": 0,
+        "innerLowSeconds": 0,
+        "innerHighSeconds": 0
       },
       "manipulation": {
         "rows": 118,
-        "median": 1,
-        "bandLow": 0,
-        "bandHigh": 3,
-        "innerLow": 0.75,
-        "innerHigh": 2.25
+        "medianSeconds": 60,
+        "bandLowSeconds": 0,
+        "bandHighSeconds": 180,
+        "innerLowSeconds": 45,
+        "innerHighSeconds": 135
       },
       "mechanism": {
         "rows": 37,
-        "median": 5,
-        "bandLow": 3,
-        "bandHigh": 20,
-        "innerLow": 7.25,
-        "innerHigh": 15.75
+        "medianSeconds": 300,
+        "bandLowSeconds": 180,
+        "bandHighSeconds": 1200,
+        "innerLowSeconds": 435,
+        "innerHighSeconds": 945
       },
       "movement": {
         "rows": 263,
-        "median": 3,
-        "bandLow": 1,
-        "bandHigh": 10,
-        "innerLow": 3.25,
-        "innerHigh": 7.75
+        "medianSeconds": 180,
+        "bandLowSeconds": 60,
+        "bandHighSeconds": 600,
+        "innerLowSeconds": 195,
+        "innerHighSeconds": 465
       }
     },
     "dramaticShare": 0.024,
@@ -315,10 +315,10 @@
       "pass": true
     },
     {
-      "name": "replay.medianMovementMinutes",
-      "value": 3,
-      "min": 1,
-      "max": 3,
+      "name": "replay.medianMovementSeconds",
+      "value": 180,
+      "min": 60,
+      "max": 180,
       "pass": true
     },
     {
@@ -328,10 +328,10 @@
       "pass": true
     },
     {
-      "name": "histogram.meanEdgeMinutes",
-      "value": 3.158,
-      "min": 2,
-      "max": 4,
+      "name": "histogram.meanEdgeSeconds",
+      "value": 189.498,
+      "min": 120,
+      "max": 240,
       "pass": true
     },
     {
@@ -358,7 +358,7 @@
     {
       "key": "action:burn/BODIES",
       "kind": "action",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — This act of desecration triggers an instant-death ceremonial punishment from the dungeon's guardian, marking it as a fatal set-piece moment.",
@@ -371,7 +371,7 @@
     {
       "key": "action:burn/BOOK",
       "kind": "action",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — Burning the book is an instant-death set-piece moment the game treats as a fatal ceremony, not a routine manipulation.",
@@ -384,7 +384,7 @@
     {
       "key": "action:kiss/BONES",
       "kind": "action",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — Kissing the skeleton triggers a curse-and-plunder ceremony (ghost appearance, robbery of valuables) that the game treats as a significant set-piece event.",
@@ -397,7 +397,7 @@
     {
       "key": "action:odysseus/CYCLOPS",
       "kind": "action",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — Speaking the secret name of Odysseus to trick the cyclops is a scripted, story-critical ceremony that resolves a major obstacle, not a routine action.",
@@ -410,7 +410,7 @@
     {
       "key": "action:wave/SCEPTRE",
       "kind": "action",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — Waving the sceptre at the rainbow's end is the ceremonial trigger that transforms the rainbow into a solid, walkable structure, revealing the pot of gold—a treasure-vault-defining set piece.",
@@ -423,7 +423,7 @@
     {
       "key": "action:dig/SAND",
       "kind": "action",
-      "minutes": 10,
+      "seconds": 600,
       "class": "mechanism",
       "source": "llm",
       "note": "Digging in sand with a shovel is manual labor requiring repeated effort to expose something buried.",
@@ -435,7 +435,7 @@
     {
       "key": "action:rub/BONES",
       "kind": "action",
-      "minutes": 10,
+      "seconds": 600,
       "class": "mechanism",
       "source": "overlay",
       "note": "same curse handler as kiss/BONES, which keeps the Dramatic nomination; a duplicate verb is not a second set piece",
@@ -448,7 +448,7 @@
     {
       "key": "action:take/BONES",
       "kind": "action",
-      "minutes": 10,
+      "seconds": 600,
       "class": "mechanism",
       "source": "overlay",
       "note": "same curse handler as kiss/BONES, which keeps the Dramatic nomination; a duplicate verb is not a second set piece",
@@ -461,7 +461,7 @@
     {
       "key": "action:fill/INFLATABLE-BOAT",
       "kind": "action",
-      "minutes": 8,
+      "seconds": 480,
       "class": "mechanism",
       "source": "llm",
       "note": "Inflating the plastic boat with the pump is a multi-step physical task requiring sustained effort, fitting the mechanism band.",
@@ -473,7 +473,7 @@
     {
       "key": "action:tie/ROPE",
       "kind": "action",
-      "minutes": 8,
+      "seconds": 480,
       "class": "mechanism",
       "source": "llm",
       "note": "Securely tying a heavy rope to a railing over a dome edge requires deliberate knot-work and effort beyond simple manipulation.",
@@ -485,7 +485,7 @@
     {
       "key": "edge:RESERVOIR-NORTH\u003eRESERVOIR",
       "kind": "edge",
-      "minutes": 7,
+      "seconds": 420,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + water 3 + conditional 1 + dark 1, llm 7 — Crossing from dry land into the flooded, unlit reservoir crevice warrants the full baseline time for cautious, groping movement through water and darkness.",
@@ -497,7 +497,7 @@
     {
       "key": "edge:RESERVOIR-SOUTH\u003eRESERVOIR",
       "kind": "edge",
-      "minutes": 7,
+      "seconds": 420,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + water 3 + conditional 1 + dark 1, llm 7 — Crossing from dry land into the flooded, unlit reservoir crevice warrants the full baseline for water and darkness.",
@@ -509,7 +509,7 @@
     {
       "key": "edge:CYCLOPS-ROOM\u003eTREASURE-ROOM",
       "kind": "edge",
-      "minutes": 6,
+      "seconds": 360,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + up 2 + conditional 1 + dark 1, llm 6 — Fleeing the Cyclops up a staircase into the treasure room is tense but straightforward, matching the baseline pacing.",
@@ -521,7 +521,7 @@
     {
       "key": "edge:IN-STREAM\u003eRESERVOIR",
       "kind": "edge",
-      "minutes": 6,
+      "seconds": 360,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + water 3 + dark 1, llm 6; cheapest of 2 exits (DOWN, EAST) — Water travel through a narrow, twisting, unlit stream justifies the full baseline pacing.",
@@ -533,7 +533,7 @@
     {
       "key": "edge:IN-STREAM\u003eSTREAM-VIEW",
       "kind": "edge",
-      "minutes": 6,
+      "seconds": 360,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + water 3 + dark 1, llm 6 — Landing from the stream onto the beach still involves the water and disorientation baseline despite reaching a plain, lit path.",
@@ -545,7 +545,7 @@
     {
       "key": "edge:RESERVOIR\u003eIN-STREAM",
       "kind": "edge",
-      "minutes": 6,
+      "seconds": 360,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + water 3 + dark 1, llm 6; cheapest of 2 exits (UP, WEST) — Flowing water and disorienting, wall-twisted darkness keep this at the baseline crawl rather than a quick step.",
@@ -557,7 +557,7 @@
     {
       "key": "edge:RESERVOIR\u003eRESERVOIR-NORTH",
       "kind": "edge",
-      "minutes": 6,
+      "seconds": 360,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + water 3 + dark 1, llm 6 — Crossing from the dry reservoir edge into the water-adjacent, unlit northern area warrants the full baseline for a cautious, blind crawl.",
@@ -569,7 +569,7 @@
     {
       "key": "edge:RESERVOIR\u003eRESERVOIR-SOUTH",
       "kind": "edge",
-      "minutes": 6,
+      "seconds": 360,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + water 3 + dark 1, llm 6 — Crossing from the reservoir into the water and dark reservoir south warrants the full baseline for a hazardous, unlit passage.",
@@ -581,7 +581,7 @@
     {
       "key": "edge:RIVER-1\u003eRIVER-2",
       "kind": "edge",
-      "minutes": 6,
+      "seconds": 360,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + water 3 + dark 1, llm 6; cheapest of 2 exits (DOWN, drift) — Drifting on the current is being on ONBIT, so the baseline holds without further nudging.",
@@ -593,7 +593,7 @@
     {
       "key": "edge:RIVER-2\u003eRIVER-3",
       "kind": "edge",
-      "minutes": 6,
+      "seconds": 360,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + water 3 + dark 1, llm 6; cheapest of 2 exits (DOWN, drift) — Drifting on the current river with limited visibility keeps this at the mechanically-priced baseline.",
@@ -605,7 +605,7 @@
     {
       "key": "action:raise/SCEPTRE",
       "kind": "action",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "overlay",
       "note": "wave/SCEPTRE is the rainbow trigger; raising it is a decoy, not the ceremony",

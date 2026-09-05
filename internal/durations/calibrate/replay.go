@@ -17,9 +17,9 @@ type Replay struct {
 	Script                string            `json:"script"`
 	Seed                  uint64            `json:"seed"`
 	Turns                 int               `json:"turns"`
-	CumulativeMinutes     int               `json:"cumulativeMinutes"`
+	CumulativeSeconds     int               `json:"cumulativeSeconds"`
 	CumulativeHours       float64           `json:"cumulativeHours"`
-	MedianMovementMinutes float64           `json:"medianMovementMinutes"`
+	MedianMovementSeconds float64           `json:"medianMovementSeconds"`
 	TurnsUnderQuiet       float64           `json:"turnsUnderQuiet"` // share of turns under the quiet threshold
 	ByKind                map[string]Bucket `json:"byKind"`
 	BySlot                map[string]Bucket `json:"bySlot"`
@@ -30,12 +30,12 @@ type Replay struct {
 // Bucket tallies turns and their summed wait.
 type Bucket struct {
 	Turns   int `json:"turns"`
-	Minutes int `json:"minutes"`
+	Seconds int `json:"seconds"`
 }
 
-// Bin is one bar of a minutes histogram.
+// Bin is one bar of a seconds histogram.
 type Bin struct {
-	Minutes int `json:"minutes"`
+	Seconds int `json:"seconds"`
 	Count   int `json:"count"`
 }
 
@@ -44,7 +44,7 @@ type TurnWait struct {
 	Turn    int    `json:"turn"`
 	Input   string `json:"input"`
 	Kind    string `json:"kind"`
-	Minutes int    `json:"minutes"`
+	Seconds int    `json:"seconds"`
 	Slot    string `json:"slot"`
 	Key     string `json:"key,omitempty"`
 }
@@ -89,30 +89,30 @@ func replay(l *durations.Layered, fx actions.Fixture, script []byte) (Replay, ma
 		state = res.State
 
 		r := l.Resolve(durations.QueryFor(res))
-		minutes := r.Row.Minutes
+		seconds := r.Row.Seconds
 		rep.Turns++
-		rep.CumulativeMinutes += minutes
-		add(rep.ByKind, res.Kind.String(), minutes)
-		add(rep.BySlot, string(r.Slot), minutes)
-		waits[minutes]++
-		if minutes < durations.QuietThreshold {
+		rep.CumulativeSeconds += seconds
+		add(rep.ByKind, res.Kind.String(), seconds)
+		add(rep.BySlot, string(r.Slot), seconds)
+		waits[seconds]++
+		if seconds < durations.QuietThreshold {
 			under++
 		}
 		if res.Kind == actions.Movement {
-			movement = append(movement, minutes)
+			movement = append(movement, seconds)
 		}
 		if r.Key != "" {
 			hit[r.Key] = true
 		}
-		all = append(all, TurnWait{Turn: i + 1, Input: cmd, Kind: res.Kind.String(), Minutes: minutes, Slot: string(r.Slot), Key: r.Key})
+		all = append(all, TurnWait{Turn: i + 1, Input: cmd, Kind: res.Kind.String(), Seconds: seconds, Slot: string(r.Slot), Key: r.Key})
 	}
 
-	rep.CumulativeHours = round(float64(rep.CumulativeMinutes) / 60)
+	rep.CumulativeHours = round(float64(rep.CumulativeSeconds) / 3600)
 	sort.Ints(movement)
-	rep.MedianMovementMinutes = median(movement)
+	rep.MedianMovementSeconds = median(movement)
 	rep.TurnsUnderQuiet = share(under, rep.Turns)
 	rep.Waits = bins(waits)
-	sort.SliceStable(all, func(i, j int) bool { return all[i].Minutes > all[j].Minutes })
+	sort.SliceStable(all, func(i, j int) bool { return all[i].Seconds > all[j].Seconds })
 	if len(all) > longestTurns {
 		all = all[:longestTurns]
 	}
@@ -121,19 +121,19 @@ func replay(l *durations.Layered, fx actions.Fixture, script []byte) (Replay, ma
 }
 
 // add tallies one turn into a bucket map.
-func add(m map[string]Bucket, key string, minutes int) {
+func add(m map[string]Bucket, key string, seconds int) {
 	b := m[key]
 	b.Turns++
-	b.Minutes += minutes
+	b.Seconds += seconds
 	m[key] = b
 }
 
-// bins renders a minutes→count map as bars in minute order.
+// bins renders a seconds→count map as bars in ascending order.
 func bins(counts map[int]int) []Bin {
 	out := make([]Bin, 0, len(counts))
-	for minutes, n := range counts {
-		out = append(out, Bin{Minutes: minutes, Count: n})
+	for seconds, n := range counts {
+		out = append(out, Bin{Seconds: seconds, Count: n})
 	}
-	sort.Slice(out, func(i, j int) bool { return out[i].Minutes < out[j].Minutes })
+	sort.Slice(out, func(i, j int) bool { return out[i].Seconds < out[j].Seconds })
 	return out
 }

@@ -9,7 +9,7 @@ import (
 // Validate checks every invariant §4 and §2 make a hard error: exact
 // schemaVersions, orphaned overlay and acknowledged keys, class bands and
 // caps, the uncurated 30-minute ceiling, and the reason required above 60
-// minutes. It returns every problem it finds, in a stable order, so one run
+// minutes — all compared in seconds, the storage unit. It returns every problem it finds, in a stable order, so one run
 // reports the whole repair list.
 func Validate(t *Table, o *Overlay, v *Verbs) []error {
 	c := &checker{table: t, overlay: o, verbs: v}
@@ -90,7 +90,7 @@ func (c *checker) verbTable() {
 			c.fail("verb default %s: unknown class %q", d.Verb, d.Class)
 			continue
 		}
-		c.checkBand(VerbDefaultKey(d.Verb), d.Class, d.Minutes, false)
+		c.checkBand(VerbDefaultKey(d.Verb), d.Class, d.Seconds, false)
 	}
 	for _, word := range sortedKeys(c.table.Vocab.Verbs) {
 		if c.table.Vocab.Verbs[word] == "" {
@@ -99,31 +99,31 @@ func (c *checker) verbTable() {
 	}
 }
 
-// checkBand enforces the §2 class table: a row's minutes must sit inside its
+// checkBand enforces the §2 class table: a row's seconds must sit inside its
 // class band and never above the class cap. Generated rows carry the extra
 // uncurated ceiling — drama needs a human signature.
-func (c *checker) checkBand(key string, class Class, minutes int, overlay bool) {
+func (c *checker) checkBand(key string, class Class, seconds int, overlay bool) {
 	band, ok := BandOf(class)
 	if !ok {
 		c.fail("%s: unknown class %q", key, class)
 		return
 	}
-	if minutes < 0 {
-		c.fail("%s: negative minutes %d", key, minutes)
+	if seconds < 0 {
+		c.fail("%s: negative seconds %d", key, seconds)
 		return
 	}
-	if minutes > band.Cap {
-		c.fail("%s: %d min is above the %s cap of %d", key, minutes, class, band.Cap)
+	if seconds > band.Cap {
+		c.fail("%s: %ds is above the %s cap of %ds", key, seconds, class, band.Cap)
 		return
 	}
 	if overlay {
 		return // an overlay row may sit anywhere under the cap, including 0 (force instant)
 	}
-	if minutes < band.Low || minutes > band.High {
-		c.fail("%s: %d min is outside the %s band %d-%d", key, minutes, class, band.Low, band.High)
+	if seconds < band.Low || seconds > band.High {
+		c.fail("%s: %ds is outside the %s band %ds-%ds", key, seconds, class, band.Low, band.High)
 	}
-	if minutes > UncuratedCap {
-		c.fail("%s: %d min exceeds the uncurated cap of %d — only an overlay row may", key, minutes, UncuratedCap)
+	if seconds > UncuratedCap {
+		c.fail("%s: %ds exceeds the uncurated cap of %ds — only an overlay row may", key, seconds, UncuratedCap)
 	}
 }
 
@@ -140,7 +140,7 @@ func (c *checker) baseRows() {
 		if e.Source == "" {
 			c.fail("%s: no source", key)
 		}
-		c.checkBand(key, e.Class, e.Minutes, false)
+		c.checkBand(key, e.Class, e.Seconds, false)
 	}
 	for _, a := range c.table.Actions {
 		key := ActionKey(a.Verb, a.Object)
@@ -149,7 +149,7 @@ func (c *checker) baseRows() {
 		if a.Source == "" {
 			c.fail("%s: no source", key)
 		}
-		c.checkBand(key, a.Class, a.Minutes, false)
+		c.checkBand(key, a.Class, a.Seconds, false)
 	}
 }
 
@@ -188,43 +188,43 @@ func (c *checker) overlayRows() {
 				c.fail("overlay %s: %s is not a room in this table", key, id)
 			}
 		}
-		c.checkOverlayMinutes(key, e.Class, e.Minutes, e.Reason)
+		c.checkOverlaySeconds(key, e.Class, e.Seconds, e.Reason)
 	}
 	for _, a := range c.overlay.Actions {
 		key := ActionKey(a.Verb, a.Object)
 		mark(key)
 		c.checkAction("overlay "+key, a.Verb, a.Object)
-		c.checkOverlayMinutes(key, a.Class, a.Minutes, a.Reason)
+		c.checkOverlaySeconds(key, a.Class, a.Seconds, a.Reason)
 	}
 	for _, verb := range sortedKeys(c.overlay.VerbDefaults) {
-		minutes := c.overlay.VerbDefaults[verb]
+		seconds := c.overlay.VerbDefaults[verb]
 		key := VerbDefaultKey(verb)
 		mark(key)
 		if !c.verbWords[verb] {
 			c.fail("overlay %s: %q is not a verb in the shared table", key, verb)
 		}
 		switch {
-		case minutes < 0:
-			c.fail("overlay %s: negative minutes %d", key, minutes)
-		case minutes > ReasonThreshold:
+		case seconds < 0:
+			c.fail("overlay %s: negative seconds %d", key, seconds)
+		case seconds > ReasonThreshold:
 			// §4 requires a reason above this line, and the verbDefaults shape
 			// is a bare map with nowhere to put one — so that is where a verb
 			// default stops. A longer duration belongs on a row that can be
 			// justified.
-			c.fail("overlay %s: %d min is above %d — price a verb default that long as a row with a reason",
-				key, minutes, ReasonThreshold)
+			c.fail("overlay %s: %ds is above %ds — price a verb default that long as a row with a reason",
+				key, seconds, ReasonThreshold)
 		}
 	}
 }
 
-func (c *checker) checkOverlayMinutes(key string, class Class, minutes int, reason string) {
+func (c *checker) checkOverlaySeconds(key string, class Class, seconds int, reason string) {
 	if class != "" {
-		c.checkBand("overlay "+key, class, minutes, true)
-	} else if minutes < 0 || minutes > bands[ClassDramatic].Cap {
-		c.fail("overlay %s: %d min is outside 0-%d", key, minutes, bands[ClassDramatic].Cap)
+		c.checkBand("overlay "+key, class, seconds, true)
+	} else if seconds < 0 || seconds > bands[ClassDramatic].Cap {
+		c.fail("overlay %s: %ds is outside 0-%ds", key, seconds, bands[ClassDramatic].Cap)
 	}
-	if minutes > ReasonThreshold && strings.TrimSpace(reason) == "" {
-		c.fail("overlay %s: %d min needs a reason (above %d)", key, minutes, ReasonThreshold)
+	if seconds > ReasonThreshold && strings.TrimSpace(reason) == "" {
+		c.fail("overlay %s: %ds needs a reason (above %ds)", key, seconds, ReasonThreshold)
 	}
 }
 

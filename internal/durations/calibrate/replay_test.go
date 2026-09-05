@@ -31,14 +31,14 @@ func TestReplayCommittedFixtures(t *testing.T) {
 			if rep.Turns != len(actions.ParseScript(script)) {
 				t.Fatalf("priced %d turns of %d commands", rep.Turns, len(actions.ParseScript(script)))
 			}
-			if rep.CumulativeMinutes == 0 || rep.MedianMovementMinutes == 0 {
+			if rep.CumulativeSeconds == 0 || rep.MedianMovementSeconds == 0 {
 				t.Fatalf("empty profile: %+v", rep)
 			}
 			if rep.ByKind["movement"].Turns == 0 || rep.BySlot["edge"].Turns == 0 {
 				t.Fatalf("no movement priced through edges: kinds %v slots %v", rep.ByKind, rep.BySlot)
 			}
-			if rep.ByKind["combat"].Minutes != 0 {
-				t.Fatalf("combat turns cost %d min, want 0", rep.ByKind["combat"].Minutes)
+			if rep.ByKind["combat"].Seconds != 0 {
+				t.Fatalf("combat turns cost %ds, want 0", rep.ByKind["combat"].Seconds)
 			}
 			if len(hit) < 50 {
 				t.Fatalf("walkthrough exercised only %d rows", len(hit))

@@ -38,7 +38,7 @@ func oracle(t *testing.T, gameName string, seed uint64, cmds []string) []int {
 		t.Fatal(err)
 	}
 	state := actions.StartState(actions.Turn{Room: banner.Room, RoomObj: banner.RoomObj, Moves: banner.Moves})
-	minutes := make([]int, 0, len(cmds))
+	seconds := make([]int, 0, len(cmds))
 	for _, cmd := range cmds {
 		turn, err := e.Run(cmd)
 		if err != nil {
@@ -48,11 +48,11 @@ func oracle(t *testing.T, gameName string, seed uint64, cmds []string) []int {
 		state = res.State
 		r := l.Resolve(durations.QueryFor(res))
 		if turn.Halted {
-			r.Row.Minutes = 0 // halts always reveal immediately
+			r.Row.Seconds = 0 // halts always reveal immediately
 		}
-		minutes = append(minutes, r.Row.Minutes)
+		seconds = append(seconds, r.Row.Seconds)
 	}
-	return minutes
+	return seconds
 }
 
 // TestCasualReplayMatchesCalibration drives a live Casual session through
@@ -85,7 +85,7 @@ func TestCasualReplayMatchesCalibration(t *testing.T) {
 				got := 0
 				switch resp.Kind {
 				case game.KindWithheld:
-					got = int(resp.Pending.Remaining / time.Minute)
+					got = int(resp.Pending.Remaining / time.Second)
 					withheld++
 					// Mature it so the next command reveals and runs.
 					clock.t = clock.t.Add(resp.Pending.Remaining)
@@ -95,7 +95,7 @@ func TestCasualReplayMatchesCalibration(t *testing.T) {
 					t.Fatalf("turn %d %q: kind %q", i+1, cmd, resp.Kind)
 				}
 				if got != want[i] {
-					t.Errorf("turn %d %q: waited %d min, calibration replay priced %d", i+1, cmd, got, want[i])
+					t.Errorf("turn %d %q: waited %ds, calibration replay priced %ds", i+1, cmd, got, want[i])
 				}
 			}
 			if withheld == 0 || instant == 0 {
@@ -134,8 +134,8 @@ func TestCasualHardClassesAndEdges(t *testing.T) {
 	if !ok {
 		t.Fatal("no edge row WEST-OF-HOUSE>SOUTH-OF-HOUSE")
 	}
-	if walk.Pending.Remaining != time.Duration(row.Minutes)*time.Minute {
-		t.Errorf("walk wait = %v, want the edge row's %d min", walk.Pending.Remaining, row.Minutes)
+	if walk.Pending.Remaining != time.Duration(row.Seconds)*time.Second {
+		t.Errorf("walk wait = %v, want the edge row's %ds", walk.Pending.Remaining, row.Seconds)
 	}
 	if walk.Status.Room != "West of House" {
 		t.Errorf("status leaked the destination: %+v", walk.Status)

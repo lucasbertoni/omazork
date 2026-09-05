@@ -1,97 +1,97 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "game": "zork2",
   "replay": {
     "script": "internal/actions/testdata/zork2-walkthrough.txt",
     "seed": 1,
     "turns": 315,
-    "cumulativeMinutes": 874,
+    "cumulativeSeconds": 52440,
     "cumulativeHours": 14.567,
-    "medianMovementMinutes": 3,
+    "medianMovementSeconds": 180,
     "turnsUnderQuiet": 0.93,
     "byKind": {
       "aborted": {
         "turns": 2,
-        "minutes": 0
+        "seconds": 0
       },
       "action": {
         "turns": 163,
-        "minutes": 482
+        "seconds": 28920
       },
       "combat": {
         "turns": 6,
-        "minutes": 0
+        "seconds": 0
       },
       "fastverb": {
         "turns": 10,
-        "minutes": 0
+        "seconds": 0
       },
       "movement": {
         "turns": 134,
-        "minutes": 392
+        "seconds": 23520
       }
     },
     "bySlot": {
       "action": {
         "turns": 55,
-        "minutes": 333
+        "seconds": 19980
       },
       "drift": {
         "turns": 6,
-        "minutes": 18
+        "seconds": 1080
       },
       "edge": {
         "turns": 133,
-        "minutes": 391
+        "seconds": 23460
       },
       "fallback": {
         "turns": 13,
-        "minutes": 13
+        "seconds": 780
       },
       "hard": {
         "turns": 18,
-        "minutes": 0
+        "seconds": 0
       },
       "overlay": {
         "turns": 2,
-        "minutes": 20
+        "seconds": 1200
       },
       "verbDefault": {
         "turns": 88,
-        "minutes": 99
+        "seconds": 5940
       }
     },
     "waits": [
       {
-        "minutes": 0,
+        "seconds": 0,
         "count": 20
       },
       {
-        "minutes": 1,
+        "seconds": 60,
         "count": 101
       },
       {
-        "minutes": 2,
+        "seconds": 120,
         "count": 59
       },
       {
-        "minutes": 3,
+        "seconds": 180,
         "count": 92
       },
       {
-        "minutes": 4,
+        "seconds": 240,
         "count": 21
       },
       {
-        "minutes": 5,
+        "seconds": 300,
         "count": 13
       },
       {
-        "minutes": 10,
+        "seconds": 600,
         "count": 2
       },
       {
-        "minutes": 30,
+        "seconds": 1800,
         "count": 7
       }
     ],
@@ -100,7 +100,7 @@
         "turn": 55,
         "input": "take sphere",
         "kind": "action",
-        "minutes": 30,
+        "seconds": 1800,
         "slot": "action",
         "key": "action:take/PALANTIR-1"
       },
@@ -108,7 +108,7 @@
         "turn": 57,
         "input": "take sphere",
         "kind": "action",
-        "minutes": 30,
+        "seconds": 1800,
         "slot": "action",
         "key": "action:take/PALANTIR-1"
       },
@@ -116,7 +116,7 @@
         "turn": 95,
         "input": "take blue sphere",
         "kind": "action",
-        "minutes": 30,
+        "seconds": 1800,
         "slot": "action",
         "key": "action:take/PALANTIR-1"
       },
@@ -124,7 +124,7 @@
         "turn": 244,
         "input": "take red sphere",
         "kind": "action",
-        "minutes": 30,
+        "seconds": 1800,
         "slot": "action",
         "key": "action:take/PALANTIR-1"
       },
@@ -132,7 +132,7 @@
         "turn": 245,
         "input": "take blue sphere",
         "kind": "action",
-        "minutes": 30,
+        "seconds": 1800,
         "slot": "action",
         "key": "action:take/PALANTIR-1"
       },
@@ -140,7 +140,7 @@
         "turn": 256,
         "input": "take clear sphere",
         "kind": "action",
-        "minutes": 30,
+        "seconds": 1800,
         "slot": "action",
         "key": "action:take/PALANTIR-1"
       },
@@ -148,7 +148,7 @@
         "turn": 261,
         "input": "take black sphere",
         "kind": "action",
-        "minutes": 30,
+        "seconds": 1800,
         "slot": "action",
         "key": "action:take/PALANTIR-1"
       },
@@ -156,7 +156,7 @@
         "turn": 42,
         "input": "eat green cake",
         "kind": "action",
-        "minutes": 10,
+        "seconds": 600,
         "slot": "overlay",
         "key": "action:eat/BLUE-ICING"
       },
@@ -164,7 +164,7 @@
         "turn": 47,
         "input": "eat blue cake",
         "kind": "action",
-        "minutes": 10,
+        "seconds": 600,
         "slot": "overlay",
         "key": "action:eat/BLUE-ICING"
       },
@@ -172,7 +172,7 @@
         "turn": 83,
         "input": "up",
         "kind": "movement",
-        "minutes": 5,
+        "seconds": 300,
         "slot": "edge",
         "key": "edge:RAVINE-LEDGE\u003eTINY-ROOM"
       }
@@ -181,74 +181,74 @@
   "histogram": {
     "edges": {
       "rows": 170,
-      "mean": 2.941,
-      "median": 3,
+      "meanSeconds": 176.471,
+      "medianSeconds": 180,
       "bins": [
         {
-          "minutes": 2,
+          "seconds": 120,
           "count": 40
         },
         {
-          "minutes": 3,
+          "seconds": 180,
           "count": 105
         },
         {
-          "minutes": 4,
+          "seconds": 240,
           "count": 20
         },
         {
-          "minutes": 5,
+          "seconds": 300,
           "count": 5
         }
       ]
     },
     "actions": {
       "rows": 288,
-      "mean": 2.014,
-      "median": 1,
+      "meanSeconds": 120.833,
+      "medianSeconds": 60,
       "bins": [
         {
-          "minutes": 0,
+          "seconds": 0,
           "count": 50
         },
         {
-          "minutes": 1,
+          "seconds": 60,
           "count": 150
         },
         {
-          "minutes": 2,
+          "seconds": 120,
           "count": 42
         },
         {
-          "minutes": 3,
+          "seconds": 180,
           "count": 9
         },
         {
-          "minutes": 4,
+          "seconds": 240,
           "count": 4
         },
         {
-          "minutes": 5,
+          "seconds": 300,
           "count": 22
         },
         {
-          "minutes": 8,
+          "seconds": 480,
           "count": 2
         },
         {
-          "minutes": 10,
+          "seconds": 600,
           "count": 3
         },
         {
-          "minutes": 12,
+          "seconds": 720,
           "count": 1
         },
         {
-          "minutes": 15,
+          "seconds": 900,
           "count": 1
         },
         {
-          "minutes": 30,
+          "seconds": 1800,
           "count": 4
         }
       ]
@@ -256,43 +256,43 @@
     "classes": {
       "dramatic": {
         "rows": 4,
-        "median": 30,
-        "bandLow": 30,
-        "bandHigh": 180,
-        "innerLow": 67.5,
-        "innerHigh": 142.5
+        "medianSeconds": 1800,
+        "bandLowSeconds": 1800,
+        "bandHighSeconds": 10800,
+        "innerLowSeconds": 4050,
+        "innerHighSeconds": 8550
       },
       "instant": {
         "rows": 34,
-        "median": 0,
-        "bandLow": 0,
-        "bandHigh": 0,
-        "innerLow": 0,
-        "innerHigh": 0
+        "medianSeconds": 0,
+        "bandLowSeconds": 0,
+        "bandHighSeconds": 0,
+        "innerLowSeconds": 0,
+        "innerHighSeconds": 0
       },
       "manipulation": {
         "rows": 206,
-        "median": 1,
-        "bandLow": 0,
-        "bandHigh": 3,
-        "innerLow": 0.75,
-        "innerHigh": 2.25
+        "medianSeconds": 60,
+        "bandLowSeconds": 0,
+        "bandHighSeconds": 180,
+        "innerLowSeconds": 45,
+        "innerHighSeconds": 135
       },
       "mechanism": {
         "rows": 38,
-        "median": 5,
-        "bandLow": 3,
-        "bandHigh": 20,
-        "innerLow": 7.25,
-        "innerHigh": 15.75
+        "medianSeconds": 300,
+        "bandLowSeconds": 180,
+        "bandHighSeconds": 1200,
+        "innerLowSeconds": 435,
+        "innerHighSeconds": 945
       },
       "movement": {
         "rows": 176,
-        "median": 3,
-        "bandLow": 1,
-        "bandHigh": 10,
-        "innerLow": 3.25,
-        "innerHigh": 7.75
+        "medianSeconds": 180,
+        "bandLowSeconds": 60,
+        "bandHighSeconds": 600,
+        "innerLowSeconds": 195,
+        "innerHighSeconds": 465
       }
     },
     "dramaticShare": 0.014,
@@ -307,10 +307,10 @@
       "pass": true
     },
     {
-      "name": "replay.medianMovementMinutes",
-      "value": 3,
-      "min": 1,
-      "max": 3,
+      "name": "replay.medianMovementSeconds",
+      "value": 180,
+      "min": 60,
+      "max": 180,
       "pass": true
     },
     {
@@ -320,10 +320,10 @@
       "pass": true
     },
     {
-      "name": "histogram.meanEdgeMinutes",
-      "value": 2.941,
-      "min": 2,
-      "max": 4,
+      "name": "histogram.meanEdgeSeconds",
+      "value": 176.471,
+      "min": 120,
+      "max": 240,
       "pass": true
     },
     {
@@ -350,7 +350,7 @@
     {
       "key": "action:eat/EAT-ME-CAKE",
       "kind": "action",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — Eating the cake triggers a world-altering set-piece transformation (shrinking, teleporting the room's contents) that the game treats as a ceremonial turning point.",
@@ -363,7 +363,7 @@
     {
       "key": "action:kick/DRAGON",
       "kind": "action",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — Provoking a huge red dragon into a physical retaliation is a life-threatening confrontation the game treats as a major set-piece moment.",
@@ -376,7 +376,7 @@
     {
       "key": "action:make/WISH",
       "kind": "action",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — Making a wish at the well is a ceremonial, fateful moment that consumes the coin and triggers a significant story event.",
@@ -389,7 +389,7 @@
     {
       "key": "action:take/PALANTIR-1",
       "kind": "action",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — This is a fatal trap trigger with a ceremonial, story-critical outcome (cage/gas/robot death), not a routine pickup.",
@@ -402,7 +402,7 @@
     {
       "key": "action:enchant/MENHIR",
       "kind": "action",
-      "minutes": 15,
+      "seconds": 900,
       "class": "mechanism",
       "source": "llm",
       "note": "Casting a levitation spell on an eight-foot stone slab to raise it and reveal a passage is a deliberate magical mechanism trigger, not a simple manipulation.",
@@ -414,7 +414,7 @@
     {
       "key": "action:enchant/CERBERUS",
       "kind": "action",
-      "minutes": 12,
+      "seconds": 720,
       "class": "mechanism",
       "source": "llm",
       "note": "Casting a specific spell on a guarding creature requires careful preparation and precise incantation, though it's a single magical act rather than a full ceremony.",
@@ -426,7 +426,7 @@
     {
       "key": "action:eat/BLUE-ICING",
       "kind": "action",
-      "minutes": 10,
+      "seconds": 600,
       "class": "mechanism",
       "source": "overlay",
       "note": "same shrinking sequence as eat/EAT-ME-CAKE, which keeps the Dramatic nomination",
@@ -439,7 +439,7 @@
     {
       "key": "action:move/PALANTIR-1",
       "kind": "action",
-      "minutes": 10,
+      "seconds": 600,
       "class": "mechanism",
       "source": "overlay",
       "note": "same cage trap as take/PALANTIR-1, which keeps the Dramatic nomination",
@@ -452,7 +452,7 @@
     {
       "key": "action:put/PALANTIR-1",
       "kind": "action",
-      "minutes": 10,
+      "seconds": 600,
       "class": "mechanism",
       "source": "overlay",
       "note": "same cage trap as take/PALANTIR-1, which keeps the Dramatic nomination",
@@ -465,7 +465,7 @@
     {
       "key": "action:disenchant/MENHIR",
       "kind": "action",
-      "minutes": 8,
+      "seconds": 480,
       "class": "mechanism",
       "source": "llm",
       "note": "Reversing a levitation spell on a massive stone requires focused magical effort akin to turning a great mechanism.",
@@ -477,7 +477,7 @@
     {
       "key": "edge:CERBERUS-ROOM\u003eDIAMOND-5",
       "kind": "edge",
-      "minutes": 5,
+      "seconds": 300,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + up 2 + dark 1, llm 5 — A stairway climb from a crypt to an oddly-angled room stays at baseline with no flooding or unusual hazards to slow it further.",
@@ -489,7 +489,7 @@
     {
       "key": "edge:DIAMOND-5\u003eSTAIRWAY-TOP",
       "kind": "edge",
-      "minutes": 5,
+      "seconds": 300,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + up 2 + dark 1, llm 5 — A straightforward staircase ascent between two ordinary rooms stays at the baseline pace.",
@@ -501,7 +501,7 @@
     {
       "key": "edge:GLACIER-ROOM\u003eLAVA-TUBE",
       "kind": "edge",
-      "minutes": 5,
+      "seconds": 300,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + up 2 + dark 1, llm 5 — Climbing a tight, dark lava chimney matches the baseline pacing with no additional hazards to justify a longer crawl.",
@@ -513,7 +513,7 @@
     {
       "key": "edge:LAVA-TUBE\u003eVOLCANO-VIEW",
       "kind": "edge",
-      "minutes": 5,
+      "seconds": 300,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + up 2 + dark 1, llm 5 — A tight, steep hundred-foot climb up a solidified lava chimney justifies the baseline pacing despite the destination being open and lit.",
@@ -525,7 +525,7 @@
     {
       "key": "edge:RAVINE-LEDGE\u003eTINY-ROOM",
       "kind": "edge",
-      "minutes": 5,
+      "seconds": 300,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + up 2 + dark 1, llm 5 — A precarious climb up a rock face to an unlit ledge justifies staying at the mechanical baseline.",
@@ -537,7 +537,7 @@
     {
       "key": "edge:CERBERUS-ROOM\u003eCRYPT-ANTEROOM",
       "kind": "edge",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + conditional 1 + dark 1, llm 4; cheapest of 2 exits (EAST, IN) — A conditional crypt passage from a described gateway room stays at the baseline pacing without added crawl or flood cues.",
@@ -549,7 +549,7 @@
     {
       "key": "edge:CRYPT-ANTEROOM\u003eCRYPT-ROOM",
       "kind": "edge",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + door 1 + dark 1, llm 4; cheapest of 2 exits (IN, SOUTH) — No descriptive detail overrides the baseline, so the mechanical crypt-door-and-darkness pricing stands as-is.",
@@ -561,7 +561,7 @@
     {
       "key": "edge:CRYPT-ROOM\u003eCRYPT-ANTEROOM",
       "kind": "edge",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + door 1 + dark 1, llm 4 — No descriptive cues to adjust the baseline, so the mechanical door-and-dark pricing stands.",
@@ -573,7 +573,7 @@
     {
       "key": "edge:DIAMOND-5\u003eCERBERUS-ROOM",
       "kind": "edge",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + down 1 + dark 1, llm 4 — A straightforward downward stair descent into a crypt entrance matches the baseline pacing without added hazards.",
@@ -585,7 +585,7 @@
     {
       "key": "edge:DRAGON-ROOM\u003eDRAGON-LAIR",
       "kind": "edge",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + conditional 1 + dark 1, llm 4; cheapest of 2 exits (NORTH, IN) — A dark, smokey tunnel leading to a flame-scarred dragon's lair warrants the baseline conditional-plus-dark pacing without further extension.",
@@ -597,7 +597,7 @@
     {
       "key": "action:burn/BRICK",
       "kind": "action",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "overlay",
       "note": "instant death is not a ceremony; the recap carries the drama",
@@ -609,7 +609,7 @@
     {
       "key": "action:eat/ORANGE-ICING",
       "kind": "action",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "overlay",
       "note": "instant death is not a ceremony; the recap carries the drama",
@@ -621,7 +621,7 @@
     {
       "key": "action:eat/RED-ICING",
       "kind": "action",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "overlay",
       "note": "instant death is not a ceremony; the recap carries the drama",
@@ -633,7 +633,7 @@
     {
       "key": "action:jump/CHASM",
       "kind": "action",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "overlay",
       "note": "instant death is not a ceremony; the recap carries the drama",
@@ -645,7 +645,7 @@
     {
       "key": "action:kick/HEADS",
       "kind": "action",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "overlay",
       "note": "instant death is not a ceremony; the recap carries the drama",
@@ -657,7 +657,7 @@
     {
       "key": "action:rape/GLOBAL-PRINCESS",
       "kind": "action",
-      "minutes": 0,
+      "seconds": 0,
       "class": "manipulation",
       "source": "overlay",
       "note": "the Wizard's lightning is instant; nothing here deserves a wait",
@@ -669,7 +669,7 @@
     {
       "key": "action:rape/PRINCESS",
       "kind": "action",
-      "minutes": 0,
+      "seconds": 0,
       "class": "manipulation",
       "source": "overlay",
       "note": "the Wizard's lightning is instant; nothing here deserves a wait",

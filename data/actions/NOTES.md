@@ -2,7 +2,11 @@
 
 The action-wait data the casual-mode mediation layer prices turns from, per
 [docs/action-waits.md](../../docs/action-waits.md) §4. Every file carries
-`"schemaVersion": 1` and the wrapper asserts an exact match at load.
+`"schemaVersion": 2` and the wrapper asserts an exact match at load. Durations are
+stored as integer **seconds** (`"seconds": 120` is a two-minute wait); the spec's
+bands and caps are written in minutes, so multiply by 60 when curating. The LLM
+cache is the exception: it keeps `minutes`, because the model is asked in minutes
+and its answers are hash-pinned — the generator converts on write.
 
 | File | Role | Written by |
 |---|---|---|
@@ -134,8 +138,8 @@ does not match the recomputed one (§7's freshness check).
 ## Curating
 
 Overlay rows override a base row, add one it lacks, and are the only place a
-duration may exceed the 30-minute uncurated cap; above 60 minutes a row must
-carry a `reason`. `minutes: 0` forces instant. Overlay keys are orphan-checked:
+duration may exceed the 30-minute (1800 s) uncurated cap; above 60 minutes
+(3600 s) a row must carry a `reason`. `seconds: 0` forces instant. Overlay keys are orphan-checked:
 a row or `acknowledged` key that no longer names a live room, verb, or object
 fails validation rather than sitting silently inert. Layering happens in memory
 at load — there is no merged artifact, and regeneration never touches curation.

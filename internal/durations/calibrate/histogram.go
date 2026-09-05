@@ -18,8 +18,8 @@ type Histogram struct {
 // Distribution summarizes one population of rows.
 type Distribution struct {
 	Rows   int     `json:"rows"`
-	Mean   float64 `json:"mean"`
-	Median float64 `json:"median"`
+	Mean   float64 `json:"meanSeconds"`
+	Median float64 `json:"medianSeconds"`
 	Bins   []Bin   `json:"bins"`
 }
 
@@ -27,11 +27,11 @@ type Distribution struct {
 // that band the median is gated to.
 type ClassStat struct {
 	Rows      int     `json:"rows"`
-	Median    float64 `json:"median"`
-	BandLow   int     `json:"bandLow"`
-	BandHigh  int     `json:"bandHigh"`
-	InnerLow  float64 `json:"innerLow"`
-	InnerHigh float64 `json:"innerHigh"`
+	Median    float64 `json:"medianSeconds"`
+	BandLow   int     `json:"bandLowSeconds"`
+	BandHigh  int     `json:"bandHighSeconds"`
+	InnerLow  float64 `json:"innerLowSeconds"`
+	InnerHigh float64 `json:"innerHighSeconds"`
 }
 
 // histogram profiles the layered rows: distributions per shape, medians per
@@ -46,8 +46,8 @@ func histogram(edges, acts []durations.KeyedRow) Histogram {
 	dramatic := 0
 	for _, rows := range [][]durations.KeyedRow{edges, acts} {
 		for _, r := range rows {
-			byClass[r.Class] = append(byClass[r.Class], r.Minutes)
-			if r.Minutes >= durations.ReasonThreshold {
+			byClass[r.Class] = append(byClass[r.Class], r.Seconds)
+			if r.Seconds >= durations.ReasonThreshold {
 				h.LongRows = append(h.LongRows, r.Key)
 			}
 		}
@@ -58,15 +58,15 @@ func histogram(edges, acts []durations.KeyedRow) Histogram {
 		}
 	}
 	h.DramaticShare = share(dramatic, len(acts))
-	for class, minutes := range byClass {
+	for class, seconds := range byClass {
 		band, ok := durations.BandOf(class)
 		if !ok {
 			continue
 		}
-		sort.Ints(minutes)
+		sort.Ints(seconds)
 		quarter := float64(band.High-band.Low) / 4
 		h.Classes[string(class)] = ClassStat{
-			Rows: len(minutes), Median: median(minutes),
+			Rows: len(seconds), Median: median(seconds),
 			BandLow: band.Low, BandHigh: band.High,
 			InnerLow: float64(band.Low) + quarter, InnerHigh: float64(band.High) - quarter,
 		}
@@ -76,12 +76,12 @@ func histogram(edges, acts []durations.KeyedRow) Histogram {
 
 // distribution summarizes one population of rows.
 func distribution(rows []durations.KeyedRow) Distribution {
-	minutes := make([]int, 0, len(rows))
+	seconds := make([]int, 0, len(rows))
 	counts := map[int]int{}
 	for _, r := range rows {
-		minutes = append(minutes, r.Minutes)
-		counts[r.Minutes]++
+		seconds = append(seconds, r.Seconds)
+		counts[r.Seconds]++
 	}
-	sort.Ints(minutes)
-	return Distribution{Rows: len(rows), Mean: mean(minutes), Median: median(minutes), Bins: bins(counts)}
+	sort.Ints(seconds)
+	return Distribution{Rows: len(rows), Mean: mean(seconds), Median: median(seconds), Bins: bins(counts)}
 }

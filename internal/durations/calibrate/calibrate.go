@@ -20,7 +20,7 @@ import (
 )
 
 // SchemaVersion is stamped on the report, like every duration file (§4).
-const SchemaVersion = 1
+const SchemaVersion = 2
 
 // Input is everything one calibration run reads.
 type Input struct {
@@ -126,7 +126,7 @@ func share(part, whole int) float64 {
 // any threshold.
 func round(f float64) float64 { return math.Round(f*1000) / 1000 }
 
-// median of a slice of minutes, as the mean of the two middle values for an
+// median of a slice of seconds, as the mean of the two middle values for an
 // even count; 0 for an empty slice.
 func median(sorted []int) float64 {
 	n := len(sorted)
@@ -140,7 +140,7 @@ func median(sorted []int) float64 {
 	}
 }
 
-// mean of a slice of minutes, rounded; 0 for an empty slice.
+// mean of a slice of seconds, rounded; 0 for an empty slice.
 func mean(values []int) float64 {
 	if len(values) == 0 {
 		return 0

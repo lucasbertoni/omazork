@@ -236,9 +236,10 @@ func Decode(req Request, text string) (Row, error) {
 
 // Check enforces the §5.3 validator: class must be movement on a static edge,
 // and minutes must sit inside the returned class's band. Nothing is clamped —
-// a violation is the caller's to retry once and then fail on.
+// a violation is the caller's to retry once and then fail on. The contract
+// speaks minutes; the bands are converted to match.
 func Check(kind Kind, class durations.Class, minutes int) error {
-	band, ok := durations.BandOf(class)
+	band, ok := MinuteBand(class)
 	if !ok {
 		return fmt.Errorf("unknown class %q", class)
 	}
@@ -249,6 +250,18 @@ func Check(kind Kind, class durations.Class, minutes int) error {
 		return fmt.Errorf("%d min is outside the %s band %d-%d", minutes, class, band.Low, band.High)
 	}
 	return nil
+}
+
+// MinuteBand is a class's §2 band in minutes — the unit the prompt shows the
+// model and the model answers in. Tables store seconds (ADR 0004); the LLM
+// contract deliberately does not, so every committed inputHash stays valid.
+func MinuteBand(class durations.Class) (durations.Band, bool) {
+	b, ok := durations.BandOf(class)
+	if !ok {
+		return durations.Band{}, false
+	}
+	m := durations.Minute
+	return durations.Band{Low: b.Low / m, High: b.High / m, Cap: b.Cap / m}, true
 }
 
 // clip flattens a response to one short line for an error message: a model

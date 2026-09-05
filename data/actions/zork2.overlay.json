@@ -1,18 +1,18 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "game": "zork2",
   "edges": [],
   "actions": [
-    { "verb": "burn", "object": "BRICK", "minutes": 2, "class": "manipulation", "note": "instant death is not a ceremony; the recap carries the drama" },
-    { "verb": "eat", "object": "ORANGE-ICING", "minutes": 2, "class": "manipulation", "note": "instant death is not a ceremony; the recap carries the drama" },
-    { "verb": "eat", "object": "RED-ICING", "minutes": 2, "class": "manipulation", "note": "instant death is not a ceremony; the recap carries the drama" },
-    { "verb": "jump", "object": "CHASM", "minutes": 1, "class": "manipulation", "note": "instant death is not a ceremony; the recap carries the drama" },
-    { "verb": "kick", "object": "HEADS", "minutes": 1, "class": "manipulation", "note": "instant death is not a ceremony; the recap carries the drama" },
-    { "verb": "rape", "object": "GLOBAL-PRINCESS", "minutes": 0, "class": "manipulation", "note": "the Wizard's lightning is instant; nothing here deserves a wait" },
-    { "verb": "rape", "object": "PRINCESS", "minutes": 0, "class": "manipulation", "note": "the Wizard's lightning is instant; nothing here deserves a wait" },
-    { "verb": "move", "object": "PALANTIR-1", "minutes": 10, "class": "mechanism", "note": "same cage trap as take/PALANTIR-1, which keeps the Dramatic nomination" },
-    { "verb": "put", "object": "PALANTIR-1", "minutes": 10, "class": "mechanism", "note": "same cage trap as take/PALANTIR-1, which keeps the Dramatic nomination" },
-    { "verb": "eat", "object": "BLUE-ICING", "minutes": 10, "class": "mechanism", "note": "same shrinking sequence as eat/EAT-ME-CAKE, which keeps the Dramatic nomination" }
+    { "verb": "burn", "object": "BRICK", "seconds": 120, "class": "manipulation", "note": "instant death is not a ceremony; the recap carries the drama" },
+    { "verb": "eat", "object": "ORANGE-ICING", "seconds": 120, "class": "manipulation", "note": "instant death is not a ceremony; the recap carries the drama" },
+    { "verb": "eat", "object": "RED-ICING", "seconds": 120, "class": "manipulation", "note": "instant death is not a ceremony; the recap carries the drama" },
+    { "verb": "jump", "object": "CHASM", "seconds": 60, "class": "manipulation", "note": "instant death is not a ceremony; the recap carries the drama" },
+    { "verb": "kick", "object": "HEADS", "seconds": 60, "class": "manipulation", "note": "instant death is not a ceremony; the recap carries the drama" },
+    { "verb": "rape", "object": "GLOBAL-PRINCESS", "seconds": 0, "class": "manipulation", "note": "the Wizard's lightning is instant; nothing here deserves a wait" },
+    { "verb": "rape", "object": "PRINCESS", "seconds": 0, "class": "manipulation", "note": "the Wizard's lightning is instant; nothing here deserves a wait" },
+    { "verb": "move", "object": "PALANTIR-1", "seconds": 600, "class": "mechanism", "note": "same cage trap as take/PALANTIR-1, which keeps the Dramatic nomination" },
+    { "verb": "put", "object": "PALANTIR-1", "seconds": 600, "class": "mechanism", "note": "same cage trap as take/PALANTIR-1, which keeps the Dramatic nomination" },
+    { "verb": "eat", "object": "BLUE-ICING", "seconds": 600, "class": "mechanism", "note": "same shrinking sequence as eat/EAT-ME-CAKE, which keeps the Dramatic nomination" }
   ],
   "verbDefaults": {},
   "acknowledged": {}

@@ -14,22 +14,22 @@ import (
 // row, adds a mechanism row at its class cap, and acknowledges keys.
 func tableFS(acknowledged string) fstest.MapFS {
 	return fstest.MapFS{
-		"data/actions/verbs.json": &fstest.MapFile{Data: []byte(`{"schemaVersion":1,"fastVerbs":["look"],"verbs":[
- {"verb":"take","synonyms":["get"],"class":"manipulation","minutes":1},
- {"verb":"wait","class":"manipulation","minutes":0},
- {"verb":"dig","class":"mechanism","minutes":10}]}`)},
-		"data/actions/zork1.json": &fstest.MapFile{Data: []byte(`{"schemaVersion":1,"game":"zork1",
+		"data/actions/verbs.json": &fstest.MapFile{Data: []byte(`{"schemaVersion":2,"fastVerbs":["look"],"verbs":[
+ {"verb":"take","synonyms":["get"],"class":"manipulation","seconds":60},
+ {"verb":"wait","class":"manipulation","seconds":0},
+ {"verb":"dig","class":"mechanism","seconds":600}]}`)},
+		"data/actions/zork1.json": &fstest.MapFile{Data: []byte(`{"schemaVersion":2,"game":"zork1",
  "rooms":[{"id":"KITCHEN","obj":10,"name":"Kitchen"},{"id":"CELLAR","obj":11,"name":"Cellar"}],
- "edges":[{"from":"KITCHEN","to":"CELLAR","dir":"DOWN","kind":"plain","minutes":4,"class":"movement","source":"rule"},
-          {"from":"CELLAR","to":"KITCHEN","dir":"UP","kind":"plain","minutes":6,"class":"movement","source":"rule"}],
- "actions":[{"verb":"dig","object":"SAND","minutes":12,"class":"mechanism","source":"llm"},
-            {"verb":"wait","object":"BOAT","minutes":2,"class":"manipulation","source":"llm"},
-            {"verb":"take","object":"SAND","minutes":1,"class":"manipulation","source":"llm"},
-            {"verb":"take","object":"WALL","minutes":30,"class":"dramatic","source":"llm","note":"llm nominated dramatic 120m — overlay candidate"}],
+ "edges":[{"from":"KITCHEN","to":"CELLAR","dir":"DOWN","kind":"plain","seconds":240,"class":"movement","source":"rule"},
+          {"from":"CELLAR","to":"KITCHEN","dir":"UP","kind":"plain","seconds":360,"class":"movement","source":"rule"}],
+ "actions":[{"verb":"dig","object":"SAND","seconds":720,"class":"mechanism","source":"llm"},
+            {"verb":"wait","object":"BOAT","seconds":120,"class":"manipulation","source":"llm"},
+            {"verb":"take","object":"SAND","seconds":60,"class":"manipulation","source":"llm"},
+            {"verb":"take","object":"WALL","seconds":1800,"class":"dramatic","source":"llm","note":"llm nominated dramatic 120m — overlay candidate"}],
  "vocab":{"verbs":{"get":"take","take":"take","dig":"dig","wait":"wait"},"nouns":{"sand":["SAND"],"boat":["BOAT"],"wall":["WALL"]}}}`)},
-		"data/actions/zork1.overlay.json": &fstest.MapFile{Data: []byte(`{"schemaVersion":1,"game":"zork1",
- "actions":[{"verb":"take","object":"BOAT","minutes":9,"class":"mechanism","note":"curated"},
-            {"verb":"dig","object":"WALL","minutes":30,"class":"mechanism","note":"curated to the cap"}],
+		"data/actions/zork1.overlay.json": &fstest.MapFile{Data: []byte(`{"schemaVersion":2,"game":"zork1",
+ "actions":[{"verb":"take","object":"BOAT","seconds":540,"class":"mechanism","note":"curated"},
+            {"verb":"dig","object":"WALL","seconds":1800,"class":"mechanism","note":"curated to the cap"}],
  "acknowledged":{` + acknowledged + `}}`)},
 	}
 }
@@ -44,11 +44,11 @@ func layered(t *testing.T, acknowledged string) *durations.Layered {
 }
 
 func thresholds() *durations.Calibration {
-	c := &durations.Calibration{SchemaVersion: 1}
+	c := &durations.Calibration{SchemaVersion: 2}
 	c.Replay.CumulativeHoursMin, c.Replay.CumulativeHoursMax = 15, 35
-	c.Replay.MedianMovementMinutesMin, c.Replay.MedianMovementMinutesMax = 1, 3
+	c.Replay.MedianMovementSecondsMin, c.Replay.MedianMovementSecondsMax = 1*durations.Minute, 3*durations.Minute
 	c.Replay.TurnsUnderQuietMin = 0.6
-	c.Histogram.MeanEdgeMinutesMin, c.Histogram.MeanEdgeMinutesMax = 2, 4
+	c.Histogram.MeanEdgeSecondsMin, c.Histogram.MeanEdgeSecondsMax = 2*durations.Minute, 4*durations.Minute
 	c.Histogram.DramaticRowsMax = 0.03
 	c.Histogram.ClassMediansInner = true
 	c.Rows.LongRowsMax = 5
@@ -58,10 +58,10 @@ func thresholds() *durations.Calibration {
 func TestHistogram(t *testing.T) {
 	edges, acts := layered(t, "").Rows()
 	h := histogram(edges, acts)
-	if h.Edges.Rows != 2 || h.Edges.Mean != 5 || h.Edges.Median != 5 {
+	if h.Edges.Rows != 2 || h.Edges.Mean != 5*durations.Minute || h.Edges.Median != 5*durations.Minute {
 		t.Fatalf("edges = %+v", h.Edges)
 	}
-	if h.Actions.Rows != 6 || h.Actions.Median != 10.5 {
+	if h.Actions.Rows != 6 || h.Actions.Median != 10.5*durations.Minute {
 		t.Fatalf("actions = %+v", h.Actions)
 	}
 	// 1 dramatic row of 6 layered action rows.
@@ -69,7 +69,7 @@ func TestHistogram(t *testing.T) {
 		t.Fatalf("dramatic share = %v", h.DramaticShare)
 	}
 	mech := h.Classes[string(durations.ClassMechanism)]
-	if mech.Rows != 3 || mech.Median != 12 || mech.InnerLow != 7.25 || mech.InnerHigh != 15.75 {
+	if mech.Rows != 3 || mech.Median != 12*durations.Minute || mech.InnerLow != 7.25*durations.Minute || mech.InnerHigh != 15.75*durations.Minute {
 		t.Fatalf("mechanism = %+v", mech)
 	}
 	if len(h.LongRows) != 0 {
@@ -80,21 +80,21 @@ func TestHistogram(t *testing.T) {
 func TestGates(t *testing.T) {
 	edges, acts := layered(t, "").Rows()
 	h := histogram(edges, acts)
-	rep := Replay{CumulativeHours: 20, MedianMovementMinutes: 2, TurnsUnderQuiet: 0.7}
+	rep := Replay{CumulativeHours: 20, MedianMovementSeconds: 2 * durations.Minute, TurnsUnderQuiet: 0.7}
 	gates := evaluate(rep, h, thresholds())
 
 	got := map[string]Gate{}
 	for _, g := range gates {
 		got[g.Name] = g
 	}
-	pass := []string{"replay.cumulativeHours", "replay.medianMovementMinutes", "replay.turnsUnderQuiet",
+	pass := []string{"replay.cumulativeHours", "replay.medianMovementSeconds", "replay.turnsUnderQuiet",
 		"histogram.classMedian.movement", "histogram.classMedian.mechanism", "histogram.classMedian.manipulation", "rows.longRows"}
 	for _, name := range pass {
 		if g, ok := got[name]; !ok || !g.Pass {
 			t.Errorf("gate %s = %+v, want pass", name, g)
 		}
 	}
-	fail := []string{"histogram.meanEdgeMinutes", "histogram.dramaticShare"}
+	fail := []string{"histogram.meanEdgeSeconds", "histogram.dramaticShare"}
 	for _, name := range fail {
 		if g, ok := got[name]; !ok || g.Pass {
 			t.Errorf("gate %s = %+v, want fail", name, g)
@@ -153,9 +153,9 @@ func TestCandidates(t *testing.T) {
 		t.Errorf("overlay-only row = %+v, want a content hash", c)
 	}
 	for i := 1; i < len(cands); i++ {
-		if cands[i-1].Minutes < cands[i].Minutes {
+		if cands[i-1].Seconds < cands[i].Seconds {
 			t.Fatalf("candidates not ordered longest first: %s (%d) before %s (%d)",
-				cands[i-1].Key, cands[i-1].Minutes, cands[i].Key, cands[i].Minutes)
+				cands[i-1].Key, cands[i-1].Seconds, cands[i].Key, cands[i].Seconds)
 		}
 	}
 

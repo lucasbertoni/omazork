@@ -41,8 +41,8 @@ func testVerbs() *durations.Verbs {
 		SchemaVersion: durations.SchemaVersion,
 		FastVerbs:     []string{"look", "pray"},
 		Verbs: []durations.VerbDefault{
-			{Verb: "take", Synonyms: []string{"get", "grab"}, Class: durations.ClassManipulation, Minutes: 1},
-			{Verb: "dig", Class: durations.ClassMechanism, Minutes: 10},
+			{Verb: "take", Synonyms: []string{"get", "grab"}, Class: durations.ClassManipulation, Seconds: 1 * durations.Minute},
+			{Verb: "dig", Class: durations.ClassMechanism, Seconds: 10 * durations.Minute},
 		},
 	}
 }
@@ -76,23 +76,23 @@ func TestEdgePricingFollowsTheRuleFormula(t *testing.T) {
 	cases := []struct {
 		name    string
 		edge    *extract.Edge
-		minutes int
+		seconds int
 		note    string
 	}{
-		{"plain lit", &extract.Edge{From: "CELLAR", Dir: "EAST", Kind: extract.KindPlain, To: "KITCHEN"}, 2, "base 2"},
-		{"up into the dark", &extract.Edge{From: "KITCHEN", Dir: "UP", Kind: extract.KindPlain, To: "ATTIC"}, 5, "base 2 + up 2 + dark 1"},
-		{"down into the dark", &extract.Edge{From: "KITCHEN", Dir: "DOWN", Kind: extract.KindPlain, To: "CELLAR"}, 4, "base 2 + down 1 + dark 1"},
-		{"through a door", &extract.Edge{From: "KITCHEN", Dir: "WEST", Kind: extract.KindCondDoor, To: "ATTIC", Door: "TRAP-DOOR"}, 4, "base 2 + door 1 + dark 1"},
-		{"conditional passage", &extract.Edge{From: "CELLAR", Dir: "NORTH", Kind: extract.KindCondFlag, To: "ATTIC", If: "MAGIC-FLAG"}, 4, "base 2 + conditional 1 + dark 1"},
-		{"water", &extract.Edge{From: "RIVER-1", Kind: extract.KindDrift, To: "RIVER-2"}, 5, "base 2 + water 3"},
+		{"plain lit", &extract.Edge{From: "CELLAR", Dir: "EAST", Kind: extract.KindPlain, To: "KITCHEN"}, 2 * durations.Minute, "base 2"},
+		{"up into the dark", &extract.Edge{From: "KITCHEN", Dir: "UP", Kind: extract.KindPlain, To: "ATTIC"}, 5 * durations.Minute, "base 2 + up 2 + dark 1"},
+		{"down into the dark", &extract.Edge{From: "KITCHEN", Dir: "DOWN", Kind: extract.KindPlain, To: "CELLAR"}, 4 * durations.Minute, "base 2 + down 1 + dark 1"},
+		{"through a door", &extract.Edge{From: "KITCHEN", Dir: "WEST", Kind: extract.KindCondDoor, To: "ATTIC", Door: "TRAP-DOOR"}, 4 * durations.Minute, "base 2 + door 1 + dark 1"},
+		{"conditional passage", &extract.Edge{From: "CELLAR", Dir: "NORTH", Kind: extract.KindCondFlag, To: "ATTIC", If: "MAGIC-FLAG"}, 4 * durations.Minute, "base 2 + conditional 1 + dark 1"},
+		{"water", &extract.Edge{From: "RIVER-1", Kind: extract.KindDrift, To: "RIVER-2"}, 5 * durations.Minute, "base 2 + water 3"},
 	}
 	for _, tc := range cases {
 		t.Run(tc.name, func(t *testing.T) {
 			x := testExtract()
 			x.Edges = []*extract.Edge{tc.edge}
 			row := edge(t, generate(t, x), tc.edge.From, tc.edge.To)
-			if row.Minutes != tc.minutes {
-				t.Fatalf("minutes = %d, want %d (note %q)", row.Minutes, tc.minutes, row.Note)
+			if row.Seconds != tc.seconds {
+				t.Fatalf("seconds = %d, want %d (note %q)", row.Seconds, tc.seconds, row.Note)
 			}
 			if row.Note != tc.note {
 				t.Fatalf("note = %q, want %q", row.Note, tc.note)
@@ -127,7 +127,7 @@ func TestDuplicatePairsCollapseToTheCheapest(t *testing.T) {
 		t.Fatalf("want one collapsed row, got %+v", table.Edges)
 	}
 	row := table.Edges[0]
-	if row.Minutes != 3 || row.Dir != "WEST" {
+	if row.Seconds != 3*durations.Minute || row.Dir != "WEST" {
 		t.Fatalf("collapsed to %+v", row)
 	}
 	if !strings.Contains(row.Note, "cheapest of 3 exits") {
@@ -212,7 +212,7 @@ func TestDriftMembershipSurvivesCollapse(t *testing.T) {
 	if row.Kind != extract.KindDrift {
 		t.Fatalf("collapse dropped drift membership: %+v", row)
 	}
-	if row.Minutes != 5 {
+	if row.Seconds != 5*durations.Minute {
 		t.Fatalf("collapse did not take the cheapest exit: %+v", row)
 	}
 }

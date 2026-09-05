@@ -28,7 +28,7 @@ func applyEdge(x *extract.Extract, rooms map[string]*extract.Room, p pricedEdge,
 			return row, fmt.Errorf("gen: %s: cached answer for %s: %w", x.Game, req.Key, err)
 		}
 		minutes, class, nomination := capNomination(answer)
-		row.Minutes = minutes
+		row.Seconds = minutes * durations.Minute
 		row.Class = class
 		row.Source = durations.SourceRuleLLM
 		arith := p.arith + fmt.Sprintf(", llm %d", minutes)
@@ -73,7 +73,7 @@ func applyHandler(x *extract.Extract, pr pair, cache *llm.Cache, result *Result)
 	minutes, class, nomination := capNomination(answer)
 	return durations.ActionRow{
 		Verb: pr.verb, Object: pr.object.ID,
-		Minutes: minutes, Class: class, Source: durations.SourceLLM,
+		Seconds: minutes * durations.Minute, Class: class, Source: durations.SourceLLM,
 		Note: joinNote(nomination, "", answer.Rationale),
 	}, true, nil
 }
@@ -83,14 +83,15 @@ func applyHandler(x *extract.Extract, pr pair, cache *llm.Cache, result *Result)
 // above the uncurated ceiling — is written at the cap and carries the note
 // that puts it in the curation queue. The cache keeps the nomination raw; only an overlay row can
 // let it run its full length. The returned note is empty when nothing was
-// capped.
+// capped. The LLM contract speaks minutes, so this works in minutes too.
 func capNomination(answer llm.Row) (minutes int, class durations.Class, nomination string) {
-	if answer.Class != durations.ClassDramatic && answer.Minutes <= durations.UncuratedCap {
+	capMinutes := durations.UncuratedCap / durations.Minute
+	if answer.Class != durations.ClassDramatic && answer.Minutes <= capMinutes {
 		return answer.Minutes, answer.Class, ""
 	}
 	minutes = answer.Minutes
-	if minutes > durations.UncuratedCap {
-		minutes = durations.UncuratedCap
+	if minutes > capMinutes {
+		minutes = capMinutes
 	}
 	return minutes, answer.Class,
 		fmt.Sprintf("llm nominated %s %dm — overlay candidate", answer.Class, answer.Minutes)
@@ -117,7 +118,9 @@ func joinNote(arith, collision, rationale string) string {
 // else is a nudge around the rule baseline.
 func edgePayload(x *extract.Extract, rooms map[string]*extract.Room, p pricedEdge) (llm.EdgePayload, llm.Kind) {
 	from, to := rooms[p.row.From], rooms[p.row.To]
-	band, _ := durations.BandOf(durations.ClassMovement)
+	// The prompt speaks minutes (it is hashed into every inputHash), so the
+	// baseline is converted back from the row's seconds.
+	band, _ := llm.MinuteBand(durations.ClassMovement)
 	payload := llm.EdgePayload{
 		Game:         x.Game,
 		From:         p.row.From,
@@ -130,7 +133,7 @@ func edgePayload(x *extract.Extract, rooms map[string]*extract.Room, p pricedEdg
 		ToFlags:      to.Flags,
 		Dir:          p.edge.Dir,
 		Kind:         p.row.Kind,
-		Baseline:     p.row.Minutes,
+		Baseline:     p.row.Seconds / durations.Minute,
 		BaselineNote: p.arith,
 		BandLow:      band.Low,
 		BandHigh:     band.High,

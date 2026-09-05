@@ -18,7 +18,8 @@ import (
 
 // Edge pricing (§2): a 2-minute base plus mechanical modifiers. Every
 // modifier that applies is named in the row's note, so a curator reading the
-// table sees the arithmetic, not just the total.
+// table sees the arithmetic, not just the total. The arithmetic is in minutes,
+// as the spec writes it and as the note renders it; the row stores seconds.
 const (
 	baseMinutes        = 2
 	upMinutes          = 2 // climbing costs more than descending
@@ -131,7 +132,7 @@ func priceEdges(x *extract.Extract, rooms map[string]*extract.Room) ([]pricedEdg
 		priced := pricedEdge{
 			row: durations.EdgeRow{
 				From: e.From, To: e.To, Dir: e.Dir, Kind: e.Kind,
-				Minutes: minutes, Class: durations.ClassMovement, Source: durations.SourceRule,
+				Seconds: minutes * durations.Minute, Class: durations.ClassMovement, Source: durations.SourceRule,
 			},
 			arith: note,
 			edge:  e,
@@ -145,7 +146,7 @@ func priceEdges(x *extract.Extract, rooms map[string]*extract.Room) ([]pricedEdg
 		} else {
 			g.n++
 			g.dirs = append(g.dirs, exitLabel(e))
-			if minutes < g.priced.row.Minutes {
+			if minutes*durations.Minute < g.priced.row.Seconds {
 				g.priced = priced
 			}
 		}
@@ -173,6 +174,7 @@ func priceEdges(x *extract.Extract, rooms map[string]*extract.Room) ([]pricedEdg
 }
 
 // priceEdge applies the §2 formula to one passage and renders the arithmetic.
+// It returns minutes, the unit the formula is written in.
 func priceEdge(e *extract.Edge, from, to *extract.Room) (int, string) {
 	minutes := baseMinutes
 	parts := []string{fmt.Sprintf("base %d", baseMinutes)}

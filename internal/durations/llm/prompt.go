@@ -153,7 +153,7 @@ func classTable() string {
 		{"mechanism", "inflate the boat, tie the rope, turn the bolt, ring the bell"},
 		{"dramatic", "the exorcism, a prayer, a treasure-vault moment"},
 	} {
-		band, _ := durations.BandOf(durations.Class(c.class))
+		band, _ := MinuteBand(durations.Class(c.class))
 		b.WriteString("  " + c.class + ": " + strconv.Itoa(band.Low) + "-" + strconv.Itoa(band.High) + " min — " + c.examples + "\n")
 	}
 	return strings.TrimRight(b.String(), "\n")

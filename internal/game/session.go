@@ -61,7 +61,7 @@ const (
 )
 
 // quietThreshold is the sole tier threshold: waits shorter than this are quiet.
-const quietThreshold = 5 * time.Minute
+const quietThreshold = durations.QuietThreshold * time.Second
 
 // tierFor resolves a wait's tier.
 func tierFor(wait time.Duration) string {
@@ -456,7 +456,7 @@ func (s *Session) classify(text string, turn engine.Turn) time.Duration {
 	s.mstate = res.State
 	s.p.Combat = res.State.Combat
 	r := s.durs.Resolve(durations.QueryFor(res))
-	return time.Duration(r.Row.Minutes) * time.Minute
+	return time.Duration(r.Row.Seconds) * time.Second
 }
 
 // matchEventID resolves the turn's score event, applying the Zork III

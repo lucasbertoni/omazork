@@ -6,14 +6,14 @@ import (
 	"github.com/lucasbertoni/omazork/internal/actions"
 )
 
-// QuietThreshold is the wait-tier line (§8): a wait under this many minutes is
+// QuietThreshold is the wait-tier line (§8), in seconds: a wait under it is
 // quiet, at or above it is full. The calibration replay gates on the share of
 // turns that land under it; the wrapper keys presentation on it.
-const QuietThreshold = 5
+const QuietThreshold = 5 * Minute
 
-// FallbackMinutes is the §2 global fallback: what a turn costs when no table
+// FallbackSeconds is the §2 global fallback: what a turn costs when no table
 // has a row for it.
-const FallbackMinutes = 1
+const FallbackSeconds = 1 * Minute
 
 // Query is one classified turn reduced to what the tables key on. The
 // classifier (internal/actions) decides Instant, Walk, and Moved; the room
@@ -144,7 +144,7 @@ func slotFor(row Row, base Slot) Slot {
 
 // fallback is the §2 global fallback resolution.
 func fallback() Resolution {
-	return Resolution{Row: Row{Minutes: FallbackMinutes, Class: ClassManipulation, Source: SourceRule}, Slot: SlotFallback}
+	return Resolution{Row: Row{Seconds: FallbackSeconds, Class: ClassManipulation, Source: SourceRule}, Slot: SlotFallback}
 }
 
 // KeyedRow is one layered row with its key, for whole-table passes.

@@ -1,89 +1,89 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "game": "zork3",
   "replay": {
     "script": "internal/actions/testdata/zork3-walkthrough.txt",
     "seed": 11,
     "turns": 264,
-    "cumulativeMinutes": 564,
+    "cumulativeSeconds": 33840,
     "cumulativeHours": 9.4,
-    "medianMovementMinutes": 3,
+    "medianMovementSeconds": 180,
     "turnsUnderQuiet": 0.86,
     "byKind": {
       "aborted": {
         "turns": 1,
-        "minutes": 0
+        "seconds": 0
       },
       "action": {
         "turns": 90,
-        "minutes": 307
+        "seconds": 18420
       },
       "combat": {
         "turns": 10,
-        "minutes": 0
+        "seconds": 0
       },
       "failedmove": {
         "turns": 31,
-        "minutes": 0
+        "seconds": 0
       },
       "fastverb": {
         "turns": 38,
-        "minutes": 0
+        "seconds": 0
       },
       "movement": {
         "turns": 94,
-        "minutes": 257
+        "seconds": 15420
       }
     },
     "bySlot": {
       "action": {
         "turns": 57,
-        "minutes": 265
+        "seconds": 15900
       },
       "edge": {
         "turns": 89,
-        "minutes": 252
+        "seconds": 15120
       },
       "fallback": {
         "turns": 13,
-        "minutes": 13
+        "seconds": 780
       },
       "hard": {
         "turns": 80,
-        "minutes": 0
+        "seconds": 0
       },
       "verbDefault": {
         "turns": 25,
-        "minutes": 34
+        "seconds": 2040
       }
     },
     "waits": [
       {
-        "minutes": 0,
+        "seconds": 0,
         "count": 81
       },
       {
-        "minutes": 1,
+        "seconds": 60,
         "count": 45
       },
       {
-        "minutes": 2,
+        "seconds": 120,
         "count": 28
       },
       {
-        "minutes": 3,
+        "seconds": 180,
         "count": 64
       },
       {
-        "minutes": 4,
+        "seconds": 240,
         "count": 9
       },
       {
-        "minutes": 5,
+        "seconds": 300,
         "count": 35
       },
       {
-        "minutes": 30,
+        "seconds": 1800,
         "count": 2
       }
     ],
@@ -92,7 +92,7 @@
         "turn": 19,
         "input": "touch table",
         "kind": "action",
-        "minutes": 30,
+        "seconds": 1800,
         "slot": "action",
         "key": "action:rub/VIEWING-TABLE"
       },
@@ -100,7 +100,7 @@
         "turn": 23,
         "input": "touch table",
         "kind": "action",
-        "minutes": 30,
+        "seconds": 1800,
         "slot": "action",
         "key": "action:rub/VIEWING-TABLE"
       },
@@ -108,7 +108,7 @@
         "turn": 9,
         "input": "enter lake",
         "kind": "action",
-        "minutes": 5,
+        "seconds": 300,
         "slot": "action",
         "key": "action:enter/LAKE"
       },
@@ -116,7 +116,7 @@
         "turn": 27,
         "input": "enter lake",
         "kind": "action",
-        "minutes": 5,
+        "seconds": 300,
         "slot": "action",
         "key": "action:enter/LAKE"
       },
@@ -124,7 +124,7 @@
         "turn": 51,
         "input": "tie chest to rope",
         "kind": "action",
-        "minutes": 5,
+        "seconds": 300,
         "slot": "action",
         "key": "action:tie/GLOBAL-ROPE"
       },
@@ -132,7 +132,7 @@
         "turn": 108,
         "input": "push button",
         "kind": "action",
-        "minutes": 5,
+        "seconds": 300,
         "slot": "action",
         "key": "action:move/DIAL-BUTTON"
       },
@@ -140,7 +140,7 @@
         "turn": 123,
         "input": "push button",
         "kind": "action",
-        "minutes": 5,
+        "seconds": 300,
         "slot": "action",
         "key": "action:move/DIAL-BUTTON"
       },
@@ -148,7 +148,7 @@
         "turn": 134,
         "input": "push east wall",
         "kind": "action",
-        "minutes": 5,
+        "seconds": 300,
         "slot": "action",
         "key": "action:move/BLACK-PANEL"
       },
@@ -156,7 +156,7 @@
         "turn": 138,
         "input": "push south wall",
         "kind": "action",
-        "minutes": 5,
+        "seconds": 300,
         "slot": "action",
         "key": "action:move/BLACK-PANEL"
       },
@@ -164,7 +164,7 @@
         "turn": 141,
         "input": "push south wall",
         "kind": "action",
-        "minutes": 5,
+        "seconds": 300,
         "slot": "action",
         "key": "action:move/BLACK-PANEL"
       }
@@ -173,62 +173,62 @@
   "histogram": {
     "edges": {
       "rows": 182,
-      "mean": 2.67,
-      "median": 3,
+      "meanSeconds": 160.22,
+      "medianSeconds": 180,
       "bins": [
         {
-          "minutes": 2,
+          "seconds": 120,
           "count": 69
         },
         {
-          "minutes": 3,
+          "seconds": 180,
           "count": 105
         },
         {
-          "minutes": 4,
+          "seconds": 240,
           "count": 7
         },
         {
-          "minutes": 5,
+          "seconds": 300,
           "count": 1
         }
       ]
     },
     "actions": {
       "rows": 214,
-      "mean": 2.014,
-      "median": 1,
+      "meanSeconds": 120.841,
+      "medianSeconds": 60,
       "bins": [
         {
-          "minutes": 0,
+          "seconds": 0,
           "count": 70
         },
         {
-          "minutes": 1,
+          "seconds": 60,
           "count": 81
         },
         {
-          "minutes": 2,
+          "seconds": 120,
           "count": 23
         },
         {
-          "minutes": 3,
+          "seconds": 180,
           "count": 4
         },
         {
-          "minutes": 4,
+          "seconds": 240,
           "count": 3
         },
         {
-          "minutes": 5,
+          "seconds": 300,
           "count": 24
         },
         {
-          "minutes": 8,
+          "seconds": 480,
           "count": 5
         },
         {
-          "minutes": 30,
+          "seconds": 1800,
           "count": 4
         }
       ]
@@ -236,43 +236,43 @@
     "classes": {
       "dramatic": {
         "rows": 4,
-        "median": 30,
-        "bandLow": 30,
-        "bandHigh": 180,
-        "innerLow": 67.5,
-        "innerHigh": 142.5
+        "medianSeconds": 1800,
+        "bandLowSeconds": 1800,
+        "bandHighSeconds": 10800,
+        "innerLowSeconds": 4050,
+        "innerHighSeconds": 8550
       },
       "instant": {
         "rows": 52,
-        "median": 0,
-        "bandLow": 0,
-        "bandHigh": 0,
-        "innerLow": 0,
-        "innerHigh": 0
+        "medianSeconds": 0,
+        "bandLowSeconds": 0,
+        "bandHighSeconds": 0,
+        "innerLowSeconds": 0,
+        "innerHighSeconds": 0
       },
       "manipulation": {
         "rows": 119,
-        "median": 1,
-        "bandLow": 0,
-        "bandHigh": 3,
-        "innerLow": 0.75,
-        "innerHigh": 2.25
+        "medianSeconds": 60,
+        "bandLowSeconds": 0,
+        "bandHighSeconds": 180,
+        "innerLowSeconds": 45,
+        "innerHighSeconds": 135
       },
       "mechanism": {
         "rows": 35,
-        "median": 5,
-        "bandLow": 3,
-        "bandHigh": 20,
-        "innerLow": 7.25,
-        "innerHigh": 15.75
+        "medianSeconds": 300,
+        "bandLowSeconds": 180,
+        "bandHighSeconds": 1200,
+        "innerLowSeconds": 435,
+        "innerHighSeconds": 945
       },
       "movement": {
         "rows": 186,
-        "median": 3,
-        "bandLow": 1,
-        "bandHigh": 10,
-        "innerLow": 3.25,
-        "innerHigh": 7.75
+        "medianSeconds": 180,
+        "bandLowSeconds": 60,
+        "bandHighSeconds": 600,
+        "innerLowSeconds": 195,
+        "innerHighSeconds": 465
       }
     },
     "dramaticShare": 0.019,
@@ -287,10 +287,10 @@
       "pass": true
     },
     {
-      "name": "replay.medianMovementMinutes",
-      "value": 3,
-      "min": 1,
-      "max": 3,
+      "name": "replay.medianMovementSeconds",
+      "value": 180,
+      "min": 60,
+      "max": 180,
       "pass": true
     },
     {
@@ -300,10 +300,10 @@
       "pass": true
     },
     {
-      "name": "histogram.meanEdgeMinutes",
-      "value": 2.67,
-      "min": 2,
-      "max": 4,
+      "name": "histogram.meanEdgeSeconds",
+      "value": 160.22,
+      "min": 120,
+      "max": 240,
       "pass": true
     },
     {
@@ -330,7 +330,7 @@
     {
       "key": "action:jump/AQUEDUCT",
       "kind": "action",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — This is an instant-death set-piece (fatal swan dive), a ceremonial climactic moment the game treats as final.",
@@ -343,7 +343,7 @@
     {
       "key": "action:knock/DUNGEON-DOOR",
       "kind": "action",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — Knocking at the front door triggers a pivotal, ceremony-like narrative encounter with the Master of the Dungeon that can culminate in a major story turning point.",
@@ -356,7 +356,7 @@
     {
       "key": "action:rub/VIEWING-TABLE",
       "kind": "action",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — Touching the table instantly transports the player to another location, a ceremonial reality-shifting moment treated as a set-piece by the handler.",
@@ -369,7 +369,7 @@
     {
       "key": "action:say/SAILOR",
       "kind": "action",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — Saying the magic phrase to the sailor triggers a scripted ceremonial payoff (the boat's release and gift), treated by the game as a special one-time event.",
@@ -382,7 +382,7 @@
     {
       "key": "action:move/CPEWL",
       "kind": "action",
-      "minutes": 8,
+      "seconds": 480,
       "class": "mechanism",
       "source": "llm",
       "note": "Pushing a massive stone wall to slide an entire architectural section requires sustained physical effort, akin to turning a heavy mechanism.",
@@ -394,7 +394,7 @@
     {
       "key": "action:move/CPSWL",
       "kind": "action",
-      "minutes": 8,
+      "seconds": 480,
       "class": "mechanism",
       "source": "llm",
       "note": "Pushing a massive sliding wall and following it into a new position is a physically demanding, multi-step mechanical action within a shifting maze.",
@@ -406,7 +406,7 @@
     {
       "key": "action:move/CPWWL",
       "kind": "action",
-      "minutes": 8,
+      "seconds": 480,
       "class": "mechanism",
       "source": "llm",
       "note": "Pushing a massive stone wall to shift the maze's layout is a strenuous, deliberate physical effort with mechanical consequences.",
@@ -418,7 +418,7 @@
     {
       "key": "action:move/MAHOGANY-PANEL",
       "kind": "action",
-      "minutes": 8,
+      "seconds": 480,
       "class": "mechanism",
       "source": "llm",
       "note": "Pushing the heavy mahogany panel physically shifts a stone structure along a channel, a laborious mechanical effort beyond simple manipulation.",
@@ -430,7 +430,7 @@
     {
       "key": "action:open/MAHOGANY-PANEL",
       "kind": "action",
-      "minutes": 8,
+      "seconds": 480,
       "class": "mechanism",
       "source": "llm",
       "note": "Opening the mahogany panel triggers a heavy stone structure to physically move along a channel, requiring real physical effort beyond a simple manipulation.",
@@ -442,7 +442,7 @@
     {
       "key": "action:burn/LORE-BOOK",
       "kind": "action",
-      "minutes": 5,
+      "seconds": 300,
       "class": "mechanism",
       "source": "llm",
       "note": "Burning an ancient book requires preparing a flame source and setting it alight, a deliberate destructive act beyond simple manipulation.",
@@ -454,7 +454,7 @@
     {
       "key": "edge:LADDER-BOTTOM\u003eLADDER-TOP",
       "kind": "edge",
-      "minutes": 5,
+      "seconds": 300,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + up 2 + dark 1, llm 5 — A straightforward ladder climb between two plainly described rooms warrants no adjustment from the baseline.",
@@ -466,7 +466,7 @@
     {
       "key": "edge:CLIFF\u003eCLIFF-LEDGE",
       "kind": "edge",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + down 1 + conditional 1, llm 4 — Both rooms are lit with no special hazards noted, so the baseline climbing time stands unchanged.",
@@ -478,7 +478,7 @@
     {
       "key": "edge:IN-LAKE\u003eON-LAKE",
       "kind": "edge",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + up 2, llm 4 — A short swim upward to the surface matches the baseline pace with no added hazard or complexity.",
@@ -490,7 +490,7 @@
     {
       "key": "edge:KEY-ROOM\u003eAQ-1",
       "kind": "edge",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + down 1 + conditional 1, llm 4 — A lit, dry stone channel with a simple downward step keeps the passage at the mechanical baseline.",
@@ -502,7 +502,7 @@
     {
       "key": "edge:LADDER-TOP\u003eLADDER-BOTTOM",
       "kind": "edge",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + down 1 + dark 1, llm 4 — A rickety ladder descent between two plain, unremarkable rooms warrants no adjustment from the baseline.",
@@ -514,7 +514,7 @@
     {
       "key": "edge:MR-ANTE\u003eMSTAIRS",
       "kind": "edge",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + door 1 + dark 1, llm 4; cheapest of 2 exits (SOUTH, UP) — Stairs ascending into darkness through a stuck door keep this at the baseline pace.",
@@ -526,7 +526,7 @@
     {
       "key": "edge:MUSEUM-ENTRANCE\u003eMUSEUM-ANTE",
       "kind": "edge",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + conditional 1 + dark 1, llm 4 — A conditional door passage between an origin lit room and a landmark chamber warrants no adjustment from the baseline.",
@@ -538,7 +538,7 @@
     {
       "key": "edge:TIMBER-ROOM\u003eLOWER-SHAFT",
       "kind": "edge",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + conditional 1 + dark 1, llm 4 — Narrow, timber-cluttered passage with a strong draft narrows further west, matching the baseline crawl-through-tight-space pacing.",
@@ -550,7 +550,7 @@
     {
       "key": "edge:AQ-2\u003eAQ-3",
       "kind": "edge",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + conditional 1, llm 3 — Both rooms are lit and above water, so the baseline conditional passage timing holds without adjustment.",
@@ -562,7 +562,7 @@
     {
       "key": "edge:AQ-3\u003eAQ-2",
       "kind": "edge",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + conditional 1, llm 3 — Both rooms are lit and above water, so the baseline pacing holds with no added hazard.",

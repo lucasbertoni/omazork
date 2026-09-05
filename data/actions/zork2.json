@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 1,
+  "schemaVersion": 2,
   "game": "zork2",
   "rooms": [
     {
@@ -439,7 +439,7 @@
       "to": "IN-AQUARIUM",
       "dir": "IN",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 3 — Moving from a dim hallway into a murky, hard-to-see sandy room warrants a slightly slower crawl than the baseline."
@@ -449,7 +449,7 @@
       "to": "WIZARDS-QUARTERS",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A dark hallway corner into an unlit room keeps the pace at the mechanical baseline without added hazard."
@@ -459,7 +459,7 @@
       "to": "WORKBENCH-ROOM",
       "dir": "EAST",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — Both rooms are lit and the hallway passage is unobstructed, matching the baseline pace."
@@ -469,7 +469,7 @@
       "to": "FRESCO-ROOM",
       "dir": "EAST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A simple eastward walk between two plain, lit rooms matches the baseline pace with no obstacles to slow it."
@@ -479,7 +479,7 @@
       "to": "TELLER-EAST",
       "dir": "NE",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain exit through a described, well-lit bank hall keeps the baseline pace without further adjustment."
@@ -489,7 +489,7 @@
       "to": "TELLER-WEST",
       "dir": "NW",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A short walk from the ornate bank entrance to an adjoining teller room stays near baseline with no special hazards noted."
@@ -499,7 +499,7 @@
       "to": "MACHINE-ROOM",
       "dir": "OUT",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2; cheapest of 2 exits (OUT, NORTH) — A short, lit, plain exit from a small closet to an adjacent room warrants no deviation from the baseline."
@@ -509,7 +509,7 @@
       "to": "COBWEBBY-CORRIDOR",
       "dir": "SW",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — The known baseline holds since the cobwebbed, twisting corridor is slow going but nothing in the description warrants further lengthening."
@@ -519,7 +519,7 @@
       "to": "COOL-ROOM",
       "dir": "NW",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Baseline holds since it's a plain twisty exit into a misty, unlit room with no additional obstacles described."
@@ -529,7 +529,7 @@
       "to": "MARBLE-HALL",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Straightforward hall passage with no unusual terrain to slow the crossing beyond the baseline."
@@ -539,7 +539,7 @@
       "to": "MENHIR-ROOM",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Known passage between two named rooms with no special description, so the baseline movement time holds."
@@ -549,7 +549,7 @@
       "to": "RIDDLE-ROOM",
       "dir": "SE",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Known passage with no descriptive detail to justify shifting from the baseline dark-room crossing time."
@@ -559,7 +559,7 @@
       "to": "ROOM-8",
       "dir": "WEST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — The Carousel Room is famously disorienting and the destination is reached via a short crawl into a small rock-carved chamber, justifying the baseline crawl-and-dark padding."
@@ -569,7 +569,7 @@
       "to": "STREAM-PATH",
       "dir": "NE",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — The Carousel Room is famous for being confusing but the destination is an ordinary path along a ravine, so the baseline 3 minutes fits without further adjustment."
@@ -579,7 +579,7 @@
       "to": "TOPIARY-ROOM",
       "dir": "EAST",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A plain lit exit into an open garden warrants no deviation from the baseline pace."
@@ -589,7 +589,7 @@
       "to": "CRYPT-ANTEROOM",
       "dir": "EAST",
       "kind": "cond_flag",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + conditional 1 + dark 1, llm 4; cheapest of 2 exits (EAST, IN) — A conditional crypt passage from a described gateway room stays at the baseline pacing without added crawl or flood cues."
@@ -599,7 +599,7 @@
       "to": "DIAMOND-5",
       "dir": "UP",
       "kind": "plain",
-      "minutes": 5,
+      "seconds": 300,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + up 2 + dark 1, llm 5 — A stairway climb from a crypt to an oddly-angled room stays at baseline with no flooding or unusual hazards to slow it further."
@@ -609,7 +609,7 @@
       "to": "CAROUSEL-ROOM",
       "dir": "NE",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A twisting cobwebbed corridor keeps the baseline pace without further justification for a longer or shorter passage."
@@ -619,7 +619,7 @@
       "to": "GUARDIAN-ROOM",
       "dir": "SW",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3; cheapest of 2 exits (SW, DOWN) — A winding, cobwebbed corridor with disturbed dust matches the baseline crawl-paced dark passage."
@@ -629,7 +629,7 @@
       "to": "LAVA-TUBE",
       "dir": "IN",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3; cheapest of 3 exits (IN, UP, NORTH) — A winding cobwebbed corridor into a tall dark lava chimney warrants the baseline 3 minutes for careful navigation."
@@ -639,7 +639,7 @@
       "to": "CAROUSEL-ROOM",
       "dir": "SE",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A twisty, misty path with a rocky bridge junction keeps it near baseline, neither notably faster nor slower."
@@ -649,7 +649,7 @@
       "to": "GLACIER-ROOM",
       "dir": "WEST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A narrow, misty, chill tunnel westward warrants a cautious pace matching the baseline."
@@ -659,7 +659,7 @@
       "to": "STONE-BRIDGE",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3; cheapest of 2 exits (NORTH, CROSS) — A plain northward walk across a stone bridge stays at the baseline pace despite the misty, unlit surroundings."
@@ -669,7 +669,7 @@
       "to": "CERBERUS-ROOM",
       "dir": "WEST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain westward exit into a described stairway landing keeps the baseline dark-crypt pacing without extra hazards to slow it further."
@@ -679,7 +679,7 @@
       "to": "CRYPT-ROOM",
       "dir": "IN",
       "kind": "cond_door",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + door 1 + dark 1, llm 4; cheapest of 2 exits (IN, SOUTH) — No descriptive detail overrides the baseline, so the mechanical crypt-door-and-darkness pricing stands as-is."
@@ -689,7 +689,7 @@
       "to": "CRYPT-ANTEROOM",
       "dir": "NORTH",
       "kind": "cond_door",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + door 1 + dark 1, llm 4 — No descriptive cues to adjust the baseline, so the mechanical door-and-dark pricing stands."
@@ -699,7 +699,7 @@
       "to": "ZORK3",
       "dir": "SOUTH",
       "kind": "cond_flag",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + conditional 1, llm 3 — A crypt-to-landing transition into a lit area matches the baseline pace with no need to adjust."
@@ -709,7 +709,7 @@
       "to": "GARDEN-NORTH",
       "dir": "SE",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A short passage from a dim, debris-filled tunnel into a lit garden warrants no adjustment from the baseline."
@@ -719,7 +719,7 @@
       "to": "SHALLOW-FORD",
       "dir": "NE",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A short, unobstructed traverse from a dim tunnel to a lit cavern edge stays at the baseline pace."
@@ -729,7 +729,7 @@
       "to": "STREAM-PATH",
       "dir": "SW",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A debris-filled dark tunnel narrowing into a corridor keeps the pace at the baseline crawl-through time."
@@ -739,7 +739,7 @@
       "to": "DEAD-PALANTIR-2",
       "dir": "WEST",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — Both rooms are lit and on land, so the baseline short passage stands unchanged."
@@ -749,7 +749,7 @@
       "to": "DEAD-PALANTIR-3",
       "dir": "WEST",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — Both rooms are lit and land-based with no special hazards, so the baseline pace holds."
@@ -759,7 +759,7 @@
       "to": "DEAD-PALANTIR-4",
       "dir": "WEST",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — Both rooms are lit and landbound with no adverse conditions noted, so the baseline pace holds."
@@ -769,7 +769,7 @@
       "to": "MARBLE-HALL",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Fording a cold, deep stream is slow and effortful even though the destination hall is open, so the baseline holds."
@@ -779,7 +779,7 @@
       "to": "RAVINE-LEDGE",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3; cheapest of 2 exits (NORTH, UP) — Fording a cold stream to reach a narrow ledge matches the baseline pace without added hazard."
@@ -789,7 +789,7 @@
       "to": "OFFICE",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain lit doorway passage stays at the baseline with no additional obstacles to slow the crossing."
@@ -799,7 +799,7 @@
       "to": "DIAMOND-5",
       "dir": "SE",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain exit between two identical oddly-angled rooms matches the baseline crawl through a disorienting but otherwise unremarkable passage."
@@ -809,7 +809,7 @@
       "to": "DIAMOND-4",
       "dir": "SW",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain exit between two similar oddly-angled rooms stays at the baseline pace despite the disorienting geometry."
@@ -819,7 +819,7 @@
       "to": "DIAMOND-5",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain exit between two identical, unremarkable oddly-angled rooms warrants no deviation from the baseline pacing."
@@ -829,7 +829,7 @@
       "to": "DIAMOND-6",
       "dir": "SE",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain exit between two similar oddly-angled rooms stays at the baseline pace."
@@ -839,7 +839,7 @@
       "to": "DIAMOND-5",
       "dir": "SW",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Plain exit between two similarly ordinary oddly-angled rooms keeps the passage at its baseline pace."
@@ -849,7 +849,7 @@
       "to": "DIAMOND-2",
       "dir": "NE",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain exit between two similar oddly-angled rooms stays at the baseline pace."
@@ -859,7 +859,7 @@
       "to": "DIAMOND-5",
       "dir": "EAST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain oddly-angled passage between two similarly disorienting rooms keeps the baseline crawl-through-the-dark pacing."
@@ -869,7 +869,7 @@
       "to": "DIAMOND-8",
       "dir": "SE",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain short passage between two similar oddly-angled rooms stays at the baseline pace."
@@ -879,7 +879,7 @@
       "to": "CERBERUS-ROOM",
       "dir": "DOWN",
       "kind": "plain",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + down 1 + dark 1, llm 4 — A straightforward downward stair descent into a crypt entrance matches the baseline pacing without added hazards."
@@ -889,7 +889,7 @@
       "to": "DIAMOND-1",
       "dir": "NW",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain short move between two similarly plain, oddly-angled rooms stays at baseline."
@@ -899,7 +899,7 @@
       "to": "DIAMOND-2",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain exit between two identical, unremarkable oddly-angled rooms doesn't merit deviation from the baseline."
@@ -909,7 +909,7 @@
       "to": "DIAMOND-3",
       "dir": "NE",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Plain exit between two similar oddly-angled rooms keeps the baseline unchanged."
@@ -919,7 +919,7 @@
       "to": "DIAMOND-4",
       "dir": "WEST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain westward step between two similarly oddly-angled rooms stays at the baseline pace."
@@ -929,7 +929,7 @@
       "to": "DIAMOND-6",
       "dir": "EAST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain oddly-angled room-to-room step keeps the baseline pacing without added hazard."
@@ -939,7 +939,7 @@
       "to": "DIAMOND-7",
       "dir": "SW",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain short move between two similarly plain, unremarkable oddly-angled rooms stays at the baseline."
@@ -949,7 +949,7 @@
       "to": "DIAMOND-8",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Plain oddly-angled rooms with no special flags keep this at the baseline dark-room crossing time."
@@ -959,7 +959,7 @@
       "to": "DIAMOND-9",
       "dir": "SE",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain exit between two similar oddly-angled rooms keeps the baseline pace with no added complications."
@@ -969,7 +969,7 @@
       "to": "STAIRWAY-TOP",
       "dir": "UP",
       "kind": "plain",
-      "minutes": 5,
+      "seconds": 300,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + up 2 + dark 1, llm 5 — A straightforward staircase ascent between two ordinary rooms stays at the baseline pace."
@@ -979,7 +979,7 @@
       "to": "DIAMOND-2",
       "dir": "NW",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Plain exit between two similarly disorienting oddly-angled rooms keeps the baseline dark-crawl pacing."
@@ -989,7 +989,7 @@
       "to": "DIAMOND-5",
       "dir": "WEST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain oddly-angled passage with no special hazards stays at the baseline dark-room crawl time."
@@ -999,7 +999,7 @@
       "to": "DIAMOND-8",
       "dir": "SW",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Plain exit between two similar oddly-angled rooms stays at the baseline pace."
@@ -1009,7 +1009,7 @@
       "to": "DIAMOND-5",
       "dir": "NE",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Plain exit between two similarly nondescript, oddly-angled rooms keeps the baseline unchanged."
@@ -1019,7 +1019,7 @@
       "to": "DIAMOND-4",
       "dir": "NW",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain exit between two identical oddly-angled rooms stays at the baseline crawl-through-darkness pace."
@@ -1029,7 +1029,7 @@
       "to": "DIAMOND-5",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Both oddly-angled rooms are plain, similar spaces with no special hazards, so the baseline timing holds."
@@ -1039,7 +1039,7 @@
       "to": "DIAMOND-6",
       "dir": "NE",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain oddly-angled passage between two similar dark rooms stays at the baseline 3 minutes."
@@ -1049,7 +1049,7 @@
       "to": "DIAMOND-5",
       "dir": "NW",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Plain exit between two identical oddly-angled rooms keeps the baseline unchanged."
@@ -1059,7 +1059,7 @@
       "to": "DRAGON-ROOM",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3; cheapest of 2 exits (SOUTH, OUT) — A short doorway crossing between two scorched rooms with no water or extra hazards, so the baseline dark-room time stands."
@@ -1069,7 +1069,7 @@
       "to": "DRAGON-LAIR",
       "dir": "NORTH",
       "kind": "cond_flag",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + conditional 1 + dark 1, llm 4; cheapest of 2 exits (NORTH, IN) — A dark, smokey tunnel leading to a flame-scarred dragon's lair warrants the baseline conditional-plus-dark pacing without further extension."
@@ -1079,7 +1079,7 @@
       "to": "FRESCO-ROOM",
       "dir": "WEST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A straightforward walk from a broken cavern to an adjacent fresco-lined room stays at the baseline pace."
@@ -1089,7 +1089,7 @@
       "to": "LEDGE-TUNNEL",
       "dir": "EAST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A small crack leading to a narrow ledge through smokey, dim tunnels justifies keeping the baseline dark-passage pace."
@@ -1099,7 +1099,7 @@
       "to": "STONE-BRIDGE",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3; cheapest of 2 exits (SOUTH, CROSS) — Crossing a large stone bridge over a chasm to a misty tunnel matches the baseline pace with no added complications."
@@ -1109,7 +1109,7 @@
       "to": "TINY-ROOM",
       "dir": "SOUTH",
       "kind": "cond_door",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + door 1 + dark 1, llm 4; cheapest of 2 exits (SOUTH, OUT) — No descriptive details push this off the mechanical baseline of a door passage into a dark room."
@@ -1119,7 +1119,7 @@
       "to": "GREAT-CAVERN",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A simple southward crossing from a sturdy bridge into a dimly lit but open cavern warrants no deviation from the baseline pace."
@@ -1129,7 +1129,7 @@
       "to": "NARROW-TUNNEL",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A simple crossing of a foot bridge into a lit cavern matches the baseline pace with no added hazards."
@@ -1139,7 +1139,7 @@
       "to": "GARDEN-NORTH",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A short, well-lit garden path with no hazards keeps this at the baseline pace."
@@ -1149,7 +1149,7 @@
       "to": "STREAM-PATH",
       "dir": "WEST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A simple gap-in-the-hedge crossing to a nearby path keeps the passage at the mechanical baseline."
@@ -1159,7 +1159,7 @@
       "to": "TOPIARY-ROOM",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A short, lit, easy walk between two garden areas matches the baseline pace."
@@ -1169,7 +1169,7 @@
       "to": "BANK-ENTRANCE",
       "dir": "WEST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain lit-room walk between two ordinary chambers stays at the baseline pace."
@@ -1179,7 +1179,7 @@
       "to": "DRAGON-ROOM",
       "dir": "EAST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A short walk between two lit rooms stays at the mechanical baseline with no added hazards."
@@ -1189,7 +1189,7 @@
       "to": "DARK-TUNNEL",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Leaving a lit garden through an overgrown gap into a debris-filled dark tunnel keeps the baseline pace with the dark penalty applied."
@@ -1199,7 +1199,7 @@
       "to": "FORMAL-GARDEN",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A short, well-lit garden path with no hazards keeps this passage at the baseline pace."
@@ -1209,7 +1209,7 @@
       "to": "GAZEBO-ROOM",
       "dir": "IN",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A short walk through a lit, gentle garden into a small gazebo warrants no adjustment from the baseline."
@@ -1219,7 +1219,7 @@
       "to": "GARDEN-NORTH",
       "dir": "OUT",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A short, lit garden stroll between two calm outdoor rooms matches the baseline pace."
@@ -1229,7 +1229,7 @@
       "to": "COOL-ROOM",
       "dir": "EAST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A simple eastward walk into a merely cool, misty room doesn't warrant deviation from the baseline dark-passage pace."
@@ -1239,7 +1239,7 @@
       "to": "LAVA-ROOM",
       "dir": "WEST",
       "kind": "cond_flag",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + conditional 1 + dark 1, llm 4 — A conditional passage into a dim lava-formed room warrants the baseline 4 minutes without further adjustment."
@@ -1249,7 +1249,7 @@
       "to": "LAVA-TUBE",
       "dir": "UP",
       "kind": "plain",
-      "minutes": 5,
+      "seconds": 300,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + up 2 + dark 1, llm 5 — Climbing a tight, dark lava chimney matches the baseline pacing with no additional hazards to justify a longer crawl."
@@ -1259,7 +1259,7 @@
       "to": "FOOT-BRIDGE",
       "dir": "NE",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A lit cavern path to a sturdy bridge is a straightforward walk, matching the baseline."
@@ -1269,7 +1269,7 @@
       "to": "SHALLOW-FORD",
       "dir": "SW",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A short, dimly lit path between two on-lit cavern rooms with no obstacles justifies staying at the baseline."
@@ -1279,7 +1279,7 @@
       "to": "COBWEBBY-CORRIDOR",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A guarded room into a winding, cobwebbed, disturbed corridor keeps the baseline dark-passage pace without extra hazards to justify lengthening it."
@@ -1289,7 +1289,7 @@
       "to": "WIZARDS-WORKSHOP",
       "dir": "SOUTH",
       "kind": "cond_door",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + door 1 + dark 1, llm 4; cheapest of 2 exits (SOUTH, IN) — A guarded door into the Wizard's dark workshop warrants the baseline pacing without further adjustment."
@@ -1299,7 +1299,7 @@
       "to": "AQUARIUM-ROOM",
       "dir": "OUT",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A simple exit from a dim sandy room into a hallway holds close to baseline pace."
@@ -1309,7 +1309,7 @@
       "to": "NARROW-TUNNEL",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A straightforward exit from the barrow into a dimly lit tunnel matches the baseline pace of a simple, unobstructed passage."
@@ -1319,7 +1319,7 @@
       "to": "MENHIR-ROOM",
       "dir": "NE",
       "kind": "cond_flag",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + conditional 1 + dark 1, llm 4; cheapest of 2 exits (NE, OUT) — A straightforward exit from a dusty but unremarkable kennel keeps the passage at the mechanical baseline."
@@ -1329,7 +1329,7 @@
       "to": "GLACIER-ROOM",
       "dir": "EAST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A simple eastward step from a lava-formed room to an unknown room stays at the mechanical baseline with no added complexity."
@@ -1339,7 +1339,7 @@
       "to": "VOLCANO-BOTTOM",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A short, plain descent from a small lava-formed room into a cavernous volcanic shaft keeps the baseline pace."
@@ -1349,7 +1349,7 @@
       "to": "COBWEBBY-CORRIDOR",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A tight lava chimney crack leading into a cobweb-choked, twisting corridor keeps the baseline pace of a cramped, careful crawl."
@@ -1359,7 +1359,7 @@
       "to": "GLACIER-ROOM",
       "dir": "DOWN",
       "kind": "plain",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + down 1 + dark 1, llm 4 — A long, dark chimney descent to an unknown room keeps this at the mechanical baseline with no reason to shorten or lengthen it."
@@ -1369,7 +1369,7 @@
       "to": "VOLCANO-VIEW",
       "dir": "UP",
       "kind": "plain",
-      "minutes": 5,
+      "seconds": 300,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + up 2 + dark 1, llm 5 — A tight, steep hundred-foot climb up a solidified lava chimney justifies the baseline pacing despite the destination being open and lit."
@@ -1379,7 +1379,7 @@
       "to": "LIBRARY",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A ledge-to-library descent through darkness warrants the baseline pace without further adjustment."
@@ -1389,7 +1389,7 @@
       "to": "VOLCANO-BOTTOM",
       "dir": "WEST",
       "kind": "cond_flag",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + conditional 1 + dark 1, llm 4 — A direct ledge-to-floor descent inside the volcano matches the baseline pacing with no additional hazards described."
@@ -1399,7 +1399,7 @@
       "to": "SAFE-ROOM",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A plain southward step between a ledge and a lit dusty room stays at the baseline pace."
@@ -1409,7 +1409,7 @@
       "to": "VOLCANO-BOTTOM",
       "dir": "WEST",
       "kind": "cond_flag",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + conditional 1 + dark 1, llm 4 — A climb down a wide ledge into a dim volcano bottom warrants the baseline four minutes."
@@ -1419,7 +1419,7 @@
       "to": "DRAGON-ROOM",
       "dir": "IN",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3; cheapest of 2 exits (IN, NORTH) — A tunnel crawl into a dark, smokey dragon lair keeps the pace at the baseline for a hazardous, unlit passage."
@@ -1429,7 +1429,7 @@
       "to": "RAVINE-LEDGE",
       "dir": "EAST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A short ledge-to-ledge traverse with a bit of precarious climbing keeps it near the baseline."
@@ -1439,7 +1439,7 @@
       "to": "LEDGE-1",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3; cheapest of 2 exits (NORTH, OUT) — A short walk from the gnawed library up to a narrow volcanic ledge stays near baseline given the darkness and change in terrain."
@@ -1449,7 +1449,7 @@
       "to": "CAGE-ROOM",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A simple lit-to-lit walk between adjacent rooms matches the baseline pace."
@@ -1459,7 +1459,7 @@
       "to": "MAGNET-ROOM",
       "dir": "WEST",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A plain westward exit from a well-lit, if noisy, machine room warrants no deviation from the baseline pace."
@@ -1468,7 +1468,7 @@
       "from": "MAGNET-ROOM",
       "to": "MACHINE-ROOM",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A plain lit-room exit into a busy but unobstructed machine room keeps the passage at the standard baseline pace."
@@ -1477,7 +1477,7 @@
       "from": "MAGNET-ROOM",
       "to": "TEA-ROOM",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — Both rooms are lit and above ground with no hazards mentioned, so the baseline pace holds."
@@ -1487,7 +1487,7 @@
       "to": "CAROUSEL-ROOM",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — The Carousel Room's known whirring sound and unrecorded conditions keep this near the baseline crawl rather than a quick lit-room step."
@@ -1497,7 +1497,7 @@
       "to": "DEEP-FORD",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Fording a cold, deep stream across cracked marble adds a bit of caution beyond a simple room transition, matching the baseline of 3 minutes."
@@ -1507,7 +1507,7 @@
       "to": "STREAM-PATH",
       "dir": "EAST",
       "kind": "cond_flag",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + conditional 1 + dark 1, llm 4 — A simple eastward walk from a marble hall to a ravine path stays at the baseline pace."
@@ -1517,7 +1517,7 @@
       "to": "CAROUSEL-ROOM",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — No special descriptive details push this beyond the baseline mechanical estimate."
@@ -1527,7 +1527,7 @@
       "to": "KENNEL",
       "dir": "SW",
       "kind": "cond_flag",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + conditional 1 + dark 1, llm 4 — A conditional exit into a dark, dusty, long-disused kennel warrants sticking to the mechanically priced baseline."
@@ -1537,7 +1537,7 @@
       "to": "STAIRWAY-TOP",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain southward passage between two lit rooms matches the standard baseline pace."
@@ -1547,7 +1547,7 @@
       "to": "FOOT-BRIDGE",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2; cheapest of 2 exits (SOUTH, CROSS) — A simple southward walk onto a sturdy foot bridge in a lit cavern warrants no adjustment from baseline."
@@ -1557,7 +1557,7 @@
       "to": "INSIDE-BARROW",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A straightforward northward passage from a lit cavern into a dimly glowing barrow entrance stays at baseline pace."
@@ -1567,7 +1567,7 @@
       "to": "DEPOSITORY",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A plain northward walk between two lit, unobstructed rooms matches the baseline pace."
@@ -1577,7 +1577,7 @@
       "to": "RIDDLE-ROOM",
       "dir": "WEST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A simple closet-to-riddle-room step keeps the baseline with no added complications."
@@ -1587,7 +1587,7 @@
       "to": "WELL-BOTTOM",
       "dir": "EAST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A simple eastward step from a small closet into an adjoining brick chamber stays at the baseline pace."
@@ -1597,7 +1597,7 @@
       "to": "WORKBENCH-ROOM",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A simple northward step between two lit, dry rooms matches the baseline pace with no complicating terrain."
@@ -1607,7 +1607,7 @@
       "to": "POSTS-ROOM",
       "dir": "OUT",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2; cheapest of 2 exits (OUT, WEST) — A simple westward exit into an enormous, lit room keeps the passage at the baseline pace."
@@ -1617,7 +1617,7 @@
       "to": "POOL-ROOM",
       "dir": "EAST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A simple eastward passage between two lit rooms stays at the baseline with no added hazards."
@@ -1627,7 +1627,7 @@
       "to": "DEEP-FORD",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3; cheapest of 2 exits (SOUTH, DOWN) — Scrambling down a rock face into a cold stream ford justifies the standard dark/hazard nudge above a trivial step."
@@ -1637,7 +1637,7 @@
       "to": "LEDGE-TUNNEL",
       "dir": "WEST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A simple westward walk along a ledge with no obstacles keeps it at the baseline 3 minutes."
@@ -1647,7 +1647,7 @@
       "to": "TINY-ROOM",
       "dir": "UP",
       "kind": "plain",
-      "minutes": 5,
+      "seconds": 300,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + up 2 + dark 1, llm 5 — A precarious climb up a rock face to an unlit ledge justifies staying at the mechanical baseline."
@@ -1657,7 +1657,7 @@
       "to": "CAROUSEL-ROOM",
       "dir": "NW",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3; cheapest of 2 exits (DOWN, NW) — No unusual descriptive details are recorded, so the passage keeps the mechanical baseline of 3 minutes."
@@ -1667,7 +1667,7 @@
       "to": "PEARL-ROOM",
       "dir": "EAST",
       "kind": "cond_door",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + door 1 + dark 1, llm 4 — The riddle-solved door opening into a plain former broom closet doesn't warrant deviation from the baseline pricing."
@@ -1677,7 +1677,7 @@
       "to": "CAROUSEL-ROOM",
       "dir": "EAST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — The Carousel Room is known for its disorienting, unlit nature, keeping the crawl-through-rock baseline intact."
@@ -1687,7 +1687,7 @@
       "to": "LEDGE-2",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Baseline dark-passage timing holds since no descriptive details suggest a faster or slower crossing."
@@ -1697,7 +1697,7 @@
       "to": "DARK-TUNNEL",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3; cheapest of 2 exits (SOUTH, CROSS) — Wading across a shallow ford into a dim, debris-filled tunnel matches the baseline dark-passage pace without added hazard."
@@ -1707,7 +1707,7 @@
       "to": "GREAT-CAVERN",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A simple winding path between two dimly lit but navigable cavern areas fits the baseline pace."
@@ -1717,7 +1717,7 @@
       "to": "DIAMOND-5",
       "dir": "DOWN",
       "kind": "plain",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + down 1 + dark 1, llm 4 — A straightforward descent down a marble stairway into a dim but unremarkable oddly-angled room matches the baseline pacing."
@@ -1727,7 +1727,7 @@
       "to": "MENHIR-ROOM",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A simple northward passage between two ordinary landbound rooms doesn't warrant deviation from the baseline."
@@ -1737,7 +1737,7 @@
       "to": "COOL-ROOM",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A misty, tunnel-bound descent from the bridge into the damp Cool Room warrants the baseline dark-passage pacing."
@@ -1747,7 +1747,7 @@
       "to": "DRAGON-ROOM",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Crossing the stone bridge into the dragon room is a straightforward paved path but the destination's dark, smokey tunnel keeps the pace at baseline."
@@ -1757,7 +1757,7 @@
       "to": "CAROUSEL-ROOM",
       "dir": "SW",
       "kind": "plain",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 4 — The tight, narrowing crawl through the tunnel justifies a slight bump above baseline despite the room being lit."
@@ -1767,7 +1767,7 @@
       "to": "DARK-TUNNEL",
       "dir": "NE",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A simple NE path walk into a dim, debris-filled tunnel matches the baseline dark-passage pacing."
@@ -1777,7 +1777,7 @@
       "to": "FORMAL-GARDEN",
       "dir": "EAST",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A simple eastward walk through an archway into a lit garden matches the baseline pace."
@@ -1787,7 +1787,7 @@
       "to": "MARBLE-HALL",
       "dir": "WEST",
       "kind": "cond_flag",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + conditional 1 + dark 1, llm 4 — The path-to-hall transition matches the baseline pace, neither a quick lit dash nor an extended flooded crawl."
@@ -1797,7 +1797,7 @@
       "to": "MAGNET-ROOM",
       "dir": "NW",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A lit, ordinary passageway to the northwest keeps the timing at the standard baseline."
@@ -1807,7 +1807,7 @@
       "to": "WELL-TOP",
       "dir": "WEST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A simple westward walk between two ordinary lit rooms warrants no adjustment from the baseline."
@@ -1817,7 +1817,7 @@
       "to": "BANK-ENTRANCE",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain, lit passage into the grand bank entrance keeps the pacing at the mechanical baseline."
@@ -1827,7 +1827,7 @@
       "to": "DEPOSITORY",
       "dir": "EAST",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A plain lit doorway between two accessible rooms warrants no adjustment from the baseline."
@@ -1837,7 +1837,7 @@
       "to": "VIEWING-EAST",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain lit-to-lit doorway crossing between banking rooms matches the baseline pace with no added obstacles."
@@ -1847,7 +1847,7 @@
       "to": "BANK-ENTRANCE",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A short plain passage into the well-lit Bank Entrance keeps the baseline three-minute timing without added delay."
@@ -1857,7 +1857,7 @@
       "to": "DEPOSITORY",
       "dir": "WEST",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A plain westward exit into a lit, ordinary room warrants no adjustment from the baseline."
@@ -1867,7 +1867,7 @@
       "to": "VIEWING-WEST",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain lit passage between two ordinary rooms stays at the baseline pace."
@@ -1877,7 +1877,7 @@
       "to": "DREARY-ROOM",
       "dir": "NORTH",
       "kind": "cond_door",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + door 1, llm 3; cheapest of 2 exits (NORTH, IN) — No descriptive cues to adjust the baseline, and the destination being lit keeps the door crossing at the standard pace."
@@ -1887,7 +1887,7 @@
       "to": "RAVINE-LEDGE",
       "dir": "DOWN",
       "kind": "plain",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + down 1 + dark 1, llm 4 — A climb down into a dark ravine ledge with a scramble to a stream justifies the baseline 4-minute pacing."
@@ -1897,7 +1897,7 @@
       "to": "CAROUSEL-ROOM",
       "dir": "WEST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A dimly lit garden path through an arbor into a tunnel matches the baseline pace with no added obstacles."
@@ -1907,7 +1907,7 @@
       "to": "FORMAL-GARDEN",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A simple lit garden path with no obstacles keeps this at the baseline pace."
@@ -1917,7 +1917,7 @@
       "to": "WIZARDS-WORKSHOP",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A simple northward walk between two ordinary indoor rooms stays at the baseline pace."
@@ -1926,7 +1926,7 @@
       "from": "VAIR-1",
       "to": "VAIR-2",
       "kind": "drift",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Drifting one hundred feet up an open volcano shaft matches the baseline pace without added hazard or complexity."
@@ -1936,7 +1936,7 @@
       "to": "LEDGE-1",
       "dir": "WEST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3; cheapest of 2 exits (WEST, LAND) — A precarious traverse along a narrow volcano ledge two hundred feet up justifies the baseline pace without further slowdown."
@@ -1945,7 +1945,7 @@
       "from": "VAIR-2",
       "to": "VAIR-1",
       "kind": "drift",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Drifting one hundred feet down through open volcano airspace between two visible landmarks matches the baseline pacing with no added hazard."
@@ -1954,7 +1954,7 @@
       "from": "VAIR-2",
       "to": "VAIR-3",
       "kind": "drift",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Drifting between two precarious, high-altitude volcano positions matches the baseline pace with no added hazard beyond the drift itself."
@@ -1963,7 +1963,7 @@
       "from": "VAIR-3",
       "to": "VAIR-2",
       "kind": "drift",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Drifting along the narrow volcano rim between two precarious ledges warrants the baseline pace with no additional hazard beyond the dark."
@@ -1972,7 +1972,7 @@
       "from": "VAIR-3",
       "to": "VAIR-4",
       "kind": "drift",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A precarious drift along a narrow volcanic rim between two airborne vantage points warrants the baseline pace with no further adjustment."
@@ -1982,7 +1982,7 @@
       "to": "LEDGE-2",
       "dir": "LAND",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3; cheapest of 2 exits (LAND, WEST) — A brief landing flight from the open volcano rim to a wide ledge stays near the baseline pace."
@@ -1991,7 +1991,7 @@
       "from": "VAIR-4",
       "to": "VAIR-3",
       "kind": "drift",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Drifting along the open, airy volcano rim between two exposed ledges matches the baseline pace without added hazard or obstruction."
@@ -2001,7 +2001,7 @@
       "to": "BANK-ENTRANCE",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A simple south exit from a viewing room to the bank entrance, both lit, matches the baseline plain traversal."
@@ -2011,7 +2011,7 @@
       "to": "BANK-ENTRANCE",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A simple lit walk from the viewing room to the bank entrance matches the baseline pace with no added hazards."
@@ -2021,7 +2021,7 @@
       "to": "LAVA-ROOM",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A simple climb north from an open volcano floor into a small lava-formed room stays at baseline pace."
@@ -2031,7 +2031,7 @@
       "to": "LAVA-TUBE",
       "dir": "EAST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — Traversing a ledge into a precarious lava chimney keeps the passage at its baseline pace of a careful but unremarkable transition."
@@ -2041,7 +2041,7 @@
       "to": "PEARL-ROOM",
       "dir": "WEST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A plain westward passage between two mundane, unremarkable rooms stays at the mechanical baseline without further adjustment."
@@ -2051,7 +2051,7 @@
       "to": "TEA-ROOM",
       "dir": "EAST",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A simple eastward crossing over a minor crack into a lit room stays at the baseline pace."
@@ -2061,7 +2061,7 @@
       "to": "AQUARIUM-ROOM",
       "dir": "NORTH",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — The destination is lit and the passage is a plain exit, so the baseline pace holds."
@@ -2071,7 +2071,7 @@
       "to": "GUARDIAN-ROOM",
       "dir": "NORTH",
       "kind": "cond_door",
-      "minutes": 4,
+      "seconds": 240,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + door 1 + dark 1, llm 4; cheapest of 2 exits (NORTH, OUT) — A guarded door out of the wizard's workshop keeps the baseline pacing with no extra hazards described."
@@ -2081,7 +2081,7 @@
       "to": "TROPHY-ROOM",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A simple southward walk between two ordinary, plainly-connected rooms matches the baseline pace."
@@ -2091,7 +2091,7 @@
       "to": "WORKBENCH-ROOM",
       "dir": "WEST",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A plain westward step between two lit, ordinary rooms matches the baseline pace with no complicating obstacles."
@@ -2101,7 +2101,7 @@
       "to": "AQUARIUM-ROOM",
       "dir": "WEST",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — A plain westward exit between two lit, ordinary rooms warrants no deviation from the baseline pace."
@@ -2111,7 +2111,7 @@
       "to": "PENTAGRAM-ROOM",
       "dir": "SOUTH",
       "kind": "plain",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2, llm 2 — Both rooms are lit and the passage is a plain, unobstructed exit, so the baseline pace holds."
@@ -2121,7 +2121,7 @@
       "to": "WIZARDS-WORKSHOP",
       "dir": "EAST",
       "kind": "plain",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "rule+llm",
       "note": "base 2 + dark 1, llm 3 — A short eastward step between lit rooms stays at the baseline pace."
@@ -2131,7 +2131,7 @@
     {
       "verb": "burn",
       "object": "BILLS",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick, trivial action that the game rejects outright with a quip, no real mechanism engaged."
@@ -2139,7 +2139,7 @@
     {
       "verb": "burn",
       "object": "BRICK",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — Burning the brick triggers instant death, a fatal ceremony-level outcome the game treats as a climactic mistake."
@@ -2147,7 +2147,7 @@
     {
       "verb": "burn",
       "object": "BUCKET",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick failed attempt to ignite a fireproof object yields no real effect, just a brief action."
@@ -2155,7 +2155,7 @@
     {
       "verb": "burn",
       "object": "FUSE",
-      "minutes": 5,
+      "seconds": 300,
       "class": "mechanism",
       "source": "llm",
       "note": "Igniting a fuse to trigger a timed sequence is a deliberate mechanical action beyond simple manipulation."
@@ -2163,7 +2163,7 @@
     {
       "verb": "burn",
       "object": "HEADS",
-      "minutes": 5,
+      "seconds": 300,
       "class": "mechanism",
       "source": "llm",
       "note": "Burning the cursed remains is a deliberate act requiring fire application, though it triggers instant fatal punishment rather than an extended process."
@@ -2171,7 +2171,7 @@
     {
       "verb": "burn",
       "object": "MATCH",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Striking a match is a quick, simple physical action with an immediate result."
@@ -2179,7 +2179,7 @@
     {
       "verb": "close",
       "object": "CRYPT-DOOR",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Closing a simple door is a quick physical action with no mechanism to operate."
@@ -2187,7 +2187,7 @@
     {
       "verb": "close",
       "object": "DIM-DOOR",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Closing a door is a simple physical action despite its magical noiseless quality."
@@ -2195,7 +2195,7 @@
     {
       "verb": "close",
       "object": "GLOBAL-WIZARD-CASE",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Closing the case is a trivial attempted action that the spell simply blocks, no different in effort than any failed close attempt."
@@ -2203,7 +2203,7 @@
     {
       "verb": "close",
       "object": "LID-1",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Closing a simple lid is a quick physical action akin to closing a container."
@@ -2211,7 +2211,7 @@
     {
       "verb": "close",
       "object": "LID-2",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Closing a lid over a keyhole is a simple physical action, priced at the low end of manipulation."
@@ -2219,7 +2219,7 @@
     {
       "verb": "close",
       "object": "PDOOR",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Closing an unlocked door is a simple physical action with no complications."
@@ -2227,7 +2227,7 @@
     {
       "verb": "close",
       "object": "RIDDLE-DOOR",
-      "minutes": 0,
+      "seconds": 0,
       "class": "manipulation",
       "source": "llm",
       "note": "A futile close attempt on an immovable stone door is a trivial no-op requiring negligible effort."
@@ -2235,7 +2235,7 @@
     {
       "verb": "close",
       "object": "ROBOT",
-      "minutes": 0,
+      "seconds": 0,
       "class": "manipulation",
       "source": "llm",
       "note": "A trivial failed action attempting to close a robot with no panel or door, yielding an instant no-op response."
@@ -2243,7 +2243,7 @@
     {
       "verb": "close",
       "object": "SAFE",
-      "minutes": 0,
+      "seconds": 0,
       "class": "manipulation",
       "source": "llm",
       "note": "A trivial failed attempt to close an immovable safe door that isn't even open."
@@ -2251,7 +2251,7 @@
     {
       "verb": "close",
       "object": "TEAPOT",
-      "minutes": 0,
+      "seconds": 0,
       "class": "manipulation",
       "source": "llm",
       "note": "A trivial failed attempt to close a lidless teapot requires almost no effort."
@@ -2259,7 +2259,7 @@
     {
       "verb": "close",
       "object": "WIZ-DOOR",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Closing an already-unlocked door is a simple physical action, just a swing shut of a creaky door."
@@ -2267,7 +2267,7 @@
     {
       "verb": "close",
       "object": "WIZARD-CASE",
-      "minutes": 0,
+      "seconds": 0,
       "class": "manipulation",
       "source": "llm",
       "note": "The cabinet is spell-protected and cannot be closed, so the attempt is a trivial failed no-op action."
@@ -2275,7 +2275,7 @@
     {
       "verb": "cross",
       "object": "BRIDGE",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "llm",
       "note": "Crossing the bridge is a single directed room transition via DO-WALK."
@@ -2283,7 +2283,7 @@
     {
       "verb": "cross",
       "object": "CHASM",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "The command fails outright with no bridge present, so no real effort or time is expended."
@@ -2291,7 +2291,7 @@
     {
       "verb": "cross",
       "object": "STREAM",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "The action fails immediately with no progress, just a rebuff telling the player to find another way."
@@ -2299,7 +2299,7 @@
     {
       "verb": "dig",
       "object": "GROUND",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick failed attempt at digging into hard, unyielding ground with no result."
@@ -2307,7 +2307,7 @@
     {
       "verb": "dig",
       "object": "PATHOBJ",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "The handler outright rejects the action with \"Not a chance,\" a no-op turn with no real effort."
@@ -2315,7 +2315,7 @@
     {
       "verb": "disenchant",
       "object": "MENHIR",
-      "minutes": 8,
+      "seconds": 480,
       "class": "mechanism",
       "source": "llm",
       "note": "Reversing a levitation spell on a massive stone requires focused magical effort akin to turning a great mechanism."
@@ -2323,7 +2323,7 @@
     {
       "verb": "drink",
       "object": "POOL",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A simple drink action yielding a trivial flavor response with no mechanical consequence."
@@ -2331,7 +2331,7 @@
     {
       "verb": "drink",
       "object": "ROBOT",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "The robot simply states it has no mouth, a trivial failed action with no real effort or consequence."
@@ -2339,7 +2339,7 @@
     {
       "verb": "drop",
       "object": "BUCKET",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Simply setting down a bucket is a quick, low-effort physical action."
@@ -2347,7 +2347,7 @@
     {
       "verb": "drop",
       "object": "COMPASS",
-      "minutes": 0,
+      "seconds": 0,
       "class": "manipulation",
       "source": "llm",
       "note": "A futile drop attempt that fails instantly since the compass can't be discarded."
@@ -2355,7 +2355,7 @@
     {
       "verb": "drop",
       "object": "GLOBAL-WATER",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Dropping water is a trivial single-action manipulation that just spills it to the floor."
@@ -2363,7 +2363,7 @@
     {
       "verb": "drop",
       "object": "GROUND",
-      "minutes": 0,
+      "seconds": 0,
       "class": "manipulation",
       "source": "llm",
       "note": "Dropping the ground is a no-op/invalid action with no real-world effort."
@@ -2371,7 +2371,7 @@
     {
       "verb": "drop",
       "object": "ROBOT",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Dropping an item the player isn't even holding is a trivial, quick action attempt."
@@ -2379,7 +2379,7 @@
     {
       "verb": "drop",
       "object": "SALTY-WATER",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Dropping held water is a simple, quick physical action that just spills it onto the floor."
@@ -2387,7 +2387,7 @@
     {
       "verb": "drop",
       "object": "WATER",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Dropping held water is a quick, simple physical action that just spills or forms a puddle."
@@ -2395,7 +2395,7 @@
     {
       "verb": "drop",
       "object": "WELL",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Dropping a takeable object into the well is a simple release action requiring minimal effort."
@@ -2403,7 +2403,7 @@
     {
       "verb": "eat",
       "object": "BILLS",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick, trivial bite of a prop with no mechanism to work, just a flavor response."
@@ -2411,7 +2411,7 @@
     {
       "verb": "eat",
       "object": "BLUE-ICING",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — Eating the blue cake triggers a body-shrinking transformation sequence that relocates the player and alters the room state, a ceremonial plot event rather than routine manipulation."
@@ -2419,7 +2419,7 @@
     {
       "verb": "eat",
       "object": "CANDY",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Eating a small piece of candy is a quick, simple physical action akin to taking or opening something."
@@ -2427,7 +2427,7 @@
     {
       "verb": "eat",
       "object": "EAT-ME-CAKE",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — Eating the cake triggers a world-altering set-piece transformation (shrinking, teleporting the room's contents) that the game treats as a ceremonial turning point."
@@ -2435,7 +2435,7 @@
     {
       "verb": "eat",
       "object": "ME",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "A trivial no-op joke response with no real-world effort or consequence."
@@ -2443,7 +2443,7 @@
     {
       "verb": "eat",
       "object": "ORANGE-ICING",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — Eating the orange-frosted cake triggers ICEBOOM, a fatal set-piece explosion ending the game, which is a ceremonial climactic moment."
@@ -2451,7 +2451,7 @@
     {
       "verb": "eat",
       "object": "RED-ICING",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — Eating the red cake is an irreversible fatal action that kills the player, a narrative set-piece rather than routine manipulation."
@@ -2459,7 +2459,7 @@
     {
       "verb": "eat",
       "object": "ROBOT",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "A failed no-op attempt that the robot simply rebuffs with a canned line about having no mouth."
@@ -2467,7 +2467,7 @@
     {
       "verb": "enchant",
       "object": "CERBERUS",
-      "minutes": 12,
+      "seconds": 720,
       "class": "mechanism",
       "source": "llm",
       "note": "Casting a specific spell on a guarding creature requires careful preparation and precise incantation, though it's a single magical act rather than a full ceremony."
@@ -2475,7 +2475,7 @@
     {
       "verb": "enchant",
       "object": "COLLAR",
-      "minutes": 5,
+      "seconds": 300,
       "class": "mechanism",
       "source": "llm",
       "note": "Casting a spell on an object requires focused arcane effort but isn't a scripted narrative set-piece."
@@ -2483,7 +2483,7 @@
     {
       "verb": "enchant",
       "object": "GLOBAL-WIZARD-CASE",
-      "minutes": 8,
+      "seconds": 480,
       "class": "mechanism",
       "source": "llm",
       "note": "Casting a spell on the warded case is a focused magical effort beyond simple manipulation but short of a ceremonial set-piece."
@@ -2491,7 +2491,7 @@
     {
       "verb": "enchant",
       "object": "MENHIR",
-      "minutes": 15,
+      "seconds": 900,
       "class": "mechanism",
       "source": "llm",
       "note": "Casting a levitation spell on an eight-foot stone slab to raise it and reveal a passage is a deliberate magical mechanism trigger, not a simple manipulation."
@@ -2499,7 +2499,7 @@
     {
       "verb": "enchant",
       "object": "WIZARD-CASE",
-      "minutes": 5,
+      "seconds": 300,
       "class": "mechanism",
       "source": "llm",
       "note": "Casting a targeted enchant spell on a specific object requires focused magical effort beyond simple manipulation but isn't a full ceremonial set-piece."
@@ -2507,7 +2507,7 @@
     {
       "verb": "enter",
       "object": "AQUARIUM",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Boarding/entering the aquarium simply redirects to walking into the room, a quick no-op-like action."
@@ -2515,7 +2515,7 @@
     {
       "verb": "enter",
       "object": "BUCKET",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Climbing into a bucket is a simple physical positioning action akin to boarding an object."
@@ -2523,7 +2523,7 @@
     {
       "verb": "enter",
       "object": "PENTAGRAM",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Simply stepping toward/into the pentagram is a quick, failed no-effort action since an invisible force just repels the player."
@@ -2531,7 +2531,7 @@
     {
       "verb": "exit",
       "object": "GAZEBO",
-      "minutes": 1,
+      "seconds": 60,
       "class": "movement",
       "source": "llm",
       "note": "Exiting the gazebo is a single directed room transition equivalent to walking out."
@@ -2539,7 +2539,7 @@
     {
       "verb": "exit",
       "object": "ME",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "A trivial no-op response telling the player to disembark on their own, with no real-world effort involved."
@@ -2547,7 +2547,7 @@
     {
       "verb": "exorcise",
       "object": "GENIE",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "The genie simply laughs at the attempt, a trivial no-op response with no real effect."
@@ -2555,7 +2555,7 @@
     {
       "verb": "fill",
       "object": "GLOBAL-WATER",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Filling a container with water is a simple physical put-action equivalent to handling an object."
@@ -2563,7 +2563,7 @@
     {
       "verb": "fill",
       "object": "SALTY-WATER",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Filling a container with water at hand is a quick, simple physical action akin to put/take."
@@ -2571,7 +2571,7 @@
     {
       "verb": "fill",
       "object": "WATER",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Filling with water resolves into a simple attempt to scoop/pour water into a container, a quick physical action."
@@ -2579,7 +2579,7 @@
     {
       "verb": "find",
       "object": "BRAIDED-WIRE",
-      "minutes": 0,
+      "seconds": 0,
       "class": "manipulation",
       "source": "llm",
       "note": "FIND just lists contents like examine, a quick no-cost lookup rather than a physical action."
@@ -2587,7 +2587,7 @@
     {
       "verb": "find",
       "object": "CLOTH-BAG",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "Finding/examining the fixed cloth bag just prints an informational message with no real manipulation occurring."
@@ -2595,7 +2595,7 @@
     {
       "verb": "find",
       "object": "COMPASS",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "The compass is already on the player's person, so finding it is a trivial no-op realization."
@@ -2603,7 +2603,7 @@
     {
       "verb": "find",
       "object": "GENIE",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "The genie flatly refuses to answer, a no-op response with no in-game effort expended."
@@ -2611,7 +2611,7 @@
     {
       "verb": "find",
       "object": "GLOBAL-UNICORN",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "Simply asking about the unicorn's whereabouts is a quick query with no physical effort involved."
@@ -2619,7 +2619,7 @@
     {
       "verb": "find",
       "object": "GRUE",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "A failed search for an unseen creature that yields only a flavor-text warning, with no real progress made."
@@ -2627,7 +2627,7 @@
     {
       "verb": "find",
       "object": "PATHOBJ",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "The command fails outright with no game-world effect, just a rebuff message."
@@ -2635,7 +2635,7 @@
     {
       "verb": "find",
       "object": "RECEPTACLE",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "Finding/examining the fixed receptacle just prints descriptive text with no manipulation or progress."
@@ -2643,7 +2643,7 @@
     {
       "verb": "find",
       "object": "ZORKMID",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "The command is a joke non-action that yields a canned rebuff with no in-world effort expended."
@@ -2651,7 +2651,7 @@
     {
       "verb": "follow",
       "object": "GLOBAL-PRINCESS",
-      "minutes": 3,
+      "seconds": 180,
       "class": "movement",
       "source": "llm",
       "note": "Following the princess is essentially trailing her into an adjacent room via DO-WALK, a single directed traversal."
@@ -2659,7 +2659,7 @@
     {
       "verb": "follow",
       "object": "GLOBAL-UNICORN",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "This is just a query about the unicorn's whereabouts with no actual pursuit occurring, a no-op response."
@@ -2667,7 +2667,7 @@
     {
       "verb": "follow",
       "object": "GOLD-KEY",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick attempt to trail the unicorn that simply spooks it away, requiring little real effort."
@@ -2675,7 +2675,7 @@
     {
       "verb": "follow",
       "object": "PATHOBJ",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "The command yields only a clarification or refusal message with no actual game action performed."
@@ -2683,7 +2683,7 @@
     {
       "verb": "follow",
       "object": "PRINCESS",
-      "minutes": 5,
+      "seconds": 300,
       "class": "movement",
       "source": "llm",
       "note": "Following the princess triggers a walk to her destination room, equivalent to traversing a room edge."
@@ -2691,7 +2691,7 @@
     {
       "verb": "follow",
       "object": "RIBBON",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick attempt to trail the unicorn that simply results in it shying away, no real progress made."
@@ -2699,7 +2699,7 @@
     {
       "verb": "follow",
       "object": "ROBOT",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "The robot simply refuses/comments that it can't follow of its own accord, a no-op conversational response with no in-world effect."
@@ -2707,7 +2707,7 @@
     {
       "verb": "follow",
       "object": "UNICORN",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "llm",
       "note": "Attempting to trail the skittish unicorn is a quick directed pursuit that simply spooks it away."
@@ -2715,7 +2715,7 @@
     {
       "verb": "give",
       "object": "DOOR-KEEPER",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Handing an item to the lizard guardian is a simple, low-effort interaction resolved immediately by the handler."
@@ -2723,7 +2723,7 @@
     {
       "verb": "give",
       "object": "DRAGON",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Offering an item to the dragon is a simple deliberate handoff, not a multi-step mechanism or set-piece."
@@ -2731,7 +2731,7 @@
     {
       "verb": "give",
       "object": "GENIE",
-      "minutes": 5,
+      "seconds": 300,
       "class": "mechanism",
       "source": "llm",
       "note": "Handing an object to the genie triggers a valuation/negotiation exchange that is more than a simple transfer but not a full ceremonial set-piece."
@@ -2739,7 +2739,7 @@
     {
       "verb": "give",
       "object": "GLOBAL-WATER",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Giving away handheld water is a trivial hand-off attempt that simply fails ('The water slips through your fingers')."
@@ -2747,7 +2747,7 @@
     {
       "verb": "give",
       "object": "GNOME",
-      "minutes": 5,
+      "seconds": 300,
       "class": "mechanism",
       "source": "llm",
       "note": "Offering an item to the gnome and awaiting his judgment is a small deliberate interaction with a meaningful outcome, warranting more than a trivial manipulation."
@@ -2755,7 +2755,7 @@
     {
       "verb": "give",
       "object": "GNOME-OF-ZURICH",
-      "minutes": 5,
+      "seconds": 300,
       "class": "mechanism",
       "source": "llm",
       "note": "Handing an item to the gnome for deposit into the safety box is a deliberate transactional exchange, not a simple object manipulation."
@@ -2763,7 +2763,7 @@
     {
       "verb": "give",
       "object": "ME",
-      "minutes": 0,
+      "seconds": 0,
       "class": "manipulation",
       "source": "llm",
       "note": "Giving yourself to yourself just redirects to taking yourself, a trivial self-referential no-op action."
@@ -2771,7 +2771,7 @@
     {
       "verb": "give",
       "object": "ROBOT",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Handing an object to the robot is a simple transfer action akin to a basic give/take interaction."
@@ -2779,7 +2779,7 @@
     {
       "verb": "give",
       "object": "SALTY-WATER",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Giving away water is a trivial handoff attempt that simply fails or spills, akin to a quick take/drop action."
@@ -2787,7 +2787,7 @@
     {
       "verb": "give",
       "object": "SERPENT",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Reaching into the aquarium to offer the serpent something is a quick, fatal manipulation with no complex mechanism involved."
@@ -2795,7 +2795,7 @@
     {
       "verb": "give",
       "object": "WAND",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Handing over an item is a simple, quick physical transfer even though the Wizard immediately snatches it back."
@@ -2803,7 +2803,7 @@
     {
       "verb": "give",
       "object": "WATER",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Giving away handheld water is a trivial physical gesture that immediately fails or spills, akin to a simple object manipulation."
@@ -2811,7 +2811,7 @@
     {
       "verb": "give",
       "object": "WIZARD",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Handing over an object is a simple physical exchange with an immediate one-line response."
@@ -2819,7 +2819,7 @@
     {
       "verb": "incant",
       "object": "CERBERUS",
-      "minutes": 5,
+      "seconds": 300,
       "class": "mechanism",
       "source": "llm",
       "note": "Incanting at Cerberus is a spell invocation requiring focus and precise wording, but it's a single verbal act rather than a full ceremonial set-piece."
@@ -2827,7 +2827,7 @@
     {
       "verb": "jump",
       "object": "BRIDGE",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "Jumping off the bridge is a fatal no-op action resolved instantly by the game's death handler."
@@ -2835,7 +2835,7 @@
     {
       "verb": "jump",
       "object": "CHASM",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — Leaping into a chasm is a fatal, irreversible gamble the game treats as a life-or-death ceremony, not a routine action."
@@ -2843,7 +2843,7 @@
     {
       "verb": "kick",
       "object": "BUCKET",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "Kicking the bucket is instantly fatal (JIGS-UP), a no-op turn ending the game rather than an effortful action."
@@ -2851,7 +2851,7 @@
     {
       "verb": "kick",
       "object": "DRAGON",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — Provoking a huge red dragon into a physical retaliation is a life-threatening confrontation the game treats as a major set-piece moment."
@@ -2859,7 +2859,7 @@
     {
       "verb": "kick",
       "object": "HEADS",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — Kicking the cursed poled heads triggers fatal punishment, a ceremonial death-trap moment the game treats as significant."
@@ -2867,7 +2867,7 @@
     {
       "verb": "kiss",
       "object": "GLOBAL-PRINCESS",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A simple, brief physical gesture toward an NPC that mostly just triggers dialogue rather than sustained effort."
@@ -2875,7 +2875,7 @@
     {
       "verb": "kiss",
       "object": "PRINCESS",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A simple physical gesture toward an entranced NPC that produces no mechanical effect on its own."
@@ -2883,7 +2883,7 @@
     {
       "verb": "knock",
       "object": "DIM-DOOR",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Knocking on a door is a simple, quick physical action yielding only a sound response."
@@ -2891,7 +2891,7 @@
     {
       "verb": "leave",
       "object": "GAZEBO",
-      "minutes": 2,
+      "seconds": 120,
       "class": "movement",
       "source": "llm",
       "note": "Leaving the gazebo is a single directed exit to an adjacent room via DO-WALK."
@@ -2899,7 +2899,7 @@
     {
       "verb": "listen",
       "object": "GRUE",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "Listening for a silent, unseen grue yields no perceptible result, a no-op turn."
@@ -2907,7 +2907,7 @@
     {
       "verb": "lock",
       "object": "KEY",
-      "minutes": 3,
+      "seconds": 180,
       "class": "mechanism",
       "source": "llm",
       "note": "Locking a door with a key is a simple mechanical action requiring only turning the lock."
@@ -2915,7 +2915,7 @@
     {
       "verb": "lock",
       "object": "PDOOR",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Turning a key in a lock is a simple, quick physical action."
@@ -2923,7 +2923,7 @@
     {
       "verb": "lock",
       "object": "WIZ-DOOR",
-      "minutes": 3,
+      "seconds": 180,
       "class": "mechanism",
       "source": "llm",
       "note": "Turning a key to lock a bolted door is a simple physical mechanism action."
@@ -2931,7 +2931,7 @@
     {
       "verb": "lower",
       "object": "LID-1",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Simple closing of a lid over a keyhole, akin to closing an object."
@@ -2939,7 +2939,7 @@
     {
       "verb": "lower",
       "object": "LID-2",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Lowering a lid over a keyhole is a simple physical action akin to closing a cover."
@@ -2947,7 +2947,7 @@
     {
       "verb": "make",
       "object": "ME",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "A rejected no-op command ('Only you can do that.') with no in-world effect."
@@ -2955,7 +2955,7 @@
     {
       "verb": "make",
       "object": "WISH",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — Making a wish at the well is a ceremonial, fateful moment that consumes the coin and triggers a significant story event."
@@ -2963,7 +2963,7 @@
     {
       "verb": "melt",
       "object": "ICE",
-      "minutes": 0,
+      "seconds": 0,
       "class": "manipulation",
       "source": "llm",
       "note": "This is a failed no-op turn since the game merely rebukes the attempt without any effect on the glacier."
@@ -2971,7 +2971,7 @@
     {
       "verb": "move",
       "object": "BLUE-BOOK",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Moving a book aside is a simple physical action akin to taking or shifting an object."
@@ -2979,7 +2979,7 @@
     {
       "verb": "move",
       "object": "CURTAIN",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A futile grasp at an intangible curtain of light is a quick, effortless failed action."
@@ -2987,7 +2987,7 @@
     {
       "verb": "move",
       "object": "GENIE",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Attempting to move the genie (not the menhir) is just a simple ineffectual command with no real-world exertion, defaulting to the generic 'cannot perform such a task' response."
@@ -2995,7 +2995,7 @@
     {
       "verb": "move",
       "object": "GREEN-BOOK",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Moving a book on a table is a simple physical manipulation with no mechanism involved."
@@ -3003,7 +3003,7 @@
     {
       "verb": "move",
       "object": "LID-1",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Simply moving a metal lid to reveal a keyhole is a quick physical action akin to opening a cover."
@@ -3011,7 +3011,7 @@
     {
       "verb": "move",
       "object": "LID-2",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Simply moving a metal lid to expose or cover a keyhole is a straightforward physical action akin to opening a container."
@@ -3019,7 +3019,7 @@
     {
       "verb": "move",
       "object": "MENHIR",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A futile attempt to budge an immovable multi-ton object, resulting in a quick failure message."
@@ -3027,7 +3027,7 @@
     {
       "verb": "move",
       "object": "PALANTIR-1",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — Reaching for the sphere triggers an irreversible cage-trap/poison-gas ceremony that redefines the game state, a genuine set-piece moment."
@@ -3035,7 +3035,7 @@
     {
       "verb": "move",
       "object": "PLACE-MAT",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Simply moving a place mat is a quick, low-effort physical action."
@@ -3043,7 +3043,7 @@
     {
       "verb": "move",
       "object": "ROBOT",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Attempting to push/move the actor-robot is a simple physical action that the handler mostly just rebuffs with dialogue."
@@ -3051,7 +3051,7 @@
     {
       "verb": "move",
       "object": "ROUND-BUTTON",
-      "minutes": 4,
+      "seconds": 240,
       "class": "mechanism",
       "source": "llm",
       "note": "Pushing the round button toggles the carousel's whirring intensity, a small but consequential mechanical interaction with the device."
@@ -3059,7 +3059,7 @@
     {
       "verb": "move",
       "object": "SQUARE-BUTTON",
-      "minutes": 5,
+      "seconds": 300,
       "class": "mechanism",
       "source": "llm",
       "note": "Pushing the square button alters the carousel's whirring intensity, a mechanical state change requiring deliberate interaction."
@@ -3067,7 +3067,7 @@
     {
       "verb": "move",
       "object": "TRIANGULAR-BUTTON",
-      "minutes": 5,
+      "seconds": 300,
       "class": "mechanism",
       "source": "llm",
       "note": "Pushing the button triggers a mechanical flip affecting the carousel room and iron box, akin to throwing a switch."
@@ -3075,7 +3075,7 @@
     {
       "verb": "move",
       "object": "WHITE-BOOK",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Simply shifting a book aside is a quick physical action, just marking it touched with no mechanism triggered."
@@ -3083,7 +3083,7 @@
     {
       "verb": "open",
       "object": "BALLOON",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Opening the receptacle in the balloon's basket is a simple physical action of unlatching a lid."
@@ -3091,7 +3091,7 @@
     {
       "verb": "open",
       "object": "CANDY",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Simply opening a candy package is a trivial physical action with no mechanism involved."
@@ -3099,7 +3099,7 @@
     {
       "verb": "open",
       "object": "CHEST",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Prying at a rusty-hinged chest lid is a brief physical action with resistance, fitting the upper end of manipulation."
@@ -3107,7 +3107,7 @@
     {
       "verb": "open",
       "object": "CLOTH-BAG",
-      "minutes": 0,
+      "seconds": 0,
       "class": "manipulation",
       "source": "llm",
       "note": "Attempting to open the enormous bag is a trivial, immediately rebuffed action with no mechanical effect."
@@ -3115,7 +3115,7 @@
     {
       "verb": "open",
       "object": "CRYPT",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A simple attempt to open a sealed crypt is quick physical effort that fails immediately."
@@ -3123,7 +3123,7 @@
     {
       "verb": "open",
       "object": "CRYPT-DOOR",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Simply swinging open a squeaky door is a quick physical action with no complex mechanism involved."
@@ -3131,7 +3131,7 @@
     {
       "verb": "open",
       "object": "DIM-DOOR",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Opening a door, even a secret one, is a simple physical action with no puzzle-solving involved."
@@ -3139,7 +3139,7 @@
     {
       "verb": "open",
       "object": "FLASK",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Opening the flask is a simple physical action, instantly fatal in outcome but trivial in effort."
@@ -3147,7 +3147,7 @@
     {
       "verb": "open",
       "object": "GLOBAL-WIZARD-CASE",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A simple attempt to open a case, immediately rebuffed by a protective spell, is just a quick physical try."
@@ -3155,7 +3155,7 @@
     {
       "verb": "open",
       "object": "HEADS",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Opening the poled heads is a simple manipulation attempt, fatal in outcome but trivial in physical effort."
@@ -3163,7 +3163,7 @@
     {
       "verb": "open",
       "object": "LID-1",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Opening a simple lid is a quick physical action with no complex mechanism involved."
@@ -3171,7 +3171,7 @@
     {
       "verb": "open",
       "object": "LID-2",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Opening a simple lid is a quick physical action typical of manipulation-class commands."
@@ -3179,7 +3179,7 @@
     {
       "verb": "open",
       "object": "PDOOR",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Simply swinging an unlocked oak door open is a quick physical action."
@@ -3187,7 +3187,7 @@
     {
       "verb": "open",
       "object": "PURPLE-BOOK",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Opening a moldy book is a simple physical action of brief effort."
@@ -3195,7 +3195,7 @@
     {
       "verb": "open",
       "object": "RECEPTACLE",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Opening a receptacle is a simple physical action akin to opening any container."
@@ -3203,7 +3203,7 @@
     {
       "verb": "open",
       "object": "RIDDLE-DOOR",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A simple attempt to open a door that merely fails or confirms state, requiring minimal effort."
@@ -3211,7 +3211,7 @@
     {
       "verb": "open",
       "object": "ROBOT",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A trivial failed attempt to open the robot, which simply has no panel or door, requiring only a quick check."
@@ -3219,7 +3219,7 @@
     {
       "verb": "open",
       "object": "SAFE",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A simple failed attempt to open a rusted, doorless safe requires only a brief effort before finding it won't budge."
@@ -3227,7 +3227,7 @@
     {
       "verb": "open",
       "object": "WIZ-DOOR",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Reaching for a locked door's handle is a quick manual attempt, even though the lizard guardian foils it."
@@ -3235,7 +3235,7 @@
     {
       "verb": "open",
       "object": "WIZARD-CASE",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A failed attempt to open a spell-protected cabinet is a simple, quick action despite its no-op outcome."
@@ -3243,7 +3243,7 @@
     {
       "verb": "play",
       "object": "VIOLIN",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Simply picking up and playing the violin badly is a quick, trivial action with no mechanical effect."
@@ -3251,7 +3251,7 @@
     {
       "verb": "plug",
       "object": "LEAK",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A failed attempt to plug an unreachable leak is a quick, simple action with no real progress."
@@ -3259,7 +3259,7 @@
     {
       "verb": "put",
       "object": "BALLOON",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Placing an object into the basket's receptacle is a simple physical placement action."
@@ -3267,7 +3267,7 @@
     {
       "verb": "put",
       "object": "BLUE-BOOK",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Placing a book down is a simple physical action requiring minimal time."
@@ -3275,7 +3275,7 @@
     {
       "verb": "put",
       "object": "BLUE-ICING",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Putting the blue-frosted cake down or into something is a simple object placement action, not a complex mechanism."
@@ -3283,7 +3283,7 @@
     {
       "verb": "put",
       "object": "BUCKET",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Placing the bucket somewhere is a simple physical action akin to putting down an object."
@@ -3291,7 +3291,7 @@
     {
       "verb": "put",
       "object": "CERBERUS",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Putting the collar on the dog is a simple, deliberate object-placement action, not a multi-step mechanism."
@@ -3299,7 +3299,7 @@
     {
       "verb": "put",
       "object": "CHASM",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Putting an object toward the chasm is a simple, quick physical action akin to dropping something."
@@ -3307,7 +3307,7 @@
     {
       "verb": "put",
       "object": "GLOBAL-WATER",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Handling water without a container is a quick, trivial physical action that just slips away."
@@ -3315,7 +3315,7 @@
     {
       "verb": "put",
       "object": "GOLD-KEY",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Attempting to put the key involves grabbing it from the unicorn, a quick physical act that spooks it away."
@@ -3323,7 +3323,7 @@
     {
       "verb": "put",
       "object": "GREEN-BOOK",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Simple physical placement of a small object requiring minimal effort."
@@ -3331,7 +3331,7 @@
     {
       "verb": "put",
       "object": "GROUND",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Putting an object on the ground is effectively just setting it down, a trivial physical action."
@@ -3339,7 +3339,7 @@
     {
       "verb": "put",
       "object": "KEYHOLE-1",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Inserting an item into a keyhole is a quick, precise physical action akin to placing a key or similar object into a lock."
@@ -3347,7 +3347,7 @@
     {
       "verb": "put",
       "object": "KEYHOLE-2",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Inserting an object into a keyhole is a quick, precise physical action akin to a fit-check."
@@ -3355,7 +3355,7 @@
     {
       "verb": "put",
       "object": "ORANGE-ICING",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Placing the orange-frosted cake is a simple deliberate action that immediately triggers its explosive effect, fitting the low end of the manipulation band."
@@ -3363,7 +3363,7 @@
     {
       "verb": "put",
       "object": "PALANTIR-1",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — Reaching for the sphere triggers a fatal cage-and-gas trap sequence with lasting narrative consequences, a ceremonial turning point rather than routine manipulation."
@@ -3371,7 +3371,7 @@
     {
       "verb": "put",
       "object": "PENTAGRAM",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Placing an object into the pentagram is a simple physical placement action akin to putting something in a container."
@@ -3379,7 +3379,7 @@
     {
       "verb": "put",
       "object": "RED-ICING",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Putting the cake somewhere (e.g., into the pool) is a simple object-placement action requiring minimal physical effort."
@@ -3387,7 +3387,7 @@
     {
       "verb": "put",
       "object": "REPELLENT",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Spraying the repellent is a quick single-action item use with no physical exertion beyond pressing a nozzle."
@@ -3395,7 +3395,7 @@
     {
       "verb": "put",
       "object": "RIBBON",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Attempting to put the ribbon-wearing unicorn triggers a quick, simple physical action that startles it away."
@@ -3403,7 +3403,7 @@
     {
       "verb": "put",
       "object": "ROBOT",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Attempting to put an object with/near the robot is a simple, quickly-resolved interaction with no mechanical effect."
@@ -3411,7 +3411,7 @@
     {
       "verb": "put",
       "object": "SALTY-WATER",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Pouring water out of hand into a container or puddle is a quick, simple physical action."
@@ -3419,7 +3419,7 @@
     {
       "verb": "put",
       "object": "SERPENT",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A trivial attempted action that fails outright with 'Impossible for many reasons,' requiring negligible effort."
@@ -3427,7 +3427,7 @@
     {
       "verb": "put",
       "object": "SEWL",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Putting an object against the east wall to trigger a hidden mechanism is a simple physical placement action."
@@ -3435,7 +3435,7 @@
     {
       "verb": "put",
       "object": "SNWL",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Putting an object against the wall to trigger a mechanism is a quick physical action akin to placing an item."
@@ -3443,7 +3443,7 @@
     {
       "verb": "put",
       "object": "SSWL",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Putting an object against the south wall to trigger a mechanism check is a quick physical action."
@@ -3451,7 +3451,7 @@
     {
       "verb": "put",
       "object": "STAND-1",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Placing a sphere on a stand is a simple physical action, though this instance may trigger a larger mechanism."
@@ -3459,7 +3459,7 @@
     {
       "verb": "put",
       "object": "STAND-2",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Placing a sapphire sphere onto a stand is a simple physical placement action, akin to a standard put-object-on-object command."
@@ -3467,7 +3467,7 @@
     {
       "verb": "put",
       "object": "STAND-3",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Placing a sphere on a stand is a simple physical action, though it may trigger a larger mechanism."
@@ -3475,7 +3475,7 @@
     {
       "verb": "put",
       "object": "STAND-4",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Simply placing an object onto a stand is a basic manipulation action regardless of the dramatic consequences it triggers."
@@ -3483,7 +3483,7 @@
     {
       "verb": "put",
       "object": "SWWL",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Placing an object against the wall to trigger a mechanism check is a simple, quick physical action."
@@ -3491,7 +3491,7 @@
     {
       "verb": "put",
       "object": "UNICORN",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Attempting to put the unicorn causes it to flee, a quick failed handling action rather than a sustained mechanism or ceremony."
@@ -3499,7 +3499,7 @@
     {
       "verb": "put",
       "object": "WAND",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Putting down the wand is a simple object placement, likely interrupted by the Wizard snatching it away."
@@ -3507,7 +3507,7 @@
     {
       "verb": "put",
       "object": "WATER",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Attempting to put loose water somewhere is a quick, trivial action that almost always just slips through the player's fingers."
@@ -3515,7 +3515,7 @@
     {
       "verb": "put",
       "object": "WELL",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Dropping an object into the well is a simple, quick physical action."
@@ -3523,7 +3523,7 @@
     {
       "verb": "put",
       "object": "WHITE-BOOK",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Putting down a book is a simple physical action with no mechanism to engage."
@@ -3531,7 +3531,7 @@
     {
       "verb": "raise",
       "object": "CERBERUS",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Raising the dog is a quick, unremarkable gesture that the game treats as a puzzled non-event unless paired with the wand."
@@ -3539,7 +3539,7 @@
     {
       "verb": "raise",
       "object": "LID-1",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Simple physical act of lifting a lid to reveal a keyhole."
@@ -3547,7 +3547,7 @@
     {
       "verb": "raise",
       "object": "LID-2",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Simply lifting a lid to expose an opening is a quick, low-effort manipulation action."
@@ -3555,7 +3555,7 @@
     {
       "verb": "raise",
       "object": "ROBOT",
-      "minutes": 5,
+      "seconds": 300,
       "class": "mechanism",
       "source": "llm",
       "note": "Raising the robot (typically against the cage) is a physical struggle requiring effort but not a full ceremonial set-piece."
@@ -3563,7 +3563,7 @@
     {
       "verb": "raise",
       "object": "WAND",
-      "minutes": 4,
+      "seconds": 240,
       "class": "mechanism",
       "source": "llm",
       "note": "Raising the wand triggers a magical charge-up effect requiring deliberate ritual gesture, akin to activating a mechanism."
@@ -3571,7 +3571,7 @@
     {
       "verb": "rape",
       "object": "GLOBAL-PRINCESS",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — This is a fatal, irreversible set-piece action that instantly kills the player via the Wizard's lightning bolt, treated by the game as a climactic (if punitive) event rather than routine manipulation."
@@ -3579,7 +3579,7 @@
     {
       "verb": "rape",
       "object": "PRINCESS",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — This is a fatal, game-ending set-piece action triggering the Wizard's instant-death intervention."
@@ -3587,7 +3587,7 @@
     {
       "verb": "rub",
       "object": "CERBERUS",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Rubbing a leashed dog's fur for affection is a quick, low-effort physical gesture with no mechanical complexity."
@@ -3595,7 +3595,7 @@
     {
       "verb": "rub",
       "object": "CRYPT",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Simply touching the crypt's surface to feel its texture is a trivial, low-effort action yielding a flavor response."
@@ -3603,7 +3603,7 @@
     {
       "verb": "rub",
       "object": "CURTAIN",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "The hand passes through the curtain with no physical interaction possible, a no-op failure response."
@@ -3611,7 +3611,7 @@
     {
       "verb": "rub",
       "object": "DEGREE",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick tactile rub that just yields a shock, no mechanism engaged."
@@ -3619,7 +3619,7 @@
     {
       "verb": "rub",
       "object": "GLOBAL-PRINCESS",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Rubbing the princess is a simple gesture akin to examine, with no mechanism engaged beyond a flavor-text check."
@@ -3627,7 +3627,7 @@
     {
       "verb": "rub",
       "object": "GOLD-KEY",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Rubbing an object the unicorn wears is a quick physical action that immediately triggers its flight response."
@@ -3635,7 +3635,7 @@
     {
       "verb": "rub",
       "object": "HEADS",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Rubbing the cursed heads is a quick tactile action that instantly triggers fatal punishment, warranting minimal time despite its outcome."
@@ -3643,7 +3643,7 @@
     {
       "verb": "rub",
       "object": "MOSS",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Rubbing moss is a quick simple physical action akin to taking a small sample."
@@ -3651,7 +3651,7 @@
     {
       "verb": "rub",
       "object": "PRINCESS",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Rubbing the entranced princess is a simple physical touch that either does nothing or triggers a scripted wake sequence, requiring negligible effort."
@@ -3659,7 +3659,7 @@
     {
       "verb": "rub",
       "object": "RIBBON",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Rubbing the ribbon is a quick, simple physical action that merely spooks the unicorn away."
@@ -3667,7 +3667,7 @@
     {
       "verb": "rub",
       "object": "TROPHY-BOTTLES",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick touch/rub that instantly resolves into a shock, a brief physical action with no drawn-out process."
@@ -3675,7 +3675,7 @@
     {
       "verb": "rub",
       "object": "TROPHY-SWORD",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick touch of the sword that briefly zaps the player's hand, requiring minimal time to attempt."
@@ -3683,7 +3683,7 @@
     {
       "verb": "rub",
       "object": "UNICORN",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick, irreversible physical action that instantly spooks the unicorn away."
@@ -3691,7 +3691,7 @@
     {
       "verb": "rub",
       "object": "WAND",
-      "minutes": 5,
+      "seconds": 300,
       "class": "mechanism",
       "source": "llm",
       "note": "Rubbing the wand on an object to invoke a magical charging effect is a deliberate ritual-like action beyond simple manipulation but short of a full dramatic set-piece."
@@ -3699,7 +3699,7 @@
     {
       "verb": "rub",
       "object": "WANDS",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick touch that merely triggers a shock warning, not a mechanism with lasting effect."
@@ -3707,7 +3707,7 @@
     {
       "verb": "say",
       "object": "CERBERUS",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "Saying a phrase at the dog produces no branch in the handler (falls through to the default snarl), a trivial no-op utterance."
@@ -3715,7 +3715,7 @@
     {
       "verb": "say",
       "object": "GNOME",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Speaking a simple phrase to the gnome is a trivial verbal action with an immediate, brief response."
@@ -3723,7 +3723,7 @@
     {
       "verb": "say",
       "object": "GNOME-OF-ZURICH",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "Saying the gnome's name is just a spoken address that produces a canned impatience response with no real effort or effect."
@@ -3731,7 +3731,7 @@
     {
       "verb": "say",
       "object": "ME",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "Talking to oneself is a trivial no-op response with no physical effort or delay involved."
@@ -3739,7 +3739,7 @@
     {
       "verb": "say",
       "object": "SAILOR",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Speaking a single word to a nearby figure is a quick verbal action, not a physical mechanism or set-piece."
@@ -3747,7 +3747,7 @@
     {
       "verb": "shake",
       "object": "REPELLENT",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Shaking a can to check its contents is a quick, low-effort physical check."
@@ -3755,7 +3755,7 @@
     {
       "verb": "smell",
       "object": "ROSE",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "Smelling a rose is a trivial sensory action with an immediate quip response, no real effort or duration."
@@ -3763,7 +3763,7 @@
     {
       "verb": "spray",
       "object": "REPELLENT",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Pressing a nozzle to spray a can is a quick, simple physical action."
@@ -3771,7 +3771,7 @@
     {
       "verb": "swim",
       "object": "GLOBAL-WATER",
-      "minutes": 5,
+      "seconds": 300,
       "class": "mechanism",
       "source": "llm",
       "note": "Swimming through water is a physical exertion beyond simple manipulation but not a scripted set-piece."
@@ -3779,7 +3779,7 @@
     {
       "verb": "swim",
       "object": "SALTY-WATER",
-      "minutes": 5,
+      "seconds": 300,
       "class": "mechanism",
       "source": "llm",
       "note": "Swimming in the salty pool room water is a physical activity requiring exertion beyond a simple manipulation but isn't a scripted set-piece."
@@ -3787,7 +3787,7 @@
     {
       "verb": "swim",
       "object": "STREAM",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "The action fails outright, yielding only a rebuff with no real-world effort expended."
@@ -3795,7 +3795,7 @@
     {
       "verb": "swim",
       "object": "WATER",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Swimming in a puddle of water is a brief physical action the game treats as a trivial, non-mechanical bodily motion."
@@ -3803,7 +3803,7 @@
     {
       "verb": "take",
       "object": "ARCANA",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick attempt to grab junk that the game immediately rejects as not worth carrying."
@@ -3811,7 +3811,7 @@
     {
       "verb": "take",
       "object": "BALLOON",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Picking up the large, heavy basket is a simple physical action, though its bulk warrants a bit more effort than a trivial grab."
@@ -3819,7 +3819,7 @@
     {
       "verb": "take",
       "object": "BLUE-BOOK",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Simply picking up a book from the room is a quick, low-effort physical action."
@@ -3827,7 +3827,7 @@
     {
       "verb": "take",
       "object": "BRAIDED-WIRE",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Simply picking up a wire is a quick physical action with no complexity involved."
@@ -3835,7 +3835,7 @@
     {
       "verb": "take",
       "object": "CLOTH-BAG",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick futile grab attempt at a fixed part of the basket that fails immediately."
@@ -3843,7 +3843,7 @@
     {
       "verb": "take",
       "object": "COLLAR",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Picking up a large, awkward collar off debris is a simple physical action, though bulkier than a trivial grab."
@@ -3851,7 +3851,7 @@
     {
       "verb": "take",
       "object": "CURTAIN",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "The hand passes through the curtain harmlessly, a failed no-op action with no real effort."
@@ -3859,7 +3859,7 @@
     {
       "verb": "take",
       "object": "DEAD-SERPENT",
-      "minutes": 3,
+      "seconds": 180,
       "class": "manipulation",
       "source": "llm",
       "note": "Attempting to lift the massive serpent is a failed take, but the effort of trying to hoist something whale-sized still caps the manipulation band."
@@ -3867,7 +3867,7 @@
     {
       "verb": "take",
       "object": "DEGREE",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A simple attempt to take an object that merely triggers a shock deterrent, requiring only a brief reach."
@@ -3875,7 +3875,7 @@
     {
       "verb": "take",
       "object": "DWINDOW",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick, immediately failed attempt to pick up a window that's fixed in the floor."
@@ -3883,7 +3883,7 @@
     {
       "verb": "take",
       "object": "GENIE",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Simply attempting to take the genie is a quick, low-effort command that mostly triggers a refusal or minor scripted reaction, not a sustained task."
@@ -3891,7 +3891,7 @@
     {
       "verb": "take",
       "object": "GLOBAL-WATER",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Attempting to scoop up loose water is a quick, simple action that predictably fails as it slips through the player's fingers."
@@ -3899,7 +3899,7 @@
     {
       "verb": "take",
       "object": "GLOBAL-WIZARD-CASE",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A simple attempted take that fails instantly due to a protective spell."
@@ -3907,7 +3907,7 @@
     {
       "verb": "take",
       "object": "GOLD-KEY",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Attempting to take the key spooks the unicorn away, but it's still a quick, simple grab attempt."
@@ -3915,7 +3915,7 @@
     {
       "verb": "take",
       "object": "GREEN-BOOK",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Simply picking up a book from a table is a quick, low-effort physical action."
@@ -3923,7 +3923,7 @@
     {
       "verb": "take",
       "object": "HEADS",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A simple reach-and-grab attempt, though it fatally backfires instantly."
@@ -3931,7 +3931,7 @@
     {
       "verb": "take",
       "object": "LEAK",
-      "minutes": 0,
+      "seconds": 0,
       "class": "manipulation",
       "source": "llm",
       "note": "A joke response to a futile take attempt on an intangible object, requiring only a quick gesture."
@@ -3939,7 +3939,7 @@
     {
       "verb": "take",
       "object": "ME",
-      "minutes": 0,
+      "seconds": 0,
       "class": "manipulation",
       "source": "llm",
       "note": "A trivial, physically meaningless attempt to grab oneself that the game merely quips at with no real effort or consequence."
@@ -3947,7 +3947,7 @@
     {
       "verb": "take",
       "object": "MENHIR",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A futile attempt to grip an immovable multi-ton object, resulting in an immediate failure with minimal physical effort expended."
@@ -3955,7 +3955,7 @@
     {
       "verb": "take",
       "object": "MOSS",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Plucking moss from its surface is a simple, quick physical action."
@@ -3963,7 +3963,7 @@
     {
       "verb": "take",
       "object": "PALANTIR-1",
-      "minutes": 30,
+      "seconds": 1800,
       "class": "dramatic",
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — This is a fatal trap trigger with a ceremonial, story-critical outcome (cage/gas/robot death), not a routine pickup."
@@ -3971,7 +3971,7 @@
     {
       "verb": "take",
       "object": "PALANTIR-2",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Simply picking up a sphere from a table is a basic object-take action."
@@ -3979,7 +3979,7 @@
     {
       "verb": "take",
       "object": "PALANTIR-3",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Simply picking up an object from the sand is a quick physical action."
@@ -3987,7 +3987,7 @@
     {
       "verb": "take",
       "object": "PALANTIR-4",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Picking up an ordinary object is a simple physical action with no special complication."
@@ -3995,7 +3995,7 @@
     {
       "verb": "take",
       "object": "PATHOBJ",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "Taking a passage is a nonsensical no-op that just prompts for a direction, requiring no real effort."
@@ -4003,7 +4003,7 @@
     {
       "verb": "take",
       "object": "PLACE-MAT",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Simply picking up a place mat is a quick, low-effort physical action."
@@ -4011,7 +4011,7 @@
     {
       "verb": "take",
       "object": "RECEPTACLE",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick futile grab at a fixed part of the basket that fails immediately."
@@ -4019,7 +4019,7 @@
     {
       "verb": "take",
       "object": "RIBBON",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Attempting to grab the ribbon requires carefully approaching the skittish unicorn, a quick but delicate reach rather than a simple pickup."
@@ -4027,7 +4027,7 @@
     {
       "verb": "take",
       "object": "ROBOT",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Attempting to take the robot (an ACTORBIT object) yields a rebuff response, a quick failed grab rather than sustained effort."
@@ -4035,7 +4035,7 @@
     {
       "verb": "take",
       "object": "ROSE-BUSH",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick attempt to pluck a rose that ends in a thorn prick, a brief failed grab."
@@ -4043,7 +4043,7 @@
     {
       "verb": "take",
       "object": "SAFE",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick futile tug at an immovable, wall-embedded safe."
@@ -4051,7 +4051,7 @@
     {
       "verb": "take",
       "object": "SALTY-WATER",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Scooping water into hand is a quick physical action that ultimately just slips away, a trivial grasp attempt."
@@ -4059,7 +4059,7 @@
     {
       "verb": "take",
       "object": "SERPENT",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick reach into the aquarium to grab the serpent, fatal outcome notwithstanding."
@@ -4067,7 +4067,7 @@
     {
       "verb": "take",
       "object": "STAND-1",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick futile tug on an object that turns out to be fixed in place."
@@ -4075,7 +4075,7 @@
     {
       "verb": "take",
       "object": "STAND-2",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick futile tug on a fixed object that fails immediately."
@@ -4083,7 +4083,7 @@
     {
       "verb": "take",
       "object": "STAND-3",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick futile tug on a stand fixed to the bench, yielding an immediate failure message."
@@ -4091,7 +4091,7 @@
     {
       "verb": "take",
       "object": "STAND-4",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A simple failed attempt to take an object that is firmly attached and doesn't budge."
@@ -4099,7 +4099,7 @@
     {
       "verb": "take",
       "object": "SWORD",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Simply picking up a visible sword is a quick physical action."
@@ -4107,7 +4107,7 @@
     {
       "verb": "take",
       "object": "TROPHY-BOTTLES",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A simple attempt to grab an object that merely results in a shock, a quick reflexive action."
@@ -4115,7 +4115,7 @@
     {
       "verb": "take",
       "object": "TROPHY-SWORD",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A simple reach-and-grab attempt, quickly interrupted by a shock before any real grip is made."
@@ -4123,7 +4123,7 @@
     {
       "verb": "take",
       "object": "UNICORN",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick grab attempt that immediately spooks the unicorn away, requiring little sustained effort."
@@ -4131,7 +4131,7 @@
     {
       "verb": "take",
       "object": "WAND",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Simply picking up an item is a quick physical action, even though the Wizard will immediately snatch it back."
@@ -4139,7 +4139,7 @@
     {
       "verb": "take",
       "object": "WANDS",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A simple reach-and-grab attempt that results in a shock, requiring minimal time despite the failed outcome."
@@ -4147,7 +4147,7 @@
     {
       "verb": "take",
       "object": "WATER",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Scooping up water is a quick, simple attempt that mostly just slips through the player's fingers."
@@ -4155,7 +4155,7 @@
     {
       "verb": "take",
       "object": "WHITE-BOOK",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Simple pickup of a single small object from a table."
@@ -4163,7 +4163,7 @@
     {
       "verb": "take",
       "object": "WIZARD-CASE",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A failed attempt to take a spell-protected fixed object is a quick, simple grasp-and-fail action."
@@ -4171,7 +4171,7 @@
     {
       "verb": "throw",
       "object": "AQUARIUM",
-      "minutes": 5,
+      "seconds": 300,
       "class": "mechanism",
       "source": "llm",
       "note": "Hauling and hurling an object at a huge glass tank to shatter it is a deliberate physical act with real consequences beyond a simple manipulation."
@@ -4179,7 +4179,7 @@
     {
       "verb": "throw",
       "object": "BLUE-ICING",
-      "minutes": 2,
+      "seconds": 120,
       "class": "manipulation",
       "source": "llm",
       "note": "Throwing a small object without a target here is just a simple toss handled as a generic fallback action."
@@ -4187,7 +4187,7 @@
     {
       "verb": "throw",
       "object": "COMPASS",
-      "minutes": 0,
+      "seconds": 0,
       "class": "manipulation",
       "source": "llm",
       "note": "A failed throw attempt that the game rejects outright, requiring only a brief futile gesture."
@@ -4195,7 +4195,7 @@
     {
       "verb": "throw",
       "object": "CURTAIN",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Throwing an object through an intangible curtain is a quick futile gesture, not a mechanism or ceremony."
@@ -4203,7 +4203,7 @@
     {
       "verb": "throw",
       "object": "FLASK",
-      "minutes": 3,
+      "seconds": 180,
       "class": "mechanism",
       "source": "llm",
       "note": "Throwing the flask releases fatal vapors instantly, but the deliberate act of hurling a dangerous unknown liquid deserves a brief mechanism-level pause."
@@ -4211,7 +4211,7 @@
     {
       "verb": "throw",
       "object": "GLOBAL-WATER",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Tossing a handful of water is a trivial physical action that simply evaporates with no lasting effect."
@@ -4219,7 +4219,7 @@
     {
       "verb": "throw",
       "object": "GNOME",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Throwing an object at the gnome is a quick, mundane physical action that just triggers a rejection or crunching response."
@@ -4227,7 +4227,7 @@
     {
       "verb": "throw",
       "object": "GNOME-OF-ZURICH",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Throwing the gnome itself is a trivial, dismissive act the game treats as a quick reflexive gesture, not a mechanism or set-piece."
@@ -4235,7 +4235,7 @@
     {
       "verb": "throw",
       "object": "LAMP",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A quick, destructive toss of the lamp with an immediate, irreversible result."
@@ -4243,7 +4243,7 @@
     {
       "verb": "throw",
       "object": "ME",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "Throwing yourself is a nonsensical no-op that the game simply rebuffs with a quip."
@@ -4251,7 +4251,7 @@
     {
       "verb": "throw",
       "object": "ORANGE-ICING",
-      "minutes": 3,
+      "seconds": 180,
       "class": "mechanism",
       "source": "llm",
       "note": "Throwing the orange cake triggers an explosive chain reaction (ICEBOOM), a deliberate risky act beyond simple manipulation but not a ceremonial set-piece."
@@ -4259,7 +4259,7 @@
     {
       "verb": "throw",
       "object": "RED-ICING",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Throwing a small object is a quick, deliberate physical action akin to putting or tossing something."
@@ -4267,7 +4267,7 @@
     {
       "verb": "throw",
       "object": "ROBOT",
-      "minutes": 3,
+      "seconds": 180,
       "class": "mechanism",
       "source": "llm",
       "note": "Throwing the robot destroys it in a single decisive but non-ceremonial physical action, warranting a short mechanism-tier cost."
@@ -4275,7 +4275,7 @@
     {
       "verb": "throw",
       "object": "SALTY-WATER",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Tossing a handful of water is a quick, trivial physical action that immediately evaporates with no lasting effect."
@@ -4283,7 +4283,7 @@
     {
       "verb": "throw",
       "object": "SEWL",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Throwing an object at a wall is a quick, simple physical action with no mechanical complexity."
@@ -4291,7 +4291,7 @@
     {
       "verb": "throw",
       "object": "SNWL",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Throwing an object at a wall is a quick, low-effort physical action with no mechanism to operate."
@@ -4299,7 +4299,7 @@
     {
       "verb": "throw",
       "object": "SSWL",
-      "minutes": 5,
+      "seconds": 300,
       "class": "mechanism",
       "source": "llm",
       "note": "Throwing an object at the coal mine's south wall to trigger a mechanism-like reaction requires deliberate aim and a moment for the wall's response."
@@ -4307,7 +4307,7 @@
     {
       "verb": "throw",
       "object": "SWWL",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Throwing an object at a wall in this puzzle context (like the Scoliosis Museum) is a quick physical action akin to putting or placing an item."
@@ -4315,7 +4315,7 @@
     {
       "verb": "throw",
       "object": "WATER",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Throwing the water is a quick, wasteful gesture that simply results in it splashing and evaporating with no lasting effect."
@@ -4323,7 +4323,7 @@
     {
       "verb": "throw",
       "object": "WELL",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Tossing a held object into the well is a quick, simple physical action."
@@ -4331,7 +4331,7 @@
     {
       "verb": "tie",
       "object": "BRAIDED-WIRE",
-      "minutes": 5,
+      "seconds": 300,
       "class": "mechanism",
       "source": "llm",
       "note": "Securing the braided wire to a hook to fasten the balloon requires careful knotting, fitting the mechanism band."
@@ -4339,7 +4339,7 @@
     {
       "verb": "turn",
       "object": "KEY",
-      "minutes": 5,
+      "seconds": 300,
       "class": "mechanism",
       "source": "llm",
       "note": "Turning a rusty key to lock/unlock a door is a small physical mechanism action requiring some effort against the rust."
@@ -4347,7 +4347,7 @@
     {
       "verb": "turn",
       "object": "MENHIR",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "The menhir is immovable and the futile effort of trying to turn it is a no-op with no real exertion."
@@ -4355,7 +4355,7 @@
     {
       "verb": "turn",
       "object": "ROBOT",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Turning the robot (an actor) is a trivial, ineffective gesture that just yields a canned buzz/click response with no mechanical effect."
@@ -4363,7 +4363,7 @@
     {
       "verb": "unlock",
       "object": "KEY",
-      "minutes": 4,
+      "seconds": 240,
       "class": "mechanism",
       "source": "llm",
       "note": "Fitting a rusty key into a lock and working it takes a bit of physical effort but is still a quick mechanical action."
@@ -4371,7 +4371,7 @@
     {
       "verb": "unlock",
       "object": "PDOOR",
-      "minutes": 3,
+      "seconds": 180,
       "class": "mechanism",
       "source": "llm",
       "note": "Fitting a key into a lock and turning it is a simple mechanical action with immediate resistance to check."
@@ -4379,7 +4379,7 @@
     {
       "verb": "unlock",
       "object": "WIZ-DOOR",
-      "minutes": 5,
+      "seconds": 300,
       "class": "mechanism",
       "source": "llm",
       "note": "Unlocking a warded door with a guardian requires careful, deliberate manipulation of the lock mechanism beyond a simple action."
@@ -4387,7 +4387,7 @@
     {
       "verb": "untie",
       "object": "BRAIDED-WIRE",
-      "minutes": 4,
+      "seconds": 240,
       "class": "mechanism",
       "source": "llm",
       "note": "Untying braided wire from a hook to release the balloon is a small physical unfastening task, quicker than tying it in the first place."
@@ -4395,7 +4395,7 @@
     {
       "verb": "walk",
       "object": "BALLOON",
-      "minutes": 5,
+      "seconds": 300,
       "class": "mechanism",
       "source": "llm",
       "note": "Walking the balloon sets its travel destination and enables movement, an actual piloting maneuver rather than a simple manipulation."
@@ -4403,7 +4403,7 @@
     {
       "verb": "walk",
       "object": "DRAGON",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "A wary, cautious approach toward a dangerous creature, but a single brief action not warranting mechanism-level complexity."
@@ -4411,7 +4411,7 @@
     {
       "verb": "walk",
       "object": "ROBOT",
-      "minutes": 0,
+      "seconds": 0,
       "class": "instant",
       "source": "llm",
       "note": "Walking at/around the robot just triggers a canned dismissive response with no real progress or physical effort."
@@ -4419,7 +4419,7 @@
     {
       "verb": "wave",
       "object": "CERBERUS",
-      "minutes": 1,
+      "seconds": 60,
       "class": "manipulation",
       "source": "llm",
       "note": "Waving at the dog with no held magic item is a trivial, unrecognized gesture the dog just snaps at."
@@ -4427,7 +4427,7 @@
     {
       "verb": "wave",
       "object": "WAND",
-      "minutes": 5,
+      "seconds": 300,
       "class": "mechanism",
       "source": "llm",
       "note": "Waving the wand at a target invokes a genuine magical ritual with real consequences, warranting more than a trivial manipulation but short of a full dramatic set-piece."

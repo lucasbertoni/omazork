@@ -59,7 +59,7 @@ func TestStaticEdgeIsNudgedInsideTheMovementBand(t *testing.T) {
 		t.Fatalf("a warm cache still wants %d calls", len(result.Missing))
 	}
 	row := result.Table.Edges[0]
-	if row.Minutes != 7 || row.Class != durations.ClassMovement {
+	if row.Seconds != 7*durations.Minute || row.Class != durations.ClassMovement {
 		t.Fatalf("row = %+v", row)
 	}
 	if row.Source != durations.SourceRuleLLM {
@@ -97,7 +97,7 @@ func TestStaleCachedRowFallsBackToRulePricing(t *testing.T) {
 	})
 	result := generateWith(t, x, cache)
 	row := result.Table.Edges[0]
-	if row.Minutes != 4 || row.Source != durations.SourceRule || strings.Contains(row.Note, "llm") {
+	if row.Seconds != 4*durations.Minute || row.Source != durations.SourceRule || strings.Contains(row.Note, "llm") {
 		t.Fatalf("a stale answer was used: %+v", row)
 	}
 	if len(result.Missing) != 1 || result.Missing[0].Key != "edge:KITCHEN>CELLAR" {
@@ -163,7 +163,7 @@ func TestHandlerPairsNeedTheCacheToBecomeRows(t *testing.T) {
 		t.Fatalf("actions = %+v", result.Table.Actions)
 	}
 	row := result.Table.Actions[0]
-	if row.Verb != "take" || row.Object != "LAMP" || row.Minutes != 2 || row.Class != durations.ClassManipulation {
+	if row.Verb != "take" || row.Object != "LAMP" || row.Seconds != 2*durations.Minute || row.Class != durations.ClassManipulation {
 		t.Fatalf("row = %+v", row)
 	}
 	if row.Source != durations.SourceLLM || row.Note != "Lifting the lantern is quick." {
@@ -181,8 +181,8 @@ func TestDramaticNominationIsCappedAndQueued(t *testing.T) {
 		cache.Put(answer(request(t, cold, "action:take/LAMP"), durations.ClassDramatic, 120, "Taking the lantern is a ceremony."))
 	})
 	row := result.Table.Actions[0]
-	if row.Minutes != durations.UncuratedCap {
-		t.Fatalf("nomination written at %d min — only an overlay row may exceed %d", row.Minutes, durations.UncuratedCap)
+	if row.Seconds != durations.UncuratedCap {
+		t.Fatalf("nomination written at %ds — only an overlay row may exceed %ds", row.Seconds, durations.UncuratedCap)
 	}
 	if !strings.HasPrefix(row.Note, "llm nominated dramatic 120m — overlay candidate") {
 		t.Fatalf("note = %q", row.Note)
@@ -209,13 +209,13 @@ func TestNoGeneratedRowExceedsTheUncuratedCap(t *testing.T) {
 		}
 	})
 	for _, row := range result.Table.Actions {
-		if row.Minutes > durations.UncuratedCap {
-			t.Fatalf("%s/%s written at %d min", row.Verb, row.Object, row.Minutes)
+		if row.Seconds > durations.UncuratedCap {
+			t.Fatalf("%s/%s written at %ds", row.Verb, row.Object, row.Seconds)
 		}
 	}
 	for _, row := range result.Table.Edges {
-		if row.Minutes > durations.UncuratedCap {
-			t.Fatalf("edge %s>%s written at %d min", row.From, row.To, row.Minutes)
+		if row.Seconds > durations.UncuratedCap {
+			t.Fatalf("edge %s>%s written at %ds", row.From, row.To, row.Seconds)
 		}
 	}
 }
@@ -328,7 +328,7 @@ func TestRoutineEdgeIsClassifiedOutright(t *testing.T) {
 	cache := llm.NewCache(x.Game)
 	cache.Put(answer(req, durations.ClassMechanism, 12, "The trapdoor has to be worked open."))
 	row := generateWith(t, x, cache).Table.Edges[0]
-	if row.Minutes != 12 || row.Class != durations.ClassMechanism {
+	if row.Seconds != 12*durations.Minute || row.Class != durations.ClassMechanism {
 		t.Fatalf("row = %+v", row)
 	}
 }
@@ -341,8 +341,8 @@ func TestDramaticNominationOnARoutineEdgeIsCappedToo(t *testing.T) {
 		cache.Put(answer(request(t, cold, "edge:ATTIC>CELLAR"), durations.ClassDramatic, 120, "A descent into the underworld."))
 	})
 	row := result.Table.Edges[0]
-	if row.Minutes != durations.UncuratedCap {
-		t.Fatalf("nomination on an edge written at %d min, want the %d cap", row.Minutes, durations.UncuratedCap)
+	if row.Seconds != durations.UncuratedCap {
+		t.Fatalf("nomination on an edge written at %ds, want the %ds cap", row.Seconds, durations.UncuratedCap)
 	}
 	if !strings.Contains(row.Note, "llm nominated dramatic 120m — overlay candidate") {
 		t.Fatalf("note = %q", row.Note)
@@ -359,11 +359,11 @@ func TestDramaticNominationOnARoutineEdgeIsCappedToo(t *testing.T) {
 func TestNominationAtTheCapStillReachesTheQueue(t *testing.T) {
 	x := handlerExtract()
 	result := warm(t, x, func(cold *Result, cache *llm.Cache) {
-		cache.Put(answer(request(t, cold, "action:take/LAMP"), durations.ClassDramatic, durations.UncuratedCap, "A solemn lifting."))
+		cache.Put(answer(request(t, cold, "action:take/LAMP"), durations.ClassDramatic, durations.UncuratedCap/durations.Minute, "A solemn lifting."))
 	})
 	row := result.Table.Actions[0]
-	if row.Minutes != durations.UncuratedCap {
-		t.Fatalf("minutes = %d", row.Minutes)
+	if row.Seconds != durations.UncuratedCap {
+		t.Fatalf("seconds = %d", row.Seconds)
 	}
 	if !strings.Contains(row.Note, "overlay candidate") {
 		t.Fatalf("a nomination at the cap never reached the curation queue: %q", row.Note)

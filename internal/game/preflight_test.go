@@ -27,6 +27,6 @@ func skewedData(t *testing.T, file string) fs.FS {
 	if err != nil {
 		t.Fatal(err)
 	}
-	m["data/actions/"+file] = &fstest.MapFile{Data: []byte(`{"schemaVersion": 2}`)}
+	m["data/actions/"+file] = &fstest.MapFile{Data: []byte(`{"schemaVersion": 1}`)} // the minutes-era version (ADR 0004)
 	return m
 }

@@ -11,14 +11,14 @@ func fixture() (*Table, *Overlay, *Verbs) {
 		Game:          "zork1",
 		Rooms:         []Room{{ID: "KITCHEN", Obj: 10, Name: "Kitchen"}, {ID: "CELLAR", Obj: 11, Name: "Cellar"}},
 		Edges: []EdgeRow{{From: "KITCHEN", To: "CELLAR", Dir: "DOWN", Kind: "plain",
-			Minutes: 4, Class: ClassMovement, Source: SourceRule}},
-		Actions: []ActionRow{{Verb: "dig", Object: "SAND", Minutes: 12, Class: ClassMechanism, Source: SourceLLM}},
+			Seconds: 4 * Minute, Class: ClassMovement, Source: SourceRule}},
+		Actions: []ActionRow{{Verb: "dig", Object: "SAND", Seconds: 12 * Minute, Class: ClassMechanism, Source: SourceLLM}},
 		Vocab:   Vocab{Verbs: map[string]string{"dig": "dig", "take": "take"}, Nouns: map[string][]string{"sand": {"SAND"}}},
 	}
 	overlay := &Overlay{SchemaVersion: SchemaVersion, Game: "zork1"}
 	verbs := &Verbs{SchemaVersion: SchemaVersion, FastVerbs: []string{"look"},
-		Verbs: []VerbDefault{{Verb: "dig", Class: ClassMechanism, Minutes: 10},
-			{Verb: "take", Synonyms: []string{"get"}, Class: ClassManipulation, Minutes: 1}}}
+		Verbs: []VerbDefault{{Verb: "dig", Class: ClassMechanism, Seconds: 10 * Minute},
+			{Verb: "take", Synonyms: []string{"get"}, Class: ClassManipulation, Seconds: 1 * Minute}}}
 	return table, overlay, verbs
 }
 
@@ -41,7 +41,7 @@ func TestValidateAcceptsCleanData(t *testing.T) {
 
 func TestValidateSchemaVersions(t *testing.T) {
 	table, overlay, verbs := fixture()
-	table.SchemaVersion = 2
+	table.SchemaVersion = 1
 	overlay.SchemaVersion = 0
 	verbs.SchemaVersion = 7
 	errs := Validate(table, overlay, verbs)
@@ -52,9 +52,9 @@ func TestValidateSchemaVersions(t *testing.T) {
 
 func TestValidateOrphanedOverlayKeys(t *testing.T) {
 	table, overlay, verbs := fixture()
-	overlay.Edges = []OverlayEdge{{From: "KITCHEN", To: "ATTIC", Minutes: 3}}
-	overlay.Actions = []OverlayAction{{Verb: "dig", Object: "GRAVEL", Minutes: 3}}
-	overlay.VerbDefaults = map[string]int{"yodel": 2}
+	overlay.Edges = []OverlayEdge{{From: "KITCHEN", To: "ATTIC", Seconds: 3 * Minute}}
+	overlay.Actions = []OverlayAction{{Verb: "dig", Object: "GRAVEL", Seconds: 3 * Minute}}
+	overlay.VerbDefaults = map[string]int{"yodel": 2 * Minute}
 	validationError(t, table, overlay, verbs, "ATTIC")
 	validationError(t, table, overlay, verbs, "GRAVEL")
 	validationError(t, table, overlay, verbs, "yodel")
@@ -79,11 +79,11 @@ func TestValidateOrphanedAcknowledgedKeys(t *testing.T) {
 
 func TestValidateBandsAndCaps(t *testing.T) {
 	table, overlay, verbs := fixture()
-	table.Edges[0].Minutes = 40 // above the movement cap and the uncurated cap
+	table.Edges[0].Seconds = 40 * Minute // above the movement cap and the uncurated cap
 	validationError(t, table, overlay, verbs, "cap")
 
 	table, overlay, verbs = fixture()
-	table.Actions[0].Minutes = 1 // below the mechanism band
+	table.Actions[0].Seconds = 1 * Minute // below the mechanism band
 	validationError(t, table, overlay, verbs, "band")
 
 	table, overlay, verbs = fixture()
@@ -93,12 +93,12 @@ func TestValidateBandsAndCaps(t *testing.T) {
 
 func TestValidateUncuratedCapIsOverlayOnly(t *testing.T) {
 	table, overlay, verbs := fixture()
-	table.Actions[0].Minutes = 45
+	table.Actions[0].Seconds = 45 * Minute
 	table.Actions[0].Class = ClassDramatic
 	validationError(t, table, overlay, verbs, "uncurated")
 
 	table, overlay, verbs = fixture()
-	overlay.Actions = []OverlayAction{{Verb: "dig", Object: "SAND", Minutes: 45, Class: ClassDramatic}}
+	overlay.Actions = []OverlayAction{{Verb: "dig", Object: "SAND", Seconds: 45 * Minute, Class: ClassDramatic}}
 	if errs := Validate(table, overlay, verbs); len(errs) != 0 {
 		t.Fatalf("overlay row above the uncurated cap rejected: %v", errs)
 	}
@@ -106,7 +106,7 @@ func TestValidateUncuratedCapIsOverlayOnly(t *testing.T) {
 
 func TestValidateReasonRequiredAboveThreshold(t *testing.T) {
 	table, overlay, verbs := fixture()
-	overlay.Actions = []OverlayAction{{Verb: "dig", Object: "SAND", Minutes: 90, Class: ClassDramatic}}
+	overlay.Actions = []OverlayAction{{Verb: "dig", Object: "SAND", Seconds: 90 * Minute, Class: ClassDramatic}}
 	validationError(t, table, overlay, verbs, "reason")
 
 	overlay.Actions[0].Reason = "the exorcism is the centerpiece"
