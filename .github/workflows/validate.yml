@@ -47,5 +47,15 @@ jobs:
         with:
           go-version-file: go.mod
 
+      # `actiongen -check` treats a missing <game>.llm.json as "no cache yet"
+      # and only reports coverage, so a change that deletes a committed cache
+      # would otherwise slip through. Every game's cache is committed; keep it so.
+      - name: Require every committed LLM cache
+        run: |
+          for game in zork1 zork2 zork3; do
+            [ -f "data/actions/${game}.llm.json" ] \
+              || { echo "data/actions/${game}.llm.json is missing"; exit 1; }
+          done
+
       - name: Validate duration data
         run: scripts/validate.sh

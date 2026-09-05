@@ -297,7 +297,8 @@ are documented as comments in the scripts.
   (label joins the triage vocabulary). No in-game feedback mechanism.
 - **Fixes** are direct overlay edits; a `scripts/validate`-style one-liner runs
   locally exactly what CI runs.
-- **CI**: new `validate.yml` on any `data/**` change, four checks:
+- **CI**: new `validate.yml` on any `data/**` change (and on the generator,
+  validator, and fixture code that produces it), four checks:
   1. Validator: schemaVersion exact-match, orphaned overlay/ack keys, band/cap
      rules, `reason` required ≥60 min.
   2. Calibration gates (§6) on the layered result.
