@@ -3,7 +3,7 @@
 Per-game achievement tables for the Console's achievements list (decided in
 [Casual extras: achievements and stats](https://github.com/lucasbertoni/omazork/issues/10),
 authored for [Achievement tables](https://github.com/lucasbertoni/omazork/issues/13)).
-Sibling to the wait tables in `data/waits/` — score-event triggers reuse those tables'
+Sibling to the score-event tables in `data/events/` — score-event triggers reuse those tables'
 event ids so delta+room matching is implemented once.
 
 ## Semantics (from #10)
@@ -37,8 +37,8 @@ event ids so delta+room matching is implemented once.
 
 ### Trigger types
 
-1. `{ "type": "score-event", "eventId": "<id>" }` — fires when the wait table's
-   event of that id matches a turn's (delta, room). One matcher serves both tables.
+1. `{ "type": "score-event", "eventId": "<id>" }` — fires when the score-event table's
+   row of that id matches a turn's (delta, room).
 2. `{ "type": "score-reaches", "score": N }` — fires the first time the score global
    (G1) is ≥ N. Trivial to detect from the Quetzal peek; used for the max-score
    achievement in each game.
@@ -55,10 +55,9 @@ event ids so delta+room matching is implemented once.
 ## Known collisions and caveats
 
 1. **Zork III shadow events collide by delta+room** (both +1 in "Land of Shadow", as
-   documented in `data/waits/NOTES.md`). For waits it's harmless (both 0); for
-   achievements it matters which unlocks. Resolution: the appearance necessarily
-   precedes the strike, so the matcher should treat the **first** Land-of-Shadow +1 of
-   a playthrough as `shadow-appears` and the **second** as `shadow-struck`. Since
+   documented in `data/events/NOTES.md`). For achievements it matters which unlocks.
+   Resolution: the appearance necessarily precedes the strike, so the matcher should
+   treat the **first** Land-of-Shadow +1 of a playthrough as `shadow-appears` and the **second** as `shadow-struck`. Since
    achievements are lifetime and both usually happen in the same encounter, even a
    misattribution self-heals within one playthrough.
 2. **Zork II `demon-paid` is repeatable** (up to 10×, per #11) — deliberately not an

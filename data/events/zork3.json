@@ -1,0 +1,15 @@
+{
+  "schemaVersion": 1,
+  "game": "zork3",
+  "maxScore": 7,
+  "comment": "Zork III scores 'potential', 7 points total, every delta is +1 — the room is the only discriminator. Two events fire in variable rooms and are combat-adjacent; they never wait.",
+  "events": [
+    { "id": "shadow-appears", "delta": 1, "room": null, "roomName": "Land of Shadow", "note": "Hooded figure arrives (SHADOW-1..8 all display 'Land of Shadow'); combat starts immediately — never wait." },
+    { "id": "shadow-struck", "delta": 1, "room": null, "roomName": "Land of Shadow", "note": "Striking the figure with the sword; mid-combat, indistinguishable from shadow-appears by delta+room — both wait 0, so the collision is harmless." },
+    { "id": "lake-crossed", "delta": 1, "room": "ON-LAKE", "roomName": "On the Lake", "note": "Swimming out onto the lake." },
+    { "id": "cliff-encounter", "delta": 1, "room": "CLIFF-LEDGE", "roomName": "Cliff Ledge", "note": "Reaching the ledge starts the sailor/chest exchange." },
+    { "id": "viewing-table", "delta": 1, "room": "VIEW-ROOM", "roomName": "Scenic Vista", "note": "Rubbing the viewing table (teleport discovery)." },
+    { "id": "time-machine", "delta": 1, "room": "TECH-MUSEUM", "roomName": "Technology Museum", "note": "Dial set to 776 GUE and button pushed. The museum exists in three eras with distinct room ids but the same display name, so roomName matching covers all of them." },
+    { "id": "royal-puzzle", "delta": 1, "room": "CP", "roomName": "Room in a Puzzle", "note": "Sliding the final wall in the Royal Puzzle — the hardest puzzle in the trilogy. All 8x8 puzzle cells share one room id/name." }
+  ]
+}

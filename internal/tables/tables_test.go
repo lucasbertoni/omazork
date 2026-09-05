@@ -1,16 +1,20 @@
 package tables_test
 
 import (
+	"encoding/json"
 	"testing"
-	"time"
 
+	omazork "github.com/lucasbertoni/omazork"
 	"github.com/lucasbertoni/omazork/internal/tables"
 )
 
-func TestKnownScoreEventWait(t *testing.T) {
-	g, err := tables.Load("zork1")
+func TestKnownScoreEvent(t *testing.T) {
+	g, err := tables.LoadEvents("zork1")
 	if err != nil {
 		t.Fatal(err)
+	}
+	if g.Name != "zork1" || g.MaxScore != 350 {
+		t.Errorf("table identity = %q/%d, want zork1/350", g.Name, g.MaxScore)
 	}
 	ev, ok := g.Match(10, "Kitchen")
 	if !ok {
@@ -19,13 +23,10 @@ func TestKnownScoreEventWait(t *testing.T) {
 	if ev.ID != "visit-kitchen" {
 		t.Errorf("event = %q, want visit-kitchen", ev.ID)
 	}
-	if ev.Wait != 5*time.Minute {
-		t.Errorf("wait = %v, want 5m", ev.Wait)
-	}
 }
 
 func TestExactRoomBeatsAnyRoom(t *testing.T) {
-	g, _ := tables.Load("zork1")
+	g, _ := tables.LoadEvents("zork1")
 	// +4 in the Gallery is take-painting (exact room), not take-sceptre (room: null).
 	ev, ok := g.Match(4, "Gallery")
 	if !ok || ev.ID != "take-painting" {
@@ -38,43 +39,91 @@ func TestExactRoomBeatsAnyRoom(t *testing.T) {
 	}
 }
 
-func TestDeathNeverWaits(t *testing.T) {
-	g, _ := tables.Load("zork1")
+func TestDeathIsAnEvent(t *testing.T) {
+	g, _ := tables.LoadEvents("zork1")
 	ev, ok := g.Match(-10, "Cellar")
-	if !ok || ev.ID != "death" || ev.Wait != 0 {
-		t.Errorf("death match = %+v ok=%v, want death with 0 wait", ev, ok)
+	if !ok || ev.ID != "death" {
+		t.Errorf("death match = %+v ok=%v, want death", ev, ok)
 	}
 }
 
 func TestCaseRemovalMatchesAnyNegativeDelta(t *testing.T) {
-	g, _ := tables.Load("zork1")
+	g, _ := tables.LoadEvents("zork1")
 	ev, ok := g.Match(-5, "Living Room")
-	if !ok || ev.ID != "case-removal" || ev.Wait != 0 {
-		t.Errorf("got %+v ok=%v, want case-removal 0 wait", ev, ok)
+	if !ok || ev.ID != "case-removal" {
+		t.Errorf("got %+v ok=%v, want case-removal", ev, ok)
 	}
 }
 
-func TestUnmatchedDeltaFallsBack(t *testing.T) {
-	g, _ := tables.Load("zork1")
-	if _, ok := g.Match(3, "West of House"); ok {
-		t.Fatal("unexpected match for +3")
-	}
-	for i := 0; i < 50; i++ {
-		w := g.FallbackWait()
-		if w < 15*time.Minute || w > 45*time.Minute {
-			t.Fatalf("fallback wait %v outside 15–45m", w)
-		}
+func TestUnmatchedDeltaIsNoEvent(t *testing.T) {
+	g, _ := tables.LoadEvents("zork1")
+	if ev, ok := g.Match(3, "West of House"); ok {
+		t.Fatalf("unexpected match %+v for +3", ev)
 	}
 }
 
 func TestZork3MatchesOnRoomName(t *testing.T) {
-	g, err := tables.Load("zork3")
+	g, err := tables.LoadEvents("zork3")
 	if err != nil {
 		t.Fatal(err)
 	}
 	ev, ok := g.Match(1, "Land of Shadow")
-	if !ok || ev.Wait != 0 {
-		t.Errorf("Land of Shadow +1 = %+v ok=%v, want a 0-wait combat event", ev, ok)
+	if !ok || ev.Room != "Land of Shadow" {
+		t.Errorf("Land of Shadow +1 = %+v ok=%v, want a shadow event", ev, ok)
+	}
+}
+
+// TestEventTablesArePureVocabularies pins the §9 file shape: schemaVersion
+// exact-match, the identity fields only, no timing fields, and the row counts
+// the old wait tables carried.
+func TestEventTablesArePureVocabularies(t *testing.T) {
+	wantRows := map[string]int{"zork1": 34, "zork2": 27, "zork3": 7}
+	for game, n := range wantRows {
+		raw, err := omazork.Data.ReadFile("data/events/" + game + ".json")
+		if err != nil {
+			t.Fatalf("%s: %v", game, err)
+		}
+		var f struct {
+			SchemaVersion int                          `json:"schemaVersion"`
+			Events        []map[string]json.RawMessage `json:"events"`
+		}
+		if err := json.Unmarshal(raw, &f); err != nil {
+			t.Fatalf("%s: %v", game, err)
+		}
+		if f.SchemaVersion != tables.SchemaVersion {
+			t.Errorf("%s: schemaVersion %d, want %d", game, f.SchemaVersion, tables.SchemaVersion)
+		}
+		if len(f.Events) != n {
+			t.Errorf("%s: %d rows, want %d", game, len(f.Events), n)
+		}
+		var top map[string]json.RawMessage
+		_ = json.Unmarshal(raw, &top)
+		if _, ok := top["fallbackMinutes"]; ok {
+			t.Errorf("%s: fallbackMinutes survives", game)
+		}
+		for _, row := range f.Events {
+			if _, ok := row["waitMinutes"]; ok {
+				t.Errorf("%s: row %s carries waitMinutes", game, row["id"])
+			}
+			for k := range row {
+				switch k {
+				case "id", "delta", "deltaMax", "room", "roomName", "note":
+				default:
+					t.Errorf("%s: row %s has unexpected field %q", game, row["id"], k)
+				}
+			}
+		}
+		g, err := tables.LoadEvents(game)
+		if err != nil {
+			t.Fatal(err)
+		}
+		for _, row := range f.Events {
+			var id string
+			_ = json.Unmarshal(row["id"], &id)
+			if !g.HasEvent(id) {
+				t.Errorf("%s: loader dropped row %q", game, id)
+			}
+		}
 	}
 }
 
@@ -87,13 +136,13 @@ func TestAchievementTablesLoad(t *testing.T) {
 		if len(a) < 10 {
 			t.Errorf("%s: only %d achievements", game, len(a))
 		}
+		g, err := tables.LoadEvents(game)
+		if err != nil {
+			t.Fatal(err)
+		}
 		for _, ach := range a {
 			switch ach.Trigger.Type {
 			case "score-event":
-				if _, err := tables.Load(game); err != nil {
-					t.Fatal(err)
-				}
-				g, _ := tables.Load(game)
 				if !g.HasEvent(ach.Trigger.EventID) {
 					t.Errorf("%s/%s references unknown event %q", game, ach.ID, ach.Trigger.EventID)
 				}

@@ -1,5 +1,5 @@
 // Package omazork embeds the assets the wrapper binary ships with: the three
-// authentic story files, the curated wait/achievement tables, and the action
+// authentic story files, the curated score-event and achievement tables, and the action
 // duration tables (generated, overlay, and shared) the mediation layer prices
 // waits from.
 package omazork
@@ -14,7 +14,7 @@ var Games embed.FS
 // own artifacts — the LLM cache and the calibration reports — are committed
 // next to them but have no business inside the binary.
 //
-//go:embed data/waits/*.json data/achievements/*.json
+//go:embed data/events/*.json data/achievements/*.json
 //go:embed data/actions/zork1.json data/actions/zork2.json data/actions/zork3.json
 //go:embed data/actions/*.overlay.json data/actions/verbs.json data/actions/calibration.json
 var Data embed.FS

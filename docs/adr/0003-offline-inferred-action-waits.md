@@ -18,5 +18,5 @@ release behavior is fixed by the committed tables. Full spec:
 - **Fully hand-authored tables**: rejected — thousands of rows across three games;
   the overlay keeps hand-authorship where it matters (drama, fixes).
 - **Keeping score-keyed waits**: rejected — score events are sparse and unrelated
-  to what the action plausibly takes; `data/waits/` survive only as score-*event*
-  tables for achievements (`data/events/`).
+  to what the action plausibly takes; the old wait tables survive only as pure
+  score-*event* tables for achievements (`data/events/`).

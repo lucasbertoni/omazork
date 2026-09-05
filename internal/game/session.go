@@ -96,7 +96,7 @@ type Session struct {
 	cfg      Config
 	eng      *engine.Engine
 	p        *session.Playthrough
-	waits    *tables.Game
+	events   *tables.EventTable
 	achs     []tables.Achievement
 	openedAt time.Time // zero when the console is closed
 
@@ -196,7 +196,7 @@ func newSession(cfg Config, gameName string) (*Session, error) {
 	if err != nil {
 		return nil, err
 	}
-	waits, err := tables.Load(gameName)
+	events, err := tables.LoadEvents(gameName)
 	if err != nil {
 		return nil, err
 	}
@@ -212,7 +212,7 @@ func newSession(cfg Config, gameName string) (*Session, error) {
 	if err != nil {
 		return nil, err
 	}
-	return &Session{cfg: cfg, eng: eng, waits: waits, achs: achs, durs: durs, matcher: matcher}, nil
+	return &Session{cfg: cfg, eng: eng, events: events, achs: achs, durs: durs, matcher: matcher}, nil
 }
 
 // reseed re-derives the classifier state from a snapshot the engine was just
@@ -425,7 +425,7 @@ func (s *Session) matchEventID(delta int, room string) string {
 		}
 		return "shadow-struck"
 	}
-	if ev, ok := s.waits.Match(delta, room); ok {
+	if ev, ok := s.events.Match(delta, room); ok {
 		return ev.ID
 	}
 	return ""

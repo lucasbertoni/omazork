@@ -1,72 +1,65 @@
 // Package tables loads the curated data tables bundled with the wrapper: the
-// per-game score-event wait tables (data/waits/) and achievement tables
-// (data/achievements/). Matching is (delta, room name), implemented once here
-// and shared by the mediation layer and the achievement engine.
+// per-game score-event tables (data/events/) and achievement tables
+// (data/achievements/). A score-event table is the game's vocabulary of
+// point-awarding moments — it carries identity, never timing (action waits
+// are priced elsewhere; see docs/action-waits.md §9). Matching is
+// (delta, room name), implemented once here for the achievement engine.
 package tables
 
 import (
 	"encoding/json"
 	"fmt"
-	"math/rand/v2"
-	"time"
 
 	omazork "github.com/lucasbertoni/omazork"
 )
 
-// Event is one known score-awarding moment from a wait table.
+// SchemaVersion is stamped on every event table; loading asserts an exact
+// match so a stale or future file fails loudly instead of matching wrong.
+const SchemaVersion = 1
+
+// Event is one known score-awarding moment from an event table.
 type Event struct {
 	ID       string
 	Delta    int
 	DeltaMax int    // when non-zero, matches any delta <= DeltaMax (Zork I case-removal)
 	Room     string // display room name; empty = any room
-	Wait     time.Duration
 }
 
-// Game is one game's loaded wait table.
-type Game struct {
-	Name        string
-	MaxScore    int
-	fallbackMin time.Duration
-	fallbackMax time.Duration
-	events      []Event
-	rand        func() float64
+// EventTable is one game's loaded score-event table.
+type EventTable struct {
+	Name     string
+	MaxScore int
+	events   []Event
 }
 
-type waitFile struct {
-	Game            string `json:"game"`
-	MaxScore        int    `json:"maxScore"`
-	FallbackMinutes struct {
-		Min int `json:"min"`
-		Max int `json:"max"`
-	} `json:"fallbackMinutes"`
-	Events []struct {
-		ID          string  `json:"id"`
-		Delta       *int    `json:"delta"`
-		DeltaMax    *int    `json:"deltaMax"`
-		RoomName    *string `json:"roomName"`
-		WaitMinutes int     `json:"waitMinutes"`
+type eventFile struct {
+	SchemaVersion int    `json:"schemaVersion"`
+	Game          string `json:"game"`
+	MaxScore      int    `json:"maxScore"`
+	Events        []struct {
+		ID       string  `json:"id"`
+		Delta    *int    `json:"delta"`
+		DeltaMax *int    `json:"deltaMax"`
+		RoomName *string `json:"roomName"`
 	} `json:"events"`
 }
 
-// Load reads the embedded wait table for zork1/zork2/zork3.
-func Load(game string) (*Game, error) {
-	raw, err := omazork.Data.ReadFile("data/waits/" + game + ".json")
+// LoadEvents reads the embedded score-event table for zork1/zork2/zork3.
+func LoadEvents(game string) (*EventTable, error) {
+	raw, err := omazork.Data.ReadFile("data/events/" + game + ".json")
 	if err != nil {
-		return nil, fmt.Errorf("tables: no wait table for %q: %w", game, err)
+		return nil, fmt.Errorf("tables: no event table for %q: %w", game, err)
 	}
-	var f waitFile
+	var f eventFile
 	if err := json.Unmarshal(raw, &f); err != nil {
-		return nil, fmt.Errorf("tables: %s wait table: %w", game, err)
+		return nil, fmt.Errorf("tables: %s event table: %w", game, err)
 	}
-	g := &Game{
-		Name:        f.Game,
-		MaxScore:    f.MaxScore,
-		fallbackMin: time.Duration(f.FallbackMinutes.Min) * time.Minute,
-		fallbackMax: time.Duration(f.FallbackMinutes.Max) * time.Minute,
-		rand:        rand.Float64,
+	if f.SchemaVersion != SchemaVersion {
+		return nil, fmt.Errorf("tables: %s event table: schemaVersion %d, want exactly %d", game, f.SchemaVersion, SchemaVersion)
 	}
+	g := &EventTable{Name: f.Game, MaxScore: f.MaxScore}
 	for _, e := range f.Events {
-		ev := Event{ID: e.ID, Wait: time.Duration(e.WaitMinutes) * time.Minute}
+		ev := Event{ID: e.ID}
 		if e.RoomName != nil {
 			ev.Room = *e.RoomName
 		}
@@ -85,7 +78,7 @@ func Load(game string) (*Game, error) {
 
 // Match finds the score event for a turn's (delta, room name). Exact-room
 // entries win over any-room entries; deltaMax ranges are checked last.
-func (g *Game) Match(delta int, room string) (Event, bool) {
+func (g *EventTable) Match(delta int, room string) (Event, bool) {
 	var anyRoom *Event
 	var ranged *Event
 	for i := range g.events {
@@ -116,20 +109,14 @@ func (g *Game) Match(delta int, room string) (Event, bool) {
 }
 
 // HasEvent reports whether an event id exists in this table (achievement
-// tables reference wait-table events by id).
-func (g *Game) HasEvent(id string) bool {
+// tables reference event-table rows by id).
+func (g *EventTable) HasEvent(id string) bool {
 	for _, e := range g.events {
 		if e.ID == id {
 			return true
 		}
 	}
 	return false
-}
-
-// FallbackWait is the random wait for a score change no table row matches.
-func (g *Game) FallbackWait() time.Duration {
-	span := g.fallbackMax - g.fallbackMin
-	return g.fallbackMin + time.Duration(g.rand()*float64(span))
 }
 
 // Achievement is one entry from an achievement table.
@@ -141,7 +128,7 @@ type Achievement struct {
 	Trigger     Trigger `json:"trigger"`
 }
 
-// Trigger is one of three kinds: score-event (references a wait-table event
+// Trigger is one of three kinds: score-event (references an event-table row
 // id), score-reaches (first time score >= Score), milestone (wrapper-detected
 // kind: first-death, grue-death, first-checkpoint, game-won, final-death).
 type Trigger struct {

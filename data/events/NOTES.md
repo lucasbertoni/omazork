@@ -1,8 +1,11 @@
-# Wait tables — derivation notes
+# Score-event tables — derivation notes
 
-Static per-game wait tables for the casual-mode mediation layer (decided in
-[Casual pacing rules](https://github.com/lucasbertoni/omazork/issues/5), authored for
-[Score-event wait tables](https://github.com/lucasbertoni/omazork/issues/9)).
+Static per-game score-event vocabularies, consumed by the achievement engine
+(originally authored as wait tables for
+[Score-event wait tables](https://github.com/lucasbertoni/omazork/issues/9); timing
+moved to action waits in [#17](https://github.com/lucasbertoni/omazork/issues/17) and the
+tables were reduced to pure event vocabularies in
+[#24](https://github.com/lucasbertoni/omazork/issues/24) — see `docs/action-waits.md` §9).
 
 ## Source of truth
 
@@ -27,42 +30,44 @@ Score events were extracted from the MIT-licensed ZIL sources at
 
 ```jsonc
 {
+  "schemaVersion": 1,             // loader asserts an exact match
   "game": "zork1",
   "maxScore": 350,
-  "fallbackMinutes": { "min": 15, "max": 45 },   // random wait for unmatched deltas
   "events": [
     {
-      "id": "take-torch",          // stable key, ours
+      "id": "take-torch",          // stable key, ours; achievement triggers reference it
       "delta": 14,                  // observed score change
       "room": "TORCH-ROOM",         // ZIL room id, null = match any room
       "roomName": "Torch Room",     // the room's DESC — what the status line shows
-      "waitMinutes": 45,            // 0 = never delay this event
       "note": "..."
     }
   ]
 }
 ```
 
-Matching: `(delta, room)` — an entry with `room: null` matches its delta in any room
-(checked after exact-room entries). Anything unmatched falls back to
-`fallbackMinutes` random, per #5. The wrapper observes the current room via the
-Quetzal decode; `room` is the ZIL identifier and `roomName` the display string —
-whichever the adapter resolves more cheaply, prefer the ZIL id where object numbers
-can be mapped at build time, else match on `roomName`.
+Matching: `(delta, roomName)` — an entry with `roomName: null` matches its delta in
+any room (checked after exact-room entries). An unmatched delta is simply not a
+named event: nothing here carries timing, so nothing falls back. The wrapper
+observes the current room via the Quetzal decode and matches on `roomName`; `room`
+is the ZIL identifier, kept for provenance.
 
-`waitMinutes: 0` means reveal immediately (combat-adjacent or punitive events).
 `deltaMax: -1` (Zork I `case-removal`) matches any negative delta in that room.
+
+Rows are never pruned: the table is the game's complete score-event vocabulary,
+whether or not an achievement currently references a row. Notes written in the
+wait-table era still mention "never wait" for combat moments; that history is
+harmless but carries no meaning now.
 
 ## Known ambiguities (delta+room cannot disambiguate)
 
 1. **Zork I trophy-case deposits** all happen in the Living Room, and several
    treasures share a TVALUE (e.g. delta 5 covers eight different treasures). Harmless:
-   one table row per distinct delta, same wait for all colliding treasures.
+   one table row per distinct delta, one event for all colliding treasures.
 2. **Zork I portable/moving treasures** — sceptre (in the coffin), emerald (in the
    buoy), canary (egg opened by the thief), bauble (dropped by the songbird) — have no
    fixed take room; their entries use `room: null`. Consequence: a delta-4/5/6 take in
    some *other* treasure's home room after the thief has relocated things will match
-   the wrong row. Both rows carry similar waits, so the error is bounded.
+   the wrong row. Both rows are treasure takes, so the misattribution is bounded to a sibling event.
 3. **Zork I first-take-only**: `VALUE` is awarded once per treasure. Re-takes score 0
    and are invisible to the mediator by design.
 4. **Zork II wandering holders** — the Wizard (wand) and unicorn (gold key) move, so
@@ -70,16 +75,8 @@ can be mapped at build time, else match on `roomName`.
    room completes the diamond, also `room: null`.
 5. **Zork III is delta-degenerate**: every event is +1, so the room does all the work.
    The two shadow-figure points fire in variable rooms (SHADOW-1..8, all displaying
-   "Land of Shadow") and collide with each other — both are combat moments with
-   `waitMinutes: 0`, so the collision never matters. The Technology Museum and Royal
+   "Land of Shadow") and collide with each other — the wrapper disambiguates
+   them by order (first +1 there is the appearance, second the strike). The Technology Museum and Royal
    Puzzle each span multiple room ids sharing one display name; match on `roomName`.
-6. **Deaths** (Zork I/II, delta -10, any room) must reveal immediately — a withheld
-   death would leave the player issuing commands into a corpse.
-
-## Tuning rationale
-
-Waits scale with narrative weight, not just delta: room-visit points and small finds
-sit at 5–30 min, mid treasures 30–60, marquee puzzle payoffs (light shaft, dragon,
-black sphere, Royal Puzzle) 60–90, and Zork II's climactic wand theft 120. Everything
-combat-adjacent (thief's Treasure Room, Cerberus, the shadow figure) is pinned to 0
-per the "combat never waits" rule from #5.
+6. **Deaths** (Zork I/II, delta -10, any room) are a single any-room event; Zork III
+   has no death penalty and so no death row.
