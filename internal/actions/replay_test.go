@@ -13,17 +13,11 @@ package actions_test
 import (
 	"os"
 	"reflect"
-	"regexp"
 	"strings"
 	"testing"
 
 	"github.com/lucasbertoni/omazork/internal/actions"
-	"github.com/lucasbertoni/omazork/internal/engine"
 )
-
-// parser rejections would mean a fixture drifted from its seed; the scripts
-// are tuned so none occur.
-var parserRejection = regexp.MustCompile(`I don't know the word|You can't go that way|Huh\?|What\?|beg your pardon|You used the word`)
 
 func TestWalkthroughFixtures(t *testing.T) {
 	cases := []struct {
@@ -81,46 +75,19 @@ func TestWalkthroughFixtures(t *testing.T) {
 				t.Fatal(err)
 			}
 			cmds := actions.ParseScript(script)
-
-			e, err := engine.New(c.game, engine.WithSeed(fx.Seed))
-			if err != nil {
-				t.Fatal(err)
-			}
-			m, err := actions.NewMatcher(c.game)
-			if err != nil {
-				t.Fatal(err)
-			}
-			banner, err := e.Start()
-			if err != nil {
-				t.Fatal(err)
-			}
-			state := actions.StartState(actions.Turn{Room: banner.Room, RoomObj: banner.RoomObj, Moves: banner.Moves})
+			results, last := replay(t, c.game, fx.Seed, cmds)
 
 			kinds := map[actions.Kind]int{}
 			var transitions []string
-			var last engine.Turn
-			for i, cmd := range cmds {
-				last, err = e.Run(cmd)
-				if err != nil {
-					t.Fatalf("command %d %q: %v", i+1, cmd, err)
-				}
-				if parserRejection.MatchString(last.Output) {
-					t.Errorf("parser rejection at command %d %q:\n%.160s", i+1, cmd, last.Output)
-				}
-				res := m.Classify(state, actions.Turn{
-					Input: cmd, Output: last.Output, Room: last.Room, RoomObj: last.RoomObj, Moves: last.Moves,
-				})
-				state = res.State
+			for _, res := range results {
 				kinds[res.Kind]++
 				for _, ev := range res.CombatEvents {
 					if strings.HasPrefix(ev, "combat begins") || strings.HasPrefix(ev, "combat ends") || strings.HasPrefix(ev, "…and ends") {
 						transitions = append(transitions, ev)
 					}
 				}
-				if last.Halted && i != len(cmds)-1 {
-					t.Fatalf("story halted early at command %d %q", i+1, cmd)
-				}
 			}
+			state := results[len(results)-1].State
 
 			if last.Room != c.finalRoom || last.Score != c.score || last.Moves != c.moves {
 				t.Errorf("final room/score/moves = %s %d/%d, want %s %d/%d",

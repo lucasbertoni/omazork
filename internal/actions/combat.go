@@ -4,15 +4,9 @@ import "regexp"
 
 // Combat marker sets, straight from the combat inventory (#19) and proven in
 // the matcher prototype (#22). Three games, three architectures (spec §3.3):
-// Zork I a real melee state machine, Zork II hostile state windows, Zork III
+// Zork I a real melee state machine, Zork II two hostile state windows (the
+// dragon's anger sequence and the unleashed three-headed dog, #41), Zork III
 // the single hooded-figure duel.
-//
-// Known gap against §3.3, carried over from the prototype: Zork II's second
-// state window — the unleashed three-headed dog — is not modeled. Adding it
-// needs per-villain room-change semantics (the dog's hostility is
-// room-bound, the dragon pursues) and a validating transcript the prototype
-// never captured. Until then a dog turn is priced as a normal action; the
-// melee blanket rule still makes any attack on it instant.
 
 var (
 	// noSuch guards engagement: "You can't see any troll here!" quotes the
@@ -36,6 +30,11 @@ type villain struct {
 	// when empty, the engage set doubles as the active set.
 	active []*regexp.Regexp
 	exits  []exitRule
+	// pursues: whether the fight survives a room change. Zork I's engine
+	// clears combat when the room changes, the Zork III figure lapses when
+	// you walk away, and the Zork II dog's hostility is bound to the
+	// Cerberus Room; only the Zork II dragon follows the player.
+	pursues bool
 }
 
 func (v *villain) exitMatch(output string) *exitRule {
@@ -48,10 +47,7 @@ func (v *villain) exitMatch(output string) *exitRule {
 }
 
 type combatRules struct {
-	// survivesRoomChange: Zork I's engine clears combat when the room
-	// changes; the Zork II dragon follows the player instead.
-	survivesRoomChange bool
-	villains           map[string]*villain
+	villains map[string]*villain
 	// villainOrder fixes the engagement scan order (map iteration is random).
 	villainOrder []string
 }
@@ -66,8 +62,7 @@ func rx(exprs ...string) []*regexp.Regexp {
 
 var combatRulesByGame = map[string]*combatRules{
 	"zork1": {
-		survivesRoomChange: false,
-		villainOrder:       []string{"troll", "thief", "cyclops"},
+		villainOrder: []string{"troll", "thief", "cyclops"},
 		villains: map[string]*villain{
 			"troll": {
 				engage: rx(
@@ -110,10 +105,10 @@ var combatRulesByGame = map[string]*combatRules{
 		},
 	},
 	"zork2": {
-		survivesRoomChange: true, // the dragon follows
-		villainOrder:       []string{"dragon"},
+		villainOrder: []string{"dragon", "dog"},
 		villains: map[string]*villain{
 			"dragon": {
+				pursues: true, // the dragon follows
 				engage: rx(
 					`succeeded in annoying him`, `That captured his interest`, `surprised and interested`,
 					`made him rather angry`, `turns his smoky yellow eyes`,
@@ -126,11 +121,27 @@ var combatRulesByGame = map[string]*combatRules{
 					{regexp.MustCompile(`sees his reflection on the icy surface`), "glacier scene — dragon dead"},
 				},
 			},
+			// The unleashed dog makes the whole Cerberus Room hostile
+			// (CERBERUS-FCN): any un-special interaction snaps, the east/in
+			// exits snap, and an attack is a coin flip between a snap and
+			// death. Walking up the stairs ends it (pursues is false); the
+			// collar pacifies it for good. Post-collar lines ("the creature
+			// expires", "doggy biscuits") are one-shots and never engage.
+			"dog": {
+				engage: rx(
+					`The three-headed dog snaps at you viciously`,
+					`The huge dog snaps nastily at you`,
+					`dog-thing snaps (at you )?viciously`,
+				),
+				exits: []exitRule{
+					{regexp.MustCompile(`The creature whines happily`), "dog pacified by the collar"},
+				},
+			},
 		},
 	},
 	"zork3": {
-		survivesRoomChange: false, // observed: the figure lapses when you walk away
-		villainOrder:       []string{"figure"},
+		// observed: the figure lapses when you walk away (pursues is false)
+		villainOrder: []string{"figure"},
 		villains: map[string]*villain{
 			"figure": {
 				engage: rx(
@@ -176,9 +187,9 @@ func updateCombat(rules *combatRules, combat, output string, moved bool) (state 
 		switch reason, ended := endReason(v, output); {
 		case ended:
 			end(reason)
-		case moved && !rules.survivesRoomChange:
+		case moved && !v.pursues:
 			end("the room changed (matches engine behavior)")
-		case moved && rules.survivesRoomChange:
+		case moved && v.pursues:
 			events = append(events, "room changed but this foe pursues — combat continues")
 		}
 	}

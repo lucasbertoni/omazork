@@ -251,3 +251,36 @@ func TestClassifyHoodedFigureDuel(t *testing.T) {
 		t.Errorf("take hood events = %q, want the hood-removed exit", res.CombatEvents)
 	}
 }
+
+func TestClassifyCerberusDeath(t *testing.T) {
+	m := mustMatcher(t, "zork2")
+	// The unleashed dog's attack response is a coin flip; the losing branch
+	// (captured verbatim, seed 1) is the death banner plus the resurrection
+	// teleport — the fight ends, and no edge may be priced.
+	state := actions.State{RoomObj: 162, Room: "Cerberus Room", Moves: 344, Combat: "dog"}
+	res := m.Classify(state, actions.Turn{
+		Input:  "attack dog",
+		Output: "The dog-thing snaps at you viciously, and succeeds. Your head, it seems, is only a small mouthful for the poor animal, who is just as hungry afterward.\n \n    ****  You have died  **** \n\nNow, let's take a look here... Well, you probably deserve another chance. I can't quite fix you up completely, but you can't have everything.\n\nRoom of Red Mist\nYou are inside a huge crystalline sphere filled with thin red mist. The mist becomes blue to the west.\nYou strain to look out through the mist... \nYou see only darkness.\n\n>",
+		Room:   "Room of Red Mist", RoomObj: 224, Moves: 345,
+	})
+	if res.Kind != actions.Combat || res.State.Combat != "" {
+		t.Fatalf("death turn = %v combat=%q, want Combat, fight over", res.Kind, res.State.Combat)
+	}
+	if !res.Moved || res.Parsed.Dir != "" {
+		t.Errorf("death teleport: moved=%v dir=%q, want a non-walk room change", res.Moved, res.Parsed.Dir)
+	}
+	if len(res.CombatEvents) == 0 || res.CombatEvents[0] != "combat ends: the player died" {
+		t.Errorf("events = %q, want the death exit", res.CombatEvents)
+	}
+
+	// Once collared, the dog is harmless: killing it is a one-shot, not a
+	// window — no engagement on the post-pacification death line.
+	res = m.Classify(actions.State{RoomObj: 162, Room: "Cerberus Room", Moves: 350}, actions.Turn{
+		Input:  "attack dog",
+		Output: "With a quiet bark of disappointment, the creature expires.\nIts six eyes look at you reproachfully. As it dies, it collapses\ninto a small pile of dust which blows away into nothing.\n\n>",
+		Room:   "Cerberus Room", RoomObj: 162, Moves: 351,
+	})
+	if res.Kind != actions.Melee || res.State.Combat != "" || len(res.CombatEvents) != 0 {
+		t.Errorf("collared dog killed = %v combat=%q events=%q, want Melee, no window", res.Kind, res.State.Combat, res.CombatEvents)
+	}
+}
