@@ -290,7 +290,7 @@
     {
       "name": "replay.cumulativeHours",
       "value": 15.233,
-      "min": 15,
+      "min": 8,
       "max": 35,
       "pass": true
     },

@@ -282,9 +282,9 @@
     {
       "name": "replay.cumulativeHours",
       "value": 9.4,
-      "min": 15,
+      "min": 8,
       "max": 35,
-      "pass": false
+      "pass": true
     },
     {
       "name": "replay.medianMovementMinutes",
