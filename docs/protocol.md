@@ -37,7 +37,8 @@ Common fields: `output` (story text), `status` (`{room, score, moves}`),
 `unlocked` (achievements earned by this response), `reveal`, `pending`.
 
 - **`output`** — a normal turn. In Classic mode every turn is this.
-- **`withheld`** — Casual: the turn scored and its outcome is held back.
+- **`withheld`** — Casual: the turn carries an action wait
+  (docs/action-waits.md) and its outcome is held back.
   `status` stays at pre-turn values (the status line is part of the outcome
   and would spoil it); `pending` is `{maturesAt, remaining}` (nanoseconds).
 - **`blocked`** — game input while an outcome is pending and unmatured.

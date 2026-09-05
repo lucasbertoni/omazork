@@ -24,6 +24,14 @@ func main() {
 	tick := flag.Duration("maturation-tick", 30*time.Second, "how often to check for matured outcomes")
 	flag.Parse()
 
+	// The duration tables are go:embedded; a schemaVersion mismatch or an
+	// orphaned overlay key means dev-time regeneration skew, and the wrapper
+	// refuses to start rather than price a single turn from it.
+	if err := game.Preflight(); err != nil {
+		fmt.Fprintf(os.Stderr, "omazork: %v\n", err)
+		os.Exit(1)
+	}
+
 	srv := server.New(game.Config{Store: session.NewStore(*stateDir)})
 
 	// A matured pending outcome fires one non-spoiler notification (#5); the

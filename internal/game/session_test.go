@@ -101,3 +101,19 @@ func TestNewGameRefusesOverwriteWithoutReplace(t *testing.T) {
 
 // storeOf reopens the same store a session was built on (test helper).
 func storeOf(t *testing.T, s *game.Session) *session.Store { return s.Store() }
+
+// play runs commands through a session, maturing every withheld outcome by
+// advancing the clock, so a test can walk a Casual game to a point of
+// interest without caring what each step cost.
+func play(t *testing.T, s *game.Session, clock *fakeClock, cmds ...string) {
+	t.Helper()
+	for _, cmd := range cmds {
+		resp, err := s.Command(cmd)
+		if err != nil {
+			t.Fatalf("%q: %v", cmd, err)
+		}
+		if resp.Kind == game.KindWithheld {
+			clock.t = clock.t.Add(resp.Pending.Remaining)
+		}
+	}
+}

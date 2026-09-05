@@ -130,3 +130,24 @@ func TestZork23Smoke(t *testing.T) {
 		}
 	}
 }
+
+func TestPeekReadsGlobalsFromSnapshot(t *testing.T) {
+	e := mustNew(t, "zork1")
+	if _, err := e.Start(); err != nil {
+		t.Fatal(err)
+	}
+	turn, err := e.Run("south")
+	if err != nil {
+		t.Fatal(err)
+	}
+	view, err := e.Peek(turn.State)
+	if err != nil {
+		t.Fatalf("Peek: %v", err)
+	}
+	if view.RoomObj != turn.RoomObj || view.Moves != turn.Moves || view.Score != turn.Score {
+		t.Errorf("peek = %+v, want room %d moves %d score %d", view, turn.RoomObj, turn.Moves, turn.Score)
+	}
+	if view.RoomObj == 64 {
+		t.Error("room object still West of House after walking south")
+	}
+}

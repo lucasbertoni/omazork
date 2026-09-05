@@ -206,8 +206,9 @@ func (l *Layered) VerbDefault(verb string) (Row, bool) {
 }
 
 // FastVerb reports whether a verb is in the always-instant hard class (§10).
-// internal/actions carries the same list as a matcher hard class today; wiring
-// the runtime to this one is the lookup slice's job.
+// The runtime and the calibration replay both enforce the class through the
+// matcher in internal/actions, which carries the same list; this accessor
+// serves the generator and validator.
 func (l *Layered) FastVerb(verb string) bool { return l.fastVerbs[verb] }
 
 // RoomObj resolves a ZIL room id to its z-machine object number (§3.1).

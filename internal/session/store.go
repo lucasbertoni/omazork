@@ -51,6 +51,12 @@ type Playthrough struct {
 	Deaths           int  `json:"deaths"`
 	LandOfShadowHits int  `json:"landOfShadowHits,omitempty"`
 	Finished         bool `json:"finished,omitempty"`
+
+	// Combat is the villain the action-wait classifier has the player engaged
+	// with (docs/action-waits.md §3.3), "" out of combat. Persisted so a
+	// wrapper respawn mid-fight keeps pricing combat turns instant; saves
+	// from before the field simply resume out of combat.
+	Combat string `json:"combat,omitempty"`
 }
 
 // Checkpoint is a player-created snapshot made with the in-game SAVE command.

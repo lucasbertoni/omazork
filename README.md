@@ -8,10 +8,12 @@ dependencies — one static Go binary the plugin bootstraps itself.
 Two ways to play, chosen per playthrough:
 
 - **Classic** — the games exactly as shipped in the 1980s.
-- **Casual** — a mediation layer paces the big moments: when your score
-  changes, the outcome is withheld and matures over minutes to hours. Close
-  the console, live your life, and come back to a "While you were away…"
-  recap. Combat and deaths never wait.
+- **Casual** — a mediation layer paces play: every action takes the time it
+  plausibly would — a minute or two to cross a room, longer to inflate a
+  boat, hours for the rare dramatic moment — and its outcome is withheld
+  until that time has passed. Close the console, live your life, and come
+  back to a "While you were away…" recap. Looking, combat, failed turns, and
+  deaths never wait.
 
 Autosave every turn (a shell restart resumes invisibly), checkpoints via
 in-game SAVE/RESTORE, per-playthrough stats, and lifetime achievements.

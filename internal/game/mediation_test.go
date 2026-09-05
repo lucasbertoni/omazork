@@ -17,11 +17,7 @@ func casualAtWindow(t *testing.T) (*game.Session, *fakeClock) {
 	if err != nil {
 		t.Fatal(err)
 	}
-	for _, cmd := range []string{"south", "east", "open window"} {
-		if _, err := s.Command(cmd); err != nil {
-			t.Fatal(err)
-		}
-	}
+	play(t, s, clock, "south", "east", "open window")
 	return s, clock
 }
 
@@ -41,9 +37,10 @@ func TestCasualWithholdsScoringOutcome(t *testing.T) {
 	if resp.Status == nil || resp.Status.Score != 0 || resp.Status.Room == "Kitchen" {
 		t.Errorf("status leaks: %+v", resp.Status)
 	}
-	// visit-kitchen waits 5 minutes per the zork1 table.
-	if resp.Pending == nil || resp.Pending.Remaining != 5*time.Minute {
-		t.Errorf("pending = %+v, want 5m remaining", resp.Pending)
+	// "enter window" is a handler teleport priced as the action alone
+	// (verb enter, no matching object row → shared verb default, 2 min).
+	if resp.Pending == nil || resp.Pending.Remaining != 2*time.Minute {
+		t.Errorf("pending = %+v, want 2m remaining", resp.Pending)
 	}
 
 	// Game input is blocked while pending; meta stays available (#5).
@@ -61,7 +58,7 @@ func TestCasualWithholdsScoringOutcome(t *testing.T) {
 	if s.PendingMatured() {
 		t.Error("matured too early")
 	}
-	clock.t = clock.t.Add(5*time.Minute + time.Second)
+	clock.t = clock.t.Add(2*time.Minute + time.Second)
 	if !s.PendingMatured() {
 		t.Error("not matured after wait")
 	}
@@ -98,13 +95,18 @@ func TestCasualWithholdsScoringOutcome(t *testing.T) {
 	if opened.Status.Room != "Kitchen" || opened.Status.Score != 10 {
 		t.Errorf("post-reveal status = %+v", opened.Status)
 	}
-	// Play continues normally.
+	// Play continues normally: the next walk is priced on its own edge.
 	next, err := s.Command("west")
 	if err != nil {
 		t.Fatal(err)
 	}
-	if next.Kind != game.KindOutput || next.Status.Room != "Living Room" {
+	if next.Kind != game.KindWithheld || next.Status.Room != "Kitchen" {
 		t.Errorf("after reveal: %+v", next)
+	}
+	clock.t = clock.t.Add(next.Pending.Remaining)
+	opened, _ = s.Opened()
+	if opened.Reveal == nil || opened.Reveal.Status.Room != "Living Room" {
+		t.Errorf("second reveal: %+v", opened.Reveal)
 	}
 }
 
@@ -123,7 +125,7 @@ func TestPendingSurvivesRestart(t *testing.T) {
 	if resp.Pending == nil {
 		t.Fatal("pending lost across restart")
 	}
-	clock.t = clock.t.Add(6 * time.Minute)
+	clock.t = clock.t.Add(resp.Pending.Remaining)
 	opened, _ := s2.Opened()
 	if opened.Reveal == nil || opened.Reveal.Delta != 10 {
 		t.Errorf("reveal after restart = %+v", opened.Reveal)

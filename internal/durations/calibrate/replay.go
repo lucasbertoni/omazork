@@ -88,15 +88,7 @@ func replay(l *durations.Layered, fx actions.Fixture, script []byte) (Replay, ma
 		res := m.Classify(state, actions.Turn{Input: cmd, Output: turn.Output, Room: turn.Room, RoomObj: turn.RoomObj, Moves: turn.Moves})
 		state = res.State
 
-		r := l.Resolve(durations.Query{
-			Instant: res.Kind.Instant(),
-			Walk:    res.Parsed.Dir != "",
-			Moved:   res.Moved,
-			From:    int(res.From),
-			To:      int(res.To),
-			Verb:    res.Parsed.Verb,
-			Object:  res.Parsed.Object,
-		})
+		r := l.Resolve(durations.QueryFor(res))
 		minutes := r.Row.Minutes
 		rep.Turns++
 		rep.CumulativeMinutes += minutes

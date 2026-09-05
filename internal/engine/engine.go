@@ -99,6 +99,17 @@ func (e *Engine) Restore(state []byte) error {
 	return nil
 }
 
+// Peek reads the room object number, score, and moves out of a snapshot
+// without touching the running machine — what a resumed session needs to
+// re-seed turn classification from its autosave.
+func (e *Engine) Peek(state []byte) (Turn, error) {
+	p, err := e.peek(state)
+	if err != nil {
+		return Turn{}, fmt.Errorf("engine: peek: %w", err)
+	}
+	return Turn{RoomObj: p.Room, Score: int(p.Score), Moves: int(p.Moves)}, nil
+}
+
 func runCtx() context.Context {
 	ctx, cancel := context.WithTimeout(context.Background(), 30*time.Second)
 	_ = cancel // the deadline bounds a runaway story; the engine returns first in practice

@@ -1,6 +1,10 @@
 package durations
 
-import "sort"
+import (
+	"sort"
+
+	"github.com/lucasbertoni/omazork/internal/actions"
+)
 
 // QuietThreshold is the wait-tier line (§8): a wait under this many minutes is
 // quiet, at or above it is full. The calibration replay gates on the share of
@@ -23,6 +27,21 @@ type Query struct {
 	To      int
 	Verb    string // parsed verb word, "" on walk commands
 	Object  string // parsed head noun, "" when absent
+}
+
+// QueryFor projects one classified turn onto what the tables key on. It is
+// the single mapping from classifier to lookup, shared by the runtime and
+// the calibration replay so the two can never disagree about a turn.
+func QueryFor(res actions.Result) Query {
+	return Query{
+		Instant: res.Kind.Instant(),
+		Walk:    res.Parsed.Dir != "",
+		Moved:   res.Moved,
+		From:    int(res.From),
+		To:      int(res.To),
+		Verb:    res.Parsed.Verb,
+		Object:  res.Parsed.Object,
+	}
 }
 
 // Slot names the §2 precedence step that priced a turn.

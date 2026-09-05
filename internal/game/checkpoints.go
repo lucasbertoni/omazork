@@ -63,6 +63,11 @@ func (s *Session) RestoreCheckpoint(id string) (Response, error) {
 		s.p.Autosave = cp.State
 		s.p.Room, s.p.Score, s.p.Moves = cp.Room, cp.Score, 0
 		s.p.Finished = false
+		// The classifier follows the engine back in time; a checkpoint is
+		// never mid-fight from its own point of view.
+		if err := s.reseed(cp.State, ""); err != nil {
+			return Response{}, err
+		}
 		s.p.AppendTranscript(fmt.Sprintf("[Restored checkpoint from %s (score %d).]", cp.Room, cp.Score))
 		if err := s.save(); err != nil {
 			return Response{}, err

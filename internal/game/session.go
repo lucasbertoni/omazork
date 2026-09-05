@@ -1,14 +1,21 @@
 // Package game is the wrapper's core: it drives one playthrough through the
-// engine, applies the casual-mode mediation rules (#5, #7), owns the save and
-// session model (#6), and evaluates achievements and play stats (#10, #13).
+// engine, applies the casual-mode mediation rules (#5, #7) — pricing every
+// turn's action wait through the shared classifier and lookup
+// (docs/action-waits.md, #37) — owns the save and session model (#6), and
+// evaluates achievements and play stats (#10, #13).
 package game
 
 import (
 	"errors"
 	"fmt"
+	"io/fs"
 	"strings"
 	"time"
 
+	omazork "github.com/lucasbertoni/omazork"
+
+	"github.com/lucasbertoni/omazork/internal/actions"
+	"github.com/lucasbertoni/omazork/internal/durations"
 	"github.com/lucasbertoni/omazork/internal/engine"
 	"github.com/lucasbertoni/omazork/internal/session"
 	"github.com/lucasbertoni/omazork/internal/tables"
@@ -93,6 +100,15 @@ type Session struct {
 	achs     []tables.Achievement
 	openedAt time.Time // zero when the console is closed
 
+	// Action-wait pricing (docs/action-waits.md): the layered duration tables,
+	// the turn classifier, and the classifier state threaded turn to turn.
+	// mstate tracks the engine's true position — post-turn even while an
+	// outcome is withheld — because that is what the next turn is classified
+	// against; its combat window is persisted on the playthrough.
+	durs    *durations.Layered
+	matcher *actions.Matcher
+	mstate  actions.State
+
 	// quit tracking: the QUIT command asks for confirmation before halting;
 	// a halt during that exchange is a quit, not a victory.
 	quitAsked bool
@@ -130,6 +146,7 @@ func start(cfg Config, gameName string, mode session.Mode) (*Session, Response, 
 		return nil, Response{}, err
 	}
 	s.recordTurn(turn)
+	s.mstate = actions.StartState(actions.Turn{Room: turn.Room, RoomObj: turn.RoomObj, Moves: turn.Moves})
 	s.p.Stats.Sessions++
 	s.p.AppendTranscript(turn.Output)
 	if err := s.save(); err != nil {
@@ -154,6 +171,9 @@ func Resume(cfg Config, gameName string) (*Session, Response, error) {
 	s.p = p
 	if len(p.Autosave) > 0 && !p.Finished {
 		if err := s.eng.Restore(p.Autosave); err != nil {
+			return nil, Response{}, err
+		}
+		if err := s.reseed(p.Autosave, p.Combat); err != nil {
 			return nil, Response{}, err
 		}
 	}
@@ -184,8 +204,49 @@ func newSession(cfg Config, gameName string) (*Session, error) {
 	if err != nil {
 		return nil, err
 	}
-	return &Session{cfg: cfg, eng: eng, waits: waits, achs: achs}, nil
+	durs, err := durations.Load(gameName)
+	if err != nil {
+		return nil, err
+	}
+	matcher, err := actions.NewMatcher(gameName)
+	if err != nil {
+		return nil, err
+	}
+	return &Session{cfg: cfg, eng: eng, waits: waits, achs: achs, durs: durs, matcher: matcher}, nil
 }
+
+// reseed re-derives the classifier state from a snapshot the engine was just
+// rewound to: room object number and moves counter from the snapshot's
+// globals, the combat window as given. Old saves carry no combat field and
+// so reseed out of combat, which only ever errs toward pricing a turn.
+func (s *Session) reseed(state []byte, combat string) error {
+	view, err := s.eng.Peek(state)
+	if err != nil {
+		return err
+	}
+	s.mstate = actions.State{RoomObj: view.RoomObj, Room: s.p.Room, Moves: view.Moves, Combat: combat}
+	s.p.Combat = combat
+	return nil
+}
+
+// Preflight loads the duration data for every game and fails on the first
+// problem — a schemaVersion mismatch, an orphaned overlay key. The wrapper
+// runs it at startup and refuses to start rather than serve skewed tables.
+func Preflight() error { return PreflightFS(omazork.Data) }
+
+// PreflightFS is Preflight over an arbitrary data tree.
+func PreflightFS(fsys fs.FS) error {
+	for _, g := range []string{"zork1", "zork2", "zork3"} {
+		if _, err := durations.LoadFS(fsys, g); err != nil {
+			return err
+		}
+	}
+	return nil
+}
+
+// Combat reports the villain the classifier currently has the player engaged
+// with, or "" out of combat.
+func (s *Session) Combat() string { return s.mstate.Combat }
 
 // Mode reports the playthrough's fixed mode.
 func (s *Session) Mode() session.Mode { return s.p.Mode }
@@ -272,11 +333,13 @@ func (s *Session) runTurn(text string, now time.Time) (Response, error) {
 		death: died, grue: died && strings.Contains(strings.ToLower(turn.Output), "grue"),
 	}, now)
 
-	// Mediation: delay iff score delta != 0, Casual mode only (#5). Deaths and
-	// halts always reveal immediately.
-	if s.p.Mode == session.Casual && delta != 0 && !died {
-		wait := s.waitFor(delta, turn.Room, eventID)
-		if wait > 0 {
+	// Mediation, Casual mode only: the turn's action wait comes from the §2
+	// lookup precedence — hard classes, overlay, drift edge, (verb, object),
+	// edge, verb default, fallback. Deaths and halts always reveal immediately.
+	// Classic never classifies, so its playthrough file is exactly what it was.
+	if s.p.Mode == session.Casual {
+		wait := s.classify(text, turn)
+		if wait > 0 && !died {
 			// The turn ran and is autosaved, but the visible status must not
 			// advance: the status line is part of the outcome (#7) and stays
 			// at its pre-turn values on every surface until the reveal.
@@ -332,14 +395,20 @@ func (s *Session) endTurn(text string, turn engine.Turn, died bool, now time.Tim
 	return Response{Kind: KindEnded, Ended: ended, Output: turn.Output, Status: s.status(), Unlocked: unlocked}, nil
 }
 
-// waitFor resolves a scoring turn's wait duration (#5, #9).
-func (s *Session) waitFor(delta int, room, eventID string) time.Duration {
-	if eventID != "" {
-		if ev, ok := s.waits.Match(delta, room); ok {
-			return ev.Wait
-		}
-	}
-	return s.waits.FallbackWait()
+// classify runs the turn through the classifier and the shared §2 lookup —
+// the same Classify and Resolve the calibration replay runs, so a walkthrough
+// turn costs a player exactly what the calibration report says it does. The
+// turn is classified against the engine's true position (§3): room object
+// number and moves counter from the snapshot, the combat window carried from
+// the previous turn and persisted on the playthrough.
+func (s *Session) classify(text string, turn engine.Turn) time.Duration {
+	res := s.matcher.Classify(s.mstate, actions.Turn{
+		Input: text, Output: turn.Output, Room: turn.Room, RoomObj: turn.RoomObj, Moves: turn.Moves,
+	})
+	s.mstate = res.State
+	s.p.Combat = res.State.Combat
+	r := s.durs.Resolve(durations.QueryFor(res))
+	return time.Duration(r.Row.Minutes) * time.Minute
 }
 
 // matchEventID resolves the turn's score event, applying the Zork III
@@ -380,7 +449,11 @@ func (s *Session) reveal(now time.Time) *Reveal {
 		}
 	}
 	s.unlock(r.Unlocked, now)
-	s.p.AppendTranscript(fmt.Sprintf("[While you were away... (%+d points)]", pend.Delta), pend.Output)
+	header := "[While you were away...]"
+	if pend.Delta != 0 {
+		header = fmt.Sprintf("[While you were away... (%+d points)]", pend.Delta)
+	}
+	s.p.AppendTranscript(header, pend.Output)
 	return r
 }
 

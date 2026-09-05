@@ -51,6 +51,19 @@ func (h *harness) send(msg map[string]any) map[string]any {
 	return resp
 }
 
+// play sends commands, advancing the clock past any withheld outcome so the
+// next command reveals and runs.
+func (h *harness) play(clock *time.Time, cmds ...string) {
+	h.t.Helper()
+	for _, cmd := range cmds {
+		r := h.send(map[string]any{"type": "input", "text": cmd})
+		if r["type"] == "withheld" {
+			rem := r["pending"].(map[string]any)["remaining"].(float64)
+			*clock = clock.Add(time.Duration(rem))
+		}
+	}
+}
+
 func TestProtocolFlow(t *testing.T) {
 	now := time.Date(2026, 8, 29, 9, 0, 0, 0, time.UTC)
 	h := start(t, &now)
@@ -74,15 +87,11 @@ func TestProtocolFlow(t *testing.T) {
 		t.Fatalf("new: %v", resp)
 	}
 
-	// Play to the scoring move: outcome withheld.
-	for _, cmd := range []string{"south", "east", "open window"} {
-		if r := h.send(map[string]any{"type": "input", "text": cmd}); r["type"] != "output" {
-			t.Fatalf("input %s: %v", cmd, r)
-		}
-	}
+	// Play to the window: a room-changing action is withheld for its wait.
+	h.play(&now, "south", "east", "open window")
 	wh := h.send(map[string]any{"type": "input", "text": "enter window"})
 	if wh["type"] != "withheld" {
-		t.Fatalf("scoring turn: %v", wh)
+		t.Fatalf("enter window: %v", wh)
 	}
 
 	// Blocked while pending.
@@ -91,7 +100,7 @@ func TestProtocolFlow(t *testing.T) {
 	}
 
 	// Mature, reopen: reveal recap rides on the response.
-	now = now.Add(6 * time.Minute)
+	now = now.Add(time.Duration(wh["pending"].(map[string]any)["remaining"].(float64)))
 	op := h.send(map[string]any{"type": "opened"})
 	if op["reveal"] == nil {
 		t.Fatalf("no reveal on open: %v", op)
@@ -136,9 +145,8 @@ func TestMaturationEvent(t *testing.T) {
 	now := time.Date(2026, 8, 29, 9, 0, 0, 0, time.UTC)
 	h := start(t, &now)
 	h.send(map[string]any{"type": "new", "game": "zork1", "mode": "casual"})
-	for _, cmd := range []string{"south", "east", "open window", "enter window"} {
-		h.send(map[string]any{"type": "input", "text": cmd})
-	}
+	h.play(&now, "south", "east", "open window")
+	h.send(map[string]any{"type": "input", "text": "enter window"})
 	now = now.Add(10 * time.Minute)
 	// The check-maturation tick emits a matured event exactly once.
 	ev := h.send(map[string]any{"type": "check-maturation"})
@@ -160,11 +168,9 @@ func TestPickerCarriesPendingMaturesAt(t *testing.T) {
 	h := start(t, &now)
 
 	h.send(map[string]any{"type": "new", "game": "zork1", "mode": "casual"})
-	for _, cmd := range []string{"south", "east", "open window"} {
-		h.send(map[string]any{"type": "input", "text": cmd})
-	}
+	h.play(&now, "south", "east", "open window")
 	if wh := h.send(map[string]any{"type": "input", "text": "enter window"}); wh["type"] != "withheld" {
-		t.Fatalf("scoring turn: %v", wh)
+		t.Fatalf("enter window: %v", wh)
 	}
 
 	pick := h.send(map[string]any{"type": "picker"})
