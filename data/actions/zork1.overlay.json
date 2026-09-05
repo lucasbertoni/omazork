@@ -2,7 +2,11 @@
   "schemaVersion": 1,
   "game": "zork1",
   "edges": [],
-  "actions": [],
+  "actions": [
+    { "verb": "rub", "object": "BONES", "minutes": 10, "class": "mechanism", "note": "same curse handler as kiss/BONES, which keeps the Dramatic nomination; a duplicate verb is not a second set piece" },
+    { "verb": "take", "object": "BONES", "minutes": 10, "class": "mechanism", "note": "same curse handler as kiss/BONES, which keeps the Dramatic nomination; a duplicate verb is not a second set piece" },
+    { "verb": "raise", "object": "SCEPTRE", "minutes": 2, "class": "manipulation", "note": "wave/SCEPTRE is the rainbow trigger; raising it is a decoy, not the ceremony" }
+  ],
   "verbDefaults": {},
   "acknowledged": {}
 }

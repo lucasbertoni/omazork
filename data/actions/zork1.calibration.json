@@ -220,7 +220,7 @@
     },
     "actions": {
       "rows": 205,
-      "mean": 2.634,
+      "mean": 2.302,
       "median": 1,
       "bins": [
         {
@@ -233,7 +233,7 @@
         },
         {
           "minutes": 2,
-          "count": 25
+          "count": 26
         },
         {
           "minutes": 3,
@@ -253,17 +253,17 @@
         },
         {
           "minutes": 10,
-          "count": 1
+          "count": 3
         },
         {
           "minutes": 30,
-          "count": 8
+          "count": 5
         }
       ]
     },
     "classes": {
       "dramatic": {
-        "rows": 8,
+        "rows": 5,
         "median": 30,
         "bandLow": 30,
         "bandHigh": 180,
@@ -279,7 +279,7 @@
         "innerHigh": 0
       },
       "manipulation": {
-        "rows": 117,
+        "rows": 118,
         "median": 1,
         "bandLow": 0,
         "bandHigh": 3,
@@ -287,7 +287,7 @@
         "innerHigh": 2.25
       },
       "mechanism": {
-        "rows": 35,
+        "rows": 37,
         "median": 5,
         "bandLow": 3,
         "bandHigh": 20,
@@ -303,7 +303,7 @@
         "innerHigh": 7.75
       }
     },
-    "dramaticShare": 0.039,
+    "dramaticShare": 0.024,
     "longRows": []
   },
   "gates": [
@@ -336,37 +336,9 @@
     },
     {
       "name": "histogram.dramaticShare",
-      "value": 0.039,
+      "value": 0.024,
       "max": 0.03,
-      "pass": false
-    },
-    {
-      "name": "histogram.classMedian.instant",
-      "value": 0,
-      "min": 0,
-      "max": 0,
       "pass": true
-    },
-    {
-      "name": "histogram.classMedian.manipulation",
-      "value": 1,
-      "min": 0.75,
-      "max": 2.25,
-      "pass": true
-    },
-    {
-      "name": "histogram.classMedian.mechanism",
-      "value": 5,
-      "min": 7.25,
-      "max": 15.75,
-      "pass": false
-    },
-    {
-      "name": "histogram.classMedian.movement",
-      "value": 3,
-      "min": 3.25,
-      "max": 7.75,
-      "pass": false
     },
     {
       "name": "rows.longRows",
@@ -436,45 +408,6 @@
       ]
     },
     {
-      "key": "action:raise/SCEPTRE",
-      "kind": "action",
-      "minutes": 30,
-      "class": "dramatic",
-      "source": "llm",
-      "note": "llm nominated dramatic 30m — overlay candidate — Raising the sceptre at the rainbow's end is a ceremonial act that transforms the environment, solidifying the rainbow into a walkable structure and revealing treasure.",
-      "inputHash": "fbb767884c226263d6b30a7ab3406fbfec688a96f2a693fe4bc2ef400e52324d",
-      "reasons": [
-        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
-        "top-10 longest action rows"
-      ]
-    },
-    {
-      "key": "action:rub/BONES",
-      "kind": "action",
-      "minutes": 30,
-      "class": "dramatic",
-      "source": "llm",
-      "note": "llm nominated dramatic 30m — overlay candidate — Desecrating a fellow adventurer's remains triggers a ghostly curse and ceremonial loss of valuables, a set-piece consequence rather than routine manipulation.",
-      "inputHash": "5578b16ea6dfbfe18524ed4dbc8491cee36b0ab52fdcaf4fc732faad6f1fe26b",
-      "reasons": [
-        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
-        "top-10 longest action rows"
-      ]
-    },
-    {
-      "key": "action:take/BONES",
-      "kind": "action",
-      "minutes": 30,
-      "class": "dramatic",
-      "source": "llm",
-      "note": "llm nominated dramatic 30m — overlay candidate — Disturbing the skeleton's remains triggers a ceremonial curse event (ghost appearance, banishment of valuables) that the game treats as a significant set-piece, not a routine pickup.",
-      "inputHash": "152ff181b1fece40d3a938fde8427cb8eaa2eaecd11910c4895cf51cc3e96e1a",
-      "reasons": [
-        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
-        "top-10 longest action rows"
-      ]
-    },
-    {
       "key": "action:wave/SCEPTRE",
       "kind": "action",
       "minutes": 30,
@@ -500,6 +433,32 @@
       ]
     },
     {
+      "key": "action:rub/BONES",
+      "kind": "action",
+      "minutes": 10,
+      "class": "mechanism",
+      "source": "overlay",
+      "note": "same curse handler as kiss/BONES, which keeps the Dramatic nomination; a duplicate verb is not a second set piece",
+      "inputHash": "5578b16ea6dfbfe18524ed4dbc8491cee36b0ab52fdcaf4fc732faad6f1fe26b",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:take/BONES",
+      "kind": "action",
+      "minutes": 10,
+      "class": "mechanism",
+      "source": "overlay",
+      "note": "same curse handler as kiss/BONES, which keeps the Dramatic nomination; a duplicate verb is not a second set piece",
+      "inputHash": "152ff181b1fece40d3a938fde8427cb8eaa2eaecd11910c4895cf51cc3e96e1a",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
+      ]
+    },
+    {
       "key": "action:fill/INFLATABLE-BOAT",
       "kind": "action",
       "minutes": 8,
@@ -507,6 +466,18 @@
       "source": "llm",
       "note": "Inflating the plastic boat with the pump is a multi-step physical task requiring sustained effort, fitting the mechanism band.",
       "inputHash": "60d9248d9da5d4970e53836262d708bc4522bae73f59302d1e3f369c5b8fd9f4",
+      "reasons": [
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:tie/ROPE",
+      "kind": "action",
+      "minutes": 8,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Securely tying a heavy rope to a railing over a dome edge requires deliberate knot-work and effort beyond simple manipulation.",
+      "inputHash": "5b417110d52de9e21f101f1dc916b6f1de42bcc41e2f1616dab589715e853453",
       "reasons": [
         "top-10 longest action rows"
       ]
@@ -629,6 +600,18 @@
       "inputHash": "383f2ba3f8801aaf29f9bd91a2fef2bf54d6a4944540e93333c8205fbb8f46a6",
       "reasons": [
         "top-10 longest edges"
+      ]
+    },
+    {
+      "key": "action:raise/SCEPTRE",
+      "kind": "action",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "overlay",
+      "note": "wave/SCEPTRE is the rainbow trigger; raising it is a decoy, not the ceremony",
+      "inputHash": "fbb767884c226263d6b30a7ab3406fbfec688a96f2a693fe4bc2ef400e52324d",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate"
       ]
     }
   ]

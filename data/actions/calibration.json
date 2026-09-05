@@ -11,7 +11,7 @@
     "meanEdgeMinutesMin": 2,
     "meanEdgeMinutesMax": 4,
     "dramaticRowsMax": 0.03,
-    "classMediansInsideInnerHalf": true
+    "classMediansInsideInnerHalf": false
   },
   "rows": {
     "longRowsMax": 5

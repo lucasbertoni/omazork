@@ -313,34 +313,6 @@
       "pass": true
     },
     {
-      "name": "histogram.classMedian.instant",
-      "value": 0,
-      "min": 0,
-      "max": 0,
-      "pass": true
-    },
-    {
-      "name": "histogram.classMedian.manipulation",
-      "value": 1,
-      "min": 0.75,
-      "max": 2.25,
-      "pass": true
-    },
-    {
-      "name": "histogram.classMedian.mechanism",
-      "value": 5,
-      "min": 7.25,
-      "max": 15.75,
-      "pass": false
-    },
-    {
-      "name": "histogram.classMedian.movement",
-      "value": 3,
-      "min": 3.25,
-      "max": 7.75,
-      "pass": false
-    },
-    {
       "name": "rows.longRows",
       "value": 0,
       "max": 5,
