@@ -5,8 +5,8 @@
     "script": "internal/actions/testdata/zork2-walkthrough.txt",
     "seed": 1,
     "turns": 315,
-    "cumulativeMinutes": 914,
-    "cumulativeHours": 15.233,
+    "cumulativeMinutes": 874,
+    "cumulativeHours": 14.567,
     "medianMovementMinutes": 3,
     "turnsUnderQuiet": 0.93,
     "byKind": {
@@ -16,7 +16,7 @@
       },
       "action": {
         "turns": 163,
-        "minutes": 522
+        "minutes": 482
       },
       "combat": {
         "turns": 6,
@@ -33,8 +33,8 @@
     },
     "bySlot": {
       "action": {
-        "turns": 57,
-        "minutes": 393
+        "turns": 55,
+        "minutes": 333
       },
       "drift": {
         "turns": 6,
@@ -51,6 +51,10 @@
       "hard": {
         "turns": 18,
         "minutes": 0
+      },
+      "overlay": {
+        "turns": 2,
+        "minutes": 20
       },
       "verbDefault": {
         "turns": 88,
@@ -83,27 +87,15 @@
         "count": 13
       },
       {
+        "minutes": 10,
+        "count": 2
+      },
+      {
         "minutes": 30,
-        "count": 9
+        "count": 7
       }
     ],
     "longestTurns": [
-      {
-        "turn": 42,
-        "input": "eat green cake",
-        "kind": "action",
-        "minutes": 30,
-        "slot": "action",
-        "key": "action:eat/BLUE-ICING"
-      },
-      {
-        "turn": 47,
-        "input": "eat blue cake",
-        "kind": "action",
-        "minutes": 30,
-        "slot": "action",
-        "key": "action:eat/BLUE-ICING"
-      },
       {
         "turn": 55,
         "input": "take sphere",
@@ -161,6 +153,22 @@
         "key": "action:take/PALANTIR-1"
       },
       {
+        "turn": 42,
+        "input": "eat green cake",
+        "kind": "action",
+        "minutes": 10,
+        "slot": "overlay",
+        "key": "action:eat/BLUE-ICING"
+      },
+      {
+        "turn": 47,
+        "input": "eat blue cake",
+        "kind": "action",
+        "minutes": 10,
+        "slot": "overlay",
+        "key": "action:eat/BLUE-ICING"
+      },
+      {
         "turn": 83,
         "input": "up",
         "kind": "movement",
@@ -196,20 +204,20 @@
     },
     "actions": {
       "rows": 288,
-      "mean": 2.924,
+      "mean": 2.014,
       "median": 1,
       "bins": [
         {
           "minutes": 0,
-          "count": 48
+          "count": 50
         },
         {
           "minutes": 1,
-          "count": 148
+          "count": 150
         },
         {
           "minutes": 2,
-          "count": 39
+          "count": 42
         },
         {
           "minutes": 3,
@@ -228,6 +236,10 @@
           "count": 2
         },
         {
+          "minutes": 10,
+          "count": 3
+        },
+        {
           "minutes": 12,
           "count": 1
         },
@@ -237,13 +249,13 @@
         },
         {
           "minutes": 30,
-          "count": 14
+          "count": 4
         }
       ]
     },
     "classes": {
       "dramatic": {
-        "rows": 14,
+        "rows": 4,
         "median": 30,
         "bandLow": 30,
         "bandHigh": 180,
@@ -259,7 +271,7 @@
         "innerHigh": 0
       },
       "manipulation": {
-        "rows": 199,
+        "rows": 206,
         "median": 1,
         "bandLow": 0,
         "bandHigh": 3,
@@ -267,7 +279,7 @@
         "innerHigh": 2.25
       },
       "mechanism": {
-        "rows": 35,
+        "rows": 38,
         "median": 5,
         "bandLow": 3,
         "bandHigh": 20,
@@ -283,13 +295,13 @@
         "innerHigh": 7.75
       }
     },
-    "dramaticShare": 0.049,
+    "dramaticShare": 0.014,
     "longRows": []
   },
   "gates": [
     {
       "name": "replay.cumulativeHours",
-      "value": 15.233,
+      "value": 14.567,
       "min": 8,
       "max": 35,
       "pass": true
@@ -316,9 +328,9 @@
     },
     {
       "name": "histogram.dramaticShare",
-      "value": 0.049,
+      "value": 0.014,
       "max": 0.03,
-      "pass": false
+      "pass": true
     },
     {
       "name": "rows.longRows",
@@ -336,32 +348,6 @@
   },
   "curationCandidates": [
     {
-      "key": "action:burn/BRICK",
-      "kind": "action",
-      "minutes": 30,
-      "class": "dramatic",
-      "source": "llm",
-      "note": "llm nominated dramatic 30m — overlay candidate — Burning the brick triggers instant death, a fatal ceremony-level outcome the game treats as a climactic mistake.",
-      "inputHash": "a0655802aaeee5f6a44351e44443ff24d685ac250fc7d692104d82fe1f500bc0",
-      "reasons": [
-        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
-        "top-10 longest action rows"
-      ]
-    },
-    {
-      "key": "action:eat/BLUE-ICING",
-      "kind": "action",
-      "minutes": 30,
-      "class": "dramatic",
-      "source": "llm",
-      "note": "llm nominated dramatic 30m — overlay candidate — Eating the blue cake triggers a body-shrinking transformation sequence that relocates the player and alters the room state, a ceremonial plot event rather than routine manipulation.",
-      "inputHash": "cbecc44b059789b695642d1f3e8fcb7df29e6113ba48e43a003be6396074e515",
-      "reasons": [
-        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
-        "top-10 longest action rows"
-      ]
-    },
-    {
       "key": "action:eat/EAT-ME-CAKE",
       "kind": "action",
       "minutes": 30,
@@ -369,45 +355,6 @@
       "source": "llm",
       "note": "llm nominated dramatic 30m — overlay candidate — Eating the cake triggers a world-altering set-piece transformation (shrinking, teleporting the room's contents) that the game treats as a ceremonial turning point.",
       "inputHash": "da9ba0c5eb6d9c543d5fee96c2600343717126941c6a4e6d15e383350839f4f1",
-      "reasons": [
-        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
-        "top-10 longest action rows"
-      ]
-    },
-    {
-      "key": "action:eat/ORANGE-ICING",
-      "kind": "action",
-      "minutes": 30,
-      "class": "dramatic",
-      "source": "llm",
-      "note": "llm nominated dramatic 30m — overlay candidate — Eating the orange-frosted cake triggers ICEBOOM, a fatal set-piece explosion ending the game, which is a ceremonial climactic moment.",
-      "inputHash": "200138adec4c9148875b6480d25919e12ba6ec9215d63415b9085c41bb98dac2",
-      "reasons": [
-        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
-        "top-10 longest action rows"
-      ]
-    },
-    {
-      "key": "action:eat/RED-ICING",
-      "kind": "action",
-      "minutes": 30,
-      "class": "dramatic",
-      "source": "llm",
-      "note": "llm nominated dramatic 30m — overlay candidate — Eating the red cake is an irreversible fatal action that kills the player, a narrative set-piece rather than routine manipulation.",
-      "inputHash": "5bdc3eff4fc3707d439545218e893eccca62b0b188603d8839d2d3d80b608969",
-      "reasons": [
-        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
-        "top-10 longest action rows"
-      ]
-    },
-    {
-      "key": "action:jump/CHASM",
-      "kind": "action",
-      "minutes": 30,
-      "class": "dramatic",
-      "source": "llm",
-      "note": "llm nominated dramatic 30m — overlay candidate — Leaping into a chasm is a fatal, irreversible gamble the game treats as a life-or-death ceremony, not a routine action.",
-      "inputHash": "bf73acd167f372112ab564ceafc6f1637504c79191974bc2331f7537c65b1f3f",
       "reasons": [
         "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
         "top-10 longest action rows"
@@ -427,19 +374,6 @@
       ]
     },
     {
-      "key": "action:kick/HEADS",
-      "kind": "action",
-      "minutes": 30,
-      "class": "dramatic",
-      "source": "llm",
-      "note": "llm nominated dramatic 30m — overlay candidate — Kicking the cursed poled heads triggers fatal punishment, a ceremonial death-trap moment the game treats as significant.",
-      "inputHash": "8f87693545d08a89c3c938fa1493b193fb885c29ec4991d69e1e8e9bc1b019ed",
-      "reasons": [
-        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
-        "top-10 longest action rows"
-      ]
-    },
-    {
       "key": "action:make/WISH",
       "kind": "action",
       "minutes": 30,
@@ -453,12 +387,62 @@
       ]
     },
     {
-      "key": "action:move/PALANTIR-1",
+      "key": "action:take/PALANTIR-1",
       "kind": "action",
       "minutes": 30,
       "class": "dramatic",
       "source": "llm",
-      "note": "llm nominated dramatic 30m — overlay candidate — Reaching for the sphere triggers an irreversible cage-trap/poison-gas ceremony that redefines the game state, a genuine set-piece moment.",
+      "note": "llm nominated dramatic 30m — overlay candidate — This is a fatal trap trigger with a ceremonial, story-critical outcome (cage/gas/robot death), not a routine pickup.",
+      "inputHash": "45ff39ef632a82dc6ad3de6d36d80a4244550a811f76ab2f13982eddd7891390",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:enchant/MENHIR",
+      "kind": "action",
+      "minutes": 15,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Casting a levitation spell on an eight-foot stone slab to raise it and reveal a passage is a deliberate magical mechanism trigger, not a simple manipulation.",
+      "inputHash": "28eeb1a62b65070a184e22f8b910546ff7a449620caefbb66782eb5788056da6",
+      "reasons": [
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:enchant/CERBERUS",
+      "kind": "action",
+      "minutes": 12,
+      "class": "mechanism",
+      "source": "llm",
+      "note": "Casting a specific spell on a guarding creature requires careful preparation and precise incantation, though it's a single magical act rather than a full ceremony.",
+      "inputHash": "c7a0a82939227b88bb4f654a0a24c4709d60d34ab41515a0cbda84e3a16288c9",
+      "reasons": [
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:eat/BLUE-ICING",
+      "kind": "action",
+      "minutes": 10,
+      "class": "mechanism",
+      "source": "overlay",
+      "note": "same shrinking sequence as eat/EAT-ME-CAKE, which keeps the Dramatic nomination",
+      "inputHash": "cbecc44b059789b695642d1f3e8fcb7df29e6113ba48e43a003be6396074e515",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
+      ]
+    },
+    {
+      "key": "action:move/PALANTIR-1",
+      "kind": "action",
+      "minutes": 10,
+      "class": "mechanism",
+      "source": "overlay",
+      "note": "same cage trap as take/PALANTIR-1, which keeps the Dramatic nomination",
       "inputHash": "e2ab4ec7dc16c4d2fa5f4e638a6232c3cec025c6f7a8c6367075deed066e2ad7",
       "reasons": [
         "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
@@ -468,49 +452,26 @@
     {
       "key": "action:put/PALANTIR-1",
       "kind": "action",
-      "minutes": 30,
-      "class": "dramatic",
-      "source": "llm",
-      "note": "llm nominated dramatic 30m — overlay candidate — Reaching for the sphere triggers a fatal cage-and-gas trap sequence with lasting narrative consequences, a ceremonial turning point rather than routine manipulation.",
+      "minutes": 10,
+      "class": "mechanism",
+      "source": "overlay",
+      "note": "same cage trap as take/PALANTIR-1, which keeps the Dramatic nomination",
       "inputHash": "15c9d261d9a4e1e64f692c5636257fbecac543ac78f785d3bb3fe90b618e2786",
       "reasons": [
-        "dramatic nomination: llm nominated dramatic 30m — overlay candidate"
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate",
+        "top-10 longest action rows"
       ]
     },
     {
-      "key": "action:rape/GLOBAL-PRINCESS",
+      "key": "action:disenchant/MENHIR",
       "kind": "action",
-      "minutes": 30,
-      "class": "dramatic",
+      "minutes": 8,
+      "class": "mechanism",
       "source": "llm",
-      "note": "llm nominated dramatic 30m — overlay candidate — This is a fatal, irreversible set-piece action that instantly kills the player via the Wizard's lightning bolt, treated by the game as a climactic (if punitive) event rather than routine manipulation.",
-      "inputHash": "790dec90f9154b5a6b2732bee1dba20e408ac8e61fd5d4bbeecefaf1af14bf35",
+      "note": "Reversing a levitation spell on a massive stone requires focused magical effort akin to turning a great mechanism.",
+      "inputHash": "3785a20476abb719328031139b4c0df2d98ff1dbbb681c6a550b0fae21d6740a",
       "reasons": [
-        "dramatic nomination: llm nominated dramatic 30m — overlay candidate"
-      ]
-    },
-    {
-      "key": "action:rape/PRINCESS",
-      "kind": "action",
-      "minutes": 30,
-      "class": "dramatic",
-      "source": "llm",
-      "note": "llm nominated dramatic 30m — overlay candidate — This is a fatal, game-ending set-piece action triggering the Wizard's instant-death intervention.",
-      "inputHash": "22f057b28e0606af287b932795099c63578fa6ba6bdc0f101e9909a874a71a33",
-      "reasons": [
-        "dramatic nomination: llm nominated dramatic 30m — overlay candidate"
-      ]
-    },
-    {
-      "key": "action:take/PALANTIR-1",
-      "kind": "action",
-      "minutes": 30,
-      "class": "dramatic",
-      "source": "llm",
-      "note": "llm nominated dramatic 30m — overlay candidate — This is a fatal trap trigger with a ceremonial, story-critical outcome (cage/gas/robot death), not a routine pickup.",
-      "inputHash": "45ff39ef632a82dc6ad3de6d36d80a4244550a811f76ab2f13982eddd7891390",
-      "reasons": [
-        "dramatic nomination: llm nominated dramatic 30m — overlay candidate"
+        "top-10 longest action rows"
       ]
     },
     {
@@ -631,6 +592,90 @@
       "inputHash": "432b653b624725e65b3e4eb099c38fe4826740bb8854410d6f6b3c753202ddc3",
       "reasons": [
         "top-10 longest edges"
+      ]
+    },
+    {
+      "key": "action:burn/BRICK",
+      "kind": "action",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "overlay",
+      "note": "instant death is not a ceremony; the recap carries the drama",
+      "inputHash": "a0655802aaeee5f6a44351e44443ff24d685ac250fc7d692104d82fe1f500bc0",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate"
+      ]
+    },
+    {
+      "key": "action:eat/ORANGE-ICING",
+      "kind": "action",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "overlay",
+      "note": "instant death is not a ceremony; the recap carries the drama",
+      "inputHash": "200138adec4c9148875b6480d25919e12ba6ec9215d63415b9085c41bb98dac2",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate"
+      ]
+    },
+    {
+      "key": "action:eat/RED-ICING",
+      "kind": "action",
+      "minutes": 2,
+      "class": "manipulation",
+      "source": "overlay",
+      "note": "instant death is not a ceremony; the recap carries the drama",
+      "inputHash": "5bdc3eff4fc3707d439545218e893eccca62b0b188603d8839d2d3d80b608969",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate"
+      ]
+    },
+    {
+      "key": "action:jump/CHASM",
+      "kind": "action",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "overlay",
+      "note": "instant death is not a ceremony; the recap carries the drama",
+      "inputHash": "bf73acd167f372112ab564ceafc6f1637504c79191974bc2331f7537c65b1f3f",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate"
+      ]
+    },
+    {
+      "key": "action:kick/HEADS",
+      "kind": "action",
+      "minutes": 1,
+      "class": "manipulation",
+      "source": "overlay",
+      "note": "instant death is not a ceremony; the recap carries the drama",
+      "inputHash": "8f87693545d08a89c3c938fa1493b193fb885c29ec4991d69e1e8e9bc1b019ed",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate"
+      ]
+    },
+    {
+      "key": "action:rape/GLOBAL-PRINCESS",
+      "kind": "action",
+      "minutes": 0,
+      "class": "manipulation",
+      "source": "overlay",
+      "note": "the Wizard's lightning is instant; nothing here deserves a wait",
+      "inputHash": "790dec90f9154b5a6b2732bee1dba20e408ac8e61fd5d4bbeecefaf1af14bf35",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate"
+      ]
+    },
+    {
+      "key": "action:rape/PRINCESS",
+      "kind": "action",
+      "minutes": 0,
+      "class": "manipulation",
+      "source": "overlay",
+      "note": "the Wizard's lightning is instant; nothing here deserves a wait",
+      "inputHash": "22f057b28e0606af287b932795099c63578fa6ba6bdc0f101e9909a874a71a33",
+      "reasons": [
+        "dramatic nomination: llm nominated dramatic 30m — overlay candidate"
       ]
     }
   ]
