@@ -5,8 +5,8 @@
     "script": "internal/actions/testdata/zork3-walkthrough.txt",
     "seed": 11,
     "turns": 264,
-    "cumulativeSeconds": 33840,
-    "cumulativeHours": 9.4,
+    "cumulativeSeconds": 32030,
+    "cumulativeHours": 8.897,
     "medianMovementSeconds": 180,
     "turnsUnderQuiet": 0.86,
     "byKind": {
@@ -16,7 +16,7 @@
       },
       "action": {
         "turns": 90,
-        "seconds": 18420
+        "seconds": 16610
       },
       "combat": {
         "turns": 10,
@@ -54,25 +54,33 @@
       },
       "verbDefault": {
         "turns": 25,
-        "seconds": 2040
+        "seconds": 230
       }
     },
     "waits": [
       {
         "seconds": 0,
-        "count": 81
+        "count": 96
+      },
+      {
+        "seconds": 10,
+        "count": 5
+      },
+      {
+        "seconds": 20,
+        "count": 3
       },
       {
         "seconds": 60,
-        "count": 45
+        "count": 29
       },
       {
         "seconds": 120,
-        "count": 28
+        "count": 23
       },
       {
         "seconds": 180,
-        "count": 64
+        "count": 62
       },
       {
         "seconds": 240,
@@ -281,7 +289,7 @@
   "gates": [
     {
       "name": "replay.cumulativeHours",
-      "value": 9.4,
+      "value": 8.897,
       "min": 8,
       "max": 35,
       "pass": true

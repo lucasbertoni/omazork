@@ -5,10 +5,10 @@
     "script": "internal/actions/testdata/zork1-walkthrough.txt",
     "seed": 12,
     "turns": 361,
-    "cumulativeSeconds": 50820,
-    "cumulativeHours": 14.117,
+    "cumulativeSeconds": 44230,
+    "cumulativeHours": 12.286,
     "medianMovementSeconds": 180,
-    "turnsUnderQuiet": 0.906,
+    "turnsUnderQuiet": 0.909,
     "byKind": {
       "aborted": {
         "turns": 2,
@@ -16,7 +16,7 @@
       },
       "action": {
         "turns": 142,
-        "seconds": 14340
+        "seconds": 7750
       },
       "combat": {
         "turns": 11,
@@ -58,17 +58,29 @@
       },
       "verbDefault": {
         "turns": 101,
-        "seconds": 6840
+        "seconds": 250
       }
     },
     "waits": [
       {
         "seconds": 0,
-        "count": 22
+        "count": 116
+      },
+      {
+        "seconds": 10,
+        "count": 3
+      },
+      {
+        "seconds": 20,
+        "count": 1
       },
       {
         "seconds": 60,
-        "count": 119
+        "count": 24
+      },
+      {
+        "seconds": 80,
+        "count": 1
       },
       {
         "seconds": 120,
@@ -76,7 +88,7 @@
       },
       {
         "seconds": 180,
-        "count": 91
+        "count": 88
       },
       {
         "seconds": 240,
@@ -95,10 +107,6 @@
         "count": 3
       },
       {
-        "seconds": 480,
-        "count": 1
-      },
-      {
         "seconds": 1800,
         "count": 1
       }
@@ -111,14 +119,6 @@
         "seconds": 1800,
         "slot": "action",
         "key": "action:wave/SCEPTRE"
-      },
-      {
-        "turn": 178,
-        "input": "inflate boat with pump",
-        "kind": "action",
-        "seconds": 480,
-        "slot": "verbDefault",
-        "key": "verbDefault:inflate"
       },
       {
         "turn": 124,
@@ -183,6 +183,14 @@
         "seconds": 360,
         "slot": "drift",
         "key": "edge:RIVER-3\u003eRIVER-4"
+      },
+      {
+        "turn": 186,
+        "input": "east",
+        "kind": "movement",
+        "seconds": 360,
+        "slot": "edge",
+        "key": "edge:RIVER-4\u003eSANDY-BEACH"
       }
     ]
   },
@@ -309,7 +317,7 @@
   "gates": [
     {
       "name": "replay.cumulativeHours",
-      "value": 14.117,
+      "value": 12.286,
       "min": 8,
       "max": 35,
       "pass": true
@@ -323,7 +331,7 @@
     },
     {
       "name": "replay.turnsUnderQuiet",
-      "value": 0.906,
+      "value": 0.909,
       "min": 0.6,
       "pass": true
     },
