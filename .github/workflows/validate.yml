@@ -1,0 +1,51 @@
+name: validate
+
+# Machine-check every duration-data change before merge (docs/action-waits.md
+# §7). scripts/validate.sh runs `actiongen -check`, which performs all four
+# checks in one pass, per game:
+#   1. validator — schemaVersion exact-match, orphaned overlay/ack keys,
+#      band/cap rules, `reason` required at ≥60 min
+#   2. calibration gates (§6) on the layered result (base + overlay + verbs)
+#   3. offline regen-and-diff drift check — regenerate from data/extract/ plus
+#      the committed <game>.llm.json; fail if any row would need an API call
+#      or the output differs from the committed table
+#   4. calibration freshness — committed <game>.calibration.json must match
+#      the recomputed layered profile
+# The check never reaches a model, so no API key is configured here.
+
+on:
+  pull_request:
+    paths:
+      - "data/**"
+      - "cmd/actiongen/**"
+      - "internal/actions/**"
+      - "internal/durations/**"
+      - "internal/extract/**"
+      - "scripts/validate.sh"
+      - ".github/workflows/validate.yml"
+  push:
+    branches: [master]
+    paths:
+      - "data/**"
+      - "cmd/actiongen/**"
+      - "internal/actions/**"
+      - "internal/durations/**"
+      - "internal/extract/**"
+      - "scripts/validate.sh"
+      - ".github/workflows/validate.yml"
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-go@v5
+        with:
+          go-version-file: go.mod
+
+      - name: Validate duration data
+        run: scripts/validate.sh

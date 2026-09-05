@@ -19,7 +19,7 @@ The action-wait data the casual-mode mediation layer prices turns from, per
 go run ./cmd/actiongen            # rewrite all three tables from data/extract/ + the committed cache
 go run ./cmd/actiongen -llm       # infer the rows the cache is missing or stale on, then rewrite
 go run ./cmd/actiongen -llm -batch 100   # same, but at most 100 rows per game this sitting
-scripts/validate.sh               # what CI runs: regen-and-diff, then validate
+scripts/validate.sh               # what CI (.github/workflows/validate.yml) runs on any data/** change
 ```
 
 Generation is deterministic: the table is a pure function of
