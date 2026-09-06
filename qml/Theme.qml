@@ -57,6 +57,28 @@ QtObject {
                        a.b + (b.b - a.b) * t, 1)
     }
 
+    // Legibility floor. A theme's `muted` is tuned for its own chrome, and
+    // on most omarchy themes it sits at 1.5–3:1 against the background —
+    // fine for a bar icon, unreadable for 10px console copy — and mixing it
+    // further toward the background sank the journal's hints below 2:1.
+    // lift() walks a color toward fgExtreme until it clears `min` (WCAG
+    // contrast ratio) against the surface it is drawn on. Floors are set so
+    // the hierarchy survives: dim < text < bright.
+    function luminance(c) {
+        function ch(v) { return v <= 0.03928 ? v / 12.92 : Math.pow((v + 0.055) / 1.055, 2.4) }
+        return 0.2126 * ch(c.r) + 0.7152 * ch(c.g) + 0.0722 * ch(c.b)
+    }
+    function contrast(a, b) {
+        var la = luminance(a), lb = luminance(b)
+        return (Math.max(la, lb) + 0.05) / (Math.min(la, lb) + 0.05)
+    }
+    function lift(c, on, min) {
+        var out = c
+        for (var t = 0; t < 1 && contrast(out, on) < min; t += 0.05)
+            out = mix(c, fgExtreme, t)
+        return out
+    }
+
     readonly property color drawerTop: adopted ? adopted.background : "#0b120c"
     readonly property color drawerBottom: adopted ? mix(adopted.background, bgExtreme, 0.12) : "#0a0f0a"
     readonly property color borderDim: adopted ? mix(adopted.background, adopted.foreground, 0.15) : "#1e3320"
@@ -66,13 +88,14 @@ QtObject {
 
     readonly property color text: adopted ? adopted.foreground : "#9fdf9f"
     readonly property color textBright: adopted ? mix(adopted.foreground, fgExtreme, 0.35) : "#cdeccd"
-    readonly property color textDim: adopted ? adopted.muted : "#5f8f62"
+    // textDim is drawn on both surfaces; drawerTop is the stricter one.
+    readonly property color textDim: lift(adopted ? adopted.muted : Qt.color("#5f8f62"), drawerTop, 4.5)
 
     readonly property color journalBg: adopted ? mix(adopted.background, bgExtreme, 0.35) : "#070c08"
-    readonly property color journalText: adopted ? mix(adopted.foreground, adopted.background, 0.22) : "#82b085"
+    readonly property color journalText: lift(adopted ? mix(adopted.foreground, adopted.background, 0.22) : Qt.color("#82b085"), journalBg, 4.5)
     readonly property color journalRule: adopted ? mix(adopted.background, adopted.foreground, 0.10) : "#142418"
-    readonly property color checkpointText: adopted ? mix(adopted.muted, adopted.foreground, 0.25) : "#6f9a72"
-    readonly property color checkpointTs: adopted ? mix(adopted.muted, adopted.background, 0.35) : "#4a6b4a"
+    readonly property color checkpointText: lift(adopted ? mix(textDim, adopted.foreground, 0.25) : Qt.color("#6f9a72"), journalBg, 4.5)
+    readonly property color checkpointTs: lift(adopted ? mix(textDim, adopted.background, 0.35) : Qt.color("#4a6b4a"), journalBg, 3.5)
 
     readonly property color amber: adopted ? adopted.accent : "#e8b04a"
     readonly property color amberBorder: adopted ? mix(adopted.accent, adopted.background, 0.45) : "#7a6a30"
