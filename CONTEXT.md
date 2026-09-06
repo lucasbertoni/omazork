@@ -16,6 +16,7 @@ Glossary of canonical terms. Keep implementation details out.
 - **Wait tier**: the presentation register of an action wait, keyed on its resolved length. *Quiet* waits pass with minimal ceremony and never notify; *full* waits get the dramatic treatment.
 - **Wait narration**: the player-facing, spoiler-free phrasing of an in-flight action wait, built from the player's own command ("climbing the tree", "heading north"). Names what the player is doing, never the outcome, the destination, or how the wait was priced. Distinct from the wait tier, which is only the register.
 - **Drift edge**: a directed room-to-room passage traversed by current or vehicle rather than a walk command (the Frigid River, the balloon). Timed as movement even though the player didn't type a direction.
+- **Blocked input**: the Console state while a pending outcome is unmatured, in either wait tier. Game input is unavailable — there is nothing to type into — and only Console shortcuts (menu, close) respond. Ends at maturation, when the input returns.
 - **Maturation**: the moment a pending outcome's action wait elapses and it becomes revealable. Revealed on the next Console open.
 - **Recap**: the "While you were away…" block shown when a matured full-tier outcome reveals: last command, the outcome, current room and score. Quiet-tier outcomes reveal plainly, without the recap frame.
 - **Casual mode**: per-save mode where the mediation layer is active. **Classic mode**: per-save mode that bypasses it entirely; pure Zork.

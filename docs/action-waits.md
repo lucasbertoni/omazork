@@ -332,7 +332,7 @@ dramatic register). The same line gates the desktop notification — quiet waits
 never notify.
 
 **Duration reveal**: the transcript stays diegetic — no numbers, ever. Out-of-game
-surfaces (console banner, journal card, bar tooltip) show remaining minutes under
+surfaces (console wait row, journal card, bar tooltip) show remaining minutes under
 an hour ("~4 min") and absolute clock time at an hour or more ("matures at
 5:12 PM").
 
@@ -352,7 +352,7 @@ destination room, never the pricing class — nothing the player did not type.
 |---|---|---|
 | Withheld response | "You begin {narration}..." | same |
 | Transcript marker | `[Time passes...]` | `[Something is unfolding...]` |
-| Blocked input | "You are still {narration}..." | same |
+| `blocked` reply (wrapper, to game input sent mid-wait) | "You are still {narration}..." | same |
 | Reveal | Plain reveal: command echo + output (+ score-delta / achievement lines), **no header** | "— While you were away… —" recap unchanged |
 | Desktop notification | none | "Something has happened in the Great Underground Empire." |
 
@@ -360,16 +360,21 @@ Pending outcomes saved before narration existed keep the generic tiered lines
 ("Time is still passing..." / "The outcome of your last action is still
 unfolding...").
 
-**Progress bar**: the out-of-game surfaces (console banner, journal card, picker
+**Progress bar**: the out-of-game surfaces (console wait row, journal card, picker
 row) draw a thin bar of the wait's elapsed share, ticking once a second, both
 tiers, staying full once matured until the reveal. The transcript never shows it.
 The picker draws the bar without narration (spoiler-free summary). A pending
 outcome without `startedAt` shows no bar.
 
-Banner "⏳ climbing the tree — ~2 min" (quiet) /
-"⏳ climbing the tree — resolves at 5:12 PM. No peeking."
-(full); journal card "⏳ climbing the tree / ~2 min"; input placeholder "time is
-passing — MENU still works". Matured variants unchanged.
+**Blocked input** (CONTEXT.md): while the wait is unmatured the Console has no
+input row at all and so never sends game input mid-wait — the wrapper's `blocked`
+reply above still serves save/restore and non-Console clients. The wait row takes
+the input row's place: "⏳ climbing the tree — ~2 min"
+(quiet) / "⏳ climbing the tree — resolves at 5:12 PM. No peeking." (full), over
+the progress bar. Only the Console shortcuts respond — `M` returns to the picker,
+`Esc` closes — and the journal's hint block lists just those two. Journal card
+"⏳ climbing the tree / ~2 min". At maturation the input row returns and the
+"matured — your next command reveals it" banner shows above it, unchanged.
 
 **Bar icon**: gains an in-flight state, both tiers — dim/hollow dot while a wait is
 unfolding, accent dot when matured (existing). Matured-dot semantics, click action,

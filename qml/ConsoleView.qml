@@ -8,12 +8,26 @@ FocusScope {
     required property var app
     required property var theme
 
-    function focusInput() { cmdInput.forceActiveFocus() }
+    // Blocked input (CONTEXT.md): while a pending outcome is unmatured the
+    // input row gives way to the wait row and the view itself holds focus so
+    // the single-key shortcuts (M menu, Esc close) work. The wrapper's
+    // blocked rule is unchanged; this side just stops inviting the typing.
+    function focusInput() {
+        if (!view.visible) return // never steal focus from the picker
+        if (view.pendingUnmatured) view.forceActiveFocus()
+        else cmdInput.forceActiveFocus()
+    }
 
-    readonly property bool pendingUnmatured:
-        view.app.pending !== null && view.app.pendingMinutes > 0
+    readonly property bool pendingUnmatured: view.app.pendingUnmatured
+    readonly property bool pendingMatured: view.app.pendingMatured
+
+    onPendingUnmaturedChanged: Qt.callLater(view.focusInput)
 
     Keys.onEscapePressed: view.app.requestClose()
+    Keys.onPressed: event => {
+        if (!view.pendingUnmatured) return
+        if (event.key === Qt.Key_M) { view.app.toPicker(); event.accepted = true }
+    }
 
     Row {
         anchors.fill: parent
@@ -50,7 +64,7 @@ FocusScope {
             ListView {
                 id: transcriptList
                 width: parent.width
-                height: parent.height - 34 - pendingBanner.height - inputRow.height
+                height: parent.height - 34 - maturedBanner.height - bottomRow.height
                 clip: true
                 spacing: 9
                 topMargin: 14
@@ -79,28 +93,54 @@ FocusScope {
             }
 
             Rectangle {
-                id: pendingBanner
-                visible: view.app.pending !== null
+                id: maturedBanner
+                visible: view.pendingMatured
                 width: parent.width - 44
                 anchors.horizontalCenter: parent.horizontalCenter
-                height: visible ? bannerColumn.implicitHeight + 18 : 0
+                height: visible ? maturedText.implicitHeight + 18 : 0
                 color: "transparent"
                 border.color: view.theme.amberBorder
                 border.width: 1
 
-                // Wait narration + remaining time, over the progress bar (#43).
-                // The narration is the wrapper's; this side only frames it.
-                Column {
-                    id: bannerColumn
+                Text {
+                    id: maturedText
                     anchors { fill: parent; margins: 9; leftMargin: 14; rightMargin: 14 }
+                    text: "⏳ The outcome has matured — your next command reveals it."
+                    color: view.theme.amber
+                    wrapMode: Text.Wrap
+                    font { family: view.theme.mono; pixelSize: 12 }
+                }
+            }
+
+            // Bottom row: the wait row during blocked input, the input row
+            // otherwise. Only one is ever visible.
+            Item {
+                id: bottomRow
+                width: parent.width
+                height: view.pendingUnmatured ? waitRow.implicitHeight + 20 : 42
+
+                Rectangle {
+                    anchors.top: parent.top
+                    width: parent.width; height: 1
+                    color: view.theme.borderDim
+                }
+
+                // Wait row (#43 narration + progress bar): what the player is
+                // doing and how long it has left. The narration is the
+                // wrapper's; this side only frames it.
+                Column {
+                    id: waitRow
+                    visible: view.pendingUnmatured
+                    anchors {
+                        left: parent.left; right: parent.right
+                        leftMargin: 22; rightMargin: 22
+                        verticalCenter: parent.verticalCenter
+                    }
                     spacing: 7
 
                     Text {
-                        id: bannerText
                         width: parent.width
-                        text: !view.pendingUnmatured
-                            ? "⏳ The outcome has matured — your next command reveals it."
-                            : view.app.pendingQuiet
+                        text: view.app.pendingQuiet
                             ? "⏳ " + view.app.pendingNarration + " — " + view.app.pendingWhen
                             : "⏳ " + view.app.pendingNarration + " — resolves "
                               + (view.app.pendingHourPlus ? "at " : "in ") + view.app.pendingWhen
@@ -115,26 +155,15 @@ FocusScope {
                         progress: view.app.pendingProgress
                     }
                 }
-            }
 
-            Item {
-                id: inputRow
-                width: parent.width
-                height: 42
-
-                Rectangle {
-                    anchors.top: parent.top
-                    width: parent.width; height: 1
-                    color: view.theme.borderDim
-                }
                 Row {
+                    visible: !view.pendingUnmatured
                     anchors {
                         fill: parent
                         leftMargin: 22; rightMargin: 22
                         topMargin: 10; bottomMargin: 10
                     }
                     spacing: 8
-                    opacity: view.pendingUnmatured ? 0.45 : 1
 
                     Text {
                         text: ">"
@@ -146,23 +175,15 @@ FocusScope {
                         id: cmdInput
                         width: parent.width - 20
                         anchors.verticalCenter: parent.verticalCenter
-                        focus: true
+                        // Hidden items keep scope focus, so release it while
+                        // blocked or the M shortcut never reaches the view.
+                        focus: !view.pendingUnmatured
                         color: view.theme.text
                         selectionColor: view.theme.borderMid
                         font { family: view.theme.mono; pixelSize: 14 }
                         onAccepted: {
                             view.app.submit(text)
                             text = ""
-                        }
-
-                        Text {
-                            anchors.fill: parent
-                            visible: cmdInput.text === ""
-                            text: !view.pendingUnmatured ? ""
-                                : view.app.pendingQuiet ? "time is passing — MENU still works"
-                                : "an outcome is unfolding — MENU still works"
-                            color: view.theme.textDim
-                            font: cmdInput.font
                         }
                     }
                 }

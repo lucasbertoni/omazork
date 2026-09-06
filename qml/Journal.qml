@@ -86,13 +86,13 @@ Rectangle {
                     Text {
                         id: pendText
                         width: parent.width
-                        text: journal.app.pendingMinutes <= 0
+                        text: journal.app.pendingMatured
                             ? "⏳ Outcome matured\nyour next command\nreveals it"
                             : journal.app.pendingQuiet
                             ? "⏳ " + journal.app.pendingNarration + "\n" + journal.app.pendingWhen
                             : "⏳ " + journal.app.pendingNarration + "\nmatures "
                               + (journal.app.pendingHourPlus ? "at " : "in ") + journal.app.pendingWhen
-                              + "\ninput paused · saves wait"
+                              + "\ninput blocked · saves wait"
                         color: journal.theme.amber
                         wrapMode: Text.Wrap
                         lineHeight: 1.3
@@ -148,9 +148,13 @@ Rectangle {
                 }
             }
 
+            // Shortcut hints: during blocked input only the Console shortcuts
+            // respond, so only those are listed.
             Text {
                 width: parent.width
-                text: "RESTORE lists checkpoints\nMENU returns to the picker\nEsc closes the console"
+                text: journal.app.pendingUnmatured
+                    ? "M returns to the picker\nEsc closes the console"
+                    : "RESTORE lists checkpoints\nMENU returns to the picker\nEsc closes the console"
                 color: journal.theme.checkpointTs
                 lineHeight: 1.4
                 font { family: journal.theme.mono; pixelSize: 10 }

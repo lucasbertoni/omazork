@@ -148,6 +148,10 @@ Item {
     property real pendingProgress: -1
     onPendingChanged: updatePendingMinutes()
     // formatted by the service (§8 rule); the transcript never sees either
+    // Blocked input (CONTEXT.md): a pending outcome that has not matured yet.
+    // The one predicate every surface reads, so they can never disagree.
+    readonly property bool pendingUnmatured: root.pending !== null && root.pendingMinutes > 0
+    readonly property bool pendingMatured: root.pending !== null && !root.pendingUnmatured
     readonly property bool pendingHourPlus: root.pending !== null
         && root.svc.pendingHourPlus(root.pendingMinutes)
     readonly property string pendingWhen: root.pending === null ? ""
