@@ -5,7 +5,7 @@ phosphor console that slides down over whatever you're doing, running the
 authentic Infocom story files through an embedded Z-machine. No external
 dependencies — one static Go binary the plugin bootstraps itself.
 
-![The omazork console open over the desktop, listing Zork I, II, and III](preview.png)
+![The omazork console open over the desktop, listing Zork I, II, and III](preview.webp)
 
 Two ways to play, chosen per playthrough:
 
