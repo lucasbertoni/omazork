@@ -4,6 +4,7 @@
   "name": "Omazork",
   "version": "0.1.0",
   "author": "Lucas Bertoni",
+  "license": "MIT",
   "description": "Zork I/II/III console overlay with casual-mode pacing",
   "kinds": ["overlay", "bar-widget", "service"],
   "keepLoaded": true,

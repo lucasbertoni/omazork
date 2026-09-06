@@ -78,14 +78,50 @@ which only knows entries in `bar.layout` — with no bar icon placed the height
 lasts for the session only. A hand-edited value applies live; out-of-range
 values clamp, non-numbers fall back to 25.
 
-On first launch the overlay bootstraps the engine binary into `bin/`: it
-downloads the checksum-pinned static build for your architecture
-(x86_64/aarch64) from the GitHub Release, falling back to `go build` if a Go
-toolchain is installed. While this repository is private, the anonymous
-download 404s — you need either an authenticated `gh` CLI or a Go toolchain.
+## Dependencies
+
+Nothing to install by hand. Everything the plugin runs is either in this
+repository or fetched from its own GitHub Releases:
+
+- **Engine binary** — on first launch the overlay bootstraps `bin/omazork`,
+  a static Go binary containing the Z-machine, from this repository's GitHub
+  Release for your architecture (x86_64/aarch64). The release tag and the
+  SHA-256 of each binary are pinned in `scripts/engine.version`; the download
+  is verified against that checksum before it is made executable, and a
+  mismatch is discarded. CI builds the binaries reproducibly from the tagged
+  commit and checks the same checksums.
+- **Go toolchain (optional)** — if the download fails (offline, or no
+  release yet) and `go` is on your PATH, the bootstrap builds the engine from
+  this checkout instead. Nothing is fetched from any other repository.
+- **`hyprctl`** — from Hyprland, already present on Omarchy, used to register
+  and drop the `Super+Z` keybinding at runtime.
+- **Game data** — the three `.z3` story files are bundled in `assets/games/`
+  (see Licensing below).
+
+No sudo or pkexec is required. The plugin writes only inside its own folder
+(`bin/`), its own state directory (see Uninstall), and its own entry in
+`~/.config/omarchy/shell.json` — via `omarchy bar set`, when you resize the
+console with `Ctrl+↑`/`Ctrl+↓` or set a key yourself. It never edits your
+Hyprland config: the keybinding lives in the running compositor only, and an
+existing user binding on the same key is left alone.
 
 Updates arrive through `omarchy plugin update omazork`; the bootstrap notices
 the new pinned checksum on the next launch and refetches.
+
+## Uninstall
+
+```sh
+omarchy plugin remove omazork
+```
+
+This disables the plugin (which drops the runtime `Super+Z` binding) and
+deletes the plugin folder, including the downloaded engine binary. Two things
+remain and are yours to delete:
+
+- **Saves, stats, and achievements** in `~/.local/state/omazork/`
+  (`$XDG_STATE_HOME/omazork` if set): `rm -rf ~/.local/state/omazork`.
+- **The menu entry**, if you added one, in
+  `~/.config/omarchy/extensions/omarchy-menu.jsonc`.
 
 ## Development
 
