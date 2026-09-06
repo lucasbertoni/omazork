@@ -1,5 +1,5 @@
 // Console height (CONTEXT.md): the share of the screen the Console occupies,
-// 20..100 percent, default 25, stepped in fives by Console shortcuts. The
+// 20..100 percent, default 35, stepped in fives by Console shortcuts. The
 // value is local state written through to this plugin's shell.json entry as
 // `"height"` (a preference, like theme), so it survives shell restarts and a
 // hand edit of the file applies live. Fullscreen is a bookmark: Ctrl+F jumps
@@ -18,7 +18,7 @@ QtObject {
 
     readonly property int minimum: 20
     readonly property int maximum: 100
-    readonly property int fallback: 25
+    readonly property int fallback: 35
     readonly property int step: 5
 
     property int percent: fallback

@@ -475,8 +475,8 @@ Item {
             Keys.onPressed: event => {
                 if (!(event.modifiers & Qt.ControlModifier)) return
                 switch (event.key) {
-                case Qt.Key_Up: consoleHeight.expand(); break
-                case Qt.Key_Down: consoleHeight.contract(); break
+                case Qt.Key_Down: consoleHeight.expand(); break
+                case Qt.Key_Up: consoleHeight.contract(); break
                 case Qt.Key_F: consoleHeight.toggleFullscreen(); break
                 default: return
                 }

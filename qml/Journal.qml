@@ -156,7 +156,7 @@ Rectangle {
                     ? "M returns to the picker\n"
                     : "RESTORE lists checkpoints\nMENU returns to the picker\n")
                     + "Esc closes the console\n"
-                    + "Ctrl+\u2191 / Ctrl+\u2193 resize the console\n"
+                    + "Ctrl+\u2193 grows, Ctrl+\u2191 shrinks the console\n"
                     + "Ctrl+F toggles fullscreen"
                 color: journal.theme.checkpointTs
                 lineHeight: 1.4
