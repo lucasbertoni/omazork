@@ -149,12 +149,15 @@ Rectangle {
             }
 
             // Shortcut hints: during blocked input only the Console shortcuts
-            // respond, so only those are listed.
+            // respond, so the typed commands are dropped from the list.
             Text {
                 width: parent.width
-                text: journal.app.pendingUnmatured
-                    ? "M returns to the picker\nEsc closes the console"
-                    : "RESTORE lists checkpoints\nMENU returns to the picker\nEsc closes the console"
+                text: (journal.app.pendingUnmatured
+                    ? "M returns to the picker\n"
+                    : "RESTORE lists checkpoints\nMENU returns to the picker\n")
+                    + "Esc closes the console\n"
+                    + "Ctrl+\u2191 / Ctrl+\u2193 resize the console\n"
+                    + "Ctrl+F toggles fullscreen"
                 color: journal.theme.checkpointTs
                 lineHeight: 1.4
                 font { family: journal.theme.mono; pixelSize: 10 }

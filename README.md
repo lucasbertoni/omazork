@@ -65,6 +65,15 @@ look instead, set it on the plugin's entry in `~/.config/omarchy/shell.json`:
 With the bar icon placed, the entry lives in `bar.layout` instead of
 `plugins`; set it there with `omarchy bar set omazork theme '"phosphor"'`.
 
+**Height** — the console opens at a quarter of the screen. `Ctrl+↑` and
+`Ctrl+↓` resize it in steps of 5% between 20% and 100%; `Ctrl+F` toggles
+fullscreen and returns to the height it left (or to 25% after a restart at
+fullscreen). The choice persists as
+`"height"` on the plugin's shell.json entry, written with `omarchy bar set`,
+which only knows entries in `bar.layout` — with no bar icon placed the height
+lasts for the session only. A hand-edited value applies live; out-of-range
+values clamp, non-numbers fall back to 25.
+
 On first launch the overlay bootstraps the engine binary into `bin/`: it
 downloads the checksum-pinned static build for your architecture
 (x86_64/aarch64) from the GitHub Release, falling back to `go build` if a Go

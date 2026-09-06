@@ -9,6 +9,8 @@ FocusScope {
     required property var theme
 
     Keys.onPressed: event => {
+        // Ctrl chords are Console shortcuts (height); let them bubble to Main
+        if ((event.modifiers & Qt.ControlModifier) && event.key !== Qt.Key_Escape) return
         if (event.key === Qt.Key_Escape) {
             if (view.app.pickerStage === "list") view.app.requestClose()
             else view.app.pickerStage = "list"

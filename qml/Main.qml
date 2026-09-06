@@ -43,6 +43,10 @@ Item {
     // the shell.json plugin entry opts out with `"theme": "phosphor"`.
     Theme { id: consoleTheme; shell: root.shell; pluginId: root.pluginId }
 
+    // Console height (CONTEXT.md): player-set share of the screen, persisted
+    // on the same shell.json entry as the theme opt-out.
+    ConsoleHeight { id: consoleHeight; shell: root.shell; pluginId: root.pluginId }
+
     // ---- service: the wrapper lives there (docs/adr/0002) ----
     property var service: null // injected by the host when the service kind loaded
 
@@ -455,10 +459,28 @@ Item {
         Rectangle {
             id: drawer
             width: parent.width
-            height: Math.max(380, Math.round(panel.height * 0.58))
+            height: Math.round(panel.height * consoleHeight.percent / 100)
             y: root.opened ? 0 : -height
             Behavior on y {
                 NumberAnimation { duration: 220; easing.type: Easing.OutCubic }
+            }
+            Behavior on height {
+                NumberAnimation { duration: 220; easing.type: Easing.OutCubic }
+            }
+
+            // Console shortcuts for the height, on every screen including
+            // blocked input: unhandled key events bubble up here from
+            // whichever child holds focus (the input, the picker, the status
+            // screen). Ctrl chords so they never collide with typing.
+            Keys.onPressed: event => {
+                if (!(event.modifiers & Qt.ControlModifier)) return
+                switch (event.key) {
+                case Qt.Key_Up: consoleHeight.expand(); break
+                case Qt.Key_Down: consoleHeight.contract(); break
+                case Qt.Key_F: consoleHeight.toggleFullscreen(); break
+                default: return
+                }
+                event.accepted = true
             }
             gradient: Gradient {
                 GradientStop { position: 0.0; color: consoleTheme.drawerTop }
