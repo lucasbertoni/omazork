@@ -5,6 +5,8 @@ phosphor console that slides down over whatever you're doing, running the
 authentic Infocom story files through an embedded Z-machine. No external
 dependencies — one static Go binary the plugin bootstraps itself.
 
+![Zork I in the omazork console, Casual mode](preview.png)
+
 Two ways to play, chosen per playthrough:
 
 - **Classic** — the games exactly as shipped in the 1980s.
