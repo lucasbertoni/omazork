@@ -27,16 +27,20 @@ Requires a current Quickshell-based Omarchy ("quattro").
 omarchy plugin add https://github.com/lucasbertoni/omazork.git --enable
 ```
 
-Plugins can't register keybindings or menu entries themselves, so add each
-with one line:
+**Keybinding** — `Super+Z` toggles the console. The plugin registers the
+binding itself in the running Hyprland when it starts and again after every
+config reload, and drops it when the plugin is disabled; it shows up in
+`omarchy menu keybindings` like any other. If `Super+Z` is already bound in
+your own `bindings.lua`, yours wins and omazork leaves it alone. To pick a
+different key, or `false` for none, set it on the plugin's shell.json entry
+(see **Theme** below for where that entry lives):
 
-**Keybinding** — in `~/.config/hypr/bindings.lua`:
-
-```lua
-o.bind("SUPER + Z", "Zork console", "omarchy-shell shell toggle omazork")
+```sh
+omarchy bar set omazork keybind '"SUPER + SHIFT + Z"'
 ```
 
-**Menu entry** — in `~/.config/omarchy/extensions/omarchy-menu.jsonc`:
+**Menu entry** — the shell has no equivalent hook for menus, so add it by
+hand — in `~/.config/omarchy/extensions/omarchy-menu.jsonc`:
 
 ```jsonc
 "zork": { "icon": "󰊠", "label": "Zork", "action": "omarchy-shell shell toggle omazork", "aliases": ["zork"] }

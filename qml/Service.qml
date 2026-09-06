@@ -4,7 +4,9 @@
 // bar.shell.serviceFor("omazork"), and both read it via live bindings.
 import QtQuick
 import Quickshell
+import Quickshell.Hyprland
 import Quickshell.Io
+import "PluginEntry.js" as PluginEntry
 
 Item {
     id: root
@@ -68,7 +70,81 @@ Item {
 
     // Services are instantiated synchronously for every enabled plugin at
     // shell startup, so the spawn is deferred off that path (docs/adr/0002).
-    Component.onCompleted: Qt.callLater(function() { bootstrap.running = true })
+    // The shell may destroy a startup instance before the deferred call
+    // lands (a shell.json load re-syncs services), so check we still exist.
+    property bool alive: true
+    Component.onCompleted: Qt.callLater(function() {
+        if (root.alive !== true) return
+        bootstrap.running = true
+        root.applyKeybind()
+    })
+
+    // ---- Console keybinding (docs/adr/0005) ----
+    // The shell gives plugins no way to declare keybindings, so the service
+    // registers one itself in the running Hyprland through scripts/keybind.sh.
+    // `"keybind"` on the plugin's shell.json entry overrides the default;
+    // `false` (or "") turns the registration off.
+    readonly property string keybind: {
+        var v = PluginEntry.setting(root.shell ? root.shell.shellConfig : null, "omazork", "keybind")
+        if (v === undefined || v === null) return "SUPER + Z"
+        if (v === false) return ""
+        return String(v).trim()
+    }
+    property string boundKeys: "" // what we last asked Hyprland to bind
+
+    onKeybindChanged: root.applyKeybind()
+
+    function applyKeybind() {
+        if (root.boundKeys !== "" && root.boundKeys !== root.keybind)
+            root.enqueueKeybind("unbind", root.boundKeys)
+        root.boundKeys = root.keybind
+        if (root.boundKeys !== "") root.enqueueKeybind("bind", root.boundKeys)
+    }
+
+    // A config reload drops every runtime bind; put ours back.
+    Connections {
+        target: Hyprland
+        function onRawEvent(event) {
+            if (event && String(event.name) === "configreloaded" && root.boundKeys !== "")
+                root.enqueueKeybind("bind", root.boundKeys)
+        }
+    }
+
+    // Disabling the plugin unloads the service: leave no dangling binding.
+    // The shell also tears services down on a plugin rescan and at startup
+    // (a shell.json load re-syncs them), where the successor's bind would
+    // race this unbind — so only unbind when the plugin really is disabled.
+    Component.onDestruction: {
+        root.alive = false
+        if (root.boundKeys === "") return
+        var disabled = false
+        try {
+            var reg = root.shell ? root.shell.pluginRegistry : null
+            disabled = !!reg && reg.isEnabled("omazork") === false
+        } catch (e) {}
+        if (disabled)
+            Quickshell.execDetached(["bash", root.pluginRoot + "/scripts/keybind.sh", "unbind", root.boundKeys])
+    }
+
+    // bind/unbind runs are serialised so an unbind-then-bind lands in order.
+    property var keybindQueue: []
+    function enqueueKeybind(action, keys) {
+        root.keybindQueue.push(["bash", root.pluginRoot + "/scripts/keybind.sh", action, keys])
+        if (!keybindProc.running) root.runNextKeybind()
+    }
+    function runNextKeybind() {
+        if (root.keybindQueue.length === 0) return
+        keybindProc.command = root.keybindQueue.shift()
+        keybindProc.running = true
+    }
+    Process {
+        id: keybindProc
+        stderr: SplitParser { onRead: data => console.warn("omazork: " + data) }
+        onExited: exitCode => {
+            if (exitCode !== 0) console.warn("omazork: keybind.sh exited " + exitCode)
+            root.runNextKeybind()
+        }
+    }
 
     Process {
         id: bootstrap
