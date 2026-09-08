@@ -13,3 +13,9 @@ Default vocabulary: `needs-triage`, `needs-info`, `ready-for-agent`, `ready-for-
 ### Domain docs
 
 Single-context: `CONTEXT.md` + `docs/adr/` at the repo root. See `docs/agents/domain.md`.
+
+## Branches
+
+Work on `develop`. `master` is the branch the Omarchy marketplace installs and must not
+contain `CLAUDE.md`, `.claude/` or `docs/agents/`. Publish with `scripts/promote.sh`,
+which merges develop into master and strips those paths. Never merge master into develop.
